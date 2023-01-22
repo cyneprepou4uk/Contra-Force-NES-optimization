@@ -384,8 +384,8 @@ C - - - - - 0x008125 02:8115: D0 E1     BNE bra_80F8_RTS
 - - - - - - 0x008137 02:8127: 9D 20 07  STA ram_0720_obj,X
 - - - - - - 0x00813A 02:812A: BD 00 06  LDA ram_0600_obj,X
 - - - - - - 0x00813D 02:812D: 09 01     ORA #$01
-- - - - - - 0x00813F 02:812F: 4C CA 90  JMP loc_90CA
-
+- - - - - - 0x00813F 02:812F: 4C CA 90  STA ram_0600_obj,X
+                                        RTS
 
 
 sub_0x008142:
@@ -3152,7 +3152,6 @@ sub_0x0090D8_0600x_write_08:
 loc_0x0090D8_0600x_write_08:
 C D 0 - - - 0x0090D8 02:90C8: A9 08     LDA #$08
 bra_90CA:
-loc_90CA:
 C D 0 - - - 0x0090DA 02:90CA: 9D 00 06  STA ram_0600_obj,X
 C - - - - - 0x0090DD 02:90CD: 60        RTS
 
