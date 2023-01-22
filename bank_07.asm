@@ -1892,6 +1892,7 @@ C - - - - - 0x00E9F8 03:A9E8: 60        RTS
 bra_A9E9:
 C - - - - - 0x00E9F9 03:A9E9: A9 00     LDA #$00
 C - - - - - 0x00E9FB 03:A9EB: 9D C8 07  STA ram_07C8_unk,X
+; bzk optimize, написать 11 и прыгнуть чуть ниже, либо скопировать код тут
 C - - - - - 0x00E9FE 03:A9EE: A9 12     LDA #$12
 C - - - - - 0x00EA00 03:A9F0: 20 09 A8  JSR sub_0x008C20
 C - - - - - 0x00EA03 03:A9F3: A5 8D     LDA ram_008D
