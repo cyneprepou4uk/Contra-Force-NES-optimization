@@ -8240,21 +8240,21 @@ C - - - - - 0x01FA4F 07:FA3F: A9 00     LDA #$00
 C - - - - - 0x01FA51 07:FA41: 85 0E     STA ram_000E
 C - - - - - 0x01FA53 07:FA43: A2 02     LDX #$02
 C - - - - - 0x01FA55 07:FA45: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA58 07:FA48: E8        INX
+C - - - - - 0x01FA58 07:FA48: E8        INX ; 03
 C - - - - - 0x01FA59 07:FA49: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA5C 07:FA4C: E8        INX
+C - - - - - 0x01FA5C 07:FA4C: E8        INX ; 04
 C - - - - - 0x01FA5D 07:FA4D: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA60 07:FA50: E8        INX
+C - - - - - 0x01FA60 07:FA50: E8        INX ; 05
 C - - - - - 0x01FA61 07:FA51: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA64 07:FA54: E8        INX
+C - - - - - 0x01FA64 07:FA54: E8        INX ; 06
 C - - - - - 0x01FA65 07:FA55: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA68 07:FA58: E8        INX
+C - - - - - 0x01FA68 07:FA58: E8        INX ; 07
 C - - - - - 0x01FA69 07:FA59: 20 E6 FA  JSR sub_FAE6
 C - - - - - 0x01FA6C 07:FA5C: A9 01     LDA #$01
 C - - - - - 0x01FA6E 07:FA5E: 85 0E     STA ram_000E
-C - - - - - 0x01FA70 07:FA60: E8        INX
+C - - - - - 0x01FA70 07:FA60: E8        INX ; 08
 C - - - - - 0x01FA71 07:FA61: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA74 07:FA64: E8        INX
+C - - - - - 0x01FA74 07:FA64: E8        INX ; 09
 C - - - - - 0x01FA75 07:FA65: 4C E6 FA  JMP loc_FAE6
 
 
@@ -8264,11 +8264,11 @@ C - - - - - 0x01FA78 07:FA68: A9 02     LDA #$02
 C - - - - - 0x01FA7A 07:FA6A: 85 0E     STA ram_000E
 C - - - - - 0x01FA7C 07:FA6C: A2 12     LDX #$12
 C - - - - - 0x01FA7E 07:FA6E: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA81 07:FA71: E8        INX
+C - - - - - 0x01FA81 07:FA71: E8        INX ; 13
 C - - - - - 0x01FA82 07:FA72: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA85 07:FA75: E8        INX
+C - - - - - 0x01FA85 07:FA75: E8        INX ; 14
 C - - - - - 0x01FA86 07:FA76: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA89 07:FA79: E8        INX
+C - - - - - 0x01FA89 07:FA79: E8        INX ; 15
 C - - - - - 0x01FA8A 07:FA7A: 4C E6 FA  JMP loc_FAE6
 
 
@@ -8278,21 +8278,21 @@ C - - - - - 0x01FA8D 07:FA7D: A9 00     LDA #$00
 C - - - - - 0x01FA8F 07:FA7F: 85 0E     STA ram_000E
 C - - - - - 0x01FA91 07:FA81: A2 02     LDX #$02
 C - - - - - 0x01FA93 07:FA83: 20 E0 FA  JSR sub_FAE0
-C - - - - - 0x01FA96 07:FA86: E8        INX
+C - - - - - 0x01FA96 07:FA86: E8        INX ; 03
 C - - - - - 0x01FA97 07:FA87: 20 E0 FA  JSR sub_FAE0
-C - - - - - 0x01FA9A 07:FA8A: E8        INX
+C - - - - - 0x01FA9A 07:FA8A: E8        INX ; 04
 C - - - - - 0x01FA9B 07:FA8B: 20 E0 FA  JSR sub_FAE0
-C - - - - - 0x01FA9E 07:FA8E: E8        INX
+C - - - - - 0x01FA9E 07:FA8E: E8        INX ; 05
 C - - - - - 0x01FA9F 07:FA8F: 20 E0 FA  JSR sub_FAE0
-C - - - - - 0x01FAA2 07:FA92: E8        INX
+C - - - - - 0x01FAA2 07:FA92: E8        INX ; 06
 C - - - - - 0x01FAA3 07:FA93: 20 E0 FA  JSR sub_FAE0
-C - - - - - 0x01FAA6 07:FA96: E8        INX
+C - - - - - 0x01FAA6 07:FA96: E8        INX ; 07
 C - - - - - 0x01FAA7 07:FA97: 20 E0 FA  JSR sub_FAE0
 C - - - - - 0x01FAAA 07:FA9A: A9 01     LDA #$01
 C - - - - - 0x01FAAC 07:FA9C: 85 0E     STA ram_000E
-C - - - - - 0x01FAAE 07:FA9E: E8        INX
+C - - - - - 0x01FAAE 07:FA9E: E8        INX ; 08
 C - - - - - 0x01FAAF 07:FA9F: 20 E0 FA  JSR sub_FAE0
-C - - - - - 0x01FAB2 07:FAA2: E8        INX
+C - - - - - 0x01FAB2 07:FAA2: E8        INX ; 09
 C - - - - - 0x01FAB3 07:FAA3: 4C E0 FA  JMP loc_FAE0
 
 
@@ -8302,21 +8302,21 @@ C D 3 - - - 0x01FAB6 07:FAA6: A9 01     LDA #$01
 C - - - - - 0x01FAB8 07:FAA8: 85 0E     STA ram_000E
 C - - - - - 0x01FABA 07:FAAA: A2 0A     LDX #$0A
 C - - - - - 0x01FABC 07:FAAC: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FABF 07:FAAF: E8        INX
+C - - - - - 0x01FABF 07:FAAF: E8        INX ; 0B
 C - - - - - 0x01FAC0 07:FAB0: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FAC3 07:FAB3: E8        INX
+C - - - - - 0x01FAC3 07:FAB3: E8        INX ; 0C
 C - - - - - 0x01FAC4 07:FAB4: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FAC7 07:FAB7: E8        INX
+C - - - - - 0x01FAC7 07:FAB7: E8        INX ; 0D
 C - - - - - 0x01FAC8 07:FAB8: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FACB 07:FABB: E8        INX
+C - - - - - 0x01FACB 07:FABB: E8        INX ; 0E
 C - - - - - 0x01FACC 07:FABC: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FACF 07:FABF: E8        INX
+C - - - - - 0x01FACF 07:FABF: E8        INX ; 0F
 C - - - - - 0x01FAD0 07:FAC0: 20 E6 FA  JSR sub_FAE6
 C - - - - - 0x01FAD3 07:FAC3: A9 02     LDA #$02
 C - - - - - 0x01FAD5 07:FAC5: 85 0E     STA ram_000E
-C - - - - - 0x01FAD7 07:FAC7: E8        INX
+C - - - - - 0x01FAD7 07:FAC7: E8        INX ; 10
 C - - - - - 0x01FAD8 07:FAC8: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FADB 07:FACB: E8        INX
+C - - - - - 0x01FADB 07:FACB: E8        INX ; 11
 C - - - - - 0x01FADC 07:FACC: 4C E6 FA  JMP loc_FAE6
 
 
