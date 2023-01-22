@@ -98,11 +98,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 2 - - - 0x01C010 07:C000: 1E        .byte con_prg_bank + $0E + $10   ; 
-
-
-
 tbl_0x01C011_for_4010_4013:
 ; AC
 - D 2 - - - 0x01C011 07:C001: 0F        .byte $0F   ; 4010
@@ -144,11 +139,6 @@ tbl_0x01C011_for_4010_4013:
 - D 2 - - - 0x01C02E 07:C01E: 3F        .byte $3F   ; 
 - D 2 - - - 0x01C02F 07:C01F: 3A        .byte $3A   ; 
 - D 2 - - - 0x01C030 07:C020: 08        .byte $08   ; 
-
-
-; bzk garbage
-- - - - - - 0x01C031 07:C021: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
-- - - - - - 0x01C040 07:C030: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
 
 
 
@@ -1502,10 +1492,6 @@ C - - - - - 0x01D5D5 07:D5C5: 9A        TXS
 C - - - - - 0x01D5D6 07:D5C6: 60        RTS
 
 
-; bzk garbage
-- - - - - - 0x01D5D7 07:D5C7: A9 FF     LDA #$FF
-
-
 
 bra_D5C9_loop:
 C - - - - - 0x01D5D9 07:D5C9: 8D 07 20  STA $2007
@@ -1655,10 +1641,6 @@ C - - - - - 0x01D6C5 07:D6B5: AE A0 03  LDX ram_03A0
 C - - - - - 0x01D6C8 07:D6B8: 9A        TXS
 bra_D6B9_RTS:
 C - - - - - 0x01D6C9 07:D6B9: 60        RTS
-
-
-; bzk garbage
-- - - - - - 0x01D6CA 07:D6BA: A9 FF     LDA #$FF
 
 
 
@@ -8053,12 +8035,6 @@ C - - - - - 0x01F8FB 07:F8EB: B9 20 07  LDA ram_0720_obj,Y
 C - - - - - 0x01F8FE 07:F8EE: 4C F8 F8  JMP loc_F8F8
 
 
-; bzk garbage
-- - - - - - 0x01F901 07:F8F1: A5 18     LDA ram_0018
-- - - - - - 0x01F903 07:F8F3: 85 16     STA ram_0016
-- - - - - - 0x01F905 07:F8F5: BD 20 07  LDA ram_0720_obj,X
-
-
 
 loc_F8F8:
 C D 3 - - - 0x01F908 07:F8F8: 29 3F     AND #$3F
@@ -9269,11 +9245,6 @@ C - - - - - 0x01FFF7 07:FFE7: 36 01     ROL ram_0001,X
 C - - - - - 0x01FFF9 07:FFE9: 88        DEY
 C - - - - - 0x01FFFA 07:FFEA: D0 E7     BNE bra_FFD3_loop
 C - - - - - 0x01FFFC 07:FFEC: 60        RTS
-
-
-; bzk garbage
-- - - - - - 0x01FFFD 07:FFED: FF        .byte $FF, $FF, $FF   ; 
-- - - - - - 0x020000 07:FFF0: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
 
 
 
