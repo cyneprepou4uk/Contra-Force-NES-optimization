@@ -16,11 +16,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 0 - - - 0x010010 04:8000: 08        .byte con_prg_bank + $08   ; 
-
-
-
 sub_8001_music_control_bytes_E0_FE:
 C D 0 - - - 0x010011 04:8001: 38        SEC
 C - - - - - 0x010012 04:8002: E9 E0     SBC #$E0
@@ -15702,10 +15697,6 @@ bra_BFEA:
 - - - - - - 0x014008 04:BFF8: 9D 4E 06  STA ram_obj_pos_X,X
 bra_BFFB_RTS:
 - - - - - - 0x01400B 04:BFFB: 60        RTS
-
-
-; bzk garbage
-- - - - - - 0x01400C 04:BFFC: FF        .byte $FF, $FF, $FF, $FF   ; 
 
 
 
