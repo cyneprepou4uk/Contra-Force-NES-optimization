@@ -40,6 +40,7 @@
 .export sub_0x008BE0
 .export sub_0x008BE3
 .export loc_0x008C20
+.export sub_0x008C20
 .export loc_0x008C23
 .export sub_0x008D91
 .export sub_0x008DD9_009F_AND_7F_TAY_DEY
@@ -2301,6 +2302,7 @@ C - - - - - 0x008C1C 02:8C0C: A8        TAY
 C - - - - - 0x008C1D 02:8C0D: B9 21 8C  LDA tbl_8C21,Y
 loc_8C10:
 loc_0x008C20:
+sub_0x008C20:
 C D 0 - - - 0x008C20 02:8C10: 38        SEC
 C - - - - - 0x008C21 02:8C11: E9 01     SBC #$01
 loc_8C13:

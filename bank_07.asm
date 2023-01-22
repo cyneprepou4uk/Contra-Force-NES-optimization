@@ -1554,9 +1554,6 @@ C - - - - - 0x00E812 03:A802: 20 6E A6  JSR sub_A66E
 C - - - - - 0x00E815 03:A805: B0 E1     BCS bra_A7E8_RTS
 bra_A807:
 C - - - - - 0x00E817 03:A807: A5 0A     LDA ram_000A
-loc_A809:
-sub_A809:
-; bzk optimize
 C D 1 - - - 0x00E819 03:A809: 4C 10 8C  JMP loc_0x008C20
 
 
@@ -1606,7 +1603,7 @@ C - - - - - 0x00E852 03:A842: 38        SEC
 C - - - - - 0x00E853 03:A843: 60        RTS
 bra_A844:
 C - - - - - 0x00E854 03:A844: A5 0A     LDA ram_000A
-C - - - - - 0x00E856 03:A846: 4C 09 A8  JMP loc_A809
+C - - - - - 0x00E856 03:A846: 4C 09 A8  JMP loc_0x008C20
 
 
 
@@ -1896,7 +1893,7 @@ bra_A9E9:
 C - - - - - 0x00E9F9 03:A9E9: A9 00     LDA #$00
 C - - - - - 0x00E9FB 03:A9EB: 9D C8 07  STA ram_07C8_unk,X
 C - - - - - 0x00E9FE 03:A9EE: A9 12     LDA #$12
-C - - - - - 0x00EA00 03:A9F0: 20 09 A8  JSR sub_A809
+C - - - - - 0x00EA00 03:A9F0: 20 09 A8  JSR sub_0x008C20
 C - - - - - 0x00EA03 03:A9F3: A5 8D     LDA ram_008D
 C - - - - - 0x00EA05 03:A9F5: 09 80     ORA #$80
 C - - - - - 0x00EA07 03:A9F7: 85 8D     STA ram_008D
