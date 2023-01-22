@@ -6895,9 +6895,8 @@ C - - - - - 0x01F371 07:F361: 60        RTS
 
 loc_F362_switch_prg_bank_pair:
 sub_F362_switch_prg_bank_pair:
-; bzk optimize, 007E is useless
-C D 3 - - - 0x01F372 07:F362: A9 01     LDA #$01
-C - - - - - 0x01F374 07:F364: 85 7E     STA ram_007E
+C D 3 - - - 0x01F372 07:F362: A9 01     ;LDA #$01
+C - - - - - 0x01F374 07:F364: 85 7E     ;STA ram_007E
 C - - - - - 0x01F376 07:F366: A5 36     LDA ram_prg_banks_pair
 C - - - - - 0x01F378 07:F368: 0A        ASL
 C - - - - - 0x01F379 07:F369: A8        TAY
@@ -6911,8 +6910,8 @@ C - - - - - 0x01F389 07:F379: 85 7D     STA ram_for_8000
 C - - - - - 0x01F38B 07:F37B: 8D 00 80  STA $8000
 C - - - - - 0x01F38E 07:F37E: B9 94 F3  LDA tbl_F393 + 1,Y
 C - - - - - 0x01F391 07:F381: 8D 01 80  STA $8001
-C - - - - - 0x01F394 07:F384: A9 00     LDA #$00
-C - - - - - 0x01F396 07:F386: 85 7E     STA ram_007E
+C - - - - - 0x01F394 07:F384: A9 00     ;LDA #$00
+C - - - - - 0x01F396 07:F386: 85 7E     ;STA ram_007E
 C - - - - - 0x01F398 07:F388: 60        RTS
 
 
