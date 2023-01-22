@@ -135,7 +135,8 @@ bra_80A7:
 C - - - - - 0x0100B7 04:80A7: 20 F0 80  JSR sub_80F0
 C - - - - - 0x0100BA 04:80AA: C8        INY
 C - - - - - 0x0100BB 04:80AB: B1 E0     LDA (ram_music_data),Y
-C - - - - - 0x0100BD 04:80AD: 4C 04 81  JMP loc_8104
+C - - - - - 0x0100BD 04:80AD: 4C 04 81  STA ram_05F7,X
+                                        RTS
 
 
 
@@ -209,7 +210,6 @@ C - - - - - 0x010113 04:8103: 60        RTS
 
 
 
-loc_8104:   ; bzk optimize, point to 8106, or write this code at 0x0100BD
 sub_8104:
 ofs_010_8104_E5:    ; bzk optimize, point to 8106
 C D 0 - - - 0x010114 04:8104: B1 E0     LDA (ram_music_data),Y
