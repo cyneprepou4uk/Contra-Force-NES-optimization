@@ -8541,8 +8541,7 @@ C - - - - - 0x01FC3C 07:FC2C: 4C 4C F3  JMP loc_F34C_prg_bankswitch
 
 
 
-; !!!
-; палитра?
+; todo
 off_FC2F_00:
 - D 3 - I - 0x01FC3F 07:FC2F: 0E        .byte $0E   ; 
 - - - - - - 0x01FC40 07:FC30: 1B        .byte $1B   ; 
