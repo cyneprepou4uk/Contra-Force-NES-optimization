@@ -5074,7 +5074,6 @@ C - - - - - 0x00FA80 03:BA70: 20 4C 9A  JSR sub_0x009A5C
 
 
 bra_BA73:
-loc_BA73:   ; bzk optimize
 C D 1 - - - 0x00FA83 03:BA73: 4C C8 90  JMP loc_0x0090D8_0600x_write_08
 
 
@@ -5147,7 +5146,7 @@ bra_BAFB:
 - - - - - - 0x00FB0B 03:BAFB: 20 52 9A  JSR sub_0x009A62
 bra_BAFE:
 C - - - - - 0x00FB0E 03:BAFE: A6 53     LDX ram_0053
-C - - - - - 0x00FB10 03:BB00: 4C 73 BA  JMP loc_BA73
+C - - - - - 0x00FB10 03:BB00: 4C 73 BA  JMP loc_0x0090D8_0600x_write_08
 
 
 
