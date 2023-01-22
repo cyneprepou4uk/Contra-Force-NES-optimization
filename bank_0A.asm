@@ -5640,12 +5640,10 @@ C - - - - - 0x016228 05:A218: AD 40 03  LDA ram_0340
 C - - - - - 0x01622B 05:A21B: F0 30     BEQ bra_A24D
 C - - - - - 0x01622D 05:A21D: A4 75     LDY ram_stage
 C - - - - - 0x01622F 05:A21F: B9 79 A2  LDA tbl_A279,Y
-; bzk optimize
-C - - - - - 0x016232 05:A222: A0 00     LDY #$00
 C - - - - - 0x016234 05:A224: 18        CLC
-C - - - - - 0x016235 05:A225: 79 6A A2  ADC tbl_A26A,Y
+C - - - - - 0x016235 05:A225: 79 6A A2  ADC #< tbl_A26C
 C - - - - - 0x016238 05:A228: 85 00     STA ram_0000
-C - - - - - 0x01623A 05:A22A: B9 6B A2  LDA tbl_A26A + 1,Y
+C - - - - - 0x01623A 05:A22A: B9 6B A2  LDA #> tbl_A26C
 C - - - - - 0x01623D 05:A22D: 69 00     ADC #$00
 C - - - - - 0x01623F 05:A22F: 85 01     STA ram_0001
 C - - - - - 0x016241 05:A231: A9 01     LDA #$01
@@ -5687,11 +5685,6 @@ tbl_A265:
 - D 1 - - - 0x016277 05:A267: 01        .byte con_btn_Right   ; 02
 - D 1 - - - 0x016278 05:A268: 02        .byte con_btn_Left   ; 03
 - D 1 - - - 0x016279 05:A269: 01        .byte con_btn_Right   ; 04
-
-
-
-tbl_A26A:
-- D 1 - - - 0x01627A 05:A26A: 6C A2     .word tbl_A26C
 
 
 
