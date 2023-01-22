@@ -993,7 +993,15 @@ C - - - - - 0x01D382 07:D372: A4 08     LDY ram_0008
 C - - - - - 0x01D384 07:D374: B9 34 06  LDA ram_obj_animation_hi,Y
 C - - - - - 0x01D387 07:D377: 29 3C     AND #$3C
 C - - - - - 0x01D389 07:D379: 4A        LSR
-C - - - - - 0x01D38A 07:D37A: 20 F0 FB  JSR sub_FBF0
+C - - - - - 0x01FC00 07:FBF0: 48        PHA
+C - - - - - 0x01FC01 07:FBF1: 4A        LSR
+C - - - - - 0x01FC02 07:FBF2: A8        TAY
+C - - - - - 0x01FC03 07:FBF3: B9 FF FB  LDA tbl_FBFF,Y
+C - - - - - 0x01FC06 07:FBF6: C5 36     CMP ram_prg_banks_pair
+C - - - - - 0x01FC08 07:FBF8: F0 03     BEQ bra_FBFD
+C - - - - - 0x01FC0A 07:FBFA: 20 4C F3  JSR sub_F34C_prg_bankswitch
+bra_FBFD:
+C - - - - - 0x01FC0D 07:FBFD: 68        PLA
 C - - - - - 0x01D38D 07:D37D: A8        TAY
 C - - - - - 0x01D38E 07:D37E: A5 10     LDA ram_0010
 C - - - - - 0x01D390 07:D380: 0A        ASL
@@ -8483,20 +8491,6 @@ C - - - - - 0x01FBF9 07:FBE9: 9D 1A 06  STA ram_obj_animation_lo,X
 C - - - - - 0x01FBFC 07:FBEC: 20 C1 F6  JSR sub_F6C1
 bra_FBEF_RTS:
 C - - - - - 0x01FBFF 07:FBEF: 60        RTS
-
-
-
-sub_FBF0:
-C - - - - - 0x01FC00 07:FBF0: 48        PHA
-C - - - - - 0x01FC01 07:FBF1: 4A        LSR
-C - - - - - 0x01FC02 07:FBF2: A8        TAY
-C - - - - - 0x01FC03 07:FBF3: B9 FF FB  LDA tbl_FBFF,Y
-C - - - - - 0x01FC06 07:FBF6: C5 36     CMP ram_prg_banks_pair
-C - - - - - 0x01FC08 07:FBF8: F0 03     BEQ bra_FBFD
-C - - - - - 0x01FC0A 07:FBFA: 20 4C F3  JSR sub_F34C_prg_bankswitch
-bra_FBFD:
-C - - - - - 0x01FC0D 07:FBFD: 68        PLA
-C - - - - - 0x01FC0E 07:FBFE: 60        RTS
 
 
 
