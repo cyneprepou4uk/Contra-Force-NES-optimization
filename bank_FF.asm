@@ -8820,7 +8820,10 @@ C - - - - - 0x01FD4F 07:FD3F: CA        DEX
 C - - - - - 0x01FD50 07:FD40: D0 F3     BNE bra_FD35_loop
 C - - - - - 0x01FD52 07:FD42: A9 FF     LDA #$FF
 C - - - - - 0x01FD54 07:FD44: 8D 00 E0  STA $E000
-C - - - - - 0x01FD57 07:FD47: 20 76 FE  JSR sub_FE76
+C - - - - - 0x01FD57 07:FD47: 20 76 FE  LDA #$0F
+                                        STA $4015
+                                        LDA #$C0
+                                        STA $4017
 C - - - - - 0x01FD5A 07:FD4A: 20 09 F3  JSR sub_F309_clear_0400_07FF
 ; A = 00
 ; clear 0000-03FF
@@ -8979,15 +8982,6 @@ sub_0x01FE80:
 C D 3 - - - 0x01FE80 07:FE70: A5 FF     LDA ram_for_2000
 C - - - - - 0x01FE82 07:FE72: 8D 00 20  STA $2000
 C - - - - - 0x01FE85 07:FE75: 60        RTS
-
-
-
-sub_FE76:
-C - - - - - 0x01FE86 07:FE76: A9 0F     LDA #$0F
-C - - - - - 0x01FE88 07:FE78: 8D 15 40  STA $4015
-C - - - - - 0x01FE8B 07:FE7B: A9 C0     LDA #$C0
-C - - - - - 0x01FE8D 07:FE7D: 8D 17 40  STA $4017
-C - - - - - 0x01FE90 07:FE80: 60        RTS
 
 
 
