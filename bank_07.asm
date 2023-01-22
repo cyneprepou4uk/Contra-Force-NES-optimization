@@ -3904,7 +3904,7 @@ C - - - - - 0x00F3E7 03:B3D7: A9 20     LDA #$20
 C - - - - - 0x00F3E9 03:B3D9: 20 62 88  JSR sub_0x008872
 C - - - - - 0x00F3EC 03:B3DC: DE A0 07  DEC ram_07A0_unk,X
 C - - - - - 0x00F3EF 03:B3DF: D0 03     BNE bra_B3E4_RTS
-C - - - - - 0x00F3F1 03:B3E1: 4C 7E B4  JMP loc_B47E
+C - - - - - 0x00F3F1 03:B3E1: 4C 7E B4  JMP loc_0x009A27
 bra_B3E4_RTS:
 C - - - - - 0x00F3F4 03:B3E4: 60        RTS
 
@@ -3922,7 +3922,7 @@ C - - - - - 0x00F3F9 03:B3E9: B9 F0 03  LDA ram_03F0,Y
 C - - - - - 0x00F3FC 03:B3EC: 9D 8C 07  STA ram_078C_unk,X
 C - - - - - 0x00F3FF 03:B3EF: A5 9F     LDA ram_009F
 C - - - - - 0x00F401 03:B3F1: D0 03     BNE bra_B3F6
-- - - - - - 0x00F403 03:B3F3: 4C 7E B4  JMP loc_B47E
+- - - - - - 0x00F403 03:B3F3: 4C 7E B4  JMP loc_0x009A27
 bra_B3F6:
 C - - - - - 0x00F406 03:B3F6: 20 36 B5  JSR sub_B536
 C - - - - - 0x00F409 03:B3F9: 20 81 B4  JSR sub_B481
@@ -3996,7 +3996,6 @@ C - - - - - 0x00F48A 03:B47A: 99 68 06  STA ram_obj_pos_Y,Y
 bra_B47D_RTS:
 C - - - - - 0x00F48D 03:B47D: 60        RTS
 bra_B47E:
-loc_B47E:   ; bzk optimize
 C D 1 - - - 0x00F48E 03:B47E: 4C 17 9A  JMP loc_0x009A27
 
 
