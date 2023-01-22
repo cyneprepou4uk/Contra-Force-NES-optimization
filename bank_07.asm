@@ -5521,8 +5521,8 @@ C - - - - - 0x00FCFB 03:BCEB: 4C F0 BE  JMP loc_BEF0
 
 
 
-bra_BCEE:
-C - - - - - 0x00FCFE 03:BCEE: 4C EF BE  JMP loc_BEEF_RTS
+bra_BCEE_RTS:
+C - - - - - 0x00FCFE 03:BCEE: 4C EF BE  RTS
 
 
 
@@ -5548,11 +5548,11 @@ C - - - - - 0x00FD25 03:BD15: 29 80     AND #$80
 C - - - - - 0x00FD27 03:BD17: D0 61     BNE bra_BD7A
 C - - - - - 0x00FD29 03:BD19: A5 60     LDA ram_0060
 C - - - - - 0x00FD2B 03:BD1B: C9 03     CMP #$03
-C - - - - - 0x00FD2D 03:BD1D: 90 CF     BCC bra_BCEE
+C - - - - - 0x00FD2D 03:BD1D: 90 CF     BCC bra_BCEE_RTS
 C - - - - - 0x00FD2F 03:BD1F: D0 06     BNE bra_BD27
 C - - - - - 0x00FD31 03:BD21: A5 61     LDA ram_0061
 C - - - - - 0x00FD33 03:BD23: C9 80     CMP #$80
-C - - - - - 0x00FD35 03:BD25: 90 C7     BCC bra_BCEE
+C - - - - - 0x00FD35 03:BD25: 90 C7     BCC bra_BCEE_RTS
 bra_BD27:
 C - - - - - 0x00FD37 03:BD27: A9 26     LDA #con_music_26
 C - - - - - 0x00FD39 03:BD29: 20 CA FE  JSR sub_0x01FEDA_add_music_to_queue
