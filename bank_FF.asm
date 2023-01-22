@@ -422,7 +422,7 @@ C - - - - - 0x01D017 07:D007: C9 03     CMP #$03
 C - - - - - 0x01D019 07:D009: D0 02     BNE bra_D00D
 C - - - - - 0x01D01B 07:D00B: A0 3D     LDY #$3D
 bra_D00D:
-C - - - - - 0x01D01D 07:D00D: 84 3F     STY ram_003F    ; bzk optimize, Y is always 3D despite conditions
+C - - - - - 0x01D01D 07:D00D: 84 3F     STY ram_garbage_loop_counter    ; bzk optimize, Y is always 3D despite conditions
 ; bzk optimize, code is executed each frame
 ; I suppose there is no need to constantly overwite this address
 ; it should be one only once here 0x01436E
@@ -7936,7 +7936,7 @@ C - - - - - 0x01F86B 07:F85B: 8E 06 20  STX $2006
 C - - - - - 0x01F86E 07:F85E: AD 02 20  LDA $2002
 C - - - - - 0x01F871 07:F861: 8C 05 20  STY $2005
 C - - - - - 0x01F874 07:F864: 8C 05 20  STY $2005
-C - - - - - 0x01F877 07:F867: A4 3F     LDY ram_003F
+C - - - - - 0x01F877 07:F867: A4 3F     LDY ram_garbage_loop_counter
 bra_F869_garbage_loop:
 C - - - - - 0x01F879 07:F869: 88        DEY
 C - - - - - 0x01F87A 07:F86A: D0 FD     BNE bra_F869_garbage_loop
