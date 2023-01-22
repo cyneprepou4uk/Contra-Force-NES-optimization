@@ -7581,7 +7581,7 @@ C - - - - - 0x01F6A3 07:F693: 60        RTS
 
 
 sub_0x01F6A4:
-C - - - - - 0x01F6A4 07:F694: A9 14     LDA #$14    ; con_F3D6_
+C - - - - - 0x01F6A4 07:F694: A9 14     LDA #$14    ; con_F3D6_14
 C - - - - - 0x01F6A6 07:F696: 8D 33 03  STA ram_0333
 C - - - - - 0x01F6A9 07:F699: 20 B3 F3  JSR sub_F3B3
 C - - - - - 0x01F6AC 07:F69C: 60        RTS
@@ -9050,14 +9050,14 @@ sub_FECA_add_music_to_queue:
 loc_FECA_add_music_to_queue:
 loc_0x01FEDA_add_music_to_queue:
 sub_0x01FEDA_add_music_to_queue:
-C D 3 - - - 0x01FEDA 07:FECA: 8C 6C 03  STY ram_036C
+C D 3 - - - 0x01FEDA 07:FECA: 8C 6C 03  STY ram_save_Y
 C - - - - - 0x01FEDD 07:FECD: AC 62 03  LDY ram_sound_hist_index_1
 C - - - - - 0x01FEE0 07:FED0: 99 90 03  STA ram_sound_history,Y
 C - - - - - 0x01FEE3 07:FED3: C8        INY
 C - - - - - 0x01FEE4 07:FED4: 98        TYA
 C - - - - - 0x01FEE5 07:FED5: 29 0F     AND #$0F
 C - - - - - 0x01FEE7 07:FED7: 8D 62 03  STA ram_sound_hist_index_1
-C - - - - - 0x01FEEA 07:FEDA: AC 6C 03  LDY ram_036C
+C - - - - - 0x01FEEA 07:FEDA: AC 6C 03  LDY ram_save_Y
 bra_FEDD_RTS:
 C - - - - - 0x01FEED 07:FEDD: 60        RTS
 

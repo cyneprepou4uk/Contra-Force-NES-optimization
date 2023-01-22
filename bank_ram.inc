@@ -1025,7 +1025,9 @@ ram_036A                        = $036A ; 01FD65
 
 ram_036B                        = $036B ; 007FDA 00A55B 00A563 00A56A 01664F 01FD65 
 
-ram_036C                        = $036C ; 01FD65 01FEDA 01FEEA 
+; temp, used only in 1 subroutine
+ram_save_Y                      = $036C ; 01FD65 01FEDA 01FEEA 
+
 ram_036D                        = $036D ; 0159DB 0159EE 01DD0E 01DD38 01FD65 
 ram_036E                        = $036E ; 00E51D 0148D1 014979 014985 01498F 014A78 014A86 014A89 014A91 014A9F 014AAD 01FD65 
 ram_036F                        = $036F ; 00E520 01FD65 
