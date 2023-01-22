@@ -5471,7 +5471,7 @@ C - - - - - 0x00FCB2 03:BCA2: A5 7B     LDA ram_chr_bank + 4
 C - - - - - 0x00FCB4 03:BCA4: C9 6E     CMP #con_chr_bank + $6E
 C - - - - - 0x00FCB6 03:BCA6: F0 06     BEQ bra_BCAE
 - - - - - - 0x00FCB8 03:BCA8: 20 47 9A  JSR sub_0x009A57
-- - - - - - 0x00FCBB 03:BCAB: 4C CD BC  JMP loc_BCCD
+- - - - - - 0x00FCBB 03:BCAB: 4C CD BC  JMP loc_0x00974A
 bra_BCAE:
 C - - - - - 0x00FCBE 03:BCAE: 20 72 91  JSR sub_0x009182_06B2x_AND_0F
 C - - - - - 0x00FCC1 03:BCB1: D0 05     BNE bra_BCB8
@@ -5491,7 +5491,6 @@ bra_BCCA:
 ofs_016_0x00FCDA_15:
 C - - - - - 0x00FCDA 03:BCCA: 4C 17 9A  JMP loc_0x009A27
 bra_BCCD:
-loc_BCCD:   ; bzk optimize
 C - - - - - 0x00FCDD 03:BCCD: 4C 3A 97  JMP loc_0x00974A
 
 
