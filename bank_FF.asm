@@ -9039,7 +9039,9 @@ sub_0x01FECF:
 C - - - - - 0x01FECF 07:FEBF: 20 03 FF  INC ram_002D
 C - - - - - 0x01FED2 07:FEC2: A9 01     LDA #con_F3D6_01
 C - - - - - 0x01FED4 07:FEC4: 20 B3 F3  JSR sub_F3B3
-C - - - - - 0x01FED7 07:FEC7: 4C 06 FF  JMP loc_FF06
+C - - - - - 0x01FED7 07:FEC7: 4C 06 FF  LDA #$00
+                                        STA ram_002D
+                                        RTS
 
 
 
@@ -9071,7 +9073,8 @@ C - - - - - 0x01FEFB 07:FEEB: BD 90 03  LDA ram_sound_history,X
 C - - - - - 0x01FEFE 07:FEEE: 85 EE     STA ram_00EE
 C - - - - - 0x01FF00 07:FEF0: 20 03 FF  INC ram_002D
 C - - - - - 0x01FF03 07:FEF3: 20 86 B2  JSR sub_0x013296
-C - - - - - 0x01FF06 07:FEF6: 20 06 FF  JSR sub_FF06
+C - - - - - 0x01FF06 07:FEF6: 20 06 FF  LDA #$00
+                                        STA ram_002D
 C - - - - - 0x01FF09 07:FEF9: E8        INX
 C - - - - - 0x01FF0A 07:FEFA: 8A        TXA
 C - - - - - 0x01FF0B 07:FEFB: 29 0F     AND #$0F
@@ -9079,14 +9082,6 @@ C - - - - - 0x01FF0D 07:FEFD: 8D 63 03  STA ram_sound_hist_index_2
 C - - - - - 0x01FF10 07:FF00: 4C E3 FE  JMP loc_FEE3_loop
 bra_FF05_RTS:
 C D 3 - I - 0x01FF15 07:FF05: 60        RTS
-
-
-
-loc_FF06:
-sub_FF06:
-C D 3 - - - 0x01FF16 07:FF06: A9 00     LDA #$00
-C - - - - - 0x01FF18 07:FF08: 85 2D     STA ram_002D
-C - - - - - 0x01FF1A 07:FF0A: 60        RTS
 
 
 
