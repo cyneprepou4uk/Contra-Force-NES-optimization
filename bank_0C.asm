@@ -20,11 +20,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 0 - - - 0x018010 06:8000: 0C        .byte con_prg_bank + $0C   ; 
-
-
-
 _off028_0x018011_00:
 - D 0 - - - 0x018011 06:8001: 07        .byte $07   ; 
 - D 0 - I - 0x018012 06:8002: 08        .byte $08   ; 
@@ -16059,10 +16054,6 @@ C - - - - - 0x01BFFE 06:BFEE: E6 5B     INC ram_005B
 C - - - - - 0x01C000 06:BFF0: A9 03     LDA #$03
 C - - - - - 0x01C002 06:BFF2: 8D A1 05  STA ram_05A1
 C - - - - - 0x01C005 06:BFF5: 60        RTS
-
-
-; bzk garbage
-- - - - - - 0x01C006 06:BFF6: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
 
 
 
