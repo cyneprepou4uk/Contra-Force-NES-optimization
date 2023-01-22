@@ -279,7 +279,7 @@ C - - - - - 0x00A1A2 02:A192: A4 18     LDY ram_0018
 C - - - - - 0x00A1A4 02:A194: B9 FD A4  LDA tbl_A4FD,Y
 C - - - - - 0x00A1A7 02:A197: 20 9D A1  JSR sub_A19D
 bra_A19A:
-C - - - - - 0x00A1AA 02:A19A: 4C AF A2  JMP loc_A2AF
+C - - - - - 0x00A1AA 02:A19A: 4C AF A2  JMP loc_AE7B
 
 
 
@@ -444,7 +444,6 @@ C - - - - - 0x00A2BA 02:A2AA: A9 02     LDA #$02
 bra_A2AC:
 C - - - - - 0x00A2BC 02:A2AC: 20 9D A1  JSR sub_A19D
 bra_A2AF:
-loc_A2AF:   ; bzk optimize
 C D 1 - - - 0x00A2BF 02:A2AF: 4C 7B AE  JMP loc_AE7B
 bra_A2B2:
 C - - - - - 0x00A2C2 02:A2B2: A5 75     LDA ram_stage
