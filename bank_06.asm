@@ -32,11 +32,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 1 - - - 0x00C010 03:A000: 06        .byte con_prg_bank + $06   ; 
-
-
-
 sub_0x00C011:
 sub_006_0x00C011_07:
 C - - - - - 0x00C011 03:A001: 20 DA A0  JSR sub_A0DA
@@ -8561,10 +8556,6 @@ off_0E_BFF0_02:
 - - - - - - 0x00E002 03:BFF2: 04        .byte $04   ; 
 - - - - - - 0x00E003 03:BFF3: 05        .byte $05   ; 
 - - - - - - 0x00E004 03:BFF4: FF        .byte $FF   ; 
-
-
-; bzk garbage
-- - - - - - 0x00E005 03:BFF5: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
 
 
 
