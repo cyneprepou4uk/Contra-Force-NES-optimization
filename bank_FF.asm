@@ -432,7 +432,7 @@ C - - - - - 0x01D017 07:D007: C9 03     CMP #$03
 C - - - - - 0x01D019 07:D009: D0 02     BNE bra_D00D
 C - - - - - 0x01D01B 07:D00B: A0 3D     LDY #$3D
 bra_D00D:
-C - - - - - 0x01D01D 07:D00D: 84 3F     STY ram_003F
+C - - - - - 0x01D01D 07:D00D: 84 3F     STY ram_003F    ; bzk optimize, Y is always 3D despite conditions
 ; bzk optimize, code is executed each frame
 ; I suppose there is no need to constantly overwite this address
 ; it should be one only once here 0x01436E
@@ -1155,6 +1155,7 @@ C - - - - - 0x01D46D 07:D45D: D0 18     BNE bra_D477
 ; bzk optimize, in bank 00 and 02, instead of FF pointers, point directly
 ; to where needed from the start. remove FF comparsion and
 ; this part of code up to 0x01D485
+; although this still could be necessary because of writes to additional addresses
 C - - - - - 0x01D46F 07:D45F: 85 1B     STA ram_001B
 C - - - - - 0x01D471 07:D461: A9 08     LDA #$08
 C - - - - - 0x01D473 07:D463: 85 1F     STA ram_001F
