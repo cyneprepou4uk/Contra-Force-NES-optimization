@@ -416,12 +416,6 @@ C - - - - - 0x01D009 07:CFF9: A9 0A     LDA #con_prg_pair + $0A
 C - - - - - 0x01D00B 07:CFFB: 20 4C F3  JSR sub_F34C_prg_bankswitch
 C - - - - - 0x01D00E 07:CFFE: 20 EE BF  JSR sub_0x007FFE_copy_buttons
 C - - - - - 0x01D011 07:D001: E6 23     INC ram_0023
-C - - - - - 0x01D015 07:D005: A5 75     LDA ram_stage
-; bzk optimize, code is executed each frame
-; I suppose there is no need to constantly overwite this address
-; it should be one only once here 0x01436E
-C - - - - - 0x01D01F 07:D00F: 0A        ASL
-C - - - - - 0x01D020 07:D010: 85 88     STA ram_x2_stage
 C - - - - - 0x01D022 07:D012: A5 20     LDA ram_0020
 C - - - - - 0x01D024 07:D014: 0A        ASL
 C - - - - - 0x01D025 07:D015: A8        TAY
@@ -1712,6 +1706,7 @@ C - - - - - 0x01D730 07:D720: 20 A8 D1  JSR sub_D1A8
 C - - - - - 0x01D733 07:D723: E6 44     INC ram_0044
 C - - - - - 0x01D735 07:D725: A9 00     LDA #$00    ; con_chr_bank + $00
 C - - - - - 0x01D737 07:D727: 85 75     STA ram_stage
+                                        STA ram_x2_stage
 C - - - - - 0x01D739 07:D729: 85 78     STA ram_chr_bank + 1
 C - - - - - 0x01D73B 07:D72B: 85 22     STA ram_0022
 C - - - - - 0x01D73D 07:D72D: 85 21     STA ram_0021
