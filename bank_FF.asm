@@ -8882,7 +8882,8 @@ C - - - - - 0x01FDCB 07:FDBB: 20 F9 CF  JSR sub_CFF9
 C - - - - - 0x01FDCE 07:FDBE: CE 5C 03  DEC ram_035C
 C - - - - - 0x01FDD1 07:FDC1: 20 D1 D2  JSR sub_D2D1
 C - - - - - 0x01FDD4 07:FDC4: 20 DE FE  JSR sub_FEDE
-C - - - - - 0x01FDD7 07:FDC7: 20 0B FF  JSR sub_FF0B
+C - - - - - 0x01FDD7 07:FDC7: 20 0B FF  LDA ram_chr_bank + 4
+                                        STA ram_copy_chr_bank_4
 C - - - - - 0x01FDDA 07:FDCA: A9 00     LDA #$00
 C - - - - - 0x01FDDC 07:FDCC: 20 77 D2  JSR sub_D277
 C - - - - - 0x01FDDF 07:FDCF: 85 24     STA ram_0024
@@ -9082,13 +9083,6 @@ C - - - - - 0x01FF0D 07:FEFD: 8D 63 03  STA ram_sound_hist_index_2
 C - - - - - 0x01FF10 07:FF00: 4C E3 FE  JMP loc_FEE3_loop
 bra_FF05_RTS:
 C D 3 - I - 0x01FF15 07:FF05: 60        RTS
-
-
-
-sub_FF0B:
-C - - - - - 0x01FF1B 07:FF0B: A5 7B     LDA ram_chr_bank + 4
-C - - - - - 0x01FF1D 07:FF0D: 8D 4A 03  STA ram_copy_chr_bank_4
-C - - - - - 0x01FF20 07:FF10: 60        RTS
 
 
 
