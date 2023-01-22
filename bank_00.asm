@@ -15,11 +15,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 0 - - - 0x000010 00:8000: 00        .byte con_prg_bank + $00   ; 
-
-
-
 tbl_0x000011_spr_data:
 - D 0 - - - 0x000011 00:8001: 70 9A     .word _off032_9A70_00
 - D 0 - - - 0x000013 00:8003: 01 A0     .word _off032_0x004011_01
@@ -10014,12 +10009,6 @@ off_0A_AEA1_12:
 - D 1 - I - 0x002EE0 00:AED0: 00        .byte $00, $8B, $11   ; 
 
 
-; bzk garbage
-- - - - - - 0x002EE3 00:AED3: 00        .byte $00   ; 
-- - - - - - 0x002EE4 00:AED4: 8B        .byte $8B   ; 
-- - - - - - 0x002EE5 00:AED5: 11        .byte $11   ; 
-
-
 
 
 
@@ -11357,12 +11346,6 @@ C - - - - - 0x0036A6 00:B696: 20 63 B6  JSR sub_B663
 C - - - - - 0x0036A9 00:B699: F0 AF     BEQ bra_B64A_RTS
 C - - - - - 0x0036AB 00:B69B: A2 1C     LDX #$1C
 C - - - - - 0x0036AD 00:B69D: 60        RTS
-
-
-; bzk garbage
-- - - - - - 0x0036AE 00:B69E: A4 94     LDY ram_0094
-- - - - - - 0x0036B0 00:B6A0: B9 F0 03  LDA ram_03F0,Y
-- - - - - - 0x0036B3 00:B6A3: 60        RTS
 
 
 
@@ -13046,16 +13029,6 @@ tbl_BFEC:
 - - - - - - 0x004008 00:BFF8: 01        .byte $01   ; 0C
 - - - - - - 0x004009 00:BFF9: 00        .byte $00   ; 0D
 - D 1 - - - 0x00400A 00:BFFA: 00        .byte $00   ; 0E 0x003FEA
-
-
-; bzk garbage
-- - - - - - 0x00400B 00:BFFB: 00        .byte $00   ; 
-- - - - - - 0x00400C 00:BFFC: 01        .byte $01   ; 
-- - - - - - 0x00400D 00:BFFD: 02        .byte $02   ; 
-
-
-; bzk garbage
-- - - - - - 0x00400E 00:BFFE: FF        .byte $FF, $FF   ; 
 
 
 
