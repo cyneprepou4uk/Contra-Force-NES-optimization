@@ -936,17 +936,16 @@ C - - - - - 0x01D305 07:D2F5: 29 03     AND #$03
 C - - - - - 0x01D307 07:D2F7: A8        TAY
 C - - - - - 0x01D308 07:D2F8: B9 6B D5  LDA tbl_D56B,Y
 C - - - - - 0x01D30B 07:D2FB: 85 10     STA ram_0010
-C - - - - - 0x01D30D 07:D2FD: A0 00     LDY #$00
 C - - - - - 0x01D30F 07:D2FF: 20 05 D3  JSR sub_D305
 C - - - - - 0x01D312 07:D302: 4C 48 D3  JMP loc_D348
 
 
 
 sub_D305:
-; bzk optimize, Y always = 00
-C - - - - - 0x01D315 07:D305: B9 6F D5  LDA tbl_D56F,Y
+; Y свободен
+C - - - - - 0x01D315 07:D305: B9 6F D5  LDA #< tbl_D571
 C - - - - - 0x01D318 07:D308: 85 02     STA ram_0002
-C - - - - - 0x01D31A 07:D30A: B9 70 D5  LDA tbl_D56F + 1,Y
+C - - - - - 0x01D31A 07:D30A: B9 70 D5  LDA #> tbl_D571
 C - - - - - 0x01D31D 07:D30D: 85 03     STA ram_0003
 C - - - - - 0x01D31F 07:D30F: A9 00     LDA #$00
 C - - - - - 0x01D321 07:D311: 85 12     STA ram_0012
@@ -1428,11 +1427,6 @@ tbl_D56B:
 - D 2 - - - 0x01D57C 07:D56C: 50        .byte $50   ; 01
 - D 2 - - - 0x01D57D 07:D56D: 78        .byte $78   ; 02
 - D 2 - - - 0x01D57E 07:D56E: A0        .byte $A0   ; 03
-
-
-
-tbl_D56F:
-- D 2 - - - 0x01D57F 07:D56F: 71 D5     .word tbl_D571
 
 
 
