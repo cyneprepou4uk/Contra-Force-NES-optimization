@@ -3161,7 +3161,7 @@ C - - - - - 0x0090DD 02:90CD: 60        RTS
 sub_0x0090DE_0600x_ORA_08:
 C - - - - - 0x0090DE 02:90CE: BD 00 06  LDA ram_0600_obj,X
 C - - - - - 0x0090E1 02:90D1: 09 08     ORA #$08
-C - - - - - 0x0090E3 02:90D3: 4C CA 90  JMP loc_90CA    ; bzk optimize, BNE
+C - - - - - 0x0090E3 02:90D3: 4C CA 90  BNE bra_90CA
 
 
 
