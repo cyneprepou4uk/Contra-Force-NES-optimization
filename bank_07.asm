@@ -4609,9 +4609,9 @@ tbl_B7C7:
 
 
 sub_B7E1:
-C - - - - - 0x00F7F1 03:B7E1: AD 64 B8  LDA tbl_B864
+C - - - - - 0x00F7F1 03:B7E1: AD 64 B8  LDA #< tbl_B866
 C - - - - - 0x00F7F4 03:B7E4: 85 00     STA ram_0000
-C - - - - - 0x00F7F6 03:B7E6: AD 65 B8  LDA tbl_B864 + 1
+C - - - - - 0x00F7F6 03:B7E6: AD 65 B8  LDA #> tbl_B866
 C - - - - - 0x00F7F9 03:B7E9: 85 01     STA ram_0001
 C - - - - - 0x00F7FB 03:B7EB: 4C 62 96  JMP loc_0x009672
 
@@ -4691,11 +4691,6 @@ tbl_B85C:
 - D 1 - - - 0x00F871 03:B861: 0C        .byte $0C   ; 0A
 - D 1 - - - 0x00F872 03:B862: 0D        .byte $0D   ; 0C
 - D 1 - - - 0x00F873 03:B863: 0E        .byte $0E   ; 0E
-
-
-
-tbl_B864:   ; bzk optimize
-- D 1 - - - 0x00F874 03:B864: 66 B8     .word tbl_B866
 
 
 
