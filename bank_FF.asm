@@ -8298,14 +8298,11 @@ C - - - - - 0x01FADC 07:FACC: 4C E6 FA  JMP loc_FAE6    ; 11
 
 
 sub_FACF_try_to_pick_up_boxes:
-C - - - - - 0x01FADF 07:FACF: A2 16     LDX #$16
-C - - - - - 0x01FAE1 07:FAD1: 20 89 FB  JSR sub_FB89_try_to_pick_up_a_box
-C - - - - - 0x01FAE4 07:FAD4: E8        INX ; 17
-C - - - - - 0x01FAE5 07:FAD5: 20 89 FB  JSR sub_FB89_try_to_pick_up_a_box
-C - - - - - 0x01FAE8 07:FAD8: E8        INX ; 18
-C - - - - - 0x01FAE9 07:FAD9: 20 89 FB  JSR sub_FB89_try_to_pick_up_a_box
-C - - - - - 0x01FAEC 07:FADC: E8        INX ; 19
-C - - - - - 0x01FAED 07:FADD: 4C 89 FB  JMP loc_FB89_try_to_pick_up_a_box
+C - - - - - 0x01FADF 07:FACF: A2 16     LDX #$15
+C - - - - - 0x01FAE1 07:FAD1: 20 89 FB  JSR sub_FB89_try_to_pick_up_a_box   ; 16
+C - - - - - 0x01FAE5 07:FAD5: 20 89 FB  JSR sub_FB89_try_to_pick_up_a_box   ; 17
+C - - - - - 0x01FAE9 07:FAD9: 20 89 FB  JSR sub_FB89_try_to_pick_up_a_box   ; 18
+C - - - - - 0x01FAED 07:FADD: 4C 89 FB  JMP loc_FB89_try_to_pick_up_a_box   ; 19
 
 
 
@@ -8414,6 +8411,7 @@ bra_FB82:
 
 sub_FB89_try_to_pick_up_a_box:
 loc_FB89_try_to_pick_up_a_box:
+                                        INX
 C D 3 - - - 0x01FB99 07:FB89: BD 82 06  LDA ram_0682_obj,X
 C - - - - - 0x01FB9C 07:FB8C: F0 07     BEQ bra_FB95_RTS
 C - - - - - 0x01FB9E 07:FB8E: BD 00 06  LDA ram_0600_obj,X
