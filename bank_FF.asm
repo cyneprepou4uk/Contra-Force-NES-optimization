@@ -8182,8 +8182,7 @@ C - - - - - 0x01F9FE 07:F9EE: A2 09     LDX #$09
 sub_F9F0:
 C - - - - - 0x01FA00 07:F9F0: 20 FF F9  JSR sub_F9FF
 C - - - - - 0x01FA03 07:F9F3: B0 03     BCS bra_F9F8_RTS
-C - - - - - 0x01FA05 07:F9F5: 20 F9 F9  JSR sub_FA7D
-                                        JMP loc_FAA6
+C - - - - - 0x01FA05 07:F9F5: 20 F9 F9  JMP loc_FA7D
 bra_F9F8_RTS:
 C - - - - - 0x01FA08 07:F9F8: 60        RTS
 
@@ -8258,7 +8257,8 @@ C - - - - - 0x01FA8A 07:FA7A: 4C E6 FA  JMP loc_FAE6    ; 15
 
 
 
-sub_FA7D:
+loc_FA7D:
+; 02-09
 C - - - - - 0x01FA8D 07:FA7D: A9 00     LDA #$00
 C - - - - - 0x01FA8F 07:FA7F: 85 0E     STA ram_000E
 C - - - - - 0x01FA91 07:FA81: A2 02     LDX #$01
@@ -8271,14 +8271,8 @@ C - - - - - 0x01FAA7 07:FA97: 20 E0 FA  JSR sub_FAE0    ; 07
 C - - - - - 0x01FAAA 07:FA9A: A9 01     LDA #$01
 C - - - - - 0x01FAAC 07:FA9C: 85 0E     STA ram_000E
 C - - - - - 0x01FAAF 07:FA9F: 20 E0 FA  JSR sub_FAE0    ; 08
-C - - - - - 0x01FAB3 07:FAA3: 4C E0 FA  JMP loc_FAE0    ; 09
-
-
-
-loc_FAA6:
-C D 3 - - - 0x01FAB6 07:FAA6: A9 01     LDA #$01
-C - - - - - 0x01FAB8 07:FAA8: 85 0E     STA ram_000E
-C - - - - - 0x01FABA 07:FAAA: A2 0A     LDX #$09
+C - - - - - 0x01FAB3 07:FAA3: 4C E0 FA  JSR sub_FAE0    ; 09
+; 0A-11
 C - - - - - 0x01FABC 07:FAAC: 20 E6 FA  JSR sub_FAE6    ; 0A
 C - - - - - 0x01FAC0 07:FAB0: 20 E6 FA  JSR sub_FAE6    ; 0B
 C - - - - - 0x01FAC4 07:FAB4: 20 E6 FA  JSR sub_FAE6    ; 0C
