@@ -8152,14 +8152,12 @@ C - - - - - 0x01F9B8 07:F9A8: AA        TAX
 C - - - - - 0x01F9B9 07:F9A9: 20 08 FA  JSR sub_FA08
 C - - - - - 0x01F9BC 07:F9AC: B0 09     BCS bra_F9B7
 C - - - - - 0x01F9BE 07:F9AE: 20 3F FA  JSR sub_FA3F
-C - - - - - 0x01F9C1 07:F9B1: 20 68 FA  JSR sub_FA68
 C - - - - - 0x01F9C4 07:F9B4: 20 CF FA  JSR sub_FACF_try_to_pick_up_boxes
 bra_F9B7:
 C - - - - - 0x01F9C7 07:F9B7: A2 01     LDX #$01
 C - - - - - 0x01F9C9 07:F9B9: 20 08 FA  JSR sub_FA08
 C - - - - - 0x01F9CC 07:F9BC: B0 09     BCS bra_F9C7
 C - - - - - 0x01F9CE 07:F9BE: 20 3F FA  JSR sub_FA3F
-C - - - - - 0x01F9D1 07:F9C1: 20 68 FA  JSR sub_FA68
 C - - - - - 0x01F9D4 07:F9C4: 20 CF FA  JSR sub_FACF_try_to_pick_up_boxes
 bra_F9C7:
 C - - - - - 0x01F9D7 07:F9C7: A2 02     LDX #$02
@@ -8230,6 +8228,7 @@ C - - - - - 0x01FA4E 07:FA3E: 60        RTS
 
 
 sub_FA3F:
+; 02-09
 C - - - - - 0x01FA4F 07:FA3F: A9 00     LDA #$00
 C - - - - - 0x01FA51 07:FA41: 85 0E     STA ram_000E
 C - - - - - 0x01FA53 07:FA43: A2 02     LDX #$01
@@ -8242,11 +8241,8 @@ C - - - - - 0x01FA69 07:FA59: 20 E6 FA  JSR sub_FAE6    ; 07
 C - - - - - 0x01FA6C 07:FA5C: A9 01     LDA #$01
 C - - - - - 0x01FA6E 07:FA5E: 85 0E     STA ram_000E
 C - - - - - 0x01FA71 07:FA61: 20 E6 FA  JSR sub_FAE6    ; 08
-C - - - - - 0x01FA75 07:FA65: 4C E6 FA  JMP loc_FAE6    ; 09
-
-
-
-sub_FA68:
+C - - - - - 0x01FA75 07:FA65: 4C E6 FA  JSR sub_FAE6    ; 09
+; 12-15
 C - - - - - 0x01FA78 07:FA68: A9 02     LDA #$02
 C - - - - - 0x01FA7A 07:FA6A: 85 0E     STA ram_000E
 C - - - - - 0x01FA7C 07:FA6C: A2 12     LDX #$11
