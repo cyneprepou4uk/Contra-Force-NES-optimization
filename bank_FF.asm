@@ -70,7 +70,7 @@
 .export sub_0x01F66E
 .export tbl_0x01F679
 .export tbl_0x01F68B
-.export sub_0x01F69F
+.export sub_0x01F69F_stage_AND_01
 .export sub_0x01F6A4
 .export sub_0x01F6AD
 .export sub_0x01F6BF
@@ -7581,7 +7581,7 @@ tbl_0x01F68B:
 
 
 
-sub_0x01F69F:
+sub_0x01F69F_stage_AND_01:
 C - - - - - 0x01F69F 07:F68F: A5 75     LDA ram_stage
 C - - - - - 0x01F6A1 07:F691: 29 01     AND #$01
 C - - - - - 0x01F6A3 07:F693: 60        RTS

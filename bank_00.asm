@@ -12227,7 +12227,7 @@ C - - - - - 0x003B4F 00:BB3F: AD 59 03  LDA ram_0359
 C - - - - - 0x003B52 00:BB42: D0 4D     BNE bra_BB91
 C - - - - - 0x003B54 00:BB44: A9 04     LDA #$04
 C - - - - - 0x003B56 00:BB46: 85 1E     STA ram_001E
-C - - - - - 0x003B58 00:BB48: 20 8F F6  JSR sub_0x01F69F
+C - - - - - 0x003B58 00:BB48: 20 8F F6  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x003B5B 00:BB4B: F0 04     BEQ bra_BB51
 C - - - - - 0x003B5D 00:BB4D: A9 02     LDA #$02
 C - - - - - 0x003B5F 00:BB4F: 85 1E     STA ram_001E
@@ -12555,7 +12555,7 @@ C - - - - - 0x003DA0 00:BD90: CD F6 03  CMP ram_03F6
 C - - - - - 0x003DA3 00:BD93: F0 1B     BEQ bra_BDB0
 loc_BD95:
 C D 1 - - - 0x003DA5 00:BD95: A2 03     LDX #$03
-C - - - - - 0x003DA7 00:BD97: 20 8F F6  JSR sub_0x01F69F
+C - - - - - 0x003DA7 00:BD97: 20 8F F6  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x003DAA 00:BD9A: F0 02     BEQ bra_BD9E
 C - - - - - 0x003DAC 00:BD9C: A2 0F     LDX #$0F
 bra_BD9E:
@@ -12580,7 +12580,7 @@ C - - - - - 0x003DCD 00:BDBD: C9 03     CMP #$03
 C - - - - - 0x003DCF 00:BDBF: F0 16     BEQ bra_BDD7
 bra_BDC1:
 C - - - - - 0x003DD1 00:BDC1: A2 01     LDX #$01
-C - - - - - 0x003DD3 00:BDC3: 20 8F F6  JSR sub_0x01F69F
+C - - - - - 0x003DD3 00:BDC3: 20 8F F6  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x003DD6 00:BDC6: F0 02     BEQ bra_BDCA
 C - - - - - 0x003DD8 00:BDC8: A2 03     LDX #$03
 bra_BDCA:
@@ -12641,7 +12641,7 @@ C - - - - - 0x003E26 00:BE16: 4C 95 BD  JMP loc_BD95
 
 
 sub_BE19:
-C - - - - - 0x003E29 00:BE19: 20 8F F6  JSR sub_0x01F69F
+C - - - - - 0x003E29 00:BE19: 20 8F F6  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x003E2C 00:BE1C: D0 09     BNE bra_BE27
 C - - - - - 0x003E2E 00:BE1E: BD AA 07  LDA ram_07AA_unk,X
 C - - - - - 0x003E31 00:BE21: 29 40     AND #$40
