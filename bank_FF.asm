@@ -8160,24 +8160,19 @@ C - - - - - 0x01F9CC 07:F9BC: B0 09     BCS bra_F9C7
 C - - - - - 0x01F9CE 07:F9BE: 20 3F FA  JSR sub_FA3F
 C - - - - - 0x01F9D4 07:F9C4: 20 CF FA  JSR sub_FACF_try_to_pick_up_boxes
 bra_F9C7:
-C - - - - - 0x01F9D7 07:F9C7: A2 02     LDX #$02
-C - - - - - 0x01F9D9 07:F9C9: 20 F0 F9  JSR sub_F9F0
-C - - - - - 0x01F9DC 07:F9CC: A2 03     LDX #$03
-C - - - - - 0x01F9DE 07:F9CE: 20 F0 F9  JSR sub_F9F0
-C - - - - - 0x01F9E1 07:F9D1: A2 04     LDX #$04
-C - - - - - 0x01F9E3 07:F9D3: 20 F0 F9  JSR sub_F9F0
-C - - - - - 0x01F9E6 07:F9D6: A2 05     LDX #$05
-C - - - - - 0x01F9E8 07:F9D8: 20 F0 F9  JSR sub_F9F0
-C - - - - - 0x01F9EB 07:F9DB: A2 06     LDX #$06
-C - - - - - 0x01F9ED 07:F9DD: 20 F0 F9  JSR sub_F9F0
-C - - - - - 0x01F9F0 07:F9E0: A2 07     LDX #$07
-C - - - - - 0x01F9F2 07:F9E2: 20 F0 F9  JSR sub_F9F0
+C - - - - - 0x01F9D7 07:F9C7: A2 02     LDX #$01
+C - - - - - 0x01F9D9 07:F9C9: 20 F0 F9  JSR sub_F9F0    ; 02
+C - - - - - 0x01F9DE 07:F9CE: 20 F0 F9  JSR sub_F9F0    ; 03
+C - - - - - 0x01F9E3 07:F9D3: 20 F0 F9  JSR sub_F9F0    ; 04
+C - - - - - 0x01F9E8 07:F9D8: 20 F0 F9  JSR sub_F9F0    ; 05
+C - - - - - 0x01F9ED 07:F9DD: 20 F0 F9  JSR sub_F9F0    ; 06
+C - - - - - 0x01F9F2 07:F9E2: 20 F0 F9  JSR sub_F9F0    ; 07
 C - - - - - 0x01F9F5 07:F9E5: A9 01     LDA #$01
 C - - - - - 0x01F9F7 07:F9E7: 85 0F     STA ram_000F
-C - - - - - 0x01F9F9 07:F9E9: A2 08     LDX #$08
-C - - - - - 0x01F9FB 07:F9EB: 20 F0 F9  JSR sub_F9F0
-C - - - - - 0x01F9FE 07:F9EE: A2 09     LDX #$09
+C - - - - - 0x01F9FB 07:F9EB: 20 F0 F9  JSR sub_F9F0    ; 08
+; 09
 sub_F9F0:
+                                        INX
 C - - - - - 0x01FA00 07:F9F0: 20 FF F9  JSR sub_F9FF
 C - - - - - 0x01FA03 07:F9F3: B0 03     BCS bra_F9F8_RTS
 C - - - - - 0x01FA05 07:F9F5: 20 F9 F9  JMP loc_FA7D
