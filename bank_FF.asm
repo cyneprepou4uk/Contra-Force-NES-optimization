@@ -67,7 +67,6 @@
 .export sub_0x01F61F
 .export sub_0x01F650
 .export sub_0x01F65F
-.export sub_0x01F66E
 .export tbl_0x01F679
 .export tbl_0x01F68B
 .export sub_0x01F69F_stage_AND_01
@@ -7541,16 +7540,6 @@ C - - - - - 0x01F664 07:F654: 9D 82 07  STA ram_0782_unk,X
 C - - - - - 0x01F667 07:F657: 9D 82 06  STA ram_0682_obj,X
 C - - - - - 0x01F66A 07:F65A: 9D C8 07  STA ram_07C8_unk,X
 C - - - - - 0x01F66D 07:F65D: 60        RTS
-
-
-
-sub_0x01F66E:
-C - - - - - 0x01F66E 07:F65E: A9 00     LDA #$00
-C - - - - - 0x01F670 07:F660: 85 69     STA ram_0069
-C - - - - - 0x01F672 07:F662: 85 6B     STA ram_006B
-C - - - - - 0x01F674 07:F664: 85 6A     STA ram_006A
-C - - - - - 0x01F676 07:F666: 85 6C     STA ram_006C
-C - - - - - 0x01F678 07:F668: 60        RTS
 
 
 

@@ -3583,7 +3583,11 @@ C - - - - - 0x0157A4 05:9794: 60        RTS
 
 sub_9795:
 C - - - - - 0x0157A5 05:9795: 20 CF 97  JSR sub_97CF
-C - - - - - 0x0157A8 05:9798: 20 5E F6  JSR sub_0x01F66E
+C - - - - - 0x0157A8 05:9798: 20 5E F6  LDA #$00
+                                        STA ram_0069
+                                        STA ram_006A
+                                        STA ram_006C
+                                        STA ram_006B
 C - - - - - 0x0157AB 05:979B: A5 34     LDA ram_0034
 C - - - - - 0x0157AD 05:979D: F0 0E     BEQ bra_97AD
 C - - - - - 0x0157AF 05:979F: C6 60     DEC ram_0060
