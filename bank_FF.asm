@@ -8288,7 +8288,6 @@ C - - - - - 0x01FAED 07:FADD: 4C 89 FB  JMP loc_FB89_try_to_pick_up_a_box   ; 19
 
 
 sub_FAE0:
-loc_FAE0:
                                         INX
 C D 3 - - - 0x01FAF0 07:FAE0: BD 82 07  LDA ram_0782_unk,X
 C - - - - - 0x01FAF3 07:FAE3: 30 01     BMI bra_FAE6
