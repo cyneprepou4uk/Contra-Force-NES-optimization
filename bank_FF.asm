@@ -7390,9 +7390,9 @@ C - - - - - 0x01F5A6 07:F596: 4C 47 F5  JMP loc_F547
 
 
 sub_F599:
-C - - - - - 0x01F5A9 07:F599: A9 B0     LDA #$B0
+C - - - - - 0x01F5A9 07:F599: A9 B0     LDA #< ram_03B0
 C - - - - - 0x01F5AB 07:F59B: 85 02     STA ram_0002
-C - - - - - 0x01F5AD 07:F59D: A9 03     LDA #$03
+C - - - - - 0x01F5AD 07:F59D: A9 03     LDA #> ram_03B0
 C - - - - - 0x01F5AF 07:F59F: 85 03     STA ram_0003
 C - - - - - 0x01F5B1 07:F5A1: 60        RTS
 
