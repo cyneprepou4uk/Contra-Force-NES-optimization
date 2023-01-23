@@ -7582,6 +7582,7 @@ tbl_0x01F68B:
 
 
 sub_0x01F69F_stage_AND_01:
+; check if stage is side view or upper view
 C - - - - - 0x01F69F 07:F68F: A5 75     LDA ram_stage
 C - - - - - 0x01F6A1 07:F691: 29 01     AND #$01
 C - - - - - 0x01F6A3 07:F693: 60        RTS

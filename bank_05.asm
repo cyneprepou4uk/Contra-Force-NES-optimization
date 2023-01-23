@@ -59,7 +59,7 @@ C - - - - - 0x00A03F 02:A02F: 60        RTS
 
 sub_A030:
 ofs_006_0x00A040_20:
-C - - - - - 0x00A040 02:A030: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A040 02:A030: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A043 02:A033: F0 08     BEQ bra_A03D
 C - - - - - 0x00A045 02:A035: 20 43 A0  JSR sub_A043_00B1x_AND_0F
 C - - - - - 0x00A048 02:A038: 29 02     AND #$02
@@ -105,7 +105,7 @@ C - - - - - 0x00A082 02:A072: 29 20     AND #$20
 C - - - - - 0x00A084 02:A074: F0 26     BEQ bra_A09C
 C - - - - - 0x00A086 02:A076: A9 0D     LDA #con_F3D6_0D
 C - - - - - 0x00A088 02:A078: 20 B3 F3  JSR sub_0x01F3C3
-C - - - - - 0x00A08B 02:A07B: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A08B 02:A07B: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A08E 02:A07E: F0 0A     BEQ bra_A08A
 C - - - - - 0x00A090 02:A080: BD C8 07  LDA ram_07C8_unk,X
 C - - - - - 0x00A093 02:A083: 29 20     AND #$20
@@ -176,7 +176,7 @@ C - - - - - 0x00A0E9 02:A0D9: 9D D2 07  STA ram_07D2_unk,X
 C - - - - - 0x00A0EC 02:A0DC: B5 BE     LDA ram_00BE,X
 C - - - - - 0x00A0EE 02:A0DE: 29 13     AND #$13
 C - - - - - 0x00A0F0 02:A0E0: 95 BE     STA ram_00BE,X
-C - - - - - 0x00A0F2 02:A0E2: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A0F2 02:A0E2: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A0F5 02:A0E5: D0 03     BNE bra_A0EA
 C - - - - - 0x00A0F7 02:A0E7: 4C B4 A1  JMP loc_A1B4
 bra_A0EA:
@@ -507,7 +507,7 @@ C - - - - - 0x00A31E 02:A30E: 15 40     ORA ram_btn_press_1,X
 C - - - - - 0x00A320 02:A310: 29 F0     AND #con_btns_ABSS
 C - - - - - 0x00A322 02:A312: 85 01     STA ram_0001
 loc_A314:
-C D 1 - - - 0x00A324 02:A314: 20 78 91  JSR sub_0x009188_stage_AND_01
+C D 1 - - - 0x00A324 02:A314: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A327 02:A317: F0 1D     BEQ bra_A336
 C - - - - - 0x00A329 02:A319: A5 00     LDA ram_0000
 C - - - - - 0x00A32B 02:A31B: 29 0F     AND #$0F
@@ -678,14 +678,14 @@ C - - - - - 0x00A45C 02:A44C: 4C CA FE  JMP loc_0x01FEDA_add_music_to_queue
 
 
 sub_A44F:
-C - - - - - 0x00A45F 02:A44F: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A45F 02:A44F: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A462 02:A452: F0 30     BEQ bra_A484
 C - - - - - 0x00A464 02:A454: D0 05     BNE bra_A45B    ; jmp
 
 
 
 sub_A456_decrease_invincibility_timer_after_death:
-C - - - - - 0x00A466 02:A456: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A466 02:A456: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A469 02:A459: D0 29     BNE bra_A484
 bra_A45B:
 C - - - - - 0x00A46B 02:A45B: BD C8 07  LDA ram_07C8_unk,X
@@ -929,7 +929,7 @@ C - - - - - 0x00A578 02:A568: F0 01     BEQ bra_A56B
 bra_A56A_RTS:
 C - - - - - 0x00A57A 02:A56A: 60        RTS
 bra_A56B:
-C - - - - - 0x00A57B 02:A56B: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A57B 02:A56B: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A57E 02:A56E: F0 0B     BEQ bra_A57B
 C - - - - - 0x00A580 02:A570: BD 68 06  LDA ram_obj_pos_Y,X
 C - - - - - 0x00A583 02:A573: C9 09     CMP #$09
@@ -985,7 +985,7 @@ C - - - - - 0x00A5DD 02:A5CD: A9 00     LDA #$00
 C - - - - - 0x00A5DF 02:A5CF: 9D 36 07  STA ram_0736_obj,X
 C - - - - - 0x00A5E2 02:A5D2: 9D 4C 07  STA ram_074C_obj,X
 C - - - - - 0x00A5E5 02:A5D5: 9D 62 07  STA ram_0762_obj,X
-C - - - - - 0x00A5E8 02:A5D8: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A5E8 02:A5D8: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A5EB 02:A5DB: D0 33     BNE bra_A610
 C - - - - - 0x00A5ED 02:A5DD: A5 D0     LDA ram_00D0
 C - - - - - 0x00A5EF 02:A5DF: C9 08     CMP #$08
@@ -1018,7 +1018,7 @@ C - - - - - 0x00A61D 02:A60D: 29 80     AND #$80
 C - - - - - 0x00A61F 02:A60F: 60        RTS
 bra_A610:
 C - - - - - 0x00A620 02:A610: 20 5A AD  JSR sub_AD5A
-C - - - - - 0x00A623 02:A613: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A623 02:A613: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A626 02:A616: F0 07     BEQ bra_A61F
 C - - - - - 0x00A628 02:A618: 20 0A A6  JSR sub_A60A
 C - - - - - 0x00A62B 02:A61B: F0 1F     BEQ bra_A63C
@@ -1117,7 +1117,7 @@ C - - - - - 0x00A6D6 02:A6C6: 60        RTS
 bra_A6C7:
 loc_A6C7:
 C D 1 - - - 0x00A6D7 02:A6C7: 20 48 A8  JSR sub_A848
-C - - - - - 0x00A6DA 02:A6CA: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A6DA 02:A6CA: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A6DD 02:A6CD: F0 02     BEQ bra_A6D1
 C - - - - - 0x00A6DF 02:A6CF: A9 04     LDA #$04
 bra_A6D1:   ; A = 00
@@ -1128,7 +1128,7 @@ C - - - - - 0x00A6E6 02:A6D6: 18        CLC
 C - - - - - 0x00A6E7 02:A6D7: 65 02     ADC ram_0002
 C - - - - - 0x00A6E9 02:A6D9: 0A        ASL
 C - - - - - 0x00A6EA 02:A6DA: A8        TAY
-C - - - - - 0x00A6EB 02:A6DB: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A6EB 02:A6DB: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A6EE 02:A6DE: F0 02     BEQ bra_A6E2
 C - - - - - 0x00A6F0 02:A6E0: A9 10     LDA #$10
 bra_A6E2:   ; A = 00
@@ -1139,14 +1139,14 @@ C - - - - - 0x00A6F9 02:A6E9: B9 9E A9  LDA tbl_A99D + 1,Y
 C - - - - - 0x00A6FC 02:A6EC: 85 03     STA ram_0003
 C - - - - - 0x00A6FE 02:A6EE: 20 0A A6  JSR sub_A60A
 C - - - - - 0x00A701 02:A6F1: D0 0A     BNE bra_A6FD
-C - - - - - 0x00A703 02:A6F3: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A703 02:A6F3: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A706 02:A6F6: D0 08     BNE bra_A700
 C - - - - - 0x00A708 02:A6F8: 20 A4 A1  JSR sub_A1A4
 C - - - - - 0x00A70B 02:A6FB: F0 03     BEQ bra_A700
 bra_A6FD:
 C - - - - - 0x00A70D 02:A6FD: 4C 7C A7  JMP loc_A77C
 bra_A700:
-C - - - - - 0x00A710 02:A700: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A710 02:A700: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A713 02:A703: D0 34     BNE bra_A739
 C - - - - - 0x00A715 02:A705: BD D2 07  LDA ram_07D2_unk,X
 C - - - - - 0x00A718 02:A708: 29 0A     AND #$0A
@@ -1222,7 +1222,7 @@ C D 1 - - - 0x00A78C 02:A77C: 20 43 A0  JSR sub_A043_00B1x_AND_0F
 C - - - - - 0x00A78F 02:A77F: A8        TAY
 C - - - - - 0x00A790 02:A780: 20 0A A6  JSR sub_A60A
 C - - - - - 0x00A793 02:A783: F0 31     BEQ bra_A7B6
-C - - - - - 0x00A795 02:A785: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A795 02:A785: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A798 02:A788: F0 1D     BEQ bra_A7A7
 C - - - - - 0x00A79A 02:A78A: 84 00     STY ram_0000
 C - - - - - 0x00A79C 02:A78C: BD AA 07  LDA ram_07AA_unk,X
@@ -1263,7 +1263,7 @@ C - - - - - 0x00A7D5 02:A7C5: 4A        LSR
 C - - - - - 0x00A7D6 02:A7C6: A8        TAY
 C - - - - - 0x00A7D7 02:A7C7: 68        PLA
 C - - - - - 0x00A7D8 02:A7C8: 20 62 97  JSR sub_0x009772
-C - - - - - 0x00A7DB 02:A7CB: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A7DB 02:A7CB: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A7DE 02:A7CE: D0 0E     BNE bra_A7DE
 C - - - - - 0x00A7E0 02:A7D0: 20 A4 A1  JSR sub_A1A4
 C - - - - - 0x00A7E3 02:A7D3: D0 09     BNE bra_A7DE
@@ -1279,7 +1279,7 @@ C - - - - - 0x00A7F2 02:A7E2: A9 13     LDA #$13
 bra_A7E4:
 C - - - - - 0x00A7F4 02:A7E4: 9D 20 07  STA ram_0720_obj,X
 bra_A7E7:
-C - - - - - 0x00A7F7 02:A7E7: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A7F7 02:A7E7: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A7FA 02:A7EA: D0 36     BNE bra_A822_RTS
 C - - - - - 0x00A7FC 02:A7EC: BD D2 07  LDA ram_07D2_unk,X
 C - - - - - 0x00A7FF 02:A7EF: 29 09     AND #$09
@@ -1378,7 +1378,7 @@ sub_A848:
 C - - - - - 0x00A858 02:A848: BD 34 06  LDA ram_obj_animation_hi,X
 C - - - - - 0x00A85B 02:A84B: 29 80     AND #$80
 C - - - - - 0x00A85D 02:A84D: 9D 34 06  STA ram_obj_animation_hi,X
-C - - - - - 0x00A860 02:A850: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A860 02:A850: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A863 02:A853: F0 0F     BEQ bra_A864
 C - - - - - 0x00A865 02:A855: B5 B1     LDA ram_current_player,X
 C - - - - - 0x00A867 02:A857: 29 02     AND #$02
@@ -1422,7 +1422,7 @@ C - - - - - 0x00A8A1 02:A891: 85 1D     STA ram_001D
 C - - - - - 0x00A8A3 02:A893: 84 18     STY ram_0018
 C - - - - - 0x00A8A5 02:A895: 84 1C     STY ram_001C
 C - - - - - 0x00A8A7 02:A897: 20 E7 F8  JSR sub_0x01F8F7
-C - - - - - 0x00A8AA 02:A89A: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A8AA 02:A89A: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A8AD 02:A89D: D0 1B     BNE bra_A8BA
 C - - - - - 0x00A8AF 02:A89F: 20 43 A0  JSR sub_A043_00B1x_AND_0F
 C - - - - - 0x00A8B2 02:A8A2: A8        TAY
@@ -1482,7 +1482,7 @@ C - - - - - 0x00A916 02:A906: C5 01     CMP ram_0001
 C - - - - - 0x00A918 02:A908: 90 4D     BCC bra_A957
 bra_A90A:
 C - - - - - 0x00A91A 02:A90A: A4 00     LDY ram_0000
-C - - - - - 0x00A91C 02:A90C: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A91C 02:A90C: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A91F 02:A90F: F0 0A     BEQ bra_A91B
 C - - - - - 0x00A921 02:A911: B9 15 AB  LDA tbl_AB15,Y
 C - - - - - 0x00A924 02:A914: 4C 3A A9  JMP loc_A93A
@@ -1538,7 +1538,7 @@ C - - - - - 0x00A973 02:A963: BD C8 07  LDA ram_07C8_unk,X
 C - - - - - 0x00A976 02:A966: F0 01     BEQ bra_A969
 C - - - - - 0x00A978 02:A968: 60        RTS
 bra_A969:
-C - - - - - 0x00A979 02:A969: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00A979 02:A969: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00A97C 02:A96C: D0 27     BNE bra_A995
 C - - - - - 0x00A97E 02:A96E: A0 03     LDY #$03
 C - - - - - 0x00A980 02:A970: A5 00     LDA ram_0000
@@ -2028,7 +2028,7 @@ tbl_AB3A:
 
 sub_AB42:
 C - - - - - 0x00AB52 02:AB42: 86 1F     STX ram_001F
-C - - - - - 0x00AB54 02:AB44: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00AB54 02:AB44: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00AB57 02:AB47: F0 1C     BEQ bra_AB65
 C - - - - - 0x00AB59 02:AB49: A9 00     LDA #$00
 C - - - - - 0x00AB5B 02:AB4B: 9D D2 07  STA ram_07D2_unk,X
@@ -2167,7 +2167,7 @@ bra_AC4B:
 C - - - - - 0x00AC5B 02:AC4B: BD D2 07  LDA ram_07D2_unk,X
 C - - - - - 0x00AC5E 02:AC4E: 29 10     AND #$10
 C - - - - - 0x00AC60 02:AC50: D0 1B     BNE bra_AC6D
-C - - - - - 0x00AC62 02:AC52: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00AC62 02:AC52: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00AC65 02:AC55: D0 16     BNE bra_AC6D
 C - - - - - 0x00AC67 02:AC57: A5 D0     LDA ram_00D0
 C - - - - - 0x00AC69 02:AC59: D0 12     BNE bra_AC6D
@@ -2270,7 +2270,7 @@ C - - - - - 0x00AD05 02:ACF5: 60        RTS
 
 sub_ACF6:
 C - - - - - 0x00AD06 02:ACF6: 84 00     STY ram_0000
-C - - - - - 0x00AD08 02:ACF8: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00AD08 02:ACF8: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00AD0B 02:ACFB: F0 0D     BEQ bra_AD0A
 C - - - - - 0x00AD0D 02:ACFD: 20 A2 A0  JSR sub_A0A2_07AAx_AND_0F
 C - - - - - 0x00AD10 02:AD00: D0 31     BNE bra_AD33
@@ -2384,7 +2384,7 @@ C - - - - - 0x00ADC3 02:ADB3: 0A        ASL
 C - - - - - 0x00ADC4 02:ADB4: 0A        ASL
 bra_ADB5:
 C - - - - - 0x00ADC5 02:ADB5: 85 1C     STA ram_001C
-C - - - - - 0x00ADC7 02:ADB7: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00ADC7 02:ADB7: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00ADCA 02:ADBA: D0 09     BNE bra_ADC5
 C - - - - - 0x00ADCC 02:ADBC: 20 A4 A1  JSR sub_A1A4
 C - - - - - 0x00ADCF 02:ADBF: F0 04     BEQ bra_ADC5
@@ -3566,7 +3566,7 @@ C - - - - - 0x00B3D9 02:B3C9: A0 00     LDY #$00
 C - - - - - 0x00B3DB 02:B3CB: 84 00     STY ram_0000
 C - - - - - 0x00B3DD 02:B3CD: 84 01     STY ram_0001
 C - - - - - 0x00B3DF 02:B3CF: 90 09     BCC bra_B3DA
-C - - - - - 0x00B3E1 02:B3D1: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00B3E1 02:B3D1: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00B3E4 02:B3D4: D0 04     BNE bra_B3DA
 C - - - - - 0x00B3E6 02:B3D6: A9 04     LDA #$04
 C - - - - - 0x00B3E8 02:B3D8: 85 01     STA ram_0001
@@ -3612,7 +3612,7 @@ C - - - - - 0x00B42A 02:B41A: DD 0A 07  CMP ram_070A_obj,X
 C - - - - - 0x00B42D 02:B41D: F0 25     BEQ bra_B444_RTS
 C - - - - - 0x00B42F 02:B41F: 48        PHA
 C - - - - - 0x00B430 02:B420: A0 04     LDY #$04
-C - - - - - 0x00B432 02:B422: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00B432 02:B422: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00B435 02:B425: F0 01     BEQ bra_B428
 C - - - - - 0x00B437 02:B427: 88        DEY
 bra_B428:
@@ -4127,7 +4127,7 @@ C - - - - - 0x00B639 02:B629: D0 16     BNE bra_B641
 C - - - - - 0x00B63B 02:B62B: BC 82 07  LDY ram_0782_unk,X
 C - - - - - 0x00B63E 02:B62E: B9 38 B8  LDA tbl_B83A - 2,Y
 C - - - - - 0x00B641 02:B631: D0 11     BNE bra_B644
-C - - - - - 0x00B643 02:B633: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00B643 02:B633: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00B646 02:B636: F0 04     BEQ bra_B63C
 C - - - - - 0x00B648 02:B638: A9 0A     LDA #$0A
 C - - - - - 0x00B64A 02:B63A: D0 02     BNE bra_B63E    ; jmp
@@ -4216,7 +4216,7 @@ bra_B6D4:
 C - - - - - 0x00B6E4 02:B6D4: 85 3A     STA ram_003A
 C - - - - - 0x00B6E6 02:B6D6: A9 00     LDA #$00
 C - - - - - 0x00B6E8 02:B6D8: 85 00     STA ram_0000
-C - - - - - 0x00B6EA 02:B6DA: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00B6EA 02:B6DA: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00B6ED 02:B6DD: F0 04     BEQ bra_B6E3
 - - - - - - 0x00B6EF 02:B6DF: A9 10     LDA #$10
 - - - - - - 0x00B6F1 02:B6E1: D0 0C     BNE bra_B6EF    ; jmp
@@ -4231,7 +4231,7 @@ C - - - - - 0x00B6FE 02:B6EE: 98        TYA
 bra_B6EF:
 C - - - - - 0x00B6FF 02:B6EF: 85 01     STA ram_0001
 C - - - - - 0x00B701 02:B6F1: 20 C0 8F  JSR sub_0x008FD0
-C - - - - - 0x00B704 02:B6F4: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00B704 02:B6F4: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00B707 02:B6F7: D0 06     BNE bra_B6FF
 C - - - - - 0x00B709 02:B6F9: A5 01     LDA ram_0001
 C - - - - - 0x00B70B 02:B6FB: F0 29     BEQ bra_B726
@@ -4261,7 +4261,7 @@ C - - - - - 0x00B736 02:B726: BD AA 07  LDA ram_07AA_unk,X
 C - - - - - 0x00B739 02:B729: 29 02     AND #$02
 C - - - - - 0x00B73B 02:B72B: D0 1D     BNE bra_B74A
 C - - - - - 0x00B73D 02:B72D: A0 00     LDY #$00
-C - - - - - 0x00B73F 02:B72F: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00B73F 02:B72F: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00B742 02:B732: D0 02     BNE bra_B736
 C - - - - - 0x00B744 02:B734: A0 48     LDY #$48
 bra_B736:
@@ -4287,7 +4287,7 @@ C - - - - - 0x00B76F 02:B75F: F0 3E     BEQ bra_B79F_RTS
 C - - - - - 0x00B771 02:B761: 85 3A     STA ram_003A
 bra_B763:
 C - - - - - 0x00B773 02:B763: 20 B1 93  JSR sub_0x0093C1_06B2x_LSRx4_TAY
-C - - - - - 0x00B776 02:B766: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00B776 02:B766: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00B779 02:B769: D0 12     BNE bra_B77D
 C - - - - - 0x00B77B 02:B76B: C8        INY
 C - - - - - 0x00B77C 02:B76C: C8        INY
@@ -4307,7 +4307,7 @@ C - - - - - 0x00B792 02:B782: B9 ED B7  LDA tbl_B7EC + 1,Y
 C - - - - - 0x00B795 02:B785: 85 01     STA ram_0001
 bra_B787:
 C - - - - - 0x00B797 02:B787: 20 C0 8F  JSR sub_0x008FD0
-C - - - - - 0x00B79A 02:B78A: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00B79A 02:B78A: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00B79D 02:B78D: D0 11     BNE bra_B7A0
 C - - - - - 0x00B79F 02:B78F: A5 01     LDA ram_0001
 C - - - - - 0x00B7A1 02:B791: F0 0C     BEQ bra_B79F_RTS

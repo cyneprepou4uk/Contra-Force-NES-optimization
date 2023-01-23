@@ -11598,7 +11598,7 @@ loc_B7E3:
 C D 1 - - - 0x0037F3 00:B7E3: 9D B2 06  STA ram_06B2_obj,X
 C - - - - - 0x0037F6 00:B7E6: C0 02     CPY #$02
 C - - - - - 0x0037F8 00:B7E8: D0 05     BNE bra_B7EF
-C - - - - - 0x0037FA 00:B7EA: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x0037FA 00:B7EA: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x0037FD 00:B7ED: D0 33     BNE bra_B822
 bra_B7EF:
 C - - - - - 0x0037FF 00:B7EF: 20 57 B8  JSR sub_B857
@@ -11809,7 +11809,7 @@ C - - - - - 0x003906 00:B8F6: 4C 82 8A  JMP loc_0x008A92
 
 
 sub_B8F9:
-C - - - - - 0x003909 00:B8F9: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x003909 00:B8F9: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00390C 00:B8FC: F0 4F     BEQ bra_B94D_RTS
 C - - - - - 0x00390E 00:B8FE: A0 00     LDY #$00
 loc_B900_loop:

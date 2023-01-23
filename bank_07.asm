@@ -2770,7 +2770,7 @@ C - - - - - 0x00EF41 03:AF31: 4C C0 8F  JMP loc_0x008FD0
 
 
 sub_AF34:
-C - - - - - 0x00EF44 03:AF34: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00EF44 03:AF34: 20 78 91  JSR sub_0x01F69F_stage_AND_01
 C - - - - - 0x00EF47 03:AF37: F0 0E     BEQ bra_AF47
 C - - - - - 0x00EF49 03:AF39: 20 B1 93  JSR sub_0x0093C1_06B2x_LSRx4_TAY
 C - - - - - 0x00EF4C 03:AF3C: B9 71 AF  LDA tbl_AF71,Y
