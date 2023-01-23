@@ -8182,15 +8182,10 @@ C - - - - - 0x01F9FE 07:F9EE: A2 09     LDX #$09
 sub_F9F0:
 C - - - - - 0x01FA00 07:F9F0: 20 FF F9  JSR sub_F9FF
 C - - - - - 0x01FA03 07:F9F3: B0 03     BCS bra_F9F8_RTS
-C - - - - - 0x01FA05 07:F9F5: 20 F9 F9  JSR sub_F9F9
+C - - - - - 0x01FA05 07:F9F5: 20 F9 F9  JSR sub_FA7D
+                                        JMP loc_FAA6
 bra_F9F8_RTS:
 C - - - - - 0x01FA08 07:F9F8: 60        RTS
-
-
-
-sub_F9F9:
-C - - - - - 0x01FA09 07:F9F9: 20 7D FA  JSR sub_FA7D
-C - - - - - 0x01FA0C 07:F9FC: 4C A6 FA  JMP loc_FAA6
 
 
 
