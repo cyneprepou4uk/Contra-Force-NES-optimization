@@ -2,7 +2,7 @@
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
 .org $8000  ; for listing file
-; 0x018010-0x01C00F
+; 0x018010-0x02000F
 
 
 
@@ -4156,7 +4156,13 @@ C - - - - - 0x01C005 06:BFF5: 60        RTS
 
 
 
-.out .sprintf("Free bytes in bank 0C: 0x%04X [%d]", ($C000 - *), ($C000 - *))
+.out .sprintf("Free bytes in bank 0C: 0x%04X [%d]", ($D140 - *), ($D140 - *))
+
+
+
+.segment "DPCM_0C"
+.incbin "DPCM.bin"
+.org $D140  ; for listing file
 
 
 

@@ -81,13 +81,9 @@ if %fast_assembly% equ 1 (
     ca65 -U copy_bank_08.asm
     ca65 -U copy_bank_0A.asm
     ca65 -U copy_bank_0C.asm
-    ca65 -U copy_bank_0E.asm
     ca65 -U copy_bank_10.asm
-    ca65 -U copy_bank_12.asm
     ca65 -U copy_bank_14.asm
-    ca65 -U copy_bank_16.asm
     ca65 -U copy_bank_18.asm
-    ca65 -U copy_bank_1A.asm
     ca65 -U copy_bank_1C.asm
     ca65 -U copy_bank_1D.asm
     ca65 -U copy_bank_1E.asm
@@ -103,13 +99,9 @@ if %fast_assembly% equ 1 (
     ca65 -U -l copy_bank_08.lst -g copy_bank_08.asm
     ca65 -U -l copy_bank_0A.lst -g copy_bank_0A.asm
     ca65 -U -l copy_bank_0C.lst -g copy_bank_0C.asm
-    ca65 -U -l copy_bank_0E.lst -g copy_bank_0E.asm
     ca65 -U -l copy_bank_10.lst -g copy_bank_10.asm
-    ca65 -U -l copy_bank_12.lst -g copy_bank_12.asm
     ca65 -U -l copy_bank_14.lst -g copy_bank_14.asm
-    ca65 -U -l copy_bank_16.lst -g copy_bank_16.asm
     ca65 -U -l copy_bank_18.lst -g copy_bank_18.asm
-    ca65 -U -l copy_bank_1A.lst -g copy_bank_1A.asm
     ca65 -U -l copy_bank_1C.lst -g copy_bank_1C.asm
     ca65 -U -l copy_bank_1D.lst -g copy_bank_1D.asm
     ca65 -U -l copy_bank_1E.lst -g copy_bank_1E.asm
@@ -129,13 +121,9 @@ if %fast_assembly% equ 1 (
         copy_bank_08.o ^
         copy_bank_0A.o ^
         copy_bank_0C.o ^
-        copy_bank_0E.o ^
         copy_bank_10.o ^
-        copy_bank_12.o ^
         copy_bank_14.o ^
-        copy_bank_16.o ^
         copy_bank_18.o ^
-        copy_bank_1A.o ^
         copy_bank_1C.o ^
         copy_bank_1D.o ^
         copy_bank_1E.o ^
@@ -152,13 +140,9 @@ if %fast_assembly% equ 1 (
         copy_bank_08.o ^
         copy_bank_0A.o ^
         copy_bank_0C.o ^
-        copy_bank_0E.o ^
         copy_bank_10.o ^
-        copy_bank_12.o ^
         copy_bank_14.o ^
-        copy_bank_16.o ^
         copy_bank_18.o ^
-        copy_bank_1A.o ^
         copy_bank_1C.o ^
         copy_bank_1D.o ^
         copy_bank_1E.o ^
