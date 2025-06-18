@@ -3705,11 +3705,14 @@ C - - - - - 0x01F374 07:F364: 85 7E     STA ram_007E_useless
 ; replace LDA with LDY, delete ASL + TAY
 C - - - - - 0x01F376 07:F366: A5 36     LDA ram_prg_banks_pair
 C - - - - - 0x01F378 07:F368: 0A        ASL
+                                        ADC ram_prg_banks_pair
 C - - - - - 0x01F379 07:F369: A8        TAY
 C - - - - - 0x01F381 07:F371: B9 93 F3  LDA tbl_F393_prg_pairs,Y
 C - - - - - 0x01F384 07:F374: 8D 01 80  STA $5114
 C - - - - - 0x01F38E 07:F37E: B9 94 F3  LDA tbl_F393_prg_pairs + $01,Y
 C - - - - - 0x01F391 07:F381: 8D 01 80  STA $5115
+                                        LDA tbl_F393_prg_pairs + $02,Y
+                                        STA $5116
 C - - - - - 0x01F394 07:F384: A9 00     LDA #$00
 C - - - - - 0x01F396 07:F386: 85 7E     STA ram_007E_useless
 C - - - - - 0x01F398 07:F388: 60        RTS
@@ -3732,51 +3735,67 @@ tbl_F393_prg_pairs:
 ; 00 
 - D 3 - - - 0x01F3A3 07:F393: 00        .byte con_prg_bank + $00   ; 
 - D 3 - - - 0x01F3A4 07:F394: 01        .byte con_prg_bank + $01   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 01 
 - D 3 - - - 0x01F3A5 07:F395: 0A        .byte con_prg_bank + $0A   ; 
 - D 3 - - - 0x01F3A6 07:F396: 0B        .byte con_prg_bank + $0B   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 02 
 - D 3 - - - 0x01F3A7 07:F397: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3A8 07:F398: 05        .byte con_prg_bank + $05   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 03 
 - D 3 - - - 0x01F3A9 07:F399: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3AA 07:F39A: 0D        .byte con_prg_bank + $0D   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 04 
 - D 3 - - - 0x01F3AB 07:F39B: 08        .byte con_prg_bank + $08   ; 
 - D 3 - - - 0x01F3AC 07:F39C: 09        .byte con_prg_bank + $09   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 05 
 - D 3 - - - 0x01F3AD 07:F39D: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3AE 07:F39E: 06        .byte con_prg_bank + $06   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 06 
 - D 3 - - - 0x01F3AF 07:F39F: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3B0 07:F3A0: 07        .byte con_prg_bank + $07   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 07 
 - D 3 - - - 0x01F3B1 07:F3A1: 0A        .byte con_prg_bank + $0A   ; 
 - D 3 - - - 0x01F3B2 07:F3A2: 0B        .byte con_prg_bank + $0B   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 08 
 - D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $00   ; 
 - D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $02   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 09 
 - D 3 - - - 0x01F3B5 07:F3A5: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3B6 07:F3A6: 03        .byte con_prg_bank + $03   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 0A 
 - D 3 - - - 0x01F3B7 07:F3A7: 00        .byte con_prg_bank + $00   ; 
 - D 3 - - - 0x01F3B8 07:F3A8: 03        .byte con_prg_bank + $03   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 0B 
 - D 3 - - - 0x01F3B9 07:F3A9: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3BA 07:F3AA: 0D        .byte con_prg_bank + $0D   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 0C 
 - - - - - - 0x01F3BB 07:F3AB: 00        .byte con_prg_bank + $00   ; 
 - - - - - - 0x01F3BC 07:F3AC: 0D        .byte con_prg_bank + $0D   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 0D 
 - D 3 - - - 0x01F3BD 07:F3AD: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3BE 07:F3AE: 01        .byte con_prg_bank + $01   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 0E 
 - D 3 - - - 0x01F3BF 07:F3AF: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3C0 07:F3B0: 02        .byte con_prg_bank + $02   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 0F 
 - D 3 - - - 0x01F3C1 07:F3B1: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3C2 07:F3B2: 09        .byte con_prg_bank + $09   ; 
+                                        .byte con_prg_bank + $1D   ; 
  
 
 
