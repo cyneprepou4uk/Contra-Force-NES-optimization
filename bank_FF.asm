@@ -1424,7 +1424,7 @@ C - - - - - 0x01D5AA 07:D59A: 9A        TXS
 loc_D59B_loop:
 bra_D59B_loop:
 C D 2 - - - 0x01D5AB 07:D59B: 68        PLA
-C - - - - - 0x01D5AC 07:D59C: F0 1D     BEQ bra_D5BB
+C - - - - - 0x01D5AC 07:D59C: F0 1D     BEQ bra_D5BB_00
 C - - - - - 0x01D5AE 07:D59E: AA        TAX
 C - - - - - 0x01D5AF 07:D59F: BD 7E D5  LDA tbl_D57F_for_2000 - $01,X
 C - - - - - 0x01D5B2 07:D5A2: 8D 00 20  STA $2000
@@ -1439,8 +1439,8 @@ C - - - - - 0x01D5C3 07:D5B3: E0 03     CPX #$03
 C - - - - - 0x01D5C5 07:D5B5: 90 15     BCC bra_D5CC
 C - - - - - 0x01D5C7 07:D5B7: F0 24     BEQ bra_D5DD
 C - - - - - 0x01D5C9 07:D5B9: B0 2D     BCS bra_D5E8    ; jmp
-bra_D5BB:   ; bzk optimize, A is already 00
-C - - - - - 0x01D5CB 07:D5BB: A9 00     LDA #$00
+bra_D5BB_00:
+; A = 00
 C - - - - - 0x01D5CD 07:D5BD: 8D 00 01  STA ram_ppu_buffer_1
 C - - - - - 0x01D5D0 07:D5C0: 85 26     STA ram_buffer_index
 C - - - - - 0x01D5D2 07:D5C2: AE A0 03  LDX ram_save_stack_pointer
