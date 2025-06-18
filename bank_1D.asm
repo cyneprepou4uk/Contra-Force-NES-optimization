@@ -6,7 +6,9 @@
 
 
 
+.segment "DPCM_1D"
 .incbin "DPCM.bin"
+.org $D140  ; for listing file
 
 
 
