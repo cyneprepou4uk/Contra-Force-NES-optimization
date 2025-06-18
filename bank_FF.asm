@@ -5925,9 +5925,7 @@ C - - - - - 0x01ED7A 07:ED6A: 85 12     STA ram_0012_t12
 C - - - - - 0x01ED7C 07:ED6C: A5 0D     LDA ram_000D_t10
 C - - - - - 0x01ED7E 07:ED6E: C9 04     CMP #$04
 C - - - - - 0x01ED80 07:ED70: 90 0E     BCC bra_ED80
-; bzk optimize, DEC 0012
-C - - - - - 0x01ED82 07:ED72: A9 FF     LDA #$FF
-C - - - - - 0x01ED84 07:ED74: 85 12     STA ram_0012_t12
+C - - - - - 0x01ED84 07:ED74: 85 12     DEC ram_0012_t12    ; -> FF
 C - - - - - 0x01ED86 07:ED76: D0 08     BNE bra_ED80    ; jmp
 
 
