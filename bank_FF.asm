@@ -6063,7 +6063,7 @@ C - - - - - 0x01FF49 07:FF39: 60        RTS
 sub_FF3A_set_mirroring_and_chr_banks:
 C - - - - - 0x01FF4A 07:FF3A: A5 34     LDY ram_mirroring
                                         LDA tbl_FF4D_mirroring,Y
-C - - - - - 0x01FF4C 07:FF3C: 8D 00 A0  STA $A000
+C - - - - - 0x01FF4C 07:FF3C: 8D 00 A0  STA $5105
                                         LDY ram_chr_bank
                                         STY $5128
                                         INY
