@@ -3089,12 +3089,35 @@ C - - - - - 0x01DF12 07:DF02: 4A        LSR
 C - - - - - 0x01DF13 07:DF03: 4A        LSR
 C - - - - - 0x01DF14 07:DF04: A8        TAY
 bra_DF05_loop:
-C - - - - - 0x01DF15 07:DF05: B9 92 E0  LDA tbl_0x01E0A2,Y
+C - - - - - 0x01DF15 07:DF05: B9 92 E0  LDA tbl_E092,Y
 C - - - - - 0x01DF18 07:DF08: C9 FF     CMP #$FF
 C - - - - - 0x01DF1A 07:DF0A: F0 EE     BEQ bra_DEFA_RTS
 C - - - - - 0x01DF1C 07:DF0C: 20 24 DE  JSR sub_DE24_write_A_to_buffer_and_INX
 C - - - - - 0x01DF1F 07:DF0F: C8        INY
 C - - - - - 0x01DF20 07:DF10: D0 F3     BNE bra_DF05_loop    ; jmp
+
+
+
+tbl_E092:
+- - - - - - 0x01E0A2 07:E092: 00        .byte $00   ; 
+- - - - - - 0x01E0A3 07:E093: 00        .byte $00   ; 
+- - - - - - 0x01E0A4 07:E094: 00        .byte $00   ; 
+- - - - - - 0x01E0A5 07:E095: FF        .byte $FF   ; 
+
+- D 3 - - - 0x01E0A6 07:E096: 01        .byte $01   ; 
+- D 3 - - - 0x01E0A7 07:E097: 20        .byte $20   ; 
+- D 3 - - - 0x01E0A8 07:E098: 0B        .byte $0B   ; 
+- D 3 - - - 0x01E0A9 07:E099: FF        .byte $FF   ; 
+
+- D 3 - - - 0x01E0AA 07:E09A: 02        .byte $02   ; 
+- D 3 - - - 0x01E0AB 07:E09B: 20        .byte $20   ; 
+- D 3 - - - 0x01E0AC 07:E09C: 0B        .byte $0B   ; 
+- D 3 - - - 0x01E0AD 07:E09D: FF        .byte $FF   ; 
+
+- D 3 - - - 0x01E0AE 07:E09E: 13        .byte $13   ; 
+- D 3 - - - 0x01E0AF 07:E09F: 20        .byte $20   ; 
+- D 3 - - - 0x01E0B0 07:E0A0: 25        .byte $25   ; 
+- D 3 - - - 0x01E0B1 07:E0A1: FF        .byte $FF   ; 
 
 
 

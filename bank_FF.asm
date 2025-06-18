@@ -61,7 +61,6 @@
 .export sub_0x01FEDA_add_music_to_queue
 .export loc_0x01E01B
 .export sub_0x01E038
-.export tbl_0x01E0A2
 .export tbl_0x01E0B2
 .export tbl_0x01E0B6
 .export tbl_0x01E0B9
@@ -185,29 +184,6 @@ C - - - - - 0x01E094 07:E084: D0 0B     BNE bra_E091_RTS
 - - - - - - 0x01E09F 07:E08F: 85 0A     STA ram_000A_t11_lives
 bra_E091_RTS:
 C - - - - - 0x01E0A1 07:E091: 60        RTS
-
-
-
-tbl_0x01E0A2:
-- - - - - - 0x01E0A2 07:E092: 00        .byte $00   ; 
-- - - - - - 0x01E0A3 07:E093: 00        .byte $00   ; 
-- - - - - - 0x01E0A4 07:E094: 00        .byte $00   ; 
-- - - - - - 0x01E0A5 07:E095: FF        .byte $FF   ; 
-
-- D 3 - - - 0x01E0A6 07:E096: 01        .byte $01   ; 
-- D 3 - - - 0x01E0A7 07:E097: 20        .byte $20   ; 
-- D 3 - - - 0x01E0A8 07:E098: 0B        .byte $0B   ; 
-- D 3 - - - 0x01E0A9 07:E099: FF        .byte $FF   ; 
-
-- D 3 - - - 0x01E0AA 07:E09A: 02        .byte $02   ; 
-- D 3 - - - 0x01E0AB 07:E09B: 20        .byte $20   ; 
-- D 3 - - - 0x01E0AC 07:E09C: 0B        .byte $0B   ; 
-- D 3 - - - 0x01E0AD 07:E09D: FF        .byte $FF   ; 
-
-- D 3 - - - 0x01E0AE 07:E09E: 13        .byte $13   ; 
-- D 3 - - - 0x01E0AF 07:E09F: 20        .byte $20   ; 
-- D 3 - - - 0x01E0B0 07:E0A0: 25        .byte $25   ; 
-- D 3 - - - 0x01E0B1 07:E0A1: FF        .byte $FF   ; 
 
 
 
