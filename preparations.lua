@@ -37,7 +37,7 @@ local bzk_regex = ".%s.%s.%s.%s.%s.%s0x......%s..:....:%s..%s..%s..."
 -- if you want to name lables and variables using
 -- letters other than latin, set this option
 -- to "true" and configure the table below
-local replace_with_latin = false
+local replace_with_latin = true
 
 -- convert configured symbols into latin symbols
 -- inside files from files_list table.
