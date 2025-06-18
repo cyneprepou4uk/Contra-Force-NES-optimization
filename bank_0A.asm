@@ -126,7 +126,7 @@ C - - - - - 0x01403A 05:802A: 8D 43 03  STA ram_0343
 C - - - - - 0x01403D 05:802D: 8D 45 03  STA ram_0345_table_index
 C - - - - - 0x01F6A4 07:F694: A9 14     LDA #$14    ; con_F3D6_14
 C - - - - - 0x01F6A6 07:F696: 8D 33 03  STA ram_0333_counter
-C - - - - - 0x01F6A9 07:F699: 20 B3 F3  JMP loc_0x01F3C3_execute_script
+C - - - - - 0x01F6A9 07:F699: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x014043 05:8033: CE 70 03  DEC ram_0370_counter_00_C0
 C - - - - - 0x014046 05:8036: 60        RTS
 bra_8037:
