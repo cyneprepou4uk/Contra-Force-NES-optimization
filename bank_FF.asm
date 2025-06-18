@@ -3748,10 +3748,10 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3A9 07:F399: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3AA 07:F39A: 0D        .byte con_prg_bank + $0D   ; 
                                         .byte con_prg_bank + $1D   ; 
-; 04 
-- D 3 - - - 0x01F3AB 07:F39B: 08        .byte con_prg_bank + $08   ; 
-- D 3 - - - 0x01F3AC 07:F39C: 09        .byte con_prg_bank + $09   ; 
-                                        .byte con_prg_bank + $1D   ; 
+; 04 звуковой движок
+- D 3 - - - 0x01F3AB 07:F39B: 08        .byte con_prg_bank + $10   ; 
+- D 3 - - - 0x01F3AC 07:F39C: 09        .byte con_prg_bank + $11   ; 
+                                        .byte con_prg_bank + $12   ; 
 ; 05 
 - D 3 - - - 0x01F3AD 07:F39D: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3AE 07:F39E: 06        .byte con_prg_bank + $06   ; 
