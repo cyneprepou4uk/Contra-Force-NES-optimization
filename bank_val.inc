@@ -3,7 +3,7 @@
 
 
 ; MISC
-con_prg_bank                            = $00 ; 
+con_prg_bank                            = $80 ; 
 con_prg_pair                            = $00 ; see pairs at 0x01F3A3
 con_chr_bank                            = $00 ; 
 con_chr_pair                            = $00 ; see pairs at 0x01F465

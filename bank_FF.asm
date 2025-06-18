@@ -7071,16 +7071,10 @@ C - - - - - 0x01F374 07:F364: 85 7E     STA ram_007E_useless
 C - - - - - 0x01F376 07:F366: A5 36     LDA ram_prg_banks_pair
 C - - - - - 0x01F378 07:F368: 0A        ASL
 C - - - - - 0x01F379 07:F369: A8        TAY
-C - - - - - 0x01F37A 07:F36A: A9 06     LDA #$06
-C - - - - - 0x01F37C 07:F36C: 85 7D     STA ram_for_8000
-C - - - - - 0x01F37E 07:F36E: 8D 00 80  STA $8000
 C - - - - - 0x01F381 07:F371: B9 93 F3  LDA tbl_F393_prg_pairs,Y
-C - - - - - 0x01F384 07:F374: 8D 01 80  STA $8001
-C - - - - - 0x01F387 07:F377: A9 07     LDA #$07
-C - - - - - 0x01F389 07:F379: 85 7D     STA ram_for_8000
-C - - - - - 0x01F38B 07:F37B: 8D 00 80  STA $8000
+C - - - - - 0x01F384 07:F374: 8D 01 80  STA $5114
 C - - - - - 0x01F38E 07:F37E: B9 94 F3  LDA tbl_F393_prg_pairs + $01,Y
-C - - - - - 0x01F391 07:F381: 8D 01 80  STA $8001
+C - - - - - 0x01F391 07:F381: 8D 01 80  STA $5115
 C - - - - - 0x01F394 07:F384: A9 00     LDA #$00
 C - - - - - 0x01F396 07:F386: 85 7E     STA ram_007E_useless
 C - - - - - 0x01F398 07:F388: 60        RTS
@@ -7916,16 +7910,15 @@ C - - - - - 0x01F739 07:F729: 8A        TXA
 C - - - - - 0x01F73A 07:F72A: 48        PHA
 C - - - - - 0x01F73B 07:F72B: 98        TYA
 C - - - - - 0x01F73C 07:F72C: 48        PHA
-C - - - - - 0x01F73D 07:F72D: 8D 00 E0  STA $E000
-C - - - - - 0x01F740 07:F730: 8D 01 E0  STA $E001
+                                        LDA #$80
+C - - - - - 0x01F73D 07:F72D: 8D 00 E0  STA $5204
 C - - - - - 0x01F743 07:F733: 20 4A F7  JSR sub_F74A_execute_indirect_jump_004C
 C - - - - - 0x01F746 07:F736: A5 2A     LDA ram_002A
 C - - - - - 0x01F748 07:F738: C9 FF     CMP #$FF
 C - - - - - 0x01F74A 07:F73A: D0 03     BNE bra_F73F
-C - - - - - 0x01F74C 07:F73C: 8D 00 E0  STA $E000
+                                        LDA #$00
+C - - - - - 0x01F74C 07:F73C: 8D 00 E0  STA $5204
 bra_F73F:
-C - - - - - 0x01F74F 07:F73F: A5 7D     LDA ram_for_8000
-C - - - - - 0x01F751 07:F741: 8D 00 80  STA $8000
 C - - - - - 0x01F754 07:F744: 68        PLA
 C - - - - - 0x01F755 07:F745: A8        TAY
 C - - - - - 0x01F756 07:F746: 68        PLA
@@ -8029,7 +8022,11 @@ tbl_F77B_irq_handlers:
 ofs_irq_handler_F78D_08:
 ; con_irq_08
 C - - J - - 0x01F79D 07:F78D: A5 D6     LDA ram_00D6
-C - - - - - 0x01F79F 07:F78F: 8D 00 C0  STA $C000
+                                        CLC
+                                        ADC ram_prev_5203
+                                        STA ram_prev_5203
+                                        INC ram_prev_5203
+C - - - - - 0x01F79F 07:F78F: 8D 00 C0  STA $5203
 C - - - - - 0x01F7A2 07:F792: A0 22     LDY #$22
 bra_F794_garbage_loop:
 C - - - - - 0x01F7A4 07:F794: 88        DEY
@@ -8051,7 +8048,11 @@ C - - - - - 0x01F7C1 07:F7B1: 4C 9E F8  JMP loc_F89E_select_irq_handler
 ofs_irq_handler_F7B4_04:
 ; con_irq_04
 C - - J - - 0x01F7C4 07:F7B4: A5 D6     LDA ram_00D6
-C - - - - - 0x01F7C6 07:F7B6: 8D 00 C0  STA $C000
+                                        CLC
+                                        ADC ram_prev_5203
+                                        STA ram_prev_5203
+                                        INC ram_prev_5203
+C - - - - - 0x01F7C6 07:F7B6: 8D 00 C0  STA $5203
 C - - - - - 0x01F7C9 07:F7B9: A0 20     LDY #$20
 bra_F7BB_garbage_loop:
 C - - - - - 0x01F7CB 07:F7BB: 88        DEY
@@ -8068,7 +8069,11 @@ C - - - - - 0x01F7DB 07:F7CB: 4C 9E F8  JMP loc_F89E_select_irq_handler
 ofs_irq_handler_F7CE_05:
 ; con_irq_05
 C - - J - - 0x01F7DE 07:F7CE: A5 D9     LDA ram_00D9
-C - - - - - 0x01F7E0 07:F7D0: 8D 00 C0  STA $C000
+                                        CLC
+                                        ADC ram_prev_5203
+                                        STA ram_prev_5203
+                                        INC ram_prev_5203
+C - - - - - 0x01F7E0 07:F7D0: 8D 00 C0  STA $5203
 C - - - - - 0x01F7E3 07:F7D3: A0 20     LDY #$20
 bra_F7D5_garbage_loop:
 C - - - - - 0x01F7E5 07:F7D5: 88        DEY
@@ -8085,7 +8090,11 @@ C - - - - - 0x01F7F5 07:F7E5: 4C 9E F8  JMP loc_F89E_select_irq_handler
 ofs_irq_handler_F7E8_03:
 ; con_irq_03
 C - - J - - 0x01F7F8 07:F7E8: A5 CA     LDA ram_00CA_useless
-C - - - - - 0x01F7FA 07:F7EA: 8D 00 C0  STA $C000
+                                        CLC
+                                        ADC ram_prev_5203
+                                        STA ram_prev_5203
+                                        INC ram_prev_5203
+C - - - - - 0x01F7FA 07:F7EA: 8D 00 C0  STA $5203
 C - - - - - 0x01F7FD 07:F7ED: A0 21     LDY #$21
 bra_F7EF_garbage_loop:
 C - - - - - 0x01F7FF 07:F7EF: 88        DEY
@@ -8109,7 +8118,11 @@ C - - - - - 0x01F81E 07:F80E: 4C 9E F8  JMP loc_F89E_select_irq_handler
 ofs_irq_handler_F811_06:
 ; con_irq_06
 C - - J - - 0x01F821 07:F811: A5 CA     LDA ram_00CA_useless
-C - - - - - 0x01F823 07:F813: 8D 00 C0  STA $C000
+                                        CLC
+                                        ADC ram_prev_5203
+                                        STA ram_prev_5203
+                                        INC ram_prev_5203
+C - - - - - 0x01F823 07:F813: 8D 00 C0  STA $5203
 C - - - - - 0x01F826 07:F816: AD 02 20  LDA $2002
 C - - - - - 0x01F829 07:F819: A9 00     LDA #$00
 C - - - - - 0x01F82B 07:F81B: 8D 05 20  STA $2005
@@ -8129,7 +8142,11 @@ ofs_irq_handler_F828_02:
 ; con_irq_02
 C - - J - - 0x01F838 07:F828: A5 CA     LDA ram_00CA_useless
 bra_F82A:
-C - - - - - 0x01F83A 07:F82A: 8D 00 C0  STA $C000
+                                        CLC
+                                        ADC ram_prev_5203
+                                        STA ram_prev_5203
+                                        INC ram_prev_5203
+C - - - - - 0x01F83A 07:F82A: 8D 00 C0  STA $5203
 C - - - - - 0x01F83D 07:F82D: A0 16     LDY #$16
 bra_F82F_garbage_loop:
 C - - - - - 0x01F83F 07:F82F: 88        DEY
@@ -8148,7 +8165,11 @@ C - - - - - 0x01F854 07:F844: 4C 9E F8  JMP loc_F89E_select_irq_handler
 ofs_irq_handler_F847_00:
 ; con_irq_00
 C - - J - - 0x01F857 07:F847: A9 1D     LDA #$1D
-C - - - - - 0x01F859 07:F849: 8D 00 C0  STA $C000
+                                        CLC
+                                        ADC ram_prev_5203
+                                        STA ram_prev_5203
+                                        INC ram_prev_5203
+C - - - - - 0x01F859 07:F849: 8D 00 C0  STA $5203
 C - - - - - 0x01F85C 07:F84C: A0 0B     LDY #$0B
 bra_F84E_garbage_loop:
 C - - - - - 0x01F85E 07:F84E: 88        DEY
@@ -8172,7 +8193,8 @@ C - - - - - 0x01F87F 07:F86F: 4C 9E F8  JMP loc_F89E_select_irq_handler
 
 ofs_irq_handler_F872_01:
 ; con_irq_01
-C - - J - - 0x01F882 07:F872: 8D 00 E0  STA $E000
+                                        LDA #$00
+C - - J - - 0x01F882 07:F872: 8D 00 E0  STA $5204
 C - - - - - 0x01F885 07:F875: AD A1 03  LDA ram_03A1_irq_timer
 C - - - - - 0x01F888 07:F878: F0 1C     BEQ bra_F896
 C - - - - - 0x01F88A 07:F87A: A5 39     LDA ram_buffer_index_2
@@ -9063,7 +9085,7 @@ off_FCA3_01:
 
 
 
-vec_FD2B_RESET:
+loc_FD2B_RESET:
 C - - - - - 0x01FD3B 07:FD2B: 78        SEI
 C - - - - - 0x01FD3C 07:FD2C: D8        CLD
 C - - - - - 0x01FD3D 07:FD2D: A2 FF     LDX #$FF
@@ -9078,8 +9100,8 @@ C - - - - - 0x01FD4A 07:FD3A: 2C 02 20  BIT $2002
 C - - - - - 0x01FD4D 07:FD3D: 30 FB     BMI bra_FD3A_loop
 C - - - - - 0x01FD4F 07:FD3F: CA        DEX
 C - - - - - 0x01FD50 07:FD40: D0 F3     BNE bra_FD35_loop
-C - - - - - 0x01FD52 07:FD42: A9 FF     LDA #$FF
-C - - - - - 0x01FD54 07:FD44: 8D 00 E0  STA $E000
+C - - - - - 0x01FD52 07:FD42: A9 FF     LDA #$00
+C - - - - - 0x01FD54 07:FD44: 8D 00 E0  STA $5204
 C - - - - - 0x01FD57 07:FD47: 20 76 FE  JSR sub_FE76
 C - - - - - 0x01FD5A 07:FD4A: 20 09 F3  JSR sub_F309_clear_0400_07FF
 ; A = 00
@@ -9161,8 +9183,8 @@ C - - - - - 0x01FDE6 07:FDD6: 40        RTI
 sub_FDD7_prepare_irq_data:
 C - - - - - 0x01FDE7 07:FDD7: A2 00     LDX #$00
 C - - - - - 0x01FDE9 07:FDD9: 86 2A     STX ram_002A
-C - - - - - 0x01FDEB 07:FDDB: A9 FF     LDA #$FF
-C - - - - - 0x01FDED 07:FDDD: 8D 00 E0  STA $E000
+C - - - - - 0x01FDED 07:FDDD: 8D 00 E0  STX $5204
+                                        STX ram_prev_5203
 C - - - - - 0x01FDF0 07:FDE0: A5 5A     LDA ram_005A_flag
 C - - - - - 0x01FDF2 07:FDE2: F0 63     BEQ bra_FE47_RTS
 C - - - - - 0x01FDF4 07:FDE4: A5 76     LDA ram_irq_handler
@@ -9201,9 +9223,13 @@ C - - - - - 0x01FE3F 07:FE2F: 8E 06 20  STX $2006
 C - - - - - 0x01FE42 07:FE32: 8C 06 20  STY $2006
 C - - - - - 0x01FE45 07:FE35: 8C 06 20  STY $2006
 C - - - - - 0x01FE48 07:FE38: A5 C9     LDA ram_scanline
-C - - - - - 0x01FE4A 07:FE3A: 8D 00 C0  STA $C000
-C - - - - - 0x01FE4D 07:FE3D: 8D 01 C0  STA $C001
-C - - - - - 0x01FE50 07:FE40: 8D 01 E0  STA $E001
+                                        CLC
+                                        ADC ram_prev_5203
+                                        STA ram_prev_5203
+                                        INC ram_prev_5203
+C - - - - - 0x01FE4A 07:FE3A: 8D 00 C0  STA $5203
+C - - - - - 0x01FE4D 07:FE3D: 8D 01 C0  LDA #$80
+C - - - - - 0x01FE50 07:FE40: 8D 01 E0  STA $5204
 C - - - - - 0x01FE53 07:FE43: 20 9E F8  JSR sub_F89E_select_irq_handler
 C - - - - - 0x01FE56 07:FE46: 58        CLI
 bra_FE47_RTS:
@@ -9353,79 +9379,78 @@ C - - - - - 0x01FF1A 07:FF0A: 60        RTS
 
 sub_FF11:
 C - - - - - 0x01FF21 07:FF11: 20 3A FF  JSR sub_FF3A_set_mirroring_and_chr_banks
-C - - - - - 0x01FF24 07:FF14: A9 04     LDA #$04
-C - - - - - 0x01FF26 07:FF16: 8D 00 80  STA $8000
 C - - - - - 0x01FF29 07:FF19: AD 4A 03  LDA ram_copy_chr_bank_4
-C - - - - - 0x01FF2C 07:FF1C: 8D 01 80  STA $8001
+C - - - - - 0x01FF2C 07:FF1C: 8D 01 80  STA $5126
 C - - - - - 0x01FF2F 07:FF1F: 4C 2F FF  JMP loc_FF2F
 
 
 
 sub_FF22_write_chr_banks:
 C - - - - - 0x01FF32 07:FF22: 20 3A FF  JSR sub_FF3A_set_mirroring_and_chr_banks
-C - - - - - 0x01FF35 07:FF25: A9 04     LDA #$04
-C - - - - - 0x01FF37 07:FF27: 8D 00 80  STA $8000
 C - - - - - 0x01FF3A 07:FF2A: A5 7B     LDA ram_chr_bank + $04
-C - - - - - 0x01FF3C 07:FF2C: 8D 01 80  STA $8001
+C - - - - - 0x01FF3C 07:FF2C: 8D 01 80  STA $5126
 loc_FF2F:
-C D 3 - - - 0x01FF3F 07:FF2F: A9 05     LDA #$05
-C - - - - - 0x01FF41 07:FF31: 8D 00 80  STA $8000
 C - - - - - 0x01FF44 07:FF34: A5 7C     LDA ram_chr_bank + $05
-C - - - - - 0x01FF46 07:FF36: 8D 01 80  STA $8001
+C - - - - - 0x01FF46 07:FF36: 8D 01 80  STA $5127
 C - - - - - 0x01FF49 07:FF39: 60        RTS
 
 
 
 sub_FF3A_set_mirroring_and_chr_banks:
-C - - - - - 0x01FF4A 07:FF3A: A5 34     LDA ram_mirroring
+C - - - - - 0x01FF4A 07:FF3A: A5 34     LDY ram_mirroring
+                                        LDA tbl_FF4D_mirroring,Y
 C - - - - - 0x01FF4C 07:FF3C: 8D 00 A0  STA $A000
-C - - - - - 0x01FF4F 07:FF3F: A0 03     LDY #$03
-bra_FF41_loop:
-C - - - - - 0x01FF51 07:FF41: 98        TYA
-C - - - - - 0x01FF52 07:FF42: 8D 00 80  STA $8000
-C - - - - - 0x01FF55 07:FF45: B9 77 00  LDA ram_chr_bank,Y
-C - - - - - 0x01FF58 07:FF48: 8D 01 80  STA $8001
-C - - - - - 0x01FF5B 07:FF4B: 88        DEY
-C - - - - - 0x01FF5C 07:FF4C: 10 F3     BPL bra_FF41_loop
+                                        LDY ram_chr_bank
+                                        STY $5128
+                                        INY
+                                        STY $5129
+                                        LDY ram_chr_bank + $01
+                                        STY $512A
+                                        INY
+                                        STY $512B
+                                        LDA ram_chr_bank + $02
+                                        STA $5124
+                                        LDA ram_chr_bank + $03
+                                        STA $5125
 C - - - - - 0x01FF5E 07:FF4E: 60        RTS
+
+
+
+tbl_FF4D_mirroring:
+                                        .byte $44 ; 00 vertical
+                                        .byte $50 ; 01 horisontal
 
 
 
 sub_FF4F:
 C - - - - - 0x01FF5F 07:FF4F: A0 3C     LDY #con_chr_bank + $3C
-C - - - - - 0x01FF61 07:FF51: A9 00     LDA #$00
-C - - - - - 0x01FF63 07:FF53: 8D 00 80  STA $8000
-C - - - - - 0x01FF66 07:FF56: 8C 01 80  STY $8001
-C - - - - - 0x01FF69 07:FF59: A9 01     LDA #$01
-C - - - - - 0x01FF6B 07:FF5B: 8D 00 80  STA $8000
-C - - - - - 0x01FF6E 07:FF5E: 8C 01 80  STY $8001
+C - - - - - 0x01FF66 07:FF56: 8C 01 80  STY $5128
+                                        INY
+                                        STY $5129
+                                        DEY
+C - - - - - 0x01FF6E 07:FF5E: 8C 01 80  STY $512A
+                                        INY
+                                        STY $512B
 C - - - - - 0x01FF71 07:FF61: D0 16     BNE bra_FF79    ; jmp
 
 
 
 sub_FF63:
-C - - - - - 0x01FF73 07:FF63: A9 00     LDA #$00
-C - - - - - 0x01FF75 07:FF65: 8D 00 80  STA $8000
-C - - - - - 0x01FF78 07:FF68: A9 7C     LDA #con_chr_bank + $7C
-C - - - - - 0x01FF7A 07:FF6A: 8D 01 80  STA $8001
-C - - - - - 0x01FF7D 07:FF6D: A9 01     LDA #$01
-C - - - - - 0x01FF7F 07:FF6F: 8D 00 80  STA $8000
-C - - - - - 0x01FF82 07:FF72: A9 3E     LDA #con_chr_bank + $3E
-C - - - - - 0x01FF84 07:FF74: 8D 01 80  STA $8001
+; X свободен
+C - - - - - 0x01FF78 07:FF68: A9 7C     LDY #con_chr_bank + $7C
+C - - - - - 0x01FF7A 07:FF6A: 8D 01 80  STY $5128
+                                        INY
+                                        STY $5129
+C - - - - - 0x01FF82 07:FF72: A9 3E     LDY #con_chr_bank + $3E
+C - - - - - 0x01FF84 07:FF74: 8D 01 80  STY $512A
+                                        INY
+                                        STY $512B
 C - - - - - 0x01FF87 07:FF77: A0 6F     LDY #con_chr_bank + $6F
 bra_FF79:
-C - - - - - 0x01FF89 07:FF79: A2 02     LDX #$02
-C - - - - - 0x01FF8B 07:FF7B: 8E 00 80  STX $8000
-C - - - - - 0x01FF8E 07:FF7E: 8C 01 80  STY $8001
-C - - - - - 0x01FF91 07:FF81: E8        INX ; 03
-C - - - - - 0x01FF92 07:FF82: 8E 00 80  STX $8000
-C - - - - - 0x01FF95 07:FF85: 8C 01 80  STY $8001
-C - - - - - 0x01FF98 07:FF88: E8        INX ; 04
-C - - - - - 0x01FF99 07:FF89: 8E 00 80  STX $8000
-C - - - - - 0x01FF9C 07:FF8C: 8C 01 80  STY $8001
-C - - - - - 0x01FF9F 07:FF8F: E8        INX ; 05
-C - - - - - 0x01FFA0 07:FF90: 8E 00 80  STX $8000
-C - - - - - 0x01FFA3 07:FF93: 8C 01 80  STY $8001
+C - - - - - 0x01FF8E 07:FF7E: 8C 01 80  STY $5124
+C - - - - - 0x01FF95 07:FF85: 8C 01 80  STY $5125
+C - - - - - 0x01FF9C 07:FF8C: 8C 01 80  STY $5126
+C - - - - - 0x01FFA3 07:FF93: 8C 01 80  STY $5127
 C - - - - - 0x01FFA6 07:FF96: 60        RTS
 
 
@@ -9486,13 +9511,37 @@ C - - - - - 0x01FFFC 07:FFEC: 60        RTS
 
 
 
-.out .sprintf("Free bytes in bank FF: 0x%04X [%d]", ($FFFA - *), ($FFFA - *))
+.out .sprintf("Free bytes in bank FF: 0x%04X [%d]", ($FFD0 - *), ($FFD0 - *))
+
+
+
+.segment "MMC5_INIT"
+.org $FFD0 ; for listing file
+vec_FFD0_RESET:
+; конфигурация маппера должна находиться
+; в фиксированном банке E000-FFFF, поскольку
+; банк C000-DFFF не гарантирован после ресета
+                                        LDX #$03
+                                        STX $5100   ; prg mode 3
+                                        STX $5101   ; chr mode 3
+                                        DEX ; 02
+                                        STX $5104   ; extended ram mode 2
+                                        STX $5102   ; disable prg ram protection 1
+                                        DEX ; 01
+                                        STX $5103   ; disable prg ram protection 2
+                                        DEX ; 00
+                                        STX $5204   ; disable irq
+                                        LDA #$44
+                                        STA $5105   ; vertical mirroring
+                                        LDA #con_prg_bank + $0E
+                                        STA $5116   ; bank for C000-DFFF
+                                        JMP loc_FD2B_RESET
 
 
 
 .segment "VECTORS"
 - D 3 - - - 0x02000A 07:FFFA: 6B FD     .word vec_FD6B_NMI
-- D 3 - - - 0x02000C 07:FFFC: 2B FD     .word vec_FD2B_RESET
+- D 3 - - - 0x02000C 07:FFFC: 2B FD     .word vec_FFD0_RESET
 - D 3 - - - 0x02000E 07:FFFE: 28 F7     .word vec_F728_IRQ
 
 

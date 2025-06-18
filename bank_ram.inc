@@ -1309,8 +1309,8 @@ ram_chr_bank                            = $0077 ; 00EA36 00EA3F 01D050 01D0BC 01
 
 
 
-; a copy of 8000 register value
-ram_for_8000                            = $007D ; 01F311 01F37C 01F389 01F74F 01FD5D 
+; free address
+; ram_007D                              = $007D ; 01F311 01F37C 01F389 01F74F 01FD5D 
 
 
 
@@ -1779,8 +1779,8 @@ ram_00EE_se                             = $00EE ; 010561 012A38 01327E 01329A 01
 
 
 
-; bzk optimize, useless address, holds 00
-ram_00EF_useless_00                     = $00EF ; 012B86 01FD5D 
+; 
+ram_prev_5203                           = $00EF ; 012B86 01FD5D 
 
 
 

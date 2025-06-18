@@ -10343,7 +10343,6 @@ C - - - - - 0x012B7E 04:AB6E: 4C 86 B2  JMP loc_B286
 sub_AB71:
 C - - - - - 0x012B81 04:AB71: AD F4 05  LDA ram_05F4_se
 C - - - - - 0x012B84 04:AB74: 29 10     AND #$10
-C - - - - - 0x012B86 04:AB76: 05 EF     ORA ram_00EF_useless_00
 C - - - - - 0x012B88 04:AB78: D0 1F     BNE bra_AB99
 C - - - - - 0x012B8A 04:AB7A: AD 5E 05  LDA ram_055E_se
 C - - - - - 0x012B8D 04:AB7D: 0A        ASL
