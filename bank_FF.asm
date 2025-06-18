@@ -2,7 +2,7 @@
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
 .org $C000  ; for listing file
-; 0x01C010-0x02000F
+; 0x03C010-0x04000F
 
 
 
@@ -9533,7 +9533,7 @@ vec_FFD0_RESET:
                                         STX $5204   ; disable irq
                                         LDA #$44
                                         STA $5105   ; vertical mirroring
-                                        LDA #con_prg_bank + $0E
+                                        LDA #con_prg_bank + $1E
                                         STA $5116   ; bank for C000-DFFF
                                         JMP loc_FD2B_RESET
 

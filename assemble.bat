@@ -17,7 +17,7 @@ set "file_name=_contra_force"
 
 :: size of your ROM file in bytes (decimal),
 :: used for checking if assembled file is correct
-set "file_size=262160"
+set "file_size=393232"
 
 :: SHA-1 checksum of the original ROM, used for checking if
 :: my disassembly is correct, but doesn't affect assembling.
@@ -81,6 +81,14 @@ if %fast_assembly% equ 1 (
     ca65 -U copy_bank_08.asm
     ca65 -U copy_bank_0A.asm
     ca65 -U copy_bank_0C.asm
+    ca65 -U copy_bank_0E.asm
+    ca65 -U copy_bank_10.asm
+    ca65 -U copy_bank_12.asm
+    ca65 -U copy_bank_14.asm
+    ca65 -U copy_bank_16.asm
+    ca65 -U copy_bank_18.asm
+    ca65 -U copy_bank_1A.asm
+    ca65 -U copy_bank_1C.asm
     ca65 -U copy_bank_FF.asm
 ) else (
     ca65 -U -l copy_bank_00.lst -g copy_bank_00.asm
@@ -93,6 +101,14 @@ if %fast_assembly% equ 1 (
     ca65 -U -l copy_bank_08.lst -g copy_bank_08.asm
     ca65 -U -l copy_bank_0A.lst -g copy_bank_0A.asm
     ca65 -U -l copy_bank_0C.lst -g copy_bank_0C.asm
+    ca65 -U -l copy_bank_0E.lst -g copy_bank_0E.asm
+    ca65 -U -l copy_bank_10.lst -g copy_bank_10.asm
+    ca65 -U -l copy_bank_12.lst -g copy_bank_12.asm
+    ca65 -U -l copy_bank_14.lst -g copy_bank_14.asm
+    ca65 -U -l copy_bank_16.lst -g copy_bank_16.asm
+    ca65 -U -l copy_bank_18.lst -g copy_bank_18.asm
+    ca65 -U -l copy_bank_1A.lst -g copy_bank_1A.asm
+    ca65 -U -l copy_bank_1C.lst -g copy_bank_1C.asm
     ca65 -U -l copy_bank_FF.lst -g copy_bank_FF.asm
 )
 
@@ -109,6 +125,14 @@ if %fast_assembly% equ 1 (
         copy_bank_08.o ^
         copy_bank_0A.o ^
         copy_bank_0C.o ^
+        copy_bank_0E.o ^
+        copy_bank_10.o ^
+        copy_bank_12.o ^
+        copy_bank_14.o ^
+        copy_bank_16.o ^
+        copy_bank_18.o ^
+        copy_bank_1A.o ^
+        copy_bank_1C.o ^
         copy_bank_FF.o
 ) else (
     ld65 -C ld65.cfg -o PRG_ROM.bin --dbgfile %debug_name% ^
@@ -122,6 +146,14 @@ if %fast_assembly% equ 1 (
         copy_bank_08.o ^
         copy_bank_0A.o ^
         copy_bank_0C.o ^
+        copy_bank_0E.o ^
+        copy_bank_10.o ^
+        copy_bank_12.o ^
+        copy_bank_14.o ^
+        copy_bank_16.o ^
+        copy_bank_18.o ^
+        copy_bank_1A.o ^
+        copy_bank_1C.o ^
         copy_bank_FF.o
 )
 
