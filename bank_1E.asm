@@ -1,12 +1,11 @@
 .segment "BANK_1E"
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
-.org $C000  ; for listing file
+.org $6000  ; for listing file
 ; 0x03C010-0x03E00F
 
 
 
-.export tbl_0x01C011_for_4010_4013
 .export _off000_0x01CF10_A4_00
 .export _off000_0x01CF5C_A4_01
 .export _off000_0x01CFAD_A4_02
@@ -60,27 +59,6 @@
 .export sub_0x01DDDF
 .export loc_0x01DE34_write_A_to_buffer_and_INX
 .export sub_0x01DF01
-
-
-
-.incbin "DPCM.bin"
-
-
-
-tbl_0x01C011_for_4010_4013:
-;                                              +-------------------- 4010
-;                                              |    +--------------- 4011
-;                                              |    |    +---------- 4012
-;                                              |    |    |    +----- 4013
-;                                              |    |    |    |
-- D 2 - - - 0x01C011 07:C001: 0F        .byte $0F, $00, $00, $4C   ; AC 
-- D 2 - - - 0x01C015 07:C005: 0F        .byte $0F, $00, $13, $4C   ; AD 
-- D 2 - - - 0x01C019 07:C009: 0F        .byte $0F, $3F, $26, $28   ; AE 
-- D 2 - - - 0x01C01D 07:C00D: 0F        .byte $0F, $00, $26, $28   ; AF 
-- D 2 - - - 0x01C021 07:C011: 0D        .byte $0D, $4F, $30, $24   ; B0 
-- D 2 - - - 0x01C025 07:C015: 0E        .byte $0E, $4F, $30, $24   ; B1 
-- D 2 - - - 0x01C029 07:C019: 0F        .byte $0F, $4F, $30, $24   ; B2 
-- D 2 - - - 0x01C02D 07:C01D: 0F        .byte $0F, $3F, $39, $08   ; B3 
 
 
 ; bzk warning, CF00 byte is a part of DPCM, but not included in binary
@@ -3304,7 +3282,7 @@ C - - - - - 0x01E037 07:E027: 60        RTS
 
 
 
-.out .sprintf("Free bytes in bank 1E: 0x%04X [%d]", ($E000 - *), ($E000 - *))
+.out .sprintf("Free bytes in bank 1E: 0x%04X [%d]", ($8000 - *), ($8000 - *))
 
 
 

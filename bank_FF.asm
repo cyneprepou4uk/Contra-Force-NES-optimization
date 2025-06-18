@@ -5842,6 +5842,9 @@ C - - - - - 0x01FD4F 07:FD3F: CA        DEX
 C - - - - - 0x01FD50 07:FD40: D0 F3     BNE bra_FD35_loop
 C - - - - - 0x01FD52 07:FD42: A9 FF     LDA #$00
 C - - - - - 0x01FD54 07:FD44: 8D 00 E0  STA $5204
+                                        JSR sub_FD69_скопировать_код_на_батарейку
+                                        LDA #con_prg_bank + $1D
+                                        STA $5116
 C - - - - - 0x01FD57 07:FD47: 20 76 FE  JSR sub_FE76
 C - - - - - 0x01FD5A 07:FD4A: 20 09 F3  JSR sub_F309_clear_0400_07FF
 ; A = 00
@@ -5861,6 +5864,30 @@ C D 3 - - - 0x01FD72 07:FD62: A5 29     LDA ram_random
 C - - - - - 0x01FD74 07:FD64: 65 23     ADC ram_frm_cnt
 C - - - - - 0x01FD76 07:FD66: 85 29     STA ram_random
 C - - - - - 0x01FD78 07:FD68: 4C 62 FD  JMP loc_FD62_infinite_loop
+
+
+
+sub_FD69_скопировать_код_на_батарейку:
+                                        LDA #< $6000
+                                        STA ram_0002_t65_data
+                                        LDA #> $6000
+                                        STA ram_0002_t65_data + $01
+                                        LDA #< $C000
+                                        STA ram_0004_t36_data
+                                        LDA #> $C000
+                                        STA ram_0004_t36_data + $01
+                                        LDY #$00
+bra_FD6A_loop:
+                                        LDA (ram_0004_t36_data),Y
+                                        STA (ram_0002_t65_data),Y
+                                        INY
+                                        BNE bra_FD6A_loop
+                                        INC ram_0002_t65_data + $01
+                                        INC ram_0004_t36_data + $01
+                                        LDA ram_0004_t36_data + $01
+                                        CMP #> $E000
+                                        BNE bra_FD6A_loop
+                                        RTS
 
 
 
