@@ -3238,9 +3238,7 @@ C - - - - - 0x01DFC0 07:DFB0: B9 B1 00  LDA ram_current_player,Y
 C - - - - - 0x01DFC3 07:DFB3: 29 0F     AND #$0F
 C - - - - - 0x01DFC5 07:DFB5: A8        TAY
 C - - - - - 0x01DFC6 07:DFB6: B9 CD E0  LDA tbl_E0CD,Y
-; bzk optimize, use STA instead of TAY + STY
-C - - - - - 0x01DFC9 07:DFB9: A8        TAY
-C - - - - - 0x01DFCA 07:DFBA: 84 0C     STY ram_000C_t11
+C - - - - - 0x01DFCA 07:DFBA: 84 0C     STA ram_000C_t11
 bra_DFBC_loop:
 C - - - - - 0x01DFCC 07:DFBC: A5 0A     LDA ram_000A_t17
 C - - - - - 0x01DFCE 07:DFBE: 29 01     AND #$01
