@@ -68,7 +68,6 @@
 .export tbl_0x01F679
 .export tbl_0x01F68B
 .export sub_0x01F69F_get_stage_view_type
-.export sub_0x01F6A4
 .export sub_0x01F6AD
 .export sub_0x01F6BF
 .export loc_0x01F6D1
@@ -7797,15 +7796,6 @@ sub_0x01F69F_get_stage_view_type:
 C - - - - - 0x01F69F 07:F68F: A5 75     LDA ram_stage
 C - - - - - 0x01F6A1 07:F691: 29 01     AND #$01
 C - - - - - 0x01F6A3 07:F693: 60        RTS
-
-
-
-sub_0x01F6A4:
-C - - - - - 0x01F6A4 07:F694: A9 14     LDA #$14    ; con_F3D6_14
-C - - - - - 0x01F6A6 07:F696: 8D 33 03  STA ram_0333_counter
-; bzk optimize, JMP
-C - - - - - 0x01F6A9 07:F699: 20 B3 F3  JSR sub_F3B3_execute_script
-C - - - - - 0x01F6AC 07:F69C: 60        RTS
 
 
 
