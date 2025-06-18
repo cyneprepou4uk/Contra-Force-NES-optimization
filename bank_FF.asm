@@ -9142,7 +9142,8 @@ C - - - - - 0x01FDCB 07:FDBB: 20 F9 CF  JSR sub_CFF9
 C - - - - - 0x01FDCE 07:FDBE: CE 5C 03  DEC ram_035C_flag   ; -> 00
 C - - - - - 0x01FDD1 07:FDC1: 20 D1 D2  JSR sub_D2D1
 C - - - - - 0x01FDD4 07:FDC4: 20 DE FE  JSR sub_FEDE
-C - - - - - 0x01FDD7 07:FDC7: 20 0B FF  JSR sub_FF0B
+C - - - - - 0x01FDD7 07:FDC7: 20 0B FF  LDA ram_chr_bank + $04
+                                        STA ram_copy_chr_bank_4
 C - - - - - 0x01FDDA 07:FDCA: A9 00     LDA #$00
 C - - - - - 0x01FDDC 07:FDCC: 20 77 D2  JSR sub_D277_write_to_buffer___unk_X
 ; A = 00
@@ -9347,13 +9348,6 @@ sub_FF06:
 C D 3 - - - 0x01FF16 07:FF06: A9 00     LDA #$00
 C - - - - - 0x01FF18 07:FF08: 85 2D     STA ram_nmi_flag_1
 C - - - - - 0x01FF1A 07:FF0A: 60        RTS
-
-
-
-sub_FF0B:
-C - - - - - 0x01FF1B 07:FF0B: A5 7B     LDA ram_chr_bank + $04
-C - - - - - 0x01FF1D 07:FF0D: 8D 4A 03  STA ram_copy_chr_bank_4
-C - - - - - 0x01FF20 07:FF10: 60        RTS
 
 
 
