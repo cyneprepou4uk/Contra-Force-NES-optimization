@@ -156,7 +156,6 @@ ram_0000_temp                           = $0000 ; 003398 0033AD 003438 003487 00
     ram_0000_t95_useless                    = ram_0000_temp ; bzk optimize
     ram_0000_t96_useless                    = ram_0000_temp ; bzk optimize
     ram_0000_t97_useless                    = ram_0000_temp ; bzk optimize
-    ram_0000_t98_useless                    = ram_0000_temp ; bzk optimize
     ram_0000_t99_useless_04                 = ram_0000_temp ; bzk optimize
 
 

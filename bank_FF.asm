@@ -523,7 +523,6 @@ C - - - - - 0x01D0F6 07:D0E6: A5 40     LDA ram_btn_press_1
 C - - - - - 0x01D0F8 07:D0E8: 05 42     ORA ram_btn_hold_1
 C - - - - - 0x01D0FA 07:D0EA: 29 10     AND #con_btn_Start
 C - - - - - 0x01D0FC 07:D0EC: F0 07     BEQ bra_D0F5
-C - - - - - 0x01D0FE 07:D0EE: 20 6C D1  JSR sub_D16C_garbage_code
 C - - - - - 0x01D101 07:D0F1: E6 21     INC ram_0021_t01
 C - - - - - 0x01D103 07:D0F3: D0 17     BNE bra_D10C
 bra_D0F5:
@@ -601,18 +600,6 @@ C - - - - - 0x01D173 07:D163: C8        INY ; 03 con_0020_gameplay
 C - - - - - 0x01D174 07:D164: 84 20     STY ram_script_hi
 C - - - - - 0x01D176 07:D166: 20 35 F6  JSR sub_F635_set_default_3_lives
 C - - - - - 0x01D179 07:D169: 4C 62 D0  JMP loc_D062
-
-
-
-sub_D16C_garbage_code:
-; bzk optimize, useless subroutine, Y and A will be overwritten
-C - - - - - 0x01D17C 07:D16C: A4 22     LDY ram_0022_t01
-C - - - - - 0x01D17E 07:D16E: C8        INY
-; bzk optimize, useless TYA + ASL + STA
-C - - - - - 0x01D17F 07:D16F: 98        TYA
-C - - - - - 0x01D180 07:D170: 0A        ASL
-C - - - - - 0x01D181 07:D171: 85 00     STA ram_0000_t98_useless
-C - - - - - 0x01D183 07:D173: 60        RTS
 
 
 
