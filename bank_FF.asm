@@ -41,7 +41,7 @@
 .export sub_0x01E086
 .export loc_0x01E19F_write_00_to_buffer
 .export sub_0x01F337
-.export sub_0x01F348_convert_dpad_buttons
+.export tbl_0x01F34C_dpad_buttons_conversion
 .export loc_0x01F35C_prg_bankswitch
 .export sub_0x01F35C_prg_bankswitch
 .export loc_0x01F3C3_execute_script
@@ -7020,18 +7020,7 @@ C - - - - - 0x01F347 07:F337: 60        RTS
 
 
 
-sub_0x01F348_convert_dpad_buttons:
-; in
-    ; Y = 
-; out
-    ; A = 
-; bzk optimize
-C - - - - - 0x01F348 07:F338: B9 3C F3  LDA tbl_F33C_dpad_buttons_conversion,Y
-C - - - - - 0x01F34B 07:F33B: 60        RTS
-
-
-
-tbl_F33C_dpad_buttons_conversion:
+tbl_0x01F34C_dpad_buttons_conversion:
 - D 3 - - - 0x01F34C 07:F33C: 00        .byte $00   ; 00 no Dpad button was pressed
 - D 3 - - - 0x01F34D 07:F33D: 03        .byte $03   ; 01 Right
 - D 3 - - - 0x01F34E 07:F33E: 07        .byte $07   ; 02 Left

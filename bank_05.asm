@@ -525,7 +525,7 @@ bra_A302:
 C - - - - - 0x00A312 02:A302: B5 42     LDA ram_btn_hold_1,X
 C - - - - - 0x00A314 02:A304: 29 0F     AND #con_btns_Dpad
 C - - - - - 0x00A316 02:A306: A8        TAY
-C - - - - - 0x00A317 02:A307: 20 38 F3  JSR sub_0x01F348_convert_dpad_buttons
+C - - - - - 0x00A317 02:A307: 20 38 F3  LDA tbl_0x01F34C_dpad_buttons_conversion,Y
 C - - - - - 0x00A31A 02:A30A: 85 00     STA ram_0000_t77
 C - - - - - 0x00A31C 02:A30C: B5 42     LDA ram_btn_hold_1,X
 C - - - - - 0x00A31E 02:A30E: 15 40     ORA ram_btn_press_1,X

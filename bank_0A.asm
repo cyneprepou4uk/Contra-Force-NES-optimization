@@ -8391,7 +8391,7 @@ C - - - - - 0x0171C9 05:B1B9: 84 02     STY ram_0002_t17
 C - - - - - 0x0171CB 05:B1BB: B9 42 00  LDA ram_btn_hold_1,Y
 C - - - - - 0x0171CE 05:B1BE: 29 0F     AND #con_btns_Dpad
 C - - - - - 0x0171D0 05:B1C0: A8        TAY
-C - - - - - 0x0171D1 05:B1C1: 20 38 F3  JSR sub_0x01F348_convert_dpad_buttons
+C - - - - - 0x0171D1 05:B1C1: 20 38 F3  LDA tbl_0x01F34C_dpad_buttons_conversion,Y
 C - - - - - 0x0171D4 05:B1C4: 85 01     STA ram_0001_t41
 C - - - - - 0x0171D6 05:B1C6: A4 02     LDY ram_0002_t17
 C - - - - - 0x0171D8 05:B1C8: B9 42 00  LDA ram_btn_hold_1,Y
