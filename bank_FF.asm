@@ -4534,11 +4534,17 @@ C - - - - - 0x01F726 07:F716: F0 0F     BEQ bra_F727_RTS
 C - - - - - 0x01F728 07:F718: BD 68 06  LDA ram_obj_pos_Y,X
 C - - - - - 0x01F72B 07:F71B: D9 68 06  CMP ram_obj_pos_Y,Y
 C - - - - - 0x01F72E 07:F71E: B0 07     BCS bra_F727_RTS
-- - - - - - 0x01F730 07:F720: B9 50 9F  LDA tbl_0x009F60,Y
+- - - - - - 0x01F730 07:F720: B9 50 9F  LDA tbl_9F50,Y
 - - - - - - 0x01F733 07:F723: 25 00     AND ram_0000_t75
 - - - - - - 0x01F735 07:F725: 85 00     STA ram_0000_t75
 bra_F727_RTS:
 C - - - - - 0x01F737 07:F727: 60        RTS
+
+
+
+tbl_9F50:
+- - - - - - 0x009F60 02:9F50: FE        .byte $FE   ; 00 
+- - - - - - 0x009F61 02:9F51: FD        .byte $FD   ; 01 
 
 
 

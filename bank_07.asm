@@ -86,7 +86,6 @@
 .export ofs_016_0x00FBAF_07
 .export ofs_016_0x00FC33_0A
 .export ofs_016_0x00FCDA_15
-.export sub_0x00F6E8
 
 
 
@@ -4473,42 +4472,6 @@ tbl_B6C8:
 
 
 
-sub_0x00F6E8:
-C - - - - - 0x00F6E8 03:B6D8: 20 E3 8F  JSR sub_0x008FF3
-C - - - - - 0x00F6EB 03:B6DB: B0 16     BCS bra_B6F3
-C - - - - - 0x00F6ED 03:B6DD: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x00F6F0 03:B6E0: 29 7F     AND #$7F
-C - - - - - 0x00F6F2 03:B6E2: C9 03     CMP #$03
-C - - - - - 0x00F6F4 03:B6E4: F0 15     BEQ bra_B6FB
-C - - - - - 0x00F6F6 03:B6E6: C9 04     CMP #$04
-C - - - - - 0x00F6F8 03:B6E8: D0 08     BNE bra_B6F2_RTS
-C - - - - - 0x00F6FA 03:B6EA: 20 E2 90  JSR sub_0x0090F2
-C - - - - - 0x00F6FD 03:B6ED: A9 05     LDA #$05
-C - - - - - 0x00F6FF 03:B6EF: 9D 78 07  STA ram_0778_unk,X
-bra_B6F2_RTS:
-C - - - - - 0x00F702 03:B6F2: 60        RTS
-bra_B6F3:
-C - - - - - 0x00F703 03:B6F3: 20 F3 8F  JSR sub_0x009003
-C - - - - - 0x00F706 03:B6F6: A0 06     LDY #$06
-C - - - - - 0x00F708 03:B6F8: 4C 37 97  JMP loc_0x009747
-bra_B6FB:
-C - - - - - 0x00F70B 03:B6FB: BD 1A 06  LDA ram_obj_animation_lo,X
-C - - - - - 0x00F70E 03:B6FE: F0 06     BEQ bra_B706
-C - - - - - 0x00F710 03:B700: A5 23     LDA ram_frm_cnt
-C - - - - - 0x00F712 03:B702: 29 0F     AND #$0F
-C - - - - - 0x00F714 03:B704: D0 EC     BNE bra_B6F2_RTS
-bra_B706:
-C - - - - - 0x00F716 03:B706: 20 2E 94  JSR sub_0x00943E
-C - - - - - 0x00F719 03:B709: 9D B4 07  STA ram_07B4_unk,X
-C - - - - - 0x00F71C 03:B70C: 20 E2 90  JSR sub_0x0090F2
-C - - - - - 0x00F71F 03:B70F: A9 00     LDA #$00
-C - - - - - 0x00F721 03:B711: 20 59 89  JSR sub_0x008969
-C - - - - - 0x00F724 03:B714: A9 00     LDA #$00
-C - - - - - 0x00F726 03:B716: 9D 0A 07  STA ram_070A_obj,X
-C - - - - - 0x00F729 03:B719: 60        RTS
-
-
-
 ofs_016_0x00F72A_26:
 C - - J - - 0x00F72A 03:B71A: 20 20 B7  JSR sub_B720
 C - - - - - 0x00F72D 03:B71D: 4C 10 8E  JMP loc_0x008E20
@@ -4538,7 +4501,9 @@ C - - - - - 0x00F75A 03:B74A: 4C 47 96  JMP loc_0x009657
 
 bra_B74D:
 C - - - - - 0x00F75D 03:B74D: 20 E3 8F  JSR sub_0x008FF3
-C - - - - - 0x00F760 03:B750: B0 A1     BCS bra_B6F3
+C - - - - - 0x00F760 03:B750: B0 A1     BCC bra_B752
+                                        JMP loc_0x00F703
+bra_B752:
 C - - - - - 0x00F762 03:B752: 20 23 B8  JSR sub_B823
 C - - - - - 0x00F765 03:B755: 20 EE B7  JSR sub_B7EE
 C - - - - - 0x00F768 03:B758: 20 E1 B7  JSR sub_B7E1
