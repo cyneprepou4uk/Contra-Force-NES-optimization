@@ -6356,7 +6356,7 @@ C - - - - - 0x005F51 01:BF41: FE 78 07  INC ram_0778_unk,X
 bra_BF44:
 C - - - - - 0x005F54 01:BF44: 20 E3 8F  JSR sub_0x008FF3
 C - - - - - 0x005F57 01:BF47: B0 33     BCS bra_BF7C
-C - - - - - 0x005F59 01:BF49: 20 82 D1  JSR sub_0x01D192
+C - - - - - 0x005F59 01:BF49: 20 82 D1  JSR sub_D182
 C - - - - - 0x005F5C 01:BF4C: BD 00 06  LDA ram_0600_obj,X
 C - - - - - 0x005F5F 01:BF4F: 29 C0     AND #$C0
 C - - - - - 0x005F61 01:BF51: D0 26     BNE bra_BF79
@@ -6388,6 +6388,17 @@ C - - - - - 0x005F8F 01:BF7F: A0 06     LDY #$06
 C - - - - - 0x005F91 01:BF81: 4C 37 97  JMP loc_0x009747
 bra_BF84_RTS:
 C - - - - - 0x005F94 01:BF84: 60        RTS
+
+
+
+sub_D182:
+C - - - - - 0x01D192 07:D182: A9 04     LDA #$04
+C - - - - - 0x01D194 07:D184: BC B2 06  LDY ram_06B2_obj,X
+C - - - - - 0x01D197 07:D187: 10 02     BPL bra_D18B
+C - - - - - 0x01D199 07:D189: A9 84     LDA #$84
+bra_D18B:
+C - - - - - 0x01D19B 07:D18B: 9D B2 06  STA ram_06B2_obj,X
+C - - - - - 0x01D19E 07:D18E: 60        RTS
 
 
 

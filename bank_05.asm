@@ -2304,7 +2304,7 @@ C - - - - - 0x00ACBA 02:ACAA: F0 16     BEQ bra_ACC2
 bra_ACBE:
 loc_ACBE:   ; bzk optimize
 ; bzk optimize, JMP
-C D 1 - - - 0x00ACCE 02:ACBE: 20 4F F6  JSR sub_0x01F65F
+C D 1 - - - 0x00ACCE 02:ACBE: 20 4F F6  JSR sub_F64F
 bra_ACC1_RTS:
 C - - - - - 0x00ACD1 02:ACC1: 60        RTS
 bra_ACC2:
@@ -2315,6 +2315,16 @@ C - - - - - 0x00ACD7 02:ACC7: 85 20     STA ram_script_hi
 C - - - - - 0x00ACD9 02:ACC9: A9 30     LDA #$30
 C - - - - - 0x00ACDB 02:ACCB: 85 4A     STA ram_004A_t02_game_over_screen_delay
 C - - - - - 0x00ACDD 02:ACCD: 60        RTS
+
+
+
+sub_F64F:
+C - - - - - 0x01F65F 07:F64F: A9 00     LDA #$00
+C - - - - - 0x01F661 07:F651: 9D 1A 06  STA ram_obj_animation_lo,X
+C - - - - - 0x01F664 07:F654: 9D 82 07  STA ram_0782_unk,X
+C - - - - - 0x01F667 07:F657: 9D 82 06  STA ram_0682_obj,X
+C - - - - - 0x01F66A 07:F65A: 9D C8 07  STA ram_07C8_unk,X
+C - - - - - 0x01F66D 07:F65D: 60        RTS
 
 
 

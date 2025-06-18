@@ -3794,7 +3794,7 @@ C - - - - - 0x0157A4 05:9794: 60        RTS
 
 sub_9795:
 C - - - - - 0x0157A5 05:9795: 20 CF 97  JSR sub_97CF
-C - - - - - 0x0157A8 05:9798: 20 5E F6  JSR sub_0x01F66E
+C - - - - - 0x0157A8 05:9798: 20 5E F6  JSR sub_F65E
 C - - - - - 0x0157AB 05:979B: A5 34     LDA ram_mirroring
 C - - - - - 0x0157AD 05:979D: F0 0E     BEQ bra_97AD
 C - - - - - 0x0157AF 05:979F: C6 60     DEC ram_0060_hi
@@ -3819,6 +3819,16 @@ C - - - - - 0x0157CD 05:97BD: A9 40     LDA #$40
 C - - - - - 0x0157CF 05:97BF: 20 AC 98  JSR sub_98AC
 C - - - - - 0x0157D2 05:97C2: 20 29 99  JSR sub_9929
 C - - - - - 0x0157D5 05:97C5: 4C B2 98  JMP loc_98B2
+
+
+
+sub_F65E:
+C - - - - - 0x01F66E 07:F65E: A9 00     LDA #$00
+C - - - - - 0x01F670 07:F660: 85 69     STA ram_0069
+C - - - - - 0x01F672 07:F662: 85 6B     STA ram_006B
+C - - - - - 0x01F674 07:F664: 85 6A     STA ram_006A
+C - - - - - 0x01F676 07:F666: 85 6C     STA ram_006C
+C - - - - - 0x01F678 07:F668: 60        RTS
 
 
 

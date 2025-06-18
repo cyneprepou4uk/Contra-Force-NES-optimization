@@ -13,7 +13,6 @@
 .export _off000_0x01CFDF_A4_03
 .export sub_0x01D072
 .export sub_0x01D184
-.export sub_0x01D192
 .export sub_0x01D19F
 .export sub_0x01D1A7
 .export sub_0x01D1B8
@@ -66,8 +65,6 @@
 .export tbl_0x01F5C6
 .export sub_0x01F61F
 .export sub_0x01F650
-.export sub_0x01F65F
-.export sub_0x01F66E
 .export tbl_0x01F679
 .export tbl_0x01F68B
 .export sub_0x01F69F_get_stage_view_type
@@ -627,17 +624,6 @@ C - - - - - 0x01D189 07:D179: A9 00     LDA #$00
 C - - - - - 0x01D18B 07:D17B: 8D 98 06  STA ram_0682_obj + $16
 C - - - - - 0x01D18E 07:D17E: 8D 99 06  STA ram_0682_obj + $17
 C - - - - - 0x01D191 07:D181: 60        RTS
-
-
-
-sub_0x01D192:
-C - - - - - 0x01D192 07:D182: A9 04     LDA #$04
-C - - - - - 0x01D194 07:D184: BC B2 06  LDY ram_06B2_obj,X
-C - - - - - 0x01D197 07:D187: 10 02     BPL bra_D18B
-C - - - - - 0x01D199 07:D189: A9 84     LDA #$84
-bra_D18B:
-C - - - - - 0x01D19B 07:D18B: 9D B2 06  STA ram_06B2_obj,X
-C - - - - - 0x01D19E 07:D18E: 60        RTS
 
 
 
@@ -7813,26 +7799,6 @@ C - - - - - 0x01F655 07:F645: 9D E8 07  STA ram_07E8,X
 C - - - - - 0x01F658 07:F648: 9D EA 07  STA ram_07EA,X
 C - - - - - 0x01F65B 07:F64B: 9D E6 07  STA ram_07E6,X
 C - - - - - 0x01F65E 07:F64E: 60        RTS
-
-
-
-sub_0x01F65F:
-C - - - - - 0x01F65F 07:F64F: A9 00     LDA #$00
-C - - - - - 0x01F661 07:F651: 9D 1A 06  STA ram_obj_animation_lo,X
-C - - - - - 0x01F664 07:F654: 9D 82 07  STA ram_0782_unk,X
-C - - - - - 0x01F667 07:F657: 9D 82 06  STA ram_0682_obj,X
-C - - - - - 0x01F66A 07:F65A: 9D C8 07  STA ram_07C8_unk,X
-C - - - - - 0x01F66D 07:F65D: 60        RTS
-
-
-
-sub_0x01F66E:
-C - - - - - 0x01F66E 07:F65E: A9 00     LDA #$00
-C - - - - - 0x01F670 07:F660: 85 69     STA ram_0069
-C - - - - - 0x01F672 07:F662: 85 6B     STA ram_006B
-C - - - - - 0x01F674 07:F664: 85 6A     STA ram_006A
-C - - - - - 0x01F676 07:F666: 85 6C     STA ram_006C
-C - - - - - 0x01F678 07:F668: 60        RTS
 
 
 
