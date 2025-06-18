@@ -39,14 +39,14 @@ set "debug_name=z_debug.txt"
 :: set to 1 if you want to create a .bak copy of your ROM after each successful assembling.
 :: ROM file will be replaced with a .bak copy if assembling was unsuccessful.
 :: default is 0
-set "file_backup=0"
+set "file_backup=1"
 
 :: set to 1 if you want to check for changes between assembled and .old copy.
 :: you should hear 3 beeps (or at least some noise) if there were any changes.
 :: I personally use it to safely add comments to the disassembly when
 :: making hacks, to make sure I didn't accidently change anything.
 :: default is 0
-set "file_diff=0"
+set "file_diff=1"
 
 :: CONFIG SECTION (end)
 
