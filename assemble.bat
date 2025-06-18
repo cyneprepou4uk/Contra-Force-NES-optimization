@@ -89,6 +89,7 @@ if %fast_assembly% equ 1 (
     ca65 -U copy_bank_18.asm
     ca65 -U copy_bank_1A.asm
     ca65 -U copy_bank_1C.asm
+    ca65 -U copy_bank_1E.asm
     ca65 -U copy_bank_FF.asm
 ) else (
     ca65 -U -l copy_bank_00.lst -g copy_bank_00.asm
@@ -109,6 +110,7 @@ if %fast_assembly% equ 1 (
     ca65 -U -l copy_bank_18.lst -g copy_bank_18.asm
     ca65 -U -l copy_bank_1A.lst -g copy_bank_1A.asm
     ca65 -U -l copy_bank_1C.lst -g copy_bank_1C.asm
+    ca65 -U -l copy_bank_1E.lst -g copy_bank_1E.asm
     ca65 -U -l copy_bank_FF.lst -g copy_bank_FF.asm
 )
 
@@ -133,6 +135,7 @@ if %fast_assembly% equ 1 (
         copy_bank_18.o ^
         copy_bank_1A.o ^
         copy_bank_1C.o ^
+        copy_bank_1E.o ^
         copy_bank_FF.o
 ) else (
     ld65 -C ld65.cfg -o PRG_ROM.bin --dbgfile %debug_name% ^
@@ -154,6 +157,7 @@ if %fast_assembly% equ 1 (
         copy_bank_18.o ^
         copy_bank_1A.o ^
         copy_bank_1C.o ^
+        copy_bank_1E.o ^
         copy_bank_FF.o
 )
 

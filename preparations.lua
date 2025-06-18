@@ -21,6 +21,7 @@ local files_list = {
     "bank_18.asm",
     "bank_1A.asm",
     "bank_1C.asm",
+    "bank_1E.asm",
     "bank_FF.asm",
     "bank_ram.inc",
     "bank_val.inc",
