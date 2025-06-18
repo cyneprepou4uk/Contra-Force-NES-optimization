@@ -36,7 +36,6 @@
 .export tbl_0x01F679
 .export tbl_0x01F68B
 .export sub_0x01F69F_get_stage_view_type
-.export sub_0x01F6AD
 .export sub_0x01F6BF
 .export loc_0x01F6D1
 .export sub_0x01F6D1
@@ -44,7 +43,6 @@
 .export sub_0x01F6E1
 .export loc_0x01F712
 .export sub_0x01F712
-.export tbl_0x01F71A_table_offset
 .export sub_0x01F71F
 .export sub_0x01F8D8_prepare_irq_data
 .export sub_0x01F8DA_prepare_irq_data
@@ -59,12 +57,8 @@
 .export sub_0x01FECF
 .export loc_0x01FEDA_add_music_to_queue
 .export sub_0x01FEDA_add_music_to_queue
-.export loc_0x01E01B
 .export sub_0x01E038
-.export tbl_0x01E0B2
-.export tbl_0x01E0B6
 .export tbl_0x01E0B9
-.export tbl_0x01E0DD
 .export tbl_0x01E0E1
 .export tbl_0x01E0EC
 .export loc_0x01E12C
@@ -99,20 +93,7 @@ bra_E003:
 C - - - - - 0x01E013 07:E003: 20 1E E0  JSR sub_0x01E02E
 C - - - - - 0x01E016 07:E006: 18        CLC
 C - - - - - 0x01E017 07:E007: 69 10     ADC #$10
-C - - - - - 0x01E019 07:E009: D0 03     BNE bra_E00E    ; jmp
-
-
-
-loc_0x01E01B:
-C D 3 - - - 0x01E01B 07:E00B: 20 1E E0  JSR sub_0x01E02E
-bra_E00E:
-C - - - - - 0x01E01E 07:E00E: 09 E0     ORA #$E0
-C - - - - - 0x01E020 07:E010: 20 24 DE  JSR sub_0x01DE34_write_A_to_buffer_and_INX
-C - - - - - 0x01E023 07:E013: 18        CLC
-C - - - - - 0x01E024 07:E014: 69 01     ADC #$01
-C - - - - - 0x01E026 07:E016: 20 24 DE  JSR sub_0x01DE34_write_A_to_buffer_and_INX
-C - - - - - 0x01E029 07:E019: A9 01     LDA #$01
-C - - - - - 0x01E02B 07:E01B: 4C BD DE  JMP loc_0x01DECD
+C - - - - - 0x01E019 07:E009: D0 03     JMP loc_0x01E01E
 
 
 
@@ -187,21 +168,6 @@ C - - - - - 0x01E0A1 07:E091: 60        RTS
 
 
 
-tbl_0x01E0B2:
-- D 3 - - - 0x01E0B2 07:E0A2: 00        .byte $00   ; 00 
-- D 3 - - - 0x01E0B3 07:E0A3: 09        .byte $09   ; 01 
-- D 3 - - - 0x01E0B4 07:E0A4: 12        .byte $12   ; 02 
-- D 3 - - - 0x01E0B5 07:E0A5: 1B        .byte $1B   ; 03 
-
-
-
-tbl_0x01E0B6:
-- D 3 - - - 0x01E0B6 07:E0A6: 00        .byte $00   ; 
-- D 3 - - - 0x01E0B7 07:E0A7: 03        .byte $03   ; 
-- D 3 - - - 0x01E0B8 07:E0A8: 06        .byte $06   ; 
-
-
-
 tbl_0x01E0B9:
 ; 00 
 - D 3 - - - 0x01E0B9 07:E0A9: 80        .byte $80   ; 
@@ -260,15 +226,8 @@ tbl_0x01E0B9:
 
 
 
-tbl_0x01E0DD:
-- D 3 - - - 0x01E0DD 07:E0CD: 00        .byte $00   ; 00 
-- D 3 - - - 0x01E0DE 07:E0CE: 0A        .byte $0A   ; 01 
-- D 3 - - - 0x01E0DF 07:E0CF: 14        .byte $14   ; 02 
-- D 3 - - - 0x01E0E0 07:E0D0: 1E        .byte $1E   ; 03 
-
-
-
 tbl_0x01E0E1:
+; bzk optimize, переместить
 - D 3 - - - 0x01E0E1 07:E0D1: AD        .byte $AD   ; 
 - D 3 - - - 0x01E0E2 07:E0D2: AC        .byte $AC   ; 
 - D 3 - - - 0x01E0E3 07:E0D3: AD        .byte $AD   ; 
@@ -284,6 +243,7 @@ tbl_0x01E0E1:
 
 
 tbl_0x01E0EC:
+; bzk optimize, переместить
 - D 3 - - - 0x01E0EC 07:E0DC: CB        .byte $CB   ; 
 - D 3 - - - 0x01E0ED 07:E0DD: CC        .byte $CC   ; 
 - D 3 - - - 0x01E0EE 07:E0DE: C2        .byte $C2   ; 
@@ -677,13 +637,13 @@ C - - - - - 0x01E333 07:E323: A5 0F     LDA ram_000F_t07
 C - - - - - 0x01E335 07:E325: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
 C - - - - - 0x01E338 07:E328: A0 00     LDY #$00
 C - - - - - 0x01E33A 07:E32A: A9 06     LDA #$06
-C - - - - - 0x01E33C 07:E32C: 20 CE DA  JSR sub_0x01DADE
+C - - - - - 0x01E33C 07:E32C: 20 CE DA  JSR sub_DACE
 C - - - - - 0x01E33F 07:E32F: A5 14     LDA ram_0014_t06
-C - - - - - 0x01E341 07:E331: 20 CE DA  JSR sub_0x01DADE
+C - - - - - 0x01E341 07:E331: 20 CE DA  JSR sub_DACE
 C - - - - - 0x01E344 07:E334: A5 15     LDA ram_0015_t02
-C - - - - - 0x01E346 07:E336: 20 CE DA  JSR sub_0x01DADE
+C - - - - - 0x01E346 07:E336: 20 CE DA  JSR sub_DACE
 C - - - - - 0x01E349 07:E339: A9 00     LDA #$00
-C - - - - - 0x01E34B 07:E33B: 20 CE DA  JSR sub_0x01DADE
+C - - - - - 0x01E34B 07:E33B: 20 CE DA  JSR sub_DACE
 C - - - - - 0x01E34E 07:E33E: 84 0A     STY ram_000A_t18_buffer_index
 C - - - - - 0x01E350 07:E340: 60        RTS
 
@@ -903,15 +863,23 @@ C - - - - - 0x01E48F 07:E47F: A5 0F     LDA ram_000F_t07
 C - - - - - 0x01E491 07:E481: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
 C - - - - - 0x01E494 07:E484: A0 00     LDY #$00
 C - - - - - 0x01E496 07:E486: A9 04     LDA #$04
-C - - - - - 0x01E498 07:E488: 20 CE DA  JSR sub_0x01DADE
+C - - - - - 0x01E498 07:E488: 20 CE DA  JSR sub_DACE
 C - - - - - 0x01E49B 07:E48B: A5 14     LDA ram_0014_t06
-C - - - - - 0x01E49D 07:E48D: 20 CE DA  JSR sub_0x01DADE
+C - - - - - 0x01E49D 07:E48D: 20 CE DA  JSR sub_DACE
 C - - - - - 0x01E4A0 07:E490: A5 15     LDA ram_0015_t02
-C - - - - - 0x01E4A2 07:E492: 20 CE DA  JSR sub_0x01DADE
+C - - - - - 0x01E4A2 07:E492: 20 CE DA  JSR sub_DACE
 C - - - - - 0x01E4A5 07:E495: A9 00     LDA #$00
-C - - - - - 0x01E4A7 07:E497: 20 CE DA  JSR sub_0x01DADE
+C - - - - - 0x01E4A7 07:E497: 20 CE DA  JSR sub_DACE
 C - - - - - 0x01E4AA 07:E49A: 84 0A     STY ram_000A_t18_buffer_index
 C - - - - - 0x01E4AC 07:E49C: 60        RTS
+
+
+
+sub_DACE:
+; bzk optimize
+C - - - - - 0x01DADE 07:DACE: 99 00 05  STA ram_0500_nmt_attr_buffer,Y
+C - - - - - 0x01DAE1 07:DAD1: C8        INY
+C - - - - - 0x01DAE2 07:DAD2: 60        RTS
 
 
 
@@ -4354,6 +4322,7 @@ C - - - - - 0x01F572 07:F562: 38        SEC
 C - - - - - 0x01F573 07:F563: 60        RTS
 bra_F564:
 loc_0x01F574:
+; bzk optimize
 C D 3 - - - 0x01F574 07:F564: CE F2 03  DEC ram_03F2
 loc_F567:
 C D 3 - - - 0x01F577 07:F567: 18        CLC
@@ -4539,6 +4508,7 @@ C - - - - - 0x01F65E 07:F64E: 60        RTS
 
 
 tbl_0x01F679:
+; bzk optimize, переместить
 ;                                              +---------- 
 ;                                              |    +----- 
 ;                                              |    |
@@ -4555,6 +4525,7 @@ tbl_0x01F679:
 
 
 tbl_0x01F68B:
+; bzk optimize, переместить
 - D 3 - - - 0x01F68B 07:F67B: 38 01     .word $0138 ; 00 
 - D 3 - - - 0x01F68D 07:F67D: EA 00     .word $00EA ; 02 
 - D 3 - - - 0x01F68F 07:F67F: 30 01     .word $0130 ; 04 
@@ -4579,19 +4550,8 @@ C - - - - - 0x01F6A3 07:F693: 60        RTS
 
 
 
-sub_0x01F6AD:
-C - - - - - 0x01F6AD 07:F69D: B9 4E 06  LDA ram_obj_pos_X,Y
-C - - - - - 0x01F6B0 07:F6A0: 38        SEC
-C - - - - - 0x01F6B1 07:F6A1: E9 10     SBC #$10
-C - - - - - 0x01F6B3 07:F6A3: 99 4E 06  STA ram_obj_pos_X,Y
-C - - - - - 0x01F6B6 07:F6A6: B9 00 06  LDA ram_0600_obj,Y
-C - - - - - 0x01F6B9 07:F6A9: 09 08     ORA #$08
-C - - - - - 0x01F6BB 07:F6AB: 99 00 06  STA ram_0600_obj,Y
-C - - - - - 0x01F6BE 07:F6AE: 60        RTS
-
-
-
 sub_0x01F6BF:
+; bzk optimize, переместить
 C - - - - - 0x01F6BF 07:F6AF: A9 00     LDA #$00
 C - - - - - 0x01F6C1 07:F6B1: 85 D3     STA ram_00D3
 C - - - - - 0x01F6C3 07:F6B3: A9 01     LDA #$01
@@ -4625,6 +4585,10 @@ tbl_0x01F6D7:
 
 
 sub_0x01F6E1:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
 C - - - - - 0x01F6E1 07:F6D1: A5 75     LDA ram_stage
 C - - - - - 0x01F6E3 07:F6D3: C9 01     CMP #$01
 C - - - - - 0x01F6E5 07:F6D5: D0 29     BNE bra_F700
@@ -4664,17 +4628,8 @@ C - - - - - 0x01F717 07:F707: 4C 85 D5  JMP loc_0x01D595
 
 
 
-tbl_0x01F71A_table_offset:
-; bzk optimize, move to bank 0A, add links to offsets
-- D 3 - - - 0x01F71A 07:F70A: 00        .byte $00   ; 00 stage 1
-- D 3 - - - 0x01F71B 07:F70B: 1B        .byte $1B   ; 01 stage 2
-- D 3 - - - 0x01F71C 07:F70C: 2D        .byte $2D   ; 02 stage 3
-- D 3 - - - 0x01F71D 07:F70D: 4C        .byte $4C   ; 03 stage 4
-- D 3 - - - 0x01F71E 07:F70E: 67        .byte $67   ; 04 stage 5
-
-
-
 sub_0x01F71F:
+; bzk optimize, переместить
 C - - - - - 0x01F71F 07:F70F: B9 AA 07  LDA ram_07AA_unk,Y
 C - - - - - 0x01F722 07:F712: 29 0F     AND #$0F
 C - - - - - 0x01F724 07:F714: C9 03     CMP #$03

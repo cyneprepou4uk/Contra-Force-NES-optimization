@@ -13,9 +13,9 @@
 .export _off000_0x01CFDF_A4_03
 .export sub_0x01D072
 .export sub_0x01D184
-.export sub_0x01D19F
 .export sub_0x01D1A7
 .export sub_0x01D1B8
+.export loc_0x01D1B8
 .export loc_0x01D1CE
 .export sub_0x01D225_prepare_pointers_for_static_screen
 .export sub_0x01D230_disable_rendering_and_set_scroll_00
@@ -38,6 +38,7 @@
 .export sub_0x01DDBD
 .export sub_0x01DE34_write_A_to_buffer_and_INX
 .export loc_0x01DEC5
+.export loc_0x01E01E
 .export sub_0x01E02E
 .export sub_0x01D009
 .export ofs_006_0x01D1B8_19
@@ -56,10 +57,8 @@
 .export ofs_006_0x01DA85_0C
 .export sub_0x01DAD1_close_ppu_buffer
 .export loc_0x01DAD1_close_ppu_buffer
-.export sub_0x01DADE
 .export sub_0x01DDDF
 .export loc_0x01DE34_write_A_to_buffer_and_INX
-.export loc_0x01DECD
 .export sub_0x01DF01
 
 
@@ -576,13 +575,6 @@ C - - - - - 0x01D191 07:D181: 60        RTS
 
 
 
-sub_0x01D19F:
-C - - - - - 0x01D19F 07:D18F: 20 BF FE  JSR sub_0x01FECF
-C - - - - - 0x01D1A2 07:D192: A2 04     LDX #con_D22A_title_screen
-C - - - - - 0x01D1A4 07:D194: 4C A8 D1  JMP loc_D1A8
-
-
-
 sub_D197:
 loc_D197:
 sub_0x01D1A7:
@@ -597,9 +589,9 @@ C - - - - - 0x01D1B5 07:D1A5: 4C 4C F3  JMP loc_0x01F35C_prg_bankswitch
 
 
 
-loc_D1A8:
 sub_D1A8:
 sub_0x01D1B8:
+loc_0x01D1B8:
 ofs_006_0x01D1B8_19:
 ; con_F3D6_19
 ofs_006_0x01D1B8_1A:
@@ -2335,13 +2327,6 @@ C - - - - - 0x01DADD 07:DACD: 60        RTS
 
 
 
-sub_0x01DADE:
-C - - - - - 0x01DADE 07:DACE: 99 00 05  STA ram_0500_nmt_attr_buffer,Y
-C - - - - - 0x01DAE1 07:DAD1: C8        INY
-C - - - - - 0x01DAE2 07:DAD2: 60        RTS
-
-
-
 ofs_002_DAD3_0A:
 ; con_DA9D_0A
 ; bzk garbage up to 0x01DB6C
@@ -3012,7 +2997,6 @@ C - - - - - 0x01DECC 07:DEBC: 60        RTS
 
 sub_DEBD:
 loc_DEBD:
-loc_0x01DECD:
 C D 2 - - - 0x01DECD 07:DEBD: A8        TAY
 C - - - - - 0x01DECE 07:DEBE: A9 00     LDA #$00
 bra_DEC0_loop:
@@ -3165,13 +3149,13 @@ C - - - - - 0x01DF69 07:DF59: 4C BD DE  JMP loc_DEBD
 
 sub_DF5C:
 C - - - - - 0x01DF6C 07:DF5C: A4 0F     LDY ram_000F_t06_player_index
-C - - - - - 0x01DF6E 07:DF5E: B9 A2 E0  LDA tbl_0x01E0B2,Y
+C - - - - - 0x01DF6E 07:DF5E: B9 A2 E0  LDA tbl_E0A2,Y
 C - - - - - 0x01DF71 07:DF61: 85 08     STA ram_0008_t02
 C - - - - - 0x01DF73 07:DF63: A5 05     LDA ram_0005_t13
 C - - - - - 0x01DF75 07:DF65: 4A        LSR
 C - - - - - 0x01DF76 07:DF66: A8        TAY
 C - - - - - 0x01DF77 07:DF67: 88        DEY
-C - - - - - 0x01DF78 07:DF68: B9 A6 E0  LDA tbl_0x01E0B6,Y
+C - - - - - 0x01DF78 07:DF68: B9 A6 E0  LDA tbl_E0A6,Y
 C - - - - - 0x01DF7B 07:DF6B: 18        CLC
 C - - - - - 0x01DF7C 07:DF6C: 65 08     ADC ram_0008_t02
 C - - - - - 0x01DF7E 07:DF6E: A8        TAY
@@ -3195,10 +3179,25 @@ C - - - - - 0x01DF90 07:DF80: 60        RTS
 
 
 
+tbl_E0A2:
+- D 3 - - - 0x01E0B2 07:E0A2: 00        .byte $00   ; 00 
+- D 3 - - - 0x01E0B3 07:E0A3: 09        .byte $09   ; 01 
+- D 3 - - - 0x01E0B4 07:E0A4: 12        .byte $12   ; 02 
+- D 3 - - - 0x01E0B5 07:E0A5: 1B        .byte $1B   ; 03 
+
+
+
+tbl_E0A6:
+- D 3 - - - 0x01E0B6 07:E0A6: 00        .byte $00   ; 
+- D 3 - - - 0x01E0B7 07:E0A7: 03        .byte $03   ; 
+- D 3 - - - 0x01E0B8 07:E0A8: 06        .byte $06   ; 
+
+
+
 sub_DF81:
 C - - - - - 0x01DF91 07:DF81: 20 F1 DE  JSR sub_DEF1
 C - - - - - 0x01DF94 07:DF84: 90 03     BCC bra_DF89
-C - - - - - 0x01DF96 07:DF86: 4C 0B E0  JMP loc_0x01E01B
+C - - - - - 0x01DF96 07:DF86: 4C 0B E0  JMP loc_E00B
 bra_DF89:
 C - - - - - 0x01DF99 07:DF89: A4 0F     LDY ram_000F_t06_player_index
 C - - - - - 0x01DF9B 07:DF8B: B9 7F 00  LDA ram_player_stats,Y
@@ -3228,7 +3227,7 @@ C - - - - - 0x01DFBE 07:DFAE: A4 04     LDY ram_0004_t26
 C - - - - - 0x01DFC0 07:DFB0: B9 B1 00  LDA ram_current_player,Y
 C - - - - - 0x01DFC3 07:DFB3: 29 0F     AND #$0F
 C - - - - - 0x01DFC5 07:DFB5: A8        TAY
-C - - - - - 0x01DFC6 07:DFB6: B9 CD E0  LDA tbl_0x01E0DD,Y
+C - - - - - 0x01DFC6 07:DFB6: B9 CD E0  LDA tbl_E0CD,Y
 C - - - - - 0x01DFCA 07:DFBA: 84 0C     STA ram_000C_t11
 bra_DFBC_loop:
 C - - - - - 0x01DFCC 07:DFBC: A5 0A     LDA ram_000A_t17
@@ -3274,6 +3273,28 @@ C - - - - - 0x01E012 07:E002: 60        RTS
 
 
 
+tbl_E0CD:
+- D 3 - - - 0x01E0DD 07:E0CD: 00        .byte $00   ; 00 
+- D 3 - - - 0x01E0DE 07:E0CE: 0A        .byte $0A   ; 01 
+- D 3 - - - 0x01E0DF 07:E0CF: 14        .byte $14   ; 02 
+- D 3 - - - 0x01E0E0 07:E0D0: 1E        .byte $1E   ; 03 
+
+
+
+loc_E00B:
+C D 3 - - - 0x01E01B 07:E00B: 20 1E E0  JSR sub_E01E
+loc_0x01E01E:
+C - - - - - 0x01E01E 07:E00E: 09 E0     ORA #$E0
+C - - - - - 0x01E020 07:E010: 20 24 DE  JSR sub_DE24_write_A_to_buffer_and_INX
+C - - - - - 0x01E023 07:E013: 18        CLC
+C - - - - - 0x01E024 07:E014: 69 01     ADC #$01
+C - - - - - 0x01E026 07:E016: 20 24 DE  JSR sub_DE24_write_A_to_buffer_and_INX
+C - - - - - 0x01E029 07:E019: A9 01     LDA #$01
+C - - - - - 0x01E02B 07:E01B: 4C BD DE  JMP loc_DEBD
+
+
+
+sub_E01E:
 sub_0x01E02E:
 C - - - - - 0x01E02E 07:E01E: A9 07     LDA #$07
 C - - - - - 0x01E030 07:E020: 20 BD DE  JSR sub_DEBD

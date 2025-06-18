@@ -78,7 +78,6 @@
 .export ofs_016_0x00F3AF_18
 .export ofs_016_0x00F3C2_04
 .export ofs_016_0x00F5F1_01
-.export ofs_016_0x00F6E2_1C
 .export ofs_016_0x00F72A_26
 .export ofs_016_0x00F8AA_06
 .export ofs_016_0x00F9E2_16
@@ -87,6 +86,7 @@
 .export ofs_016_0x00FBAF_07
 .export ofs_016_0x00FC33_0A
 .export ofs_016_0x00FCDA_15
+.export sub_0x00F6E8
 
 
 
@@ -4351,7 +4351,7 @@ C - - - - - 0x00F62B 03:B61B: 85 CF     STA ram_00CF_flag
 C - - - - - 0x00F62D 03:B61D: A0 07     LDY #$07
 C - - - - - 0x00F62F 03:B61F: A9 A6     LDA #$A6
 C - - - - - 0x00F631 03:B621: 20 D8 93  JSR sub_0x0093E8
-C - - - - - 0x00F634 03:B624: 20 9D F6  JSR sub_0x01F6AD
+C - - - - - 0x00F634 03:B624: 20 9D F6  JSR sub_F69D
 C - - - - - 0x00F637 03:B627: 4C 3A 97  JMP loc_0x00974A
 bra_B62A:
 C - - - - - 0x00F63A 03:B62A: A9 00     LDA #$00
@@ -4434,6 +4434,18 @@ C - - - - - 0x00F6CB 03:B6BB: 4C 64 B6  JMP loc_B664
 
 
 
+sub_F69D:
+C - - - - - 0x01F6AD 07:F69D: B9 4E 06  LDA ram_obj_pos_X,Y
+C - - - - - 0x01F6B0 07:F6A0: 38        SEC
+C - - - - - 0x01F6B1 07:F6A1: E9 10     SBC #$10
+C - - - - - 0x01F6B3 07:F6A3: 99 4E 06  STA ram_obj_pos_X,Y
+C - - - - - 0x01F6B6 07:F6A6: B9 00 06  LDA ram_0600_obj,Y
+C - - - - - 0x01F6B9 07:F6A9: 09 08     ORA #$08
+C - - - - - 0x01F6BB 07:F6AB: 99 00 06  STA ram_0600_obj,Y
+C - - - - - 0x01F6BE 07:F6AE: 60        RTS
+
+
+
 sub_B6BE:
 C - - - - - 0x00F6CE 03:B6BE: A9 24     LDA #con_music_24
 C - - - - - 0x00F6D0 03:B6C0: 4C D8 95  JMP loc_0x0095E8_play_music
@@ -4461,13 +4473,7 @@ tbl_B6C8:
 
 
 
-ofs_016_0x00F6E2_1C:
-C - - J - - 0x00F6E2 03:B6D2: 20 D8 B6  JSR sub_B6D8
-C - - - - - 0x00F6E5 03:B6D5: 4C B6 81  JMP loc_0x0081C6
-
-
-
-sub_B6D8:
+sub_0x00F6E8:
 C - - - - - 0x00F6E8 03:B6D8: 20 E3 8F  JSR sub_0x008FF3
 C - - - - - 0x00F6EB 03:B6DB: B0 16     BCS bra_B6F3
 C - - - - - 0x00F6ED 03:B6DD: BD 78 07  LDA ram_0778_unk,X

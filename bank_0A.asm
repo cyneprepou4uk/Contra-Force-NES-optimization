@@ -131,7 +131,7 @@ C - - - - - 0x014043 05:8033: CE 70 03  DEC ram_0370_counter_00_C0
 C - - - - - 0x014046 05:8036: 60        RTS
 bra_8037:
 C - - - - - 0x014047 05:8037: A4 75     LDY ram_stage
-C - - - - - 0x014049 05:8039: B9 0A F7  LDA tbl_0x01F71A_table_offset,Y
+C - - - - - 0x014049 05:8039: B9 0A F7  LDA tbl_F70A_table_offset,Y
 C - - - - - 0x01404C 05:803C: 18        CLC
 C - - - - - 0x01404D 05:803D: 65 22     ADC ram_0022_t02
 C - - - - - 0x01404F 05:803F: A8        TAY
@@ -214,8 +214,19 @@ tbl_8057:
 
 
 
+tbl_F70A_table_offset:
+; bzk optimize, move to bank 0A, add links to offsets
+- D 3 - - - 0x01F71A 07:F70A: 00        .byte off_8092_00_stage_1 - tbl__8092   ; 
+- D 3 - - - 0x01F71B 07:F70B: 1B        .byte off_80AD_01_stage_2 - tbl__8092   ; 
+- D 3 - - - 0x01F71C 07:F70C: 2D        .byte off_80BF_02_stage_3 - tbl__8092   ; 
+- D 3 - - - 0x01F71D 07:F70D: 4C        .byte off_80DE_03_stage_4 - tbl__8092   ; 
+- D 3 - - - 0x01F71E 07:F70E: 67        .byte off_80F9_04_stage_5 - tbl__8092   ; 
+
+
+
 tbl_8092:
-; 00 stage 1
+tbl__8092:
+off_8092_00_stage_1:
 - D 0 - - - 0x0140A2 05:8092: 21        .byte con_8113_21   ; 
 - D 0 - - - 0x0140A3 05:8093: 07        .byte con_8113_07   ; 
 - D 0 - - - 0x0140A4 05:8094: 22        .byte con_8113_22   ; 
@@ -243,7 +254,8 @@ tbl_8092:
 - D 0 - - - 0x0140BA 05:80AA: 2B        .byte con_8113_2B   ; 
 - D 0 - - - 0x0140BB 05:80AB: 07        .byte con_8113_07   ; 
 - D 0 - - - 0x0140BC 05:80AC: 2C        .byte con_8113_2C   ; 
-; 1B stage 2
+
+off_80AD_01_stage_2:
 - D 0 - - - 0x0140BD 05:80AD: 21        .byte con_8113_21   ; 
 - D 0 - - - 0x0140BE 05:80AE: 07        .byte con_8113_07   ; 
 - D 0 - - - 0x0140BF 05:80AF: 22        .byte con_8113_22   ; 
@@ -262,7 +274,8 @@ tbl_8092:
 - D 0 - - - 0x0140CC 05:80BC: 2B        .byte con_8113_2B   ; 
 - D 0 - - - 0x0140CD 05:80BD: 07        .byte con_8113_07   ; 
 - D 0 - - - 0x0140CE 05:80BE: 2C        .byte con_8113_2C   ; 
-; 2D stage 3
+
+off_80BF_02_stage_3:
 - D 0 - - - 0x0140CF 05:80BF: 30        .byte con_8113_30   ; 
 - D 0 - - - 0x0140D0 05:80C0: 21        .byte con_8113_21   ; 
 - D 0 - - - 0x0140D1 05:80C1: 49        .byte con_8113_49   ; 
@@ -294,7 +307,8 @@ tbl_8092:
 - D 0 - - - 0x0140EB 05:80DB: 2B        .byte con_8113_2B   ; 
 - D 0 - - - 0x0140EC 05:80DC: 07        .byte con_8113_07   ; 
 - D 0 - - - 0x0140ED 05:80DD: 2C        .byte con_8113_2C   ; 
-; 4C stage 4
+
+off_80DE_03_stage_4:
 - D 0 - - - 0x0140EE 05:80DE: 37        .byte con_8113_37   ; 
 - D 0 - - - 0x0140EF 05:80DF: 21        .byte con_8113_21   ; 
 - D 0 - - - 0x0140F0 05:80E0: 38        .byte con_8113_38   ; 
@@ -322,7 +336,8 @@ tbl_8092:
 - D 0 - - - 0x014106 05:80F6: 2B        .byte con_8113_2B   ; 
 - D 0 - - - 0x014107 05:80F7: 07        .byte con_8113_07   ; 
 - D 0 - - - 0x014108 05:80F8: 2C        .byte con_8113_2C   ; 
-; 67 stage 5
+
+off_80F9_04_stage_5:
 - D 0 - - - 0x014109 05:80F9: 05        .byte con_8113_05   ; 
 - D 0 - - - 0x01410A 05:80FA: 09        .byte con_8113_09   ; 
 - D 0 - - - 0x01410B 05:80FB: 2B        .byte con_8113_2B   ; 
@@ -654,7 +669,7 @@ C - - - - - 0x01428D 05:827D: 4C 9E 82  JMP loc_829E
 
 ofs_020_8280_03:
 ; con_8113_03
-C - - J - - 0x014290 05:8280: 20 8F D1  JSR sub_0x01D19F
+C - - J - - 0x014290 05:8280: 20 8F D1  JSR sub_D18F
 C - - - - - 0x014293 05:8283: A9 17     LDA #$17
 sub_8285:
 C - - - - - 0x014295 05:8285: A0 01     LDY #$01
@@ -665,6 +680,13 @@ C D 0 - - - 0x01429A 05:828A: A9 00     LDA #$00
 C - - - - - 0x01429C 05:828C: 85 2B     STA ram_002B_flags
 C - - - - - 0x01429E 05:828E: 38        SEC
 C - - - - - 0x01429F 05:828F: 60        RTS
+
+
+
+sub_D18F:
+C - - - - - 0x01D19F 07:D18F: 20 BF FE  JSR sub_0x01FECF
+C - - - - - 0x01D1A2 07:D192: A2 04     LDX #con_D22A_title_screen
+C - - - - - 0x01D1A4 07:D194: 4C A8 D1  JMP loc_0x01D1B8
 
 
 

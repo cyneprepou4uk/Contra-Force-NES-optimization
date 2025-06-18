@@ -583,7 +583,7 @@ tbl_8204:
 - D 0 - - - 0x008246 02:8236: 52 8E     .word ofs_016_8E52_19
 - D 0 - - - 0x008248 02:8238: 38 B2     .word ofs_016_0x00D248_1A
 - D 0 - - - 0x00824A 02:823A: EA 8D     .word ofs_016_8DEA_1B
-- D 0 - - - 0x00824C 02:823C: D2 B6     .word ofs_016_0x00F6E2_1C
+- D 0 - - - 0x00824C 02:823C: D2 B6     .word ofs_016_B6D2_1C
 - D 0 - - - 0x00824E 02:823E: 1D BF     .word ofs_016_0x005F2D_1D
 - D 0 - - - 0x008250 02:8240: 01 A0     .word ofs_016_0x00E011_1E
 - D 0 - - - 0x008252 02:8242: 1B A0     .word ofs_016_0x00E02B_1F
@@ -2722,6 +2722,12 @@ C - - - - - 0x008E27 02:8E17: F0 D0     BEQ bra_8DE9_RTS
 sub_0x008E29:
 C - - - - - 0x008E29 02:8E19: 20 52 9F  JSR sub_9F52
 C - - - - - 0x008E2C 02:8E1C: 4C 98 98  JMP loc_9898
+
+
+
+ofs_016_B6D2_1C:
+C - - J - - 0x00F6E2 03:B6D2: 20 D8 B6  JSR sub_0x00F6E8
+C - - - - - 0x00F6E5 03:B6D5: 4C B6 81  JMP loc_0x0081C6
 
 
 
