@@ -212,7 +212,7 @@ ram_0001_temp                           = $0001 ; 0033CA 00385C 003987 003CC0 00
     ram_0001_t48_ppu_addr_hi                = ram_0001_temp ; 
     ram_0001_t49_ppu_addr_hi                = ram_0001_temp ; 
     ram_0001_t50_ppu_addr_hi                = ram_0001_temp ; 
-    ram_0001_t51_meta_indexes_ptr_hi                         = ram_0001_temp ; 
+    ram_0001_t51_meta_indexes_ptr_hi        = ram_0001_temp ; 
     ram_0001_t52_hi                         = ram_0001_temp ; 
     ram_0001_t53_useless                    = ram_0001_temp ; bzk optimize
     ram_0001_t54_useless                    = ram_0001_temp ; bzk optimize
@@ -1617,8 +1617,8 @@ ram_scanline                            = $00C9 ; 01F311 01FD5D 01FDFC 01FE48
 
 
 
-; bzk optimize, holds value for C000, but you can write any value to C000
-ram_00CA_useless                        = $00CA ; 01F311 01F7F8 01F821 01F838 01FD5D 01FE00 
+; 
+ram_00CA_scanline                       = $00CA ; 01F311 01F7F8 01F821 01F838 01FD5D 01FE00 
 
 
 

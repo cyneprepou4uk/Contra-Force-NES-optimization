@@ -8089,7 +8089,7 @@ C - - - - - 0x01F7F5 07:F7E5: 4C 9E F8  JMP loc_F89E_select_irq_handler
 
 ofs_irq_handler_F7E8_03:
 ; con_irq_03
-C - - J - - 0x01F7F8 07:F7E8: A5 CA     LDA ram_00CA_useless
+C - - J - - 0x01F7F8 07:F7E8: A5 CA     LDA ram_00CA_scanline
                                         CLC
                                         ADC ram_prev_5203
                                         STA ram_prev_5203
@@ -8117,7 +8117,7 @@ C - - - - - 0x01F81E 07:F80E: 4C 9E F8  JMP loc_F89E_select_irq_handler
 
 ofs_irq_handler_F811_06:
 ; con_irq_06
-C - - J - - 0x01F821 07:F811: A5 CA     LDA ram_00CA_useless
+C - - J - - 0x01F821 07:F811: A5 CA     LDA ram_00CA_scanline
                                         CLC
                                         ADC ram_prev_5203
                                         STA ram_prev_5203
@@ -8140,7 +8140,7 @@ C - - - - - 0x01F836 07:F826: D0 02     BNE bra_F82A    ; jmp
 
 ofs_irq_handler_F828_02:
 ; con_irq_02
-C - - J - - 0x01F838 07:F828: A5 CA     LDA ram_00CA_useless
+C - - J - - 0x01F838 07:F828: A5 CA     LDA ram_00CA_scanline
 bra_F82A:
                                         CLC
                                         ADC ram_prev_5203
@@ -9193,7 +9193,7 @@ C - - - - - 0x01FDF8 07:FDE8: 85 C8     STA ram_copy_irq_handler
 C - - - - - 0x01FDFA 07:FDEA: A5 4E     LDA ram_next_scanline
 C - - - - - 0x01FDFC 07:FDEC: 85 C9     STA ram_scanline
 C - - - - - 0x01FDFE 07:FDEE: A5 4F     LDA ram_004F
-C - - - - - 0x01FE00 07:FDF0: 85 CA     STA ram_00CA_useless
+C - - - - - 0x01FE00 07:FDF0: 85 CA     STA ram_00CA_scanline
 C - - - - - 0x01FE02 07:FDF2: A5 59     LDA ram_0059
 C - - - - - 0x01FE04 07:FDF4: 85 D6     STA ram_00D6
 C - - - - - 0x01FE06 07:FDF6: A5 5D     LDA ram_005D
