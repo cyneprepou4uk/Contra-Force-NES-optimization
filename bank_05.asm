@@ -845,11 +845,6 @@ tbl_A4F6_bonus:
 - D 1 - - - 0x00A50A 02:A4FA: 08        .byte $08   ; 05 invincible jump
 
 
-; bzk garbage?
-- - - - - - 0x00A50B 02:A4FB: 00        .byte $00   ; 06 
-- - - - - - 0x00A50C 02:A4FC: 00        .byte $00   ; 07 
-
-
 
 tbl_A4FD:
 - - - - - - 0x00A50D 02:A4FD: 00        .byte $00   ; 00 
@@ -2090,14 +2085,6 @@ tbl_AB25:
 - - - - - - 0x00AB42 02:AB32: 00        .byte $00   ; 0D 
 - - - - - - 0x00AB43 02:AB33: 03        .byte $03   ; 0E 
 - - - - - - 0x00AB44 02:AB34: 04        .byte $04   ; 0F 
-
-
-; bzk garbage
-- - - - - - 0x00AB45 02:AB35: 02        .byte $02   ; 
-- - - - - - 0x00AB46 02:AB36: 01        .byte $01   ; 
-- - - - - - 0x00AB47 02:AB37: 00        .byte $00   ; 
-- - - - - - 0x00AB48 02:AB38: 00        .byte $00   ; 
-- - - - - - 0x00AB49 02:AB39: 00        .byte $00   ; 
 
 
 
@@ -6389,10 +6376,6 @@ _off024_BFE1_39:
 - D 1 - I - 0x00C005 02:BFF5: 02        .byte $02   ; 
 - D 1 - I - 0x00C006 02:BFF6: 00        .byte $00   ; 
 - - - - - - 0x00C007 02:BFF7: FE        .byte $FE   ; 
-
-
-; bzk garbage
-- - - - - - 0x00C008 02:BFF8: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
 
 
 

@@ -10015,12 +10015,6 @@ off_0A_AEA1_12:
 - D 1 - I - 0x002EE0 00:AED0: 00        .byte $00, $8B, $11   ; 
 
 
-; bzk garbage
-- - - - - - 0x002EE3 00:AED3: 00        .byte $00   ; 
-- - - - - - 0x002EE4 00:AED4: 8B        .byte $8B   ; 
-- - - - - - 0x002EE5 00:AED5: 11        .byte $11   ; 
-
-
 
 
 
@@ -13113,16 +13107,6 @@ tbl_BFEC:
 - - - - - - 0x004008 00:BFF8: 01        .byte $01   ; 0C 
 - - - - - - 0x004009 00:BFF9: 00        .byte $00   ; 0D 
 - D 1 - - - 0x00400A 00:BFFA: 00        .byte $00   ; 0E 0x003FEA
-
-
-; bzk garbage
-- - - - - - 0x00400B 00:BFFB: 00        .byte $00   ; 
-- - - - - - 0x00400C 00:BFFC: 01        .byte $01   ; 
-- - - - - - 0x00400D 00:BFFD: 02        .byte $02   ; 
-
-
-; bzk garbage
-- - - - - - 0x00400E 00:BFFE: FF        .byte $FF, $FF   ; 
 
 
 

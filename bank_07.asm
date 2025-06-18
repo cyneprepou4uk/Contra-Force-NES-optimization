@@ -1701,10 +1701,6 @@ C - - - - - 0x00E8DC 03:A8CC: 38        SEC
 C - - - - - 0x00E8DD 03:A8CD: 60        RTS
 
 
-; bzk garbage
-- - - - - - 0x00E8DE 03:A8CE: 2D        .byte $2D   ; 
-
-
 
 tbl_A8CF:
 - D 1 - - - 0x00E8DF 03:A8CF: 2A        .byte con_A36F_2A   ; 00 
@@ -1712,11 +1708,6 @@ tbl_A8CF:
 - - - - - - 0x00E8E1 03:A8D1: 2C        .byte con_A36F_2C   ; 04 
 - D 1 - - - 0x00E8E2 03:A8D2: 2A        .byte con_A36F_2A   ; 06 
 - - - - - - 0x00E8E3 03:A8D3: 32        .byte con_A36F_32   ; 08 
-
-
-
-; bzk garbage
-- - - - - - 0x00E8E4 03:A8D4: 01        .byte $01   ; 
 
 
 
@@ -5643,10 +5634,6 @@ C - - - - - 0x00FE04 03:BDF4: 9D B4 07  STA ram_07B4_unk,X
 C - - - - - 0x00FE07 03:BDF7: 4C 1C BE  JMP loc_BE1C
 
 
-; bzk garbage
-- - - - - - 0x00FE0A 03:BDFA: 4C EF BE  JMP loc_BEEF_RTS
-
-
 
 bra_BDFD:
 C - - - - - 0x00FE0D 03:BDFD: A5 01     LDA ram_0001_t29_hi
@@ -5947,10 +5934,6 @@ tbl_BFF3:
 - D 1 - - - 0x010003 03:BFF3: 40        .byte $40   ; 00 
 - - - - - - 0x010004 03:BFF4: 80        .byte $80   ; 01 
 - - - - - - 0x010005 03:BFF5: FF        .byte $FF   ; 02 
-
-
-; bzk garbage
-- - - - - - 0x010006 03:BFF6: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
 
 
 

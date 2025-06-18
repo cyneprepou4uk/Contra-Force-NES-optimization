@@ -6290,19 +6290,6 @@ tbl_BEE1:
 - - - - - - 0x005EFA 01:BEEA: 80        .byte $80   ; ED
 
 
-; bzk garbage
-- - - - - - 0x005EFB 01:BEEB: E9        .byte $E9   ; 
-- - - - - - 0x005EFC 01:BEEC: EA        .byte $EA   ; 
-- - - - - - 0x005EFD 01:BEED: E6        .byte $E6   ; 
-- - - - - - 0x005EFE 01:BEEE: EB        .byte $EB   ; 
-- - - - - - 0x005EFF 01:BEEF: E7        .byte $E7   ; 
-- - - - - - 0x005F00 01:BEF0: E5        .byte $E5   ; 
-- - - - - - 0x005F01 01:BEF1: ED        .byte $ED   ; 
-- - - - - - 0x005F02 01:BEF2: E8        .byte $E8   ; 
-- - - - - - 0x005F03 01:BEF3: EC        .byte $EC   ; 
-- - - - - - 0x005F04 01:BEF4: E4        .byte $E4   ; 
-
-
 
 tbl_BEF5:
 - D 1 - - - 0x005F05 01:BEF5: FA        .byte $FA   ; 00 
@@ -6343,19 +6330,6 @@ tbl_BF09:
 - D 1 - - - 0x005F20 01:BF10: 20        .byte $20   ; 07 
 - D 1 - - - 0x005F21 01:BF11: 00        .byte $00   ; 08 
 - D 1 - - - 0x005F22 01:BF12: 00        .byte $00   ; 09 
-
-
-; bzk garbage
-- - - - - - 0x005F23 01:BF13: 40        .byte $40   ; 
-- - - - - - 0x005F24 01:BF14: 60        .byte $60   ; 
-- - - - - - 0x005F25 01:BF15: 20        .byte $20   ; 
-- - - - - - 0x005F26 01:BF16: 60        .byte $60   ; 
-- - - - - - 0x005F27 01:BF17: 40        .byte $40   ; 
-- - - - - - 0x005F28 01:BF18: 00        .byte $00   ; 
-- - - - - - 0x005F29 01:BF19: 80        .byte $80   ; 
-- - - - - - 0x005F2A 01:BF1A: 20        .byte $20   ; 
-- - - - - - 0x005F2B 01:BF1B: 80        .byte $80   ; 
-- - - - - - 0x005F2C 01:BF1C: 00        .byte $00   ; 
 
 
 
@@ -6492,10 +6466,6 @@ tbl_BFF6_index:
 - - - - - - 0x006007 01:BFF7: 01        .byte $01   ; 01 
 - - - - - - 0x006008 01:BFF8: 02        .byte $02   ; 02 
 - - - - - - 0x006009 01:BFF9: FF        .byte $FF   ; 03 
-
-
-; bzk garbage
-- - - - - - 0x00600A 01:BFFA: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF   ; 
 
 
 

@@ -2516,10 +2516,6 @@ _off030_0x01A6AA_02_stage_2:
 - D 1 - I - 0x01A79A 06:A78A: DD        .byte $DD, $AA, $44, $11, $AA, $33, $00, $C0, $30, $0C, $03, $00, $33, $00, $00        ; F0 
 
 
-; bzk garbage, no such metatile with FF index
-- - - - - - 0x01A7A9 06:A799: C3        .byte $C3   ; FF
-
-
 
 _off028_0x01A7AA_06_stage_4:
 - - - - - - 0x01A7AA 06:A79A: 01        .byte $01, $01, $01, $01, $01, $01, $01, $07   ; 000 
@@ -4157,10 +4153,6 @@ C - - - - - 0x01BFFE 06:BFEE: E6 5B     INC ram_005B_script
 C - - - - - 0x01C000 06:BFF0: A9 03     LDA #$03
 C - - - - - 0x01C002 06:BFF2: 8D A1 05  STA ram_059E_se + $03
 C - - - - - 0x01C005 06:BFF5: 60        RTS
-
-
-; bzk garbage
-- - - - - - 0x01C006 06:BFF6: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
 
 
 

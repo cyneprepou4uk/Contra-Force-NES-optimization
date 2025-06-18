@@ -2028,10 +2028,6 @@ C - - - - - 0x014A56 05:8A46: 20 4D 8A  JSR sub_8A4D
 C - - - - - 0x014A59 05:8A49: D0 8E     BNE bra_89D9    ; jmp
 
 
-; bzk garbage
-- - - - - - 0x014A5B 05:8A4B: A9 00     LDA #$00
-
-
 
 sub_8A4D:
 C - - - - - 0x014A5D 05:8A4D: 95 42     STA ram_btn_hold_1,X
@@ -6534,21 +6530,6 @@ C - - - - - 0x0165FF 05:A5EF: E6 5B     INC ram_005B_script
 C - - - - - 0x016601 05:A5F1: 60        RTS
 
 
-; bzk garbage
-- - - - - - 0x016602 05:A5F2: 00        .byte $00   ; 
-- - - - - - 0x016603 05:A5F3: 00        .byte $00   ; 
-- - - - - - 0x016604 05:A5F4: 00        .byte $00   ; 
-- - - - - - 0x016605 05:A5F5: 00        .byte $00   ; 
-- - - - - - 0x016606 05:A5F6: 00        .byte $00   ; 
-- - - - - - 0x016607 05:A5F7: 00        .byte $00   ; 
-- - - - - - 0x016608 05:A5F8: 20        .byte $20   ; 
-- - - - - - 0x016609 05:A5F9: 00        .byte $00   ; 
-- - - - - - 0x01660A 05:A5FA: E0        .byte $E0   ; 
-- - - - - - 0x01660B 05:A5FB: 00        .byte $00   ; 
-- - - - - - 0x01660C 05:A5FC: D8        .byte $D8   ; 
-- - - - - - 0x01660D 05:A5FD: 00        .byte $00   ; 
-
-
 
 ofs_008_A5FE_07:
 C - - J - - 0x01660E 05:A5FE: A9 22     LDA #con_F3D6_22
@@ -6713,25 +6694,6 @@ C - - - - - 0x01670E 05:A6FE: D0 02     BNE bra_A702_not_overflow
 bra_A702_not_overflow:
 C - - - - - 0x016712 05:A702: A9 08     LDA #con_DA9D_08
 C - - - - - 0x016714 05:A704: D0 E1     BNE bra_A6E7    ; jmp
-
-
-; bzk garbage
-- - - - - - 0x016716 05:A706: 00        .byte $00   ; 
-- - - - - - 0x016717 05:A707: 01        .byte $01   ; 
-- - - - - - 0x016718 05:A708: 03        .byte $03   ; 
-- - - - - - 0x016719 05:A709: 07        .byte $07   ; 
-- - - - - - 0x01671A 05:A70A: 0F        .byte $0F   ; 
-- - - - - - 0x01671B 05:A70B: 1F        .byte $1F   ; 
-- - - - - - 0x01671C 05:A70C: 3F        .byte $3F   ; 
-- - - - - - 0x01671D 05:A70D: 7F        .byte $7F   ; 
-- - - - - - 0x01671E 05:A70E: FE        .byte $FE   ; 
-- - - - - - 0x01671F 05:A70F: FC        .byte $FC   ; 
-- - - - - - 0x016720 05:A710: F8        .byte $F8   ; 
-- - - - - - 0x016721 05:A711: F0        .byte $F0   ; 
-- - - - - - 0x016722 05:A712: E0        .byte $E0   ; 
-- - - - - - 0x016723 05:A713: C0        .byte $C0   ; 
-- - - - - - 0x016724 05:A714: 80        .byte $80   ; 
-- - - - - - 0x016725 05:A715: 00        .byte $00   ; 
 
 
 
@@ -8280,13 +8242,6 @@ bra_B0D3:
 - - - - - - 0x0170F1 05:B0E1: E5 02     SBC ram_0002_t16_pos_Y
 - - - - - - 0x0170F3 05:B0E3: 9D 68 06  STA ram_obj_pos_Y,X
 - - - - - - 0x0170F6 05:B0E6: 4C 29 B0  JMP loc_B029
-
-
-; bzk garbage
-- - - - - - 0x0170F9 05:B0E9: 00        .byte $00   ; 
-- - - - - - 0x0170FA 05:B0EA: 00        .byte $00   ; 
-- - - - - - 0x0170FB 05:B0EB: 00        .byte $00   ; 
-- - - - - - 0x0170FC 05:B0EC: 00        .byte $00   ; 
 
 
 
@@ -10851,10 +10806,6 @@ _off012_0x017E33_10_credits:
 - D 1 - I - 0x01800D 05:BFFD: 00        .byte $00   ; 
 
 - D 1 - I - 0x01800E 05:BFFE: FF        .byte $FF   ; end token
-
-
-; bzk garbage
-- - - - - - 0x01800F 05:BFFF: FF        .byte $FF   ; 
 
 
 

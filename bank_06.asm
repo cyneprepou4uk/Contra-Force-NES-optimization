@@ -9537,10 +9537,6 @@ off_0E_BFF0_02:
 - - - - - - 0x00E004 03:BFF4: FF        .byte $FF   ; 
 
 
-; bzk garbage
-- - - - - - 0x00E005 03:BFF5: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
-
-
 
 .out .sprintf("Free bytes in bank 06: 0x%04X [%d]", ($C000 - *), ($C000 - *))
 

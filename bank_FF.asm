@@ -119,11 +119,6 @@ tbl_0x01C011_for_4010_4013:
 - D 2 - - - 0x01C02D 07:C01D: 0F        .byte $0F, $3F, $3A, $08   ; B3 
 
 
-; bzk garbage
-- - - - - - 0x01C031 07:C021: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
-- - - - - - 0x01C040 07:C030: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
-
-
 
 .segment "DPCM"
 .org $C040  ; for listing file
@@ -1488,10 +1483,6 @@ C - - - - - 0x01D5D5 07:D5C5: 9A        TXS
 C - - - - - 0x01D5D6 07:D5C6: 60        RTS
 
 
-; bzk garbage
-- - - - - - 0x01D5D7 07:D5C7: A9 FF     LDA #$FF
-
-
 
 bra_D5C9_loop:
 C - - - - - 0x01D5D9 07:D5C9: 8D 07 20  STA $2007
@@ -1642,10 +1633,6 @@ C - - - - - 0x01D6C5 07:D6B5: AE A0 03  LDX ram_save_stack_pointer
 C - - - - - 0x01D6C8 07:D6B8: 9A        TXS
 bra_D6B9_RTS:
 C - - - - - 0x01D6C9 07:D6B9: 60        RTS
-
-
-; bzk garbage
-- - - - - - 0x01D6CA 07:D6BA: A9 FF     LDA #$FF
 
 
 
@@ -8360,18 +8347,6 @@ sub_0x01F8F7:
 C - - - - - 0x01F8F7 07:F8E7: A4 18     LDY ram_0018_t09_object_index
 C - - - - - 0x01F8F9 07:F8E9: 84 16     STY ram_0016_t09_object_index
 C - - - - - 0x01F8FB 07:F8EB: B9 20 07  LDA ram_0720_obj,Y
-; bzk optimize, useless JMP after deleting garbage at 0x01F901
-C - - - - - 0x01F8FE 07:F8EE: 4C F8 F8  JMP loc_F8F8
-
-
-; bzk garbage
-- - - - - - 0x01F901 07:F8F1: A5 18     LDA ram_0018_t09_object_index
-- - - - - - 0x01F903 07:F8F3: 85 16     STA ram_0016_t09_object_index
-- - - - - - 0x01F905 07:F8F5: BD 20 07  LDA ram_0720_obj,X
-
-
-
-loc_F8F8:
 C D 3 - - - 0x01F908 07:F8F8: 29 3F     AND #$3F
 C - - - - - 0x01F90A 07:F8FA: 0A        ASL
 C - - - - - 0x01F90B 07:F8FB: A8        TAY
@@ -9609,11 +9584,6 @@ C - - - - - 0x01FFF7 07:FFE7: 36 01     ROL ram_0000_t32 + $01,X
 C - - - - - 0x01FFF9 07:FFE9: 88        DEY
 C - - - - - 0x01FFFA 07:FFEA: D0 E7     BNE bra_FFD3_loop
 C - - - - - 0x01FFFC 07:FFEC: 60        RTS
-
-
-; bzk garbage
-- - - - - - 0x01FFFD 07:FFED: FF        .byte $FF, $FF, $FF   ; 
-- - - - - - 0x020000 07:FFF0: FF        .byte $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF   ; 
 
 
 

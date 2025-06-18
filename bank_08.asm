@@ -14428,10 +14428,6 @@ bra_BFFB_RTS:
 - - - - - - 0x01400B 04:BFFB: 60        RTS
 
 
-; bzk garbage
-- - - - - - 0x01400C 04:BFFC: FF        .byte $FF, $FF, $FF, $FF   ; 
-
-
 
 .out .sprintf("Free bytes in bank 08: 0x%04X [%d]", ($C000 - *), ($C000 - *))
 
