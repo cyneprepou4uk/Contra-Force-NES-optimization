@@ -7053,7 +7053,8 @@ C - - - - - 0x01F362 07:F352: B9 89 F3  LDA tbl_F389,Y
 bra_F355:
 C - - - - - 0x01F365 07:F355: 85 36     STA ram_prg_banks_pair
 bra_F357_loop:
-C - - - - - 0x01F367 07:F357: 20 8E F3  JSR sub_F38E_clear_nmi_flag
+C - - - - - 0x01F367 07:F357: 20 8E F3  LDA #$00
+                                        STA ram_nmi_flag_2
 C - - - - - 0x01F36A 07:F35A: 20 62 F3  JSR sub_F362_switch_prg_bank_pair
 C - - - - - 0x01F36D 07:F35D: A5 C4     LDA ram_nmi_flag_2
 C - - - - - 0x01F36F 07:F35F: D0 F6     BNE bra_F357_loop
@@ -7093,14 +7094,6 @@ tbl_F389:
 - D 3 - - - 0x01F39B 07:F38B: 09        .byte con_prg_pair + $09   ; 02 stage 3
 - D 3 - - - 0x01F39C 07:F38C: 03        .byte con_prg_pair + $03   ; 03 stage 4
 - D 3 - - - 0x01F39D 07:F38D: 09        .byte con_prg_pair + $09   ; 04 stage 5
-
-
-
-sub_F38E_clear_nmi_flag:
-; bzk optimize, only 1 ref
-C - - - - - 0x01F39E 07:F38E: A9 00     LDA #$00
-C - - - - - 0x01F3A0 07:F390: 85 C4     STA ram_nmi_flag_2
-C - - - - - 0x01F3A2 07:F392: 60        RTS
 
 
 
