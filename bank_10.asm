@@ -16,11 +16,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 0 - - - 0x010010 04:8000: 08        .byte con_prg_bank + $10   ; 
-
-
-
 sub_8001_music_control_bytes_E0_FE:
 C D 0 - - - 0x010011 04:8001: 38        SEC
 C - - - - - 0x010012 04:8002: E9 E0     SBC #$E0

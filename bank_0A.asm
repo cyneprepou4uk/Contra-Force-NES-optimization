@@ -92,11 +92,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 0 - - - 0x014010 05:8000: 0B        .byte con_prg_bank + $0B   ; 
-
-
-
 .export tbl_0x014123
 tbl_0x014123:
 ; see con_8113

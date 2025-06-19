@@ -29,11 +29,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 1 - - - 0x00A010 02:A000: 05        .byte con_prg_bank + $05   ; 
-
-
-
 sub_0x00A011:
 C - - - - - 0x00A011 02:A001: A2 01     LDX #$01
 bra_A003_loop:

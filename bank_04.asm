@@ -144,11 +144,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 0 - - - 0x008010 02:8000: 04        .byte con_prg_bank + $04   ; 
-
-
-
 sub_0x008011:
 C D 0 - - - 0x008011 02:8001: A9 00     LDA #$00
 C - - - - - 0x008013 02:8003: 8D 40 03  STA ram_0340_flag

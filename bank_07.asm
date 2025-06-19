@@ -89,11 +89,6 @@
 
 
 
-; bzk garbage, unused bank id
-- D 1 - - - 0x00E010 03:A000: 07        .byte con_prg_bank + $07   ; 
-
-
-
 ofs_016_0x00E011_1E:
 C - - J - - 0x00E011 03:A001: A9 00     LDA #$00
 C - - - - - 0x00E013 03:A003: 20 5E A0  JSR sub_A05E
