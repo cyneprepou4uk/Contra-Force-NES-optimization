@@ -115,7 +115,7 @@ C - - - - - 0x01D054 07:D044: 60        RTS
 bra_D045:
 C - - - - - 0x01D055 07:D045: CA        DEX
 C - - - - - 0x01D056 07:D046: D0 14     BNE bra_D05C
-C - - - - - 0x01D058 07:D048: A9 07     LDA #con_prg_pair + $07
+C - - - - - 0x01D058 07:D048: A9 07     LDA #con_prg_pair + $01
 C - - - - - 0x01D05A 07:D04A: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D05D 07:D04D: 20 01 80  JSR sub_0x014011
 C - - - - - 0x01D060 07:D050: A5 22     LDA ram_0022_t02
@@ -162,7 +162,7 @@ C - - - - - 0x01D08D 07:D07D: 4C 60 D0  JMP loc_D060_prepare_next_script
 
 ofs_000_D080_04:
 ; con_0020_04
-C - - J - - 0x01D090 07:D080: A9 07     LDA #con_prg_pair + $07
+C - - J - - 0x01D090 07:D080: A9 07     LDA #con_prg_pair + $01
 C - - - - - 0x01D092 07:D082: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D095 07:D085: 4C 20 80  JMP loc_8020
 
@@ -1558,8 +1558,9 @@ tbl_D70D:
 
 
 ofs_001_D717_00:
-C - - J - - 0x01D727 07:D717: A9 07     LDA #$07    ; con_prg_pair + $07
+C - - J - - 0x01D727 07:D717: A9 07     LDA #$07
 C - - - - - 0x01D729 07:D719: 85 25     STA ram_disable_rendering_timer
+                                        LDA #con_prg_pair + $01
 C - - - - - 0x01D72B 07:D71B: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D72E 07:D71E: A2 0E     LDX #con_D22A_player_select
 C - - - - - 0x01D730 07:D720: 20 A8 D1  JSR sub_D1A8

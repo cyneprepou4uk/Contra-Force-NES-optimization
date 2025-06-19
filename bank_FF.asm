@@ -3729,8 +3729,6 @@ tbl_F389:
 
 tbl_F393_prg_pairs:
 ; see con_prg_pair
-; bzk optimize, 01 and 07 are the same
-; bzk optimize, 03 and 0B are the same
 ; 00 
 - D 3 - - - 0x01F3A3 07:F393: 00        .byte con_prg_bank + $00   ; 
 - D 3 - - - 0x01F3A4 07:F394: 01        .byte con_prg_bank + $01   ; 
@@ -3759,10 +3757,10 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3AF 07:F39F: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3B0 07:F3A0: 07        .byte con_prg_bank + $07   ; 
                                         .byte con_prg_bank + $1D   ; 
-; 07 
-- D 3 - - - 0x01F3B1 07:F3A1: 0A        .byte con_prg_bank + $0A   ; 
-- D 3 - - - 0x01F3B2 07:F3A2: 0B        .byte con_prg_bank + $0B   ; 
-                                        .byte con_prg_bank + $1D   ; 
+; 07 unused
+- D 3 - - - 0x01F3B1 07:F3A1: 0A        .byte con_prg_bank + $7F   ; 
+- D 3 - - - 0x01F3B2 07:F3A2: 0B        .byte con_prg_bank + $7F   ; 
+                                        .byte con_prg_bank + $7F   ; 
 ; 08 
 - D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $14   ; 
 - D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $15   ; 
@@ -3775,14 +3773,14 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3B7 07:F3A7: 00        .byte con_prg_bank + $00   ; 
 - D 3 - - - 0x01F3B8 07:F3A8: 03        .byte con_prg_bank + $03   ; 
                                         .byte con_prg_bank + $1D   ; 
-; 0B 
-- D 3 - - - 0x01F3B9 07:F3A9: 0C        .byte con_prg_bank + $0C   ; 
-- D 3 - - - 0x01F3BA 07:F3AA: 0D        .byte con_prg_bank + $0D   ; 
-                                        .byte con_prg_bank + $1D   ; 
-; 0C 
-- - - - - - 0x01F3BB 07:F3AB: 00        .byte con_prg_bank + $00   ; 
-- - - - - - 0x01F3BC 07:F3AC: 0D        .byte con_prg_bank + $0D   ; 
-                                        .byte con_prg_bank + $1D   ; 
+; 0B unused
+- D 3 - - - 0x01F3B9 07:F3A9: 0C        .byte con_prg_bank + $7F   ; 
+- D 3 - - - 0x01F3BA 07:F3AA: 0D        .byte con_prg_bank + $7F   ; 
+                                        .byte con_prg_bank + $7F   ; 
+; 0C unused
+- - - - - - 0x01F3BB 07:F3AB: 00        .byte con_prg_bank + $7F   ; 
+- - - - - - 0x01F3BC 07:F3AC: 0D        .byte con_prg_bank + $7F   ; 
+                                        .byte con_prg_bank + $7F   ; 
 ; 0D 
 - D 3 - - - 0x01F3BD 07:F3AD: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3BE 07:F3AE: 01        .byte con_prg_bank + $01   ; 
@@ -3862,7 +3860,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F409 07:F3F9: 02        .byte con_prg_pair + $02   ; 
 ; 0C con_F3D6_0C
 - D 3 - - - 0x01F40A 07:F3FA: 75 DA     .word ofs_006_0x01DA85_0C
-- D 3 - - - 0x01F40C 07:F3FC: 07        .byte con_prg_pair + $07   ; 
+- D 3 - - - 0x01F40C 07:F3FC: 07        .byte con_prg_pair + $01   ; 
 ; 0D con_F3D6_0D
 - D 3 - - - 0x01F40D 07:F3FD: 06 AF     .word ofs_006_0x016F16_0D
 - D 3 - - - 0x01F40F 07:F3FF: 01        .byte con_prg_pair + $01   ; 
@@ -3901,7 +3899,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F430 07:F420: 02        .byte con_prg_pair + $02   ; 
 ; 19 con_F3D6_19
 - D 3 - - - 0x01F431 07:F421: A8 D1     .word ofs_006_0x01D1B8_19
-- D 3 - - - 0x01F433 07:F423: 0B        .byte con_prg_pair + $0B   ; 
+- D 3 - - - 0x01F433 07:F423: 0B        .byte con_prg_pair + $03   ; 
 ; 1A con_F3D6_1A
 - D 3 - - - 0x01F434 07:F424: A8 D1     .word ofs_006_0x01D1B8_1A
 - D 3 - - - 0x01F436 07:F426: 09        .byte con_prg_pair + $09   ; 
@@ -3928,7 +3926,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F44B 07:F43B: 02        .byte con_prg_pair + $02   ; 
 ; 22 con_F3D6_22
 - D 3 - - - 0x01F44C 07:F43C: C9 BF     .word ofs_006_0x01BFD9_22
-- D 3 - - - 0x01F44E 07:F43E: 0B        .byte con_prg_pair + $0B   ; 
+- D 3 - - - 0x01F44E 07:F43E: 0B        .byte con_prg_pair + $03   ; 
 ; 23 con_F3D6_23
 - D 3 - - - 0x01F44F 07:F43F: 48 A0     .word ofs_006_0x00A058_23
 - D 3 - - - 0x01F451 07:F441: 02        .byte con_prg_pair + $02   ; 
