@@ -3731,6 +3731,39 @@ C - - - - - 0x009A87 02:9A77: 60        RTS
 
 
 
+.export sub_0x0091D5_add_to_pos_X
+sub_0x0091D5_add_to_pos_X:
+; in
+    ; A = how much to add
+C - - - - - 0x0091D5 02:91C5: 18        CLC
+C - - - - - 0x0091D6 02:91C6: 7D 4E 06  ADC ram_obj_pos_X,X
+.export loc_0x0091D9_set_pos_X
+loc_0x0091D9_set_pos_X:
+; bzk optimize
+C - - - - - 0x0091D9 02:91C9: 9D 4E 06  STA ram_obj_pos_X,X
+C - - - - - 0x0091DC 02:91CC: 60        RTS
+
+
+
+sub_93B1_06B2x_LSRx4_TAY:
+.export sub_0x0093C1_06B2x_LSRx4_TAY
+sub_0x0093C1_06B2x_LSRx4_TAY:
+C - - - - - 0x0093C1 02:93B1: BD B2 06  LDA ram_06B2_obj,X
+.export sub_0x0093C4_LSRx4_TAY
+sub_0x0093C4_LSRx4_TAY:
+; / 10
+C - - - - - 0x0093C4 02:93B4: 4A        LSR
+.export sub_0x0093C4_LSRx3_TAY
+sub_0x0093C4_LSRx3_TAY:
+; / 08
+C - - - - - 0x0093C5 02:93B5: 4A        LSR
+C - - - - - 0x0093C6 02:93B6: 4A        LSR
+C - - - - - 0x0093C7 02:93B7: 4A        LSR
+C - - - - - 0x0093C8 02:93B8: A8        TAY
+C - - - - - 0x0093C9 02:93B9: 60        RTS
+
+
+
 .out .sprintf("Free bytes in bank 1E: 0x%04X [%d]", ($8000 - *), ($8000 - *))
 
 
