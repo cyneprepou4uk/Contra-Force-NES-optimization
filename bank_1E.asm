@@ -836,11 +836,15 @@ C - - - - - 0x01D37E 07:D36E: D0 EA     BNE bra_D35A_RTS
 ; A = 00
 ; bzk optimize, useless STA
 C - - - - - 0x01D380 07:D370: 85 14     STA ram_0014_t11_useless
+                                        LDA #con_prg_pair + $08
+                                        CMP ram_prg_banks_pair
+                                        BEQ bra_D372_currently_same_bank
+                                        JSR sub_0x01F35C_prg_bankswitch
+bra_D372_currently_same_bank:
 C - - - - - 0x01D382 07:D372: A4 08     LDY ram_0008_t11_object_index
 C - - - - - 0x01D384 07:D374: B9 34 06  LDA ram_obj_animation_hi,Y
 C - - - - - 0x01D387 07:D377: 29 3C     AND #$3C
 C - - - - - 0x01D389 07:D379: 4A        LSR
-C - - - - - 0x01D38A 07:D37A: 20 F0 FB  JSR sub_0x01FC00
 C - - - - - 0x01D38D 07:D37D: A8        TAY
 C - - - - - 0x01D38E 07:D37E: A5 10     LDA ram_0010_t09_animation_id
 C - - - - - 0x01D390 07:D380: 0A        ASL

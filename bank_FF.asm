@@ -82,7 +82,6 @@
 .export sub_0x01F645_set_default_3_lives
 .export loc_0x01F645_set_default_3_lives
 .export sub_0x01F9A4
-.export sub_0x01FC00
 
 
 
@@ -3765,9 +3764,9 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3B2 07:F3A2: 0B        .byte con_prg_bank + $0B   ; 
                                         .byte con_prg_bank + $1D   ; 
 ; 08 
-- D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $00   ; 
-- D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $02   ; 
-                                        .byte con_prg_bank + $1D   ; 
+- D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $14   ; 
+- D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $15   ; 
+                                        .byte con_prg_bank + $16   ; 
 ; 09 
 - D 3 - - - 0x01F3B5 07:F3A5: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3B6 07:F3A6: 03        .byte con_prg_bank + $03   ; 
@@ -5401,39 +5400,6 @@ C - - - - - 0x01FBF9 07:FBE9: 9D 1A 06  STA ram_obj_animation_lo,X
 C - - - - - 0x01FBFC 07:FBEC: 20 C1 F6  JSR sub_F6C1
 bra_FBEF_RTS:
 C - - - - - 0x01FBFF 07:FBEF: 60        RTS
-
-
-
-sub_0x01FC00:
-C - - - - - 0x01FC00 07:FBF0: 48        PHA
-C - - - - - 0x01FC01 07:FBF1: 4A        LSR
-C - - - - - 0x01FC02 07:FBF2: A8        TAY
-C - - - - - 0x01FC03 07:FBF3: B9 FF FB  LDA tbl_FBFF_prg_banks_pair,Y
-C - - - - - 0x01FC06 07:FBF6: C5 36     CMP ram_prg_banks_pair
-C - - - - - 0x01FC08 07:FBF8: F0 03     BEQ bra_FBFD_currently_same_bank
-C - - - - - 0x01FC0A 07:FBFA: 20 4C F3  JSR sub_F34C_prg_bankswitch
-bra_FBFD_currently_same_bank:
-C - - - - - 0x01FC0D 07:FBFD: 68        PLA
-C - - - - - 0x01FC0E 07:FBFE: 60        RTS
-
-
-
-tbl_FBFF_prg_banks_pair:
-- D 3 - - - 0x01FC0F 07:FBFF: 00        .byte con_prg_pair + $00   ; 00 
-- D 3 - - - 0x01FC10 07:FC00: 08        .byte con_prg_pair + $08   ; 01 
-- D 3 - - - 0x01FC11 07:FC01: 08        .byte con_prg_pair + $08   ; 02 
-- D 3 - - - 0x01FC12 07:FC02: 00        .byte con_prg_pair + $00   ; 03 
-- D 3 - - - 0x01FC13 07:FC03: 00        .byte con_prg_pair + $00   ; 04 
-- D 3 - - - 0x01FC14 07:FC04: 00        .byte con_prg_pair + $00   ; 05 
-- D 3 - - - 0x01FC15 07:FC05: 00        .byte con_prg_pair + $00   ; 06 
-- D 3 - - - 0x01FC16 07:FC06: 00        .byte con_prg_pair + $00   ; 07 
-- D 3 - - - 0x01FC17 07:FC07: 08        .byte con_prg_pair + $08   ; 08 
-- D 3 - - - 0x01FC18 07:FC08: 00        .byte con_prg_pair + $00   ; 09 
-- D 3 - - - 0x01FC19 07:FC09: 00        .byte con_prg_pair + $00   ; 0A 
-- D 3 - - - 0x01FC1A 07:FC0A: 08        .byte con_prg_pair + $08   ; 0B 
-- D 3 - - - 0x01FC1B 07:FC0B: 08        .byte con_prg_pair + $08   ; 0C 
-- D 3 - - - 0x01FC1C 07:FC0C: 0A        .byte con_prg_pair + $0A   ; 0D 
-- - - - - - 0x01FC1D 07:FC0D: 00        .byte con_prg_pair + $00   ; 0E 
 
 
 
