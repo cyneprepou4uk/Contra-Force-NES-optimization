@@ -3757,10 +3757,10 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3AF 07:F39F: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3B0 07:F3A0: 07        .byte con_prg_bank + $07   ; 
                                         .byte con_prg_bank + $1D   ; 
-; 07 unused
-- D 3 - - - 0x01F3B1 07:F3A1: 0A        .byte con_prg_bank + $7F   ; 
-- D 3 - - - 0x01F3B2 07:F3A2: 0B        .byte con_prg_bank + $7F   ; 
-                                        .byte con_prg_bank + $7F   ; 
+; 07 
+- D 3 - - - 0x01F3B1 07:F3A1: 0A        .byte con_prg_bank + $08   ; 
+- D 3 - - - 0x01F3B2 07:F3A2: 0B        .byte con_prg_bank + $09   ; 
+                                        .byte con_prg_bank + $1D   ; 
 ; 08 
 - D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $14   ; 
 - D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $15   ; 
@@ -3887,7 +3887,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F424 07:F414: 01        .byte con_prg_pair + $01   ; 
 ; 15 con_F3D6_15
 - D 3 - - - 0x01F425 07:F415: 7D BA     .word ofs_006_0x003A8D_15
-- D 3 - - - 0x01F427 07:F417: 00        .byte con_prg_pair + $00   ; 
+- D 3 - - - 0x01F427 07:F417: 00        .byte con_prg_pair + $07   ; 
 ; 16 con_F3D6_16
 - D 3 - - - 0x01F428 07:F418: 72 97     .word ofs_006_0x009782_16
 - D 3 - - - 0x01F42A 07:F41A: 02        .byte con_prg_pair + $02   ; 

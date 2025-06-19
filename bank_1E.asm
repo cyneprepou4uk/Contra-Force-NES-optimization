@@ -1995,7 +1995,7 @@ C - - - - - 0x01D97F 07:D96F: 85 3E     STA ram_003E_brightness_counter
 bra_D971_RTS:
 C - - - - - 0x01D981 07:D971: 60        RTS
 bra_D972:
-C - - - - - 0x01D982 07:D972: A9 00     LDA #con_prg_pair + $00
+C - - - - - 0x01D982 07:D972: A9 00     LDA #con_prg_pair + $07
 C - - - - - 0x01D984 07:D974: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D987 07:D977: 20 7D BA  JSR sub_0x003A8D
 C - - - - - 0x01D98A 07:D97A: A5 6B     LDA ram_006B
