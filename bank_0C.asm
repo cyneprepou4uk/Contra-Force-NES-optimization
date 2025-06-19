@@ -16,7 +16,6 @@
 .export _off029_0x01B06A_06_stage_4
 .export _off030_0x01BC5A_06_stage_4
 .export _off012_0x01BD19_0C_pause
-.export ofs_006_0x01BFD9_22
 
 
 
@@ -4119,35 +4118,6 @@ _off012_0x01BD19_0C_pause:
 - D 1 - I - 0x01BFD7 06:BFC7: FF        .byte $FF   ; 
 
 - D 1 - I - 0x01BFD8 06:BFC8: FF        .byte $FF   ; end token
-
-
-
-ofs_006_0x01BFD9_22:
-; con_F3D6_22
-C - - J - - 0x01BFD9 06:BFC9: A2 00     LDX #$00
-C - - - - - 0x01BFDB 06:BFCB: A0 01     LDY #$01
-bra_BFCD_loop:
-C - - - - - 0x01BFDD 06:BFCD: BD 82 07  LDA ram_0782_unk,X
-C - - - - - 0x01BFE0 06:BFD0: F0 16     BEQ bra_BFE8
-C - - - - - 0x01BFE2 06:BFD2: BD 5D 03  LDA ram_035D_obj_pos_X,X
-C - - - - - 0x01BFE5 06:BFD5: D0 03     BNE bra_BFDA
-C - - - - - 0x01BFE7 06:BFD7: B9 5D 03  LDA ram_035D_obj_pos_X,Y
-bra_BFDA:
-C - - - - - 0x01BFEA 06:BFDA: 9D 4E 06  STA ram_obj_pos_X,X
-C - - - - - 0x01BFED 06:BFDD: BD 5F 03  LDA ram_035F_obj_pos_Y,X
-C - - - - - 0x01BFF0 06:BFE0: D0 03     BNE bra_BFE5
-C - - - - - 0x01BFF2 06:BFE2: B9 5F 03  LDA ram_035F_obj_pos_Y,Y
-bra_BFE5:
-C - - - - - 0x01BFF5 06:BFE5: 9D 68 06  STA ram_obj_pos_Y,X
-bra_BFE8:
-C - - - - - 0x01BFF8 06:BFE8: 88        DEY
-C - - - - - 0x01BFF9 06:BFE9: E8        INX
-C - - - - - 0x01BFFA 06:BFEA: E0 02     CPX #$02
-C - - - - - 0x01BFFC 06:BFEC: D0 DF     BNE bra_BFCD_loop
-C - - - - - 0x01BFFE 06:BFEE: E6 5B     INC ram_005B_script
-C - - - - - 0x01C000 06:BFF0: A9 03     LDA #$03
-C - - - - - 0x01C002 06:BFF2: 8D A1 05  STA ram_059E_se + $03
-C - - - - - 0x01C005 06:BFF5: 60        RTS
 
 
 
