@@ -101,8 +101,6 @@
 .export sub_0x00950E
 .export sub_0x009517_EOR_FF_CLC_ADC_01
 .export sub_0x00951D
-.export tbl_0x009574_sfx
-.export tbl_0x009583_sfx
 .export sub_0x009592
 .export loc_0x0095E8_play_music
 .export sub_0x0095E8_play_music
@@ -3961,44 +3959,6 @@ bra_955E:
 - - - - - - 0x00956F 02:955F: C0 04     CPY #$04
 - - - - - - 0x009571 02:9561: 90 F0     BCC bra_9553_loop
 - - - - - - 0x009573 02:9563: 60        RTS
-
-
-
-tbl_0x009574_sfx:
-- D 0 - - - 0x009574 02:9564: 0C        .byte con_music_0C   ; 01 
-- D 0 - - - 0x009575 02:9565: 10        .byte con_music_10   ; 02 
-- D 0 - - - 0x009576 02:9566: 14        .byte con_music_14   ; 03 
-- D 0 - - - 0x009577 02:9567: 18        .byte con_music_18   ; 04 
-- D 0 - - - 0x009578 02:9568: 18        .byte con_music_18   ; 05 
-- D 0 - - - 0x009579 02:9569: 2C        .byte con_music_2C   ; 06 
-- D 0 - - - 0x00957A 02:956A: 16        .byte con_music_16   ; 07 
-- D 0 - - - 0x00957B 02:956B: 0E        .byte con_music_0E   ; 08 
-- D 0 - - - 0x00957C 02:956C: FF        .byte $FF   ; 09 
-- D 0 - - - 0x00957D 02:956D: 2C        .byte con_music_2C   ; 0A 
-- - - - - - 0x00957E 02:956E: FF        .byte $FF   ; 0B 
-- D 0 - - - 0x00957F 02:956F: 12        .byte con_music_12   ; 0C 
-- D 0 - - - 0x009580 02:9570: 16        .byte con_music_16   ; 0D 
-- D 0 - - - 0x009581 02:9571: FF        .byte $FF   ; 0E 
-- D 0 - - - 0x009582 02:9572: FF        .byte $FF   ; 0F 
-
-
-
-tbl_0x009583_sfx:
-- D 0 - - - 0x009583 02:9573: 1E        .byte con_music_1E   ; 01 
-- D 0 - - - 0x009584 02:9574: FF        .byte $FF   ; 02 
-- D 0 - - - 0x009585 02:9575: 14        .byte con_music_14   ; 03 
-- D 0 - - - 0x009586 02:9576: 22        .byte con_music_22   ; 04 
-- D 0 - - - 0x009587 02:9577: 22        .byte con_music_22   ; 05 
-- D 0 - - - 0x009588 02:9578: 2C        .byte con_music_2C   ; 06 
-- - - - - - 0x009589 02:9579: FF        .byte $FF   ; 07 
-- D 0 - - - 0x00958A 02:957A: 20        .byte con_music_20   ; 08 
-- D 0 - - - 0x00958B 02:957B: FF        .byte $FF   ; 09 
-- D 0 - - - 0x00958C 02:957C: 2C        .byte con_music_2C   ; 0A 
-- - - - - - 0x00958D 02:957D: FF        .byte $FF   ; 0B 
-- D 0 - - - 0x00958E 02:957E: 12        .byte con_music_12   ; 0C 
-- - - - - - 0x00958F 02:957F: FF        .byte $FF   ; 0D 
-- D 0 - - - 0x009590 02:9580: FF        .byte $FF   ; 0E 
-- D 0 - - - 0x009591 02:9581: 22        .byte con_music_22   ; 0F 
 
 
 

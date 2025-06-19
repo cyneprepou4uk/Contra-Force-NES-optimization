@@ -958,11 +958,11 @@ C - - - - - 0x003818 00:B808: BD 82 06  LDA ram_0682_obj,X
 C - - - - - 0x00381B 00:B80B: 30 15     BMI bra_B822
 C - - - - - 0x00381D 00:B80D: 20 41 91  JSR sub_0x009151_0682x_and_0F
 C - - - - - 0x003820 00:B810: A8        TAY
-C - - - - - 0x003821 00:B811: B9 63 95  LDA tbl_0x009574_sfx - $01,Y
+C - - - - - 0x003821 00:B811: B9 63 95  LDA tbl_9564_sfx - $01,Y
 C - - - - - 0x003824 00:B814: E0 12     CPX #$12
 C - - - - - 0x003826 00:B816: 90 03     BCC bra_B81B
 ; X = 12+
-C - - - - - 0x003828 00:B818: B9 72 95  LDA tbl_0x009583_sfx - $01,Y
+C - - - - - 0x003828 00:B818: B9 72 95  LDA tbl_9573_sfx - $01,Y
 bra_B81B:
 C - - - - - 0x00382B 00:B81B: C9 FF     CMP #$FF
 C - - - - - 0x00382D 00:B81D: F0 03     BEQ bra_B822
@@ -992,6 +992,44 @@ C - - - - - 0x003857 00:B847: 85 00     STA ram_0000_t15_jmp
 C - - - - - 0x003859 00:B849: B9 B0 B8  LDA tbl_B8B1 - $01,Y
 C - - - - - 0x00385C 00:B84C: 85 01     STA ram_0000_t15_jmp + $01
 C - - - - - 0x00385E 00:B84E: 6C 00 00  JMP (ram_0000_t15_jmp)
+
+
+
+tbl_9564_sfx:
+- D 0 - - - 0x009574 02:9564: 0C        .byte con_music_0C   ; 01 
+- D 0 - - - 0x009575 02:9565: 10        .byte con_music_10   ; 02 
+- D 0 - - - 0x009576 02:9566: 14        .byte con_music_14   ; 03 
+- D 0 - - - 0x009577 02:9567: 18        .byte con_music_18   ; 04 
+- D 0 - - - 0x009578 02:9568: 18        .byte con_music_18   ; 05 
+- D 0 - - - 0x009579 02:9569: 2C        .byte con_music_2C   ; 06 
+- D 0 - - - 0x00957A 02:956A: 16        .byte con_music_16   ; 07 
+- D 0 - - - 0x00957B 02:956B: 0E        .byte con_music_0E   ; 08 
+- D 0 - - - 0x00957C 02:956C: FF        .byte $FF   ; 09 
+- D 0 - - - 0x00957D 02:956D: 2C        .byte con_music_2C   ; 0A 
+- - - - - - 0x00957E 02:956E: FF        .byte $FF   ; 0B 
+- D 0 - - - 0x00957F 02:956F: 12        .byte con_music_12   ; 0C 
+- D 0 - - - 0x009580 02:9570: 16        .byte con_music_16   ; 0D 
+- D 0 - - - 0x009581 02:9571: FF        .byte $FF   ; 0E 
+- D 0 - - - 0x009582 02:9572: FF        .byte $FF   ; 0F 
+
+
+
+tbl_9573_sfx:
+- D 0 - - - 0x009583 02:9573: 1E        .byte con_music_1E   ; 01 
+- D 0 - - - 0x009584 02:9574: FF        .byte $FF   ; 02 
+- D 0 - - - 0x009585 02:9575: 14        .byte con_music_14   ; 03 
+- D 0 - - - 0x009586 02:9576: 22        .byte con_music_22   ; 04 
+- D 0 - - - 0x009587 02:9577: 22        .byte con_music_22   ; 05 
+- D 0 - - - 0x009588 02:9578: 2C        .byte con_music_2C   ; 06 
+- - - - - - 0x009589 02:9579: FF        .byte $FF   ; 07 
+- D 0 - - - 0x00958A 02:957A: 20        .byte con_music_20   ; 08 
+- D 0 - - - 0x00958B 02:957B: FF        .byte $FF   ; 09 
+- D 0 - - - 0x00958C 02:957C: 2C        .byte con_music_2C   ; 0A 
+- - - - - - 0x00958D 02:957D: FF        .byte $FF   ; 0B 
+- D 0 - - - 0x00958E 02:957E: 12        .byte con_music_12   ; 0C 
+- - - - - - 0x00958F 02:957F: FF        .byte $FF   ; 0D 
+- D 0 - - - 0x009590 02:9580: FF        .byte $FF   ; 0E 
+- D 0 - - - 0x009591 02:9581: 22        .byte con_music_22   ; 0F 
 
 
 
