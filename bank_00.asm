@@ -7,7 +7,6 @@
 
 
 .export sub_0x003315
-.export sub_0x003393
 .export sub_0x0037C0
 .export sub_0x003A8D
 .export ofs_006_0x003A8D_15
@@ -97,7 +96,6 @@ sub_B37D:
 C - - - - - 0x00338D 00:B37D: 20 E2 91  JSR sub_0x0091F2
 C - - - - - 0x003390 00:B380: 9D B2 06  STA ram_06B2_obj,X
 sub_B383:
-sub_0x003393:
 C - - - - - 0x003393 00:B383: A9 FF     LDA #$FF
 C - - - - - 0x003395 00:B385: 4C 38 98  JMP loc_0x009848
 

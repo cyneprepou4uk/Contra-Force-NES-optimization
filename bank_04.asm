@@ -3410,7 +3410,8 @@ C - - - - - 0x0091E7 02:91D7: A9 00     LDA #$00
 C - - - - - 0x0091E9 02:91D9: 9D B2 06  STA ram_06B2_obj,X
 C - - - - - 0x0091EC 02:91DC: 9D 20 07  STA ram_0720_obj,X
 loc_0x0091EF:
-C D 0 - - - 0x0091EF 02:91DF: 20 83 B3  JSR sub_0x003393
+C D 0 - - - 0x0091EF 02:91DF: 20 83 B3  LDA #$FF
+                                        JSR sub_9838
 sub_0x0091F2:
 C - - - - - 0x0091F2 02:91E2: A9 00     LDA #$00
 loc_91E4:
@@ -4489,6 +4490,7 @@ C - - - - - 0x009846 02:9836: D0 04     BNE bra_983C
 ; FE
 bra_9838:
 loc_9838:
+sub_9838:
 loc_0x009848:
 ; in
     ; A = 
