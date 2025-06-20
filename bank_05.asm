@@ -147,7 +147,6 @@ C - - - - - 0x00A0B1 02:A0A1: 60        RTS
 
 
 sub_A0A2_07AAx_AND_0F:
-sub_A0A2:
 C - - - - - 0x00A0B2 02:A0A2: BD AA 07  LDA ram_07AA_unk,X
 C - - - - - 0x00A0B5 02:A0A5: 29 0F     AND #$0F
 C - - - - - 0x00A0B7 02:A0A7: 60        RTS
@@ -2447,12 +2446,12 @@ C - - - - - 0x00AD8F 02:AD7F: 90 0D     BCC bra_AD8E
 C - - - - - 0x00AD91 02:AD81: C9 B8     CMP #$B8
 C - - - - - 0x00AD93 02:AD83: 90 16     BCC bra_AD9B
 bra_AD85:
-- - - - - - 0x00AD95 02:AD85: 20 A2 A0  JSR sub_A0A2
+- - - - - - 0x00AD95 02:AD85: 20 A2 A0  JSR sub_A0A2_07AAx_AND_0F
 - - - - - - 0x00AD98 02:AD88: C9 05     CMP #$05
 - - - - - - 0x00AD9A 02:AD8A: B0 09     BCS bra_AD95
 - - - - - - 0x00AD9C 02:AD8C: 90 0D     BCC bra_AD9B    ; jmp
 bra_AD8E:
-- - - - - - 0x00AD9E 02:AD8E: 20 A2 A0  JSR sub_A0A2
+- - - - - - 0x00AD9E 02:AD8E: 20 A2 A0  JSR sub_A0A2_07AAx_AND_0F
 - - - - - - 0x00ADA1 02:AD91: C9 06     CMP #$06
 - - - - - - 0x00ADA3 02:AD93: B0 06     BCS bra_AD9B
 bra_AD95:
