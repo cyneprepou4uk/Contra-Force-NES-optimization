@@ -3121,15 +3121,8 @@ tbl_B155:
 - D 1 - - - 0x00B169 02:B159: A1 B1     .word _off021_B1A1_04_stage_3
 
 
-; bzk garbage 0x00AF21
-- - - - - - 0x00B16B 02:B15B: 5F B1     .word _off021_B15F_06_stage_4
-- - - - - - 0x00B16D 02:B15D: 5F B1     .word _off021_B15F_08_stage_5
-
-
 
 _off021_B15F_02_stage_2:
-_off021_B15F_06_stage_4:
-_off021_B15F_08_stage_5:
 - D 1 - I - 0x00B16F 02:B15F: 05        .byte $05   ; 
 - - - - - - 0x00B170 02:B160: 00        .byte $00   ; 
 - D 1 - I - 0x00B171 02:B161: 01        .byte $01   ; 
