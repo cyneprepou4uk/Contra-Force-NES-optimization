@@ -107,7 +107,6 @@
 .export sub_0x00962E
 .export loc_0x009657
 .export sub_0x009657
-.export loc_0x009672
 .export sub_0x00968C
 .export sub_0x0096CA
 .export sub_0x009710
@@ -4098,27 +4097,6 @@ C - - - - - 0x009667 02:9657: BD B2 06  LDA ram_06B2_obj,X
 C - - - - - 0x00966A 02:965A: 85 06     STA ram_0006_t11
 C - - - - - 0x00966C 02:965C: 20 BA 96  JSR sub_96BA
 C - - - - - 0x00966F 02:965F: 4C 2D 96  JMP loc_962D
-
-
-
-loc_0x009672:
-C D 0 - - - 0x009672 02:9662: BD BE 07  LDA ram_07BE_unk,X
-; * 04
-C - - - - - 0x009675 02:9665: 0A        ASL
-C - - - - - 0x009676 02:9666: 0A        ASL
-C - - - - - 0x009677 02:9667: A8        TAY
-C - - - - - 0x009678 02:9668: B1 00     LDA (ram_0000_t08_data),Y
-C - - - - - 0x00967A 02:966A: C8        INY
-C - - - - - 0x00967B 02:966B: 85 02     STA ram_0002_t09_lo
-C - - - - - 0x00967D 02:966D: B1 00     LDA (ram_0000_t08_data),Y
-C - - - - - 0x00967F 02:966F: C8        INY
-C - - - - - 0x009680 02:9670: 85 03     STA ram_0003_t02
-C - - - - - 0x009682 02:9672: B1 00     LDA (ram_0000_t08_data),Y
-C - - - - - 0x009684 02:9674: C8        INY
-C - - - - - 0x009685 02:9675: 85 04     STA ram_0004_t04
-C - - - - - 0x009687 02:9677: B1 00     LDA (ram_0000_t08_data),Y
-C - - - - - 0x009689 02:9679: 85 05     STA ram_0005_t01
-C - - - - - 0x00968B 02:967B: 60        RTS
 
 
 
