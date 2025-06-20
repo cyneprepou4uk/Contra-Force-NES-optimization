@@ -59,8 +59,6 @@
 
 
 sub_0x01D009:
-C - - - - - 0x01D009 07:CFF9: A9 0A     LDA #con_prg_pair + $0A
-C - - - - - 0x01D00B 07:CFFB: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D00E 07:CFFE: 20 EE BF  JSR sub_BFEE_copy_buttons
 C - - - - - 0x01D011 07:D001: E6 23     INC ram_frm_cnt
 C - - - - - 0x01D013 07:D003: A0 3D     LDY #$3D
@@ -380,8 +378,6 @@ C - - - - - 0x01D0B6 07:D0A6: 29 FC     AND #$FC
 C - - - - - 0x01D0B8 07:D0A8: 85 FF     STA ram_for_2000
 C - - - - - 0x01D0BA 07:D0AA: A9 7C     LDA #con_chr_bank + $7C
 C - - - - - 0x01D0BC 07:D0AC: 85 77     STA ram_chr_bank
-C - - - - - 0x01D0BE 07:D0AE: A9 0A     LDA #con_prg_pair + $0A
-C - - - - - 0x01D0C0 07:D0B0: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D0C3 07:D0B3: 20 94 BF  JSR sub_BF94_clear_data
 C - - - - - 0x01D0C6 07:D0B6: 20 97 D1  JSR sub_D197
 C - - - - - 0x01D0C9 07:D0B9: 20 27 F3  JSR sub_0x01F337
