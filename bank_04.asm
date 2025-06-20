@@ -101,7 +101,6 @@
 .export sub_0x0095E8_play_music
 .export sub_0x0095ED
 .export loc_0x0095F9_06B2x_EOR_80
-.export loc_0x0095FE_sta_06B2x
 .export sub_0x009602
 .export sub_0x00961A
 .export loc_0x00962E
@@ -3211,7 +3210,8 @@ C - - - - - 0x009125 02:9115: 65 0D     ADC ram_000D_t02
 C - - - - - 0x009127 02:9117: 85 0D     STA ram_000D_t02
 bra_9119:
 C - - - - - 0x009129 02:9119: A5 0D     LDA ram_000D_t02
-C - - - - - 0x00912B 02:911B: 4C EE 95  JMP loc_95EE
+C - - - - - 0x00912B 02:911B: 4C EE 95  STA ram_06B2_obj,X
+                                        RTS
 
 
 
@@ -3389,7 +3389,8 @@ C - - - - - 0x00920F 02:91FF: 85 6D     STA ram_006D
 sub_9201:
 C - - - - - 0x009211 02:9201: 20 72 91  JSR sub_0x009182_06B2x_AND_0F
 C - - - - - 0x009214 02:9204: 05 6D     ORA ram_006D
-C - - - - - 0x009216 02:9206: 4C EE 95  JMP loc_95EE
+C - - - - - 0x009216 02:9206: 4C EE 95  STA ram_06B2_obj,X
+                                        RTS
 
 
 
@@ -4015,8 +4016,6 @@ sub_95E9_06B2x_EOR_80:
 loc_0x0095F9_06B2x_EOR_80:
 C D 0 - - - 0x0095F9 02:95E9: BD B2 06  LDA ram_06B2_obj,X
 C - - - - - 0x0095FC 02:95EC: 49 80     EOR #$80
-loc_95EE:
-loc_0x0095FE_sta_06B2x:
 C D 0 - - - 0x0095FE 02:95EE: 9D B2 06  STA ram_06B2_obj,X
 C - - - - - 0x009601 02:95F1: 60        RTS
 
@@ -4025,7 +4024,8 @@ C - - - - - 0x009601 02:95F1: 60        RTS
 sub_95F2:
 sub_0x009602:
 C - - - - - 0x009602 02:95F2: 20 7D 91  JSR sub_917D_06B2x_AND_F0
-C - - - - - 0x009605 02:95F5: 4C EE 95  JMP loc_95EE
+C - - - - - 0x009605 02:95F5: 4C EE 95  STA ram_06B2_obj,X
+                                        RTS
 
 
 ; bzk garbage

@@ -4621,7 +4621,8 @@ bra_B80D:
 C - - - - - 0x00F81D 03:B80D: 20 14 B8  JSR sub_B814
 bra_B810:
 C - - - - - 0x00F820 03:B810: 68        PLA
-C - - - - - 0x00F821 03:B811: 4C EE 95  JMP loc_0x0095FE_sta_06B2x
+C - - - - - 0x00F821 03:B811: 4C EE 95  STA ram_06B2_obj,X
+                                        RTS
 
 
 

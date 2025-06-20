@@ -4512,7 +4512,8 @@ C - - - - - 0x00B7E8 02:B7D8: D0 05     BNE bra_B7DF
 C - - - - - 0x00B7EA 02:B7DA: BD B2 06  LDA ram_06B2_obj,X
 C - - - - - 0x00B7ED 02:B7DD: 29 F0     AND #$F0
 bra_B7DF:
-C - - - - - 0x00B7EF 02:B7DF: 4C EE 95  JMP loc_0x0095FE_sta_06B2x
+C - - - - - 0x00B7EF 02:B7DF: 4C EE 95  STA ram_06B2_obj,X
+                                        RTS
 
 
 
@@ -4851,7 +4852,8 @@ bra_B94E:
 C - - - - - 0x00B95E 02:B94E: 20 D4 B9  JSR sub_B9D4
 C - - - - - 0x00B961 02:B951: A9 00     LDA #$00
 bra_B953:
-C - - - - - 0x00B963 02:B953: 4C EE 95  JMP loc_0x0095FE_sta_06B2x
+C - - - - - 0x00B963 02:B953: 4C EE 95  STA ram_06B2_obj,X
+                                        RTS
 bra_B956:
 - - - - - - 0x00B966 02:B956: 4C 17 9A  JMP loc_0x009A27
 bra_B959:
