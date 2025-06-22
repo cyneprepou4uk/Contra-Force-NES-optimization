@@ -99,7 +99,6 @@
 .export loc_0x0095E8_play_music
 .export sub_0x0095E8_play_music
 .export sub_0x0095ED
-.export loc_0x0095F9_06B2x_EOR_80
 .export sub_0x009602
 .export sub_0x00961A
 .export loc_0x00962E
@@ -1073,7 +1072,9 @@ tbl_8550_score:
 ofs_017_8561_06:
 C - - J - - 0x008571 02:8561: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x008574 02:8564: 30 11     BMI bra_8577
-C - - - - - 0x008576 02:8566: 20 E9 95  JSR sub_95E9_06B2x_EOR_80
+C - - - - - 0x008576 02:8566: 20 E9 95  LDA ram_06B2_obj,X
+                                        EOR #$80
+                                        STA ram_06B2_obj,X
 C - - - - - 0x008579 02:8569: 20 1B 84  JSR sub_0x00842B_000A_ASL_TAY
 C - - - - - 0x00857C 02:856C: B9 7A 85  LDA tbl_857A,Y
 C - - - - - 0x00857F 02:856F: F0 06     BEQ bra_8577
@@ -4018,16 +4019,8 @@ C - - - - - 0x0095ED 02:95DD: 84 00     STY ram_0000_t63
 C - - - - - 0x0095EF 02:95DF: BD 34 06  LDA ram_obj_animation_hi,X
 C - - - - - 0x0095F2 02:95E2: 29 FC     AND #$FC
 C - - - - - 0x0095F4 02:95E4: 05 00     ORA ram_0000_t63
-C - - - - - 0x0095F6 02:95E6: 4C 6F 98  JMP loc_986F
-
-
-
-sub_95E9_06B2x_EOR_80:
-loc_0x0095F9_06B2x_EOR_80:
-C D 0 - - - 0x0095F9 02:95E9: BD B2 06  LDA ram_06B2_obj,X
-C - - - - - 0x0095FC 02:95EC: 49 80     EOR #$80
-C D 0 - - - 0x0095FE 02:95EE: 9D B2 06  STA ram_06B2_obj,X
-C - - - - - 0x009601 02:95F1: 60        RTS
+C - - - - - 0x0095F6 02:95E6: 4C 6F 98  STA ram_obj_animation_hi,X
+                                        RTS
 
 
 
@@ -4434,7 +4427,6 @@ C - - - - - 0x009876 02:9866: 85 10     STA ram_0010_t05
 C - - - - - 0x009878 02:9868: BD 34 06  LDA ram_obj_animation_hi,X
 C - - - - - 0x00987B 02:986B: 29 C3     AND #$C3
 C - - - - - 0x00987D 02:986D: 05 10     ORA ram_0010_t05
-loc_986F:
 C D 0 - - - 0x00987F 02:986F: 9D 34 06  STA ram_obj_animation_hi,X
 C - - - - - 0x009882 02:9872: 60        RTS
 

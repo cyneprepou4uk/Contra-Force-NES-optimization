@@ -682,7 +682,10 @@ C - - - - - 0x005F7F 01:BF6F: A0 00     LDY #$00
 C - - - - - 0x005F81 01:BF71: 20 BC 8F  JSR sub_0x008FCC
 C - - - - - 0x005F84 01:BF74: B0 0E     BCS bra_BF84_RTS
 bra_BF76:
-C - - - - - 0x005F86 01:BF76: 4C E9 95  JMP loc_0x0095F9_06B2x_EOR_80
+C - - - - - 0x005F86 01:BF76: 4C E9 95  LDA ram_06B2_obj,X
+                                        EOR #$80
+                                        STA ram_06B2_obj,X
+                                        RTS
 bra_BF79:
 C - - - - - 0x005F89 01:BF79: 4C 17 9A  JMP loc_0x009A27
 bra_BF7C:
