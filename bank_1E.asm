@@ -4199,6 +4199,21 @@ C - - - - - 0x00A0B7 02:A0A7: 60        RTS
 
 
 
+sub_9758:
+sub_0x009768:
+.export sub_0x009768
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
+C - - - - - 0x009768 02:9758: AD 82 07  LDA ram_0782_unk
+C - - - - - 0x00976B 02:975B: 18        CLC
+C - - - - - 0x00976C 02:975C: 6D 83 07  ADC ram_0782_unk + $01
+C - - - - - 0x00976F 02:975F: C9 5C     CMP #$5C
+C - - - - - 0x009771 02:9761: 60        RTS
+
+
+
 .out .sprintf("Free bytes in bank 1E: 0x%04X [%d]", ($8000 - *), ($8000 - *))
 
 

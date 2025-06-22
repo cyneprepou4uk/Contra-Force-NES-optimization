@@ -111,7 +111,6 @@
 .export sub_0x00972F
 .export loc_0x009747
 .export loc_0x00974A
-.export sub_0x009768
 .export sub_0x009772
 .export loc_0x009772
 .export ofs_006_0x009782_16
@@ -4247,18 +4246,8 @@ C - - - - - 0x00975D 02:974D: 9D 9C 06  STA ram_069C_obj,X
 C - - - - - 0x009760 02:9750: 9D 0A 07  STA ram_070A_obj,X
 C - - - - - 0x009763 02:9753: 9D 78 07  STA ram_0778_unk,X
 C - - - - - 0x009766 02:9756: 38        SEC
-C - - - - - 0x009767 02:9757: 60        RTS
-
-
-
-sub_9758:
-sub_0x009768:
-C - - - - - 0x009768 02:9758: AD 82 07  LDA ram_0782_unk
-C - - - - - 0x00976B 02:975B: 18        CLC
-C - - - - - 0x00976C 02:975C: 6D 83 07  ADC ram_0782_unk + $01
-C - - - - - 0x00976F 02:975F: C9 5C     CMP #$5C
 bra_9761_RTS:
-C - - - - - 0x009771 02:9761: 60        RTS
+C - - - - - 0x009767 02:9757: 60        RTS
 
 
 
@@ -5245,7 +5234,7 @@ C - - - - - 0x009E78 02:9E68: 90 E9     BCC bra_9E53
 C - - - - - 0x009E7A 02:9E6A: 85 00     STA ram_0000_t75
 C - - - - - 0x009E7C 02:9E6C: C9 03     CMP #$03
 C - - - - - 0x009E7E 02:9E6E: F0 05     BEQ bra_9E75
-C - - - - - 0x009E80 02:9E70: 20 58 97  JSR sub_9758
+C - - - - - 0x009E80 02:9E70: 20 58 97  JSR sub_0x009768
 C - - - - - 0x009E83 02:9E73: B0 DE     BCS bra_9E53
 bra_9E75:
 C - - - - - 0x009E85 02:9E75: 38        SEC
@@ -5265,7 +5254,7 @@ C - - - - - 0x009E8E 02:9E7E: F0 0C     BEQ bra_9E8C
 C - - - - - 0x009E90 02:9E80: A9 10     LDA #$10    ; active flag
 C - - - - - 0x009E92 02:9E82: 20 96 9E  JSR sub_9E96
 C - - - - - 0x009E95 02:9E85: B0 47     BCS bra_9ECE
-C - - - - - 0x009E97 02:9E87: 20 58 97  JSR sub_9758
+C - - - - - 0x009E97 02:9E87: 20 58 97  JSR sub_0x009768
 C - - - - - 0x009E9A 02:9E8A: 90 46     BCC bra_9ED2_RTS
 bra_9E8C:
 - - - - - - 0x009E9C 02:9E8C: C8        INY
