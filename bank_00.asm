@@ -154,7 +154,9 @@ C - - - - - 0x0033F5 00:B3E5: F0 1D     BEQ bra_B404
 C - - - - - 0x0033F7 00:B3E7: 85 18     STA ram_0018_t10
 C - - - - - 0x0033F9 00:B3E9: BD 4E 06  LDA ram_obj_pos_X,X
 C - - - - - 0x0033FC 00:B3EC: 10 09     BPL bra_B3F7
-C - - - - - 0x0033FE 00:B3EE: 20 07 95  JSR sub_0x009517_EOR_FF_CLC_ADC_01
+C - - - - - 0x0033FE 00:B3EE: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 C - - - - - 0x003401 00:B3F1: C5 18     CMP ram_0018_t10
 C - - - - - 0x003403 00:B3F3: 90 D6     BCC bra_B3CB
 C - - - - - 0x003405 00:B3F5: B0 0D     BCS bra_B404    ; jmp

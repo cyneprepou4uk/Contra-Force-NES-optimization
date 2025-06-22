@@ -5055,7 +5055,9 @@ C - - - - - 0x00BAB2 02:BAA2: 60        RTS
 sub_BAA3:
 C - - - - - 0x00BAB3 02:BAA3: BD BE 07  LDA ram_07BE_unk,X
 C - - - - - 0x00BAB6 02:BAA6: 10 03     BPL bra_BAAB
-C - - - - - 0x00BAB8 02:BAA8: 20 07 95  JSR sub_0x009517_EOR_FF_CLC_ADC_01
+C - - - - - 0x00BAB8 02:BAA8: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 bra_BAAB:
 C - - - - - 0x00BABB 02:BAAB: C9 04     CMP #$04
 bra_BAAD_RTS:

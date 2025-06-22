@@ -94,7 +94,6 @@
 .export sub_0x0094D5
 .export sub_0x009504
 .export sub_0x00950E
-.export sub_0x009517_EOR_FF_CLC_ADC_01
 .export sub_0x00951D
 .export sub_0x009592
 .export loc_0x0095E8_play_music
@@ -1213,7 +1212,9 @@ C - - - - - 0x00862D 02:861D: E9 04     SBC #$04
 C - - - - - 0x00862F 02:861F: C9 08     CMP #$08
 C - - - - - 0x008631 02:8621: B0 07     BCS bra_862A
 C - - - - - 0x008633 02:8623: A5 0A     LDA ram_000A_t06
-C - - - - - 0x008635 02:8625: 20 07 95  JSR sub_9507_EOR_FF_CLC_ADC_01
+C - - - - - 0x008635 02:8625: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 C - - - - - 0x008638 02:8628: 85 0A     STA ram_000A_t06
 bra_862A:
 C - - - - - 0x00863A 02:862A: BD B2 06  LDA ram_06B2_obj,X
@@ -2085,7 +2086,9 @@ C - - - - - 0x008AE3 02:8AD3: 29 3F     AND #$3F
 C - - - - - 0x008AE5 02:8AD5: C9 20     CMP #$20
 C - - - - - 0x008AE7 02:8AD7: 90 05     BCC bra_8ADE
 C - - - - - 0x008AE9 02:8AD9: 09 C0     ORA #$C0
-C - - - - - 0x008AEB 02:8ADB: 20 07 95  JSR sub_9507_EOR_FF_CLC_ADC_01
+C - - - - - 0x008AEB 02:8ADB: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 bra_8ADE:
 C - - - - - 0x008AEE 02:8ADE: 85 0E     STA ram_000E_t03_lo
 C - - - - - 0x008AF0 02:8AE0: A9 00     LDA #$00
@@ -2243,7 +2246,9 @@ C - - - - - 0x008BB5 02:8BA5: A5 14     LDA ram_0014_t04_hi
 C - - - - - 0x008BB7 02:8BA7: 49 FF     EOR #$FF
 C - - - - - 0x008BB9 02:8BA9: 85 14     STA ram_0014_t04_hi
 C - - - - - 0x008BBB 02:8BAB: A5 13     LDA ram_0013_t03_lo
-C - - - - - 0x008BBD 02:8BAD: 20 07 95  JSR sub_9507_EOR_FF_CLC_ADC_01
+C - - - - - 0x008BBD 02:8BAD: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 C - - - - - 0x008BC0 02:8BB0: 85 13     STA ram_0013_t03_lo
 C - - - - - 0x008BC2 02:8BB2: 90 02     BCC bra_8BB6_RTS
 C - - - - - 0x008BC4 02:8BB4: E6 14     INC ram_0014_t04_hi
@@ -3193,7 +3198,9 @@ C - - - - - 0x00910E 02:90FE: 08        PHP
 C - - - - - 0x00910F 02:90FF: 26 00     ROL ram_0000_temp
 C - - - - - 0x009111 02:9101: 28        PLP
 C - - - - - 0x009112 02:9102: B0 03     BCS bra_9107
-C - - - - - 0x009114 02:9104: 20 07 95  JSR sub_9507_EOR_FF_CLC_ADC_01
+C - - - - - 0x009114 02:9104: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 bra_9107:
 C - - - - - 0x009117 02:9107: C9 80     CMP #$80
 C - - - - - 0x009119 02:9109: 2A        ROL
@@ -3410,7 +3417,9 @@ C - - - - - 0x00922F 02:921F: A5 11     LDA ram_0011_t05_pos_Y
 C - - - - - 0x009231 02:9221: 38        SEC
 C - - - - - 0x009232 02:9222: E5 13     SBC ram_0013_t09_pos_Y
 C - - - - - 0x009234 02:9224: B0 05     BCS bra_922B
-C - - - - - 0x009236 02:9226: 20 07 95  JSR sub_9507_EOR_FF_CLC_ADC_01
+C - - - - - 0x009236 02:9226: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 C - - - - - 0x009239 02:9229: E6 14     INC ram_0014_t05   ; -> 01
 bra_922B:
 C - - - - - 0x00923B 02:922B: 85 13     STA ram_0013_t05_pos_Y_distance
@@ -3422,7 +3431,9 @@ C - - - - - 0x009244 02:9234: A5 10     LDA ram_0010_t04_pos_X
 C - - - - - 0x009246 02:9236: 38        SEC
 C - - - - - 0x009247 02:9237: E5 12     SBC ram_0012_t06_pos_X
 C - - - - - 0x009249 02:9239: B0 05     BCS bra_9240
-C - - - - - 0x00924B 02:923B: 20 07 95  JSR sub_9507_EOR_FF_CLC_ADC_01
+C - - - - - 0x00924B 02:923B: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 C - - - - - 0x00924E 02:923E: E6 15     INC ram_0015_t01    ; -> 01
 bra_9240:
 C - - - - - 0x009250 02:9240: 85 12     STA ram_0012_t07_pos_X_distance
@@ -3442,7 +3453,9 @@ C - - - - - 0x009262 02:9252: A5 14     LDA ram_0014_t05
 C - - - - - 0x009264 02:9254: C5 15     CMP ram_0015_t01
 C - - - - - 0x009266 02:9256: F0 07     BEQ bra_925F
 C - - - - - 0x009268 02:9258: A5 6D     LDA ram_006D
-C - - - - - 0x00926A 02:925A: 20 07 95  JSR sub_9507_EOR_FF_CLC_ADC_01
+C - - - - - 0x00926A 02:925A: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 C - - - - - 0x00926D 02:925D: 85 6D     STA ram_006D
 bra_925F:
 C - - - - - 0x00926F 02:925F: A5 15     LDA ram_0015_t01
@@ -3845,8 +3858,6 @@ C - - - - - 0x009511 02:9501: 38        SEC
 C - - - - - 0x009512 02:9502: F9 68 06  SBC ram_obj_pos_Y,Y
 loc_9505:
 C D 0 - - - 0x009515 02:9505: B0 1C     BCS bra_9523_RTS
-sub_9507_EOR_FF_CLC_ADC_01:
-sub_0x009517_EOR_FF_CLC_ADC_01:
 C - - - - - 0x009517 02:9507: 49 FF     EOR #$FF
 C - - - - - 0x009519 02:9509: 18        CLC
 C - - - - - 0x00951A 02:950A: 69 01     ADC #$01

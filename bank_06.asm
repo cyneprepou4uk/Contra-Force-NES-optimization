@@ -672,10 +672,14 @@ C - - - - - 0x00C3BE 03:A3AE: 99 B2 06  STA ram_06B2_obj,Y
 C - - - - - 0x00C3C1 03:A3B1: 99 C8 07  STA ram_07C8_unk,Y
 C - - - - - 0x00C3C4 03:A3B4: 99 BE 07  STA ram_07BE_unk,Y
 C - - - - - 0x00C3C7 03:A3B7: A5 62     LDA ram_0062_fr
-C - - - - - 0x00C3C9 03:A3B9: 20 07 95  JSR sub_0x009517_EOR_FF_CLC_ADC_01
+C - - - - - 0x00C3C9 03:A3B9: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 C - - - - - 0x00C3CC 03:A3BC: 99 C8 06  STA ram_obj_spd_X,Y
 C - - - - - 0x00C3CF 03:A3BF: A5 65     LDA ram_0065_fr
-C - - - - - 0x00C3D1 03:A3C1: 20 07 95  JSR sub_0x009517_EOR_FF_CLC_ADC_01
+C - - - - - 0x00C3D1 03:A3C1: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
 C - - - - - 0x00C3D4 03:A3C4: 99 DE 06  STA ram_obj_spd_Y,Y
 C - - - - - 0x00C3D7 03:A3C7: B9 82 07  LDA ram_0782_unk,Y
 C - - - - - 0x00C3DA 03:A3CA: 30 4D     BMI bra_A419
