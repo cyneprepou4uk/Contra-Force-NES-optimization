@@ -380,7 +380,7 @@ C - - - - - 0x01D0BA 07:D0AA: A9 7C     LDA #con_chr_bank + $7C
 C - - - - - 0x01D0BC 07:D0AC: 85 77     STA ram_chr_bank
 C - - - - - 0x01D0C3 07:D0B3: 20 94 BF  JSR sub_BF94_clear_data
 C - - - - - 0x01D0C6 07:D0B6: 20 97 D1  JSR sub_D197
-C - - - - - 0x01D0C9 07:D0B9: 20 27 F3  JSR sub_0x01F337
+C - - - - - 0x01D0C9 07:D0B9: 20 27 F3  JSR sub_F327
 C - - - - - 0x01D0CC 07:D0BC: A9 A4     LDA #con_music_A4
 C - - - - - 0x01D0CE 07:D0BE: 20 CA FE  JSR sub_0x01FEDA_add_music_to_queue
 bra_D0C1:
@@ -4211,6 +4211,21 @@ C - - - - - 0x00976B 02:975B: 18        CLC
 C - - - - - 0x00976C 02:975C: 6D 83 07  ADC ram_0782_unk + $01
 C - - - - - 0x00976F 02:975F: C9 5C     CMP #$5C
 C - - - - - 0x009771 02:9761: 60        RTS
+
+
+
+sub_F327:
+.export sub_0x01F337
+sub_0x01F337:
+C - - - - - 0x01F337 07:F327: A9 00     LDA #$00
+C - - - - - 0x01F339 07:F329: 8D 78 07  STA ram_0778_unk
+C - - - - - 0x01F33C 07:F32C: 8D 79 07  STA ram_0778_unk + $01
+C - - - - - 0x01F33F 07:F32F: A2 17     LDX #$17
+bra_F331_loop:
+C - - - - - 0x01F341 07:F331: 9D 1A 06  STA ram_obj_animation_lo,X
+C - - - - - 0x01F344 07:F334: CA        DEX
+C - - - - - 0x01F345 07:F335: 10 FA     BPL bra_F331_loop
+C - - - - - 0x01F347 07:F337: 60        RTS
 
 
 

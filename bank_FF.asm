@@ -8,7 +8,6 @@
 
 .export sub_0x01E086
 .export loc_0x01E19F_write_00_to_buffer
-.export sub_0x01F337
 .export tbl_0x01F34C_dpad_buttons_conversion
 .export loc_0x01F35C_prg_bankswitch
 .export sub_0x01F35C_prg_bankswitch
@@ -3637,19 +3636,6 @@ C - - - - - 0x01F330 07:F320: 9D 00 03  STA ram_palette_buffer - $B0,X
 C - - - - - 0x01F333 07:F323: E8        INX
 C - - - - - 0x01F334 07:F324: D0 FA     BNE bra_F320_loop
 C - - - - - 0x01F336 07:F326: 60        RTS
-
-
-
-sub_0x01F337:
-C - - - - - 0x01F337 07:F327: A9 00     LDA #$00
-C - - - - - 0x01F339 07:F329: 8D 78 07  STA ram_0778_unk
-C - - - - - 0x01F33C 07:F32C: 8D 79 07  STA ram_0778_unk + $01
-C - - - - - 0x01F33F 07:F32F: A2 17     LDX #$17
-bra_F331_loop:
-C - - - - - 0x01F341 07:F331: 9D 1A 06  STA ram_obj_animation_lo,X
-C - - - - - 0x01F344 07:F334: CA        DEX
-C - - - - - 0x01F345 07:F335: 10 FA     BPL bra_F331_loop
-C - - - - - 0x01F347 07:F337: 60        RTS
 
 
 
