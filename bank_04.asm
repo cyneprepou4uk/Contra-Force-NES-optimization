@@ -1336,7 +1336,7 @@ tbl_86E0:
 
 
 ofs_017_86E1_0A:
-C - - J - - 0x0086F1 02:86E1: 20 4C 9A  JSR sub_0x009A5C
+C - - J - - 0x0086F1 02:86E1: 20 4C 9A  JSR sub_0x009A5C_clear_animation
 C - - - - - 0x0086F4 02:86E4: A5 0A     LDA ram_000A_t03
 sub_0x0086F6:
 C - - - - - 0x0086F6 02:86E6: 85 7B     STA ram_chr_bank + $04
@@ -4235,7 +4235,7 @@ loc_0x009747:
 C D 0 - - - 0x009747 02:9737: 20 3E 85  JSR sub_853E
 loc_973A:
 loc_0x00974A:
-C D 0 - - - 0x00974A 02:973A: 20 4C 9A  JSR sub_0x009A5C
+C D 0 - - - 0x00974A 02:973A: 20 4C 9A  JSR sub_0x009A5C_clear_animation
 C - - - - - 0x00974D 02:973D: 9D 34 06  STA ram_obj_animation_hi,X
 C - - - - - 0x009750 02:9740: 9D 20 07  STA ram_0720_obj,X
 C - - - - - 0x009753 02:9743: A9 2C     LDA #$2C
@@ -4267,7 +4267,7 @@ C - - - - - 0x009878 02:9868: BD 34 06  LDA ram_obj_animation_hi,X
 C - - - - - 0x00987B 02:986B: 29 C3     AND #$C3
 C - - - - - 0x00987D 02:986D: 05 10     ORA ram_0010_t05
 C D 0 - - - 0x00987F 02:986F: 9D 34 06  STA ram_obj_animation_hi,X
-C - - - - - 0x009778 02:9768: 20 4C 9A  JSR sub_0x009A5C
+C - - - - - 0x009778 02:9768: 20 4C 9A  JSR sub_0x009A5C_clear_animation
 C - - - - - 0x00977B 02:976B: E0 0A     CPX #$0A
 C - - - - - 0x00977D 02:976D: B0 F2     BCS bra_9761_RTS
 C - - - - - 0x00977F 02:976F: 9D F4 06  STA ram_06F4_obj,X

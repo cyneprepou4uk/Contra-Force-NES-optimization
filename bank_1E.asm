@@ -8,9 +8,9 @@
 
 .export sub_0x01D072
 .export sub_0x01D184
-.export sub_0x01D1A7
-.export sub_0x01D1B8
-.export loc_0x01D1B8
+.export sub_0x01D1A7_unpack_static_screen
+.export sub_0x01D1B8_unpack_static_screen
+.export loc_0x01D1B8_unpack_static_screen
 .export loc_0x01D1CE
 .export sub_0x01D225_prepare_pointers_for_static_screen
 .export sub_0x01D230_disable_rendering_and_set_scroll_00
@@ -36,8 +36,8 @@
 .export loc_0x01E01E
 .export sub_0x01E02E
 .export sub_0x01D009
-.export ofs_006_0x01D1B8_19
-.export ofs_006_0x01D1B8_1A
+.export ofs_006_0x01D1B8_19_unpack_static_screen___pause
+.export ofs_006_0x01D1B8_1A_unpack_static_screen___cutscene_pause
 .export sub_0x01D2E1
 .export sub_0x01D689
 .export ofs_006_0x01D9BC_14
@@ -145,14 +145,14 @@ C - - J - - 0x01D079 07:D069: A5 42     LDA ram_btn_hold_1
 C - - - - - 0x01D07B 07:D06B: 05 40     ORA ram_btn_press_1
 C - - - - - 0x01D07D 07:D06D: 29 10     AND #con_btn_Start
 C - - - - - 0x01D07F 07:D06F: D0 D3     BNE bra_D044_RTS
-C - - - - - 0x01D081 07:D071: 20 97 D1  JSR sub_D197
+C - - - - - 0x01D081 07:D071: 20 97 D1  JSR sub_D197_unpack_static_screen
 C - - - - - 0x01D084 07:D074: 4C 60 D0  JMP loc_D060_prepare_next_script
 
 
 
 ofs_000_D077_02:
 ; con_0020_02
-C - - J - - 0x01D087 07:D077: 20 97 D1  JSR sub_D197
+C - - J - - 0x01D087 07:D077: 20 97 D1  JSR sub_D197_unpack_static_screen
 C - - - - - 0x01D08A 07:D07A: 20 FD F2  JSR sub_0x01F30D_clear_0060_00DF
 C - - - - - 0x01D08D 07:D07D: 4C 60 D0  JMP loc_D060_prepare_next_script
 
@@ -379,7 +379,7 @@ C - - - - - 0x01D0B8 07:D0A8: 85 FF     STA ram_for_2000
 C - - - - - 0x01D0BA 07:D0AA: A9 7C     LDA #con_chr_bank + $7C
 C - - - - - 0x01D0BC 07:D0AC: 85 77     STA ram_chr_bank
 C - - - - - 0x01D0C3 07:D0B3: 20 94 BF  JSR sub_BF94_clear_data
-C - - - - - 0x01D0C6 07:D0B6: 20 97 D1  JSR sub_D197
+C - - - - - 0x01D0C6 07:D0B6: 20 97 D1  JSR sub_D197_unpack_static_screen
 C - - - - - 0x01D0C9 07:D0B9: 20 27 F3  JSR sub_F327
 C - - - - - 0x01D0CC 07:D0BC: A9 A4     LDA #con_music_A4
 C - - - - - 0x01D0CE 07:D0BE: 20 CA FE  JSR sub_0x01FEDA_add_music_to_queue
@@ -505,26 +505,28 @@ C - - - - - 0x01D191 07:D181: 60        RTS
 
 
 
-sub_D197:
-loc_D197:
-sub_0x01D1A7:
+sub_D197_unpack_static_screen:
+loc_D197_unpack_static_screen:
+sub_0x01D1A7_unpack_static_screen:
+; in
+    ; X = 
 C D 2 - - - 0x01D1A7 07:D197: A5 36     LDA ram_prg_banks_pair
 C - - - - - 0x01D1A9 07:D199: 48        PHA
 C - - - - - 0x01D1AA 07:D19A: A9 01     LDA #con_prg_pair + $01
 C - - - - - 0x01D1AC 07:D19C: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D1AF 07:D19F: A2 00     LDX #con_D22A_clear_nametables
-C - - - - - 0x01D1B1 07:D1A1: 20 A8 D1  JSR sub_D1A8
+C - - - - - 0x01D1B1 07:D1A1: 20 A8 D1  JSR sub_D1A8_unpack_static_screen
 C - - - - - 0x01D1B4 07:D1A4: 68        PLA
 C - - - - - 0x01D1B5 07:D1A5: 4C 4C F3  JMP loc_0x01F35C_prg_bankswitch
 
 
 
-sub_D1A8:
-sub_0x01D1B8:
-loc_0x01D1B8:
-ofs_006_0x01D1B8_19:
+sub_D1A8_unpack_static_screen:
+sub_0x01D1B8_unpack_static_screen:
+loc_0x01D1B8_unpack_static_screen:
+ofs_006_0x01D1B8_19_unpack_static_screen___pause:
 ; con_F3D6_19
-ofs_006_0x01D1B8_1A:
+ofs_006_0x01D1B8_1A_unpack_static_screen___cutscene_pause:
 ; con_F3D6_1A
 C D 2 - - - 0x01D1B8 07:D1A8: 20 15 D2  JSR sub_D215_prepare_pointers_for_static_screen
 C - - - - - 0x01D1BB 07:D1AB: 20 20 D2  JSR sub_D220_disable_rendering_and_set_scroll_00
@@ -1522,7 +1524,7 @@ C - - - - - 0x01D6F0 07:D6E0: C5 44     CMP ram_script_lo
 C - - - - - 0x01D6F2 07:D6E2: D0 18     BNE bra_D6FC
 C - - - - - 0x01D6F4 07:D6E4: AD 40 03  LDA ram_0340_flag
 C - - - - - 0x01D6F7 07:D6E7: 30 13     BMI bra_D6FC
-C - - - - - 0x01D6F9 07:D6E9: A5 BB     LDA ram_00BB_flag
+C - - - - - 0x01D6F9 07:D6E9: A5 BB     LDA ram_00BB
 C - - - - - 0x01D6FB 07:D6EB: D0 0F     BNE bra_D6FC
 C - - - - - 0x01D6FD 07:D6ED: 20 18 DA  JSR sub_DA18
 C - - - - - 0x01D700 07:D6F0: A5 45     LDA ram_pause_flag
@@ -1559,7 +1561,7 @@ C - - - - - 0x01D729 07:D719: 85 25     STA ram_disable_rendering_timer
                                         LDA #con_prg_pair + $01
 C - - - - - 0x01D72B 07:D71B: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D72E 07:D71E: A2 0E     LDX #con_D22A_player_select
-C - - - - - 0x01D730 07:D720: 20 A8 D1  JSR sub_D1A8
+C - - - - - 0x01D730 07:D720: 20 A8 D1  JSR sub_D1A8_unpack_static_screen
 C - - - - - 0x01D733 07:D723: E6 44     INC ram_script_lo
 C - - - - - 0x01D735 07:D725: A9 00     LDA #$00    ; con_chr_bank + $00
 C - - - - - 0x01D737 07:D727: 85 75     STA ram_stage
@@ -1913,7 +1915,7 @@ C - - - - - 0x01D906 07:D8F6: D0 0A     BNE bra_D902
 C - - - - - 0x01D908 07:D8F8: 20 1A F5  JSR sub_0x01F52A
 C - - - - - 0x01D90B 07:D8FB: 90 26     BCC bra_D923_RTS
 C - - - - - 0x01D90D 07:D8FD: E6 21     INC ram_0021_t01
-C - - - - - 0x01D90F 07:D8FF: 4C 97 D1  JMP loc_D197
+C - - - - - 0x01D90F 07:D8FF: 4C 97 D1  JMP loc_D197_unpack_static_screen
 bra_D902:
 C - - - - - 0x01D912 07:D902: 88        DEY
 C - - - - - 0x01D913 07:D903: D0 1F     BNE bra_D924
@@ -2005,7 +2007,7 @@ C - - - - - 0x01D997 07:D987: A9 01     LDA #con_prg_pair + $01
 C - - - - - 0x01D999 07:D989: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D99C 07:D98C: 20 AC D9  JSR sub_D9AC
 C - - - - - 0x01D99F 07:D98F: 20 94 F9  JSR sub_0x01F9A4
-C - - - - - 0x01D9A2 07:D992: A5 BB     LDA ram_00BB_flag
+C - - - - - 0x01D9A2 07:D992: A5 BB     LDA ram_00BB
 C - - - - - 0x01D9A4 07:D994: D0 DB     BNE bra_D971_RTS
 C - - - - - 0x01D9A6 07:D996: A9 05     LDA #con_prg_pair + $05
 C - - - - - 0x01D9A8 07:D998: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
@@ -2021,7 +2023,7 @@ C - - - - - 0x01D9B9 07:D9A9: 4C 7A B3  JMP loc_0x00B38A
 sub_D9AC:
 ofs_006_0x01D9BC_14:
 ; con_F3D6_14
-C - - - - - 0x01D9BC 07:D9AC: A5 BB     LDA ram_00BB_flag
+C - - - - - 0x01D9BC 07:D9AC: A5 BB     LDA ram_00BB
 C - - - - - 0x01D9BE 07:D9AE: F0 03     BEQ bra_D9B3
 C - - - - - 0x01D9C0 07:D9B0: 20 FD 96  JSR sub_0x01570D
 bra_D9B3:
@@ -3651,7 +3653,7 @@ sub_0x009A27:
     ; A = 00
 .export ofs_017_0x009A27_02
 ofs_017_0x009A27_02:
-C D 0 - - - 0x009A27 02:9A17: 20 33 9A  JSR sub_9A33
+C D 0 - - - 0x009A27 02:9A17: 20 33 9A  JSR sub_9A33_clear_object_data
 ; A = 00
 C - - - - - 0x009A2A 02:9A1A: 9D 00 06  STA ram_0600_obj,X
 C - - - - - 0x009A2D 02:9A1D: 9D 82 07  STA ram_0782_unk,X
@@ -3665,7 +3667,7 @@ C - - - - - 0x009A42 02:9A32: 60        RTS
 
 
 
-sub_9A33:
+sub_9A33_clear_object_data:
 C - - - - - 0x009A43 02:9A33: A9 00     LDA #$00
 C - - - - - 0x009A45 02:9A35: 9D 34 06  STA ram_obj_animation_hi,X
 C - - - - - 0x009A48 02:9A38: 9D 82 06  STA ram_0682_obj,X
@@ -3679,8 +3681,8 @@ sub_0x009A57:
 loc_0x009A57:
 C D 0 - - - 0x009A57 02:9A47: A9 00     LDA #$00
 C - - - - - 0x009A59 02:9A49: 9D 0A 07  STA ram_070A_obj,X
-.export sub_0x009A5C
-sub_0x009A5C:
+.export sub_0x009A5C_clear_animation
+sub_0x009A5C_clear_animation:
 C - - - - - 0x009A5C 02:9A4C: A9 00     LDA #$00
 .export loc_0x009A5E
 loc_0x009A5E:
@@ -3706,7 +3708,7 @@ ofs_020_0x009A62_12:
 ofs_020_0x009A62_16:
 C D 0 - - - 0x009A62 02:9A52: BD 82 06  LDA ram_0682_obj,X
 C - - - - - 0x009A65 02:9A55: F0 20     BEQ bra_9A77_RTS
-C - - - - - 0x009A67 02:9A57: 20 33 9A  JSR sub_9A33
+C - - - - - 0x009A67 02:9A57: 20 33 9A  JSR sub_9A33_clear_object_data
 C - - - - - 0x009A6A 02:9A5A: A9 FF     LDA #$FF
 C - - - - - 0x009A6C 02:9A5C: 9D F4 06  STA ram_06F4_obj,X
 C - - - - - 0x009A6F 02:9A5F: E0 12     CPX #$12
@@ -3714,7 +3716,7 @@ C - - - - - 0x009A71 02:9A61: B0 14     BCS bra_9A77_RTS
 C - - - - - 0x009A73 02:9A63: A0 00     LDY #$00
 C - - - - - 0x009A75 02:9A65: E0 0E     CPX #$0E
 C - - - - - 0x009A77 02:9A67: 90 01     BCC bra_9A6A
-C - - - - - 0x009A79 02:9A69: C8        INY
+C - - - - - 0x009A79 02:9A69: C8        INY ; 01
 bra_9A6A:
 C - - - - - 0x009A7A 02:9A6A: B9 83 00  LDA ram_bullet_counter,Y
 C - - - - - 0x009A7D 02:9A6D: 38        SEC

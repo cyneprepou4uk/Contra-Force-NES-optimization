@@ -407,7 +407,7 @@ C - - - - - 0x01E278 07:E268: A5 75     LDA ram_stage
 C - - - - - 0x01E27A 07:E26A: F0 2D     BEQ bra_E299
 C - - - - - 0x01E27C 07:E26C: C9 03     CMP #$03
 C - - - - - 0x01E27E 07:E26E: D0 14     BNE bra_E284
-C - - - - - 0x01E280 07:E270: A5 BB     LDA ram_00BB_flag
+C - - - - - 0x01E280 07:E270: A5 BB     LDA ram_00BB
 C - - - - - 0x01E282 07:E272: D0 10     BNE bra_E284
 C - - - - - 0x01E284 07:E274: A5 64     LDA ram_0064_lo
 C - - - - - 0x01E286 07:E276: 38        SEC
@@ -457,7 +457,7 @@ C - - - - - 0x01E2D0 07:E2C0: A5 75     LDA ram_stage
 C - - - - - 0x01E2D2 07:E2C2: F0 10     BEQ bra_E2D4
 C - - - - - 0x01E2D4 07:E2C4: C9 03     CMP #$03
 C - - - - - 0x01E2D6 07:E2C6: D0 08     BNE bra_E2D0
-C - - - - - 0x01E2D8 07:E2C8: A5 BB     LDA ram_00BB_flag
+C - - - - - 0x01E2D8 07:E2C8: A5 BB     LDA ram_00BB
 C - - - - - 0x01E2DA 07:E2CA: D0 04     BNE bra_E2D0
 C - - - - - 0x01E2DC 07:E2CC: A9 2C     LDA #$2C
 C - - - - - 0x01E2DE 07:E2CE: D0 06     BNE bra_E2D6    ; jmp
@@ -3884,10 +3884,10 @@ tbl_F3D6:
 - D 3 - - - 0x01F42E 07:F41E: D3 A6     .word ofs_006_0x00A6E3_18
 - D 3 - - - 0x01F430 07:F420: 02        .byte con_prg_pair + $02   ; 
 ; 19 con_F3D6_19
-- D 3 - - - 0x01F431 07:F421: A8 D1     .word ofs_006_0x01D1B8_19
+- D 3 - - - 0x01F431 07:F421: A8 D1     .word ofs_006_0x01D1B8_19_unpack_static_screen___pause
 - D 3 - - - 0x01F433 07:F423: 0B        .byte con_prg_pair + $03   ; 
 ; 1A con_F3D6_1A
-- D 3 - - - 0x01F434 07:F424: A8 D1     .word ofs_006_0x01D1B8_1A
+- D 3 - - - 0x01F434 07:F424: A8 D1     .word ofs_006_0x01D1B8_1A_unpack_static_screen___cutscene_pause
 - D 3 - - - 0x01F436 07:F426: 09        .byte con_prg_pair + $09   ; 
 ; 1B con_F3D6_1B
 - D 3 - - - 0x01F437 07:F427: 71 DA     .word ofs_006_0x01DA81_1B
@@ -5691,7 +5691,7 @@ C - - - - - 0x01FD4F 07:FD3F: CA        DEX
 C - - - - - 0x01FD50 07:FD40: D0 F3     BNE bra_FD35_loop
 C - - - - - 0x01FD52 07:FD42: A9 FF     LDA #$00
 C - - - - - 0x01FD54 07:FD44: 8D 00 E0  STA $5204
-                                        JSR sub_FD69_скопировать_код_на_батарейку
+                                        JSR sub_FD69_copy_code_to_battery
                                         LDA #con_prg_bank + $1D
                                         STA $5116
 C - - - - - 0x01FD57 07:FD47: 20 76 FE  JSR sub_FE76
@@ -5716,7 +5716,7 @@ C - - - - - 0x01FD78 07:FD68: 4C 62 FD  JMP loc_FD62_infinite_loop
 
 
 
-sub_FD69_скопировать_код_на_батарейку:
+sub_FD69_copy_code_to_battery:
                                         LDA #< $6000
                                         STA ram_0002_t65_data
                                         LDA #> $6000

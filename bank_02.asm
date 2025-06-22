@@ -487,7 +487,7 @@ C - - - - - 0x005E64 01:BE54: 84 02     STY ram_0002_t18_array_index
 C - - - - - 0x005E66 01:BE56: A5 1F     LDA ram_001F_t04
 C - - - - - 0x005E68 01:BE58: 20 0E FC  JSR sub_0x01FC1E
 loc_BE5B:
-C - - - - - 0x005E6B 01:BE5B: 20 4C 9A  JSR sub_0x009A5C
+C - - - - - 0x005E6B 01:BE5B: 20 4C 9A  JSR sub_0x009A5C_clear_animation
 C - - - - - 0x005E6E 01:BE5E: FE C8 07  INC ram_07C8_unk,X
 C - - - - - 0x005E71 01:BE61: BD C8 07  LDA ram_07C8_unk,X
 C - - - - - 0x005E74 01:BE64: C9 0A     CMP #$0A
