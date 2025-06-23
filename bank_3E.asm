@@ -1,8 +1,8 @@
-.segment "BANK_1E"
+.segment "BANK_3E"
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
 .org $6000  ; for listing file
-; 0x03C010-0x03E00F
+; 0x07C010-0x07E00F
 
 
 

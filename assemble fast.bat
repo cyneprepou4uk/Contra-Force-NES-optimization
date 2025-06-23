@@ -17,7 +17,7 @@ set "file_name=_contra_force"
 
 :: size of your ROM file in bytes (decimal),
 :: used for checking if assembled file is correct
-set "file_size=393232"
+set "file_size=655376"
 
 :: SHA-1 checksum of the original ROM, used for checking if
 :: my disassembly is correct, but doesn't affect assembling.
@@ -85,8 +85,16 @@ if %fast_assembly% equ 1 (
     ca65 -U copy_bank_14.asm
     ca65 -U copy_bank_18.asm
     ca65 -U copy_bank_1C.asm
-    ca65 -U copy_bank_1D.asm
-    ca65 -U copy_bank_1E.asm
+    ca65 -U copy_bank_20.asm
+    ca65 -U copy_bank_24.asm
+    ca65 -U copy_bank_28.asm
+    ca65 -U copy_bank_2C.asm
+    ca65 -U copy_bank_30.asm
+    ca65 -U copy_bank_34.asm
+    ca65 -U copy_bank_38.asm
+    ca65 -U copy_bank_3C.asm
+    ca65 -U copy_bank_3D.asm
+    ca65 -U copy_bank_3E.asm
     ca65 -U copy_bank_FF.asm
 ) else (
     ca65 -U -l copy_bank_00.lst -g copy_bank_00.asm
@@ -103,8 +111,16 @@ if %fast_assembly% equ 1 (
     ca65 -U -l copy_bank_14.lst -g copy_bank_14.asm
     ca65 -U -l copy_bank_18.lst -g copy_bank_18.asm
     ca65 -U -l copy_bank_1C.lst -g copy_bank_1C.asm
-    ca65 -U -l copy_bank_1D.lst -g copy_bank_1D.asm
-    ca65 -U -l copy_bank_1E.lst -g copy_bank_1E.asm
+    ca65 -U -l copy_bank_20.lst -g copy_bank_20.asm
+    ca65 -U -l copy_bank_24.lst -g copy_bank_24.asm
+    ca65 -U -l copy_bank_28.lst -g copy_bank_28.asm
+    ca65 -U -l copy_bank_2C.lst -g copy_bank_2C.asm
+    ca65 -U -l copy_bank_30.lst -g copy_bank_30.asm
+    ca65 -U -l copy_bank_34.lst -g copy_bank_34.asm
+    ca65 -U -l copy_bank_38.lst -g copy_bank_38.asm
+    ca65 -U -l copy_bank_3C.lst -g copy_bank_3C.asm
+    ca65 -U -l copy_bank_3D.lst -g copy_bank_3D.asm
+    ca65 -U -l copy_bank_3E.lst -g copy_bank_3E.asm
     ca65 -U -l copy_bank_FF.lst -g copy_bank_FF.asm
 )
 
@@ -125,8 +141,16 @@ if %fast_assembly% equ 1 (
         copy_bank_14.o ^
         copy_bank_18.o ^
         copy_bank_1C.o ^
-        copy_bank_1D.o ^
-        copy_bank_1E.o ^
+        copy_bank_20.o ^
+        copy_bank_24.o ^
+        copy_bank_28.o ^
+        copy_bank_2C.o ^
+        copy_bank_30.o ^
+        copy_bank_34.o ^
+        copy_bank_38.o ^
+        copy_bank_3C.o ^
+        copy_bank_3D.o ^
+        copy_bank_3E.o ^
         copy_bank_FF.o
 ) else (
     ld65 -C ld65.cfg -o PRG_ROM.bin --dbgfile %debug_name% ^
@@ -144,8 +168,16 @@ if %fast_assembly% equ 1 (
         copy_bank_14.o ^
         copy_bank_18.o ^
         copy_bank_1C.o ^
-        copy_bank_1D.o ^
-        copy_bank_1E.o ^
+        copy_bank_20.o ^
+        copy_bank_24.o ^
+        copy_bank_28.o ^
+        copy_bank_2C.o ^
+        copy_bank_30.o ^
+        copy_bank_34.o ^
+        copy_bank_38.o ^
+        copy_bank_3C.o ^
+        copy_bank_3D.o ^
+        copy_bank_3E.o ^
         copy_bank_FF.o
 )
 

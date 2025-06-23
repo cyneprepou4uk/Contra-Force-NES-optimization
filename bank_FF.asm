@@ -2,7 +2,7 @@
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
 .org $E000  ; for listing file
-; 0x03E010-0x04000F
+; 0x07E010-0x08000F
 
 
 
@@ -3718,19 +3718,19 @@ tbl_F393_prg_pairs:
 ; 00 
 - D 3 - - - 0x01F3A3 07:F393: 00        .byte con_prg_bank + $00   ; 
 - D 3 - - - 0x01F3A4 07:F394: 01        .byte con_prg_bank + $01   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
 ; 01 
 - D 3 - - - 0x01F3A5 07:F395: 0A        .byte con_prg_bank + $0A   ; 
 - D 3 - - - 0x01F3A6 07:F396: 0B        .byte con_prg_bank + $0B   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
 ; 02 
 - D 3 - - - 0x01F3A7 07:F397: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3A8 07:F398: 05        .byte con_prg_bank + $05   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
 ; 03 
 - D 3 - - - 0x01F3A9 07:F399: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3AA 07:F39A: 0D        .byte con_prg_bank + $0D   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
 ; 04 звуковой движок
 - D 3 - - - 0x01F3AB 07:F39B: 08        .byte con_prg_bank + $10   ; 
 - D 3 - - - 0x01F3AC 07:F39C: 09        .byte con_prg_bank + $11   ; 
@@ -3738,15 +3738,15 @@ tbl_F393_prg_pairs:
 ; 05 
 - D 3 - - - 0x01F3AD 07:F39D: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3AE 07:F39E: 06        .byte con_prg_bank + $06   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
 ; 06 
 - D 3 - - - 0x01F3AF 07:F39F: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3B0 07:F3A0: 07        .byte con_prg_bank + $07   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
 ; 07 
 - D 3 - - - 0x01F3B1 07:F3A1: 0A        .byte con_prg_bank + $08   ; 
 - D 3 - - - 0x01F3B2 07:F3A2: 0B        .byte con_prg_bank + $09   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
 ; 08 
 - D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $14   ; 
 - D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $15   ; 
@@ -3754,7 +3754,7 @@ tbl_F393_prg_pairs:
 ; 09 
 - D 3 - - - 0x01F3B5 07:F3A5: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3B6 07:F3A6: 03        .byte con_prg_bank + $03   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
 ; 0A
 - D 3 - - - 0x01F3B7 07:F3A7: 00        .byte con_prg_bank + $18   ; 
 - D 3 - - - 0x01F3B8 07:F3A8: 03        .byte con_prg_bank + $19   ; 
@@ -3770,11 +3770,11 @@ tbl_F393_prg_pairs:
 ; 0D 
 - D 3 - - - 0x01F3BD 07:F3AD: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3BE 07:F3AE: 01        .byte con_prg_bank + $01   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
 ; 0E 
 - D 3 - - - 0x01F3BF 07:F3AF: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3C0 07:F3B0: 02        .byte con_prg_bank + $02   ; 
-                                        .byte con_prg_bank + $1D   ; 
+                                        .byte con_prg_bank + $3D   ; 
  
 
 
@@ -5692,7 +5692,7 @@ C - - - - - 0x01FD50 07:FD40: D0 F3     BNE bra_FD35_loop
 C - - - - - 0x01FD52 07:FD42: A9 FF     LDA #$00
 C - - - - - 0x01FD54 07:FD44: 8D 00 E0  STA $5204
                                         JSR sub_FD69_copy_code_to_battery
-                                        LDA #con_prg_bank + $1D
+                                        LDA #con_prg_bank + $3D
                                         STA $5116
 C - - - - - 0x01FD57 07:FD47: 20 76 FE  JSR sub_FE76
 C - - - - - 0x01FD5A 07:FD4A: 20 09 F3  JSR sub_F309_clear_0400_07FF
@@ -6147,7 +6147,7 @@ vec_FFD0_RESET:
                                         STX $5204   ; disable irq
                                         LDA #$44
                                         STA $5105   ; vertical mirroring
-                                        LDA #con_prg_bank + $1E
+                                        LDA #con_prg_bank + $3E
                                         STA $5116   ; bank for C000-DFFF
                                         JMP loc_FD2B_RESET
 

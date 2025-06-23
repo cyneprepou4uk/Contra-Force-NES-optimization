@@ -1,12 +1,12 @@
-.segment "BANK_1D"
+.segment "BANK_3D"
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
 .org $C000  ; for listing file
-; 0x03A010-0x03C00F
+; 0x07A010-0x07C00F
 
 
 
-.segment "DPCM_1D"
+.segment "DPCM_3D"
 .incbin "DPCM.bin"
 .org $D140  ; for listing file
 
