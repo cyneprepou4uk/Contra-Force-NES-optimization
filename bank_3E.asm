@@ -11,8 +11,8 @@
 .export sub_0x01D1A7_unpack_static_screen
 .export sub_0x01D1B8_unpack_static_screen
 .export loc_0x01D1B8_unpack_static_screen
-.export loc_0x01D1CE
-.export sub_0x01D225_prepare_pointers_for_static_screen
+.export loc_D1BE
+.export loc_0x01D225_unpack_static_screen___no_2006_writes
 .export sub_0x01D230_disable_rendering_and_set_scroll_00
 .export sub_0x01D24C_draw_text
 .export loc_0x01D287_write_to_buffer___unk_X
@@ -508,19 +508,7 @@ C - - - - - 0x01D191 07:D181: 60        RTS
 sub_D197_unpack_static_screen:
 loc_D197_unpack_static_screen:
 sub_0x01D1A7_unpack_static_screen:
-; in
-    ; X = 
-C D 2 - - - 0x01D1A7 07:D197: A5 36     LDA ram_prg_banks_pair
-C - - - - - 0x01D1A9 07:D199: 48        PHA
-C - - - - - 0x01D1AA 07:D19A: A9 01     LDA #con_prg_pair + $01
-C - - - - - 0x01D1AC 07:D19C: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D1AF 07:D19F: A2 00     LDX #con_D22A_clear_nametables
-C - - - - - 0x01D1B1 07:D1A1: 20 A8 D1  JSR sub_D1A8_unpack_static_screen
-C - - - - - 0x01D1B4 07:D1A4: 68        PLA
-C - - - - - 0x01D1B5 07:D1A5: 4C 4C F3  JMP loc_0x01F35C_prg_bankswitch
-
-
-
 sub_D1A8_unpack_static_screen:
 sub_0x01D1B8_unpack_static_screen:
 loc_0x01D1B8_unpack_static_screen:
@@ -528,6 +516,10 @@ ofs_006_0x01D1B8_19_unpack_static_screen___pause:
 ; con_F3D6_19
 ofs_006_0x01D1B8_1A_unpack_static_screen___cutscene_pause:
 ; con_F3D6_1A
+                                        LDA ram_prg_banks_pair
+                                        PHA
+                                        LDA #con_prg_pair + $0B
+                                        JSR sub_0x01F35C_prg_bankswitch
 C D 2 - - - 0x01D1B8 07:D1A8: 20 15 D2  JSR sub_D215_prepare_pointers_for_static_screen
 C - - - - - 0x01D1BB 07:D1AB: 20 20 D2  JSR sub_D220_disable_rendering_and_set_scroll_00
 loc_D1AE_loop:
@@ -538,7 +530,7 @@ C - - - - - 0x01D1C5 07:D1B5: 8D 06 20  STA $2006
 C - - - - - 0x01D1C8 07:D1B8: 88        DEY ; 00
 C - - - - - 0x01D1C9 07:D1B9: B1 00     LDA (ram_0000_t0C_static_screen_data),Y
 C - - - - - 0x01D1CB 07:D1BB: 8D 06 20  STA $2006
-loc_0x01D1CE:
+loc_D1BE:
 C D 2 - - - 0x01D1CE 07:D1BE: A2 00     LDX #$00
 C - - - - - 0x01D1D0 07:D1C0: A9 02     LDA #$02
 loc_D1C2_loop:
@@ -585,7 +577,10 @@ C - - - - - 0x01D210 07:D200: A9 01     LDA #$01
 C - - - - - 0x01D212 07:D202: 20 0B D2  JSR sub_D20B_increase_0000_pointer_by_A
 C - - - - - 0x01D215 07:D205: 4C AE D1  JMP loc_D1AE_loop
 bra_D208_FF:
-C - - - - - 0x01D218 07:D208: 4C 70 FE  JMP loc_0x01FE80
+C - - - - - 0x01D218 07:D208: 4C 70 FE  JSR sub_0x01FE80
+                                        PLA
+                                        JMP loc_0x01F35C_prg_bankswitch
+                                        
 
 
 
@@ -605,12 +600,19 @@ C - - - - - 0x01D224 07:D214: 60        RTS
 
 
 sub_D215_prepare_pointers_for_static_screen:
-sub_0x01D225_prepare_pointers_for_static_screen:
 C - - - - - 0x01D225 07:D215: BD 2A D2  LDA tbl_D22A_static_screens,X
 C - - - - - 0x01D228 07:D218: 85 00     STA ram_0000_t0C_static_screen_data
 C - - - - - 0x01D22A 07:D21A: BD 2B D2  LDA tbl_D22A_static_screens + $01,X
 C - - - - - 0x01D22D 07:D21D: 85 01     STA ram_0000_t0C_static_screen_data + $01
 C - - - - - 0x01D22F 07:D21F: 60        RTS
+
+
+
+loc_0x01D225_unpack_static_screen___no_2006_writes:
+                                        JSR sub_D215_prepare_pointers_for_static_screen
+                                        LDA ram_prg_banks_pair
+                                        PHA
+                                        JMP loc_D1BE
 
 
 
@@ -626,12 +628,11 @@ C - - - - - 0x01D239 07:D229: 60        RTS
 
 
 tbl_D22A_static_screens:
-; bank is selected via 0x01F372 when code jumps to it
 ; see con_D22A
 - D 2 - - - 0x01D23A 07:D22A: A2 A9     .word _off012_0x0169B2_00_clear_nametables
-- - - - - - 0x01D23C 07:D22C: A2 A9     .word _off012_0x0169B2_02   ; unused, index doesn't exist
+- - - - - - 0x01D23C 07:D22C: A2 A9     .word $FFFF          ; 02 unused, index doesn't exist
 - D 2 - - - 0x01D23E 07:D22E: 54 95     .word _off012_0x015564_04_title_screen
-- - - - - - 0x01D240 07:D230: A2 A9     .word _off012_0x0169B2_06   ; unused, index doesn't exist
+- - - - - - 0x01D240 07:D230: A2 A9     .word $FFFF          ; 06 unused, index doesn't exist
 - D 2 - - - 0x01D242 07:D232: CC BE     .word _off012_0x007EDC_08_cutscene_phone
 - D 2 - - - 0x01D244 07:D234: 7A AD     .word _off012_0x016D8A_0A_cutscene_crime
 - D 2 - - - 0x01D246 07:D236: 09 BD     .word _off012_0x01BD19_0C_pause
@@ -1558,8 +1559,6 @@ tbl_D70D:
 ofs_001_D717_00:
 C - - J - - 0x01D727 07:D717: A9 07     LDA #$07
 C - - - - - 0x01D729 07:D719: 85 25     STA ram_disable_rendering_timer
-                                        LDA #con_prg_pair + $01
-C - - - - - 0x01D72B 07:D71B: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D72E 07:D71E: A2 0E     LDX #con_D22A_player_select
 C - - - - - 0x01D730 07:D720: 20 A8 D1  JSR sub_D1A8_unpack_static_screen
 C - - - - - 0x01D733 07:D723: E6 44     INC ram_script_lo
