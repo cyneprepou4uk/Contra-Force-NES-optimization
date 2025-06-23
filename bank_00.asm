@@ -90,7 +90,8 @@ C - - - - - 0x00338D 00:B37D: 20 E2 91  JSR sub_0x0091F2
 C - - - - - 0x003390 00:B380: 9D B2 06  STA ram_06B2_obj,X
 sub_B383:
 C - - - - - 0x003393 00:B383: A9 FF     LDA #$FF
-C - - - - - 0x003395 00:B385: 4C 38 98  JMP loc_0x009848
+C - - - - - 0x003395 00:B385: 4C 38 98  STA ram_06F4_obj,X
+                                        RTS
 
 
 

@@ -115,7 +115,6 @@
 .export loc_0x009772
 .export ofs_006_0x009782_16
 .export ofs_006_0x009793_24
-.export loc_0x009848
 .export sub_0x009A88_drop_a_box_with_powerup
 .export sub_0x009E15
 .export loc_0x009E15
@@ -3368,7 +3367,7 @@ C - - - - - 0x0091E9 02:91D9: 9D B2 06  STA ram_06B2_obj,X
 C - - - - - 0x0091EC 02:91DC: 9D 20 07  STA ram_0720_obj,X
 loc_0x0091EF:
 C D 0 - - - 0x0091EF 02:91DF: 20 83 B3  LDA #$FF
-                                        JSR sub_9838
+                                        STA ram_06F4_obj,X
 sub_0x0091F2:
 C - - - - - 0x0091F2 02:91E2: A9 00     LDA #$00
 loc_91E4:
@@ -4396,9 +4395,6 @@ C - - - - - 0x009844 02:9834: C9 FE     CMP #$FE
 C - - - - - 0x009846 02:9836: D0 04     BNE bra_983C
 ; FE
 bra_9838:
-loc_9838:
-sub_9838:
-loc_0x009848:
 ; in
     ; A = 
 ; bzk optimize
@@ -4423,7 +4419,8 @@ bra_9858:
 C - - - - - 0x009868 02:9858: BD F4 06  LDA ram_06F4_obj,X
 C - - - - - 0x00986B 02:985B: 18        CLC
 C - - - - - 0x00986C 02:985C: 69 20     ADC #$20
-C - - - - - 0x00986E 02:985E: 4C 38 98  JMP loc_9838
+C - - - - - 0x00986E 02:985E: 4C 38 98  STA ram_06F4_obj,X
+                                        RTS
 
 
 
