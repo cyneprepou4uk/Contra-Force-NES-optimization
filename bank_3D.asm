@@ -12,7 +12,7 @@
 
 
 
-.out .sprintf("Free bytes in bank 1D: 0x%04X [%d]", ($E000 - *), ($E000 - *))
+.out .sprintf("Free bytes in bank 3D: 0x%04X [%d]", ($E000 - *), ($E000 - *))
 
 
 

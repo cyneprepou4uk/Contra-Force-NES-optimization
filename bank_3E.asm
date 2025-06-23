@@ -4230,7 +4230,7 @@ C - - - - - 0x01F347 07:F337: 60        RTS
 
 
 
-.out .sprintf("Free bytes in bank 1E: 0x%04X [%d]", ($8000 - *), ($8000 - *))
+.out .sprintf("Free bytes in bank 3E: 0x%04X [%d]", ($8000 - *), ($8000 - *))
 
 
 
