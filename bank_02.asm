@@ -19,7 +19,8 @@
 bra_BB78:
 - - - - - - 0x005B88 01:BB78: A2 02     LDX #$02
 bra_BB7A_loop:
-- - - - - - 0x005B8A 01:BB7A: 20 83 91  JSR sub_0x009193_0782x_AND_7F
+- - - - - - 0x005B8A 01:BB7A: 20 83 91  LDA ram_0782_unk,X
+                                        AND #$7F
 - - - - - - 0x005B8D 01:BB7D: C9 30     CMP #$30
 - - - - - - 0x005B8F 01:BB7F: D0 06     BNE bra_BB87
 - - - - - - 0x005B91 01:BB81: 20 22 BC  JSR sub_BC22

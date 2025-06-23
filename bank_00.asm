@@ -27,7 +27,8 @@ C - - - - - 0x003324 00:B314: 8A        TXA
 C - - - - - 0x003325 00:B315: A8        TAY
 C - - - - - 0x003326 00:B316: 20 C5 94  JSR sub_0x0094D5
 bra_B319:
-C - - - - - 0x003329 00:B319: 20 41 91  JSR sub_0x009151_0682x_and_0F
+C - - - - - 0x003329 00:B319: 20 41 91  LDA ram_0682_obj,X
+                                        AND #$0F
 C - - - - - 0x00332C 00:B31C: F0 4B     BEQ bra_B369_RTS
 C - - - - - 0x00332E 00:B31E: A8        TAY
 C - - - - - 0x00332F 00:B31F: B9 A1 B8  LDA tbl_B8A2 - $01,Y
@@ -40,7 +41,8 @@ C - - - - - 0x00333C 00:B32C: 20 88 B3  JSR sub_B388
 C - - - - - 0x00333F 00:B32F: F0 38     BEQ bra_B369_RTS
 bra_B331:
 ofs_020_B331_04:
-C - - - - - 0x003341 00:B331: 20 41 91  JSR sub_0x009151_0682x_and_0F
+C - - - - - 0x003341 00:B331: 20 41 91  LDA ram_0682_obj,X
+                                        AND #$0F
 C - - - - - 0x003344 00:B334: C9 0A     CMP #$0A
 C - - - - - 0x003346 00:B336: F0 31     BEQ bra_B369_RTS
 ; destroy object with a bullet?
@@ -176,7 +178,9 @@ C - - - - - 0x003417 00:B407: 20 BA 93  JSR sub_0x0093CA
 C - - - - - 0x00341A 00:B40A: B0 4E     BCC bra_B40C
                                         JMP loc_B45A
 bra_B40C:
-C - - - - - 0x00341C 00:B40C: 20 89 91  JSR sub_0x009199_0095_clear_bit7
+C - - - - - 0x00341C 00:B40C: 20 89 91  LDA ram_0095_flag
+                                        AND #$7F
+                                        STA ram_0095_flag
 C - - - - - 0x00341F 00:B40F: A4 88     LDY ram_x2_stage
 C - - - - - 0x003421 00:B411: B9 1E B4  LDA tbl_B41E,Y
 C - - - - - 0x003424 00:B414: 85 18     STA ram_0018_t03_jmp
@@ -323,7 +327,9 @@ C - - - - - 0x00346F 00:B45F: F0 05     BEQ bra_B466
 C - - - - - 0x003471 00:B461: A9 82     LDA #$82
 C - - - - - 0x003473 00:B463: 9D 9C 06  STA ram_069C_obj,X
 bra_B466:
-C - - - - - 0x003476 00:B466: 20 90 91  JSR sub_0x0091A0_0095_set_bit7
+C - - - - - 0x003476 00:B466: 20 90 91  LDA ram_0095_flag
+                                        ORA #$80
+                                        STA ram_0095_flag
 C - - - - - 0x003479 00:B469: D0 0A     BNE bra_B475    ; jmp
 
 
@@ -448,7 +454,8 @@ bra_B526:
 loc_B526:
 C D 1 - - - 0x003536 00:B526: E0 0A     CPX #$0A
 C - - - - - 0x003538 00:B528: 90 F7     BCC bra_B521
-C - - - - - 0x00353A 00:B52A: 20 41 91  JSR sub_0x009151_0682x_and_0F
+C - - - - - 0x00353A 00:B52A: 20 41 91  LDA ram_0682_obj,X
+                                        AND #$0F
 C - - - - - 0x00353D 00:B52D: C9 02     CMP #$02
 C - - - - - 0x00353F 00:B52F: F0 F0     BEQ bra_B521
 C - - - - - 0x003541 00:B531: C9 03     CMP #$03
@@ -913,7 +920,8 @@ tbl_B79C:
 sub_0x0037C0:
 C - - - - - 0x0037C0 00:B7B0: BD 9C 06  LDA ram_069C_obj,X
 C - - - - - 0x0037C3 00:B7B3: 30 6D     BMI bra_B822
-C - - - - - 0x0037C5 00:B7B5: 20 41 91  JSR sub_0x009151_0682x_and_0F
+C - - - - - 0x0037C5 00:B7B5: 20 41 91  LDA ram_0682_obj,X
+                                        AND #$0F
 C - - - - - 0x0037C8 00:B7B8: A8        TAY
 C - - - - - 0x0037C9 00:B7B9: B9 65 B8  LDA tbl_B866 - $01,Y
 C - - - - - 0x0037CC 00:B7BC: E0 12     CPX #$12
@@ -934,7 +942,8 @@ C - - - - - 0x0037E4 00:B7D4: 4A        LSR
 bra_B7D5:
 C - - - - - 0x0037E5 00:B7D5: 29 0F     AND #$0F
 C - - - - - 0x0037E7 00:B7D7: 85 00     STA ram_0000_t44
-C - - - - - 0x0037E9 00:B7D9: 20 7D 91  JSR sub_0x00918D_06B2x_AND_F0
+C - - - - - 0x0037E9 00:B7D9: 20 7D 91  LDA ram_06B2_obj,X
+                                        AND #$F0
 C - - - - - 0x0037EC 00:B7DC: 05 00     ORA ram_0000_t44
 C - - - - - 0x0037EE 00:B7DE: 4C E3 B7  JMP loc_B7E3
 bra_B7E1:
@@ -949,7 +958,8 @@ bra_B7EF:
 C - - - - - 0x0037FF 00:B7EF: 20 57 B8  JSR sub_B857
 C - - - - - 0x003802 00:B7F2: E0 12     CPX #$12
 C - - - - - 0x003804 00:B7F4: 90 0F     BCC bra_B805
-C - - - - - 0x003806 00:B7F6: 20 41 91  JSR sub_0x009151_0682x_and_0F
+C - - - - - 0x003806 00:B7F6: 20 41 91  LDA ram_0682_obj,X
+                                        AND #$0F
 C - - - - - 0x003809 00:B7F9: C9 04     CMP #$04
 C - - - - - 0x00380B 00:B7FB: D0 08     BNE bra_B805
 C - - - - - 0x00380D 00:B7FD: BD 34 06  LDA ram_obj_animation_hi,X
@@ -959,7 +969,8 @@ bra_B805:
 C - - - - - 0x003815 00:B805: 20 82 95  JSR sub_0x009592
 C - - - - - 0x003818 00:B808: BD 82 06  LDA ram_0682_obj,X
 C - - - - - 0x00381B 00:B80B: 30 15     BMI bra_B822
-C - - - - - 0x00381D 00:B80D: 20 41 91  JSR sub_0x009151_0682x_and_0F
+C - - - - - 0x00381D 00:B80D: 20 41 91  LDA ram_0682_obj,X
+                                        AND #$0F
 C - - - - - 0x003820 00:B810: A8        TAY
 C - - - - - 0x003821 00:B811: B9 63 95  LDA tbl_9564_sfx - $01,Y
 C - - - - - 0x003824 00:B814: E0 12     CPX #$12
@@ -1042,7 +1053,8 @@ sub_B851:
     ; Z
         ; 0 = 
         ; 1 = 
-C - - - - - 0x003861 00:B851: 20 41 91  JSR sub_0x009151_0682x_and_0F
+C - - - - - 0x003861 00:B851: 20 41 91  LDA ram_0682_obj,X
+                                        AND #$0F
 C - - - - - 0x003864 00:B854: 0A        ASL
 C - - - - - 0x003865 00:B855: A8        TAY
 C - - - - - 0x003866 00:B856: 60        RTS
@@ -1256,7 +1268,8 @@ off_B931_04:
 
 
 ofs_020_B935_08:
-C - - J - - 0x003945 00:B935: 20 7D 91  JSR sub_0x00918D_06B2x_AND_F0
+C - - J - - 0x003945 00:B935: 20 7D 91  LDA ram_06B2_obj,X
+                                        AND #$F0
 C - - - - - 0x003948 00:B938: 85 0D     STA ram_000D_t02
 C - - - - - 0x00394A 00:B93A: 20 51 BA  JSR sub_BA51
 C - - - - - 0x00394D 00:B93D: B0 0E     BCS bra_B94D_RTS

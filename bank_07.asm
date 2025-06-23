@@ -3883,7 +3883,8 @@ tbl_B397:
 
 ofs_016_0x00F3AF_18:
 C D 1 J - - 0x00F3AF 03:B39F: 20 CE 90  JSR sub_0x0090DE_0600x_ORA_08
-C - - - - - 0x00F3B2 03:B3A2: 20 83 91  JSR sub_0x009193_0782x_AND_7F
+C - - - - - 0x00F3B2 03:B3A2: 20 83 91  LDA ram_0782_unk,X
+                                        AND #$7F
 C - - - - - 0x00F3B5 03:B3A5: C9 32     CMP #$32
 C - - - - - 0x00F3B7 03:B3A7: F0 06     BEQ bra_B3AF
 C - - - - - 0x00F3B9 03:B3A9: 20 F1 BC  JSR sub_BCF1
@@ -4478,7 +4479,8 @@ C - - - - - 0x00F72D 03:B71D: 4C 10 8E  JMP loc_0x008E20
 sub_B720:
 C - - - - - 0x00F730 03:B720: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x00F733 03:B723: D0 28     BNE bra_B74D
-C - - - - - 0x00F735 03:B725: 20 83 91  JSR sub_0x009193_0782x_AND_7F
+C - - - - - 0x00F735 03:B725: 20 83 91  LDA ram_0782_unk,X
+                                        AND #$7F
 C - - - - - 0x00F738 03:B728: 9D 82 07  STA ram_0782_unk,X
 C - - - - - 0x00F73B 03:B72B: A9 01     LDA #$01
 C - - - - - 0x00F73D 03:B72D: 9D D2 07  STA ram_07D2_unk,X
