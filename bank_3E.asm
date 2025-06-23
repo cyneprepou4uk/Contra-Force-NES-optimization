@@ -8,7 +8,7 @@
 
 .export sub_0x01D072
 .export sub_0x01D184
-.export sub_0x01D1A7_unpack_static_screen
+.export sub_0x01D1A7_clear_nametables
 .export sub_0x01D1B8_unpack_static_screen
 .export loc_0x01D1B8_unpack_static_screen
 .export loc_D1BE
@@ -145,14 +145,14 @@ C - - J - - 0x01D079 07:D069: A5 42     LDA ram_btn_hold_1
 C - - - - - 0x01D07B 07:D06B: 05 40     ORA ram_btn_press_1
 C - - - - - 0x01D07D 07:D06D: 29 10     AND #con_btn_Start
 C - - - - - 0x01D07F 07:D06F: D0 D3     BNE bra_D044_RTS
-C - - - - - 0x01D081 07:D071: 20 97 D1  JSR sub_D197_unpack_static_screen
+C - - - - - 0x01D081 07:D071: 20 97 D1  JSR sub_D197_clear_nametables
 C - - - - - 0x01D084 07:D074: 4C 60 D0  JMP loc_D060_prepare_next_script
 
 
 
 ofs_000_D077_02:
 ; con_0020_02
-C - - J - - 0x01D087 07:D077: 20 97 D1  JSR sub_D197_unpack_static_screen
+C - - J - - 0x01D087 07:D077: 20 97 D1  JSR sub_D197_clear_nametables
 C - - - - - 0x01D08A 07:D07A: 20 FD F2  JSR sub_0x01F30D_clear_0060_00DF
 C - - - - - 0x01D08D 07:D07D: 4C 60 D0  JMP loc_D060_prepare_next_script
 
@@ -379,7 +379,7 @@ C - - - - - 0x01D0B8 07:D0A8: 85 FF     STA ram_for_2000
 C - - - - - 0x01D0BA 07:D0AA: A9 7C     LDA #con_chr_bank + $7C
 C - - - - - 0x01D0BC 07:D0AC: 85 77     STA ram_chr_bank
 C - - - - - 0x01D0C3 07:D0B3: 20 94 BF  JSR sub_BF94_clear_data
-C - - - - - 0x01D0C6 07:D0B6: 20 97 D1  JSR sub_D197_unpack_static_screen
+C - - - - - 0x01D0C6 07:D0B6: 20 97 D1  JSR sub_D197_clear_nametables
 C - - - - - 0x01D0C9 07:D0B9: 20 27 F3  JSR sub_F327
 C - - - - - 0x01D0CC 07:D0BC: A9 A4     LDA #con_music_A4
 C - - - - - 0x01D0CE 07:D0BE: 20 CA FE  JSR sub_0x01FEDA_add_music_to_queue
@@ -505,9 +505,9 @@ C - - - - - 0x01D191 07:D181: 60        RTS
 
 
 
-sub_D197_unpack_static_screen:
-loc_D197_unpack_static_screen:
-sub_0x01D1A7_unpack_static_screen:
+sub_D197_clear_nametables:
+loc_D197_clear_nametables:
+sub_0x01D1A7_clear_nametables:
 C - - - - - 0x01D1AF 07:D19F: A2 00     LDX #con_D22A_clear_nametables
 sub_D1A8_unpack_static_screen:
 sub_0x01D1B8_unpack_static_screen:
@@ -1914,7 +1914,7 @@ C - - - - - 0x01D906 07:D8F6: D0 0A     BNE bra_D902
 C - - - - - 0x01D908 07:D8F8: 20 1A F5  JSR sub_0x01F52A
 C - - - - - 0x01D90B 07:D8FB: 90 26     BCC bra_D923_RTS
 C - - - - - 0x01D90D 07:D8FD: E6 21     INC ram_0021_t01
-C - - - - - 0x01D90F 07:D8FF: 4C 97 D1  JMP loc_D197_unpack_static_screen
+C - - - - - 0x01D90F 07:D8FF: 4C 97 D1  JMP loc_D197_clear_nametables
 bra_D902:
 C - - - - - 0x01D912 07:D902: 88        DEY
 C - - - - - 0x01D913 07:D903: D0 1F     BNE bra_D924

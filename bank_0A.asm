@@ -320,7 +320,7 @@ ofs_020_823D_00:
 ; con_8113_00
 C - - J - - 0x01424D 05:823D: 20 CC 81  JSR sub_81CC
 C - - - - - 0x014250 05:8240: 20 9B F4  JSR sub_0x01F4AB
-C - - - - - 0x014253 05:8243: 20 97 D1  JSR sub_0x01D1A7_unpack_static_screen
+C - - - - - 0x014253 05:8243: 20 97 D1  JSR sub_0x01D1A7_clear_nametables
 C - - - - - 0x014256 05:8246: A9 7C     LDA #con_chr_bank + $7C
 C - - - - - 0x014258 05:8248: 85 79     STA ram_chr_bank + $02
 C - - - - - 0x01425A 05:824A: A9 1C     LDA #con_chr_pair + $1C
@@ -341,7 +341,7 @@ C - - - - - 0x01426E 05:825E: 60        RTS
 
 ofs_020_825F_01:
 ; con_8113_01
-C - - J - - 0x01426F 05:825F: 20 97 D1  JSR sub_0x01D1A7_unpack_static_screen
+C - - J - - 0x01426F 05:825F: 20 97 D1  JSR sub_0x01D1A7_clear_nametables
 C - - - - - 0x014272 05:8262: 38        SEC
 C - - - - - 0x014273 05:8263: 60        RTS
 
@@ -651,7 +651,7 @@ C - - - - - 0x01435B 05:834B: 4C 02 F7  JMP loc_0x01F712
 
 ofs_020_834E_2C:
 ; con_8113_2C
-C - - J - - 0x01435E 05:834E: 20 97 D1  JSR sub_0x01D1A7_unpack_static_screen
+C - - J - - 0x01435E 05:834E: 20 97 D1  JSR sub_0x01D1A7_clear_nametables
 C - - - - - 0x014361 05:8351: A5 75     LDA ram_stage
 C - - - - - 0x014363 05:8353: C9 04     CMP #$04
 C - - - - - 0x014365 05:8355: F0 28     BEQ bra_837F
@@ -5295,7 +5295,7 @@ C - - - - - 0x016406 05:A3F6: E6 5B     INC ram_005B_script
 C - - - - - 0x016408 05:A3F8: A9 00     LDA #$00
 C - - - - - 0x01640A 05:A3FA: 85 1E     STA ram_001E_t11
 C - - - - - 0x01640C 05:A3FC: 20 93 FE  JSR sub_0x01FEA3_disable_rendering
-C - - - - - 0x01640F 05:A3FF: 20 97 D1  JSR sub_0x01D1A7_unpack_static_screen
+C - - - - - 0x01640F 05:A3FF: 20 97 D1  JSR sub_0x01D1A7_clear_nametables
 C - - - - - 0x016412 05:A402: A2 0C     LDX #con_D22A_pause
 C - - - - - 0x016414 05:A404: A9 19     LDA #con_F3D6_19
 C - - - - - 0x016416 05:A406: 20 B3 F3  JSR sub_0x01F3C3_execute_script
@@ -5620,7 +5620,7 @@ ofs_008_A603_09:
 ofs_008_A603_0A:
 C - - J - - 0x016613 05:A603: A9 04     LDA #con_chr_bank + $04
 C - - - - - 0x016615 05:A605: 85 79     STA ram_chr_bank + $02
-C - - - - - 0x016617 05:A607: 20 97 D1  JSR sub_0x01D1A7_unpack_static_screen
+C - - - - - 0x016617 05:A607: 20 97 D1  JSR sub_0x01D1A7_clear_nametables
 C - - - - - 0x01661A 05:A60A: 20 95 97  JSR sub_9795
 C - - - - - 0x01661D 05:A60D: A9 00     LDA #$00
 C - - - - - 0x01661F 05:A60F: 85 2B     STA ram_002B_flags

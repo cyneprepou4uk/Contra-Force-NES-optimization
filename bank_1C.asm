@@ -9,12 +9,6 @@
 .export _off012_0x0169B2_00_clear_nametables
 _off012_0x0169B2_00_clear_nametables:
 ; con_D22A_clear_nametables
-.export _off012_0x0169B2_02
-_off012_0x0169B2_02:
-; con_D22A_02
-.export _off012_0x0169B2_06
-_off012_0x0169B2_06:
-; con_D22A_06
 ; 00-7E = print byte xx times
 ; 80-FE = print a list of bytes xx times
 ; 7F = change ppu address
