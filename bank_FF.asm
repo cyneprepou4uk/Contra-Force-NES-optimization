@@ -1668,7 +1668,7 @@ C - - - - - 0x01E8A6 07:E896: 85 10     STA ram_0010_t11
 C - - - - - 0x01E8A8 07:E898: A5 11     LDA ram_0011_t08
 C - - - - - 0x01E8AA 07:E89A: 29 03     AND #$03
 C - - - - - 0x01E8AC 07:E89C: 85 11     STA ram_0011_t09
-C - - - - - 0x01E8AE 07:E89E: 20 B5 ED  JSR sub_EDB5
+C - - - - - 0x01E8AE 07:E89E: 20 B5 ED  JSR sub_EDB5_prepare_metatiles_pointers
 C - - - - - 0x01E8B1 07:E8A1: 6C 1C 00  JMP (ram_001C_t01_jmp)
 
 
@@ -1741,7 +1741,7 @@ C - - - - - 0x01E919 07:E909: 85 10     STA ram_0010_t13
 C - - - - - 0x01E91B 07:E90B: A5 11     LDA ram_0011_t10
 C - - - - - 0x01E91D 07:E90D: 29 03     AND #$03
 C - - - - - 0x01E91F 07:E90F: 85 11     STA ram_0011_t11
-C - - - - - 0x01E921 07:E911: 20 B5 ED  JSR sub_EDB5
+C - - - - - 0x01E921 07:E911: 20 B5 ED  JSR sub_EDB5_prepare_metatiles_pointers
 C - - - - - 0x01E924 07:E914: 6C 1C 00  JMP (ram_001C_t02_jmp)
 
 
@@ -1915,7 +1915,7 @@ C - - - - - 0x01EA06 07:E9F6: 85 10     STA ram_0010_t13
 C - - - - - 0x01EA08 07:E9F8: A5 11     LDA ram_0011_t12
 C - - - - - 0x01EA0A 07:E9FA: 29 03     AND #$03
 C - - - - - 0x01EA0C 07:E9FC: 85 11     STA ram_0011_t11
-C - - - - - 0x01EA0E 07:E9FE: 20 B5 ED  JSR sub_EDB5
+C - - - - - 0x01EA0E 07:E9FE: 20 B5 ED  JSR sub_EDB5_prepare_metatiles_pointers
 C - - - - - 0x01EA11 07:EA01: A9 00     LDA #$00
 C - - - - - 0x01EA13 07:EA03: 8D 53 03  STA ram_0353_flag
 C - - - - - 0x01EA16 07:EA06: 6C 1C 00  JMP (ram_001C_t03_jmp)
@@ -2026,7 +2026,7 @@ C - - - - - 0x01EABB 07:EAAB: 85 10     STA ram_0010_t13
 C - - - - - 0x01EABD 07:EAAD: A5 11     LDA ram_0011_t13
 C - - - - - 0x01EABF 07:EAAF: 29 03     AND #$03
 C - - - - - 0x01EAC1 07:EAB1: 85 11     STA ram_0011_t11
-C - - - - - 0x01EAC3 07:EAB3: 20 B5 ED  JSR sub_EDB5
+C - - - - - 0x01EAC3 07:EAB3: 20 B5 ED  JSR sub_EDB5_prepare_metatiles_pointers
 C - - - - - 0x01EAC6 07:EAB6: A9 01     LDA #$01
 C - - - - - 0x01EAC8 07:EAB8: 8D 53 03  STA ram_0353_flag
 C - - - - - 0x01EACB 07:EABB: 6C 1C 00  JMP (ram_001C_t04_jmp)
@@ -2622,7 +2622,7 @@ tbl_EDAB:
 
 
 
-sub_EDB5:
+sub_EDB5_prepare_metatiles_pointers:
 ; out
     ; ram_0008_t17_metatiles_ptr
 C - - - - - 0x01EDC5 07:EDB5: A4 88     LDY ram_x2_stage
@@ -3355,7 +3355,7 @@ bra_F1EC:
 C - - - - - 0x01F1FC 07:F1EC: A9 01     LDA #$01
 bra_F1EE:
 C - - - - - 0x01F1FE 07:F1EE: A8        TAY
-C - - - - - 0x01F1FF 07:F1EF: B9 7D F2  LDA tbl_F27D,Y
+C - - - - - 0x01F1FF 07:F1EF: B9 7D F2  LDA tbl_F27D_ppu_address_hi,Y
 C - - - - - 0x01F202 07:F1F2: 05 05     ORA ram_0005_t15
 C - - - - - 0x01F204 07:F1F4: 85 05     STA ram_0005_t09_ppu_addr_hi
 C - - - - - 0x01F206 07:F1F6: A9 04     LDA #$04
@@ -3386,7 +3386,7 @@ C - - - - - 0x01F23A 07:F22A: 2A        ROL
 C - - - - - 0x01F23B 07:F22B: 88        DEY
 C - - - - - 0x01F23C 07:F22C: 10 FA     BPL bra_F228_loop
 C - - - - - 0x01F23E 07:F22E: 85 13     STA ram_0013_t01
-C - - - - - 0x01F240 07:F230: 20 B5 ED  JSR sub_EDB5
+C - - - - - 0x01F240 07:F230: 20 B5 ED  JSR sub_EDB5_prepare_metatiles_pointers
 C - - - - - 0x01F243 07:F233: A5 08     LDA ram_0008_t17_metatiles_ptr
 C - - - - - 0x01F245 07:F235: 18        CLC
 C - - - - - 0x01F246 07:F236: 65 12     ADC ram_0012_t03_data_index
@@ -3434,6 +3434,10 @@ C - - - - - 0x01F278 07:F268: 60        RTS
 
 
 sub_F269:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
 C - - - - - 0x01F279 07:F269: A4 75     LDY ram_stage
 C - - - - - 0x01F27B 07:F26B: C0 02     CPY #$02
 C - - - - - 0x01F27D 07:F26D: 60        RTS
@@ -3453,7 +3457,7 @@ tbl_F273:
 
 
 
-tbl_F27D:
+tbl_F27D_ppu_address_hi:
 - D 3 - - - 0x01F28D 07:F27D: 20        .byte $20   ; 00 
 - D 3 - - - 0x01F28E 07:F27E: 2C        .byte $2C   ; 01 
 - - - - - - 0x01F28F 07:F27F: 2C        .byte $2C   ; 02 
@@ -3719,7 +3723,7 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3A3 07:F393: 00        .byte con_prg_bank + $00   ; 
 - D 3 - - - 0x01F3A4 07:F394: 01        .byte con_prg_bank + $01   ; 
                                         .byte con_prg_bank + $3D   ; 
-; 01 
+; 01 норм
 - D 3 - - - 0x01F3A5 07:F395: 0A        .byte con_prg_bank + $0A   ; 
 - D 3 - - - 0x01F3A6 07:F396: 0B        .byte con_prg_bank + $0B   ; 
                                         .byte con_prg_bank + $3D   ; 
@@ -3727,11 +3731,13 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3A7 07:F397: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3A8 07:F398: 05        .byte con_prg_bank + $05   ; 
                                         .byte con_prg_bank + $3D   ; 
-; 03 
+; 03 !!! надо переместить данные каждого уровня в свой банк, тогда
+; можно будет переместить con_F3D6_00 и con_F3D6_0F в первую часть банка,
+; и подключать вторую часть с нужным уровнем, вместо трех банков 03 0C 0D
 - D 3 - - - 0x01F3A9 07:F399: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3AA 07:F39A: 0D        .byte con_prg_bank + $0D   ; 
                                         .byte con_prg_bank + $3D   ; 
-; 04 звуковой движок
+; 04 норм звуковой движок
 - D 3 - - - 0x01F3AB 07:F39B: 08        .byte con_prg_bank + $10   ; 
 - D 3 - - - 0x01F3AC 07:F39C: 09        .byte con_prg_bank + $11   ; 
                                         .byte con_prg_bank + $12   ; 
@@ -3743,11 +3749,11 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3AF 07:F39F: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3B0 07:F3A0: 07        .byte con_prg_bank + $07   ; 
                                         .byte con_prg_bank + $3D   ; 
-; 07 
+; 07 норм
 - D 3 - - - 0x01F3B1 07:F3A1: 0A        .byte con_prg_bank + $08   ; 
 - D 3 - - - 0x01F3B2 07:F3A2: 0B        .byte con_prg_bank + $09   ; 
                                         .byte con_prg_bank + $3D   ; 
-; 08 
+; 08 норм
 - D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $14   ; 
 - D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $15   ; 
                                         .byte con_prg_bank + $16   ; 
@@ -3755,11 +3761,11 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3B5 07:F3A5: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3B6 07:F3A6: 03        .byte con_prg_bank + $03   ; 
                                         .byte con_prg_bank + $3D   ; 
-; 0A
+; 0A норм
 - D 3 - - - 0x01F3B7 07:F3A7: 00        .byte con_prg_bank + $18   ; 
 - D 3 - - - 0x01F3B8 07:F3A8: 03        .byte con_prg_bank + $19   ; 
                                         .byte con_prg_bank + $1A   ; 
-; 0B 
+; 0B норм
 - D 3 - - - 0x01F3B9 07:F3A9: 0C        .byte con_prg_bank + $1C   ; 
 - D 3 - - - 0x01F3BA 07:F3AA: 0D        .byte con_prg_bank + $1D   ; 
                                         .byte con_prg_bank + $1E   ; 
