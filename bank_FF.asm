@@ -14,7 +14,7 @@
 .export loc_0x01F3C3_execute_script
 .export sub_0x01F3C3_execute_script
 .export sub_0x01F458_select_bg_chr_bank_pair
-.export sub_0x01F4AB
+.export sub_0x01F4BE
 .export sub_0x01F4C1
 .export loc_0x01F4C1
 .export sub_0x01F4E8
@@ -4049,22 +4049,7 @@ tbl_F455_bg_chr_bank:
 
 
 
-sub_0x01F4AB:
-C - - - - - 0x01F4AB 07:F49B: A0 1F     LDY #$1F
-C - - - - - 0x01F4AD 07:F49D: A9 0F     LDA #$0F
-bra_F49F_loop:
-C - - - - - 0x01F4AF 07:F49F: 99 B0 03  STA ram_palette_buffer,Y
-C - - - - - 0x01F4B2 07:F4A2: 88        DEY
-C - - - - - 0x01F4B3 07:F4A3: 10 FA     BPL bra_F49F_loop
-C - - - - - 0x01F4B5 07:F4A5: C8        INY
-C - - - - - 0x01F4B6 07:F4A6: 20 AE F4  JSR sub_F4AE
-C - - - - - 0x01F4B9 07:F4A9: A9 03     LDA #$01 + $02
-C - - - - - 0x01F4BB 07:F4AB: 85 2B     STA ram_002B_flags
-C - - - - - 0x01F4BD 07:F4AD: 60        RTS
-
-
-
-sub_F4AE:
+sub_0x01F4BE:
 C - - - - - 0x01F4BE 07:F4AE: 98        TYA
 C - - - - - 0x01F4BF 07:F4AF: A0 02     LDY #$02
 sub_0x01F4C1:

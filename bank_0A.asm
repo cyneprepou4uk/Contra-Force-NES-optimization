@@ -319,7 +319,7 @@ C - - - - - 0x01424B 05:823B: D0 0F     BNE bra_824C    ; jmp
 ofs_020_823D_00:
 ; con_8113_00
 C - - J - - 0x01424D 05:823D: 20 CC 81  JSR sub_81CC
-C - - - - - 0x014250 05:8240: 20 9B F4  JSR sub_0x01F4AB
+C - - - - - 0x014250 05:8240: 20 9B F4  JSR sub_F49B
 C - - - - - 0x014253 05:8243: 20 97 D1  JSR sub_0x01D1A7_clear_nametables
 C - - - - - 0x014256 05:8246: A9 7C     LDA #con_chr_bank + $7C
 C - - - - - 0x014258 05:8248: 85 79     STA ram_chr_bank + $02
@@ -336,6 +336,21 @@ C - - - - - 0x014269 05:8259: 29 FC     AND #$FC
 C - - - - - 0x01426B 05:825B: 85 FF     STA ram_for_2000
 C - - - - - 0x01426D 05:825D: 38        SEC
 C - - - - - 0x01426E 05:825E: 60        RTS
+
+
+
+sub_F49B:
+C - - - - - 0x01F4AB 07:F49B: A0 1F     LDY #$1F
+C - - - - - 0x01F4AD 07:F49D: A9 0F     LDA #$0F
+bra_F49F_loop:
+C - - - - - 0x01F4AF 07:F49F: 99 B0 03  STA ram_palette_buffer,Y
+C - - - - - 0x01F4B2 07:F4A2: 88        DEY
+C - - - - - 0x01F4B3 07:F4A3: 10 FA     BPL bra_F49F_loop
+C - - - - - 0x01F4B5 07:F4A5: C8        INY
+C - - - - - 0x01F4B6 07:F4A6: 20 AE F4  JSR sub_0x01F4BE
+C - - - - - 0x01F4B9 07:F4A9: A9 03     LDA #$01 + $02
+C - - - - - 0x01F4BB 07:F4AB: 85 2B     STA ram_002B_flags
+C - - - - - 0x01F4BD 07:F4AD: 60        RTS
 
 
 
