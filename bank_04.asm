@@ -115,7 +115,6 @@
 .export sub_0x009E25
 .export sub_0x009E65
 .export sub_0x009E75
-.export sub_0x009E87
 
 
 
@@ -4350,75 +4349,6 @@ C - - - - - 0x009E83 02:9E73: B0 DE     BCS bra_9E53
 bra_9E75:
 C - - - - - 0x009E85 02:9E75: 38        SEC
 C - - - - - 0x009E86 02:9E76: 60        RTS
-
-
-
-sub_0x009E87:
-; out
-    ; C
-        ; 0 = 
-        ; 1 = 
-C - - - - - 0x009E87 02:9E77: A0 00     LDY #$00
-C - - - - - 0x009E89 02:9E79: BD 36 07  LDA ram_0736_obj,X
-C - - - - - 0x009E8C 02:9E7C: 29 01     AND #$01
-C - - - - - 0x009E8E 02:9E7E: F0 0C     BEQ bra_9E8C
-C - - - - - 0x009E90 02:9E80: A9 10     LDA #$10    ; active flag
-C - - - - - 0x009E92 02:9E82: 20 96 9E  JSR sub_9E96
-C - - - - - 0x009E95 02:9E85: B0 47     BCS bra_9ECE
-C - - - - - 0x009E97 02:9E87: 20 58 97  JSR sub_0x009768
-C - - - - - 0x009E9A 02:9E8A: 90 46     BCC bra_9ED2_RTS
-bra_9E8C:
-- - - - - - 0x009E9C 02:9E8C: C8        INY
-- - - - - - 0x009E9D 02:9E8D: BD 36 07  LDA ram_0736_obj,X
-- - - - - - 0x009EA0 02:9E90: 29 02     AND #$02
-- - - - - - 0x009EA2 02:9E92: F0 3A     BEQ bra_9ECE
-- - - - - - 0x009EA4 02:9E94: A9 20     LDA #$20    ; cpu flag
-sub_9E96:
-; in
-    ; A = 
-; out
-    ; C
-        ; 0 = 
-        ; 1 = 
-C - - - - - 0x009EA6 02:9E96: A2 03     LDX #$03
-C - - - - - 0x009EA8 02:9E98: 85 00     STA ram_0000_t76
-bra_9E9A_loop:
-C - - - - - 0x009EAA 02:9E9A: B5 7F     LDA ram_player_stats,X
-C - - - - - 0x009EAC 02:9E9C: 29 F0     AND #$F0
-C - - - - - 0x009EAE 02:9E9E: C5 00     CMP ram_0000_t76
-C - - - - - 0x009EB0 02:9EA0: F0 07     BEQ bra_9EA9_match
-C - - - - - 0x009EB2 02:9EA2: CA        DEX
-C - - - - - 0x009EB3 02:9EA3: 10 F5     BPL bra_9E9A_loop
-; if no matches
-- - - - - - 0x009EB5 02:9EA5: A6 53     LDX ram_0053
-- - - - - - 0x009EB7 02:9EA7: 18        CLC
-- - - - - - 0x009EB8 02:9EA8: 60        RTS
-bra_9EA9_match:
-C - - - - - 0x009EB9 02:9EA9: A6 53     LDX ram_0053
-C - - - - - 0x009EBB 02:9EAB: BD B4 07  LDA ram_07B4_unk,X
-C - - - - - 0x009EBE 02:9EAE: C9 04     CMP #$04
-C - - - - - 0x009EC0 02:9EB0: 90 0F     BCC bra_9EC1
-C - - - - - 0x009EC2 02:9EB2: B9 4E 06  LDA ram_obj_pos_X,Y
-C - - - - - 0x009EC5 02:9EB5: 38        SEC
-C - - - - - 0x009EC6 02:9EB6: FD 4E 06  SBC ram_obj_pos_X,X
-C - - - - - 0x009EC9 02:9EB9: 30 04     BMI bra_9EBF
-C - - - - - 0x009ECB 02:9EBB: C9 06     CMP #$06
-C - - - - - 0x009ECD 02:9EBD: B0 0F     BCS bra_9ECE
-bra_9EBF:
-C - - - - - 0x009ECF 02:9EBF: 18        CLC
-C - - - - - 0x009ED0 02:9EC0: 60        RTS
-bra_9EC1:
-- - - - - - 0x009ED1 02:9EC1: B9 68 06  LDA ram_obj_pos_Y,Y
-- - - - - - 0x009ED4 02:9EC4: 38        SEC
-- - - - - - 0x009ED5 02:9EC5: FD 68 06  SBC ram_obj_pos_Y,X
-- - - - - - 0x009ED8 02:9EC8: 30 F5     BMI bra_9EBF
-- - - - - - 0x009EDA 02:9ECA: C9 18     CMP #$18
-- - - - - - 0x009EDC 02:9ECC: 90 04     BCC bra_9ED2_RTS
-bra_9ECE:
-C - - - - - 0x009EDE 02:9ECE: 20 68 B0  JSR sub_0x00D078
-C - - - - - 0x009EE1 02:9ED1: 38        SEC
-bra_9ED2_RTS:
-C - - - - - 0x009EE2 02:9ED2: 60        RTS
 
 
 
