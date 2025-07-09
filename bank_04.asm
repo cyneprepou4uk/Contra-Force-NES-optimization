@@ -3459,12 +3459,6 @@ C - - - - - 0x0093BD 02:93AD: D0 DF     BNE bra_938E    ; jmp
 
 
 
-bra_93AF:
-C - - - - - 0x0093BF 02:93AF: 38        SEC
-C - - - - - 0x0093C0 02:93B0: 60        RTS
-
-
-
 sub_93BA:
 sub_0x0093CA:
 loc_0x0093CA:
@@ -3491,6 +3485,9 @@ bra_93D3:
 C - - - - - 0x0093E3 02:93D3: A5 39     LDA ram_buffer_index_2
 C - - - - - 0x0093E5 02:93D5: C9 20     CMP #$20
 C - - - - - 0x0093E7 02:93D7: 60        RTS
+bra_93AF:
+C - - - - - 0x0093BF 02:93AF: 38        SEC
+C - - - - - 0x0093C0 02:93B0: 60        RTS
 
 
 
