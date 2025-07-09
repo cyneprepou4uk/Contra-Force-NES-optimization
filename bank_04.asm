@@ -52,7 +52,6 @@
 .export sub_0x008FF3
 .export sub_0x009003
 .export sub_0x009013
-.export sub_0x00901C
 .export sub_0x00905B
 .export sub_0x009080
 .export sub_0x009095
@@ -2979,25 +2978,6 @@ C - - - - - 0x009018 02:9008: D0 D7     BNE bra_9009
 C - - - - - 0x00901A 02:900A: 18        CLC
 C - - - - - 0x00901B 02:900B: 60        RTS
 bra_9009:
-                                        SEC
-                                        RTS
-
-
-
-sub_0x00901C:
-; out
-    ; C
-        ; 0 = 
-        ; 1 = 
-C - - - - - 0x00901C 02:900C: BD 36 07  LDA ram_0736_obj,X
-C - - - - - 0x00901F 02:900F: 29 FC     AND #$FC
-C - - - - - 0x009021 02:9011: D0 CE     BNE bra_9017
-C - - - - - 0x009023 02:9013: BD 4C 07  LDA ram_074C_obj,X
-C - - - - - 0x009026 02:9016: 4C 06 90  AND #$03
-                                        BNE bra_9017
-                                        CLC
-                                        RTS
-bra_9017:
                                         SEC
                                         RTS
 

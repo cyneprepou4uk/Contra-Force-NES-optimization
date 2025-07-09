@@ -73,7 +73,7 @@ C - - - - - 0x003377 00:B367: 90 E8     BCC bra_B351_loop
 bra_B369_RTS:
 C - - - - - 0x003379 00:B369: 60        RTS
 bra_B36A:
-C - - - - - 0x00337A 00:B36A: 20 0C 90  JSR sub_0x00901C
+C - - - - - 0x00337A 00:B36A: 20 0C 90  JSR sub_900C
 C - - - - - 0x00337D 00:B36D: 90 FA     BCC bra_B369_RTS
 ofs_020_B36F_1A:
 C - - J - - 0x00337F 00:B36F: A9 1A     LDA #$1A
@@ -93,6 +93,25 @@ C - - - - - 0x003390 00:B380: 9D B2 06  STA ram_06B2_obj,X
 sub_B383:
 C - - - - - 0x003393 00:B383: A9 FF     LDA #$FF
 C - - - - - 0x003395 00:B385: 4C 38 98  STA ram_06F4_obj,X
+                                        RTS
+
+
+
+sub_900C:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
+C - - - - - 0x00901C 02:900C: BD 36 07  LDA ram_0736_obj,X
+C - - - - - 0x00901F 02:900F: 29 FC     AND #$FC
+C - - - - - 0x009021 02:9011: D0 CE     BNE bra_9017
+C - - - - - 0x009023 02:9013: BD 4C 07  LDA ram_074C_obj,X
+C - - - - - 0x009026 02:9016: 4C 06 90  AND #$03
+                                        BNE bra_9017
+                                        CLC
+                                        RTS
+bra_9017:
+                                        SEC
                                         RTS
 
 
