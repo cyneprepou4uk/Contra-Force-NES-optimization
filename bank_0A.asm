@@ -5267,19 +5267,11 @@ C - - - - - 0x0163C8 05:A3B8: 60        RTS
 
 
 sub_A3B9_prepare_palette_pointers:
-; bzk optimize, Y is always 00
-C - - - - - 0x0163C9 05:A3B9: A0 00     LDY #$00
-C - - - - - 0x0163CB 05:A3BB: B9 C6 A3  LDA tbl_A3C6_palette,Y
+C - - - - - 0x0163CB 05:A3BB: B9 C6 A3  LDA #< tbl_A3C8_palette
 C - - - - - 0x0163CE 05:A3BE: 85 02     STA ram_0002_t05_data
-C - - - - - 0x0163D0 05:A3C0: B9 C7 A3  LDA tbl_A3C6_palette + $01,Y
+C - - - - - 0x0163D0 05:A3C0: B9 C7 A3  LDA #> tbl_A3C8_palette
 C - - - - - 0x0163D3 05:A3C3: 85 03     STA ram_0002_t05_data + $01
 C - - - - - 0x0163D5 05:A3C5: 60        RTS
-
-
-
-tbl_A3C6_palette:
-; bzk optimize
-- D 1 - - - 0x0163D6 05:A3C6: C8 A3     .word tbl_A3C8_palette
 
 
 
