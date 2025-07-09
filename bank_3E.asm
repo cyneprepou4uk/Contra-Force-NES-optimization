@@ -4200,7 +4200,6 @@ C - - - - - 0x00A0B7 02:A0A7: 60        RTS
 
 
 
-sub_9758:
 sub_0x009768:
 .export sub_0x009768
 ; out
