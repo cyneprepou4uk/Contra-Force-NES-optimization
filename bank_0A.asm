@@ -977,11 +977,9 @@ C - - - - - 0x0145A8 05:8598: 84 02     STY ram_0002_t42
 C - - - - - 0x0145AA 05:859A: A8        TAY
 C - - - - - 0x0145AB 05:859B: B9 B5 85  LDA tbl_85B5,Y
 C - - - - - 0x0145AE 05:859E: 18        CLC
-; bzk optimize
-C - - - - - 0x0145AF 05:859F: A0 00     LDY #$00
-C - - - - - 0x0145B1 05:85A1: 79 BD 85  ADC tbl_85BD,Y
+C - - - - - 0x0145B1 05:85A1: 79 BD 85  ADC #< tbl_85BF_palette
 C - - - - - 0x0145B4 05:85A4: 85 00     STA ram_0000_t00_data
-C - - - - - 0x0145B6 05:85A6: B9 BE 85  LDA tbl_85BD + $01,Y
+C - - - - - 0x0145B6 05:85A6: B9 BE 85  LDA #> tbl_85BF_palette
 C - - - - - 0x0145B9 05:85A9: 69 00     ADC #$00
 C - - - - - 0x0145BB 05:85AB: 85 01     STA ram_0000_t00_data + $01
 C - - - - - 0x0145BD 05:85AD: A0 01     LDY #$01
@@ -999,12 +997,6 @@ tbl_85B5:
 - D 0 - - - 0x0145CA 05:85BA: 3C        .byte $3C   ; 05 
 - D 0 - - - 0x0145CB 05:85BB: 48        .byte $48   ; 06 
 - D 0 - - - 0x0145CC 05:85BC: 54        .byte $54   ; 07 
-
-
-
-tbl_85BD:
-; bzk optimize
-- D 0 - - - 0x0145CD 05:85BD: BF 85     .word tbl_85BF_palette
 
 
 
