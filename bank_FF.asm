@@ -4200,8 +4200,16 @@ C - - - - - 0x01F578 07:F568: 60        RTS
 sub_0x01F579:
 ofs_020_0x01F579_04:
 ; con_8113_04
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
 C - - J - - 0x01F579 07:F569: 20 99 F5  JSR sub_F599
 sub_0x01F57C:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
 C - - - - - 0x01F57C 07:F56C: AD F2 03  LDA ram_03F2
 C - - - - - 0x01F57F 07:F56F: D0 F3     BNE bra_F564
 C - - - - - 0x01F581 07:F571: A9 08     LDA #$08

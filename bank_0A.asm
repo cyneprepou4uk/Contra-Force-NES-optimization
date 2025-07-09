@@ -991,24 +991,24 @@ C - - - - - 0x0145C2 05:85B2: 4C 8A 82  JMP loc_828A
 
 
 tbl_85B5:
-- D 0 - - - 0x0145C5 05:85B5: 00        .byte $00   ; 
-- D 0 - - - 0x0145C6 05:85B6: 0C        .byte $0C   ; 
-- D 0 - - - 0x0145C7 05:85B7: 18        .byte $18   ; 
-- D 0 - - - 0x0145C8 05:85B8: 24        .byte $24   ; 
-- D 0 - - - 0x0145C9 05:85B9: 30        .byte $30   ; 
-- D 0 - - - 0x0145CA 05:85BA: 3C        .byte $3C   ; 
-- D 0 - - - 0x0145CB 05:85BB: 48        .byte $48   ; 
-- D 0 - - - 0x0145CC 05:85BC: 54        .byte $54   ; 
+- D 0 - - - 0x0145C5 05:85B5: 00        .byte $00   ; 00 
+- D 0 - - - 0x0145C6 05:85B6: 0C        .byte $0C   ; 01 
+- D 0 - - - 0x0145C7 05:85B7: 18        .byte $18   ; 02 
+- D 0 - - - 0x0145C8 05:85B8: 24        .byte $24   ; 03 
+- D 0 - - - 0x0145C9 05:85B9: 30        .byte $30   ; 04 
+- D 0 - - - 0x0145CA 05:85BA: 3C        .byte $3C   ; 05 
+- D 0 - - - 0x0145CB 05:85BB: 48        .byte $48   ; 06 
+- D 0 - - - 0x0145CC 05:85BC: 54        .byte $54   ; 07 
 
 
 
 tbl_85BD:
 ; bzk optimize
-- D 0 - - - 0x0145CD 05:85BD: BF 85     .word tbl_85BF
+- D 0 - - - 0x0145CD 05:85BD: BF 85     .word tbl_85BF_palette
 
 
 
-tbl_85BF:
+tbl_85BF_palette:
 ; these are 2-4th colors, the 1st color is always 0F, see 0x01F4F6
 ; 00 
 - D 0 - I - 0x0145CF 05:85BF: 0F        .byte $0F, $0F, $0F   ; 
@@ -1073,15 +1073,15 @@ C - - - - - 0x014644 05:8634: C9 02     CMP #$02
 C - - - - - 0x014646 05:8636: D0 09     BNE bra_8641
 C - - - - - 0x014648 05:8638: 38        SEC
 C - - - - - 0x014649 05:8639: 60        RTS
+
+
+
 ofs_020_863A_31:
 ; con_8113_31
 C - - J - - 0x01464A 05:863A: 20 48 86  JSR sub_8648
 C - - - - - 0x01464D 05:863D: D0 02     BNE bra_8641
 C - - - - - 0x01464F 05:863F: 38        SEC
 C - - - - - 0x014650 05:8640: 60        RTS
-
-
-
 bra_8641:
 sub_8641:
 C - - - - - 0x014651 05:8641: A9 1A     LDA #con_chr_pair + $1A
@@ -5165,6 +5165,7 @@ C - - - - - 0x016335 05:A325: F0 71     BEQ bra_A398
 - - - - - - 0x016337 05:A327: 20 93 FE  JSR sub_0x01FEA3_disable_rendering
 - - - - - - 0x01633A 05:A32A: A9 00     LDA #$00
 - - - - - - 0x01633C 05:A32C: 8D 44 03  STA ram_0344
+; bzk optimize, LDX + LDY,X, delete TAY
 - - - - - - 0x01633F 05:A32F: A4 75     LDY ram_stage
 - - - - - - 0x016341 05:A331: B9 69 A3  LDA tbl_A369,Y
 - - - - - - 0x016344 05:A334: A8        TAY
