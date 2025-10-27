@@ -13,7 +13,6 @@
 .export sub_0x0080C6
 .export sub_0x008142
 .export ofs_006_0x008142_17
-.export loc_0x0081CC
 .export sub_0x00846C
 .export sub_0x008494
 .export sub_0x0084A4
@@ -481,12 +480,6 @@ bra_81C2:
 C - - - - - 0x0081D2 02:81C2: 4C 78 82  JMP loc_8278
 bra_81BA_RTS:
                                         RTS
-
-
-
-loc_0x0081CC:
-C D 0 - - - 0x0081CC 02:81BC: 20 92 82  JSR sub_8292
-C - - - - - 0x0081CF 02:81BF: 4C 10 8E  JMP loc_0x008E20
 
 
 
@@ -6043,6 +6036,21 @@ tbl_AF29:
 - - - - - - 0x00EF3B 03:AF2B: 08        .byte $08   ; 02 stage 3
 - - - - - - 0x00EF3C 03:AF2C: 08        .byte $08   ; 03 stage 4
 - D 1 - - - 0x00EF3D 03:AF2D: 18        .byte $18   ; 04 stage 5
+
+
+
+.export loc_0x00E018
+loc_0x00E018:
+C - - - - - 0x00E018 03:A008: BD 0A 07  LDA ram_070A_obj,X
+C - - - - - 0x00E01B 03:A00B: 30 0D     BMI bra_A01A_RTS
+C - - - - - 0x00E01D 03:A00D: B9 81 AF  LDA tbl_0x00EF91,Y
+C - - - - - 0x00E020 03:A010: 85 00     STA ram_0000_t06_data
+C - - - - - 0x00E022 03:A012: B9 82 AF  LDA tbl_0x00EF91 + $01,Y
+C - - - - - 0x00E025 03:A015: 85 01     STA ram_0000_t06_data + $01
+C - - - - - 0x00E027 03:A017: 4C BC 81  JSR sub_8292
+C - - - - - 0x0081CF 02:81BF: 4C 10 8E  JMP loc_0x008E20
+bra_A01A_RTS:
+C - - - - - 0x00E02A 03:A01A: 60        RTS
 
 
 

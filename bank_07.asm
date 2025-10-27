@@ -85,16 +85,7 @@ ofs_016_0x00E011_1E:
 C - - J - - 0x00E011 03:A001: A9 00     LDA #$00
 C - - - - - 0x00E013 03:A003: 20 5E A0  JSR sub_0x00E06E
 C - - - - - 0x00E016 03:A006: A0 00     LDY #$00
-bra_A008:
-C - - - - - 0x00E018 03:A008: BD 0A 07  LDA ram_070A_obj,X
-C - - - - - 0x00E01B 03:A00B: 30 0D     BMI bra_A01A_RTS
-C - - - - - 0x00E01D 03:A00D: B9 81 AF  LDA tbl_AF81,Y
-C - - - - - 0x00E020 03:A010: 85 00     STA ram_0000_t06_data
-C - - - - - 0x00E022 03:A012: B9 82 AF  LDA tbl_AF81 + $01,Y
-C - - - - - 0x00E025 03:A015: 85 01     STA ram_0000_t06_data + $01
-C - - - - - 0x00E027 03:A017: 4C BC 81  JMP loc_0x0081CC
-bra_A01A_RTS:
-C - - - - - 0x00E02A 03:A01A: 60        RTS
+                                        JMP loc_0x00E018
 
 
 
@@ -102,7 +93,7 @@ ofs_016_0x00E02B_1F:
 C - - J - - 0x00E02B 03:A01B: A9 01     LDA #$01
 C - - - - - 0x00E02D 03:A01D: 20 5E A0  JSR sub_0x00E06E
 C - - - - - 0x00E030 03:A020: A0 02     LDY #$02
-C - - - - - 0x00E032 03:A022: D0 E4     BNE bra_A008    ; jmp
+C - - - - - 0x00E032 03:A022: D0 E4     JMP loc_0x00E018
 
 
 
@@ -110,7 +101,7 @@ ofs_016_0x00E034_24:
 C - - J - - 0x00E034 03:A024: A9 02     LDA #$02
 C - - - - - 0x00E036 03:A026: 20 5E A0  JSR sub_0x00E06E
 C - - - - - 0x00E039 03:A029: A0 04     LDY #$04
-C - - - - - 0x00E03B 03:A02B: D0 DB     BNE bra_A008    ; jmp
+C - - - - - 0x00E03B 03:A02B: D0 DB     JMP loc_0x00E018
 
 
 
@@ -118,7 +109,7 @@ ofs_016_0x00E03D_20:
 C - - J - - 0x00E03D 03:A02D: A9 05     LDA #$05
 C - - - - - 0x00E03F 03:A02F: 20 5E A0  JSR sub_0x00E06E
 C - - - - - 0x00E042 03:A032: A0 0C     LDY #$0C
-C - - - - - 0x00E044 03:A034: D0 D2     BNE bra_A008    ; jmp
+C - - - - - 0x00E044 03:A034: D0 D2     JMP loc_0x00E018
 
 
 
@@ -126,7 +117,7 @@ ofs_016_0x00E046_21:
 C - - J - - 0x00E046 03:A036: A9 03     LDA #$03
 C - - - - - 0x00E048 03:A038: 20 5E A0  JSR sub_0x00E06E
 C - - - - - 0x00E04B 03:A03B: A0 06     LDY #$06
-C - - - - - 0x00E04D 03:A03D: D0 C9     BNE bra_A008    ; jmp
+C - - - - - 0x00E04D 03:A03D: D0 C9     JMP loc_0x00E018
 
 
 
@@ -141,7 +132,7 @@ bra_A04C:
 C - - - - - 0x00E05C 03:A04C: A9 04     LDA #$04
 C - - - - - 0x00E05E 03:A04E: 20 5E A0  JSR sub_0x00E06E
 C - - - - - 0x00E061 03:A051: A0 08     LDY #$08
-C - - - - - 0x00E063 03:A053: D0 B3     BNE bra_A008    ; jmp
+C - - - - - 0x00E063 03:A053: D0 B3     JMP loc_0x00E018
 
 
 
@@ -149,7 +140,7 @@ ofs_016_0x00E065_11:
 C - - J - - 0x00E065 03:A055: A9 06     LDA #$06
 C - - - - - 0x00E067 03:A057: 9D C8 07  STA ram_07C8_unk,X
 C - - - - - 0x00E06A 03:A05A: A0 0A     LDY #$0A
-C - - - - - 0x00E06C 03:A05C: D0 AA     BNE bra_A008    ; jmp
+C - - - - - 0x00E06C 03:A05C: D0 AA     JMP loc_0x00E018
 
 
 
@@ -2233,7 +2224,9 @@ tbl_AECB:
 
 
 
-tbl_AF81:
+.export tbl_0x00EF91
+tbl_0x00EF91:
+; todo переместить в банк 04
 - D 1 - - - 0x00EF91 03:AF81: 8F AF     .word _off010_AF8F_00
 - D 1 - - - 0x00EF93 03:AF83: 43 B0     .word _off010_B043_02
 - D 1 - - - 0x00EF95 03:AF85: 0F B1     .word _off010_B10F_04
