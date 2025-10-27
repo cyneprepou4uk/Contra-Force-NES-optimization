@@ -621,7 +621,6 @@ C - - - - - 0x00C38C 03:A37C: 84 07     STY ram_0007_t08
 C - - - - - 0x00C38E 03:A37E: A5 1C     LDA ram_001C_t05
 C - - - - - 0x00C390 03:A380: C9 3B     CMP #$3B
 C - - - - - 0x00C392 03:A382: F0 05     BEQ bra_A389_RTS
-sub_A384:
 C - - - - - 0x00C394 03:A384: B9 82 07  LDA ram_0782_unk,Y
 C - - - - - 0x00C397 03:A387: 29 7F     AND #$7F
 bra_A389_RTS:
@@ -752,7 +751,8 @@ bra_A476:
 C - - - - - 0x00C486 03:A476: A4 00     LDY ram_0000_t1E
 loc_A478:
 C D 1 - - - 0x00C488 03:A478: 20 E3 93  JSR sub_0x0093F3
-C - - - - - 0x00C48B 03:A47B: 20 84 A3  JSR sub_A384
+C - - - - - 0x00C48B 03:A47B: 20 84 A3  LDA ram_0782_unk,Y
+                                        AND #$7F
 C - - - - - 0x00C48E 03:A47E: A8        TAY
 C - - - - - 0x00C48F 03:A47F: B9 A9 A4  LDA tbl_A4AA - $01,Y
 C - - - - - 0x00C492 03:A482: 30 17     BMI bra_A49B
