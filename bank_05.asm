@@ -8,8 +8,6 @@
 
 .export sub_0x00A011
 .export ofs_006_0x00A040_20
-.export sub_0x00A058
-.export ofs_006_0x00A058_23
 .export sub_0x00A073
 .export ofs_006_0x00A073_12
 .export loc_0x00A548
@@ -77,69 +75,6 @@ sub_A043_00B1x_AND_0F:
 C - - - - - 0x00A053 02:A043: B5 B1     LDA ram_current_player,X
 C - - - - - 0x00A055 02:A045: 29 0F     AND #$0F
 C - - - - - 0x00A057 02:A047: 60        RTS
-
-
-
-sub_0x00A058:
-ofs_006_0x00A058_23:
-; con_F3D6_23
-C - - - - - 0x00A058 02:A048: A5 69     LDA ram_0069
-C - - - - - 0x00A05A 02:A04A: 8D F3 03  STA ram_03F3
-C - - - - - 0x00A05D 02:A04D: A5 6B     LDA ram_006B
-C - - - - - 0x00A05F 02:A04F: 8D F5 03  STA ram_03F5
-C - - - - - 0x00A062 02:A052: A5 64     LDA ram_0064_lo
-C - - - - - 0x00A064 02:A054: 29 F8     AND #$F8
-C - - - - - 0x00A066 02:A056: 8D F6 03  STA ram_03F6
-C - - - - - 0x00A069 02:A059: A5 61     LDA ram_0061_lo
-C - - - - - 0x00A06B 02:A05B: 29 F8     AND #$F8
-C - - - - - 0x00A06D 02:A05D: 8D F4 03  STA ram_03F4
-C D 1 - - - 0x00AEC1 02:AEB1: A5 75     LDA ram_stage
-C - - - - - 0x00AEC3 02:AEB3: C9 03     CMP #$03
-C - - - - - 0x00AEC5 02:AEB5: D0 38     BNE bra_AEEF_RTS
-C - - - - - 0x00AEC7 02:AEB7: AD 40 03  LDA ram_0340_flag
-C - - - - - 0x00AECA 02:AEBA: 30 33     BMI bra_AEEF_RTS
-C - - - - - 0x00AECC 02:AEBC: C9 02     CMP #$02
-C - - - - - 0x00AECE 02:AEBE: F0 2F     BEQ bra_AEEF_RTS
-C - - - - - 0x00AED0 02:AEC0: A9 E7     LDA #$E7
-C - - - - - 0x00AED2 02:AEC2: CD 4E 06  CMP ram_obj_pos_X
-C - - - - - 0x00AED5 02:AEC5: 90 28     BCC bra_AEEF_RTS
-C - - - - - 0x00AED7 02:AEC7: CD 4F 06  CMP ram_obj_pos_X + $01
-C - - - - - 0x00AEDA 02:AECA: 90 23     BCC bra_AEEF_RTS
-C - - - - - 0x00AEDC 02:AECC: A9 00     LDA #$00
-C - - - - - 0x00AEDE 02:AECE: 85 D5     STA ram_00D5
-C - - - - - 0x00AEE0 02:AED0: AD 58 03  LDA ram_0358_flag
-C - - - - - 0x00AEE3 02:AED3: D0 08     BNE bra_AEDD
-; bzk optimize, INC 0358
-; bzk bug? 0357 is 00 by default, and 0358 doesn't change
-; anywhere else, so only 0x00B2AD byte will ever be read
-C - - - - - 0x00AEE5 02:AED5: A9 08     LDA #$08
-C - - - - - 0x00AEE7 02:AED7: 8D 58 03  STA ram_0358_flag
-C - - - - - 0x00AEEA 02:AEDA: EE 57 03  INC ram_0357_table_index
-bra_AEDD:
-C - - - - - 0x00AEED 02:AEDD: AD 57 03  LDA ram_0357_table_index
-C - - - - - 0x00AEF0 02:AEE0: 29 07     AND #$07
-C - - - - - 0x00AEF2 02:AEE2: 8D 57 03  STA ram_0357_table_index
-C - - - - - 0x00AEF5 02:AEE5: A8        TAY
-C - - - - - 0x00AEF6 02:AEE6: B9 9C B2  LDA tbl_B29C,Y
-C - - - - - 0x00AEF9 02:AEE9: 10 02     BPL bra_AEED
-C - - - - - 0x00AEFB 02:AEEB: C6 D5     DEC ram_00D5
-bra_AEED:
-C - - - - - 0x00AEFD 02:AEED: 85 D4     STA ram_00D4
-bra_AEEF_RTS:
-C - - - - - 0x00AEFF 02:AEEF: 60        RTS
-
-
-
-tbl_B29C:
-; bzk optimize, only byte at index 01 is read, see 0x00AEE5
-- - - - - - 0x00B2AC 02:B29C: 10        .byte $10   ; 00 
-- D 1 - - - 0x00B2AD 02:B29D: E0        .byte $E0   ; 01 
-- - - - - - 0x00B2AE 02:B29E: 20        .byte $20   ; 02 
-- - - - - - 0x00B2AF 02:B29F: F0        .byte $F0   ; 03 
-- - - - - - 0x00B2B0 02:B2A0: 08        .byte $08   ; 04 
-- - - - - - 0x00B2B1 02:B2A1: F8        .byte $F8   ; 05 
-- - - - - - 0x00B2B2 02:B2A2: 10        .byte $10   ; 06 
-- - - - - - 0x00B2B3 02:B2A3: F0        .byte $F0   ; 07 
 
 
 
