@@ -38,7 +38,6 @@
 .export sub_0x008BD9
 .export sub_0x008BE0
 .export sub_0x008BE3
-.export loc_0x008C20
 .export sub_0x008D91
 .export sub_0x008DE0
 .export sub_0x008F47
@@ -2324,7 +2323,6 @@ C - - - - - 0x008C19 02:8C09: 79 18 8C  ADC tbl_8C18,Y
 C - - - - - 0x008C1C 02:8C0C: A8        TAY
 C - - - - - 0x008C1D 02:8C0D: B9 21 8C  LDA tbl_8C21,Y
 loc_8C10:
-loc_0x008C20:
 C D 0 - - - 0x008C20 02:8C10: 38        SEC
 C - - - - - 0x008C21 02:8C11: E9 01     SBC #$01
 C D 0 - - - 0x008C23 02:8C13: 9D 78 07  STA ram_0778_unk,X
@@ -2380,13 +2378,15 @@ C - - - - - 0x008C5E 02:8C4E: A9 00     LDA #con_F3D6_00
 C - - - - - 0x008C60 02:8C50: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x008C63 02:8C53: A5 01     LDA ram_0001_t15_table_index
 C - - - - - 0x008C65 02:8C55: F0 05     BEQ bra_8C5C
-; bzk optimize, load 1D and jump to 0x008C23 instead
-C - - - - - 0x008C67 02:8C57: A9 1E     LDA #$1E
-C - - - - - 0x008C69 02:8C59: 4C 10 8C  JMP loc_8C10
+C - - - - - 0x008C67 02:8C57: A9 1E     LDA #$1D
+C - - - - - 0x008C69 02:8C59: 4C 10 8C  STA ram_0778_unk,X
+                                        SEC
+                                        RTS
 bra_8C5C:
-; bzk optimize, load 21 and jump to 0x008C23 instead
-C - - - - - 0x008C6C 02:8C5C: A9 22     LDA #$22
-C - - - - - 0x008C6E 02:8C5E: 4C 10 8C  JMP loc_8C10
+C - - - - - 0x008C6C 02:8C5C: A9 22     LDA #$21
+C - - - - - 0x008C6E 02:8C5E: 4C 10 8C  STA ram_0778_unk,X
+                                        SEC
+                                        RTS
 
 
 
