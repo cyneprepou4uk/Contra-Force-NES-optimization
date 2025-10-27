@@ -32,6 +32,7 @@
 .export ofs_016_0x00F3AF_18
 .export ofs_016_0x008E62_19
 .export ofs_016_0x00D248_1A
+.export ofs_016_0x008DFA_1B
 
 
 
@@ -4604,6 +4605,67 @@ tbl_B298:
 - - - - - - 0x00D2A8 03:B298: 97        .byte $97   ; 00 stage 1
 - - - - - - 0x00D2A9 03:B299: 00        .byte $00   ; 01 stage 2
 - - - - - - 0x00D2AA 03:B29A: 78        .byte $78   ; 02 stage 3
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_016_0x008DFA_1B:
+C - - J - - 0x008DFA 02:8DEA: 20 1F 8E  JSR sub_8E1F
+C - - - - - 0x008DFD 02:8DED: A5 D0     LDA ram_00D0
+C - - - - - 0x008DFF 02:8DEF: C9 08     CMP #$08
+C - - - - - 0x008E01 02:8DF1: D0 1D     BNE bra_8E10
+C - - - - - 0x008E03 02:8DF3: A5 A4     LDA ram_00A4_lo
+C - - - - - 0x008E05 02:8DF5: C9 F0     CMP #$F0
+C - - - - - 0x008E07 02:8DF7: D0 08     BNE bra_8E01
+C - - - - - 0x008E09 02:8DF9: A5 B0     LDA ram_00B0_fr
+C - - - - - 0x008E0B 02:8DFB: D0 13     BNE bra_8E10
+C - - - - - 0x008E0D 02:8DFD: A9 FF     LDA #$FF    ; > FF00
+C - - - - - 0x008E0F 02:8DFF: D0 06     BNE bra_8E07    ; jmp
+bra_8E01:
+C - - - - - 0x008E11 02:8E01: C9 FE     CMP #$FE
+C - - - - - 0x008E13 02:8E03: D0 0B     BNE bra_8E10
+C - - - - - 0x008E15 02:8E05: A9 FD     LDA #$FD    ; > FD00
+bra_8E07:
+C - - - - - 0x008E17 02:8E07: 85 01     STA ram_0001_t04_hi
+C - - - - - 0x008E19 02:8E09: A9 00     LDA #$00
+C - - - - - 0x008E1B 02:8E0B: 85 00     STA ram_0000_t47_lo
+C - - - - - 0x008E1D 02:8E0D: 20 B2 98  JSR sub_0x0098C2
+bra_8E10:
+                                        JMP loc_0x008E20
+
+
+
+sub_8E1F:
+C - - - - - 0x008E2F 02:8E1F: A9 06     LDA #$06
+C - - - - - 0x008E31 02:8E21: 9D 20 07  STA ram_0720_obj,X
+C - - - - - 0x008E34 02:8E24: A9 3C     LDA #$3C
+C - - - - - 0x008E36 02:8E26: 20 A1 89  JSR sub_0x0089B1
+C - - - - - 0x008E39 02:8E29: BD 68 06  LDA ram_obj_pos_Y,X
+C - - - - - 0x008E3C 02:8E2C: C9 40     CMP #$40
+C - - - - - 0x008E3E 02:8E2E: B0 04     BCS bra_8E34
+C - - - - - 0x008E40 02:8E30: A4 D0     LDY ram_00D0
+C - - - - - 0x008E42 02:8E32: F0 12     BEQ bra_8E46
+bra_8E34:
+C - - - - - 0x008E44 02:8E34: A9 10     LDA #$10
+C - - - - - 0x008E46 02:8E36: A8        TAY ; 10
+C - - - - - 0x008E47 02:8E37: 20 4B 90  JSR sub_0x00905B
+C - - - - - 0x008E4A 02:8E3A: B0 93     BCS bra_8E47_RTS
+C - - - - - 0x008E4C 02:8E3C: A5 D0     LDA ram_00D0
+C - - - - - 0x008E4E 02:8E3E: C9 06     CMP #$06
+C - - - - - 0x008E50 02:8E40: 90 8D     BCC bra_8E47_RTS
+C - - - - - 0x008E52 02:8E42: 09 80     ORA #$80
+C - - - - - 0x008E54 02:8E44: 85 D0     STA ram_00D0
+bra_8E46:
+C - - - - - 0x008E56 02:8E46: 4C 3A 97  JMP loc_0x00974A
+bra_8E47_RTS:
+                                        RTS
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 
