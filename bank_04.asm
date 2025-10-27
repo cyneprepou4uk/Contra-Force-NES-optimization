@@ -68,7 +68,6 @@
 .export sub_0x00912E
 .export sub_0x009164_copy_position
 .export sub_0x0091A6
-.export sub_0x0091C1
 .export sub_0x0091DD
 .export ofs_020_0x0091DD_02
 .export ofs_020_0x0091DD_10
@@ -3251,23 +3250,6 @@ C - - - - - 0x0091BB 02:91AB: 20 49 94  JSR sub_9449
 C - - - - - 0x0091BE 02:91AE: A6 53     LDX ram_0053
 bra_91B0_RTS:
 C - - - - - 0x0091C0 02:91B0: 60        RTS
-
-
-
-sub_0x0091C1:
-C - - - - - 0x0091C1 02:91B1: A2 03     LDX #$03
-C - - - - - 0x0091C3 02:91B3: A9 00     LDA #$00
-bra_91B5_loop:
-C - - - - - 0x0091C5 02:91B5: 9D 46 03  STA ram_0346,X
-C - - - - - 0x0091C8 02:91B8: CA        DEX
-C - - - - - 0x0091C9 02:91B9: 10 FA     BPL bra_91B5_loop
-C - - - - - 0x0091CB 02:91BB: A2 05     LDX #$05
-bra_91BD_loop:
-C - - - - - 0x0091CD 02:91BD: 95 A0     STA ram_array_00A0,X
-C - - - - - 0x0091CF 02:91BF: 95 AB     STA ram_array_00AB,X
-C - - - - - 0x0091D1 02:91C1: CA        DEX
-C - - - - - 0x0091D2 02:91C2: 10 F9     BPL bra_91BD_loop
-C - - - - - 0x0091D4 02:91C4: 60        RTS
 
 
 
