@@ -3675,6 +3675,7 @@ C - - - - - 0x009A4B 02:9A3B: 9D 36 07  STA ram_0736_obj,X
 C - - - - - 0x009A4E 02:9A3E: 9D 4C 07  STA ram_074C_obj,X
 C - - - - - 0x009A51 02:9A41: 9D 62 07  STA ram_0762_obj,X
 C - - - - - 0x009A54 02:9A44: 9D 20 07  STA ram_0720_obj,X
+sub_9A47:
 .export sub_0x009A57
 sub_0x009A57:
 .export loc_0x009A57
@@ -3850,7 +3851,7 @@ bra_98D8:
 C - - - - - 0x0098E8 02:98D8: BD 68 06  LDA ram_obj_pos_Y,X
 C - - - - - 0x0098EB 02:98DB: C9 DE     CMP #$DE
 C - - - - - 0x0098ED 02:98DD: 90 06     BCC bra_98E5
-C - - - - - 0x0098EF 02:98DF: 20 47 9A  JSR sub_0x009A57
+C - - - - - 0x0098EF 02:98DF: 20 47 9A  JSR sub_9A47
 C - - - - - 0x0098F2 02:98E2: 9D 78 07  STA ram_0778_unk,X
 bra_98E5:
 C - - - - - 0x0098F5 02:98E5: BD DE 06  LDA ram_obj_spd_Y,X

@@ -10,7 +10,6 @@
 .export sub_0x005D43
 .export loc_0x005D77
 .export ofs_016_0x005D8D_0C
-.export ofs_016_0x005E85_12
 .export ofs_016_0x005F2D_1D
 .export ofs_016_0x005F95_0E
 
@@ -493,7 +492,6 @@ C - - - - - 0x005E6E 01:BE5E: FE C8 07  INC ram_07C8_unk,X
 C - - - - - 0x005E71 01:BE61: BD C8 07  LDA ram_07C8_unk,X
 C - - - - - 0x005E74 01:BE64: C9 0A     CMP #$0A
 C - - - - - 0x005E76 01:BE66: 90 B5     BCC bra_BE1D_RTS
-bra_BE68:
 loc_BE68:   ; bzk optimize
 C D 1 - - - 0x005E78 01:BE68: 4C 17 9A  JMP loc_0x009A27
 bra_BE6B:
@@ -501,55 +499,6 @@ bra_BE6B:
 - - - - - - 0x005E7D 01:BE6D: A5 1F     LDA ram_001F_t04
 - - - - - - 0x005E7F 01:BE6F: 99 00 04  STA ram_0400,Y
 - - - - - - 0x005E82 01:BE72: 4C 5B BE  JMP loc_BE5B
-
-
-
-ofs_016_0x005E85_12:
-C - - J - - 0x005E85 01:BE75: 20 7B BE  JSR sub_BE7B
-C - - - - - 0x005E88 01:BE78: 4C B6 81  JMP loc_0x0081C6
-
-
-
-sub_BE7B:
-C - - - - - 0x005E8B 01:BE7B: BD 68 06  LDA ram_obj_pos_Y,X
-C - - - - - 0x005E8E 01:BE7E: C9 E0     CMP #$E0
-C - - - - - 0x005E90 01:BE80: 90 08     BCC bra_BE8A
-C - - - - - 0x005E92 01:BE82: 20 47 9A  JSR sub_0x009A57
-C - - - - - 0x005E95 01:BE85: A9 01     LDA #$01
-C - - - - - 0x005E97 01:BE87: 9D 78 07  STA ram_0778_unk,X
-bra_BE8A:
-C - - - - - 0x005E9A 01:BE8A: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x005E9D 01:BE8D: 29 7F     AND #$7F
-C - - - - - 0x005E9F 01:BE8F: C9 03     CMP #$03
-C - - - - - 0x005EA1 01:BE91: 90 1C     BCC bra_BEAF
-C - - - - - 0x005EA3 01:BE93: 20 81 8D  JSR sub_0x008D91
-C - - - - - 0x005EA6 01:BE96: B0 D0     BCS bra_BE68
-C - - - - - 0x005EA8 01:BE98: BD 68 06  LDA ram_obj_pos_Y,X
-C - - - - - 0x005EAB 01:BE9B: C9 10     CMP #$10
-C - - - - - 0x005EAD 01:BE9D: 90 10     BCC bra_BEAF
-C - - - - - 0x005EAF 01:BE9F: A9 00     LDA #$00
-C - - - - - 0x005EB1 01:BEA1: A0 F0     LDY #$F0
-C - - - - - 0x005EB3 01:BEA3: 20 BC 8F  JSR sub_0x008FCC
-C - - - - - 0x005EB6 01:BEA6: A5 00     LDA ram_0000_t42
-C - - - - - 0x005EB8 01:BEA8: 38        SEC
-C - - - - - 0x005EB9 01:BEA9: E9 EC     SBC #$EC
-C - - - - - 0x005EBB 01:BEAB: C9 02     CMP #$02
-C - - - - - 0x005EBD 01:BEAD: B0 B9     BCS bra_BE68
-bra_BEAF:
-C - - - - - 0x005EBF 01:BEAF: 20 2E 94  JSR sub_0x00943E
-C - - - - - 0x005EC2 01:BEB2: 9D B4 07  STA ram_07B4_unk,X
-C - - - - - 0x005EC5 01:BEB5: A9 40     LDA #$40
-C - - - - - 0x005EC7 01:BEB7: A0 40     LDY #$40
-C - - - - - 0x005EC9 01:BEB9: 20 0D 95  JSR sub_0x00951D
-C - - - - - 0x005ECC 01:BEBC: B0 0E     BCS bra_BECC_RTS
-C - - - - - 0x005ECE 01:BEBE: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x005ED1 01:BEC1: 29 7F     AND #$7F
-C - - - - - 0x005ED3 01:BEC3: C9 01     CMP #$01
-C - - - - - 0x005ED5 01:BEC5: D0 05     BNE bra_BECC_RTS
-C - - - - - 0x005ED7 01:BEC7: A9 03     LDA #$03
-C - - - - - 0x005ED9 01:BEC9: 9D 78 07  STA ram_0778_unk,X
-bra_BECC_RTS:
-C - - - - - 0x005EDC 01:BECC: 60        RTS
 
 
 

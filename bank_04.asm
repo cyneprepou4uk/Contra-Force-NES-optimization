@@ -28,7 +28,6 @@
 .export sub_0x0088F9
 .export loc_0x0088F9
 .export loc_0x008967
-.export sub_0x008969
 .export loc_0x0089B1
 .export sub_0x0089B1
 .export loc_0x008A8B
@@ -411,6 +410,7 @@ bra_81AE:
 C - - - - - 0x0081BE 02:81AE: 20 53 81  JSR sub_8153_swap_prg_banks
 C - - - - - 0x0081C1 02:81B1: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x0081C4 02:81B4: F0 0C     BEQ bra_81C2
+loc_81B6:
 loc_0x0081C6:
 C D 0 - - - 0x0081C6 02:81B6: 20 78 82  JSR sub_8278
 C - - - - - 0x0081C9 02:81B9: 4C 10 8E  JMP loc_0x008E20
@@ -519,7 +519,7 @@ tbl_8204:
 - D 0 - - - 0x008232 02:8222: 49 8E     .word ofs_016_8E49_0F
 - D 0 - - - 0x008234 02:8224: 21 AF     .word ofs_016_0x00CF31_10
 - D 0 - - - 0x008236 02:8226: 55 A0     .word ofs_016_0x00E065_11
-- D 0 - - - 0x008238 02:8228: 75 BE     .word ofs_016_0x005E85_12
+- D 0 - - - 0x008238 02:8228: 75 BE     .word ofs_016_BE75_12
 - D 0 - - - 0x00823A 02:822A: 97 BB     .word ofs_016_0x005BA7_13
 - - - - - - 0x00823C 02:822C: C8 81     .word ofs_016_81C8_14_RTS
 - - - - - - 0x00823E 02:822E: CA BC     .word ofs_016_0x00FCDA_15
@@ -1814,7 +1814,7 @@ tbl_891F:
 loc_0x008967:
 ofs_017_8957_2C:
 C D 0 - - - 0x008967 02:8957: A5 0A     LDA ram_000A_t03
-sub_0x008969:
+sub_8959:
 ; in
     ; A = 
 C - - - - - 0x008969 02:8959: 85 0B     STA ram_000B_t08
@@ -2669,7 +2669,7 @@ bra_8E10:
 
 ofs_016_B6D2_1C:
 C - - J - - 0x00F6E2 03:B6D2: 20 D8 B6  JSR sub_B6D8
-C - - - - - 0x00F6E5 03:B6D5: 4C B6 81  JMP loc_0x0081C6
+C - - - - - 0x00F6E5 03:B6D5: 4C B6 81  JMP loc_81B6
 
 
 
@@ -2704,7 +2704,7 @@ C - - - - - 0x00F716 03:B706: 20 2E 94  JSR sub_942E
 C - - - - - 0x00F719 03:B709: 9D B4 07  STA ram_07B4_unk,X
 C - - - - - 0x00F71C 03:B70C: 20 E2 90  JSR sub_90E2
 C - - - - - 0x00F71F 03:B70F: A9 00     LDA #$00
-C - - - - - 0x00F721 03:B711: 20 59 89  JSR sub_0x008969
+C - - - - - 0x00F721 03:B711: 20 59 89  JSR sub_8959
 C - - - - - 0x00F724 03:B714: A9 00     LDA #$00
 C - - - - - 0x00F726 03:B716: 9D 0A 07  STA ram_070A_obj,X
 bra_B719_RTS:
@@ -5365,6 +5365,57 @@ _off024_BFE1_39:
 - D 1 - I - 0x00C005 02:BFF5: 02        .byte $02   ; 
 - D 1 - I - 0x00C006 02:BFF6: 00        .byte $00   ; 
 - - - - - - 0x00C007 02:BFF7: FE        .byte $FE   ; 
+
+
+
+ofs_016_BE75_12:
+C - - J - - 0x005E85 01:BE75: 20 7B BE  JSR sub_BE7B
+C - - - - - 0x005E88 01:BE78: 4C B6 81  JMP loc_81B6
+
+
+
+sub_BE7B:
+C - - - - - 0x005E8B 01:BE7B: BD 68 06  LDA ram_obj_pos_Y,X
+C - - - - - 0x005E8E 01:BE7E: C9 E0     CMP #$E0
+C - - - - - 0x005E90 01:BE80: 90 08     BCC bra_BE8A
+C - - - - - 0x005E92 01:BE82: 20 47 9A  JSR sub_0x009A57
+C - - - - - 0x005E95 01:BE85: A9 01     LDA #$01
+C - - - - - 0x005E97 01:BE87: 9D 78 07  STA ram_0778_unk,X
+bra_BE8A:
+C - - - - - 0x005E9A 01:BE8A: BD 78 07  LDA ram_0778_unk,X
+C - - - - - 0x005E9D 01:BE8D: 29 7F     AND #$7F
+C - - - - - 0x005E9F 01:BE8F: C9 03     CMP #$03
+C - - - - - 0x005EA1 01:BE91: 90 1C     BCC bra_BEAF
+C - - - - - 0x005EA3 01:BE93: 20 81 8D  JSR sub_8D81
+C - - - - - 0x005EA6 01:BE96: B0 D0     BCS bra_BECA
+C - - - - - 0x005EA8 01:BE98: BD 68 06  LDA ram_obj_pos_Y,X
+C - - - - - 0x005EAB 01:BE9B: C9 10     CMP #$10
+C - - - - - 0x005EAD 01:BE9D: 90 10     BCC bra_BEAF
+C - - - - - 0x005EAF 01:BE9F: A9 00     LDA #$00
+C - - - - - 0x005EB1 01:BEA1: A0 F0     LDY #$F0
+C - - - - - 0x005EB3 01:BEA3: 20 BC 8F  JSR sub_8FBC
+C - - - - - 0x005EB6 01:BEA6: A5 00     LDA ram_0000_t42
+C - - - - - 0x005EB8 01:BEA8: 38        SEC
+C - - - - - 0x005EB9 01:BEA9: E9 EC     SBC #$EC
+C - - - - - 0x005EBB 01:BEAB: C9 02     CMP #$02
+C - - - - - 0x005EBD 01:BEAD: B0 B9     BCS bra_BECA
+bra_BEAF:
+C - - - - - 0x005EBF 01:BEAF: 20 2E 94  JSR sub_942E
+C - - - - - 0x005EC2 01:BEB2: 9D B4 07  STA ram_07B4_unk,X
+C - - - - - 0x005EC5 01:BEB5: A9 40     LDA #$40
+C - - - - - 0x005EC7 01:BEB7: A0 40     LDY #$40
+C - - - - - 0x005EC9 01:BEB9: 20 0D 95  JSR sub_0x00951D
+C - - - - - 0x005ECC 01:BEBC: B0 0E     BCS bra_BECC_RTS
+C - - - - - 0x005ECE 01:BEBE: BD 78 07  LDA ram_0778_unk,X
+C - - - - - 0x005ED1 01:BEC1: 29 7F     AND #$7F
+C - - - - - 0x005ED3 01:BEC3: C9 01     CMP #$01
+C - - - - - 0x005ED5 01:BEC5: D0 05     BNE bra_BECC_RTS
+C - - - - - 0x005ED7 01:BEC7: A9 03     LDA #$03
+C - - - - - 0x005ED9 01:BEC9: 9D 78 07  STA ram_0778_unk,X
+bra_BECC_RTS:
+C - - - - - 0x005EDC 01:BECC: 60        RTS
+bra_BECA:
+                                        JMP loc_0x009A27
 
 
 
