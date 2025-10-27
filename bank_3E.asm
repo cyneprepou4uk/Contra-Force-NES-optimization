@@ -3646,8 +3646,6 @@ loc_0x009A27:
 sub_0x009A27:
 ; out
     ; A = 00
-.export ofs_016_0x00FCDA_15
-ofs_016_0x00FCDA_15:
 .export ofs_017_0x009A27_02
 ofs_017_0x009A27_02:
 C D 0 - - - 0x009A27 02:9A17: 20 33 9A  JSR sub_9A33_clear_object_data

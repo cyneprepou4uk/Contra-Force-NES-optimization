@@ -483,7 +483,6 @@ bra_81BA_RTS:
 
 
 
-ofs_016_81C8_14_RTS:
 ofs_016_81C8_23_RTS:
 ofs_016_81C8_25_RTS:
 C - - - - - 0x0081D8 02:81C8: 60        RTS
@@ -574,7 +573,7 @@ tbl_8204:
 - D 0 - - - 0x008236 02:8226: 55 A0     .word ofs_016_0x00E065_11
 - D 0 - - - 0x008238 02:8228: 75 BE     .word ofs_016_0x005E85_12
 - D 0 - - - 0x00823A 02:822A: 97 BB     .word ofs_016_0x005BA7_13
-- - - - - - 0x00823C 02:822C: C8 81     .word ofs_016_81C8_14_RTS
+- - - - - - 0x00823C 02:822C: C8 81     .word ofs_016_0x0081D8_14_RTS
 - - - - - - 0x00823E 02:822E: CA BC     .word ofs_016_0x00FCDA_15
 - D 0 - - - 0x008240 02:8230: D2 B9     .word ofs_016_0x00F9E2_16
 - D 0 - - - 0x008242 02:8232: 3C BB     .word ofs_016_0x00FB4C_17
@@ -616,9 +615,9 @@ tbl_8252:
 - D 0 - - - 0x008272 02:8262: 06        .byte con_prg_pair + $10   ; 11 
 - D 0 - - - 0x008273 02:8263: 0E        .byte con_prg_pair + $10   ; 12 
 - D 0 - - - 0x008274 02:8264: 0E        .byte con_prg_pair + $10   ; 13 
-- - - - - - 0x008275 02:8265: 06        .byte con_prg_pair + $06   ; 14 
-- - - - - - 0x008276 02:8266: 06        .byte con_prg_pair + $06   ; 15 
-- D 0 - - - 0x008277 02:8267: 06        .byte con_prg_pair + $06   ; 16 
+- - - - - - 0x008275 02:8265: 06        .byte con_prg_pair + $10   ; 14 
+- - - - - - 0x008276 02:8266: 06        .byte con_prg_pair + $10   ; 15 
+- D 0 - - - 0x008277 02:8267: 06        .byte con_prg_pair + $10   ; 16 
 - D 0 - - - 0x008278 02:8268: 06        .byte con_prg_pair + $06   ; 17 
 - D 0 - - - 0x008279 02:8269: 06        .byte con_prg_pair + $06   ; 18 
 - D 0 - - - 0x00827A 02:826A: 0E        .byte con_prg_pair + $10   ; 19 
