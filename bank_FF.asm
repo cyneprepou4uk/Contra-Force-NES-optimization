@@ -49,6 +49,7 @@
 .export sub_0x01F8F7
 .export tbl_0x01F95A
 .export sub_0x01FC1E
+.export loc_0x01FC1E
 .export loc_0x01FE80
 .export sub_0x01FE80
 .export sub_0x01FEA3_disable_rendering
@@ -5388,6 +5389,7 @@ C - - - - - 0x01FBFF 07:FBEF: 60        RTS
 
 
 sub_0x01FC1E:
+loc_0x01FC1E:
 ; in
     ; A = 
 C - - - - - 0x01FC1E 07:FC0E: 85 12     STA ram_0012_t17_data_index
