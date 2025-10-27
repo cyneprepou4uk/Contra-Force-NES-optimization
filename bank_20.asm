@@ -3317,7 +3317,7 @@ C - - - - - 0x008E75 02:8E65: 9D 20 07  STA ram_0720_obj,X
 bra_8E68:
 C - - - - - 0x008E78 02:8E68: 20 B1 93  JSR sub_0x0093C1_06B2x_LSRx4_TAY
 C - - - - - 0x008E7B 02:8E6B: D0 E2     BEQ bra_8E6D
-C - - - - - 0x008E5F 02:8E4F: 4C 67 BD  JMP loc_0x005D77
+C - - - - - 0x008E5F 02:8E4F: 4C 67 BD  JMP loc_BD67
 bra_8E6D:
 C - - - - - 0x008E7D 02:8E6D: BD 00 06  LDA ram_0600_obj,X
 C - - - - - 0x008E80 02:8E70: 29 20     AND #$20
@@ -3414,6 +3414,20 @@ C - - - - - 0x008F3B 02:8F2B: 68        PLA
 C D 0 - - - 0x008F3C 02:8F2C: 9D 4E 06  STA ram_obj_pos_X,X
 C - - - - - 0x008F3F 02:8F2F: 18        CLC
 C - - - - - 0x008F40 02:8F30: 60        RTS
+
+
+
+loc_BD67:
+C D 1 - - - 0x005D77 01:BD67: 20 D6 90  JSR sub_0x0090E6_0600x_AND_F0
+C - - - - - 0x005D7A 01:BD6A: D0 0E     BNE bra_BD7A
+C - - - - - 0x005D7C 01:BD6C: A9 81     LDA #$81
+C - - - - - 0x005D7E 01:BD6E: A0 08     LDY #$08
+C - - - - - 0x005D80 01:BD70: 20 D8 93  JSR sub_0x0093E8
+C - - - - - 0x005D83 01:BD73: B0 05     BCS bra_BD7A
+C - - - - - 0x005D85 01:BD75: A9 00     LDA #$00
+C - - - - - 0x005D87 01:BD77: 99 B2 06  STA ram_06B2_obj,Y
+bra_BD7A:
+C - - - - - 0x005D8A 01:BD7A: 4C 10 8E  JMP loc_0x008E20
 
 
 

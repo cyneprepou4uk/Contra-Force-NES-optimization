@@ -8,7 +8,6 @@
 
 .export ofs_016_0x005BA7_13
 .export sub_0x005D43
-.export loc_0x005D77
 .export ofs_016_0x005F2D_1D
 
 
@@ -484,20 +483,6 @@ C - - - - - 0x005D6E 01:BD5E: A0 00     LDY #$00
 C - - - - - 0x005D70 01:BD60: B9 82 07  LDA ram_0782_unk,Y
 C - - - - - 0x005D73 01:BD63: D0 DE     BNE bra_BD43
 - - - - - - 0x005D75 01:BD65: F0 DB     BEQ bra_BD42    ; jmp
-
-
-
-loc_0x005D77:
-C D 1 - - - 0x005D77 01:BD67: 20 D6 90  JSR sub_0x0090E6_0600x_AND_F0
-C - - - - - 0x005D7A 01:BD6A: D0 0E     BNE bra_BD7A
-C - - - - - 0x005D7C 01:BD6C: A9 81     LDA #$81
-C - - - - - 0x005D7E 01:BD6E: A0 08     LDY #$08
-C - - - - - 0x005D80 01:BD70: 20 D8 93  JSR sub_0x0093E8
-C - - - - - 0x005D83 01:BD73: B0 05     BCS bra_BD7A
-C - - - - - 0x005D85 01:BD75: A9 00     LDA #$00
-C - - - - - 0x005D87 01:BD77: 99 B2 06  STA ram_06B2_obj,Y
-bra_BD7A:
-C - - - - - 0x005D8A 01:BD7A: 4C 10 8E  JMP loc_0x008E20
 
 
 
