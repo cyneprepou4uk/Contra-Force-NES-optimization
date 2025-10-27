@@ -471,7 +471,6 @@ bra_81AE:
 C - - - - - 0x0081BE 02:81AE: 20 53 81  JSR sub_8153_swap_prg_banks
 C - - - - - 0x0081C1 02:81B1: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x0081C4 02:81B4: F0 0C     BEQ bra_81C2
-loc_81B6:
 .export loc_0x0081C6
 loc_0x0081C6:
 C D 0 - - - 0x0081C6 02:81B6: 20 78 82  JSR sub_8278
@@ -581,7 +580,7 @@ tbl_8204:
 - D 0 - - - 0x008246 02:8236: 52 8E     .word ofs_016_0x008E62_19
 - D 0 - - - 0x008248 02:8238: 38 B2     .word ofs_016_0x00D248_1A
 - D 0 - - - 0x00824A 02:823A: EA 8D     .word ofs_016_0x008DFA_1B
-- D 0 - - - 0x00824C 02:823C: D2 B6     .word ofs_016_B6D2_1C
+- D 0 - - - 0x00824C 02:823C: D2 B6     .word ofs_016_0x00F6E2_1C
 - D 0 - - - 0x00824E 02:823E: 1D BF     .word ofs_016_0x005F2D_1D
 - D 0 - - - 0x008250 02:8240: 01 A0     .word ofs_016_0x00E011_1E
 - D 0 - - - 0x008252 02:8242: 1B A0     .word ofs_016_0x00E02B_1F
@@ -623,7 +622,7 @@ tbl_8252:
 - D 0 - - - 0x00827A 02:826A: 0E        .byte con_prg_pair + $10   ; 19 
 - D 0 - - - 0x00827B 02:826B: 05        .byte con_prg_pair + $10   ; 1A 
 - D 0 - - - 0x00827C 02:826C: 02        .byte con_prg_pair + $10   ; 1B 
-- D 0 - - - 0x00827D 02:826D: 06        .byte con_prg_pair + $06   ; 1C 
+- D 0 - - - 0x00827D 02:826D: 06        .byte con_prg_pair + $10   ; 1C 
 - D 0 - - - 0x00827E 02:826E: 0E        .byte con_prg_pair + $0E   ; 1D 
 - D 0 - - - 0x00827F 02:826F: 06        .byte con_prg_pair + $06   ; 1E 
 - D 0 - - - 0x008280 02:8270: 06        .byte con_prg_pair + $06   ; 1F 
@@ -1866,7 +1865,8 @@ tbl_891F:
 loc_0x008967:
 ofs_017_8957_2C:
 C D 0 - - - 0x008967 02:8957: A5 0A     LDA ram_000A_t03
-sub_8959:
+.export sub_0x008969
+sub_0x008969:
 ; in
     ; A = 
 C - - - - - 0x008969 02:8959: 85 0B     STA ram_000B_t08
@@ -2695,47 +2695,11 @@ C - - - - - 0x008DF9 02:8DE9: 60        RTS
 
 
 
-ofs_016_B6D2_1C:
-C - - J - - 0x00F6E2 03:B6D2: 20 D8 B6  JSR sub_B6D8
-C - - - - - 0x00F6E5 03:B6D5: 4C B6 81  JMP loc_81B6
-
-
-
-sub_B6D8:
-C - - - - - 0x00F6E8 03:B6D8: 20 E3 8F  JSR sub_8FE3
-C - - - - - 0x00F6EB 03:B6DB: B0 16     BCS bra_B6F3
-C - - - - - 0x00F6ED 03:B6DD: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x00F6F0 03:B6E0: 29 7F     AND #$7F
-C - - - - - 0x00F6F2 03:B6E2: C9 03     CMP #$03
-C - - - - - 0x00F6F4 03:B6E4: F0 15     BEQ bra_B6FB
-C - - - - - 0x00F6F6 03:B6E6: C9 04     CMP #$04
-C - - - - - 0x00F6F8 03:B6E8: D0 08     BNE bra_B6F2_RTS
-C - - - - - 0x00F6FA 03:B6EA: 20 E2 90  JSR sub_90E2
-C - - - - - 0x00F6FD 03:B6ED: A9 05     LDA #$05
-C - - - - - 0x00F6FF 03:B6EF: 9D 78 07  STA ram_0778_unk,X
-bra_B6F2_RTS:
-C - - - - - 0x00F702 03:B6F2: 60        RTS
-bra_B6F3:
 .export loc_0x00F703
 loc_0x00F703:
 C - - - - - 0x00F703 03:B6F3: 20 F3 8F  JSR sub_8FF3
 C - - - - - 0x00F706 03:B6F6: A0 06     LDY #$06
 C - - - - - 0x00F708 03:B6F8: 4C 37 97  JMP loc_9737
-bra_B6FB:
-C - - - - - 0x00F70B 03:B6FB: BD 1A 06  LDA ram_obj_animation_lo,X
-C - - - - - 0x00F70E 03:B6FE: F0 06     BEQ bra_B706
-C - - - - - 0x00F710 03:B700: A5 23     LDA ram_frm_cnt
-C - - - - - 0x00F712 03:B702: 29 0F     AND #$0F
-C - - - - - 0x00F714 03:B704: D0 EC     BNE bra_B6F2_RTS
-bra_B706:
-C - - - - - 0x00F716 03:B706: 20 2E 94  JSR sub_942E
-C - - - - - 0x00F719 03:B709: 9D B4 07  STA ram_07B4_unk,X
-C - - - - - 0x00F71C 03:B70C: 20 E2 90  JSR sub_90E2
-C - - - - - 0x00F71F 03:B70F: A9 00     LDA #$00
-C - - - - - 0x00F721 03:B711: 20 59 89  JSR sub_8959
-C - - - - - 0x00F724 03:B714: A9 00     LDA #$00
-C - - - - - 0x00F726 03:B716: 9D 0A 07  STA ram_070A_obj,X
-C - - - - - 0x00F729 03:B719: 60        RTS
 
 
 
@@ -2814,12 +2778,11 @@ C - - - - - 0x008FF2 02:8FE2: 60        RTS
 
 
 
-sub_8FE3:
+sub_0x008FF3:
 ; out
     ; C
         ; 0 = 
         ; 1 = 
-sub_0x008FF3:
 ofs_017_8FE3_57:
 C - - - - - 0x008FF3 02:8FE3: BD 4C 07  LDA ram_074C_obj,X
 C - - - - - 0x008FF6 02:8FE6: 29 FC     AND #$FC
@@ -2991,7 +2954,8 @@ C - - - - - 0x0090F1 02:90E1: 60        RTS
 
 
 
-sub_90E2:
+.export sub_0x0090F2
+sub_0x0090F2:
 C - - - - - 0x0090F2 02:90E2: BD B2 06  LDA ram_06B2_obj,X
 ; bzk optimize, useless STA
 C - - - - - 0x0090F5 02:90E5: 85 0B     STA ram_000B_t16_useless
