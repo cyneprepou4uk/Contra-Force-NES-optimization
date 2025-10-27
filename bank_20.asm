@@ -4214,8 +4214,7 @@ C - - - - - 0x00FEEF 03:BEDF: 8A        TXA
 C - - - - - 0x00FEF0 03:BEE0: 48        PHA
 C - - - - - 0x00FEF1 03:BEE1: A9 06     LDA #con_DA9D_06
 C - - - - - 0x00FEF3 03:BEE3: 85 1F     STA ram_001F_t01
-C - - - - - 0x00FEF5 03:BEE5: A9 06     LDA #con_F3D6_06
-C - - - - - 0x00FEF7 03:BEE7: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x00FEF7 03:BEE7: 20 B3 F3  JSR sub_0x01DA85
 C - - - - - 0x00FEFA 03:BEEA: 68        PLA
 C - - - - - 0x00FEFB 03:BEEB: AA        TAX
 bra_BEEC:

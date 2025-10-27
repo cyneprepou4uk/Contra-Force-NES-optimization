@@ -2187,6 +2187,8 @@ ofs_006_0x01DA85_06:
 ; con_F3D6_06
 ofs_006_0x01DA85_0C:
 ; con_F3D6_0C
+.export sub_0x01DA85
+sub_0x01DA85:
 C - - J - - 0x01DA85 07:DA75: A5 1F     LDA ram_001F_t01
 loc_0x01DA87:
 C D 2 - - - 0x01DA87 07:DA77: A0 00     LDY #$00
