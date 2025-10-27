@@ -1094,10 +1094,6 @@ C - - - - - 0x00E5AA 03:A59A: 38        SEC
 C - - - - - 0x00E5AB 03:A59B: 60        RTS
 
 
-; bzk garbage
-- - - - - - 0x00E5AC 03:A59C: A9 36     LDA #con_A36F_36
-
-
 
 bra_A5A1:
 C - - - - - 0x00E5B1 03:A5A1: 18        CLC
