@@ -3782,6 +3782,10 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3BF 07:F3AF: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3C0 07:F3B0: 02        .byte con_prg_bank + $02   ; 
                                         .byte con_prg_bank + $3D   ; 
+; 0F (unused) 
+                                        .byte con_prg_bank + $7F   ; 
+                                        .byte con_prg_bank + $7F   ; 
+                                        .byte con_prg_bank + $7F   ; 
 ; 10 
                                         .byte con_prg_bank + $04   ; 
                                         .byte con_prg_bank + $20   ; 
