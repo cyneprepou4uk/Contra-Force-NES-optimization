@@ -14,10 +14,6 @@
 .export sub_0x0161F4
 .export ofs_006_0x0161F4_0A
 .export loc_0x016303
-.export _off025_0x016AD8_00
-.export _off025_0x016AEA_01
-.export _off025_0x016AFC_02
-.export _off025_0x016B0E_03
 .export _off026_0x016B20_04
 .export _off026_0x016B20_0C
 .export _off026_0x016B2A_00
@@ -5928,46 +5924,6 @@ _off007_A926_03:
 - D 1 - I - 0x016937 05:A927: 15        .byte $15   ; 0x01DBAA
 - D 1 - I - 0x016938 05:A928: 00        .byte $00   ; 0x01DBB6
 - D 1 - I - 0x016939 05:A929: FF        .byte $FF   ; 0x01DBAA
-
-
-
-_off025_0x016AD8_00:
-- D 1 - I - 0x016AD8 05:AAC8: 04        .byte $04   ; size X
-- D 1 - I - 0x016AD9 05:AAC9: 04        .byte $04   ; size Y
-- D 1 - I - 0x016ADA 05:AACA: C9        .byte $C9, $C9, $C9, $C9   ; 01 
-- D 1 - I - 0x016ADE 05:AACE: CA        .byte $CA, $CA, $CA, $CA   ; 02 
-- D 1 - I - 0x016AE2 05:AAD2: CB        .byte $CB, $CB, $CB, $CB   ; 03 
-- D 1 - I - 0x016AE6 05:AAD6: CC        .byte $CC, $CC, $CC, $CC   ; 04 
-
-
-
-_off025_0x016AEA_01:
-- D 1 - I - 0x016AEA 05:AADA: 04        .byte $04   ; size X
-- D 1 - I - 0x016AEB 05:AADB: 04        .byte $04   ; size Y
-- D 1 - I - 0x016AEC 05:AADC: C9        .byte $C9, $CD, $D1, $C9   ; 01 
-- D 1 - I - 0x016AF0 05:AAE0: CA        .byte $CA, $CE, $D2, $CA   ; 02 
-- D 1 - I - 0x016AF4 05:AAE4: CB        .byte $CB, $CF, $D3, $CB   ; 03 
-- D 1 - I - 0x016AF8 05:AAE8: CC        .byte $CC, $D0, $D4, $CC   ; 04 
-
-
-
-_off025_0x016AFC_02:
-- D 1 - I - 0x016AFC 05:AAEC: 04        .byte $04   ; size X
-- D 1 - I - 0x016AFD 05:AAED: 04        .byte $04   ; size Y
-- D 1 - I - 0x016AFE 05:AAEE: C9        .byte $C9, $00, $00, $C9   ; 01 
-- D 1 - I - 0x016B02 05:AAF2: CA        .byte $CA, $00, $00, $CA   ; 02 
-- D 1 - I - 0x016B06 05:AAF6: CB        .byte $CB, $00, $00, $CB   ; 03 
-- D 1 - I - 0x016B0A 05:AAFA: CC        .byte $CC, $00, $00, $CC   ; 04 
-
-
-
-_off025_0x016B0E_03:
-- D 1 - I - 0x016B0E 05:AAFE: 04        .byte $04   ; size X
-- D 1 - I - 0x016B0F 05:AAFF: 04        .byte $04   ; size Y
-- D 1 - I - 0x016B10 05:AB00: CD        .byte $CD, $00, $00, $D1   ; 01 
-- D 1 - I - 0x016B14 05:AB04: CE        .byte $CE, $00, $00, $D2   ; 02 
-- D 1 - I - 0x016B18 05:AB08: CF        .byte $CF, $00, $00, $D3   ; 03 
-- D 1 - I - 0x016B1C 05:AB0C: D0        .byte $D0, $00, $00, $D4   ; 04 
 
 
 
