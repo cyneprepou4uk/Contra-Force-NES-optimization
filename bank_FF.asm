@@ -5296,6 +5296,7 @@ bra_FB5B:
 C - - - - - 0x01FB6B 07:FB5B: A4 17     LDY ram_0017_t08_player_index
 C - - - - - 0x01FB6D 07:FB5D: 19 62 07  ORA ram_0762_obj,Y
 C - - - - - 0x01FB70 07:FB60: 99 62 07  STA ram_0762_obj,Y
+; bzk optimize, useless branch
 C - - - - - 0x01FB73 07:FB63: D0 00     BNE bra_FB65
 bra_FB65:
 C - - - - - 0x01FB75 07:FB65: A5 17     LDA ram_0017_t08_player_index

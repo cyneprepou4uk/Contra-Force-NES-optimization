@@ -7803,6 +7803,7 @@ C - - - - - 0x017605 05:B5F5: B9 82 06  LDA ram_0682_obj,Y
 C - - - - - 0x017608 05:B5F8: F0 53     BEQ bra_B64D
 C - - - - - 0x01760A 05:B5FA: B9 00 06  LDA ram_0600_obj,Y
 C - - - - - 0x01760D 05:B5FD: 29 F0     AND #$F0
+; bzk optimize, useless branch
 C - - - - - 0x01760F 05:B5FF: F0 00     BEQ bra_B601
 bra_B601:
 C - - - - - 0x017611 05:B601: A4 1F     LDY ram_001F_t13_object_index
