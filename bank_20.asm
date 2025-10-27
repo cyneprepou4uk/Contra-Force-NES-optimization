@@ -16,6 +16,7 @@
 .export ofs_016_0x00B84F_09
 .export ofs_016_0x00FC33_0A
 .export ofs_016_0x00D1DE_0B
+.export ofs_016_0x005D8D_0C
 
 
 
@@ -2176,6 +2177,230 @@ C - - - - - 0x00D240 03:B230: A9 03     LDA #$03
 C - - - - - 0x00D242 03:B232: 4C 62 97  JMP loc_0x009772
 bra_B235:
 C - - - - - 0x00D245 03:B235: 4C 47 9A  JMP loc_0x009A57
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_016_0x005D8D_0C:
+C - - J - - 0x005D8D 01:BD7D: 20 83 BD  JSR sub_BD83
+C - - - - - 0x005D90 01:BD80: 4C 10 8E  JMP loc_0x008E20
+
+
+
+sub_BD83:
+C - - - - - 0x005D93 01:BD83: BD 78 07  LDA ram_0778_unk,X
+C - - - - - 0x005D96 01:BD86: F0 03     BEQ bra_BD8B
+C - - - - - 0x005D98 01:BD88: 4C 18 BE  JMP loc_BE18
+bra_BD8B:
+C - - - - - 0x005D9B 01:BD8B: 20 C8 90  JSR sub_0x0090D8_0600x_write_08
+C - - - - - 0x005D9E 01:BD8E: FE 78 07  INC ram_0778_unk,X
+C - - - - - 0x005DA1 01:BD91: A5 9F     LDA ram_009F
+C - - - - - 0x005DA3 01:BD93: 38        SEC
+C - - - - - 0x005DA4 01:BD94: E9 E4     SBC #$E4
+C - - - - - 0x005DA6 01:BD96: A8        TAY
+C - - - - - 0x005DA7 01:BD97: BD BE 07  LDA ram_07BE_unk,X
+C - - - - - 0x005DAA 01:BD9A: 18        CLC
+C - - - - - 0x005DAB 01:BD9B: 79 CD BE  ADC tbl_BECD,Y
+C - - - - - 0x005DAE 01:BD9E: 9D BE 07  STA ram_07BE_unk,X
+C - - - - - 0x005DB1 01:BDA1: BD 4E 06  LDA ram_obj_pos_X,X
+C - - - - - 0x005DB4 01:BDA4: 18        CLC
+C - - - - - 0x005DB5 01:BDA5: 79 D7 BE  ADC tbl_BED7,Y
+C - - - - - 0x005DB8 01:BDA8: 9D AA 07  STA ram_07AA_unk,X
+C - - - - - 0x005DBB 01:BDAB: 6A        ROR
+C - - - - - 0x005DBC 01:BDAC: 59 D7 BE  EOR tbl_BED7,Y
+C - - - - - 0x005DBF 01:BDAF: 2A        ROL
+C - - - - - 0x005DC0 01:BDB0: 90 08     BCC bra_BDBA
+- - - - - - 0x005DC2 01:BDB2: BD D2 07  LDA ram_07D2_unk,X
+- - - - - - 0x005DC5 01:BDB5: 09 02     ORA #$02
+- - - - - - 0x005DC7 01:BDB7: 9D D2 07  STA ram_07D2_unk,X
+bra_BDBA:
+C - - - - - 0x005DCA 01:BDBA: BD AA 07  LDA ram_07AA_unk,X
+C - - - - - 0x005DCD 01:BDBD: 18        CLC
+C - - - - - 0x005DCE 01:BDBE: 69 40     ADC #$40
+C - - - - - 0x005DD0 01:BDC0: C9 60     CMP #$60
+C - - - - - 0x005DD2 01:BDC2: B0 09     BCS bra_BDCD
+C - - - - - 0x005DD4 01:BDC4: A5 61     LDA ram_0061_lo
+C - - - - - 0x005DD6 01:BDC6: 29 1F     AND #$1F
+C - - - - - 0x005DD8 01:BDC8: F0 03     BEQ bra_BDCD
+C - - - - - 0x005DDA 01:BDCA: 4C 68 BE  JMP loc_BE68
+bra_BDCD:
+C - - - - - 0x005DDD 01:BDCD: BD 68 06  LDA ram_obj_pos_Y,X
+C - - - - - 0x005DE0 01:BDD0: 18        CLC
+C - - - - - 0x005DE1 01:BDD1: 79 E1 BE  ADC tbl_BEE1,Y
+C - - - - - 0x005DE4 01:BDD4: 9D B4 07  STA ram_07B4_unk,X
+C - - - - - 0x005DE7 01:BDD7: B0 0D     BCS bra_BDE6
+C - - - - - 0x005DE9 01:BDD9: B9 E1 BE  LDA tbl_BEE1,Y
+C - - - - - 0x005DEC 01:BDDC: F0 08     BEQ bra_BDE6
+C - - - - - 0x005DEE 01:BDDE: BD D2 07  LDA ram_07D2_unk,X
+C - - - - - 0x005DF1 01:BDE1: 09 01     ORA #$01
+C - - - - - 0x005DF3 01:BDE3: 9D D2 07  STA ram_07D2_unk,X
+bra_BDE6:
+C - - - - - 0x005DF6 01:BDE6: BD B4 07  LDA ram_07B4_unk,X
+C - - - - - 0x005DF9 01:BDE9: C9 20     CMP #$20
+C - - - - - 0x005DFB 01:BDEB: 90 03     BCC bra_BDF0
+C - - - - - 0x005DFD 01:BDED: 4C 68 BE  JMP loc_BE68
+bra_BDF0:
+C - - - - - 0x005E00 01:BDF0: BD D2 07  LDA ram_07D2_unk,X
+C - - - - - 0x005E03 01:BDF3: 29 03     AND #$03
+C - - - - - 0x005E05 01:BDF5: F0 03     BEQ bra_BDFA
+- - - - - - 0x005E07 01:BDF7: 4C 68 BE  JMP loc_BE68
+bra_BDFA:
+C - - - - - 0x005E0A 01:BDFA: 20 B9 8F  JSR sub_0x008FC9
+C - - - - - 0x005E0D 01:BDFD: 20 0A 96  JSR sub_0x00961A
+C - - - - - 0x005E10 01:BE00: A9 03     LDA #$03
+C - - - - - 0x005E12 01:BE02: 20 00 97  JSR sub_0x009710
+C - - - - - 0x005E15 01:BE05: BD AA 07  LDA ram_07AA_unk,X
+C - - - - - 0x005E18 01:BE08: 29 E0     AND #$E0
+C - - - - - 0x005E1A 01:BE0A: 99 4E 06  STA ram_obj_pos_X,Y
+C - - - - - 0x005E1D 01:BE0D: BD B4 07  LDA ram_07B4_unk,X
+C - - - - - 0x005E20 01:BE10: 29 E0     AND #$E0
+C - - - - - 0x005E22 01:BE12: 69 20     ADC #$20
+C - - - - - 0x005E24 01:BE14: 99 68 06  STA ram_obj_pos_Y,Y
+C - - - - - 0x005E27 01:BE17: 60        RTS
+
+
+
+loc_BE18:
+C D 1 - - - 0x005E28 01:BE18: 20 BA 93  JSR sub_0x0093CA
+C - - - - - 0x005E2B 01:BE1B: 90 01     BCC bra_BE1E
+bra_BE1D_RTS:
+C - - - - - 0x005E2D 01:BE1D: 60        RTS
+bra_BE1E:
+C - - - - - 0x005E2E 01:BE1E: BC C8 07  LDY ram_07C8_unk,X
+C - - - - - 0x005E31 01:BE21: B9 F5 BE  LDA tbl_BEF5,Y
+C - - - - - 0x005E34 01:BE24: 85 1F     STA ram_001F_t04
+C - - - - - 0x005E36 01:BE26: B9 09 BF  LDA tbl_BF09,Y
+C - - - - - 0x005E39 01:BE29: 18        CLC
+C - - - - - 0x005E3A 01:BE2A: 7D AA 07  ADC ram_07AA_unk,X
+C - - - - - 0x005E3D 01:BE2D: 85 00     STA ram_0000_t38
+C - - - - - 0x005E3F 01:BE2F: 6A        ROR
+C - - - - - 0x005E40 01:BE30: 59 09 BF  EOR tbl_BF09,Y
+C - - - - - 0x005E43 01:BE33: 2A        ROL
+C - - - - - 0x005E44 01:BE34: 2A        ROL
+C - - - - - 0x005E45 01:BE35: 2A        ROL
+C - - - - - 0x005E46 01:BE36: 5D D2 07  EOR ram_07D2_unk,X
+C - - - - - 0x005E49 01:BE39: 29 02     AND #$02
+C - - - - - 0x005E4B 01:BE3B: F0 0F     BEQ bra_BE4C
+- - - - - - 0x005E4D 01:BE3D: A5 00     LDA ram_0000_t38
+- - - - - - 0x005E4F 01:BE3F: 29 1F     AND #$1F
+- - - - - - 0x005E51 01:BE41: F0 28     BEQ bra_BE6B
+- - - - - - 0x005E53 01:BE43: A5 00     LDA ram_0000_t38
+- - - - - - 0x005E55 01:BE45: 18        CLC
+- - - - - - 0x005E56 01:BE46: 69 18     ADC #$18
+- - - - - - 0x005E58 01:BE48: C9 30     CMP #$30
+- - - - - - 0x005E5A 01:BE4A: B0 1F     BCS bra_BE6B
+bra_BE4C:
+C - - - - - 0x005E5C 01:BE4C: B9 FF BE  LDA tbl_BEFF,Y
+C - - - - - 0x005E5F 01:BE4F: 18        CLC
+C - - - - - 0x005E60 01:BE50: 7D BE 07  ADC ram_07BE_unk,X
+C - - - - - 0x005E63 01:BE53: A8        TAY
+C - - - - - 0x005E64 01:BE54: 84 02     STY ram_0002_t18_array_index
+C - - - - - 0x005E66 01:BE56: A5 1F     LDA ram_001F_t04
+C - - - - - 0x005E68 01:BE58: 20 0E FC  JSR sub_0x01FC1E
+loc_BE5B:
+C - - - - - 0x005E6B 01:BE5B: 20 4C 9A  JSR sub_0x009A5C_clear_animation
+C - - - - - 0x005E6E 01:BE5E: FE C8 07  INC ram_07C8_unk,X
+C - - - - - 0x005E71 01:BE61: BD C8 07  LDA ram_07C8_unk,X
+C - - - - - 0x005E74 01:BE64: C9 0A     CMP #$0A
+C - - - - - 0x005E76 01:BE66: 90 B5     BCC bra_BE1D_RTS
+loc_BE68:   ; bzk optimize
+C D 1 - - - 0x005E78 01:BE68: 4C 17 9A  JMP loc_0x009A27
+bra_BE6B:
+- - - - - - 0x005E7B 01:BE6B: 84 02     STY ram_0002_t18_array_index
+- - - - - - 0x005E7D 01:BE6D: A5 1F     LDA ram_001F_t04
+- - - - - - 0x005E7F 01:BE6F: 99 00 04  STA ram_0400,Y
+- - - - - - 0x005E82 01:BE72: 4C 5B BE  JMP loc_BE5B
+
+
+
+tbl_BEF5:
+- D 1 - - - 0x005F05 01:BEF5: FA        .byte $FA   ; 00 
+- D 1 - - - 0x005F06 01:BEF6: FB        .byte $FB   ; 01 
+- D 1 - - - 0x005F07 01:BEF7: F9        .byte $F9   ; 02 
+- D 1 - - - 0x005F08 01:BEF8: FC        .byte $FC   ; 03 
+- D 1 - - - 0x005F09 01:BEF9: F9        .byte $F9   ; 04 
+- D 1 - - - 0x005F0A 01:BEFA: F8        .byte $F8   ; 05 
+- D 1 - - - 0x005F0B 01:BEFB: FE        .byte $FE   ; 06 
+- D 1 - - - 0x005F0C 01:BEFC: FA        .byte $FA   ; 07 
+- D 1 - - - 0x005F0D 01:BEFD: FD        .byte $FD   ; 08 
+- D 1 - - - 0x005F0E 01:BEFE: F7        .byte $F7   ; 09 
+
+
+
+tbl_BF09:
+- D 1 - - - 0x005F19 01:BF09: 20        .byte $20   ; 00 
+- D 1 - - - 0x005F1A 01:BF0A: 00        .byte $00   ; 01 
+- D 1 - - - 0x005F1B 01:BF0B: 00        .byte $00   ; 02 
+- D 1 - - - 0x005F1C 01:BF0C: 20        .byte $20   ; 03 
+- D 1 - - - 0x005F1D 01:BF0D: 00        .byte $00   ; 04 
+- D 1 - - - 0x005F1E 01:BF0E: 20        .byte $20   ; 05 
+- D 1 - - - 0x005F1F 01:BF0F: 20        .byte $20   ; 06 
+- D 1 - - - 0x005F20 01:BF10: 20        .byte $20   ; 07 
+- D 1 - - - 0x005F21 01:BF11: 00        .byte $00   ; 08 
+- D 1 - - - 0x005F22 01:BF12: 00        .byte $00   ; 09 
+
+
+
+tbl_BEFF:
+- D 1 - - - 0x005F0F 01:BEFF: 21        .byte $21   ; 00 
+- D 1 - - - 0x005F10 01:BF00: 30        .byte $30   ; 01 
+- D 1 - - - 0x005F11 01:BF01: 10        .byte $10   ; 02 
+- D 1 - - - 0x005F12 01:BF02: 31        .byte $31   ; 03 
+- D 1 - - - 0x005F13 01:BF03: 20        .byte $20   ; 04 
+- D 1 - - - 0x005F14 01:BF04: 01        .byte $01   ; 05 
+- D 1 - - - 0x005F15 01:BF05: 41        .byte $41   ; 06 
+- D 1 - - - 0x005F16 01:BF06: 11        .byte $11   ; 07 
+- D 1 - - - 0x005F17 01:BF07: 40        .byte $40   ; 08 
+- D 1 - - - 0x005F18 01:BF08: 00        .byte $00   ; 09 
+
+
+
+tbl_BECD:
+- D 1 - - - 0x005EDD 01:BECD: 00        .byte $00   ; E4 
+- - - - - - 0x005EDE 01:BECE: FF        .byte $FF   ; E5 
+- - - - - - 0x005EDF 01:BECF: F0        .byte $F0   ; E6 
+- D 1 - - - 0x005EE0 01:BED0: E0        .byte $E0   ; E7 
+- - - - - - 0x005EE1 01:BED1: EF        .byte $EF   ; E8 
+- D 1 - - - 0x005EE2 01:BED2: DF        .byte $DF   ; E9 
+- D 1 - - - 0x005EE3 01:BED3: D0        .byte $D0   ; EA 
+- D 1 - - - 0x005EE4 01:BED4: CF        .byte $CF   ; EB 
+- - - - - - 0x005EE5 01:BED5: C0        .byte $C0   ; EC 
+- - - - - - 0x005EE6 01:BED6: BF        .byte $BF   ; ED 
+
+
+
+tbl_BED7:
+- D 1 - - - 0x005EE7 01:BED7: 00        .byte $00   ; E4 
+- - - - - - 0x005EE8 01:BED8: E0        .byte $E0   ; E5 
+- - - - - - 0x005EE9 01:BED9: 00        .byte $00   ; E6 
+- D 1 - - - 0x005EEA 01:BEDA: 00        .byte $00   ; E7 
+- - - - - - 0x005EEB 01:BEDB: E0        .byte $E0   ; E8 
+- D 1 - - - 0x005EEC 01:BEDC: E0        .byte $E0   ; E9 
+- D 1 - - - 0x005EED 01:BEDD: 00        .byte $00   ; EA 
+- D 1 - - - 0x005EEE 01:BEDE: E0        .byte $E0   ; EB 
+- - - - - - 0x005EEF 01:BEDF: 00        .byte $00   ; EC 
+- - - - - - 0x005EF0 01:BEE0: E0        .byte $E0   ; ED 
+
+
+
+tbl_BEE1:
+- - - - - - 0x005EF1 01:BEE1: 00        .byte $00   ; E4 
+- - - - - - 0x005EF2 01:BEE2: 00        .byte $00   ; E5 
+- - - - - - 0x005EF3 01:BEE3: E0        .byte $E0   ; E6 
+- D 1 - - - 0x005EF4 01:BEE4: C0        .byte $C0   ; E7 
+- - - - - - 0x005EF5 01:BEE5: E0        .byte $E0   ; E8 
+- D 1 - - - 0x005EF6 01:BEE6: C0        .byte $C0   ; E9 
+- - - - - - 0x005EF7 01:BEE7: A0        .byte $A0   ; EA 
+- D 1 - - - 0x005EF8 01:BEE8: A0        .byte $A0   ; EB 
+- - - - - - 0x005EF9 01:BEE9: 80        .byte $80   ; EC 
+- - - - - - 0x005EFA 01:BEEA: 80        .byte $80   ; ED 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 
