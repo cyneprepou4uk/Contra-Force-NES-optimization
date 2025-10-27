@@ -447,10 +447,9 @@ C - - - - - 0x00818B 02:817B: D0 05     BNE bra_8182
 C - - - - - 0x00818D 02:817D: A9 03     LDA #$03
 C - - - - - 0x00818F 02:817F: 9D 82 06  STA ram_0682_obj,X
 bra_8182:
-C - - - - - 0x008192 02:8182: 98        TYA
-C - - - - - 0x008193 02:8183: 4A        LSR
-C - - - - - 0x008194 02:8184: A8        TAY
-C - - - - - 0x008195 02:8185: B9 51 82  LDA tbl_8252 - $01,Y
+; bzk optimize, возможно достаточно переключить 1 раз заранее,
+; однако некоторые внутренние скрипты могут переключать банки в теории
+C - - - - - 0x008195 02:8185: B9 51 82  LDA #con_prg_pair + $10
 C - - - - - 0x008198 02:8188: C5 36     CMP ram_prg_banks_pair
 C - - - - - 0x00819A 02:818A: F0 03     BEQ bra_818F
 C - - - - - 0x00819C 02:818C: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
@@ -548,7 +547,7 @@ tbl_81C9:
 tbl_8204:
 - - - - - - 0x008214 02:8204: FF FF     .word $FFFF ; 00 unused 0x008178
 - D 0 - - - 0x008216 02:8206: E1 B5     .word ofs_016_0x00F5F1_01
-- - - - - - 0x008218 02:8208: C8 81     .word ofs_016_0x0081D8_02_RTS
+- - - - - - 0x008218 02:8208: C8 81     .word ofs_016_0x0081D8_02_RTS   ; unused?
 - D 0 - - - 0x00821A 02:820A: 45 BA     .word ofs_016_0x00FA55_03
 - D 0 - - - 0x00821C 02:820C: B2 B3     .word ofs_016_0x00F3C2_04
 - D 0 - - - 0x00821E 02:820E: 27 B9     .word ofs_016_0x00B937_05
@@ -585,48 +584,6 @@ tbl_8204:
 - D 0 - - - 0x00825C 02:824C: 24 A0     .word ofs_016_0x00E034_24
 - - - - - - 0x00825E 02:824E: C8 81     .word ofs_016_0x0081D8_25_RTS
 - D 0 - - - 0x008260 02:8250: 1A B7     .word ofs_016_0x00F72A_26
-
-
-
-tbl_8252:
-- D 0 - - - 0x008262 02:8252: 06        .byte con_prg_pair + $10   ; 01 
-- - - - - - 0x008263 02:8253: 06        .byte con_prg_pair + $10   ; 02 unused?
-- D 0 - - - 0x008264 02:8254: 06        .byte con_prg_pair + $10   ; 03 
-- D 0 - - - 0x008265 02:8255: 06        .byte con_prg_pair + $10   ; 04 
-- D 0 - - - 0x008266 02:8256: 02        .byte con_prg_pair + $10   ; 05 
-- D 0 - - - 0x008267 02:8257: 06        .byte con_prg_pair + $10   ; 06 
-- D 0 - - - 0x008268 02:8258: 06        .byte con_prg_pair + $10   ; 07 
-- D 0 - - - 0x008269 02:8259: 02        .byte con_prg_pair + $10   ; 08 
-- D 0 - - - 0x00826A 02:825A: 02        .byte con_prg_pair + $10   ; 09 
-- D 0 - - - 0x00826B 02:825B: 06        .byte con_prg_pair + $10   ; 0A 
-- D 0 - - - 0x00826C 02:825C: 05        .byte con_prg_pair + $10   ; 0B 
-- D 0 - - - 0x00826D 02:825D: 0E        .byte con_prg_pair + $10   ; 0C 
-- D 0 - - - 0x00826E 02:825E: 05        .byte con_prg_pair + $10   ; 0D 
-- D 0 - - - 0x00826F 02:825F: 0E        .byte con_prg_pair + $10   ; 0E 
-- D 0 - - - 0x008270 02:8260: 02        .byte con_prg_pair + $10   ; 0F 
-- D 0 - - - 0x008271 02:8261: 05        .byte con_prg_pair + $10   ; 10 
-- D 0 - - - 0x008272 02:8262: 06        .byte con_prg_pair + $10   ; 11 
-- D 0 - - - 0x008273 02:8263: 0E        .byte con_prg_pair + $10   ; 12 
-- D 0 - - - 0x008274 02:8264: 0E        .byte con_prg_pair + $10   ; 13 
-- - - - - - 0x008275 02:8265: 06        .byte con_prg_pair + $10   ; 14 
-- - - - - - 0x008276 02:8266: 06        .byte con_prg_pair + $10   ; 15 
-- D 0 - - - 0x008277 02:8267: 06        .byte con_prg_pair + $10   ; 16 
-- D 0 - - - 0x008278 02:8268: 06        .byte con_prg_pair + $10   ; 17 
-- D 0 - - - 0x008279 02:8269: 06        .byte con_prg_pair + $10   ; 18 
-- D 0 - - - 0x00827A 02:826A: 0E        .byte con_prg_pair + $10   ; 19 
-- D 0 - - - 0x00827B 02:826B: 05        .byte con_prg_pair + $10   ; 1A 
-- D 0 - - - 0x00827C 02:826C: 02        .byte con_prg_pair + $10   ; 1B 
-- D 0 - - - 0x00827D 02:826D: 06        .byte con_prg_pair + $10   ; 1C 
-- D 0 - - - 0x00827E 02:826E: 0E        .byte con_prg_pair + $10   ; 1D 
-- D 0 - - - 0x00827F 02:826F: 06        .byte con_prg_pair + $10   ; 1E 
-- D 0 - - - 0x008280 02:8270: 06        .byte con_prg_pair + $10   ; 1F 
-- D 0 - - - 0x008281 02:8271: 06        .byte con_prg_pair + $10   ; 20 
-- D 0 - - - 0x008282 02:8272: 06        .byte con_prg_pair + $10   ; 21 
-- D 0 - - - 0x008283 02:8273: 06        .byte con_prg_pair + $10   ; 22 
-- D 0 - - - 0x008284 02:8274: 02        .byte con_prg_pair + $10   ; 23 
-- D 0 - - - 0x008285 02:8275: 06        .byte con_prg_pair + $10   ; 24 
-- - - - - - 0x008286 02:8276: 06        .byte con_prg_pair + $10   ; 25 
-- D 0 - - - 0x008287 02:8277: 06        .byte con_prg_pair + $10   ; 26 
 
 
 
