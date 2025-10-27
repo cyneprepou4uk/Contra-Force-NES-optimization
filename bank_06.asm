@@ -3894,7 +3894,9 @@ C - - - - - 0x00CF8E 03:AF7E: 20 72 91  JSR sub_0x009182_06B2x_AND_0F
 C - - - - - 0x00CF91 03:AF81: D0 17     BNE bra_AF9A
 C - - - - - 0x00CF93 03:AF83: A9 03     LDA #$03
 bra_AF85:
-C - - - - - 0x00CF95 03:AF85: 4C 13 8C  JMP loc_0x008C23
+C - - - - - 0x00CF95 03:AF85: 4C 13 8C  STA ram_0778_unk,X
+                                        SEC
+                                        RTS
 bra_AF88:
 C - - - - - 0x00CF98 03:AF88: 20 A3 AF  JSR sub_AFA3
 C - - - - - 0x00CF9B 03:AF8B: 4C 47 96  JMP loc_0x009657

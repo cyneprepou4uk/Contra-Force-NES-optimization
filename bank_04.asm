@@ -39,7 +39,6 @@
 .export sub_0x008BE0
 .export sub_0x008BE3
 .export loc_0x008C20
-.export loc_0x008C23
 .export sub_0x008D91
 .export sub_0x008DE0
 .export sub_0x008F47
@@ -2287,7 +2286,10 @@ sub_0x008BD9:
 C - - - - - 0x008BD9 02:8BC9: A4 0B     LDY ram_000B_t10
 loc_8BCB:
 C D 0 - - - 0x008BDB 02:8BCB: B9 82 07  LDA ram_0782_unk,Y
-C - - - - - 0x008BDE 02:8BCE: D0 46     BNE bra_8C16
+C - - - - - 0x008BDE 02:8BCE: D0 46     BEQ bra_8BD0
+                                        SEC
+                                        RTS
+bra_8BD0:
 sub_0x008BE0:
 C - - - - - 0x008BE0 02:8BD0: 20 54 91  JSR sub_9154_copy_position
 sub_0x008BE3:
@@ -2325,10 +2327,7 @@ loc_8C10:
 loc_0x008C20:
 C D 0 - - - 0x008C20 02:8C10: 38        SEC
 C - - - - - 0x008C21 02:8C11: E9 01     SBC #$01
-loc_8C13:
-loc_0x008C23:
 C D 0 - - - 0x008C23 02:8C13: 9D 78 07  STA ram_0778_unk,X
-bra_8C16:
 C - - - - - 0x008C26 02:8C16: 38        SEC
 C - - - - - 0x008C27 02:8C17: 60        RTS
 
@@ -2474,7 +2473,9 @@ C - - - - - 0x008CED 02:8CDD: 9D B2 06  STA ram_06B2_obj,X
 C - - - - - 0x008CF0 02:8CE0: A5 0A     LDA ram_000A_t03
 C - - - - - 0x008CF2 02:8CE2: 18        CLC
 C - - - - - 0x008CF3 02:8CE3: 7D 78 07  ADC ram_0778_unk,X
-C - - - - - 0x008CF6 02:8CE6: 4C 13 8C  JMP loc_8C13
+C - - - - - 0x008CF6 02:8CE6: 4C 13 8C  STA ram_0778_unk,X
+                                        SEC
+                                        RTS
 bra_8CE9:
 C - - - - - 0x008CF9 02:8CE9: A5 29     LDA ram_random
 C - - - - - 0x008CFB 02:8CEB: 29 70     AND #$70
