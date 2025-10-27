@@ -489,7 +489,6 @@ C - - - - - 0x0081CF 02:81BF: 4C 10 8E  JMP loc_0x008E20
 
 
 
-ofs_016_81C8_02_RTS:
 ofs_016_81C8_14_RTS:
 ofs_016_81C8_23_RTS:
 ofs_016_81C8_25_RTS:
@@ -563,7 +562,7 @@ tbl_81C9:
 tbl_8204:
 - - - - - - 0x008214 02:8204: FF FF     .word $FFFF ; 00 unused 0x008178
 - D 0 - - - 0x008216 02:8206: E1 B5     .word ofs_016_0x00F5F1_01
-- - - - - - 0x008218 02:8208: C8 81     .word ofs_016_81C8_02_RTS
+- - - - - - 0x008218 02:8208: C8 81     .word ofs_016_0x0081D8_02_RTS
 - D 0 - - - 0x00821A 02:820A: 45 BA     .word ofs_016_0x00FA55_03
 - D 0 - - - 0x00821C 02:820C: B2 B3     .word ofs_016_0x00F3C2_04
 - D 0 - - - 0x00821E 02:820E: 27 B9     .word ofs_016_0x00B937_05
@@ -576,7 +575,7 @@ tbl_8204:
 - D 0 - - - 0x00822C 02:821C: 7D BD     .word ofs_016_0x005D8D_0C
 - D 0 - - - 0x00822E 02:821E: D3 AF     .word ofs_016_0x00CFE3_0D
 - D 0 - - - 0x008230 02:8220: 85 BF     .word ofs_016_0x005F95_0E
-- D 0 - - - 0x008232 02:8222: 49 8E     .word ofs_016_8E49_0F
+- D 0 - - - 0x008232 02:8222: 49 8E     .word ofs_016_0x008E59_0F
 - D 0 - - - 0x008234 02:8224: 21 AF     .word ofs_016_AF21_10
 - D 0 - - - 0x008236 02:8226: 55 A0     .word ofs_016_0x00E065_11
 - D 0 - - - 0x008238 02:8228: 75 BE     .word ofs_016_BE75_12
@@ -605,7 +604,7 @@ tbl_8204:
 
 tbl_8252:
 - D 0 - - - 0x008262 02:8252: 06        .byte con_prg_pair + $10   ; 01 
-- - - - - - 0x008263 02:8253: 06        .byte con_prg_pair + $00   ; 02 unused?
+- - - - - - 0x008263 02:8253: 06        .byte con_prg_pair + $10   ; 02 unused?
 - D 0 - - - 0x008264 02:8254: 06        .byte con_prg_pair + $10   ; 03 
 - D 0 - - - 0x008265 02:8255: 06        .byte con_prg_pair + $10   ; 04 
 - D 0 - - - 0x008266 02:8256: 02        .byte con_prg_pair + $10   ; 05 
@@ -618,7 +617,7 @@ tbl_8252:
 - D 0 - - - 0x00826D 02:825D: 0E        .byte con_prg_pair + $10   ; 0C 
 - D 0 - - - 0x00826E 02:825E: 05        .byte con_prg_pair + $10   ; 0D 
 - D 0 - - - 0x00826F 02:825F: 0E        .byte con_prg_pair + $10   ; 0E 
-- D 0 - - - 0x008270 02:8260: 02        .byte con_prg_pair + $02   ; 0F 
+- D 0 - - - 0x008270 02:8260: 02        .byte con_prg_pair + $10   ; 0F 
 - D 0 - - - 0x008271 02:8261: 05        .byte con_prg_pair + $05   ; 10 
 - D 0 - - - 0x008272 02:8262: 06        .byte con_prg_pair + $06   ; 11 
 - D 0 - - - 0x008273 02:8263: 0E        .byte con_prg_pair + $0E   ; 12 
@@ -2984,12 +2983,6 @@ C - - - - - 0x008E52 02:8E42: 09 80     ORA #$80
 C - - - - - 0x008E54 02:8E44: 85 D0     STA ram_00D0
 bra_8E46:
 C - - - - - 0x008E56 02:8E46: 4C 3A 97  JMP loc_973A
-
-
-
-ofs_016_8E49_0F:
-C - - J - - 0x008E59 02:8E49: 20 A4 B2  JSR sub_0x00B2B4
-C - - - - - 0x008E5C 02:8E4C: 4C 10 8E  JMP loc_0x008E20
 
 
 
