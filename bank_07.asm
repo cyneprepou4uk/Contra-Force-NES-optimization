@@ -1099,11 +1099,6 @@ C - - - - - 0x00E5AB 03:A59B: 60        RTS
 
 
 
-bra_A59E:
-- - - - - - 0x00E5AE 03:A59E: 4C 61 A3  JMP loc_A361
-
-
-
 bra_A5A1:
 C - - - - - 0x00E5B1 03:A5A1: 18        CLC
 C - - - - - 0x00E5B2 03:A5A2: 60        RTS
@@ -1123,7 +1118,7 @@ C - - - - - 0x00E5BA 03:A5AA: BC 0A 07  LDY ram_070A_obj,X
 C - - - - - 0x00E5BD 03:A5AD: C0 06     CPY #$06
 C - - - - - 0x00E5BF 03:A5AF: F0 F2     BEQ bra_A5A3
 - - - - - - 0x00E5C1 03:A5B1: A9 20     LDA #con_A36F_20
-- - - - - - 0x00E5C3 03:A5B3: D0 E9     BNE bra_A59E    ; jmp
+- - - - - - 0x00E5AE 03:A59E: 4C 61 A3  JMP loc_A361
 
 
 
