@@ -78,7 +78,6 @@
 .export ofs_016_0x00F72A_26
 .export ofs_016_0x00F9E2_16
 .export ofs_016_0x00FB4C_17
-.export ofs_016_0x00FC33_0A
 
 
 
@@ -4266,127 +4265,6 @@ C - - - - - 0x00FBA7 03:BB97: 20 52 9A  JSR sub_0x009A62
 bra_BB9A:
 C - - - - - 0x00FBAA 03:BB9A: A6 53     LDX ram_0053
 C - - - - - 0x00FBAC 03:BB9C: 4C C8 90  JMP loc_0x0090D8_0600x_write_08
-
-
-
-ofs_016_0x00FC33_0A:
-C - - J - - 0x00FC33 03:BC23: 20 29 BC  JSR sub_BC29
-C - - - - - 0x00FC36 03:BC26: 4C 10 8E  JMP loc_0x008E20
-
-
-
-sub_BC29:
-C - - - - - 0x00FC39 03:BC29: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x00FC3C 03:BC2C: D0 74     BNE bra_BCA2
-C - - - - - 0x00FC3E 03:BC2E: BD AA 07  LDA ram_07AA_unk,X
-C - - - - - 0x00FC41 03:BC31: 38        SEC
-C - - - - - 0x00FC42 03:BC32: E5 61     SBC ram_0061_lo
-C - - - - - 0x00FC44 03:BC34: 9D 4E 06  STA ram_obj_pos_X,X
-C - - - - - 0x00FC47 03:BC37: BD D2 07  LDA ram_07D2_unk,X
-C - - - - - 0x00FC4A 03:BC3A: E5 60     SBC ram_0060_hi
-C - - - - - 0x00FC4C 03:BC3C: 85 01     STA ram_0001_t27
-C - - - - - 0x00FC4E 03:BC3E: 10 12     BPL bra_BC52
-C - - - - - 0x00FC50 03:BC40: A5 01     LDA ram_0001_t27
-C - - - - - 0x00FC52 03:BC42: 49 FF     EOR #$FF
-C - - - - - 0x00FC54 03:BC44: 85 01     STA ram_0001_t27
-C - - - - - 0x00FC56 03:BC46: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00FC59 03:BC49: 20 07 95  EOR #$FF
-                                        CLC
-                                        ADC #$01
-; bzk optimize, useless STA
-C - - - - - 0x00FC5C 03:BC4C: 85 00     STA ram_0000_t95_useless
-C - - - - - 0x00FC5E 03:BC4E: 90 02     BCC bra_BC52
-; if overflow
-- - - - - - 0x00FC60 03:BC50: E6 01     INC ram_0001_t27
-bra_BC52:
-C - - - - - 0x00FC62 03:BC52: A5 01     LDA ram_0001_t27
-C - - - - - 0x00FC64 03:BC54: D0 74     BNE bra_BCCA
-C - - - - - 0x00FC66 03:BC56: A5 69     LDA ram_0069
-C - - - - - 0x00FC68 03:BC58: 10 04     BPL bra_BC5E
-C - - - - - 0x00FC6A 03:BC5A: A9 08     LDA #$08
-C - - - - - 0x00FC6C 03:BC5C: D0 02     BNE bra_BC60    ; jmp
-bra_BC5E:
-C - - - - - 0x00FC6E 03:BC5E: A9 F8     LDA #$F8
-bra_BC60:
-C - - - - - 0x00FC70 03:BC60: 20 C5 91  JSR sub_0x0091D5_add_to_pos_X
-C - - - - - 0x00FC73 03:BC63: BD BE 07  LDA ram_07BE_unk,X
-C - - - - - 0x00FC76 03:BC66: 38        SEC
-C - - - - - 0x00FC77 03:BC67: E5 64     SBC ram_0064_lo
-C - - - - - 0x00FC79 03:BC69: 9D 68 06  STA ram_obj_pos_Y,X
-C - - - - - 0x00FC7C 03:BC6C: BD C8 07  LDA ram_07C8_unk,X
-C - - - - - 0x00FC7F 03:BC6F: E5 63     SBC ram_0063_hi
-C - - - - - 0x00FC81 03:BC71: 85 01     STA ram_0001_t28
-C - - - - - 0x00FC83 03:BC73: 10 12     BPL bra_BC87
-- - - - - - 0x00FC85 03:BC75: A5 01     LDA ram_0001_t28
-- - - - - - 0x00FC87 03:BC77: 49 FF     EOR #$FF
-- - - - - - 0x00FC89 03:BC79: 85 01     STA ram_0001_t28
-- - - - - - 0x00FC8B 03:BC7B: BD 68 06  LDA ram_obj_pos_Y,X
-- - - - - - 0x00FC8E 03:BC7E: 20 07 95  EOR #$FF
-                                        CLC
-                                        ADC #$01
-; bzk optimize, useless STA
-- - - - - - 0x00FC91 03:BC81: 85 00     STA ram_0000_t96_useless
-- - - - - - 0x00FC93 03:BC83: 90 02     BCC bra_BC87
-; if overflow
-- - - - - - 0x00FC95 03:BC85: E6 01     INC ram_0001_t28
-bra_BC87:
-C - - - - - 0x00FC97 03:BC87: A5 01     LDA ram_0001_t28
-C - - - - - 0x00FC99 03:BC89: D0 3F     BNE bra_BCCA
-C - - - - - 0x00FC9B 03:BC8B: 20 D0 BC  JSR sub_BCD0
-C - - - - - 0x00FC9E 03:BC8E: B0 3A     BCS bra_BCCA
-C - - - - - 0x00FCA0 03:BC90: A9 20     LDA #$20
-C - - - - - 0x00FCA2 03:BC92: 9D 68 06  STA ram_obj_pos_Y,X
-C - - - - - 0x00FCA5 03:BC95: A9 14     LDA #$14
-C - - - - - 0x00FCA7 03:BC97: 9D 20 07  STA ram_0720_obj,X
-C - - - - - 0x00FCAA 03:BC9A: A9 0B     LDA #$0B
-C - - - - - 0x00FCAC 03:BC9C: 20 A1 89  JSR sub_0x0089B1
-C - - - - - 0x00FCAF 03:BC9F: FE 78 07  INC ram_0778_unk,X
-bra_BCA2:
-C - - - - - 0x00FCB2 03:BCA2: A5 7B     LDA ram_chr_bank + $04
-C - - - - - 0x00FCB4 03:BCA4: C9 6E     CMP #con_chr_bank + $6E
-C - - - - - 0x00FCB6 03:BCA6: F0 06     BEQ bra_BCAE
-- - - - - - 0x00FCB8 03:BCA8: 20 47 9A  JSR sub_0x009A57
-- - - - - - 0x00FCBB 03:BCAB: 4C CD BC  JMP loc_BCCD
-bra_BCAE:
-C - - - - - 0x00FCBE 03:BCAE: 20 72 91  JSR sub_0x009182_06B2x_AND_0F
-C - - - - - 0x00FCC1 03:BCB1: D0 05     BNE bra_BCB8
-C - - - - - 0x00FCC3 03:BCB3: A9 42     LDA #$42
-C - - - - - 0x00FCC5 03:BCB5: 9D B2 06  STA ram_06B2_obj,X
-bra_BCB8:
-C - - - - - 0x00FCC8 03:BCB8: 20 BA 96  JSR sub_0x0096CA
-C - - - - - 0x00FCCB 03:BCBB: A5 01     LDA ram_0001_t02_hi
-C - - - - - 0x00FCCD 03:BCBD: C9 04     CMP #$04
-C - - - - - 0x00FCCF 03:BCBF: 90 02     BCC bra_BCC3
-C - - - - - 0x00FCD1 03:BCC1: B0 0A     BCS bra_BCCD    ; jmp
-bra_BCC3:
-C - - - - - 0x00FCD3 03:BCC3: BD 68 06  LDA ram_obj_pos_Y,X
-C - - - - - 0x00FCD6 03:BCC6: C9 E8     CMP #$E8
-C - - - - - 0x00FCD8 03:BCC8: 90 20     BCC bra_BCEA_RTS
-bra_BCCA:
-C - - - - - 0x00FCDA 03:BCCA: 4C 17 9A  JMP loc_0x009A27
-bra_BCCD:
-loc_BCCD:   ; bzk optimize
-C - - - - - 0x00FCDD 03:BCCD: 4C 3A 97  JMP loc_0x00974A
-
-
-
-sub_BCD0:
-C - - - - - 0x00FCE0 03:BCD0: A0 00     LDY #$00
-bra_BCD2_loop:
-C - - - - - 0x00FCE2 03:BCD2: B9 82 07  LDA ram_0782_unk,Y
-C - - - - - 0x00FCE5 03:BCD5: F0 0E     BEQ bra_BCE5
-C - - - - - 0x00FCE7 03:BCD7: 20 FE 94  JSR sub_0x00950E
-C - - - - - 0x00FCEA 03:BCDA: C9 40     CMP #$40
-C - - - - - 0x00FCEC 03:BCDC: B0 07     BCS bra_BCE5
-C - - - - - 0x00FCEE 03:BCDE: 20 F4 94  JSR sub_0x009504
-C - - - - - 0x00FCF1 03:BCE1: C9 68     CMP #$68
-C - - - - - 0x00FCF3 03:BCE3: 90 05     BCC bra_BCEA_RTS
-bra_BCE5:
-C - - - - - 0x00FCF5 03:BCE5: C8        INY
-C - - - - - 0x00FCF6 03:BCE6: C0 02     CPY #$02
-C - - - - - 0x00FCF8 03:BCE8: 90 E8     BCC bra_BCD2_loop
-bra_BCEA_RTS:
-C - - - - - 0x00FCFA 03:BCEA: 60        RTS
 
 
 
