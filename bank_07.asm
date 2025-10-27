@@ -12,7 +12,6 @@
 .export ofs_016_0x00E03D_20
 .export ofs_016_0x00E046_21
 .export ofs_016_0x00E04F_22
-.export ofs_016_0x00E065_11
 .export ofs_017_0x00E2F1_3E
 .export ofs_017_0x00E2FB_16
 .export ofs_017_0x00E33D_17
@@ -133,14 +132,6 @@ C - - - - - 0x00E05C 03:A04C: A9 04     LDA #$04
 C - - - - - 0x00E05E 03:A04E: 20 5E A0  JSR sub_0x00E06E
 C - - - - - 0x00E061 03:A051: A0 08     LDY #$08
 C - - - - - 0x00E063 03:A053: D0 B3     JMP loc_0x00E018
-
-
-
-ofs_016_0x00E065_11:
-C - - J - - 0x00E065 03:A055: A9 06     LDA #$06
-C - - - - - 0x00E067 03:A057: 9D C8 07  STA ram_07C8_unk,X
-C - - - - - 0x00E06A 03:A05A: A0 0A     LDY #$0A
-C - - - - - 0x00E06C 03:A05C: D0 AA     JMP loc_0x00E018
 
 
 

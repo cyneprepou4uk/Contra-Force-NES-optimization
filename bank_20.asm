@@ -22,7 +22,7 @@
 .export ofs_016_0x005F95_0E
 .export ofs_016_0x008E59_0F
 .export ofs_016_0x00CF31_10
-
+.export ofs_016_0x00E065_11
 .export ofs_016_0x005E85_12
 
 .export ofs_016_0x008E62_19
@@ -3242,6 +3242,18 @@ off_AFCB_02:
 ;                                              |    |    |    |
 - D 1 - I - 0x00CFDB 03:AFCB: 79        .byte $79, $85, $C1, $01   ; 00 
 - D 1 - I - 0x00CFDF 03:AFCF: D6        .byte $D6, $84, $00, $FE   ; 01 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_016_0x00E065_11:
+C - - J - - 0x00E065 03:A055: A9 06     LDA #$06
+C - - - - - 0x00E067 03:A057: 9D C8 07  STA ram_07C8_unk,X
+C - - - - - 0x00E06A 03:A05A: A0 0A     LDY #$0A
+C - - - - - 0x00E06C 03:A05C: D0 AA     JMP loc_0x00E018
 
 
 
