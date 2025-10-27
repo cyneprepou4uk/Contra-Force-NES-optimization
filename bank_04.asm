@@ -615,7 +615,7 @@ tbl_8252:
 - D 0 - - - 0x008271 02:8261: 05        .byte con_prg_pair + $10   ; 10 
 - D 0 - - - 0x008272 02:8262: 06        .byte con_prg_pair + $10   ; 11 
 - D 0 - - - 0x008273 02:8263: 0E        .byte con_prg_pair + $10   ; 12 
-- D 0 - - - 0x008274 02:8264: 0E        .byte con_prg_pair + $0E   ; 13 
+- D 0 - - - 0x008274 02:8264: 0E        .byte con_prg_pair + $10   ; 13 
 - - - - - - 0x008275 02:8265: 06        .byte con_prg_pair + $06   ; 14 
 - - - - - - 0x008276 02:8266: 06        .byte con_prg_pair + $06   ; 15 
 - D 0 - - - 0x008277 02:8267: 06        .byte con_prg_pair + $06   ; 16 
