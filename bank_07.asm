@@ -6,8 +6,6 @@
 
 
 
-.export ofs_016_0x00E011_1E
-.export ofs_016_0x00E02B_1F
 .export ofs_016_0x00E034_24
 .export ofs_016_0x00E03D_20
 .export ofs_016_0x00E046_21
@@ -74,22 +72,6 @@
 .export ofs_017_0x00EEB0_56
 .export ofs_017_0x00EEC9_10
 .export ofs_016_0x00F72A_26
-
-
-
-ofs_016_0x00E011_1E:
-C - - J - - 0x00E011 03:A001: A9 00     LDA #$00
-C - - - - - 0x00E013 03:A003: 20 5E A0  JSR sub_0x00E06E
-C - - - - - 0x00E016 03:A006: A0 00     LDY #$00
-                                        JMP loc_0x00E018
-
-
-
-ofs_016_0x00E02B_1F:
-C - - J - - 0x00E02B 03:A01B: A9 01     LDA #$01
-C - - - - - 0x00E02D 03:A01D: 20 5E A0  JSR sub_0x00E06E
-C - - - - - 0x00E030 03:A020: A0 02     LDY #$02
-C - - - - - 0x00E032 03:A022: D0 E4     JMP loc_0x00E018
 
 
 
