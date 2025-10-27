@@ -3919,8 +3919,8 @@ tbl_F3D6:
 ; 1B con_F3D6_1B
 - D 3 - - - 0x01F437 07:F427: 71 DA     .word ofs_006_0x01DA81_1B
 - D 3 - - - 0x01F439 07:F429: 03        .byte con_prg_pair + $03   ; 
-; 1C con_F3D6_1C
-- D 3 - - - 0x01F43A 07:F42A: 6B DA     .word ofs_006_0x01DA7B_1C
+; 1C con_F3D6_1C unused
+- D 3 - - - 0x01F43A 07:F42A: 6B DA     .word $FFFF
 - D 3 - - - 0x01F43C 07:F42C: 01        .byte con_prg_pair + $01   ; 
 ; 1D con_F3D6_1D
 - D 3 - - - 0x01F43D 07:F42D: 94 84     .word ofs_006_0x0084A4_1D

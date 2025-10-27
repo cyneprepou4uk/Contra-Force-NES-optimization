@@ -3028,8 +3028,7 @@ C - - - - - 0x00B328 02:B318: A9 01     LDA #$01
 C - - - - - 0x00B32A 02:B31A: 8D 56 03  STA ram_0356_flag
 C - - - - - 0x00B32D 02:B31D: 8A        TXA
 C - - - - - 0x00B32E 02:B31E: 48        PHA
-C - - - - - 0x00B32F 02:B31F: A9 1C     LDA #con_F3D6_1C
-C - - - - - 0x00B331 02:B321: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x00B331 02:B321: 20 B3 F3  JSR sub_0x01DA7B
 C - - - - - 0x00B334 02:B324: 68        PLA
 C - - - - - 0x00B335 02:B325: AA        TAX
 bra_B326_RTS:

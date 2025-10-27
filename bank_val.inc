@@ -2,6 +2,11 @@
 
 
 
+; todo баги
+    ; вроде бы ящики реже выпадают
+
+
+
 ; MISC
 con_prg_bank                            = $80 ; 
 con_prg_pair                            = $00 ; see pairs at 0x01F3A3
@@ -343,7 +348,7 @@ con_F3D6_18                             = $18 ;
 con_F3D6_19                             = $19 ; 
 con_F3D6_1A                             = $1A ; 
 con_F3D6_1B                             = $1B ; 
-con_F3D6_1C                             = $1C ; 
+; con_F3D6_1C                           = $1C ; unused, бывший 0x01DA7B
 con_F3D6_1D                             = $1D ; 
 con_F3D6_1E                             = $1E ; 
 con_F3D6_1F                             = $1F ; 

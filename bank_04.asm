@@ -1552,8 +1552,7 @@ C D 0 - - - 0x0087A2 02:8792: A9 06     LDA #con_DA9D_06
 C - - - - - 0x0087A4 02:8794: 85 1F     STA ram_001F_t01
 C - - - - - 0x0087A6 02:8796: A9 01     LDA #$01
 C - - - - - 0x0087A8 02:8798: 8D 56 03  STA ram_0356_flag
-C - - - - - 0x0087AB 02:879B: A9 1C     LDA #con_F3D6_1C
-C - - - - - 0x0087AD 02:879D: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x0087AD 02:879D: 20 B3 F3  JSR sub_0x01DA7B
 C - - - - - 0x0087B0 02:87A0: 4C 4B 85  JMP loc_854B
 bra_87A3:
 C - - - - - 0x0087B3 02:87A3: 18        CLC

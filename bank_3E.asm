@@ -44,7 +44,6 @@
 .export tbl_0x01DA67_metatiles
 .export tbl_0x01DA71_metatile_indexes
 .export sub_0x01DA7B
-.export ofs_006_0x01DA7B_1C
 .export ofs_006_0x01DA81_1B
 .export ofs_006_0x01DA85_05
 .export ofs_006_0x01DA85_06
@@ -2174,8 +2173,6 @@ tbl_0x01DA71_metatile_indexes:
 
 
 sub_0x01DA7B:
-ofs_006_0x01DA7B_1C:
-; con_F3D6_1C
 C - - - - - 0x01DA7B 07:DA6B: A4 75     LDY ram_stage
 C - - - - - 0x01DA7D 07:DA6D: C0 02     CPY #$02
 C - - - - - 0x01DA7F 07:DA6F: 90 04     BCC bra_DA75
