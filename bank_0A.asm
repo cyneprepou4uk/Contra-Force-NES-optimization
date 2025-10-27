@@ -14,8 +14,6 @@
 .export sub_0x0161F4
 .export ofs_006_0x0161F4_0A
 .export loc_0x016303
-.export off_0x01693A_02
-.export off_0x016940_00
 .export _off025_0x016AD8_00
 .export _off025_0x016AEA_01
 .export _off025_0x016AFC_02
@@ -5930,22 +5928,6 @@ _off007_A926_03:
 - D 1 - I - 0x016937 05:A927: 15        .byte $15   ; 0x01DBAA
 - D 1 - I - 0x016938 05:A928: 00        .byte $00   ; 0x01DBB6
 - D 1 - I - 0x016939 05:A929: FF        .byte $FF   ; 0x01DBAA
-
-
-
-off_0x01693A_02:
-- D 1 - I - 0x01693A 05:A92A: 02        .byte $02   ; size X
-- D 1 - I - 0x01693B 05:A92B: 02        .byte $02   ; size Y
-- D 1 - I - 0x01693C 05:A92C: D6        .byte $D6, $D7   ; 01 
-- D 1 - I - 0x01693E 05:A92E: 92        .byte $92, $93   ; 02 
-
-
-
-off_0x016940_00:
-- D 1 - I - 0x016940 05:A930: 02        .byte $02   ; size X
-- D 1 - I - 0x016941 05:A931: 02        .byte $02   ; size Y
-- D 1 - I - 0x016942 05:A932: D8        .byte $D8, $D9   ; 01 
-- D 1 - I - 0x016944 05:A934: 94        .byte $94, $95   ; 02 
 
 
 
