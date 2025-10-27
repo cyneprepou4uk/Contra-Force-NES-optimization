@@ -1040,6 +1040,9 @@ C - - - - - 0x00E55E 03:A54E: A9 01     LDA #$01
 C - - - - - 0x00E560 03:A550: 8D 40 03  STA ram_0340_flag
 C - - - - - 0x00E563 03:A553: 38        SEC
 C - - - - - 0x00E564 03:A554: 60        RTS
+bra_A5A1:
+C - - - - - 0x00E5B1 03:A5A1: 18        CLC
+C - - - - - 0x00E5B2 03:A5A2: 60        RTS
 
 
 
@@ -1092,21 +1095,6 @@ C - - - - - 0x00E5A6 03:A596: 69 30     ADC #$30
 C - - - - - 0x00E5A8 03:A598: C9 60     CMP #$60
 C - - - - - 0x00E5AA 03:A59A: 38        SEC
 C - - - - - 0x00E5AB 03:A59B: 60        RTS
-
-
-
-bra_A5A1:
-C - - - - - 0x00E5B1 03:A5A1: 18        CLC
-C - - - - - 0x00E5B2 03:A5A2: 60        RTS
-
-
-
-bra_A5A3:
-C - - - - - 0x00E5B3 03:A5A3: 38        SEC
-C - - - - - 0x00E5B4 03:A5A4: 60        RTS
-
-
-
 bra_A5A5:
 C - - - - - 0x00E5B5 03:A5A5: A9 03     LDA #$03
 C - - - - - 0x00E5B7 03:A5A7: 9D B2 06  STA ram_06B2_obj,X
@@ -1115,6 +1103,9 @@ C - - - - - 0x00E5BD 03:A5AD: C0 06     CPY #$06
 C - - - - - 0x00E5BF 03:A5AF: F0 F2     BEQ bra_A5A3
 - - - - - - 0x00E5C1 03:A5B1: A9 20     LDA #con_A36F_20
 - - - - - - 0x00E5AE 03:A59E: 4C 61 A3  JMP loc_A361
+bra_A5A3:
+C - - - - - 0x00E5B3 03:A5A3: 38        SEC
+C - - - - - 0x00E5B4 03:A5A4: 60        RTS
 
 
 
@@ -1193,7 +1184,7 @@ ofs_017_0x00E618_2D:
 C - - J - - 0x00E618 03:A608: A0 00     LDY #$00
 C - - - - - 0x00E61A 03:A60A: 20 16 A6  JSR sub_A616
 C - - - - - 0x00E61D 03:A60D: 90 E6     BCC bra_A5F5
-C - - - - - 0x00E61F 03:A60F: C8        INY
+C - - - - - 0x00E61F 03:A60F: C8        INY ; 01
 C - - - - - 0x00E620 03:A610: 20 16 A6  JSR sub_A616
 C - - - - - 0x00E623 03:A613: 90 E0     BCC bra_A5F5
 C - - - - - 0x00E625 03:A615: 60        RTS
