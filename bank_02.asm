@@ -10,7 +10,6 @@
 .export sub_0x005D43
 .export loc_0x005D77
 .export ofs_016_0x005F2D_1D
-.export ofs_016_0x005F95_0E
 
 
 
@@ -438,84 +437,6 @@ C - - - - - 0x01D199 07:D189: A9 84     LDA #$84
 bra_D18B:
 C - - - - - 0x01D19B 07:D18B: 9D B2 06  STA ram_06B2_obj,X
 C - - - - - 0x01D19E 07:D18E: 60        RTS
-
-
-
-ofs_016_0x005F95_0E:
-C - - J - - 0x005F95 01:BF85: A9 00     LDA #$00
-C - - - - - 0x005F97 01:BF87: 9D 20 07  STA ram_0720_obj,X
-C - - - - - 0x005F9A 01:BF8A: A5 23     LDA ram_frm_cnt
-C - - - - - 0x005F9C 01:BF8C: 29 3F     AND #$3F
-C - - - - - 0x005F9E 01:BF8E: D0 55     BNE bra_BFE5
-- - - - - - 0x005FA0 01:BF90: BD D2 07  LDA ram_07D2_unk,X
-- - - - - - 0x005FA3 01:BF93: FE D2 07  INC ram_07D2_unk,X
-- - - - - - 0x005FA6 01:BF96: 29 03     AND #$03
-- - - - - - 0x005FA8 01:BF98: A8        TAY
-- - - - - - 0x005FA9 01:BF99: B9 F6 BF  LDA tbl_BFF6_index,Y
-- - - - - - 0x005FAC 01:BF9C: 30 47     BMI bra_BFE5
-- - - - - - 0x005FAE 01:BF9E: A8        TAY
-- - - - - - 0x005FAF 01:BF9F: B9 F0 BF  LDA tbl_BFF0,Y
-- - - - - - 0x005FB2 01:BFA2: 85 00     STA ram_0000_t39
-- - - - - - 0x005FB4 01:BFA4: B9 F3 BF  LDA tbl_BFF3,Y
-- - - - - - 0x005FB7 01:BFA7: 85 01     STA ram_0001_t01
-- - - - - - 0x005FB9 01:BFA9: A0 12     LDY #$12
-- - - - - - 0x005FBB 01:BFAB: B9 82 06  LDA ram_0682_obj,Y
-- - - - - - 0x005FBE 01:BFAE: D0 35     BNE bra_BFE5
-- - - - - - 0x005FC0 01:BFB0: A9 A1     LDA #$A1
-- - - - - - 0x005FC2 01:BFB2: 9D A0 07  STA ram_07A0_unk,X
-- - - - - - 0x005FC5 01:BFB5: 20 A1 84  JSR sub_0x0084B1
-- - - - - - 0x005FC8 01:BFB8: A9 40     LDA #$40
-- - - - - - 0x005FCA 01:BFBA: 99 B2 06  STA ram_06B2_obj,Y
-- - - - - - 0x005FCD 01:BFBD: BD 4E 06  LDA ram_obj_pos_X,X
-- - - - - - 0x005FD0 01:BFC0: 18        CLC
-- - - - - - 0x005FD1 01:BFC1: 65 00     ADC ram_0000_t39
-- - - - - - 0x005FD3 01:BFC3: 99 4E 06  STA ram_obj_pos_X,Y
-- - - - - - 0x005FD6 01:BFC6: 6A        ROR
-- - - - - - 0x005FD7 01:BFC7: 45 00     EOR ram_0000_t39
-- - - - - - 0x005FD9 01:BFC9: 2A        ROL
-- - - - - - 0x005FDA 01:BFCA: B0 1C     BCS bra_BFE8
-- - - - - - 0x005FDC 01:BFCC: BD 68 06  LDA ram_obj_pos_Y,X
-- - - - - - 0x005FDF 01:BFCF: 18        CLC
-- - - - - - 0x005FE0 01:BFD0: 65 01     ADC ram_0001_t01
-- - - - - - 0x005FE2 01:BFD2: 99 68 06  STA ram_obj_pos_Y,Y
-- - - - - - 0x005FE5 01:BFD5: 6A        ROR
-- - - - - - 0x005FE6 01:BFD6: 45 01     EOR ram_0001_t01
-- - - - - - 0x005FE8 01:BFD8: 2A        ROL
-- - - - - - 0x005FE9 01:BFD9: B0 0D     BCS bra_BFE8
-- - - - - - 0x005FEB 01:BFDB: A9 06     LDA #$06
-- - - - - - 0x005FED 01:BFDD: 99 20 07  STA ram_0720_obj,Y
-- - - - - - 0x005FF0 01:BFE0: A9 32     LDA #con_music_32
-- - - - - - 0x005FF2 01:BFE2: 20 D8 95  JSR sub_0x0095E8_play_music
-bra_BFE5:
-C - - - - - 0x005FF5 01:BFE5: 4C 10 8E  JMP loc_0x008E20
-bra_BFE8:
-- - - - - - 0x005FF8 01:BFE8: 98        TYA
-- - - - - - 0x005FF9 01:BFE9: AA        TAX
-- - - - - - 0x005FFA 01:BFEA: 20 52 9A  JSR sub_0x009A62
-- - - - - - 0x005FFD 01:BFED: A6 53     LDX ram_0053
-- - - - - - 0x005FFF 01:BFEF: 60        RTS
-
-
-
-tbl_BFF0:
-- - - - - - 0x006000 01:BFF0: ED        .byte $ED   ; 00 
-- - - - - - 0x006001 01:BFF1: ED        .byte $ED   ; 01 
-- - - - - - 0x006002 01:BFF2: 0D        .byte $0D   ; 02 
-
-
-
-tbl_BFF3:
-- - - - - - 0x006003 01:BFF3: FB        .byte $FB   ; 00 
-- - - - - - 0x006004 01:BFF4: 1A        .byte $1A   ; 01 
-- - - - - - 0x006005 01:BFF5: 1A        .byte $1A   ; 02 
-
-
-
-tbl_BFF6_index:
-- - - - - - 0x006006 01:BFF6: 00        .byte $00   ; 00 
-- - - - - - 0x006007 01:BFF7: 01        .byte $01   ; 01 
-- - - - - - 0x006008 01:BFF8: 02        .byte $02   ; 02 
-- - - - - - 0x006009 01:BFF9: FF        .byte $FF   ; 03 
 
 
 
