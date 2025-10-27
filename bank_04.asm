@@ -4142,6 +4142,7 @@ C D 0 - - - 0x009747 02:9737: 20 3E 85  JSR sub_853E
 loc_973A:
 loc_0x00974A:
 C D 0 - - - 0x00974A 02:973A: 20 4C 9A  JSR sub_0x009A5C_clear_animation
+; A = 00
 C - - - - - 0x00974D 02:973D: 9D 34 06  STA ram_obj_animation_hi,X
 C - - - - - 0x009750 02:9740: 9D 20 07  STA ram_0720_obj,X
 C - - - - - 0x009753 02:9743: A9 2C     LDA #$2C
@@ -4176,6 +4177,7 @@ C D 0 - - - 0x00987F 02:986F: 9D 34 06  STA ram_obj_animation_hi,X
 C - - - - - 0x009778 02:9768: 20 4C 9A  JSR sub_0x009A5C_clear_animation
 C - - - - - 0x00977B 02:976B: E0 0A     CPX #$0A
 C - - - - - 0x00977D 02:976D: B0 F2     BCS bra_9761_RTS
+; A = 00
 C - - - - - 0x00977F 02:976F: 9D F4 06  STA ram_06F4_obj,X
 sub_9772:
 ofs_006_0x009782_16:

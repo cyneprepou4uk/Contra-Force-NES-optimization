@@ -3682,6 +3682,8 @@ C D 0 - - - 0x009A57 02:9A47: A9 00     LDA #$00
 C - - - - - 0x009A59 02:9A49: 9D 0A 07  STA ram_070A_obj,X
 .export sub_0x009A5C_clear_animation
 sub_0x009A5C_clear_animation:
+; out
+    ; A = 00
 C - - - - - 0x009A5C 02:9A4C: A9 00     LDA #$00
 .export loc_0x009A5E
 loc_0x009A5E:
