@@ -58,7 +58,6 @@
 .export ofs_017_0x00EB0B_4A
 .export ofs_017_0x00EB19_4B
 .export ofs_017_0x00EB41_4D
-.export ofs_017_0x00EB60_4E
 .export ofs_017_0x00EB66_50
 .export ofs_017_0x00EBBE_53
 .export ofs_017_0x00ED01_54
@@ -1725,7 +1724,8 @@ tbl_A8D5:
 ofs_017_0x00E8EA_48:
 C - - J - - 0x00E8EA 03:A8DA: A5 8D     LDA ram_008D
 C - - - - - 0x00E8EC 03:A8DC: 30 30     BMI bra_A90E
-C - - - - - 0x00E8EE 03:A8DE: 20 50 AB  JSR sub_AB50
+C - - - - - 0x00E8EE 03:A8DE: 20 50 AB  LDA ram_0343
+                                        CMP #$07
 C - - - - - 0x00E8F1 03:A8E1: 90 2E     BCC bra_A911
 C - - - - - 0x00E8F3 03:A8E3: A9 01     LDA #$01
 C - - - - - 0x00E8F5 03:A8E5: 8D 40 03  STA ram_0340_flag
@@ -2136,14 +2136,6 @@ C - - - - - 0x0091CF 02:91BF: 95 AB     STA ram_array_00AB,X
 C - - - - - 0x0091D1 02:91C1: CA        DEX
 C - - - - - 0x0091D2 02:91C2: 10 F9     BPL bra_91BD_loop
 C - - - - - 0x0091D4 02:91C4: 60        RTS
-
-
-
-sub_AB50:
-ofs_017_0x00EB60_4E:
-C - - J - - 0x00EB60 03:AB50: AD 43 03  LDA ram_0343
-C - - - - - 0x00EB63 03:AB53: C9 07     CMP #$07
-C - - - - - 0x00EB65 03:AB55: 60        RTS
 
 
 

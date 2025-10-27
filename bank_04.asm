@@ -753,7 +753,7 @@ tbl_82F9:
 - D 0 - - - 0x00839F 02:838F: 09 AB     .word ofs_017_0x00EB19_4B
 - D 0 - - - 0x0083A1 02:8391: B9 AA     .word ofs_017_0x00EAC9_4C
 - D 0 - - - 0x0083A3 02:8393: 31 AB     .word ofs_017_0x00EB41_4D
-- D 0 - - - 0x0083A5 02:8395: 50 AB     .word ofs_017_0x00EB60_4E
+- D 0 - - - 0x0083A5 02:8395: 50 AB     .word ofs_017_AB50_4E
 - D 0 - - - 0x0083A7 02:8397: 9A 89     .word ofs_017_899A_4F
 - D 0 - - - 0x0083A9 02:8399: 56 AB     .word ofs_017_0x00EB66_50
 - - - - - - 0x0083AB 02:839B: 23 AD     .word ofs_017_0x00ED33_51
@@ -774,6 +774,13 @@ tbl_82F9:
 - - - - - - 0x0083C9 02:83B9: 67 AE     .word ofs_017_0x00EE77_60
 - D 0 - - - 0x0083CB 02:83BB: 3C A5     .word ofs_017_0x00E54C_61
 - D 0 - - - 0x0083CD 02:83BD: 72 AE     .word ofs_017_0x00EE82_62
+
+
+
+ofs_017_AB50_4E:
+C - - J - - 0x00EB60 03:AB50: AD 43 03  LDA ram_0343
+C - - - - - 0x00EB63 03:AB53: C9 07     CMP #$07
+C - - - - - 0x00EB65 03:AB55: 60        RTS
 
 
 
