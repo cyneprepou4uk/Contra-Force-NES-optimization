@@ -465,7 +465,7 @@ C - - - - - 0x0081A8 02:8198: F0 28     BEQ bra_81C2
 C - - - - - 0x0081AA 02:819A: 20 26 B6  JSR sub_0x00B636
 C - - - - - 0x0081AD 02:819D: 20 78 82  JSR sub_8278
 C - - - - - 0x0081B0 02:81A0: BD 82 07  LDA ram_0782_unk,X
-C - - - - - 0x0081B3 02:81A3: F0 23     BEQ bra_81C8_RTS
+C - - - - - 0x0081B3 02:81A3: F0 23     BEQ bra_81BA_RTS
 C - - - - - 0x0081B5 02:81A5: 20 F2 B3  JSR sub_0x00B402
 C - - - - - 0x0081B8 02:81A8: 20 10 8E  JSR sub_0x008E20
 C - - - - - 0x0081BB 02:81AB: 4C C0 B6  JMP loc_0x00B6D0
@@ -476,6 +476,10 @@ C - - - - - 0x0081C4 02:81B4: F0 0C     BEQ bra_81C2
 loc_81B6:
 C D 0 - - - 0x0081C6 02:81B6: 20 78 82  JSR sub_8278
 C - - - - - 0x0081C9 02:81B9: 4C 10 8E  JMP loc_0x008E20
+bra_81C2:
+C - - - - - 0x0081D2 02:81C2: 4C 78 82  JMP loc_8278
+bra_81BA_RTS:
+                                        RTS
 
 
 
@@ -485,12 +489,6 @@ C - - - - - 0x0081CF 02:81BF: 4C 10 8E  JMP loc_0x008E20
 
 
 
-bra_81C2:
-C - - - - - 0x0081D2 02:81C2: 4C 78 82  JMP loc_8278
-
-
-
-bra_81C8_RTS:
 ofs_016_81C8_02_RTS:
 ofs_016_81C8_14_RTS:
 ofs_016_81C8_23_RTS:
