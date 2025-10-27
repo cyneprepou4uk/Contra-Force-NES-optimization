@@ -82,7 +82,6 @@
 .export ofs_016_0x00F9E2_16
 .export ofs_016_0x00FA55_03
 .export ofs_016_0x00FB4C_17
-.export ofs_016_0x00FBAF_07
 .export ofs_016_0x00FC33_0A
 .export ofs_016_0x00FCDA_15
 
@@ -5230,124 +5229,6 @@ C - - - - - 0x00FBA7 03:BB97: 20 52 9A  JSR sub_0x009A62
 bra_BB9A:
 C - - - - - 0x00FBAA 03:BB9A: A6 53     LDX ram_0053
 C - - - - - 0x00FBAC 03:BB9C: 4C C8 90  JMP loc_0x0090D8_0600x_write_08
-
-
-
-ofs_016_0x00FBAF_07:
-C - - J - - 0x00FBAF 03:BB9F: 20 A5 BB  JSR sub_BBA5
-C - - - - - 0x00FBB2 03:BBA2: 4C 10 8E  JMP loc_0x008E20
-
-
-
-sub_BBA5:
-C - - - - - 0x00FBB5 03:BBA5: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x00FBB8 03:BBA8: D0 1C     BNE bra_BBC6
-C - - - - - 0x00FBBA 03:BBAA: FE 78 07  INC ram_0778_unk,X
-C - - - - - 0x00FBBD 03:BBAD: 20 C8 90  JSR sub_0x0090D8_0600x_write_08
-C - - - - - 0x00FBC0 03:BBB0: A9 06     LDA #$06
-C - - - - - 0x00FBC2 03:BBB2: 9D 20 07  STA ram_0720_obj,X
-C - - - - - 0x00FBC5 03:BBB5: A9 07     LDA #$07
-C - - - - - 0x00FBC7 03:BBB7: 20 A1 89  JSR sub_0x0089B1
-C - - - - - 0x00FBCA 03:BBBA: 20 B1 93  JSR sub_0x0093C1_06B2x_LSRx4_TAY
-C - - - - - 0x00FBCD 03:BBBD: 9D AA 07  STA ram_07AA_unk,X
-C - - - - - 0x00FBD0 03:BBC0: 20 D5 BB  JSR sub_BBD5
-C - - - - - 0x00FBD3 03:BBC3: 4C 47 96  JMP loc_0x009657
-bra_BBC6:
-C - - - - - 0x00FBD6 03:BBC6: 20 D5 BB  JSR sub_BBD5
-C - - - - - 0x00FBD9 03:BBC9: 20 1E 96  JSR sub_0x00962E
-C - - - - - 0x00FBDC 03:BBCC: 20 55 9E  JSR sub_0x009E65
-C - - - - - 0x00FBDF 03:BBCF: 90 03     BCC bra_BBD4_RTS
-C - - - - - 0x00FBE1 03:BBD1: 4C 05 9E  JMP loc_0x009E15
-bra_BBD4_RTS:
-C - - - - - 0x00FBE4 03:BBD4: 60        RTS
-
-
-
-sub_BBD5:
-C - - - - - 0x00FBE5 03:BBD5: BD AA 07  LDA ram_07AA_unk,X
-C - - - - - 0x00FBE8 03:BBD8: 0A        ASL
-C - - - - - 0x00FBE9 03:BBD9: A8        TAY
-C - - - - - 0x00FBEA 03:BBDA: B9 E7 BB  LDA tbl_BBE7,Y
-C - - - - - 0x00FBED 03:BBDD: 85 00     STA ram_0000_t08_data
-C - - - - - 0x00FBEF 03:BBDF: B9 E8 BB  LDA tbl_BBE7 + $01,Y
-C - - - - - 0x00FBF2 03:BBE2: 85 01     STA ram_0000_t08_data + $01
-C - - - - - 0x00FBF4 03:BBE4: 4C 62 96  JMP loc_0x009672
-
-
-
-tbl_BBE7:
-- D 1 - - - 0x00FBF7 03:BBE7: F3 BB     .word _off013_BBF3_00
-- D 1 - - - 0x00FBF9 03:BBE9: FB BB     .word _off013_BBFB_01
-- D 1 - - - 0x00FBFB 03:BBEB: 03 BC     .word _off013_BC03_02
-- D 1 - - - 0x00FBFD 03:BBED: 0B BC     .word _off013_BC0B_03
-- D 1 - - - 0x00FBFF 03:BBEF: 13 BC     .word _off013_BC13_04
-- D 1 - - - 0x00FC01 03:BBF1: 1B BC     .word _off013_BC1B_05
-
-
-
-_off013_BBF3_00:
-;                                              +-------------------- 
-;                                              |    +--------------- 
-;                                              |    |    +---------- 
-;                                              |    |    |    +----- 
-;                                              |    |    |    |
-- D 1 - I - 0x00FC03 03:BBF3: 7F        .byte $7F, $09, $05, $01   ; 00 
-- D 1 - I - 0x00FC07 03:BBF7: BF        .byte $BF, $09, $85, $00   ; 01 
-
-
-
-_off013_BBFB_01:
-;                                              +-------------------- 
-;                                              |    +--------------- 
-;                                              |    |    +---------- 
-;                                              |    |    |    +----- 
-;                                              |    |    |    |
-- D 1 - I - 0x00FC0B 03:BBFB: 2F        .byte $2F, $0E, $05, $01   ; 00 
-- D 1 - I - 0x00FC0F 03:BBFF: 4F        .byte $4F, $0E, $85, $00   ; 01 
-
-
-
-_off013_BC03_02:
-;                                              +-------------------- 
-;                                              |    +--------------- 
-;                                              |    |    +---------- 
-;                                              |    |    |    +----- 
-;                                              |    |    |    |
-- D 1 - I - 0x00FC13 03:BC03: 4F        .byte $4F, $0E, $01, $01   ; 00 
-- D 1 - I - 0x00FC17 03:BC07: 6F        .byte $6F, $0E, $81, $00   ; 01 
-
-
-
-_off013_BC0B_03:
-;                                              +-------------------- 
-;                                              |    +--------------- 
-;                                              |    |    +---------- 
-;                                              |    |    |    +----- 
-;                                              |    |    |    |
-- D 1 - I - 0x00FC1B 03:BC0B: 7F        .byte $7F, $0E, $05, $01   ; 00 
-- D 1 - I - 0x00FC1F 03:BC0F: BF        .byte $BF, $0E, $85, $00   ; 01 
-
-
-
-_off013_BC13_04:
-;                                              +-------------------- 
-;                                              |    +--------------- 
-;                                              |    |    +---------- 
-;                                              |    |    |    +----- 
-;                                              |    |    |    |
-- D 1 - I - 0x00FC23 03:BC13: CF        .byte $CF, $0E, $05, $01   ; 00 
-- D 1 - I - 0x00FC27 03:BC17: EF        .byte $EF, $0E, $85, $00   ; 01 
-
-
-
-_off013_BC1B_05:
-;                                              +-------------------- 
-;                                              |    +--------------- 
-;                                              |    |    +---------- 
-;                                              |    |    |    +----- 
-;                                              |    |    |    |
-- D 1 - I - 0x00FC2B 03:BC1B: EF        .byte $EF, $0E, $01, $01   ; 00 
-- D 1 - I - 0x00FC2F 03:BC1F: 0F        .byte $0F, $0F, $81, $00   ; 01 
 
 
 
