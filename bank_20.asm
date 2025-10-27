@@ -31,6 +31,7 @@
 .export ofs_016_0x00FB4C_17
 .export ofs_016_0x00F3AF_18
 .export ofs_016_0x008E62_19
+.export ofs_016_0x00D248_1A
 
 
 
@@ -4536,6 +4537,73 @@ tbl_8FB3:
 tbl_8FB5:
 - D 0 - - - 0x008FC5 02:8FB5: 04        .byte con_8F57_04   ; 00 
 - D 0 - - - 0x008FC6 02:8FB6: 0C        .byte con_8F57_0C   ; 01 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_016_0x00D248_1A:
+C - - J - - 0x00D248 03:B238: 20 3E B2  JSR sub_B23E
+C - - - - - 0x00D24B 03:B23B: 4C 10 8E  JMP loc_0x008E20
+
+
+
+sub_B23E:
+C - - - - - 0x00D24E 03:B23E: 20 CE 90  JSR sub_0x0090DE_0600x_ORA_08
+C - - - - - 0x00D251 03:B241: BD B4 07  LDA ram_07B4_unk,X
+C - - - - - 0x00D254 03:B244: 30 2A     BMI bra_B270
+C - - - - - 0x00D256 03:B246: 20 D6 90  JSR sub_0x0090E6_0600x_AND_F0
+C - - - - - 0x00D259 03:B249: D0 21     BNE bra_B26C_RTS
+C - - - - - 0x00D25B 03:B24B: BD 68 06  LDA ram_obj_pos_Y,X
+C - - - - - 0x00D25E 03:B24E: 18        CLC
+C - - - - - 0x00D25F 03:B24F: 69 40     ADC #$40
+C - - - - - 0x00D261 03:B251: C9 50     CMP #$50
+C - - - - - 0x00D263 03:B253: 90 17     BCC bra_B26C_RTS
+C - - - - - 0x00D265 03:B255: 20 DC 90  JSR sub_0x0090EC
+C - - - - - 0x00D268 03:B258: A4 75     LDY ram_stage
+C - - - - - 0x00D26A 03:B25A: D9 6D B2  CMP tbl_B26D,Y
+C - - - - - 0x00D26D 03:B25D: D0 33     BNE bra_B292
+C - - - - - 0x00D26F 03:B25F: A9 0C     LDA #$0C
+C - - - - - 0x00D271 03:B261: 9D 82 06  STA ram_0682_obj,X
+C - - - - - 0x00D274 03:B264: 9D 20 07  STA ram_0720_obj,X
+C - - - - - 0x00D277 03:B267: 20 03 90  JSR sub_0x009013
+C - - - - - 0x00D27A 03:B26A: B0 04     BCS bra_B270
+bra_B26C_RTS:
+C - - - - - 0x00D27C 03:B26C: 60        RTS
+bra_B270:
+- - - - - - 0x00D280 03:B270: A9 FF     LDA #$FF
+- - - - - - 0x00D282 03:B272: 9D B4 07  STA ram_07B4_unk,X
+- - - - - - 0x00D285 03:B275: 20 BA 93  JSR sub_0x0093CA
+- - - - - - 0x00D288 03:B278: B0 F2     BCS bra_B26C_RTS
+- - - - - - 0x00D28A 03:B27A: A9 02     LDA #$02
+- - - - - - 0x00D28C 03:B27C: 20 00 97  JSR sub_0x009710
+- - - - - - 0x00D28F 03:B27F: A9 04     LDA #$04
+- - - - - - 0x00D291 03:B281: 9D B4 07  STA ram_07B4_unk,X
+- - - - - - 0x00D294 03:B284: 99 20 07  STA ram_0720_obj,Y
+- - - - - - 0x00D297 03:B287: 20 B9 8F  JSR sub_0x008FC9
+- - - - - - 0x00D29A 03:B28A: A4 75     LDY ram_stage
+- - - - - - 0x00D29C 03:B28C: B9 98 B2  LDA tbl_B298,Y
+- - - - - - 0x00D29F 03:B28F: 4C 0E FC  JMP loc_0x01FC1E
+bra_B292:
+C - - - - - 0x00D2A2 03:B292: A9 00     LDA #$00
+C - - - - - 0x00D2A4 03:B294: 9D 20 07  STA ram_0720_obj,X
+C - - - - - 0x00D2A7 03:B297: 60        RTS
+
+
+
+tbl_B26D:
+- D 1 - - - 0x00D27D 03:B26D: 87        .byte $87   ; 00 stage 1
+- - - - - - 0x00D27E 03:B26E: 00        .byte $00   ; 01 stage 2
+- D 1 - - - 0x00D27F 03:B26F: 71        .byte $71   ; 02 stage 3
+
+
+
+tbl_B298:
+- - - - - - 0x00D2A8 03:B298: 97        .byte $97   ; 00 stage 1
+- - - - - - 0x00D2A9 03:B299: 00        .byte $00   ; 01 stage 2
+- - - - - - 0x00D2AA 03:B29A: 78        .byte $78   ; 02 stage 3
 
 
 
