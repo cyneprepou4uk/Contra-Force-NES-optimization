@@ -561,7 +561,7 @@ tbl_81C9:
 
 
 tbl_8204:
-- - - - - - 0x008214 02:8204: FF FF     .word $FFFF ; 00
+- - - - - - 0x008214 02:8204: FF FF     .word $FFFF ; 00 unused 0x008178
 - D 0 - - - 0x008216 02:8206: E1 B5     .word ofs_016_0x00F5F1_01
 - - - - - - 0x008218 02:8208: C8 81     .word ofs_016_81C8_02_RTS
 - D 0 - - - 0x00821A 02:820A: 45 BA     .word ofs_016_0x00FA55_03
@@ -572,7 +572,7 @@ tbl_8204:
 - D 0 - - - 0x008224 02:8214: F1 B9     .word ofs_016_0x00BA01_08
 - D 0 - - - 0x008226 02:8216: 3F B8     .word ofs_016_0x00B84F_09
 - D 0 - - - 0x008228 02:8218: 23 BC     .word ofs_016_0x00FC33_0A
-- D 0 - - - 0x00822A 02:821A: CE B1     .word ofs_016_0x00D1DE_0B
+- D 0 - - - 0x00822A 02:821A: CE B1     .word ofs_016_B1CE_0B
 - D 0 - - - 0x00822C 02:821C: 7D BD     .word ofs_016_0x005D8D_0C
 - D 0 - - - 0x00822E 02:821E: D3 AF     .word ofs_016_0x00CFE3_0D
 - D 0 - - - 0x008230 02:8220: 85 BF     .word ofs_016_0x005F95_0E
@@ -2727,7 +2727,7 @@ bra_8E10:
 
 
 
-ofs_016_0x00D1DE_0B:
+ofs_016_B1CE_0B:
 C - - J - - 0x00D1DE 03:B1CE: 20 D4 B1  JSR sub_B1D4
 C - - - - - 0x00D1E1 03:B1D1: 4C 10 8E  JMP loc_0x008E20
 
