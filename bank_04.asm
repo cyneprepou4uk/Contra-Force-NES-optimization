@@ -49,7 +49,6 @@
 .export loc_0x008FD0
 .export sub_0x008FF3
 .export sub_0x009003
-.export sub_0x009013
 .export sub_0x00905B
 .export sub_0x009080
 .export sub_0x009095
@@ -2974,23 +2973,6 @@ C - - - - - 0x009012 02:9002: 60        RTS
 
 
 
-sub_9003:
-sub_0x009013:
-; out
-    ; C
-        ; 0 = 
-        ; 1 = 
-C - - - - - 0x009013 02:9003: BD 36 07  LDA ram_0736_obj,X
-C D 0 - - - 0x009016 02:9006: 29 03     AND #$03
-C - - - - - 0x009018 02:9008: D0 D7     BNE bra_9009
-C - - - - - 0x00901A 02:900A: 18        CLC
-C - - - - - 0x00901B 02:900B: 60        RTS
-bra_9009:
-                                        SEC
-                                        RTS
-
-
-
 sub_904B:
 sub_0x00905B:
 ; in
@@ -4318,7 +4300,7 @@ sub_0x009E65:
 ofs_017_9E55_3F:
 ; out
     ; Y = 
-C - - - - - 0x009E65 02:9E55: 20 03 90  JSR sub_9003
+C - - - - - 0x009E65 02:9E55: 20 03 90  JSR sub_0x009013
 C - - - - - 0x009E68 02:9E58: 90 F9     BCC bra_9E53
 C - - - - - 0x009E6A 02:9E5A: 85 00     STA ram_0000_t75
 C - - - - - 0x009E6C 02:9E5C: A0 00     LDY #$00
@@ -4332,7 +4314,7 @@ C - - - - - 0x009E74 02:9E64: 60        RTS
 
 
 sub_0x009E75:
-C - - - - - 0x009E75 02:9E65: 20 03 90  JSR sub_9003
+C - - - - - 0x009E75 02:9E65: 20 03 90  JSR sub_0x009013
 C - - - - - 0x009E78 02:9E68: 90 E9     BCC bra_9E53
 C - - - - - 0x009E7A 02:9E6A: 85 00     STA ram_0000_t75
 C - - - - - 0x009E7C 02:9E6C: C9 03     CMP #$03
