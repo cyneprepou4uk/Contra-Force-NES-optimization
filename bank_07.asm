@@ -83,7 +83,6 @@
 .export ofs_016_0x00FA55_03
 .export ofs_016_0x00FB4C_17
 .export ofs_016_0x00FC33_0A
-.export ofs_016_0x00FCDA_15
 
 
 
@@ -5326,7 +5325,6 @@ C - - - - - 0x00FCD3 03:BCC3: BD 68 06  LDA ram_obj_pos_Y,X
 C - - - - - 0x00FCD6 03:BCC6: C9 E8     CMP #$E8
 C - - - - - 0x00FCD8 03:BCC8: 90 20     BCC bra_BCEA_RTS
 bra_BCCA:
-ofs_016_0x00FCDA_15:
 C - - - - - 0x00FCDA 03:BCCA: 4C 17 9A  JMP loc_0x009A27
 bra_BCCD:
 loc_BCCD:   ; bzk optimize
