@@ -482,12 +482,6 @@ bra_81BA_RTS:
 
 
 
-ofs_016_81C8_23_RTS:
-ofs_016_81C8_25_RTS:
-C - - - - - 0x0081D8 02:81C8: 60        RTS
-
-
-
 tbl_81C9:
 - D 0 - - - 0x0081D9 02:81C9: 01        .byte $01   ; 01 
 - D 0 - - - 0x0081DA 02:81CA: 00        .byte $00   ; 02 
@@ -587,9 +581,9 @@ tbl_8204:
 - D 0 - - - 0x008254 02:8244: 2D A0     .word ofs_016_0x00E03D_20
 - D 0 - - - 0x008256 02:8246: 36 A0     .word ofs_016_0x00E046_21
 - D 0 - - - 0x008258 02:8248: 3F A0     .word ofs_016_0x00E04F_22
-- D 0 - - - 0x00825A 02:824A: C8 81     .word ofs_016_81C8_23_RTS
+- D 0 - - - 0x00825A 02:824A: C8 81     .word ofs_016_0x0081D8_23_RTS
 - D 0 - - - 0x00825C 02:824C: 24 A0     .word ofs_016_0x00E034_24
-- - - - - - 0x00825E 02:824E: C8 81     .word ofs_016_81C8_25_RTS
+- - - - - - 0x00825E 02:824E: C8 81     .word ofs_016_0x0081D8_25_RTS
 - D 0 - - - 0x008260 02:8250: 1A B7     .word ofs_016_0x00F72A_26
 
 
@@ -626,13 +620,13 @@ tbl_8252:
 - D 0 - - - 0x00827E 02:826E: 0E        .byte con_prg_pair + $10   ; 1D 
 - D 0 - - - 0x00827F 02:826F: 06        .byte con_prg_pair + $10   ; 1E 
 - D 0 - - - 0x008280 02:8270: 06        .byte con_prg_pair + $10   ; 1F 
-- D 0 - - - 0x008281 02:8271: 06        .byte con_prg_pair + $06   ; 20 
-- D 0 - - - 0x008282 02:8272: 06        .byte con_prg_pair + $06   ; 21 
-- D 0 - - - 0x008283 02:8273: 06        .byte con_prg_pair + $06   ; 22 
-- D 0 - - - 0x008284 02:8274: 02        .byte con_prg_pair + $02   ; 23 
-- D 0 - - - 0x008285 02:8275: 06        .byte con_prg_pair + $06   ; 24 
-- - - - - - 0x008286 02:8276: 06        .byte con_prg_pair + $06   ; 25 
-- D 0 - - - 0x008287 02:8277: 06        .byte con_prg_pair + $06   ; 26 
+- D 0 - - - 0x008281 02:8271: 06        .byte con_prg_pair + $10   ; 20 
+- D 0 - - - 0x008282 02:8272: 06        .byte con_prg_pair + $10   ; 21 
+- D 0 - - - 0x008283 02:8273: 06        .byte con_prg_pair + $10   ; 22 
+- D 0 - - - 0x008284 02:8274: 02        .byte con_prg_pair + $10   ; 23 
+- D 0 - - - 0x008285 02:8275: 06        .byte con_prg_pair + $10   ; 24 
+- - - - - - 0x008286 02:8276: 06        .byte con_prg_pair + $10   ; 25 
+- D 0 - - - 0x008287 02:8277: 06        .byte con_prg_pair + $10   ; 26 
 
 
 
