@@ -75,7 +75,6 @@
 .export ofs_017_0x00EEC9_10
 .export ofs_016_0x00F3AF_18
 .export ofs_016_0x00F72A_26
-.export ofs_016_0x00FB4C_17
 
 
 
@@ -3457,62 +3456,6 @@ tbl_B866:
 - D 1 - I - 0x00F89E 03:B88E: A4        .byte $A4, $86, $81, $0B   ; 0A 
 - - - - - - 0x00F8A2 03:B892: 33        .byte $33, $00, $C1, $00   ; 0B 
 - - - - - - 0x00F8A6 03:B896: 33        .byte $33, $00, $C1, $00   ; 0C 
-
-
-
-bra_BB39:
-C - - - - - 0x00FB49 03:BB39: 4C 17 9A  JMP loc_0x009A27
-
-
-
-ofs_016_0x00FB4C_17:
-C - - J - - 0x00FB4C 03:BB3C: 20 1E 91  JSR sub_0x00912E
-C - - - - - 0x00FB4F 03:BB3F: 90 06     BCC bra_BB47
-C - - - - - 0x00FB51 03:BB41: A5 00     LDA ram_0000_t42
-C - - - - - 0x00FB53 03:BB43: C9 AC     CMP #$AC
-C - - - - - 0x00FB55 03:BB45: D0 F2     BNE bra_BB39
-bra_BB47:
-C - - - - - 0x00FB57 03:BB47: 20 81 8D  JSR sub_0x008D91
-C - - - - - 0x00FB5A 03:BB4A: B0 ED     BCS bra_BB39
-C - - - - - 0x00FB5C 03:BB4C: BD 00 06  LDA ram_0600_obj,X
-C - - - - - 0x00FB5F 03:BB4F: 30 49     BMI bra_BB9A
-C - - - - - 0x00FB61 03:BB51: A5 23     LDA ram_frm_cnt
-C - - - - - 0x00FB63 03:BB53: 29 0F     AND #$0F
-C - - - - - 0x00FB65 03:BB55: D0 43     BNE bra_BB9A
-C - - - - - 0x00FB67 03:BB57: A9 70     LDA #$70
-C - - - - - 0x00FB69 03:BB59: A0 60     LDY #$60
-C - - - - - 0x00FB6B 03:BB5B: 20 0D 95  JSR sub_0x00951D
-C - - - - - 0x00FB6E 03:BB5E: B0 3A     BCS bra_BB9A
-C - - - - - 0x00FB70 03:BB60: 20 C8 90  JSR sub_0x0090D8_0600x_write_08
-C - - - - - 0x00FB73 03:BB63: A9 E1     LDA #$E1
-C - - - - - 0x00FB75 03:BB65: 20 1F 97  JSR sub_0x00972F
-C - - - - - 0x00FB78 03:BB68: B0 30     BCS bra_BB9A
-C - - - - - 0x00FB7A 03:BB6A: 98        TYA
-C - - - - - 0x00FB7B 03:BB6B: AA        TAX
-C - - - - - 0x00FB7C 03:BB6C: 20 2E 94  JSR sub_0x00943E
-C - - - - - 0x00FB7F 03:BB6F: A9 00     LDA #$00
-C - - - - - 0x00FB81 03:BB71: 9D B2 06  STA ram_06B2_obj,X
-C - - - - - 0x00FB84 03:BB74: A9 16     LDA #$16
-C - - - - - 0x00FB86 03:BB76: 85 00     STA ram_0000_t21_pos_X
-C - - - - - 0x00FB88 03:BB78: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00FB8B 03:BB7B: D9 4E 06  CMP ram_obj_pos_X,Y
-C - - - - - 0x00FB8E 03:BB7E: 90 09     BCC bra_BB89
-C - - - - - 0x00FB90 03:BB80: A9 80     LDA #$80
-C - - - - - 0x00FB92 03:BB82: 9D B2 06  STA ram_06B2_obj,X
-C - - - - - 0x00FB95 03:BB85: A9 F4     LDA #$F4
-C - - - - - 0x00FB97 03:BB87: 85 00     STA ram_0000_t21_pos_X
-bra_BB89:
-C - - - - - 0x00FB99 03:BB89: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00FB9C 03:BB8C: 18        CLC
-C - - - - - 0x00FB9D 03:BB8D: 65 00     ADC ram_0000_t21_pos_X
-C - - - - - 0x00FB9F 03:BB8F: 9D 4E 06  STA ram_obj_pos_X,X
-C - - - - - 0x00FBA2 03:BB92: 6A        ROR
-C - - - - - 0x00FBA3 03:BB93: 45 00     EOR ram_0000_t21_pos_X
-C - - - - - 0x00FBA5 03:BB95: 90 03     BCC bra_BB9A
-C - - - - - 0x00FBA7 03:BB97: 20 52 9A  JSR sub_0x009A62
-bra_BB9A:
-C - - - - - 0x00FBAA 03:BB9A: A6 53     LDX ram_0053
-C - - - - - 0x00FBAC 03:BB9C: 4C C8 90  JMP loc_0x0090D8_0600x_write_08
 
 
 
