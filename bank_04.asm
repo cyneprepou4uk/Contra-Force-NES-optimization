@@ -720,12 +720,12 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 27 
                                         .byte con_prg_pair + $11 ; 28 
                                         .byte con_prg_pair + $11 ; 29 
-                                        .byte con_prg_pair + $02 ; 2A 
-                                        .byte con_prg_pair + $02 ; 2B 
-                                        .byte con_prg_pair + $02 ; 2C 
-                                        .byte con_prg_pair + $02 ; 2D 
-                                        .byte con_prg_pair + $02 ; 2E 
-                                        .byte con_prg_pair + $02 ; 2F 
+                                        .byte con_prg_pair + $11 ; 2A 
+                                        .byte con_prg_pair + $11 ; 2B 
+                                        .byte con_prg_pair + $11 ; 2C 
+                                        .byte con_prg_pair + $11 ; 2D 
+                                        .byte con_prg_pair + $11 ; 2E 
+                                        .byte con_prg_pair + $11 ; 2F 
                                         .byte con_prg_pair + $02 ; 30 
                                         .byte con_prg_pair + $02 ; 31 
                                         .byte con_prg_pair + $02 ; 32 
@@ -823,9 +823,9 @@ tbl_82F9:
 - D 0 - - - 0x008357 02:8347: 8C A5     .word ofs_017_0x00E59C_27
 - D 0 - - - 0x008359 02:8349: B5 A5     .word ofs_017_0x00E5C5_28
 - D 0 - - - 0x00835B 02:834B: E1 A5     .word ofs_017_0x00E5F1_29
-- D 0 - - - 0x00835D 02:834D: AC 88     .word ofs_017_88AC_2A
-- D 0 - - - 0x00835F 02:834F: E7 88     .word ofs_017_88E7_2B
-- D 0 - - - 0x008361 02:8351: 57 89     .word ofs_017_8957_2C
+- D 0 - - - 0x00835D 02:834D: AC 88     .word ofs_017_0x0088BC_2A
+- D 0 - - - 0x00835F 02:834F: E7 88     .word ofs_017_0x0088F7_2B
+- D 0 - - - 0x008361 02:8351: 57 89     .word ofs_017_0x008967_2C
 - D 0 - - - 0x008363 02:8353: 08 A6     .word ofs_017_0x00E618_2D
 - D 0 - - - 0x008365 02:8355: 22 A6     .word ofs_017_0x00E632_2E
 - D 0 - - - 0x008367 02:8357: 60 A6     .word ofs_017_0x00E670_2F
@@ -1160,43 +1160,6 @@ C - - - - - 0x00887C 02:886C: 60        RTS
 
 
 
-ofs_017_88AC_2A:
-C - - J - - 0x0088BC 02:88AC: A5 0A     LDA ram_000A_t03
-C - - - - - 0x0088BE 02:88AE: 30 0B     BMI bra_88BB
-C - - - - - 0x0088C0 02:88B0: 20 B1 93  JSR sub_0x0093C1_06B2x_LSRx4_TAY
-C - - - - - 0x0088C3 02:88B3: 4A        LSR
-C - - - - - 0x0088C4 02:88B4: 18        CLC
-C - - - - - 0x0088C5 02:88B5: 65 0A     ADC ram_000A_t03
-C - - - - - 0x0088C7 02:88B7: 85 3C     STA ram_003C_t02_data_index
-C - - - - - 0x0088C9 02:88B9: 38        SEC
-C - - - - - 0x0088CA 02:88BA: 60        RTS
-bra_88BB:
-C - - - - - 0x0088CB 02:88BB: 29 7F     AND #$7F
-C - - - - - 0x0088CD 02:88BD: 85 3C     STA ram_003C_t02_data_index
-C - - - - - 0x0088CF 02:88BF: BD 82 07  LDA ram_0782_unk,X
-C - - - - - 0x0088D2 02:88C2: C9 04     CMP #$04
-C - - - - - 0x0088D4 02:88C4: D0 18     BNE bra_88DE
-C - - - - - 0x0088D6 02:88C6: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x0088D9 02:88C9: C9 11     CMP #$11
-C - - - - - 0x0088DB 02:88CB: D0 08     BNE bra_88D5
-C - - - - - 0x0088DD 02:88CD: A9 06     LDA #$06
-C - - - - - 0x0088DF 02:88CF: 20 BB 90  JSR sub_90BB
-C - - - - - 0x0088E2 02:88D2: 4C DE 88  JMP loc_88DE
-bra_88D5:
-C - - - - - 0x0088E5 02:88D5: C9 16     CMP #$16
-C - - - - - 0x0088E7 02:88D7: D0 05     BNE bra_88DE
-C - - - - - 0x0088E9 02:88D9: A9 05     LDA #$05
-C - - - - - 0x0088EB 02:88DB: 20 BB 90  JSR sub_90BB
-bra_88DE:
-loc_88DE:
-C D 0 - - - 0x0088EE 02:88DE: BD B2 06  LDA ram_06B2_obj,X
-C - - - - - 0x0088F1 02:88E1: 10 02     BPL bra_88E5
-C - - - - - 0x0088F3 02:88E3: E6 3C     INC ram_003C_t02_data_index
-bra_88E5:
-C - - - - - 0x0088F5 02:88E5: 38        SEC
-C - - - - - 0x0088F6 02:88E6: 60        RTS
-ofs_017_88E7_2B:
-C - - J - - 0x0088F7 02:88E7: A5 0A     LDA ram_000A_t03
 sub_0x0088F9:
 loc_0x0088F9:
 C D 0 - - - 0x0088F9 02:88E9: 85 00     STA ram_0000_t48
@@ -1287,7 +1250,6 @@ tbl_891F:
 
 
 loc_0x008967:
-ofs_017_8957_2C:
 C D 0 - - - 0x008967 02:8957: A5 0A     LDA ram_000A_t03
 .export sub_0x008969
 sub_0x008969:
@@ -5362,6 +5324,28 @@ C - - - - - 0x00E7FE 03:A7EE: 4C E3 A7  JMP loc_A7E3
 tbl_A7F1:
 - D 1 - - - 0x00E801 03:A7F1: 4D 00     .word $004D ; 00 
 - - - - - - 0x00E803 03:A7F3: D0 00     .word $00D0 ; 01 
+
+
+
+.export sub_0x00E67E
+sub_0x00E67E:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
+C - - - - - 0x00E67E 03:A66E: B9 82 07  LDA ram_0782_unk,Y
+C - - - - - 0x00E681 03:A671: F0 11     BEQ bra_A684
+C - - - - - 0x00E683 03:A673: B9 68 06  LDA ram_obj_pos_Y,Y
+C - - - - - 0x00E686 03:A676: DD 68 06  CMP ram_obj_pos_Y,X
+C - - - - - 0x00E689 03:A679: 90 09     BCC bra_A684
+C - - - - - 0x00E68B 03:A67B: 20 F4 94  JSR sub_94F4
+C - - - - - 0x00E68E 03:A67E: C9 20     CMP #$20
+C - - - - - 0x00E690 03:A680: B0 02     BCS bra_A684
+C - - - - - 0x00E692 03:A682: 38        SEC
+C - - - - - 0x00E693 03:A683: 60        RTS
+bra_A684:
+C - - - - - 0x00E694 03:A684: 18        CLC
+C - - - - - 0x00E695 03:A685: 60        RTS
 
 
 
