@@ -695,8 +695,8 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 0E 
                                         .byte con_prg_pair + $11 ; 0F 
                                         .byte con_prg_pair + $11 ; 10 
-                                        .byte con_prg_pair + $02 ; 11 
-                                        .byte con_prg_pair + $02 ; 12 
+                                        .byte con_prg_pair + $11 ; 11 
+                                        .byte con_prg_pair + $11 ; 12 
                                         .byte con_prg_pair + $02 ; 13 
                                         .byte con_prg_pair + $02 ; 14 
                                         .byte con_prg_pair + $02 ; 15 
@@ -798,8 +798,8 @@ tbl_82F9:
 - D 0 - - - 0x008325 02:8315: 91 85     .word ofs_017_0x0085A1_0E
 - D 0 - - - 0x008327 02:8317: BD 87     .word ofs_017_0x0087CD_0F
 - D 0 - - - 0x008329 02:8319: B9 AE     .word ofs_017_0x00EEC9_10
-- D 0 - - - 0x00832B 02:831B: F4 87     .word ofs_017_87F4_11
-- D 0 - - - 0x00832D 02:831D: 0C 88     .word ofs_017_880C_12
+- D 0 - - - 0x00832B 02:831B: F4 87     .word ofs_017_0x008804_11
+- D 0 - - - 0x00832D 02:831D: 0C 88     .word ofs_017_0x00881C_12
 - D 0 - - - 0x00832F 02:831F: 11 88     .word ofs_017_8811_13
 - D 0 - - - 0x008331 02:8321: 5B 88     .word ofs_017_885B_14
 - D 0 - - - 0x008333 02:8323: 6D 88     .word ofs_017_886D_15
@@ -1162,29 +1162,6 @@ C - - - - - 0x0087A6 02:8796: A9 01     LDA #$01
 C - - - - - 0x0087A8 02:8798: 8D 56 03  STA ram_0356_flag
 C - - - - - 0x0087AD 02:879D: 20 B3 F3  JSR sub_0x01DA7B
 C - - - - - 0x0087B0 02:87A0: 4C 4B 85  JMP loc_854B
-
-
-
-ofs_017_87F4_11:
-C - - J - - 0x008804 02:87F4: A9 00     LDA #$00
-C - - - - - 0x008806 02:87F6: 85 6D     STA ram_006D
-C - - - - - 0x008808 02:87F8: 20 2E 94  JSR sub_942E
-C - - - - - 0x00880B 02:87FB: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00880E 02:87FE: D9 4E 06  CMP ram_obj_pos_X,Y
-C - - - - - 0x008811 02:8801: 90 04     BCC bra_8807
-C - - - - - 0x008813 02:8803: A9 80     LDA #$80
-C - - - - - 0x008815 02:8805: 85 6D     STA ram_006D
-bra_8807:
-C - - - - - 0x008817 02:8807: 20 01 92  JSR sub_9201
-C - - - - - 0x00881A 02:880A: 38        SEC
-C - - - - - 0x00881B 02:880B: 60        RTS
-
-
-
-ofs_017_880C_12:
-C - - J - - 0x00881C 02:880C: 20 E8 91  JSR sub_91E8
-C - - - - - 0x00881F 02:880F: 38        SEC
-C - - - - - 0x008820 02:8810: 60        RTS
 
 
 
@@ -2667,7 +2644,8 @@ C - - - - - 0x00920A 02:91FA: 18        CLC
 C - - - - - 0x00920B 02:91FB: 69 08     ADC #$08
 C - - - - - 0x00920D 02:91FD: 29 E0     AND #$E0
 C - - - - - 0x00920F 02:91FF: 85 6D     STA ram_006D
-sub_9201:
+.export sub_0x009211
+sub_0x009211:
 C - - - - - 0x009211 02:9201: 20 72 91  JSR sub_0x009182_06B2x_AND_0F
 C - - - - - 0x009214 02:9204: 05 6D     ORA ram_006D
 C - - - - - 0x009216 02:9206: 4C EE 95  STA ram_06B2_obj,X
