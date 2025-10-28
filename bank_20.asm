@@ -2,7 +2,7 @@
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
 .org $A000  ; for listing file
-; 0x040010-0x04200F
+; 0x040010-0x04400F
 
 
 
@@ -5163,7 +5163,13 @@ tbl_B7C7:
 
 
 
-.out .sprintf("Free bytes in bank 20: 0x%04X [%d]", ($C000 - *), ($C000 - *))
+.out .sprintf("Free bytes in bank 20: 0x%04X [%d]", ($D140 - *), ($D140 - *))
+
+
+
+.segment "DPCM_20"
+.incbin "DPCM.bin"
+.org $D140  ; for listing file
 
 
 
