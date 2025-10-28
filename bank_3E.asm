@@ -3648,8 +3648,6 @@ loc_0x009A27:
 sub_0x009A27:
 ; out
     ; A = 00
-.export ofs_017_0x009A27_02
-ofs_017_0x009A27_02:
 C D 0 - - - 0x009A27 02:9A17: 20 33 9A  JSR sub_9A33_clear_object_data
 ; A = 00
 C - - - - - 0x009A2A 02:9A1A: 9D 00 06  STA ram_0600_obj,X
