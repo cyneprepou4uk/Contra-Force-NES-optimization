@@ -6113,6 +6113,34 @@ tbl_AD86:
 
 
 
+.export sub_0x00E6FA
+sub_0x00E6FA:
+.export loc_0x00E6FA
+loc_0x00E6FA:
+; in
+    ; Y = 00/02
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
+C - - - - - 0x00E6FA 03:A6EA: A5 01     LDA ram_0001_t02_hi
+C - - - - - 0x00E6FC 03:A6EC: D9 F9 A6  CMP tbl_A6F8 + $01,Y
+C - - - - - 0x00E6FF 03:A6EF: F0 01     BEQ bra_A6F2
+C - - - - - 0x00E701 03:A6F1: 60        RTS
+bra_A6F2:
+C - - - - - 0x00E702 03:A6F2: A5 00     LDA ram_0000_t41_lo
+C - - - - - 0x00E704 03:A6F4: D9 F8 A6  CMP tbl_A6F8,Y
+C - - - - - 0x00E707 03:A6F7: 60        RTS
+
+
+
+tbl_A6F8:
+;                                   
+- D 1 - - - 0x00E708 03:A6F8: 08        .byte $08, $04   ; 00 
+- D 1 - - - 0x00E70A 03:A6FA: 28        .byte $28, $04   ; 02 
+
+
+
 .out .sprintf("Free bytes in bank 04: 0x%04X [%d]", ($A000 - *), ($A000 - *))
 
 
