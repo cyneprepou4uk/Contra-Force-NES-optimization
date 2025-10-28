@@ -25,6 +25,7 @@
 .export ofs_017_0x00EEC9_10
 .export ofs_017_0x008804_11
 .export ofs_017_0x00881C_12
+.export ofs_017_0x008821_13
 
 
 
@@ -789,6 +790,52 @@ ofs_017_0x00881C_12:
 C - - J - - 0x00881C 02:880C: 20 E8 91  JSR sub_0x0091F8
 C - - - - - 0x00881F 02:880F: 38        SEC
 C - - - - - 0x008820 02:8810: 60        RTS
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x008821_13:
+C - - J - - 0x008821 02:8811: BD B2 06  LDA ram_06B2_obj,X
+C - - - - - 0x008824 02:8814: 29 40     AND #$40
+C - - - - - 0x008826 02:8816: D0 28     BNE bra_8840
+C - - - - - 0x008828 02:8818: 20 2E 94  JSR sub_0x00943E
+C - - - - - 0x00882B 02:881B: BD B2 06  LDA ram_06B2_obj,X
+C - - - - - 0x00882E 02:881E: 29 80     AND #$80
+C - - - - - 0x008830 02:8820: D0 15     BNE bra_8837
+C - - - - - 0x008832 02:8822: BD 68 06  LDA ram_obj_pos_Y,X
+C - - - - - 0x008835 02:8825: D9 68 06  CMP ram_obj_pos_Y,Y
+C - - - - - 0x008838 02:8828: 90 09     BCC bra_8833
+bra_882A:
+C - - - - - 0x00883A 02:882A: A9 C0     LDA #$C0
+bra_882C:
+C - - - - - 0x00883C 02:882C: 18        CLC
+C - - - - - 0x00883D 02:882D: 7D B2 06  ADC ram_06B2_obj,X
+C - - - - - 0x008840 02:8830: 4C F0 8C  STA ram_06B2_obj,X
+                                        SEC
+                                        RTS
+bra_8833:
+C - - - - - 0x008843 02:8833: A9 40     LDA #$40
+C - - - - - 0x008845 02:8835: D0 F5     BNE bra_882C    ; jmp
+bra_8837:
+C - - - - - 0x008847 02:8837: BD 68 06  LDA ram_obj_pos_Y,X
+C - - - - - 0x00884A 02:883A: D9 68 06  CMP ram_obj_pos_Y,Y
+C - - - - - 0x00884D 02:883D: 4C 4E 88  JMP loc_884E
+bra_8840:
+C - - - - - 0x008850 02:8840: 20 2E 94  JSR sub_0x00943E
+C - - - - - 0x008853 02:8843: BD B2 06  LDA ram_06B2_obj,X
+C - - - - - 0x008856 02:8846: 30 0A     BMI bra_8852
+C - - - - - 0x008858 02:8848: BD 4E 06  LDA ram_obj_pos_X,X
+C - - - - - 0x00885B 02:884B: D9 4E 06  CMP ram_obj_pos_X,Y
+loc_884E:
+C D 0 - - - 0x00885E 02:884E: B0 E3     BCS bra_8833
+C - - - - - 0x008860 02:8850: 90 D8     BCC bra_882A    ; jmp
+bra_8852:
+C - - - - - 0x008862 02:8852: B9 4E 06  LDA ram_obj_pos_X,Y
+C - - - - - 0x008865 02:8855: DD 4E 06  CMP ram_obj_pos_X,X
+C - - - - - 0x008868 02:8858: 4C 4E 88  JMP loc_884E
 
 
 
