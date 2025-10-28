@@ -18,6 +18,8 @@
 .export ofs_017_0x0086BB_09
 .export ofs_017_0x0086F1_0A
 .export ofs_017_0x0086FA_0B_play_music
+.export ofs_017_0x008702_0C
+.export ofs_017_0x008756_0D
 
 
 
@@ -426,6 +428,222 @@ C - - - - - 0x0086F9 02:86E9: 60        RTS
 
 ofs_017_0x0086FA_0B_play_music:
                                         JMP loc_0x0086FA_play_music
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x008702_0C:
+C - - J - - 0x008702 02:86F2: A5 0A     LDA ram_000A_t03
+; * 04
+C - - - - - 0x008704 02:86F4: 0A        ASL
+C - - - - - 0x008705 02:86F5: 0A        ASL
+C - - - - - 0x008706 02:86F6: A8        TAY
+C - - - - - 0x008707 02:86F7: B9 0E 87  LDA tbl_870E,Y
+C - - - - - 0x00870A 02:86FA: 85 0D     STA ram_000D_t01_data
+C - - - - - 0x00870C 02:86FC: B9 0F 87  LDA tbl_870E + $01,Y
+C - - - - - 0x00870F 02:86FF: 85 0E     STA ram_000D_t01_data + $01
+C - - - - - 0x008711 02:8701: B9 10 87  LDA tbl_870E + $02,Y
+C - - - - - 0x008714 02:8704: 85 0B     STA ram_000B_t01
+C - - - - - 0x008716 02:8706: 8A        TXA
+C - - - - - 0x008717 02:8707: A8        TAY
+C - - - - - 0x008718 02:8708: A5 0B     LDA ram_000B_t01
+C - - - - - 0x00871A 02:870A: 91 0D     STA (ram_000D_t01_data),Y
+C - - - - - 0x00871C 02:870C: 38        SEC
+C - - - - - 0x00871D 02:870D: 60        RTS
+
+
+
+tbl_870E:
+; 00 
+- D 0 - - - 0x00871E 02:870E: 20 07     .word ram_0720_obj
+- D 0 - - - 0x008720 02:8710: 06        .byte $06   ; 
+- - - - - - 0x008721 02:8711: 00        .byte $00   ; placeholder
+; 01 
+- D 0 - - - 0x008722 02:8712: 20 07     .word ram_0720_obj
+- D 0 - - - 0x008724 02:8714: 00        .byte $00   ; 
+- - - - - - 0x008725 02:8715: 00        .byte $00   ; placeholder
+; 02 
+- D 0 - - - 0x008726 02:8716: 0A 07     .word ram_070A_obj
+- D 0 - - - 0x008728 02:8718: 00        .byte $00   ; 
+- - - - - - 0x008729 02:8719: 00        .byte $00   ; placeholder
+; 03 
+- D 0 - - - 0x00872A 02:871A: 1A 06     .word ram_obj_animation_lo
+- D 0 - - - 0x00872C 02:871C: 00        .byte $00   ; 
+- - - - - - 0x00872D 02:871D: 00        .byte $00   ; placeholder
+; 04 
+- - - - - - 0x00872E 02:871E: AA 07     .word ram_07AA_unk
+- - - - - - 0x008730 02:8720: 01        .byte $01   ; 
+- - - - - - 0x008731 02:8721: 00        .byte $00   ; placeholder
+; 05 
+- D 0 - - - 0x008732 02:8722: 00 06     .word ram_0600_obj
+- D 0 - - - 0x008734 02:8724: 08        .byte $08   ; 
+- - - - - - 0x008735 02:8725: 00        .byte $00   ; placeholder
+; 06 
+- D 0 - - - 0x008736 02:8726: 20 07     .word ram_0720_obj
+- D 0 - - - 0x008738 02:8728: 1B        .byte $1B   ; 
+- - - - - - 0x008739 02:8729: 00        .byte $00   ; placeholder
+; 07 
+- D 0 - - - 0x00873A 02:872A: AA 07     .word ram_07AA_unk
+- D 0 - - - 0x00873C 02:872C: 00        .byte $00   ; 
+- - - - - - 0x00873D 02:872D: 00        .byte $00   ; placeholder
+; 08 
+- D 0 - - - 0x00873E 02:872E: 20 07     .word ram_0720_obj
+- D 0 - - - 0x008740 02:8730: 16        .byte $16   ; 
+- - - - - - 0x008741 02:8731: 00        .byte $00   ; placeholder
+; 09 
+- D 0 - - - 0x008742 02:8732: 20 07     .word ram_0720_obj
+- D 0 - - - 0x008744 02:8734: 06        .byte $06   ; 
+- - - - - - 0x008745 02:8735: 00        .byte $00   ; placeholder
+; 0A 
+- D 0 - - - 0x008746 02:8736: 20 07     .word ram_0720_obj
+- D 0 - - - 0x008748 02:8738: 03        .byte $03   ; 
+- - - - - - 0x008749 02:8739: 00        .byte $00   ; placeholder
+; 0B 
+- D 0 - - - 0x00874A 02:873A: 20 07     .word ram_0720_obj
+- D 0 - - - 0x00874C 02:873C: 07        .byte $07   ; 
+- - - - - - 0x00874D 02:873D: 00        .byte $00   ; placeholder
+; 0C 
+- D 0 - - - 0x00874E 02:873E: 20 07     .word ram_0720_obj
+- D 0 - - - 0x008750 02:8740: 08        .byte $08   ; 
+- - - - - - 0x008751 02:8741: 00        .byte $00   ; placeholder
+; 0D 
+- D 0 - - - 0x008752 02:8742: AA 07     .word ram_07AA_unk
+- D 0 - - - 0x008754 02:8744: 0C        .byte $0C   ; 
+- - - - - - 0x008755 02:8745: 00        .byte $00   ; placeholder
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x008756_0D:
+C - - J - - 0x008756 02:8746: BD 78 07  LDA ram_0778_unk,X
+C - - - - - 0x008759 02:8749: 30 0D     BMI bra_8758
+C - - - - - 0x00875B 02:874B: A5 0A     LDA ram_000A_t03
+C - - - - - 0x00875D 02:874D: 9D A0 07  STA ram_07A0_unk,X
+; bzk optimize, useless LDA + STA
+C - - - - - 0x008760 02:8750: A5 0B     LDA ram_000B_t04    ; also ram_000B_t13
+C - - - - - 0x008762 02:8752: 85 06     STA ram_0006_t18_useless
+; bzk optimize, useless LDA + STA
+C - - - - - 0x008764 02:8754: A5 0C     LDA ram_000C_t01_distance
+C - - - - - 0x008766 02:8756: 85 07     STA ram_0007_t12_useless
+bra_8758:
+C - - - - - 0x008768 02:8758: 20 62 87  JSR sub_8762
+C - - - - - 0x00876B 02:875B: B0 03     BCS bra_8760
+C - - - - - 0x00876D 02:875D: DE 78 07  DEC ram_0778_unk,X
+bra_8760:
+C - - - - - 0x008770 02:8760: 38        SEC
+C - - - - - 0x008771 02:8761: 60        RTS
+
+
+
+sub_8762:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
+C - - - - - 0x008772 02:8762: BD A0 07  LDA ram_07A0_unk,X
+; * 04
+C - - - - - 0x008775 02:8765: 0A        ASL
+C - - - - - 0x008776 02:8766: 0A        ASL
+C - - - - - 0x008777 02:8767: A8        TAY
+C - - - - - 0x008778 02:8768: B9 AE 87  LDA tbl_87AD + $01,Y
+C - - - - - 0x00877B 02:876B: 84 0C     STY ram_000C_t03
+C - - - - - 0x00877D 02:876D: F0 03     BEQ bra_8772
+C - - - - - 0x00877F 02:876F: 20 10 8E  JSR sub_0x008E20
+bra_8772:
+C - - - - - 0x008782 02:8772: 20 BA 93  JSR sub_0x0093CA
+C - - - - - 0x008785 02:8775: B0 2C     BCC bra_8777
+C - - - - - 0x0087B3 02:87A3: 18        CLC
+C - - - - - 0x0087B4 02:87A4: 60        RTS
+bra_8777:
+C - - - - - 0x008787 02:8777: A4 0C     LDY ram_000C_t03
+C - - - - - 0x008789 02:8779: B9 AF 87  LDA tbl_87AD + $02,Y
+C - - - - - 0x00878C 02:877C: 85 06     STA ram_0006_t05_ppu_addr_lo
+C - - - - - 0x00878E 02:877E: B9 B0 87  LDA tbl_87AD + $03,Y
+C - - - - - 0x008791 02:8781: 85 07     STA ram_0007_t01_ppu_addr_hi
+C - - - - - 0x008793 02:8783: B9 AD 87  LDA tbl_87AD,Y
+C - - - - - 0x008796 02:8786: 0A        ASL
+C - - - - - 0x008797 02:8787: A8        TAY
+C - - - - - 0x008798 02:8788: B9 A5 87  LDA tbl_87A5,Y
+C - - - - - 0x00879B 02:878B: 85 02     STA ram_0002_t02_ppu_data
+C - - - - - 0x00879D 02:878D: B9 A6 87  LDA tbl_87A5 + $01,Y
+C - - - - - 0x0087A0 02:8790: 85 03     STA ram_0002_t02_ppu_data + $01
+                                        JMP loc_0x0087A2
+
+
+
+tbl_87AD:
+; bzk optimize, same 2nd, 3rd and 4th bytes,
+; while the 1st byte is the same as index
+; 00 
+- D 0 - - - 0x0087BD 02:87AD: 00        .byte $00   ; index
+- D 0 - - - 0x0087BE 02:87AE: 01        .byte $01   ; 
+- D 0 - - - 0x0087BF 02:87AF: 9C 22     .word $229C ; ppu address
+; 01 
+- D 0 - - - 0x0087C1 02:87B1: 01        .byte $01   ; index
+- D 0 - - - 0x0087C2 02:87B2: 01        .byte $01   ; 
+- D 0 - - - 0x0087C3 02:87B3: 9C 22     .word $229C ; ppu address
+; 02 
+- D 0 - - - 0x0087C5 02:87B5: 02        .byte $02   ; index
+- D 0 - - - 0x0087C6 02:87B6: 01        .byte $01   ; 
+- D 0 - - - 0x0087C7 02:87B7: 9C 22     .word $229C ; ppu address
+; 03 
+- D 0 - - - 0x0087C9 02:87B9: 03        .byte $03   ; index
+- D 0 - - - 0x0087CA 02:87BA: 01        .byte $01   ; 
+- D 0 - - - 0x0087CB 02:87BB: 9C 22     .word $229C ; ppu address
+
+
+
+tbl_87A5:
+- D 0 - - - 0x0087B5 02:87A5: C8 AA     .word _off025_AAC8_00
+- D 0 - - - 0x0087B7 02:87A7: DA AA     .word _off025_AADA_01
+- D 0 - - - 0x0087B9 02:87A9: EC AA     .word _off025_AAEC_02
+- D 0 - - - 0x0087BB 02:87AB: FE AA     .word _off025_AAFE_03
+
+
+
+_off025_AAC8_00:
+- D 1 - I - 0x016AD8 05:AAC8: 04        .byte $04   ; size X
+- D 1 - I - 0x016AD9 05:AAC9: 04        .byte $04   ; size Y
+- D 1 - I - 0x016ADA 05:AACA: C9        .byte $C9, $C9, $C9, $C9   ; 01 
+- D 1 - I - 0x016ADE 05:AACE: CA        .byte $CA, $CA, $CA, $CA   ; 02 
+- D 1 - I - 0x016AE2 05:AAD2: CB        .byte $CB, $CB, $CB, $CB   ; 03 
+- D 1 - I - 0x016AE6 05:AAD6: CC        .byte $CC, $CC, $CC, $CC   ; 04 
+
+
+
+_off025_AADA_01:
+- D 1 - I - 0x016AEA 05:AADA: 04        .byte $04   ; size X
+- D 1 - I - 0x016AEB 05:AADB: 04        .byte $04   ; size Y
+- D 1 - I - 0x016AEC 05:AADC: C9        .byte $C9, $CD, $D1, $C9   ; 01 
+- D 1 - I - 0x016AF0 05:AAE0: CA        .byte $CA, $CE, $D2, $CA   ; 02 
+- D 1 - I - 0x016AF4 05:AAE4: CB        .byte $CB, $CF, $D3, $CB   ; 03 
+- D 1 - I - 0x016AF8 05:AAE8: CC        .byte $CC, $D0, $D4, $CC   ; 04 
+
+
+
+_off025_AAEC_02:
+- D 1 - I - 0x016AFC 05:AAEC: 04        .byte $04   ; size X
+- D 1 - I - 0x016AFD 05:AAED: 04        .byte $04   ; size Y
+- D 1 - I - 0x016AFE 05:AAEE: C9        .byte $C9, $00, $00, $C9   ; 01 
+- D 1 - I - 0x016B02 05:AAF2: CA        .byte $CA, $00, $00, $CA   ; 02 
+- D 1 - I - 0x016B06 05:AAF6: CB        .byte $CB, $00, $00, $CB   ; 03 
+- D 1 - I - 0x016B0A 05:AAFA: CC        .byte $CC, $00, $00, $CC   ; 04 
+
+
+
+_off025_AAFE_03:
+- D 1 - I - 0x016B0E 05:AAFE: 04        .byte $04   ; size X
+- D 1 - I - 0x016B0F 05:AAFF: 04        .byte $04   ; size Y
+- D 1 - I - 0x016B10 05:AB00: CD        .byte $CD, $00, $00, $D1   ; 01 
+- D 1 - I - 0x016B14 05:AB04: CE        .byte $CE, $00, $00, $D2   ; 02 
+- D 1 - I - 0x016B18 05:AB08: CF        .byte $CF, $00, $00, $D3   ; 03 
+- D 1 - I - 0x016B1C 05:AB0C: D0        .byte $D0, $00, $00, $D4   ; 04 
 
 
 
