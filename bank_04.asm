@@ -19,7 +19,6 @@
 .export ofs_006_0x0084A4_1D
 .export sub_0x0084B1
 .export sub_0x00854E
-.export sub_0x0086F6
 .export loc_0x0087A2
 .export sub_0x0087A2
 .export sub_0x008872
@@ -689,7 +688,7 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 07 
                                         .byte con_prg_pair + $11 ; 08 
                                         .byte con_prg_pair + $11 ; 09 
-                                        .byte con_prg_pair + $02 ; 0A 
+                                        .byte con_prg_pair + $11 ; 0A 
                                         .byte con_prg_pair + $02 ; 0B 
                                         .byte con_prg_pair + $02 ; 0C 
                                         .byte con_prg_pair + $02 ; 0D 
@@ -792,8 +791,8 @@ tbl_82F9:
 - D 0 - - - 0x008317 02:8307: 7E 85     .word ofs_017_0x00858E_07
 - D 0 - - - 0x008319 02:8309: D0 85     .word ofs_017_0x0085E0_08
 - D 0 - - - 0x00831B 02:830B: AB 86     .word ofs_017_0x0086BB_09
-- D 0 - - - 0x00831D 02:830D: E1 86     .word ofs_017_86E1_0A
-- D 0 - - - 0x00831F 02:830F: EA 86     .word ofs_017_86EA_0B_play_music
+- D 0 - - - 0x00831D 02:830D: E1 86     .word ofs_017_0x0086F1_0A
+- D 0 - - - 0x00831F 02:830F: EA 86     .word ofs_017_0x0086FA_0B_play_music
 - D 0 - - - 0x008321 02:8311: F2 86     .word ofs_017_86F2_0C
 - D 0 - - - 0x008323 02:8313: 46 87     .word ofs_017_8746_0D
 - D 0 - - - 0x008325 02:8315: 91 85     .word ofs_017_8591_0E
@@ -1146,18 +1145,9 @@ off_85C2_03:
 
 
 
-ofs_017_86E1_0A:
-C - - J - - 0x0086F1 02:86E1: 20 4C 9A  JSR sub_0x009A5C_clear_animation
-C - - - - - 0x0086F4 02:86E4: A5 0A     LDA ram_000A_t03
-sub_0x0086F6:
-C - - - - - 0x0086F6 02:86E6: 85 7B     STA ram_chr_bank + $04
-C - - - - - 0x0086F8 02:86E8: 38        SEC
-C - - - - - 0x0086F9 02:86E9: 60        RTS
-
-
-
 loc_86EA_play_music:
-ofs_017_86EA_0B_play_music:
+.export loc_0x0086FA_play_music
+loc_0x0086FA_play_music:
 C D 0 - - - 0x0086FA 02:86EA: A5 0A     LDA ram_000A_t03
 C - - - - - 0x0086FC 02:86EC: 20 CA FE  JSR sub_0x01FEDA_add_music_to_queue
 C - - - - - 0x0086FF 02:86EF: 4C 4B 85  JMP loc_854B

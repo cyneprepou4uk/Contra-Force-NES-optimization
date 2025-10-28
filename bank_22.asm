@@ -16,6 +16,8 @@
 .export ofs_017_0x00858E_07
 .export ofs_017_0x0085E0_08
 .export ofs_017_0x0086BB_09
+.export ofs_017_0x0086F1_0A
+.export ofs_017_0x0086FA_0B_play_music
 
 
 
@@ -406,6 +408,24 @@ tbl_86E0:
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x0086F1_0A:
+C - - J - - 0x0086F1 02:86E1: 20 4C 9A  JSR sub_0x009A5C_clear_animation
+C - - - - - 0x0086F4 02:86E4: A5 0A     LDA ram_000A_t03
+C - - - - - 0x0086F6 02:86E6: 85 7B     STA ram_chr_bank + $04
+C - - - - - 0x0086F8 02:86E8: 38        SEC
+C - - - - - 0x0086F9 02:86E9: 60        RTS
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x0086FA_0B_play_music:
+                                        JMP loc_0x0086FA_play_music
 
 
 

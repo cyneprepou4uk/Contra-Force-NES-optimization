@@ -2107,7 +2107,8 @@ C - - - - - 0x00EECC 03:AEBC: A8        TAY
 C - - - - - 0x00EECD 03:AEBD: B9 CC AE  LDA tbl_AECB + $01,Y
 C - - - - - 0x00EED0 03:AEC0: 48        PHA
 C - - - - - 0x00EED1 03:AEC1: B9 CB AE  LDA tbl_AECB,Y
-C - - - - - 0x00EED4 03:AEC4: 20 E6 86  JSR sub_0x0086F6
+C - - - - - 0x00EED4 03:AEC4: 20 E6 86  STA ram_chr_bank + $04
+                                        SEC
 C - - - - - 0x00EED7 03:AEC7: 68        PLA
 C - - - - - 0x00EED8 03:AEC8: 4C E9 88  JMP loc_0x0088F9
 
