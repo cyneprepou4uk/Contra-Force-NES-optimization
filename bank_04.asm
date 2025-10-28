@@ -672,114 +672,10 @@ C - - - - - 0x0082FF 02:82EF: 85 02     STA ram_0002_t06_jmp
 C - - - - - 0x008301 02:82F1: B9 FA 82  LDA tbl_82F9 + $01,Y
 C - - - - - 0x008304 02:82F4: 85 03     STA ram_0002_t06_jmp + $01
 ; временный код банксвича
-                                        LDY ram_0682_obj,X
-                                        LDA tbl_82F9_prg_banks,Y
+                                        LDA #con_prg_pair + $11
                                         JSR sub_0x01F35C_prg_bankswitch
 ; 
 C - - - - - 0x008306 02:82F6: 6C 02 00  JMP (ram_0002_t06_jmp)
-
-
-
-tbl_82F9_prg_banks:
-                                        .byte con_prg_pair + $11 ; 00 
-                                        .byte con_prg_pair + $11 ; 01 
-                                        .byte con_prg_pair + $11 ; 02 
-                                        .byte con_prg_pair + $11 ; 03 
-                                        .byte con_prg_pair + $11 ; 04 
-                                        .byte con_prg_pair + $11 ; 05 
-                                        .byte con_prg_pair + $11 ; 06 
-                                        .byte con_prg_pair + $11 ; 07 
-                                        .byte con_prg_pair + $11 ; 08 
-                                        .byte con_prg_pair + $11 ; 09 
-                                        .byte con_prg_pair + $11 ; 0A 
-                                        .byte con_prg_pair + $11 ; 0B 
-                                        .byte con_prg_pair + $11 ; 0C 
-                                        .byte con_prg_pair + $11 ; 0D 
-                                        .byte con_prg_pair + $11 ; 0E 
-                                        .byte con_prg_pair + $11 ; 0F 
-                                        .byte con_prg_pair + $11 ; 10 
-                                        .byte con_prg_pair + $11 ; 11 
-                                        .byte con_prg_pair + $11 ; 12 
-                                        .byte con_prg_pair + $11 ; 13 
-                                        .byte con_prg_pair + $11 ; 14 
-                                        .byte con_prg_pair + $11 ; 15 
-                                        .byte con_prg_pair + $11 ; 16 
-                                        .byte con_prg_pair + $11 ; 17 
-                                        .byte con_prg_pair + $11 ; 18 
-                                        .byte con_prg_pair + $11 ; 19 
-                                        .byte con_prg_pair + $11 ; 1A 
-                                        .byte con_prg_pair + $11 ; 1B 
-                                        .byte con_prg_pair + $11 ; 1C 
-                                        .byte con_prg_pair + $11 ; 1D 
-                                        .byte con_prg_pair + $11 ; 1E 
-                                        .byte con_prg_pair + $11 ; 1F 
-                                        .byte con_prg_pair + $11 ; 20 
-                                        .byte con_prg_pair + $11 ; 21 
-                                        .byte con_prg_pair + $11 ; 22 
-                                        .byte con_prg_pair + $11 ; 23 
-                                        .byte con_prg_pair + $11 ; 24 
-                                        .byte con_prg_pair + $11 ; 25 
-                                        .byte con_prg_pair + $11 ; 26 
-                                        .byte con_prg_pair + $11 ; 27 
-                                        .byte con_prg_pair + $11 ; 28 
-                                        .byte con_prg_pair + $11 ; 29 
-                                        .byte con_prg_pair + $11 ; 2A 
-                                        .byte con_prg_pair + $11 ; 2B 
-                                        .byte con_prg_pair + $11 ; 2C 
-                                        .byte con_prg_pair + $11 ; 2D 
-                                        .byte con_prg_pair + $11 ; 2E 
-                                        .byte con_prg_pair + $11 ; 2F 
-                                        .byte con_prg_pair + $11 ; 30 
-                                        .byte con_prg_pair + $11 ; 31 
-                                        .byte con_prg_pair + $11 ; 32 
-                                        .byte con_prg_pair + $11 ; 33 
-                                        .byte con_prg_pair + $11 ; 34 
-                                        .byte con_prg_pair + $11 ; 35 
-                                        .byte con_prg_pair + $11 ; 36 
-                                        .byte con_prg_pair + $11 ; 37 
-                                        .byte con_prg_pair + $11 ; 38 
-                                        .byte con_prg_pair + $11 ; 39 
-                                        .byte con_prg_pair + $11 ; 3A 
-                                        .byte con_prg_pair + $11 ; 3B 
-                                        .byte con_prg_pair + $11 ; 3C 
-                                        .byte con_prg_pair + $11 ; 3D 
-                                        .byte con_prg_pair + $11 ; 3E 
-                                        .byte con_prg_pair + $11 ; 3F 
-                                        .byte con_prg_pair + $11 ; 40 
-                                        .byte con_prg_pair + $11 ; 41 
-                                        .byte con_prg_pair + $11 ; 42 
-                                        .byte con_prg_pair + $11 ; 43 
-                                        .byte con_prg_pair + $11 ; 44 
-                                        .byte con_prg_pair + $11 ; 45 
-                                        .byte con_prg_pair + $11 ; 46 
-                                        .byte con_prg_pair + $11 ; 47 
-                                        .byte con_prg_pair + $11 ; 48 
-                                        .byte con_prg_pair + $11 ; 49 
-                                        .byte con_prg_pair + $11 ; 4A 
-                                        .byte con_prg_pair + $11 ; 4B 
-                                        .byte con_prg_pair + $11 ; 4C 
-                                        .byte con_prg_pair + $11 ; 4D 
-                                        .byte con_prg_pair + $11 ; 4E 
-                                        .byte con_prg_pair + $11 ; 4F 
-                                        .byte con_prg_pair + $11 ; 50 
-                                        .byte con_prg_pair + $11 ; 51 
-                                        .byte con_prg_pair + $11 ; 52 
-                                        .byte con_prg_pair + $11 ; 53 
-                                        .byte con_prg_pair + $11 ; 54 
-                                        .byte con_prg_pair + $11 ; 55 
-                                        .byte con_prg_pair + $11 ; 56 
-                                        .byte con_prg_pair + $02 ; 57 
-                                        .byte con_prg_pair + $02 ; 58 
-                                        .byte con_prg_pair + $02 ; 59 
-                                        .byte con_prg_pair + $02 ; 5A 
-                                        .byte con_prg_pair + $02 ; 5B 
-                                        .byte con_prg_pair + $02 ; 5C 
-                                        .byte con_prg_pair + $02 ; 5D 
-                                        .byte con_prg_pair + $02 ; 5E 
-                                        .byte con_prg_pair + $02 ; 5F 
-                                        .byte con_prg_pair + $02 ; 60 
-                                        .byte con_prg_pair + $02 ; 61 
-                                        .byte con_prg_pair + $02 ; 62 
 
 
 
@@ -844,7 +740,7 @@ tbl_82F9:
 - - - - - - 0x00837B 02:836B: 21 A7     .word ofs_017_0x00E731_39
 - D 0 - - - 0x00837D 02:836D: 2E A7     .word ofs_017_0x00E73E_3A
 - D 0 - - - 0x00837F 02:836F: 38 A7     .word ofs_017_0x00E748_3B
-- - - - - - 0x008381 02:8371: 45 A7     .word ofs_017_0x00E755_3C
+- - - - - - 0x008381 02:8371: 45 A7     .word ofs_017_0x00E755_3C   ; unused?
 - D 0 - - - 0x008383 02:8373: 45 A7     .word ofs_017_0x00E755_3D
 - D 0 - - - 0x008385 02:8375: E1 A2     .word ofs_017_0x00E2F1_3E
 - D 0 - - - 0x008387 02:8377: 55 9E     .word ofs_017_0x009E65_3F
@@ -865,17 +761,17 @@ tbl_82F9:
 - D 0 - - - 0x0083A5 02:8395: 50 AB     .word ofs_017_0x00EB60_4E
 - D 0 - - - 0x0083A7 02:8397: 9A 89     .word ofs_017_0x0089AA_4F
 - D 0 - - - 0x0083A9 02:8399: 56 AB     .word ofs_017_0x00EB66_50
-- - - - - - 0x0083AB 02:839B: 23 AD     .word ofs_017_0x00ED33_51
+- - - - - - 0x0083AB 02:839B: 23 AD     .word ofs_017_0x00ED33_51   ; unused?
 - D 0 - - - 0x0083AD 02:839D: 23 AD     .word ofs_017_0x00ED33_52
 - D 0 - - - 0x0083AF 02:839F: AE AB     .word ofs_017_0x00EBBE_53
 - D 0 - - - 0x0083B1 02:83A1: F1 AC     .word ofs_017_0x00ED01_54
-- - - - - - 0x0083B3 02:83A3: 23 AD     .word ofs_017_0x00ED33_55
+- - - - - - 0x0083B3 02:83A3: 23 AD     .word ofs_017_0x00ED33_55   ; unused?
 - D 0 - - - 0x0083B5 02:83A5: A0 AE     .word ofs_017_0x00EEB0_56
-- D 0 - - - 0x0083B7 02:83A7: E3 8F     .word ofs_017_8FE3_57
+- D 0 - - - 0x0083B7 02:83A7: E3 8F     .word ofs_017_0x008FF3_57
 - D 0 - - - 0x0083B9 02:83A9: 2D AE     .word ofs_017_0x00EE3D_58
 - D 0 - - - 0x0083BB 02:83AB: B9 AD     .word ofs_017_0x00EDC9_59
 - D 0 - - - 0x0083BD 02:83AD: C7 AD     .word ofs_017_0x00EDD7_5A
-- D 0 - - - 0x0083BF 02:83AF: 20 8D     .word ofs_017_8D20_5B
+- D 0 - - - 0x0083BF 02:83AF: 20 8D     .word ofs_017_0x008D30_5B
 - D 0 - - - 0x0083C1 02:83B1: D5 AD     .word ofs_017_0x00EDE5_5C
 - D 0 - - - 0x0083C3 02:83B3: 05 AE     .word ofs_017_0x00EE15_5D
 - - - - - - 0x0083C5 02:83B5: 39 AE     .word ofs_017_0x00EE49_5E
@@ -1728,72 +1624,6 @@ C - - - - - 0x008C27 02:8C17: 60        RTS
 
 
 
-ofs_017_8D20_5B:
-C - - J - - 0x008D30 02:8D20: A5 60     LDA ram_0060_hi
-C - - - - - 0x008D32 02:8D22: C9 02     CMP #$02
-C - - - - - 0x008D34 02:8D24: D0 06     BNE bra_8D2C
-C - - - - - 0x008D36 02:8D26: A5 61     LDA ram_0061_lo
-C - - - - - 0x008D38 02:8D28: C9 C0     CMP #$C0
-C - - - - - 0x008D3A 02:8D2A: 90 28     BCC bra_8D54
-bra_8D2C:
-C - - - - - 0x008D3C 02:8D2C: 20 64 8D  JSR sub_8D64
-C - - - - - 0x008D3F 02:8D2F: B0 23     BCS bra_8D54
-C - - - - - 0x008D41 02:8D31: BD B4 07  LDA ram_07B4_unk,X
-C - - - - - 0x008D44 02:8D34: 29 03     AND #$03
-C - - - - - 0x008D46 02:8D36: A8        TAY
-C - - - - - 0x008D47 02:8D37: B9 7D 8D  LDA tbl_8D7D,Y
-C - - - - - 0x008D4A 02:8D3A: 18        CLC
-C - - - - - 0x008D4B 02:8D3B: 7D 8C 07  ADC ram_078C_unk,X
-C - - - - - 0x008D4E 02:8D3E: 85 00     STA ram_0000_t52
-C - - - - - 0x008D50 02:8D40: 6A        ROR
-C - - - - - 0x008D51 02:8D41: 59 7D 8D  EOR tbl_8D7D,Y
-C - - - - - 0x008D54 02:8D44: 5D B4 07  EOR ram_07B4_unk,X
-C - - - - - 0x008D57 02:8D47: 2A        ROL
-C - - - - - 0x008D58 02:8D48: B0 0F     BCS bra_8D59
-C - - - - - 0x008D5A 02:8D4A: A5 00     LDA ram_0000_t52
-C - - - - - 0x008D5C 02:8D4C: 9D 4E 06  STA ram_obj_pos_X,X
-C - - - - - 0x008D5F 02:8D4F: 20 59 8D  JSR sub_8D59
-C - - - - - 0x008D62 02:8D52: 38        SEC
-C - - - - - 0x008D63 02:8D53: 60        RTS
-bra_8D54:
-C - - - - - 0x008D64 02:8D54: 20 17 9A  JSR sub_0x009A27
-C - - - - - 0x008D67 02:8D57: 38        SEC
-C - - - - - 0x008D68 02:8D58: 60        RTS
-bra_8D59:
-sub_8D59:
-C - - - - - 0x008D69 02:8D59: BD B4 07  LDA ram_07B4_unk,X
-C - - - - - 0x008D6C 02:8D5C: 18        CLC
-C - - - - - 0x008D6D 02:8D5D: 69 01     ADC #$01
-C - - - - - 0x008D6F 02:8D5F: 29 03     AND #$03
-C - - - - - 0x008D71 02:8D61: 4C C4 8D  JMP loc_8DC4
-
-
-
-sub_8D64:
-C - - - - - 0x008D74 02:8D64: BD 00 06  LDA ram_0600_obj,X
-C - - - - - 0x008D77 02:8D67: 29 0F     AND #$0F
-C - - - - - 0x008D79 02:8D69: 9D 00 06  STA ram_0600_obj,X
-C - - - - - 0x008D7C 02:8D6C: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x008D7F 02:8D6F: 48        PHA
-C - - - - - 0x008D80 02:8D70: 20 81 8D  JSR sub_8D81
-C - - - - - 0x008D83 02:8D73: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x008D86 02:8D76: 9D 8C 07  STA ram_078C_unk,X
-C - - - - - 0x008D89 02:8D79: 68        PLA
-C - - - - - 0x008D8A 02:8D7A: 4C 2C 8F  STA ram_obj_pos_X,X
-                                        CLC
-                                        RTS
-
-
-
-tbl_8D7D:
-- D 0 - - - 0x008D8D 02:8D7D: C0        .byte $C0   ; 00 
-- D 0 - - - 0x008D8E 02:8D7E: 00        .byte $00   ; 01 
-- D 0 - - - 0x008D8F 02:8D7F: 40        .byte $40   ; 02 
-- D 0 - - - 0x008D90 02:8D80: 7F        .byte $7F   ; 03 
-
-
-
-sub_8D81:
 sub_0x008D91:
 C - - - - - 0x008D91 02:8D81: BD BE 07  LDA ram_07BE_unk,X
 C - - - - - 0x008D94 02:8D84: 38        SEC
@@ -1829,7 +1659,6 @@ C - - - - - 0x008DCB 02:8DBB: C9 25     CMP #$25
 C - - - - - 0x008DCD 02:8DBD: D0 E3     BNE bra_8DA2
 C - - - - - 0x008DCF 02:8DBF: BD B4 07  LDA ram_07B4_unk,X
 C - - - - - 0x008DD2 02:8DC2: 09 80     ORA #$80
-loc_8DC4:
 C D 0 - - - 0x008DD4 02:8DC4: 9D B4 07  STA ram_07B4_unk,X
 bra_8DC7:
 C - - - - - 0x008DD7 02:8DC7: 18        CLC
@@ -1940,11 +1769,12 @@ C - - - - - 0x008FF2 02:8FE2: 60        RTS
 
 
 sub_0x008FF3:
+.export loc_0x008FF3
+loc_0x008FF3:
 ; out
     ; C
         ; 0 = 
         ; 1 = 
-ofs_017_8FE3_57:
 C - - - - - 0x008FF3 02:8FE3: BD 4C 07  LDA ram_074C_obj,X
 C - - - - - 0x008FF6 02:8FE6: 29 FC     AND #$FC
 C - - - - - 0x008FF8 02:8FE8: D0 09     BNE bra_8FF3
