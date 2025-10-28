@@ -683,7 +683,7 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 01 
                                         .byte con_prg_pair + $11 ; 02 
                                         .byte con_prg_pair + $11 ; 03 
-                                        .byte con_prg_pair + $02 ; 04 
+                                        .byte con_prg_pair + $11 ; 04 
                                         .byte con_prg_pair + $02 ; 05 
                                         .byte con_prg_pair + $02 ; 06 
                                         .byte con_prg_pair + $02 ; 07 
@@ -786,7 +786,7 @@ tbl_82F9:
 - D 0 - - - 0x00830B 02:82FB: BF 83     .word ofs_017_0x0083CF_01
 - D 0 - - - 0x00830D 02:82FD: 17 9A     .word ofs_017_0x009A27_02
 - D 0 - - - 0x00830F 02:82FF: EB 83     .word ofs_017_0x0083FB_03
-- D 0 - - - 0x008311 02:8301: 68 84     .word ofs_017_8468_04
+- D 0 - - - 0x008311 02:8301: 68 84     .word ofs_017_0x008478_04
 - D 0 - - - 0x008313 02:8303: 3C 85     .word ofs_017_853C_05
 - D 0 - - - 0x008315 02:8305: 61 85     .word ofs_017_8561_06
 - D 0 - - - 0x008317 02:8307: 7E 85     .word ofs_017_857E_07
@@ -922,20 +922,9 @@ C - - - - - 0x008475 02:8465: 4C 94 84  JMP loc_8494
 
 
 
-ofs_017_8468_04:
-C - - J - - 0x008478 02:8468: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x00847B 02:846B: 30 0F     BMI bra_847A
-C - - - - - 0x00847D 02:846D: 20 1B 84  JSR sub_0x00842B_000A_ASL_TAY
-C - - - - - 0x008480 02:8470: B9 35 85  LDA tbl_8534 + $01,Y
-C - - - - - 0x008483 02:8473: 9D A0 07  STA ram_07A0_unk,X
-C - - - - - 0x008486 02:8476: B9 34 85  LDA tbl_8534,Y
-C D 0 - - - 0x008489 02:8479: 9D 9C 06  STA ram_069C_obj,X
-bra_847A:
-                                        JMP loc_847C
-
-
-
 loc_847C:
+.export loc_0x00848C
+loc_0x00848C:
 C - - - - - 0x00848C 02:847C: BD 9C 06  LDA ram_069C_obj,X
 C - - - - - 0x00848F 02:847F: F0 13     BEQ bra_8494
 C - - - - - 0x008491 02:8481: DE 9C 06  DEC ram_069C_obj,X
@@ -1051,14 +1040,6 @@ C - - - - - 0x00853F 02:852F: 9D 9C 06  STA ram_069C_obj,X
 bra_8532:
 C - - - - - 0x008542 02:8532: 18        CLC
 C - - - - - 0x008543 02:8533: 60        RTS
-
-
-
-tbl_8534:
-- - - - - - 0x008544 02:8534: 04        .byte $04, $D1   ; 00 
-- - - - - - 0x008546 02:8536: 04        .byte $04, $91   ; 01 
-- - - - - - 0x008548 02:8538: 04        .byte $04, $11   ; 02 
-- D 0 - - - 0x00854A 02:853A: 00        .byte $00, $D1   ; 03 
 
 
 
