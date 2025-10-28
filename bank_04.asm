@@ -688,7 +688,7 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 06 
                                         .byte con_prg_pair + $11 ; 07 
                                         .byte con_prg_pair + $11 ; 08 
-                                        .byte con_prg_pair + $02 ; 09 
+                                        .byte con_prg_pair + $11 ; 09 
                                         .byte con_prg_pair + $02 ; 0A 
                                         .byte con_prg_pair + $02 ; 0B 
                                         .byte con_prg_pair + $02 ; 0C 
@@ -791,7 +791,7 @@ tbl_82F9:
 - D 0 - - - 0x008315 02:8305: 61 85     .word ofs_017_0x008571_06
 - D 0 - - - 0x008317 02:8307: 7E 85     .word ofs_017_0x00858E_07
 - D 0 - - - 0x008319 02:8309: D0 85     .word ofs_017_0x0085E0_08
-- D 0 - - - 0x00831B 02:830B: AB 86     .word ofs_017_86AB_09
+- D 0 - - - 0x00831B 02:830B: AB 86     .word ofs_017_0x0086BB_09
 - D 0 - - - 0x00831D 02:830D: E1 86     .word ofs_017_86E1_0A
 - D 0 - - - 0x00831F 02:830F: EA 86     .word ofs_017_86EA_0B_play_music
 - D 0 - - - 0x008321 02:8311: F2 86     .word ofs_017_86F2_0C
@@ -1143,48 +1143,6 @@ off_85C2_03:
 - - - - - - 0x0085D5 02:85C5: 38        .byte $38   ; 
 - D 0 - I - 0x0085D6 02:85C6: 4C        .byte $4C   ; 
 - D 0 - I - 0x0085D7 02:85C7: 54        .byte $54   ; 
-
-
-
-ofs_017_86AB_09:
-C - - J - - 0x0086BB 02:86AB: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x0086BE 02:86AE: 30 0F     BMI bra_86BF
-C - - - - - 0x0086C0 02:86B0: 20 1B 84  JSR sub_0x00842B_000A_ASL_TAY
-C - - - - - 0x0086C3 02:86B3: B9 DF 86  LDA tbl_86DF,Y
-C - - - - - 0x0086C6 02:86B6: 9D 9C 06  STA ram_069C_obj,X
-C - - - - - 0x0086C9 02:86B9: B9 E0 86  LDA tbl_86E0,Y
-C - - - - - 0x0086CC 02:86BC: 9D B2 06  STA ram_06B2_obj,X
-bra_86BF:
-C - - - - - 0x0086CF 02:86BF: BD 9C 06  LDA ram_069C_obj,X
-C - - - - - 0x0086D2 02:86C2: 29 03     AND #$03
-C - - - - - 0x0086D4 02:86C4: D0 16     BNE bra_86DC
-C - - - - - 0x0086D6 02:86C6: 20 72 91  JSR sub_0x009182_06B2x_AND_0F
-C - - - - - 0x0086D9 02:86C9: 18        CLC
-C - - - - - 0x0086DA 02:86CA: 69 01     ADC #$01
-C - - - - - 0x0086DC 02:86CC: C9 09     CMP #$09
-C - - - - - 0x0086DE 02:86CE: B0 02     BCS bra_86D2
-C - - - - - 0x0086E0 02:86D0: A9 08     LDA #$08
-bra_86D2:
-C - - - - - 0x0086E2 02:86D2: 85 0A     STA ram_000A_t07
-C - - - - - 0x0086E4 02:86D4: 20 7D 91  LDA ram_06B2_obj,X
-                                        AND #$F0
-C - - - - - 0x0086E7 02:86D7: 05 0A     ORA ram_000A_t07
-C - - - - - 0x0086E9 02:86D9: 9D B2 06  STA ram_06B2_obj,X
-bra_86DC:
-C - - - - - 0x0086EC 02:86DC: 4C E2 83  DEC ram_069C_obj,X
-                                        BEQ bra_83D8
-                                        CLC
-                                        RTS
-bra_83D8:
-                                        SEC
-                                        RTS
-
-
-; bzk optimize
-tbl_86DF:
-- D 0 - - - 0x0086EF 02:86DF: F3        .byte $F3   ; 
-tbl_86E0:
-- D 0 - - - 0x0086F0 02:86E0: 41        .byte $41   ; 
 
 
 
