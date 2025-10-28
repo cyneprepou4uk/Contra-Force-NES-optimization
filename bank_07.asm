@@ -7,8 +7,6 @@
 
 
 .export ofs_017_0x00E2F1_3E
-.export ofs_017_0x00E46A_1B
-.export ofs_017_0x00E486_1C
 .export ofs_017_0x00E49B_1E
 .export ofs_017_0x00E4B1_1F
 .export ofs_017_0x00E4D2_21
@@ -73,54 +71,23 @@ C - - - - - 0x00E2FA 03:A2EA: 60        RTS
 
 
 
-ofs_017_0x00E46A_1B:
-C - - J - - 0x00E46A 03:A45A: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00E46D 03:A45D: 18        CLC
-C - - - - - 0x00E46E 03:A45E: 69 18     ADC #$18
-C - - - - - 0x00E470 03:A460: C9 30     CMP #$30
-C - - - - - 0x00E472 03:A462: B0 3B     BCS bra_A49F
-C - - - - - 0x00E474 03:A464: A0 00     LDY #$00
-C - - - - - 0x00E476 03:A466: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00E479 03:A469: 10 02     BPL bra_A46D
-C - - - - - 0x00E47B 03:A46B: A0 80     LDY #$80
-bra_A46D:
-C - - - - - 0x00E47D 03:A46D: 98        TYA
-C - - - - - 0x00E47E 03:A46E: 9D B2 06  STA ram_06B2_obj,X
-C - - - - - 0x00E481 03:A471: A9 02     LDA #con_A36F_02
-C - - - - - 0x00E483 03:A473: 4C 61 A3  JMP loc_0x00E371
-
-
-
-ofs_017_0x00E486_1C:
-C - - J - - 0x00E486 03:A476: BD 68 06  LDA ram_obj_pos_Y,X
-C - - - - - 0x00E489 03:A479: C9 A0     CMP #$A0
-C - - - - - 0x00E48B 03:A47B: 90 08     BCC bra_A485
-C - - - - - 0x00E48D 03:A47D: A0 3A     LDY #con_A36F_3A
-C - - - - - 0x00E48F 03:A47F: A5 29     LDA ram_random
-C - - - - - 0x00E491 03:A481: C9 80     CMP #$80
-C - - - - - 0x00E493 03:A483: 90 02     BCC bra_A487
-bra_A485:
-C - - - - - 0x00E495 03:A485: A0 03     LDY #con_A36F_03
-bra_A487:
-C - - - - - 0x00E497 03:A487: 98        TYA
-C - - - - - 0x00E498 03:A488: 4C 61 A3  JMP loc_0x00E371
-
-
-
 ofs_017_0x00E49B_1E:
 C - - J - - 0x00E49B 03:A48B: BD B2 06  LDA ram_06B2_obj,X
 C - - - - - 0x00E49E 03:A48E: 10 08     BPL bra_A498
 C - - - - - 0x00E4A0 03:A490: BD 4E 06  LDA ram_obj_pos_X,X
 C - - - - - 0x00E4A3 03:A493: C9 40     CMP #$40
-C - - - - - 0x00E4A5 03:A495: 90 EE     BCC bra_A485
+C - - - - - 0x00E4A5 03:A495: 90 EE     BCC bra_A49E
 C - - - - - 0x00E4A7 03:A497: 60        RTS
 bra_A498:
 C - - - - - 0x00E4A8 03:A498: BD 4E 06  LDA ram_obj_pos_X,X
 C - - - - - 0x00E4AB 03:A49B: C9 C0     CMP #$C0
-C - - - - - 0x00E4AD 03:A49D: B0 E6     BCS bra_A485
-bra_A49F:
+C - - - - - 0x00E4AD 03:A49D: B0 E6     BCS bra_A49E
 C - - - - - 0x00E4AF 03:A49F: 38        SEC
 C - - - - - 0x00E4B0 03:A4A0: 60        RTS
+bra_A49E:
+                                        LDY #con_A36F_03
+                                        TYA
+                                        JMP loc_0x00E371
 
 
 

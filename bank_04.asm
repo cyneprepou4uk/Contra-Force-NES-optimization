@@ -705,9 +705,9 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 18 
                                         .byte con_prg_pair + $11 ; 19 
                                         .byte con_prg_pair + $11 ; 1A 
-                                        .byte con_prg_pair + $02 ; 1B 
-                                        .byte con_prg_pair + $02 ; 1C 
-                                        .byte con_prg_pair + $02 ; 1D 
+                                        .byte con_prg_pair + $11 ; 1B 
+                                        .byte con_prg_pair + $11 ; 1C 
+                                        .byte con_prg_pair + $11 ; 1D 
                                         .byte con_prg_pair + $02 ; 1E 
                                         .byte con_prg_pair + $02 ; 1F 
                                         .byte con_prg_pair + $02 ; 20 
@@ -810,7 +810,7 @@ tbl_82F9:
 - D 0 - - - 0x00833D 02:832D: 37 A4     .word ofs_017_0x00E447_1A
 - D 0 - - - 0x00833F 02:832F: 5A A4     .word ofs_017_0x00E46A_1B
 - D 0 - - - 0x008341 02:8331: 76 A4     .word ofs_017_0x00E486_1C
-- D 0 - - - 0x008343 02:8333: 46 84     .word ofs_017_8446_1D
+- D 0 - - - 0x008343 02:8333: 46 84     .word ofs_017_0x008456_1D
 - D 0 - - - 0x008345 02:8335: 8B A4     .word ofs_017_0x00E49B_1E
 - D 0 - - - 0x008347 02:8337: A1 A4     .word ofs_017_0x00E4B1_1F
 - D 0 - - - 0x008349 02:8339: 9A 89     .word ofs_017_899A_20
@@ -890,23 +890,6 @@ C - - - - - 0x00EB65 03:AB55: 60        RTS
 
 
 
-ofs_017_8446_1D:
-C - - J - - 0x008456 02:8446: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x008459 02:8449: 30 31     BMI bra_8459
-C - - - - - 0x00845B 02:844B: A0 00     LDY #$00
-C - - - - - 0x00845D 02:844D: BD A0 07  LDA ram_07A0_unk,X
-C - - - - - 0x008460 02:8450: 29 F0     AND #$F0
-C - - - - - 0x008462 02:8452: C9 10     CMP #$10
-C - - - - - 0x008464 02:8454: D0 02     BNE bra_8458
-C - - - - - 0x008466 02:8456: A0 08     LDY #$08
-bra_8458:
-C - - - - - 0x008468 02:8458: 98        TYA
-                                        STA ram_069C_obj,X
-bra_8459:
-C - - - - - 0x008469 02:8459: 4C 79 84  JMP loc_847C
-
-
-
 sub_0x00846C:
 ; in
     ; ram_000B_t05
@@ -921,7 +904,6 @@ C - - - - - 0x008475 02:8465: 4C 94 84  JMP loc_8494
 
 
 
-loc_847C:
 .export loc_0x00848C
 loc_0x00848C:
 C - - - - - 0x00848C 02:847C: BD 9C 06  LDA ram_069C_obj,X
