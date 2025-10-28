@@ -680,7 +680,7 @@ C - - - - - 0x008306 02:82F6: 6C 02 00  JMP (ram_0002_t06_jmp)
 
 tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 00 
-                                        .byte con_prg_pair + $02 ; 01 
+                                        .byte con_prg_pair + $11 ; 01 
                                         .byte con_prg_pair + $02 ; 02 
                                         .byte con_prg_pair + $02 ; 03 
                                         .byte con_prg_pair + $02 ; 04 
@@ -783,7 +783,7 @@ tbl_82F9_prg_banks:
 
 tbl_82F9:
 - - - - - - 0x008309 02:82F9: E5 82     .word ofs_017_0x0082F5_00
-- D 0 - - - 0x00830B 02:82FB: BF 83     .word ofs_017_83BF_01
+- D 0 - - - 0x00830B 02:82FB: BF 83     .word ofs_017_0x0083CF_01
 - D 0 - - - 0x00830D 02:82FD: 17 9A     .word ofs_017_0x009A27_02
 - D 0 - - - 0x00830F 02:82FF: EB 83     .word ofs_017_83EB_03
 - D 0 - - - 0x008311 02:8301: 68 84     .word ofs_017_8468_04
@@ -891,35 +891,6 @@ C - - - - - 0x00EB65 03:AB55: 60        RTS
 
 
 
-ofs_017_83BF_01:
-C - - J - - 0x0083CF 02:83BF: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x0083D2 02:83C2: 30 1E     BMI bra_83E2
-C - - - - - 0x0083D4 02:83C4: BD 82 07  LDA ram_0782_unk,X
-C - - - - - 0x0083D7 02:83C7: 30 11     BMI bra_83DA
-C - - - - - 0x0083D9 02:83C9: 20 78 91  JSR sub_0x009188_stage_AND_01
-C - - - - - 0x0083DC 02:83CC: D0 0C     BNE bra_83DA    ; if upper view
-; if side view
-C - - - - - 0x0083DE 02:83CE: BD AA 07  LDA ram_07AA_unk,X
-C - - - - - 0x0083E1 02:83D1: 29 08     AND #$08
-C - - - - - 0x0083E3 02:83D3: D0 05     BNE bra_83DA
-C - - - - - 0x0083E5 02:83D5: A9 05     LDA #$05
-C - - - - - 0x0083E7 02:83D7: 20 BB 90  JSR sub_90BB
-bra_83DA:
-C - - - - - 0x0083EA 02:83DA: 20 F2 95  JSR sub_95F2
-C - - - - - 0x0083ED 02:83DD: A5 0A     LDA ram_000A_t03
-C - - - - - 0x0083EF 02:83DF: 9D 9C 06  STA ram_069C_obj,X
-bra_83E2:
-loc_83E2:
-C D 0 - - - 0x0083F2 02:83E2: DE 9C 06  DEC ram_069C_obj,X
-C - - - - - 0x0083F5 02:83E5: F0 02     BEQ bra_83E9
-C - - - - - 0x0083F7 02:83E7: 18        CLC
-C - - - - - 0x0083F8 02:83E8: 60        RTS
-bra_83E9:
-C - - - - - 0x0083F9 02:83E9: 38        SEC
-C - - - - - 0x0083FA 02:83EA: 60        RTS
-
-
-
 ofs_017_83EB_03:
 C - - J - - 0x0083FB 02:83EB: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x0083FE 02:83EE: 30 28     BMI bra_8418
@@ -941,7 +912,13 @@ C - - - - - 0x00841F 02:840F: 20 7D 91  LDA ram_06B2_obj,X
 C - - - - - 0x008422 02:8412: 19 21 84  ORA tbl_8420 + $01,Y
 C - - - - - 0x008425 02:8415: 9D B2 06  STA ram_06B2_obj,X
 bra_8418:
-C - - - - - 0x008428 02:8418: 4C E2 83  JMP loc_83E2
+C - - - - - 0x008428 02:8418: 4C E2 83  DEC ram_069C_obj,X
+                                        BEQ bra_83DB
+                                        CLC
+                                        RTS
+bra_83DB:
+                                        SEC
+                                        RTS
 
 
 
@@ -1188,7 +1165,13 @@ C - - - - - 0x00857F 02:856F: F0 06     BEQ bra_8577
 C - - - - - 0x008581 02:8571: B9 7B 85  LDA tbl_857A + $01,Y
 C - - - - - 0x008584 02:8574: 9D 9C 06  STA ram_069C_obj,X
 bra_8577:
-C - - - - - 0x008587 02:8577: 4C E2 83  JMP loc_83E2
+C - - - - - 0x008587 02:8577: 4C E2 83  DEC ram_069C_obj,X
+                                        BEQ bra_83D6
+                                        CLC
+                                        RTS
+bra_83D6:
+                                        SEC
+                                        RTS
 
 
 
@@ -1434,7 +1417,13 @@ C - - - - - 0x0086E4 02:86D4: 20 7D 91  LDA ram_06B2_obj,X
 C - - - - - 0x0086E7 02:86D7: 05 0A     ORA ram_000A_t07
 C - - - - - 0x0086E9 02:86D9: 9D B2 06  STA ram_06B2_obj,X
 bra_86DC:
-C - - - - - 0x0086EC 02:86DC: 4C E2 83  JMP loc_83E2
+C - - - - - 0x0086EC 02:86DC: 4C E2 83  DEC ram_069C_obj,X
+                                        BEQ bra_83D8
+                                        CLC
+                                        RTS
+bra_83D8:
+                                        SEC
+                                        RTS
 
 
 ; bzk optimize
@@ -3008,6 +2997,8 @@ C - - - - - 0x0090CA 02:90BA: 60        RTS
 
 
 sub_90BB:
+.export sub_0x0090CB
+sub_0x0090CB:
 ; in
     ; A = 
 C - - - - - 0x0090CB 02:90BB: 85 00     STA ram_0000_t57
