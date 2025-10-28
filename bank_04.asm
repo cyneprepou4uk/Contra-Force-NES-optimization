@@ -240,18 +240,16 @@ tbl_809D:
 
 
 
-bra_80B1:   ; A = 00
-C - - - - - 0x0080C1 02:80B1: 9D 82 06  STA ram_0682_obj,X
-C - - - - - 0x0080C4 02:80B4: F0 25     BEQ bra_80DB    ; jmp
-
-
-
 sub_0x0080C6:
 C - - - - - 0x0080C6 02:80B6: 20 48 A0  JSR sub_A048
 C - - - - - 0x0080C9 02:80B9: A2 00     LDX #$00
 bra_80BB_loop:
 C - - - - - 0x0080CB 02:80BB: BD 82 07  LDA ram_0782_unk,X
-C - - - - - 0x0080CE 02:80BE: F0 F1     BEQ bra_80B1
+C - - - - - 0x0080CE 02:80BE: F0 F1     BNE bra_80C0
+; A = 00
+C - - - - - 0x0080C1 02:80B1: 9D 82 06  STA ram_0682_obj,X
+C - - - - - 0x0080C4 02:80B4: F0 25     BEQ bra_80DB    ; jmp
+bra_80C0:
 C - - - - - 0x0080D0 02:80C0: 86 53     STX ram_0053
 C - - - - - 0x0080D2 02:80C2: A5 60     LDA ram_0060_hi
 C - - - - - 0x0080D4 02:80C4: C9 04     CMP #$04
