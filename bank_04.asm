@@ -71,7 +71,6 @@
 .export ofs_006_0x009219_1F
 .export sub_0x009382
 .export sub_0x0093CA
-.export loc_0x0093CA
 .export sub_0x0093E8
 .export sub_0x0093F3
 .export sub_0x00943E
@@ -734,16 +733,16 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 31 
                                         .byte con_prg_pair + $11 ; 32 
                                         .byte con_prg_pair + $11 ; 33 
-                                        .byte con_prg_pair + $02 ; 34 
-                                        .byte con_prg_pair + $02 ; 35 
-                                        .byte con_prg_pair + $02 ; 36 
-                                        .byte con_prg_pair + $02 ; 37 
-                                        .byte con_prg_pair + $02 ; 38 
-                                        .byte con_prg_pair + $02 ; 39 
-                                        .byte con_prg_pair + $02 ; 3A 
-                                        .byte con_prg_pair + $02 ; 3B 
-                                        .byte con_prg_pair + $02 ; 3C 
-                                        .byte con_prg_pair + $02 ; 3D 
+                                        .byte con_prg_pair + $11 ; 34 
+                                        .byte con_prg_pair + $11 ; 35 
+                                        .byte con_prg_pair + $11 ; 36 
+                                        .byte con_prg_pair + $11 ; 37 
+                                        .byte con_prg_pair + $11 ; 38 
+                                        .byte con_prg_pair + $11 ; 39 
+                                        .byte con_prg_pair + $11 ; 3A 
+                                        .byte con_prg_pair + $11 ; 3B 
+                                        .byte con_prg_pair + $11 ; 3C 
+                                        .byte con_prg_pair + $11 ; 3D 
                                         .byte con_prg_pair + $02 ; 3E 
                                         .byte con_prg_pair + $02 ; 3F 
                                         .byte con_prg_pair + $02 ; 40 
@@ -2482,7 +2481,6 @@ C - - - - - 0x0093BD 02:93AD: D0 DF     BNE bra_938E    ; jmp
 
 sub_93BA:
 sub_0x0093CA:
-loc_0x0093CA:
 ; out
     ; C
         ; 0 = 
