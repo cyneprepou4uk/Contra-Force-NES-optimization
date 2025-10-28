@@ -38,7 +38,6 @@
 .export sub_0x01F6BF
 .export loc_0x01F6D1
 .export sub_0x01F6D1
-.export tbl_0x01F6D7
 .export sub_0x01F6E1
 .export loc_0x01F712
 .export sub_0x01F712
@@ -4465,18 +4464,6 @@ sub_0x01F6D1:
 C D 3 - - - 0x01F6D1 07:F6C1: A9 08     LDA #$08
 C - - - - - 0x01F6D3 07:F6C3: 8D A1 03  STA ram_03A1_irq_timer
 C - - - - - 0x01F6D6 07:F6C6: 60        RTS
-
-
-
-tbl_0x01F6D7:
-;                                              +---------- pos_X
-;                                              |    +----- pos_Y
-;                                              |    |
-- D 3 - - - 0x01F6D7 07:F6C7: 70        .byte $70, $A8   ; 00 stage 1
-- D 3 - - - 0x01F6D9 07:F6C9: 80        .byte $80, $70   ; 02 stage 2
-- D 3 - - - 0x01F6DB 07:F6CB: 80        .byte $80, $A9   ; 04 stage 3
-- D 3 - - - 0x01F6DD 07:F6CD: 80        .byte $80, $90   ; 06 stage 4
-- D 3 - - - 0x01F6DF 07:F6CF: 80        .byte $80, $90   ; 08 stage 5
 
 
 

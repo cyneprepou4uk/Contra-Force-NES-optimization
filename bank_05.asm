@@ -33,9 +33,9 @@ C - - - - - 0x00A01F 02:A00F: 0A        ASL
 C - - - - - 0x00A020 02:A010: 0A        ASL
 C - - - - - 0x00A021 02:A011: 0A        ASL
 C - - - - - 0x00A022 02:A012: 0A        ASL
-C - - - - - 0x00A023 02:A013: 79 C7 F6  ADC tbl_0x01F6D7,Y
+C - - - - - 0x00A023 02:A013: 79 C7 F6  ADC tbl_F6C7,Y
 C - - - - - 0x00A026 02:A016: 9D 4E 06  STA ram_obj_pos_X,X
-C - - - - - 0x00A029 02:A019: B9 C8 F6  LDA tbl_0x01F6D7 + $01,Y
+C - - - - - 0x00A029 02:A019: B9 C8 F6  LDA tbl_F6C7 + $01,Y
 C - - - - - 0x00A02C 02:A01C: 9D 68 06  STA ram_obj_pos_Y,X
 C - - - - - 0x00A02F 02:A01F: A9 0A     LDA #$0A
 C - - - - - 0x00A031 02:A021: 9D 82 06  STA ram_0682_obj,X
@@ -46,6 +46,18 @@ bra_A02C:
 C - - - - - 0x00A03C 02:A02C: CA        DEX
 C - - - - - 0x00A03D 02:A02D: 10 D4     BPL bra_A003_loop
 C - - - - - 0x00A03F 02:A02F: 60        RTS
+
+
+
+tbl_F6C7:
+;                                              +---------- pos_X
+;                                              |    +----- pos_Y
+;                                              |    |
+- D 3 - - - 0x01F6D7 07:F6C7: 70        .byte $70, $A8   ; 00 stage 1
+- D 3 - - - 0x01F6D9 07:F6C9: 80        .byte $80, $70   ; 02 stage 2
+- D 3 - - - 0x01F6DB 07:F6CB: 80        .byte $80, $A9   ; 04 stage 3
+- D 3 - - - 0x01F6DD 07:F6CD: 80        .byte $80, $90   ; 06 stage 4
+- D 3 - - - 0x01F6DF 07:F6CF: 80        .byte $80, $90   ; 08 stage 5
 
 
 
