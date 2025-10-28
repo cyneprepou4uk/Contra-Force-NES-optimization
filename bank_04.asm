@@ -2955,7 +2955,6 @@ C - - - - - 0x00975D 02:974D: 9D 9C 06  STA ram_069C_obj,X
 C - - - - - 0x009760 02:9750: 9D 0A 07  STA ram_070A_obj,X
 C - - - - - 0x009763 02:9753: 9D 78 07  STA ram_0778_unk,X
 C - - - - - 0x009766 02:9756: 38        SEC
-bra_9761_RTS:
 C - - - - - 0x009767 02:9757: 60        RTS
 
 
@@ -2991,6 +2990,8 @@ C - - - - - 0x00978A 02:977A: F0 32     BEQ bra_9761_RTS
 C - - - - - 0x00978C 02:977C: 30 30     BMI bra_9761_RTS
 C - - - - - 0x00978E 02:977E: A9 24     LDA #con_F3D6_24
 C - - - - - 0x009790 02:9780: 4C B3 F3  JMP loc_0x01F3C3_execute_script
+bra_9761_RTS:
+                                        RTS
 
 
 
