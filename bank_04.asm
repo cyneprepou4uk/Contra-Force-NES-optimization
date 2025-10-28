@@ -715,11 +715,11 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 22 
                                         .byte con_prg_pair + $11 ; 23 
                                         .byte con_prg_pair + $11 ; 24 
-                                        .byte con_prg_pair + $02 ; 25 
-                                        .byte con_prg_pair + $02 ; 26 
-                                        .byte con_prg_pair + $02 ; 27 
-                                        .byte con_prg_pair + $02 ; 28 
-                                        .byte con_prg_pair + $02 ; 29 
+                                        .byte con_prg_pair + $11 ; 25 
+                                        .byte con_prg_pair + $11 ; 26 
+                                        .byte con_prg_pair + $11 ; 27 
+                                        .byte con_prg_pair + $11 ; 28 
+                                        .byte con_prg_pair + $11 ; 29 
                                         .byte con_prg_pair + $02 ; 2A 
                                         .byte con_prg_pair + $02 ; 2B 
                                         .byte con_prg_pair + $02 ; 2C 
@@ -5333,6 +5333,35 @@ C - - - - - 0x00E92B 03:A91B: 8D 45 03  STA ram_0345_table_index
 C - - - - - 0x00E92E 03:A91E: 8D 32 03  STA ram_0332_flag
 C - - - - - 0x00E931 03:A921: 38        SEC
 C - - - - - 0x00E932 03:A922: 60        RTS
+
+
+
+.export sub_0x00E7E4
+sub_0x00E7E4:
+.export loc_0x00E7E4
+loc_0x00E7E4:
+C - - - - - 0x00E7E4 03:A7D4: 20 BA 96  JSR sub_0x0096CA
+C - - - - - 0x00E7E7 03:A7D7: BD AA 07  LDA ram_07AA_unk,X
+C - - - - - 0x00E7EA 03:A7DA: 0A        ASL
+C - - - - - 0x00E7EB 03:A7DB: A8        TAY
+C - - - - - 0x00E7EC 03:A7DC: A5 01     LDA ram_0001_t02_hi
+C - - - - - 0x00E7EE 03:A7DE: D9 F2 A7  CMP tbl_A7F1 + $01,Y
+C - - - - - 0x00E7F1 03:A7E1: F0 06     BEQ bra_A7E9
+loc_A7E3:
+C D 1 - - - 0x00E7F3 03:A7E3: 6A        ROR
+C - - - - - 0x00E7F4 03:A7E4: 5D AA 07  EOR ram_07AA_unk,X
+C - - - - - 0x00E7F7 03:A7E7: 2A        ROL
+C - - - - - 0x00E7F8 03:A7E8: 60        RTS
+bra_A7E9:
+C - - - - - 0x00E7F9 03:A7E9: A5 00     LDA ram_0000_t41_lo
+C - - - - - 0x00E7FB 03:A7EB: D9 F1 A7  CMP tbl_A7F1,Y
+C - - - - - 0x00E7FE 03:A7EE: 4C E3 A7  JMP loc_A7E3
+
+
+
+tbl_A7F1:
+- D 1 - - - 0x00E801 03:A7F1: 4D 00     .word $004D ; 00 
+- - - - - - 0x00E803 03:A7F3: D0 00     .word $00D0 ; 01 
 
 
 
