@@ -749,11 +749,11 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 41 
                                         .byte con_prg_pair + $11 ; 42 
                                         .byte con_prg_pair + $11 ; 43 
-                                        .byte con_prg_pair + $02 ; 44 
-                                        .byte con_prg_pair + $02 ; 45 
-                                        .byte con_prg_pair + $02 ; 46 
-                                        .byte con_prg_pair + $02 ; 47 
-                                        .byte con_prg_pair + $02 ; 48 
+                                        .byte con_prg_pair + $11 ; 44 
+                                        .byte con_prg_pair + $11 ; 45 
+                                        .byte con_prg_pair + $11 ; 46 
+                                        .byte con_prg_pair + $11 ; 47 
+                                        .byte con_prg_pair + $11 ; 48 
                                         .byte con_prg_pair + $02 ; 49 
                                         .byte con_prg_pair + $02 ; 4A 
                                         .byte con_prg_pair + $02 ; 4B 
@@ -5909,6 +5909,76 @@ tbl_B820:
 - D 1 - - - 0x00B83E 02:B82E: 00        .byte $00, $07   ; 08 
 - D 1 - - - 0x00B840 02:B830: 25        .byte $25, $04   ; 09 
 - D 1 - - - 0x00B842 02:B832: 14        .byte $14, $07   ; 0A 
+
+
+
+.export sub_0x00E933
+sub_0x00E933:
+C - - - - - 0x00E933 03:A923: B9 45 A9  LDA tbl_A945,Y
+C - - - - - 0x00E936 03:A926: 9D 9C 06  STA ram_069C_obj,X
+C - - - - - 0x00E939 03:A929: 98        TYA
+C - - - - - 0x00E93A 03:A92A: 0A        ASL
+C - - - - - 0x00E93B 03:A92B: A8        TAY
+C - - - - - 0x00E93C 03:A92C: B9 52 A9  LDA tbl_A952,Y
+C - - - - - 0x00E93F 03:A92F: 8D 47 03  STA ram_0347
+C - - - - - 0x00E942 03:A932: B9 53 A9  LDA tbl_A952 + $01,Y
+C - - - - - 0x00E945 03:A935: 8D 46 03  STA ram_0346
+C - - - - - 0x00E948 03:A938: B9 6C A9  LDA tbl_A96C,Y
+C - - - - - 0x00E94B 03:A93B: 8D 49 03  STA ram_0349
+C - - - - - 0x00E94E 03:A93E: B9 6D A9  LDA tbl_A96C + $01,Y
+C - - - - - 0x00E951 03:A941: 8D 48 03  STA ram_0348
+C - - - - - 0x00E954 03:A944: 60        RTS
+
+
+
+tbl_A945:
+- D 1 - - - 0x00E955 03:A945: 70        .byte $70   ; 00 
+- D 1 - - - 0x00E956 03:A946: 40        .byte $40   ; 01 
+- D 1 - - - 0x00E957 03:A947: 30        .byte $30   ; 02 
+- D 1 - - - 0x00E958 03:A948: 16        .byte $16   ; 03 
+- D 1 - - - 0x00E959 03:A949: 28        .byte $28   ; 04 
+- D 1 - - - 0x00E95A 03:A94A: 16        .byte $16   ; 05 
+- D 1 - - - 0x00E95B 03:A94B: 0A        .byte $0A   ; 06 
+- D 1 - - - 0x00E95C 03:A94C: 31        .byte $31   ; 07 
+- D 1 - - - 0x00E95D 03:A94D: FF        .byte $FF   ; 08 
+- D 1 - - - 0x00E95E 03:A94E: 40        .byte $40   ; 09 
+- D 1 - - - 0x00E95F 03:A94F: FF        .byte $FF   ; 0A 
+- D 1 - - - 0x00E960 03:A950: 40        .byte $40   ; 0B 
+- D 1 - - - 0x00E961 03:A951: FF        .byte $FF   ; 0C 
+
+
+
+tbl_A952:
+- D 1 - - - 0x00E962 03:A952: 00        .byte $00, $FE   ; 00 
+- D 1 - - - 0x00E964 03:A954: 00        .byte $00, $00   ; 01 
+- D 1 - - - 0x00E966 03:A956: 00        .byte $00, $FE   ; 02 
+- D 1 - - - 0x00E968 03:A958: 80        .byte $80, $01   ; 03 
+- D 1 - - - 0x00E96A 03:A95A: 00        .byte $00, $02   ; 04 
+- D 1 - - - 0x00E96C 03:A95C: 80        .byte $80, $FE   ; 05 
+- D 1 - - - 0x00E96E 03:A95E: 00        .byte $00, $02   ; 06 
+- D 1 - - - 0x00E970 03:A960: 00        .byte $00, $FE   ; 07 
+- D 1 - - - 0x00E972 03:A962: 80        .byte $80, $FF   ; 08 
+- D 1 - - - 0x00E974 03:A964: 00        .byte $00, $00   ; 09 
+- D 1 - - - 0x00E976 03:A966: 80        .byte $80, $00   ; 0A 
+- D 1 - - - 0x00E978 03:A968: 00        .byte $00, $00   ; 0B 
+- D 1 - - - 0x00E97A 03:A96A: 00        .byte $00, $FF   ; 0C 
+
+
+
+tbl_A96C:
+- D 1 - - - 0x00E97C 03:A96C: 00        .byte $00, $00   ; 00 
+- D 1 - - - 0x00E97E 03:A96E: 00        .byte $00, $00   ; 01 
+- D 1 - - - 0x00E980 03:A970: 00        .byte $00, $00   ; 02 
+- D 1 - - - 0x00E982 03:A972: 80        .byte $80, $FE   ; 03 
+- D 1 - - - 0x00E984 03:A974: 00        .byte $00, $00   ; 04 
+- D 1 - - - 0x00E986 03:A976: 80        .byte $80, $01   ; 05 
+- D 1 - - - 0x00E988 03:A978: 00        .byte $00, $00   ; 06 
+- D 1 - - - 0x00E98A 03:A97A: 00        .byte $00, $00   ; 07 
+- D 1 - - - 0x00E98C 03:A97C: 00        .byte $00, $FF   ; 08 
+- D 1 - - - 0x00E98E 03:A97E: 00        .byte $00, $FE   ; 09 
+- D 1 - - - 0x00E990 03:A980: 00        .byte $00, $00   ; 0A 
+- D 1 - - - 0x00E992 03:A982: 00        .byte $00, $02   ; 0B 
+- D 1 - - - 0x00E994 03:A984: 00        .byte $00, $00   ; 0C 
 
 
 
