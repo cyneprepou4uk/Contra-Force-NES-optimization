@@ -7,7 +7,6 @@
 
 
 .export sub_0x008011
-.export ofs_006_0x00801F_21
 .export loc_0x008093
 .export sub_0x008093
 .export sub_0x0080C6
@@ -116,16 +115,7 @@ C - - - - - 0x008016 02:8006: 85 8C     STA ram_008C
 C - - - - - 0x008018 02:8008: 85 8D     STA ram_008D
 C - - - - - 0x00801A 02:800A: 85 9E     STA ram_009E
 C - - - - - 0x00801C 02:800C: 20 01 A0  JSR sub_0x00A011
-ofs_006_0x00801F_21:
-; con_F3D6_21
-C - - - - - 0x00801F 02:800F: A2 02     LDX #$02
-bra_8011_loop:
-C - - - - - 0x008021 02:8011: 20 13 9A  JSR sub_0x009A23
-C - - - - - 0x008024 02:8014: E8        INX
-C - - - - - 0x008025 02:8015: E0 16     CPX #$16
-C - - - - - 0x008027 02:8017: 90 F8     BCC bra_8011_loop
-bra_8019_RTS:
-C - - - - - 0x008029 02:8019: 60        RTS
+                                        JMP loc_0x00801F
 
 
 
@@ -177,6 +167,8 @@ C - - - - - 0x008075 02:8065: B0 EC     BCS bra_8053_RTS
 - - - - - - 0x008077 02:8067: BD 34 06  LDA ram_obj_animation_hi,X
 - - - - - - 0x00807A 02:806A: 49 80     EOR #$80
 - - - - - - 0x00807C 02:806C: 4C 50 80  JMP loc_8050
+bra_8019_RTS:
+                                        RTS
 
 
 

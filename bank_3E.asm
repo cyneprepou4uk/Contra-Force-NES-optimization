@@ -494,8 +494,7 @@ C - - - - - 0x01D179 07:D169: 4C 62 D0  JMP loc_D062
 
 sub_D174:
 sub_0x01D184:
-C - - - - - 0x01D184 07:D174: A9 21     LDA #con_F3D6_21
-C - - - - - 0x01D186 07:D176: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x01D186 07:D176: 20 B3 F3  JSR sub_0x00801F
 C - - - - - 0x01D189 07:D179: A9 00     LDA #$00
 C - - - - - 0x01D18B 07:D17B: 8D 98 06  STA ram_0682_obj + $16
 C - - - - - 0x01D18E 07:D17E: 8D 99 06  STA ram_0682_obj + $17
@@ -3639,8 +3638,6 @@ C - - - - - 0x008DDF 02:8DCF: 60        RTS
 
 
 sub_9A13:
-.export sub_0x009A23
-sub_0x009A23:
 C - - - - - 0x009A23 02:9A13: E0 0A     CPX #$0A
 C - - - - - 0x009A25 02:9A15: B0 3B     BCS bra_9A52
 .export loc_0x009A27
@@ -4246,6 +4243,20 @@ C - - - - - 0x00901B 02:900B: 60        RTS
 bra_9009:
                                         SEC
                                         RTS
+
+
+
+.export sub_0x00801F
+sub_0x00801F:
+.export loc_0x00801F
+loc_0x00801F:
+C - - - - - 0x00801F 02:800F: A2 02     LDX #$02
+bra_8011_loop:
+C - - - - - 0x008021 02:8011: 20 13 9A  JSR sub_9A13
+C - - - - - 0x008024 02:8014: E8        INX
+C - - - - - 0x008025 02:8015: E0 16     CPX #$16
+C - - - - - 0x008027 02:8017: 90 F8     BCC bra_8011_loop
+C - - - - - 0x008029 02:8019: 60        RTS
 
 
 
