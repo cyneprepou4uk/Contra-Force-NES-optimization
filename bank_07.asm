@@ -7,8 +7,6 @@
 
 
 .export ofs_017_0x00E2F1_3E
-.export ofs_017_0x00E405_19
-.export ofs_017_0x00E447_1A
 .export ofs_017_0x00E46A_1B
 .export ofs_017_0x00E486_1C
 .export ofs_017_0x00E49B_1E
@@ -72,101 +70,6 @@ C - - - - - 0x00E2F4 03:A2E4: 29 80     AND #$80
 C - - - - - 0x00E2F6 03:A2E6: 9D B2 06  STA ram_06B2_obj,X
 C - - - - - 0x00E2F9 03:A2E9: 38        SEC
 C - - - - - 0x00E2FA 03:A2EA: 60        RTS
-
-
-
-ofs_017_0x00E405_19:
-C - - J - - 0x00E405 03:A3F5: A5 42     LDA ram_btn_hold_1
-C - - - - - 0x00E407 03:A3F7: 05 43     ORA ram_btn_hold_1 + $01
-C - - - - - 0x00E409 03:A3F9: 29 04     AND #con_btn_Down
-C - - - - - 0x00E40B 03:A3FB: D0 15     BNE bra_A412
-C - - - - - 0x00E40D 03:A3FD: BD AA 07  LDA ram_07AA_unk,X
-C - - - - - 0x00E410 03:A400: 29 0F     AND #$0F
-C - - - - - 0x00E412 03:A402: A8        TAY
-C - - - - - 0x00E413 03:A403: B9 27 A4  LDA tbl_A427,Y
-C - - - - - 0x00E416 03:A406: 9D AA 07  STA ram_07AA_unk,X
-; bzk optimize, since this table is not used anywhere else,
-; you can LDA proper bytes directly without ADC
-C - - - - - 0x00E419 03:A409: B9 17 A4  LDA tbl_A417,Y
-C - - - - - 0x00E41C 03:A40C: 18        CLC
-C - - - - - 0x00E41D 03:A40D: 69 3F     ADC #$3F
-; con_A36F_3F
-; con_A36F_40
-; con_A36F_41
-; con_A36F_42
-C - - - - - 0x00E41F 03:A40F: 4C 61 A3  JMP loc_0x00E371
-bra_A412:
-C - - - - - 0x00E422 03:A412: A9 3C     LDA #con_A36F_3C
-C - - - - - 0x00E424 03:A414: 4C 61 A3  JMP loc_0x00E371
-
-
-
-tbl_A417:
-- D 1 - - - 0x00E427 03:A417: 03        .byte $03   ; 00 con_A36F_42
-- D 1 - - - 0x00E428 03:A418: 01        .byte $01   ; 01 con_A36F_40
-- - - - - - 0x00E429 03:A419: 01        .byte $01   ; 02 con_A36F_40
-- - - - - - 0x00E42A 03:A41A: 01        .byte $01   ; 03 con_A36F_40
-- D 1 - - - 0x00E42B 03:A41B: 00        .byte $00   ; 04 con_A36F_3F
-- - - - - - 0x00E42C 03:A41C: 03        .byte $03   ; 05 con_A36F_42
-- - - - - - 0x00E42D 03:A41D: 02        .byte $02   ; 06 con_A36F_41
-- - - - - - 0x00E42E 03:A41E: 03        .byte $03   ; 07 con_A36F_42
-- - - - - - 0x00E42F 03:A41F: 00        .byte $00   ; 08 con_A36F_3F
-- - - - - - 0x00E430 03:A420: 02        .byte $02   ; 09 con_A36F_41
-- - - - - - 0x00E431 03:A421: 03        .byte $03   ; 0A con_A36F_42
-- - - - - - 0x00E432 03:A422: 03        .byte $03   ; 0B con_A36F_42
-- - - - - - 0x00E433 03:A423: 02        .byte $02   ; 0C con_A36F_41
-- - - - - - 0x00E434 03:A424: 03        .byte $03   ; 0D con_A36F_42
-- - - - - - 0x00E435 03:A425: 03        .byte $03   ; 0E con_A36F_42
-- - - - - - 0x00E436 03:A426: 03        .byte $03   ; 0F con_A36F_42
-
-
-
-tbl_A427:
-- D 1 - - - 0x00E437 03:A427: 00        .byte $00   ; 00 
-- D 1 - - - 0x00E438 03:A428: 00        .byte $00   ; 01 
-- - - - - - 0x00E439 03:A429: 01        .byte $01   ; 02 
-- - - - - - 0x00E43A 03:A42A: 00        .byte $00   ; 03 
-- D 1 - - - 0x00E43B 03:A42B: 00        .byte $00   ; 04 
-- - - - - - 0x00E43C 03:A42C: 00        .byte $00   ; 05 
-- - - - - - 0x00E43D 03:A42D: 00        .byte $00   ; 06 
-- - - - - - 0x00E43E 03:A42E: 00        .byte $00   ; 07 
-- - - - - - 0x00E43F 03:A42F: 01        .byte $01   ; 08 
-- - - - - - 0x00E440 03:A430: 00        .byte $00   ; 09 
-- - - - - - 0x00E441 03:A431: 00        .byte $00   ; 0A 
-- - - - - - 0x00E442 03:A432: 00        .byte $00   ; 0B 
-- - - - - - 0x00E443 03:A433: 00        .byte $00   ; 0C 
-- - - - - - 0x00E444 03:A434: 00        .byte $00   ; 0D 
-- - - - - - 0x00E445 03:A435: 00        .byte $00   ; 0E 
-- - - - - - 0x00E446 03:A436: 00        .byte $00   ; 0F 
-
-
-
-ofs_017_0x00E447_1A:
-C - - J - - 0x00E447 03:A437: BC AA 07  LDY ram_07AA_unk,X
-C - - - - - 0x00E44A 03:A43A: 20 F4 94  JSR sub_0x009504
-C - - - - - 0x00E44D 03:A43D: C9 20     CMP #$20
-C - - - - - 0x00E44F 03:A43F: 90 09     BCC bra_A44A
-; 20+
-C - - - - - 0x00E451 03:A441: C9 60     CMP #$60
-C - - - - - 0x00E453 03:A443: B0 09     BCS bra_A44E
-; 20-5F
-C - - - - - 0x00E455 03:A445: A9 3B     LDA #con_A36F_3B
-bra_A447:
-C - - - - - 0x00E457 03:A447: 4C 61 A3  JMP loc_0x00E371
-bra_A44A:
-- - - - - - 0x00E45A 03:A44A: A9 3A     LDA #con_A36F_3A
-- - - - - - 0x00E45C 03:A44C: D0 F9     BNE bra_A447    ; jmp
-bra_A44E:
-; 60+
-C - - - - - 0x00E45E 03:A44E: C9 80     CMP #$80
-C - - - - - 0x00E460 03:A450: B0 04     BCS bra_A456
-; 60-7F
-C - - - - - 0x00E462 03:A452: A9 3C     LDA #con_A36F_3C
-C - - - - - 0x00E464 03:A454: D0 F1     BNE bra_A447    ; jmp
-bra_A456:
-; 80+
-C - - - - - 0x00E466 03:A456: A9 03     LDA #con_A36F_03
-C - - - - - 0x00E468 03:A458: D0 ED     BNE bra_A447    ; jmp
 
 
 

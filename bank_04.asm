@@ -703,8 +703,8 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 16 
                                         .byte con_prg_pair + $11 ; 17 
                                         .byte con_prg_pair + $11 ; 18 
-                                        .byte con_prg_pair + $02 ; 19 
-                                        .byte con_prg_pair + $02 ; 1A 
+                                        .byte con_prg_pair + $11 ; 19 
+                                        .byte con_prg_pair + $11 ; 1A 
                                         .byte con_prg_pair + $02 ; 1B 
                                         .byte con_prg_pair + $02 ; 1C 
                                         .byte con_prg_pair + $02 ; 1D 
