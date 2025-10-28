@@ -3793,7 +3793,7 @@ tbl_F393_prg_pairs:
 ; 11 
                                         .byte con_prg_bank + $04   ; 
                                         .byte con_prg_bank + $22   ; 
-                                        .byte con_prg_bank + $3D   ; 
+                                        .byte con_prg_bank + $23   ; 
 ; 12 unused
                                         .byte con_prg_bank + $04   ; 
                                         .byte con_prg_bank + $22   ; 

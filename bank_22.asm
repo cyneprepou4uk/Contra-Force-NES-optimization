@@ -2,7 +2,7 @@
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
 .org $A000  ; for listing file
-; 0x044010-0x04600F
+; 0x044010-0x04800F
 
 
 
@@ -3437,8 +3437,13 @@ bra_AE9E:
 
 
 
+.out .sprintf("Free bytes in bank 22: 0x%04X [%d]", ($D140 - *), ($D140 - *))
 
-.out .sprintf("Free bytes in bank 22: 0x%04X [%d]", ($C000 - *), ($C000 - *))
+
+
+.segment "DPCM_22"
+.incbin "DPCM.bin"
+.org $D140  ; for listing file
 
 
 
