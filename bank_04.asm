@@ -698,8 +698,8 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 11 
                                         .byte con_prg_pair + $11 ; 12 
                                         .byte con_prg_pair + $11 ; 13 
-                                        .byte con_prg_pair + $02 ; 14 
-                                        .byte con_prg_pair + $02 ; 15 
+                                        .byte con_prg_pair + $11 ; 14 
+                                        .byte con_prg_pair + $11 ; 15 
                                         .byte con_prg_pair + $02 ; 16 
                                         .byte con_prg_pair + $02 ; 17 
                                         .byte con_prg_pair + $02 ; 18 
@@ -801,8 +801,8 @@ tbl_82F9:
 - D 0 - - - 0x00832B 02:831B: F4 87     .word ofs_017_0x008804_11
 - D 0 - - - 0x00832D 02:831D: 0C 88     .word ofs_017_0x00881C_12
 - D 0 - - - 0x00832F 02:831F: 11 88     .word ofs_017_0x008821_13
-- D 0 - - - 0x008331 02:8321: 5B 88     .word ofs_017_885B_14
-- D 0 - - - 0x008333 02:8323: 6D 88     .word ofs_017_886D_15
+- D 0 - - - 0x008331 02:8321: 5B 88     .word ofs_017_0x00886B_14
+- D 0 - - - 0x008333 02:8323: 6D 88     .word ofs_017_0x00887D_15
 - D 0 - - - 0x008335 02:8325: EB A2     .word ofs_017_0x00E2FB_16
 - D 0 - - - 0x008337 02:8327: 2D A3     .word ofs_017_0x00E33D_17
 - D 0 - - - 0x008339 02:8329: 5F A3     .word ofs_017_0x00E36F_18
@@ -1165,55 +1165,16 @@ C - - - - - 0x0087B0 02:87A0: 4C 4B 85  JMP loc_854B
 
 
 
-ofs_017_885B_14:
-C - - J - - 0x00886B 02:885B: A9 05     LDA #$05
-C - - - - - 0x00886D 02:885D: 20 BB 90  JSR sub_90BB
-C - - - - - 0x008870 02:8860: A5 0A     LDA ram_000A_t03
 sub_8862:
 sub_0x008872:
+.export loc_0x008872
+loc_0x008872:
 C - - - - - 0x008872 02:8862: 85 01     STA ram_0001_t04_hi
 C - - - - - 0x008874 02:8864: A9 00     LDA #$00
 C - - - - - 0x008876 02:8866: 85 00     STA ram_0000_t47_lo
 C - - - - - 0x008878 02:8868: 20 B2 98  JSR sub_0x0098C2
 C - - - - - 0x00887B 02:886B: 38        SEC
 C - - - - - 0x00887C 02:886C: 60        RTS
-
-
-
-ofs_017_886D_15:
-C - - J - - 0x00887D 02:886D: A9 00     LDA #$00
-C - - - - - 0x00887F 02:886F: 9D 20 07  STA ram_0720_obj,X
-C - - - - - 0x008882 02:8872: A9 0F     LDA #$0F
-C - - - - - 0x008884 02:8874: 20 BB 90  JSR sub_90BB
-C - - - - - 0x008887 02:8877: 20 99 94  JSR sub_9499
-C - - - - - 0x00888A 02:887A: 90 2E     BCC bra_88AA
-C - - - - - 0x00888C 02:887C: B9 82 06  LDA ram_0682_obj,Y
-C - - - - - 0x00888F 02:887F: 29 0F     AND #$0F
-C - - - - - 0x008891 02:8881: C9 0D     CMP #$0D
-C - - - - - 0x008893 02:8883: F0 25     BEQ bra_88AA
-C - - - - - 0x008895 02:8885: B9 B2 06  LDA ram_06B2_obj,Y
-C - - - - - 0x008898 02:8888: 85 0A     STA ram_000A_t08
-C - - - - - 0x00889A 02:888A: 20 78 91  JSR sub_0x009188_stage_AND_01
-C - - - - - 0x00889D 02:888D: D0 06     BNE bra_8895_upper_view
-; if side view
-C - - - - - 0x00889F 02:888F: A5 0A     LDA ram_000A_t08
-C - - - - - 0x0088A1 02:8891: 29 80     AND #$80
-C - - - - - 0x0088A3 02:8893: 85 0A     STA ram_000A_t08
-bra_8895_upper_view:
-C - - - - - 0x0088A5 02:8895: A5 0A     LDA ram_000A_t08
-C - - - - - 0x0088A7 02:8897: 29 F0     AND #$F0
-C - - - - - 0x0088A9 02:8899: 9D B2 06  STA ram_06B2_obj,X
-C - - - - - 0x0088AC 02:889C: A0 00     LDY #$00
-C - - - - - 0x0088AE 02:889E: BD 4C 07  LDA ram_074C_obj,X
-C - - - - - 0x0088B1 02:88A1: 29 3C     AND #$3C
-C - - - - - 0x0088B3 02:88A3: D0 01     BNE bra_88A6
-C - - - - - 0x0088B5 02:88A5: C8        INY
-bra_88A6:
-C - - - - - 0x0088B6 02:88A6: 98        TYA
-C - - - - - 0x0088B7 02:88A7: 9D B4 07  STA ram_07B4_unk,X
-bra_88AA:
-C - - - - - 0x0088BA 02:88AA: 38        SEC
-C - - - - - 0x0088BB 02:88AB: 60        RTS
 
 
 
@@ -2957,7 +2918,6 @@ C - - - - - 0x0094A8 02:9498: 60        RTS
 
 
 
-sub_9499:
 sub_0x0094A9:
 C - - - - - 0x0094A9 02:9499: BD 4C 07  LDA ram_074C_obj,X
 C - - - - - 0x0094AC 02:949C: 29 FC     AND #$FC

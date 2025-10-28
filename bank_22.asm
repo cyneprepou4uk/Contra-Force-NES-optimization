@@ -26,6 +26,8 @@
 .export ofs_017_0x008804_11
 .export ofs_017_0x00881C_12
 .export ofs_017_0x008821_13
+.export ofs_017_0x00886B_14
+.export ofs_017_0x00887D_15
 
 
 
@@ -836,6 +838,59 @@ bra_8852:
 C - - - - - 0x008862 02:8852: B9 4E 06  LDA ram_obj_pos_X,Y
 C - - - - - 0x008865 02:8855: DD 4E 06  CMP ram_obj_pos_X,X
 C - - - - - 0x008868 02:8858: 4C 4E 88  JMP loc_884E
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x00886B_14:
+C - - J - - 0x00886B 02:885B: A9 05     LDA #$05
+C - - - - - 0x00886D 02:885D: 20 BB 90  JSR sub_0x0090CB
+C - - - - - 0x008870 02:8860: A5 0A     LDA ram_000A_t03
+                                        JMP loc_0x008872
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x00887D_15:
+C - - J - - 0x00887D 02:886D: A9 00     LDA #$00
+C - - - - - 0x00887F 02:886F: 9D 20 07  STA ram_0720_obj,X
+C - - - - - 0x008882 02:8872: A9 0F     LDA #$0F
+C - - - - - 0x008884 02:8874: 20 BB 90  JSR sub_0x0090CB
+C - - - - - 0x008887 02:8877: 20 99 94  JSR sub_0x0094A9
+C - - - - - 0x00888A 02:887A: 90 2E     BCC bra_88AA
+C - - - - - 0x00888C 02:887C: B9 82 06  LDA ram_0682_obj,Y
+C - - - - - 0x00888F 02:887F: 29 0F     AND #$0F
+C - - - - - 0x008891 02:8881: C9 0D     CMP #$0D
+C - - - - - 0x008893 02:8883: F0 25     BEQ bra_88AA
+C - - - - - 0x008895 02:8885: B9 B2 06  LDA ram_06B2_obj,Y
+C - - - - - 0x008898 02:8888: 85 0A     STA ram_000A_t08
+C - - - - - 0x00889A 02:888A: 20 78 91  JSR sub_0x009188_stage_AND_01
+C - - - - - 0x00889D 02:888D: D0 06     BNE bra_8895_upper_view
+; if side view
+C - - - - - 0x00889F 02:888F: A5 0A     LDA ram_000A_t08
+C - - - - - 0x0088A1 02:8891: 29 80     AND #$80
+C - - - - - 0x0088A3 02:8893: 85 0A     STA ram_000A_t08
+bra_8895_upper_view:
+C - - - - - 0x0088A5 02:8895: A5 0A     LDA ram_000A_t08
+C - - - - - 0x0088A7 02:8897: 29 F0     AND #$F0
+C - - - - - 0x0088A9 02:8899: 9D B2 06  STA ram_06B2_obj,X
+C - - - - - 0x0088AC 02:889C: A0 00     LDY #$00
+C - - - - - 0x0088AE 02:889E: BD 4C 07  LDA ram_074C_obj,X
+C - - - - - 0x0088B1 02:88A1: 29 3C     AND #$3C
+C - - - - - 0x0088B3 02:88A3: D0 01     BNE bra_88A6
+C - - - - - 0x0088B5 02:88A5: C8        INY ; 01
+bra_88A6:
+C - - - - - 0x0088B6 02:88A6: 98        TYA
+C - - - - - 0x0088B7 02:88A7: 9D B4 07  STA ram_07B4_unk,X
+bra_88AA:
+C - - - - - 0x0088BA 02:88AA: 38        SEC
+C - - - - - 0x0088BB 02:88AB: 60        RTS
 
 
 
