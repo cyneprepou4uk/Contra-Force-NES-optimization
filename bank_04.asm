@@ -708,10 +708,10 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 1B 
                                         .byte con_prg_pair + $11 ; 1C 
                                         .byte con_prg_pair + $11 ; 1D 
-                                        .byte con_prg_pair + $02 ; 1E 
-                                        .byte con_prg_pair + $02 ; 1F 
-                                        .byte con_prg_pair + $02 ; 20 
-                                        .byte con_prg_pair + $02 ; 21 
+                                        .byte con_prg_pair + $11 ; 1E 
+                                        .byte con_prg_pair + $11 ; 1F 
+                                        .byte con_prg_pair + $11 ; 20 
+                                        .byte con_prg_pair + $11 ; 21 
                                         .byte con_prg_pair + $02 ; 22 
                                         .byte con_prg_pair + $02 ; 23 
                                         .byte con_prg_pair + $02 ; 24 
@@ -813,7 +813,7 @@ tbl_82F9:
 - D 0 - - - 0x008343 02:8333: 46 84     .word ofs_017_0x008456_1D
 - D 0 - - - 0x008345 02:8335: 8B A4     .word ofs_017_0x00E49B_1E
 - D 0 - - - 0x008347 02:8337: A1 A4     .word ofs_017_0x00E4B1_1F
-- D 0 - - - 0x008349 02:8339: 9A 89     .word ofs_017_899A_20
+- D 0 - - - 0x008349 02:8339: 9A 89     .word ofs_017_0x0089AA_20
 - D 0 - - - 0x00834B 02:833B: C2 A4     .word ofs_017_0x00E4D2_21
 - D 0 - - - 0x00834D 02:833D: 9F 89     .word ofs_017_899F_22
 - D 0 - - - 0x00834F 02:833F: D7 A4     .word ofs_017_0x00E4E7_23
@@ -1362,7 +1362,6 @@ tbl_8996:
 
 
 
-ofs_017_899A_20:
 ofs_017_899A_4F:
 C - - J - - 0x0089AA 02:899A: A5 0A     LDA ram_000A_t03
 C - - - - - 0x0089AC 02:899C: 4C F0 8C  STA ram_06B2_obj,X

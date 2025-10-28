@@ -7,9 +7,6 @@
 
 
 .export ofs_017_0x00E2F1_3E
-.export ofs_017_0x00E49B_1E
-.export ofs_017_0x00E4B1_1F
-.export ofs_017_0x00E4D2_21
 .export ofs_017_0x00E4E7_23
 .export ofs_017_0x00E508_24
 .export ofs_017_0x00E54C_61
@@ -68,74 +65,6 @@ C - - - - - 0x00E2F4 03:A2E4: 29 80     AND #$80
 C - - - - - 0x00E2F6 03:A2E6: 9D B2 06  STA ram_06B2_obj,X
 C - - - - - 0x00E2F9 03:A2E9: 38        SEC
 C - - - - - 0x00E2FA 03:A2EA: 60        RTS
-
-
-
-ofs_017_0x00E49B_1E:
-C - - J - - 0x00E49B 03:A48B: BD B2 06  LDA ram_06B2_obj,X
-C - - - - - 0x00E49E 03:A48E: 10 08     BPL bra_A498
-C - - - - - 0x00E4A0 03:A490: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00E4A3 03:A493: C9 40     CMP #$40
-C - - - - - 0x00E4A5 03:A495: 90 EE     BCC bra_A49E
-C - - - - - 0x00E4A7 03:A497: 60        RTS
-bra_A498:
-C - - - - - 0x00E4A8 03:A498: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00E4AB 03:A49B: C9 C0     CMP #$C0
-C - - - - - 0x00E4AD 03:A49D: B0 E6     BCS bra_A49E
-C - - - - - 0x00E4AF 03:A49F: 38        SEC
-C - - - - - 0x00E4B0 03:A4A0: 60        RTS
-bra_A49E:
-                                        LDY #con_A36F_03
-                                        TYA
-                                        JMP loc_0x00E371
-
-
-
-ofs_017_0x00E4B1_1F:
-C - - J - - 0x00E4B1 03:A4A1: BD 00 06  LDA ram_0600_obj,X
-C - - - - - 0x00E4B4 03:A4A4: 20 B4 93  JSR sub_0x0093C4_LSRx4_TAY
-C - - - - - 0x00E4B7 03:A4A7: 20 72 91  JSR sub_0x009182_06B2x_AND_0F
-C - - - - - 0x00E4BA 03:A4AA: 19 B2 A4  ORA tbl_A4B2,Y
-C - - - - - 0x00E4BD 03:A4AD: 9D B2 06  STA ram_06B2_obj,X
-C - - - - - 0x00E4C0 03:A4B0: 38        SEC
-C - - - - - 0x00E4C1 03:A4B1: 60        RTS
-
-
-
-tbl_A4B2:
-- - - - - - 0x00E4C2 03:A4B2: 00        .byte $00   ; 00 
-- - - - - - 0x00E4C3 03:A4B3: 80        .byte $80   ; 01 
-- D 1 - - - 0x00E4C4 03:A4B4: 00        .byte $00   ; 02 
-- - - - - - 0x00E4C5 03:A4B5: 00        .byte $00   ; 03 
-- - - - - - 0x00E4C6 03:A4B6: C0        .byte $C0   ; 04 
-- - - - - - 0x00E4C7 03:A4B7: A0        .byte $A0   ; 05 
-- - - - - - 0x00E4C8 03:A4B8: E0        .byte $E0   ; 06 
-- - - - - - 0x00E4C9 03:A4B9: E0        .byte $E0   ; 07 
-- - - - - - 0x00E4CA 03:A4BA: 40        .byte $40   ; 08 
-- - - - - - 0x00E4CB 03:A4BB: 60        .byte $60   ; 09 
-- - - - - - 0x00E4CC 03:A4BC: 20        .byte $20   ; 0A 
-- - - - - - 0x00E4CD 03:A4BD: 20        .byte $20   ; 0B 
-- - - - - - 0x00E4CE 03:A4BE: 00        .byte $00   ; 0C 
-- - - - - - 0x00E4CF 03:A4BF: 00        .byte $00   ; 0D 
-- - - - - - 0x00E4D0 03:A4C0: 00        .byte $00   ; 0E 
-- - - - - - 0x00E4D1 03:A4C1: 00        .byte $00   ; 0F 
-
-
-
-ofs_017_0x00E4D2_21:
-C - - J - - 0x00E4D2 03:A4C2: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x00E4D5 03:A4C5: 30 07     BMI bra_A4CE
-C - - - - - 0x00E4D7 03:A4C7: A5 0A     LDA ram_000A_t03
-C - - - - - 0x00E4D9 03:A4C9: 8D A1 05  STA ram_059E_se + $03
-bra_A4CC:
-C - - - - - 0x00E4DC 03:A4CC: 18        CLC
-C - - - - - 0x00E4DD 03:A4CD: 60        RTS
-bra_A4CE:
-C - - - - - 0x00E4DE 03:A4CE: AD A1 05  LDA ram_059E_se + $03
-C - - - - - 0x00E4E1 03:A4D1: C9 01     CMP #$01
-C - - - - - 0x00E4E3 03:A4D3: B0 F7     BCS bra_A4CC
-C - - - - - 0x00E4E5 03:A4D5: 38        SEC
-C - - - - - 0x00E4E6 03:A4D6: 60        RTS
 
 
 
