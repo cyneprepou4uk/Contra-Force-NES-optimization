@@ -96,7 +96,6 @@
 .export loc_0x00974A
 .export sub_0x009772
 .export loc_0x009772
-.export ofs_006_0x009782_16
 .export sub_0x009A88_drop_a_box_with_powerup
 .export sub_0x009E15
 .export loc_0x009E15
@@ -263,7 +262,7 @@ C - - - - - 0x0080DD 02:80CD: 9D 00 06  STA ram_0600_obj,X
 bra_80D0:
 C - - - - - 0x0080E0 02:80D0: 20 FF 80  JSR sub_80FF
 C - - - - - 0x0080E3 02:80D3: 20 F9 80  JSR sub_80F9
-C - - - - - 0x0080E6 02:80D6: 20 72 97  JSR sub_9772
+C - - - - - 0x0080E6 02:80D6: 20 72 97  JSR sub_0x009782
 C - - - - - 0x0080E9 02:80D9: A6 53     LDX ram_0053
 bra_80DB:
 C - - - - - 0x0080EB 02:80DB: E8        INX
@@ -411,7 +410,7 @@ C - - - - - 0x008165 02:8155: 4C 4C F3  JMP loc_0x01F35C_prg_bankswitch
 
 
 sub_8158:
-C - - - - - 0x008168 02:8158: 20 72 97  JSR sub_9772
+C - - - - - 0x008168 02:8158: 20 72 97  JSR sub_0x009782
 C - - - - - 0x00816B 02:815B: 20 1A 80  JSR sub_801A
 C - - - - - 0x00816E 02:815E: A6 53     LDX ram_0053
 C - - - - - 0x008170 02:8160: 60        RTS
@@ -2977,20 +2976,11 @@ C - - - - - 0x00987D 02:986D: 05 10     ORA ram_0010_t05
 C D 0 - - - 0x00987F 02:986F: 9D 34 06  STA ram_obj_animation_hi,X
 C - - - - - 0x009778 02:9768: 20 4C 9A  JSR sub_0x009A5C_clear_animation
 C - - - - - 0x00977B 02:976B: E0 0A     CPX #$0A
-C - - - - - 0x00977D 02:976D: B0 F2     BCS bra_9761_RTS
+C - - - - - 0x00977D 02:976D: B0 F2     BCS bra_976E_RTS
 ; A = 00
 C - - - - - 0x00977F 02:976F: 9D F4 06  STA ram_06F4_obj,X
-sub_9772:
-ofs_006_0x009782_16:
-; con_F3D6_16
-C - - - - - 0x009782 02:9772: BD 82 06  LDA ram_0682_obj,X
-C - - - - - 0x009785 02:9775: F0 37     BEQ bra_9761_RTS
-C - - - - - 0x009787 02:9777: BD 0A 07  LDA ram_070A_obj,X
-C - - - - - 0x00978A 02:977A: F0 32     BEQ bra_9761_RTS
-C - - - - - 0x00978C 02:977C: 30 30     BMI bra_9761_RTS
-C - - - - - 0x00978E 02:977E: A9 24     LDA #con_F3D6_24
-C - - - - - 0x009790 02:9780: 4C B3 F3  JMP loc_0x01F3C3_execute_script
-bra_9761_RTS:
+                                        JMP loc_0x009782
+bra_976E_RTS:
                                         RTS
 
 

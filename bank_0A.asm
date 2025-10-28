@@ -1657,8 +1657,7 @@ C - - - - - 0x0149E9 05:89D9: A9 12     LDA #con_F3D6_12
 C - - - - - 0x0149EB 05:89DB: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x0149EE 05:89DE: A9 13     LDA #con_F3D6_13
 C - - - - - 0x0149F0 05:89E0: 20 B3 F3  JSR sub_0x01F3C3_execute_script
-C - - - - - 0x0149F3 05:89E3: A9 16     LDA #con_F3D6_16
-C - - - - - 0x0149F5 05:89E5: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x0149F5 05:89E5: 20 B3 F3  JSR sub_0x009782
 C - - - - - 0x0149F8 05:89E8: 86 3A     STX ram_003A_t06
 C - - - - - 0x0149FA 05:89EA: A9 17     LDA #con_F3D6_17
 C - - - - - 0x0149FC 05:89EC: 20 B3 F3  JSR sub_0x01F3C3_execute_script
@@ -1863,8 +1862,7 @@ C - - - - - 0x014B5A 05:8B4A: A9 04     LDA #$04
 C - - - - - 0x014B5C 05:8B4C: 85 02     STA ram_0002_t33
 C - - - - - 0x014B5E 05:8B4E: A9 18     LDA #con_F3D6_18
 C - - - - - 0x014B60 05:8B50: 20 B3 F3  JSR sub_0x01F3C3_execute_script
-C - - - - - 0x014B63 05:8B53: A9 16     LDA #con_F3D6_16
-C - - - - - 0x014B65 05:8B55: 4C B3 F3  JMP loc_0x01F3C3_execute_script
+C - - - - - 0x014B65 05:8B55: 4C B3 F3  JMP loc_0x009782
 bra_8B58:
 C - - - - - 0x014B68 05:8B58: BD AA 07  LDA ram_07AA_unk,X
 C - - - - - 0x014B6B 05:8B5B: 29 F0     AND #$F0

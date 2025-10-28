@@ -4260,6 +4260,22 @@ C - - - - - 0x008029 02:8019: 60        RTS
 
 
 
+.export loc_0x009782
+loc_0x009782:
+.export sub_0x009782
+sub_0x009782:
+C - - - - - 0x009782 02:9772: BD 82 06  LDA ram_0682_obj,X
+C - - - - - 0x009785 02:9775: F0 37     BEQ bra_9761_RTS
+C - - - - - 0x009787 02:9777: BD 0A 07  LDA ram_070A_obj,X
+C - - - - - 0x00978A 02:977A: F0 32     BEQ bra_9761_RTS
+C - - - - - 0x00978C 02:977C: 30 30     BMI bra_9761_RTS
+C - - - - - 0x00978E 02:977E: A9 24     LDA #con_F3D6_24
+C - - - - - 0x009790 02:9780: 4C B3 F3  JMP loc_0x01F3C3_execute_script
+bra_9761_RTS:
+                                        RTS
+
+
+
 .out .sprintf("Free bytes in bank 3E: 0x%04X [%d]", ($8000 - *), ($8000 - *))
 
 
