@@ -1913,6 +1913,7 @@ C - - - - - 0x0090D7 02:90C7: 60        RTS
 
 
 
+sub_90C8_0600x_write_08:
 sub_0x0090D8_0600x_write_08:
 loc_0x0090D8_0600x_write_08:
 ; bzk optimize
@@ -5893,7 +5894,7 @@ C - - - - - 0x00E9CC 03:A9BC: 60        RTS
 sub_AA06:
 .export sub_0x00EA16
 sub_0x00EA16:
-C - - - - - 0x00EA16 03:AA06: 20 C8 90  JSR sub_0x0090D8_0600x_write_08
+C - - - - - 0x00EA16 03:AA06: 20 C8 90  JSR sub_90C8_0600x_write_08
 C - - - - - 0x00EA19 03:AA09: BD C8 07  LDA ram_07C8_unk,X
 C - - - - - 0x00EA1C 03:AA0C: C9 05     CMP #$05
 C - - - - - 0x00EA1E 03:AA0E: F0 1D     BEQ bra_AA2D
@@ -6018,7 +6019,7 @@ C - - - - - 0x00ED4A 03:AD3A: AD 85 AD  LDA tbl_AD85
 C - - - - - 0x00ED4D 03:AD3D: 20 DC AC  JSR sub_ACDC
 C - - - - - 0x00ED50 03:AD40: A9 51     LDA #$51
 C - - - - - 0x00ED52 03:AD42: 20 1F 97  JSR sub_0x00972F
-C - - - - - 0x00ED55 03:AD45: 20 C8 90  JSR sub_0x0090D8_0600x_write_08
+C - - - - - 0x00ED55 03:AD45: 20 C8 90  JSR sub_90C8_0600x_write_08
 C - - - - - 0x00ED58 03:AD48: 20 16 AD  LDY #$01
                                         JSR sub_0x00E933
 C - - - - - 0x00ED5B 03:AD4B: A9 80     LDA #$80
