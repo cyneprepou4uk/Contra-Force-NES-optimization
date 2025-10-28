@@ -7,8 +7,6 @@
 
 
 .export ofs_017_0x00E2F1_3E
-.export ofs_017_0x00E4E7_23
-.export ofs_017_0x00E508_24
 .export ofs_017_0x00E54C_61
 .export ofs_017_0x00E565_25
 .export ofs_017_0x00E585_26
@@ -68,68 +66,6 @@ C - - - - - 0x00E2FA 03:A2EA: 60        RTS
 
 
 
-ofs_017_0x00E4E7_23:
-C - - J - - 0x00E4E7 03:A4D7: A5 0A     LDA ram_000A_t03
-C - - - - - 0x00E4E9 03:A4D9: F0 09     BEQ bra_A4E4
-C - - - - - 0x00E4EB 03:A4DB: 10 0C     BPL bra_A4E9
-C - - - - - 0x00E4ED 03:A4DD: A9 02     LDA #$02
-C - - - - - 0x00E4EF 03:A4DF: 8D 40 03  STA ram_0340_flag
-C - - - - - 0x00E4F2 03:A4E2: D0 05     BNE bra_A4E9    ; jmp
-bra_A4E4:
-C - - - - - 0x00E4F4 03:A4E4: A9 01     LDA #$01
-C - - - - - 0x00E4F6 03:A4E6: 8D 40 03  STA ram_0340_flag
-bra_A4E9:
-C - - - - - 0x00E4F9 03:A4E9: A9 01     LDA #$01
-C - - - - - 0x00E4FB 03:A4EB: 85 8C     STA ram_008C
-C - - - - - 0x00E4FD 03:A4ED: 20 47 9A  JSR sub_0x009A57
-C - - - - - 0x00E500 03:A4F0: 9D 20 07  STA ram_0720_obj,X
-C - - - - - 0x00E503 03:A4F3: 20 CE 90  JSR sub_0x0090DE_0600x_ORA_08
-C - - - - - 0x00E506 03:A4F6: 38        SEC
-C - - - - - 0x00E507 03:A4F7: 60        RTS
-
-
-
-ofs_017_0x00E508_24:
-C - - J - - 0x00E508 03:A4F8: A5 0A     LDA ram_000A_t03
-C - - - - - 0x00E50A 03:A4FA: C9 02     CMP #$02
-C - - - - - 0x00E50C 03:A4FC: F0 32     BEQ bra_A530
-C - - - - - 0x00E50E 03:A4FE: C9 03     CMP #$03
-C - - - - - 0x00E510 03:A500: D0 03     BNE bra_A505
-C - - - - - 0x00E512 03:A502: 20 13 A9  JSR sub_A913
-bra_A505:
-C - - - - - 0x00E515 03:A505: A9 04     LDA #con_0020_04
-C - - - - - 0x00E517 03:A507: 85 20     STA ram_script_hi
-C - - - - - 0x00E519 03:A509: A9 00     LDA #$00
-C - - - - - 0x00E51B 03:A50B: 85 22     STA ram_0022_t02
-C - - - - - 0x00E51D 03:A50D: 8D 6E 03  STA ram_036E
-C - - - - - 0x00E520 03:A510: 8D 6F 03  STA ram_036E + $01
-C - - - - - 0x00E523 03:A513: A9 C0     LDA #$C0
-C - - - - - 0x00E525 03:A515: 8D 70 03  STA ram_0370_counter_00_C0
-C - - - - - 0x00E528 03:A518: A0 16     LDY #$16
-bra_A51A_loop:
-C - - - - - 0x00E52A 03:A51A: A9 00     LDA #$00
-C - - - - - 0x00E52C 03:A51C: 99 1A 06  STA ram_obj_animation_lo,Y
-C - - - - - 0x00E52F 03:A51F: 99 82 06  STA ram_0682_obj,Y
-C - - - - - 0x00E532 03:A522: C8        INY
-C - - - - - 0x00E533 03:A523: C0 1A     CPY #$1A
-C - - - - - 0x00E535 03:A525: 90 F3     BCC bra_A51A_loop
-C - - - - - 0x00E537 03:A527: A5 0A     LDA ram_000A_t03
-C - - - - - 0x00E539 03:A529: F0 03     BEQ bra_A52E
-C - - - - - 0x00E53B 03:A52B: 20 47 9A  JSR sub_0x009A57
-bra_A52E:
-C - - - - - 0x00E53E 03:A52E: 38        SEC
-C - - - - - 0x00E53F 03:A52F: 60        RTS
-bra_A530:
-C - - - - - 0x00E540 03:A530: A9 A0     LDA #$A0
-C - - - - - 0x00E542 03:A532: 85 AF     STA ram_00AF_lo
-C - - - - - 0x00E544 03:A534: A9 00     LDA #$00
-C - - - - - 0x00E546 03:A536: 85 AB     STA ram_00AB_hi
-C - - - - - 0x00E548 03:A538: 85 AC     STA ram_00AC_lo
-C - - - - - 0x00E54A 03:A53A: 38        SEC
-C - - - - - 0x00E54B 03:A53B: 60        RTS
-
-
-
 ofs_017_0x00E54C_61:
 C - - J - - 0x00E54C 03:A53C: A5 63     LDA ram_0063_hi
 C - - - - - 0x00E54E 03:A53E: C9 02     CMP #$02
@@ -168,10 +104,13 @@ C - - - - - 0x00E577 03:A567: 4C 5F A3  LDA ram_000A_t03
 
 sub_A56A:
 C - - - - - 0x00E57A 03:A56A: B9 82 07  LDA ram_0782_unk,Y
-C - - - - - 0x00E57D 03:A56D: F0 BF     BEQ bra_A52E
+C - - - - - 0x00E57D 03:A56D: F0 BF     BEQ bra_A573
 C - - - - - 0x00E57F 03:A56F: 20 FE 94  JSR sub_0x00950E
 C - - - - - 0x00E582 03:A572: C9 18     CMP #$18
 C - - - - - 0x00E584 03:A574: 60        RTS
+bra_A573:
+                                        SEC
+                                        RTS
 
 
 
@@ -851,22 +790,15 @@ C - - - - - 0x00E919 03:A909: 9D 96 07  STA ram_0796_unk,X
 C - - - - - 0x00E91C 03:A90C: 38        SEC
 C - - - - - 0x00E91D 03:A90D: 60        RTS
 bra_A90E:
-- - - - - - 0x00E91E 03:A90E: 20 13 A9  JSR sub_A913
+- - - - - - 0x00E91E 03:A90E: 20 13 A9  JSR sub_0x00E923
 bra_A911:
 C - - - - - 0x00E921 03:A911: 18        CLC
 C - - - - - 0x00E922 03:A912: 60        RTS
 
 
 
-sub_A913:
 ofs_017_0x00E923_5F:
-C - - - - - 0x00E923 03:A913: A9 00     LDA #$00
-C - - - - - 0x00E925 03:A915: 8D 43 03  STA ram_0343
-C - - - - - 0x00E928 03:A918: 8D 44 03  STA ram_0344
-C - - - - - 0x00E92B 03:A91B: 8D 45 03  STA ram_0345_table_index
-C - - - - - 0x00E92E 03:A91E: 8D 32 03  STA ram_0332_flag
-C - - - - - 0x00E931 03:A921: 38        SEC
-C - - - - - 0x00E932 03:A922: 60        RTS
+                                        JMP loc_0x00E923
 
 
 

@@ -40,6 +40,9 @@
 .export ofs_017_0x00E4B1_1F
 .export ofs_017_0x0089AA_20
 .export ofs_017_0x00E4D2_21
+.export ofs_017_0x0089AF_22
+.export ofs_017_0x00E4E7_23
+.export ofs_017_0x00E508_24
 
 
 
@@ -1277,6 +1280,91 @@ C - - - - - 0x00E4E1 03:A4D1: C9 01     CMP #$01
 C - - - - - 0x00E4E3 03:A4D3: B0 F7     BCS bra_A4CC
 C - - - - - 0x00E4E5 03:A4D5: 38        SEC
 C - - - - - 0x00E4E6 03:A4D6: 60        RTS
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x0089AF_22:
+C - - J - - 0x0089AF 02:899F: A5 0A     LDA ram_000A_t03
+                                        JMP loc_0x0089B1
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x00E4E7_23:
+C - - J - - 0x00E4E7 03:A4D7: A5 0A     LDA ram_000A_t03
+C - - - - - 0x00E4E9 03:A4D9: F0 09     BEQ bra_A4E4
+C - - - - - 0x00E4EB 03:A4DB: 10 0C     BPL bra_A4E9
+C - - - - - 0x00E4ED 03:A4DD: A9 02     LDA #$02
+C - - - - - 0x00E4EF 03:A4DF: 8D 40 03  STA ram_0340_flag
+C - - - - - 0x00E4F2 03:A4E2: D0 05     BNE bra_A4E9    ; jmp
+bra_A4E4:
+C - - - - - 0x00E4F4 03:A4E4: A9 01     LDA #$01
+C - - - - - 0x00E4F6 03:A4E6: 8D 40 03  STA ram_0340_flag
+bra_A4E9:
+C - - - - - 0x00E4F9 03:A4E9: A9 01     LDA #$01
+C - - - - - 0x00E4FB 03:A4EB: 85 8C     STA ram_008C
+C - - - - - 0x00E4FD 03:A4ED: 20 47 9A  JSR sub_0x009A57
+C - - - - - 0x00E500 03:A4F0: 9D 20 07  STA ram_0720_obj,X
+C - - - - - 0x00E503 03:A4F3: 20 CE 90  JSR sub_0x0090DE_0600x_ORA_08
+C - - - - - 0x00E506 03:A4F6: 38        SEC
+C - - - - - 0x00E507 03:A4F7: 60        RTS
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x00E508_24:
+C - - J - - 0x00E508 03:A4F8: A5 0A     LDA ram_000A_t03
+C - - - - - 0x00E50A 03:A4FA: C9 02     CMP #$02
+C - - - - - 0x00E50C 03:A4FC: F0 32     BEQ bra_A530
+C - - - - - 0x00E50E 03:A4FE: C9 03     CMP #$03
+C - - - - - 0x00E510 03:A500: D0 03     BNE bra_A505
+C - - - - - 0x00E512 03:A502: 20 13 A9  JSR sub_0x00E923
+bra_A505:
+C - - - - - 0x00E515 03:A505: A9 04     LDA #con_0020_04
+C - - - - - 0x00E517 03:A507: 85 20     STA ram_script_hi
+C - - - - - 0x00E519 03:A509: A9 00     LDA #$00
+C - - - - - 0x00E51B 03:A50B: 85 22     STA ram_0022_t02
+C - - - - - 0x00E51D 03:A50D: 8D 6E 03  STA ram_036E
+C - - - - - 0x00E520 03:A510: 8D 6F 03  STA ram_036E + $01
+C - - - - - 0x00E523 03:A513: A9 C0     LDA #$C0
+C - - - - - 0x00E525 03:A515: 8D 70 03  STA ram_0370_counter_00_C0
+C - - - - - 0x00E528 03:A518: A0 16     LDY #$16
+bra_A51A_loop:
+C - - - - - 0x00E52A 03:A51A: A9 00     LDA #$00
+C - - - - - 0x00E52C 03:A51C: 99 1A 06  STA ram_obj_animation_lo,Y
+C - - - - - 0x00E52F 03:A51F: 99 82 06  STA ram_0682_obj,Y
+C - - - - - 0x00E532 03:A522: C8        INY
+C - - - - - 0x00E533 03:A523: C0 1A     CPY #$1A
+C - - - - - 0x00E535 03:A525: 90 F3     BCC bra_A51A_loop
+C - - - - - 0x00E537 03:A527: A5 0A     LDA ram_000A_t03
+C - - - - - 0x00E539 03:A529: F0 03     BEQ bra_A52E
+C - - - - - 0x00E53B 03:A52B: 20 47 9A  JSR sub_0x009A57
+bra_A52E:
+C - - - - - 0x00E53E 03:A52E: 38        SEC
+C - - - - - 0x00E53F 03:A52F: 60        RTS
+bra_A530:
+C - - - - - 0x00E540 03:A530: A9 A0     LDA #< $00A0
+C - - - - - 0x00E542 03:A532: 85 AF     STA ram_00AF_lo
+C - - - - - 0x00E544 03:A534: A9 00     LDA #> $00A0
+C - - - - - 0x00E546 03:A536: 85 AB     STA ram_00AB_hi
+                                       ;LDA #$00
+C - - - - - 0x00E548 03:A538: 85 AC     STA ram_00AC_lo
+C - - - - - 0x00E54A 03:A53A: 38        SEC
+C - - - - - 0x00E54B 03:A53B: 60        RTS
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 
