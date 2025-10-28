@@ -20,10 +20,14 @@
 .export ofs_017_0x0086FA_0B_play_music
 .export ofs_017_0x008702_0C
 .export ofs_017_0x008756_0D
+.export ofs_017_0x0085A1_0E
+.export ofs_017_0x0087CD_0F
+.export ofs_017_0x00EEC9_10
 
 
 
 ofs_017_0x0082F5_00:
+; unused?
                                         CLC
                                         RTS
 
@@ -644,6 +648,118 @@ _off025_AAFE_03:
 - D 1 - I - 0x016B14 05:AB04: CE        .byte $CE, $00, $00, $D2   ; 02 
 - D 1 - I - 0x016B18 05:AB08: CF        .byte $CF, $00, $00, $D3   ; 03 
 - D 1 - I - 0x016B1C 05:AB0C: D0        .byte $D0, $00, $00, $D4   ; 04 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x0085A1_0E:
+                                        JMP loc_0x0085A1
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x0087CD_0F:
+C - - J - - 0x0087CD 02:87BD: 20 2E 94  JSR sub_0x00943E
+C - - - - - 0x0087D0 02:87C0: 9D B4 07  STA ram_07B4_unk,X
+C - - - - - 0x0087D3 02:87C3: A5 0A     LDA ram_000A_t03
+C - - - - - 0x0087D5 02:87C5: 29 0F     AND #$0F
+C - - - - - 0x0087D7 02:87C7: 0A        ASL
+C - - - - - 0x0087D8 02:87C8: A8        TAY
+C - - - - - 0x0087D9 02:87C9: 84 0C     STY ram_000C_t04
+C - - - - - 0x0087DB 02:87CB: B9 F0 87  LDA tbl_87F0,Y
+C - - - - - 0x0087DE 02:87CE: 48        PHA
+C - - - - - 0x0087DF 02:87CF: B9 F1 87  LDA tbl_87F0 + $01,Y
+C - - - - - 0x0087E2 02:87D2: A8        TAY
+C - - - - - 0x0087E3 02:87D3: 68        PLA
+C - - - - - 0x0087E4 02:87D4: 20 0D 95  JSR sub_0x00951D
+C - - - - - 0x0087E7 02:87D7: B0 15     BCS bra_87EE
+C - - - - - 0x0087E9 02:87D9: A5 29     LDA ram_random
+C - - - - - 0x0087EB 02:87DB: A4 0C     LDY ram_000C_t04
+C - - - - - 0x0087ED 02:87DD: C9 80     CMP #$80
+C - - - - - 0x0087EF 02:87DF: B0 0D     BCS bra_87EE
+- - - - - - 0x0087F1 02:87E1: A5 0A     LDA ram_000A_t03
+; / 10
+- - - - - - 0x0087F3 02:87E3: 4A        LSR
+- - - - - - 0x0087F4 02:87E4: 4A        LSR
+- - - - - - 0x0087F5 02:87E5: 4A        LSR
+- - - - - - 0x0087F6 02:87E6: 4A        LSR
+- - - - - - 0x0087F7 02:87E7: 18        CLC
+- - - - - - 0x0087F8 02:87E8: 7D 78 07  ADC ram_0778_unk,X
+- - - - - - 0x0087FB 02:87EB: 9D 78 07  STA ram_0778_unk,X
+bra_87EE:
+C - - - - - 0x0087FE 02:87EE: 38        SEC
+C - - - - - 0x0087FF 02:87EF: 60        RTS
+
+
+
+tbl_87F0:
+- - - - - - 0x008800 02:87F0: 58        .byte $58, $20   ; 00 
+- D 0 - - - 0x008802 02:87F2: 50        .byte $50, $10   ; 01 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x00EEC9_10:
+C - - J - - 0x00EEC9 03:AEB9: A5 0A     LDA ram_000A_t03
+C - - - - - 0x00EECB 03:AEBB: 0A        ASL
+C - - - - - 0x00EECC 03:AEBC: A8        TAY
+C - - - - - 0x00EECD 03:AEBD: B9 CC AE  LDA tbl_AECB + $01,Y
+C - - - - - 0x00EED0 03:AEC0: 48        PHA
+C - - - - - 0x00EED1 03:AEC1: B9 CB AE  LDA tbl_AECB,Y
+C - - - - - 0x00EED4 03:AEC4: 20 E6 86  STA ram_chr_bank + $04
+                                        SEC
+C - - - - - 0x00EED7 03:AEC7: 68        PLA
+C - - - - - 0x00EED8 03:AEC8: 4C E9 88  JMP loc_0x0088F9
+
+
+
+tbl_AECB:
+; 00 
+- D 1 - - - 0x00EEDB 03:AECB: 2E        .byte con_chr_bank + $2E   ; 
+- D 1 - - - 0x00EEDC 03:AECC: 00        .byte $00   ; 
+; 01 
+- D 1 - - - 0x00EEDD 03:AECD: 6C        .byte con_chr_bank + $6C   ; 
+- D 1 - - - 0x00EEDE 03:AECE: 06        .byte $06   ; 
+; 02 
+- D 1 - - - 0x00EEDF 03:AECF: 2F        .byte con_chr_bank + $2F   ; 
+- D 1 - - - 0x00EEE0 03:AED0: 08        .byte $08   ; 
+; 03 
+- D 1 - - - 0x00EEE1 03:AED1: 6C        .byte con_chr_bank + $6C   ; 
+- D 1 - - - 0x00EEE2 03:AED2: 02        .byte $02   ; 
+; 04 
+- D 1 - - - 0x00EEE3 03:AED3: 2F        .byte con_chr_bank + $2F   ; 
+- D 1 - - - 0x00EEE4 03:AED4: 01        .byte $01   ; 
+; 05 
+- - - - - - 0x00EEE5 03:AED5: 2F        .byte con_chr_bank + $2F   ; 
+- - - - - - 0x00EEE6 03:AED6: 05        .byte $05   ; 
+; 06 
+- D 1 - - - 0x00EEE7 03:AED7: 29        .byte con_chr_bank + $29   ; 
+- D 1 - - - 0x00EEE8 03:AED8: 14        .byte $14   ; 
+; 07 
+- D 1 - - - 0x00EEE9 03:AED9: 2C        .byte con_chr_bank + $2C   ; 
+- D 1 - - - 0x00EEEA 03:AEDA: 15        .byte $15   ; 
+; 08 
+- D 1 - - - 0x00EEEB 03:AEDB: 2B        .byte con_chr_bank + $2B   ; 
+- D 1 - - - 0x00EEEC 03:AEDC: 1A        .byte $1A   ; 
+; 09 
+- D 1 - - - 0x00EEED 03:AEDD: 2A        .byte con_chr_bank + $2A   ; 
+- D 1 - - - 0x00EEEE 03:AEDE: 18        .byte $18   ; 
+; 0A 
+- D 1 - - - 0x00EEEF 03:AEDF: 2C        .byte con_chr_bank + $2C   ; 
+- D 1 - - - 0x00EEF0 03:AEE0: 1B        .byte $1B   ; 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 

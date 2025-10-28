@@ -66,7 +66,6 @@
 .export ofs_017_0x00EE77_60
 .export ofs_017_0x00EE82_62
 .export ofs_017_0x00EEB0_56
-.export ofs_017_0x00EEC9_10
 
 
 
@@ -2097,57 +2096,6 @@ loc_AEB4:
 C - - - - - 0x00EEC4 03:AEB4: 20 AF F6  JSR sub_0x01F6BF
 C - - - - - 0x00EEC7 03:AEB7: 38        SEC
 C - - - - - 0x00EEC8 03:AEB8: 60        RTS
-
-
-
-ofs_017_0x00EEC9_10:
-C - - J - - 0x00EEC9 03:AEB9: A5 0A     LDA ram_000A_t03
-C - - - - - 0x00EECB 03:AEBB: 0A        ASL
-C - - - - - 0x00EECC 03:AEBC: A8        TAY
-C - - - - - 0x00EECD 03:AEBD: B9 CC AE  LDA tbl_AECB + $01,Y
-C - - - - - 0x00EED0 03:AEC0: 48        PHA
-C - - - - - 0x00EED1 03:AEC1: B9 CB AE  LDA tbl_AECB,Y
-C - - - - - 0x00EED4 03:AEC4: 20 E6 86  STA ram_chr_bank + $04
-                                        SEC
-C - - - - - 0x00EED7 03:AEC7: 68        PLA
-C - - - - - 0x00EED8 03:AEC8: 4C E9 88  JMP loc_0x0088F9
-
-
-
-tbl_AECB:
-; 00 
-- D 1 - - - 0x00EEDB 03:AECB: 2E        .byte con_chr_bank + $2E   ; 
-- D 1 - - - 0x00EEDC 03:AECC: 00        .byte $00   ; 
-; 01 
-- D 1 - - - 0x00EEDD 03:AECD: 6C        .byte con_chr_bank + $6C   ; 
-- D 1 - - - 0x00EEDE 03:AECE: 06        .byte $06   ; 
-; 02 
-- D 1 - - - 0x00EEDF 03:AECF: 2F        .byte con_chr_bank + $2F   ; 
-- D 1 - - - 0x00EEE0 03:AED0: 08        .byte $08   ; 
-; 03 
-- D 1 - - - 0x00EEE1 03:AED1: 6C        .byte con_chr_bank + $6C   ; 
-- D 1 - - - 0x00EEE2 03:AED2: 02        .byte $02   ; 
-; 04 
-- D 1 - - - 0x00EEE3 03:AED3: 2F        .byte con_chr_bank + $2F   ; 
-- D 1 - - - 0x00EEE4 03:AED4: 01        .byte $01   ; 
-; 05 
-- - - - - - 0x00EEE5 03:AED5: 2F        .byte con_chr_bank + $2F   ; 
-- - - - - - 0x00EEE6 03:AED6: 05        .byte $05   ; 
-; 06 
-- D 1 - - - 0x00EEE7 03:AED7: 29        .byte con_chr_bank + $29   ; 
-- D 1 - - - 0x00EEE8 03:AED8: 14        .byte $14   ; 
-; 07 
-- D 1 - - - 0x00EEE9 03:AED9: 2C        .byte con_chr_bank + $2C   ; 
-- D 1 - - - 0x00EEEA 03:AEDA: 15        .byte $15   ; 
-; 08 
-- D 1 - - - 0x00EEEB 03:AEDB: 2B        .byte con_chr_bank + $2B   ; 
-- D 1 - - - 0x00EEEC 03:AEDC: 1A        .byte $1A   ; 
-; 09 
-- D 1 - - - 0x00EEED 03:AEDD: 2A        .byte con_chr_bank + $2A   ; 
-- D 1 - - - 0x00EEEE 03:AEDE: 18        .byte $18   ; 
-; 0A 
-- D 1 - - - 0x00EEEF 03:AEDF: 2C        .byte con_chr_bank + $2C   ; 
-- D 1 - - - 0x00EEF0 03:AEE0: 1B        .byte $1B   ; 
 
 
 

@@ -692,9 +692,9 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 0B 
                                         .byte con_prg_pair + $11 ; 0C 
                                         .byte con_prg_pair + $11 ; 0D 
-                                        .byte con_prg_pair + $02 ; 0E 
-                                        .byte con_prg_pair + $02 ; 0F 
-                                        .byte con_prg_pair + $02 ; 10 
+                                        .byte con_prg_pair + $11 ; 0E 
+                                        .byte con_prg_pair + $11 ; 0F 
+                                        .byte con_prg_pair + $11 ; 10 
                                         .byte con_prg_pair + $02 ; 11 
                                         .byte con_prg_pair + $02 ; 12 
                                         .byte con_prg_pair + $02 ; 13 
@@ -781,7 +781,7 @@ tbl_82F9_prg_banks:
 
 
 tbl_82F9:
-- - - - - - 0x008309 02:82F9: E5 82     .word ofs_017_0x0082F5_00
+- - - - - - 0x008309 02:82F9: E5 82     .word ofs_017_0x0082F5_00   ; unused?
 - D 0 - - - 0x00830B 02:82FB: BF 83     .word ofs_017_0x0083CF_01
 - D 0 - - - 0x00830D 02:82FD: 17 9A     .word ofs_017_0x009A27_02
 - D 0 - - - 0x00830F 02:82FF: EB 83     .word ofs_017_0x0083FB_03
@@ -795,8 +795,8 @@ tbl_82F9:
 - D 0 - - - 0x00831F 02:830F: EA 86     .word ofs_017_0x0086FA_0B_play_music
 - D 0 - - - 0x008321 02:8311: F2 86     .word ofs_017_0x008702_0C
 - D 0 - - - 0x008323 02:8313: 46 87     .word ofs_017_0x008756_0D
-- D 0 - - - 0x008325 02:8315: 91 85     .word ofs_017_8591_0E
-- D 0 - - - 0x008327 02:8317: BD 87     .word ofs_017_87BD_0F
+- D 0 - - - 0x008325 02:8315: 91 85     .word ofs_017_0x0085A1_0E
+- D 0 - - - 0x008327 02:8317: BD 87     .word ofs_017_0x0087CD_0F
 - D 0 - - - 0x008329 02:8319: B9 AE     .word ofs_017_0x00EEC9_10
 - D 0 - - - 0x00832B 02:831B: F4 87     .word ofs_017_87F4_11
 - D 0 - - - 0x00832D 02:831D: 0C 88     .word ofs_017_880C_12
@@ -1086,7 +1086,6 @@ tbl_8550_score:
 
 
 
-ofs_017_8591_0E:
 .export loc_0x0085A1
 loc_0x0085A1:
 C - - J - - 0x0085A1 02:8591: A9 01     LDA #$01
@@ -1163,46 +1162,6 @@ C - - - - - 0x0087A6 02:8796: A9 01     LDA #$01
 C - - - - - 0x0087A8 02:8798: 8D 56 03  STA ram_0356_flag
 C - - - - - 0x0087AD 02:879D: 20 B3 F3  JSR sub_0x01DA7B
 C - - - - - 0x0087B0 02:87A0: 4C 4B 85  JMP loc_854B
-
-
-
-ofs_017_87BD_0F:
-C - - J - - 0x0087CD 02:87BD: 20 2E 94  JSR sub_942E
-C - - - - - 0x0087D0 02:87C0: 9D B4 07  STA ram_07B4_unk,X
-C - - - - - 0x0087D3 02:87C3: A5 0A     LDA ram_000A_t03
-C - - - - - 0x0087D5 02:87C5: 29 0F     AND #$0F
-C - - - - - 0x0087D7 02:87C7: 0A        ASL
-C - - - - - 0x0087D8 02:87C8: A8        TAY
-C - - - - - 0x0087D9 02:87C9: 84 0C     STY ram_000C_t04
-C - - - - - 0x0087DB 02:87CB: B9 F0 87  LDA tbl_87F0,Y
-C - - - - - 0x0087DE 02:87CE: 48        PHA
-C - - - - - 0x0087DF 02:87CF: B9 F1 87  LDA tbl_87F0 + $01,Y
-C - - - - - 0x0087E2 02:87D2: A8        TAY
-C - - - - - 0x0087E3 02:87D3: 68        PLA
-C - - - - - 0x0087E4 02:87D4: 20 0D 95  JSR sub_950D
-C - - - - - 0x0087E7 02:87D7: B0 15     BCS bra_87EE
-C - - - - - 0x0087E9 02:87D9: A5 29     LDA ram_random
-C - - - - - 0x0087EB 02:87DB: A4 0C     LDY ram_000C_t04
-C - - - - - 0x0087ED 02:87DD: C9 80     CMP #$80
-C - - - - - 0x0087EF 02:87DF: B0 0D     BCS bra_87EE
-- - - - - - 0x0087F1 02:87E1: A5 0A     LDA ram_000A_t03
-; / 10
-- - - - - - 0x0087F3 02:87E3: 4A        LSR
-- - - - - - 0x0087F4 02:87E4: 4A        LSR
-- - - - - - 0x0087F5 02:87E5: 4A        LSR
-- - - - - - 0x0087F6 02:87E6: 4A        LSR
-- - - - - - 0x0087F7 02:87E7: 18        CLC
-- - - - - - 0x0087F8 02:87E8: 7D 78 07  ADC ram_0778_unk,X
-- - - - - - 0x0087FB 02:87EB: 9D 78 07  STA ram_0778_unk,X
-bra_87EE:
-C - - - - - 0x0087FE 02:87EE: 38        SEC
-C - - - - - 0x0087FF 02:87EF: 60        RTS
-
-
-
-tbl_87F0:
-- - - - - - 0x008800 02:87F0: 58        .byte $58, $20   ; 00 
-- D 0 - - - 0x008802 02:87F2: 50        .byte $50, $10   ; 01 
 
 
 
@@ -3177,7 +3136,6 @@ C - - - - - 0x00951C 02:950C: 60        RTS
 
 
 
-sub_950D:
 sub_0x00951D:
 ; in
     ; A = 
