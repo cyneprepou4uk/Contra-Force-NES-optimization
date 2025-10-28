@@ -6,10 +6,7 @@
 
 
 
-.export ofs_017_0x00E2F1_3E
 .export ofs_017_0x00E54C_61
-.export ofs_017_0x00E7DA_40
-.export ofs_017_0x00E805_43
 .export ofs_017_0x00E81C_44
 .export ofs_017_0x00E82B_45
 .export ofs_017_0x00E839_46
@@ -36,15 +33,6 @@
 .export ofs_017_0x00EE77_60
 .export ofs_017_0x00EE82_62
 .export ofs_017_0x00EEB0_56
-
-
-
-ofs_017_0x00E2F1_3E:
-C - - J - - 0x00E2F1 03:A2E1: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00E2F4 03:A2E4: 29 80     AND #$80
-C - - - - - 0x00E2F6 03:A2E6: 9D B2 06  STA ram_06B2_obj,X
-C - - - - - 0x00E2F9 03:A2E9: 38        SEC
-C - - - - - 0x00E2FA 03:A2EA: 60        RTS
 
 
 
@@ -96,40 +84,6 @@ tbl_A6F8:
 
 
 
-ofs_017_0x00E7DA_40:
-C - - J - - 0x00E7DA 03:A7CA: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x00E7DD 03:A7CD: 30 05     BMI bra_A7D4
-C - - - - - 0x00E7DF 03:A7CF: A5 0A     LDA ram_000A_t03
-                                        STA ram_07AA_unk,X
-                                        JMP loc_0x00E7E4
-bra_A7D4:
-                                        JMP loc_0x00E7E4
-
-
-
-ofs_017_0x00E805_43:
-C - - J - - 0x00E805 03:A7F5: BD 68 06  LDA ram_obj_pos_Y,X
-C - - - - - 0x00E808 03:A7F8: 30 0D     BMI bra_A807
-C - - - - - 0x00E80A 03:A7FA: A0 00     LDY #$00
-C - - - - - 0x00E80C 03:A7FC: 20 6E A6  JSR sub_0x00E67E
-C - - - - - 0x00E80F 03:A7FF: B0 E7     BCS bra_A7E8_RTS
-C - - - - - 0x00E811 03:A801: C8        INY ; 01
-C - - - - - 0x00E812 03:A802: 20 6E A6  JSR sub_0x00E67E
-C - - - - - 0x00E815 03:A805: B0 E1     BCS bra_A7E8_RTS
-bra_A807:
-C - - - - - 0x00E817 03:A807: A5 0A     LDA ram_000A_t03
-loc_A809:
-sub_A809:
-; bzk optimize
-C D 1 - - - 0x00E819 03:A809: 4C 10 8C  SEC
-                                        SBC #$01
-                                        STA ram_0778_unk,X
-                                        SEC
-bra_A7E8_RTS:
-                                        RTS
-
-
-
 ofs_017_0x00E81C_44:
 C - - J - - 0x00E81C 03:A80C: A5 8C     LDA ram_008C
 C - - - - - 0x00E81E 03:A80E: C9 05     CMP #$05
@@ -175,7 +129,11 @@ C - - - - - 0x00E852 03:A842: 38        SEC
 C - - - - - 0x00E853 03:A843: 60        RTS
 bra_A844:
 C - - - - - 0x00E854 03:A844: A5 0A     LDA ram_000A_t03
-C - - - - - 0x00E856 03:A846: 4C 09 A8  JMP loc_A809
+C - - - - - 0x00E856 03:A846: 4C 09 A8  SEC
+                                        SBC #$01
+                                        STA ram_0778_unk,X
+                                        SEC
+                                        RTS
 
 
 
@@ -453,8 +411,8 @@ C - - - - - 0x00E9F8 03:A9E8: 60        RTS
 bra_A9E9:
 C - - - - - 0x00E9F9 03:A9E9: A9 00     LDA #$00
 C - - - - - 0x00E9FB 03:A9EB: 9D C8 07  STA ram_07C8_unk,X
-C - - - - - 0x00E9FE 03:A9EE: A9 12     LDA #$12
-C - - - - - 0x00EA00 03:A9F0: 20 09 A8  JSR sub_A809
+C - - - - - 0x00E9FE 03:A9EE: A9 12     LDA #$11
+C - - - - - 0x00EA00 03:A9F0: 20 09 A8  STA ram_0778_unk,X
 ; bzk optimize, useless code up to 0x00EA07
 C - - - - - 0x00EA03 03:A9F3: A5 8D     LDA ram_008D
 C - - - - - 0x00EA05 03:A9F5: 09 80     ORA #$80

@@ -743,12 +743,12 @@ tbl_82F9_prg_banks:
                                         .byte con_prg_pair + $11 ; 3B 
                                         .byte con_prg_pair + $11 ; 3C 
                                         .byte con_prg_pair + $11 ; 3D 
-                                        .byte con_prg_pair + $02 ; 3E 
-                                        .byte con_prg_pair + $02 ; 3F 
-                                        .byte con_prg_pair + $02 ; 40 
-                                        .byte con_prg_pair + $02 ; 41 
-                                        .byte con_prg_pair + $02 ; 42 
-                                        .byte con_prg_pair + $02 ; 43 
+                                        .byte con_prg_pair + $11 ; 3E 
+                                        .byte con_prg_pair + $11 ; 3F 
+                                        .byte con_prg_pair + $11 ; 40 
+                                        .byte con_prg_pair + $11 ; 41 
+                                        .byte con_prg_pair + $11 ; 42 
+                                        .byte con_prg_pair + $11 ; 43 
                                         .byte con_prg_pair + $02 ; 44 
                                         .byte con_prg_pair + $02 ; 45 
                                         .byte con_prg_pair + $02 ; 46 
@@ -847,10 +847,10 @@ tbl_82F9:
 - - - - - - 0x008381 02:8371: 45 A7     .word ofs_017_0x00E755_3C
 - D 0 - - - 0x008383 02:8373: 45 A7     .word ofs_017_0x00E755_3D
 - D 0 - - - 0x008385 02:8375: E1 A2     .word ofs_017_0x00E2F1_3E
-- D 0 - - - 0x008387 02:8377: 55 9E     .word ofs_017_9E55_3F
+- D 0 - - - 0x008387 02:8377: 55 9E     .word ofs_017_0x009E65_3F
 - D 0 - - - 0x008389 02:8379: CA A7     .word ofs_017_0x00E7DA_40
-- D 0 - - - 0x00838B 02:837B: 16 8D     .word ofs_017_8D16_41
-- D 0 - - - 0x00838D 02:837D: 49 8A     .word ofs_017_8A49_42
+- D 0 - - - 0x00838B 02:837B: 16 8D     .word ofs_017_0x008D26_41
+- D 0 - - - 0x00838D 02:837D: 49 8A     .word ofs_017_0x008A59_42
 - D 0 - - - 0x00838F 02:837F: F5 A7     .word ofs_017_0x00E805_43
 - D 0 - - - 0x008391 02:8381: 0C A8     .word ofs_017_0x00E81C_44
 - D 0 - - - 0x008393 02:8383: 1B A8     .word ofs_017_0x00E82B_45
@@ -1435,24 +1435,8 @@ tbl_89CF:
 
 
 
-ofs_017_8A49_42:
-C - - J - - 0x008A59 02:8A49: BD 78 07  LDA ram_0778_unk,X
-C - - - - - 0x008A5C 02:8A4C: 30 1A     BMI bra_8A68
-C - - - - - 0x008A5E 02:8A4E: 20 1B 84  JSR sub_0x00842B_000A_ASL_TAY
-C - - - - - 0x008A61 02:8A51: B9 C7 8B  LDA tbl_8BC7,Y
-C - - - - - 0x008A64 02:8A54: 29 40     AND #$40
-C - - - - - 0x008A66 02:8A56: 9D 9C 06  STA ram_069C_obj,X
-C - - - - - 0x008A69 02:8A59: B9 C7 8B  LDA tbl_8BC7,Y
-C - - - - - 0x008A6C 02:8A5C: 29 0F     AND #$0F
-C - - - - - 0x008A6E 02:8A5E: 85 0B     STA ram_000B_t09
-C - - - - - 0x008A70 02:8A60: 20 7D 91  LDA ram_06B2_obj,X
-                                        AND #$F0
-C - - - - - 0x008A73 02:8A63: 05 0B     ORA ram_000B_t09
-C - - - - - 0x008A75 02:8A65: 9D B2 06  STA ram_06B2_obj,X
-bra_8A68:
-C - - - - - 0x008A78 02:8A68: 20 1B 84  JSR sub_0x00842B_000A_ASL_TAY
-C - - - - - 0x008A7B 02:8A6B: B9 C8 8B  LDA tbl_8BC8,Y
-C - - - - - 0x008A7E 02:8A6E: 85 0C     STA ram_000C_t02
+.export loc_0x008A80
+loc_0x008A80:
 .export sub_0x008A80
 sub_0x008A80:
 C - - - - - 0x008A80 02:8A70: 20 52 9F  JSR sub_0x009F62
@@ -1712,13 +1696,6 @@ tbl_8BB7:
 - - - - - - 0x008BD5 02:8BC5: 80 03     .word $0380 ; 
 
 
-; bzk optimize
-tbl_8BC7:
-- D 0 - - - 0x008BD7 02:8BC7: 41        .byte $41   ; 
-tbl_8BC8:
-- D 0 - - - 0x008BD8 02:8BC8: E9        .byte $E9   ; 
-
-
 
 sub_0x008BD9:
 ; in
@@ -1763,15 +1740,6 @@ C - - - - - 0x008C21 02:8C11: E9 01     SBC #$01
 C D 0 - - - 0x008C23 02:8C13: 9D 78 07  STA ram_0778_unk,X
 C - - - - - 0x008C26 02:8C16: 38        SEC
 C - - - - - 0x008C27 02:8C17: 60        RTS
-
-
-
-ofs_017_8D16_41:
-C - - J - - 0x008D26 02:8D16: 20 F2 95  JSR sub_95F2
-C - - - - - 0x008D29 02:8D19: A9 07     LDA #$07
-C - - - - - 0x008D2B 02:8D1B: 20 BB 90  JSR sub_90BB
-C - - - - - 0x008D2E 02:8D1E: 38        SEC
-C - - - - - 0x008D2F 02:8D1F: 60        RTS
 
 
 
@@ -2117,7 +2085,6 @@ C - - - - - 0x0090CA 02:90BA: 60        RTS
 
 
 
-sub_90BB:
 .export sub_0x0090CB
 sub_0x0090CB:
 ; in
@@ -2956,7 +2923,6 @@ C - - - - - 0x0095F6 02:95E6: 4C 6F 98  STA ram_obj_animation_hi,X
 
 
 
-sub_95F2:
 sub_0x009602:
 C - - - - - 0x009602 02:95F2: 20 7D 91  LDA ram_06B2_obj,X
                                         AND #$F0
@@ -3343,7 +3309,8 @@ C - - - - - 0x009E64 02:9E54: 60        RTS
 
 
 sub_0x009E65:
-ofs_017_9E55_3F:
+.export loc_0x009E65
+loc_0x009E65:
 ; out
     ; Y = 
 C - - - - - 0x009E65 02:9E55: 20 03 90  JSR sub_0x009013
