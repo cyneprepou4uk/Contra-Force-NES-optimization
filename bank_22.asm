@@ -29,6 +29,8 @@
 .export ofs_017_0x00886B_14
 .export ofs_017_0x00887D_15
 .export ofs_017_0x00E2FB_16
+.export ofs_017_0x00E33D_17
+.export ofs_017_0x00E36F_18
 
 
 
@@ -947,6 +949,64 @@ C - - - - - 0x00E339 03:A329: 60        RTS
 bra_A327:
                                         SEC
                                         RTS
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x00E33D_17:
+C - - J - - 0x00E33D 03:A32D: A0 00     LDY #$00
+C - - - - - 0x00E33F 03:A32F: 20 4A A3  JSR sub_A34A
+C - - - - - 0x00E342 03:A332: B0 08     BCS bra_A33C
+C - - - - - 0x00E344 03:A334: BD AA 07  LDA ram_07AA_unk,X
+C - - - - - 0x00E347 03:A337: 09 04     ORA #$04
+C - - - - - 0x00E349 03:A339: 9D AA 07  STA ram_07AA_unk,X
+bra_A33C:
+C - - - - - 0x00E34C 03:A33C: C8        INY ; 01
+C - - - - - 0x00E34D 03:A33D: 20 4A A3  JSR sub_A34A
+C - - - - - 0x00E350 03:A340: B0 CE     BCS bra_A348
+- - - - - - 0x00E352 03:A342: BD AA 07  LDA ram_07AA_unk,X
+- - - - - - 0x00E355 03:A345: 09 08     ORA #$08
+- - - - - - 0x00E357 03:A347: 4C 0D A3  STA ram_07AA_unk,X
+bra_A348:
+; bzk optimize, C = 1
+                                        SEC
+                                        RTS
+
+
+
+sub_A34A:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
+C - - - - - 0x00E35A 03:A34A: B9 82 07  LDA ram_0782_unk,Y
+C - - - - - 0x00E35D 03:A34D: F0 C1     BEQ bra_A35B
+C - - - - - 0x00E35F 03:A34F: 20 FE 94  JSR sub_0x00950E
+C - - - - - 0x00E362 03:A352: C9 18     CMP #$18
+C - - - - - 0x00E364 03:A354: B0 D3     BCS bra_A35A_RTS
+C - - - - - 0x00E366 03:A356: B9 4E 06  LDA ram_obj_pos_X,Y
+C - - - - - 0x00E369 03:A359: DD 4E 06  CMP ram_obj_pos_X,X
+C - - - - - 0x00E36C 03:A35C: 4C 24 A3  ROR
+                                        EOR ram_06B2_obj,X
+                                        ROL
+bra_A35A_RTS:
+                                        RTS
+bra_A35B:
+                                        SEC
+                                        RTS
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x00E36F_18:
+C D 1 J - - 0x00E36F 03:A35F: A5 0A     LDA ram_000A_t03
+                                        JMP loc_0x00E371
 
 
 
