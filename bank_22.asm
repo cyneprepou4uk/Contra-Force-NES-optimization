@@ -28,6 +28,7 @@
 .export ofs_017_0x008821_13
 .export ofs_017_0x00886B_14
 .export ofs_017_0x00887D_15
+.export ofs_017_0x00E2FB_16
 
 
 
@@ -891,6 +892,61 @@ C - - - - - 0x0088B7 02:88A7: 9D B4 07  STA ram_07B4_unk,X
 bra_88AA:
 C - - - - - 0x0088BA 02:88AA: 38        SEC
 C - - - - - 0x0088BB 02:88AB: 60        RTS
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+ofs_017_0x00E2FB_16:
+C - - J - - 0x00E2FB 03:A2EB: BD 68 06  LDA ram_obj_pos_Y,X
+C - - - - - 0x00E2FE 03:A2EE: C9 50     CMP #$50
+C - - - - - 0x00E300 03:A2F0: 90 38     BCC bra_A32A
+; 50+
+C - - - - - 0x00E302 03:A2F2: A9 00     LDA #$00
+C - - - - - 0x00E304 03:A2F4: 9D AA 07  STA ram_07AA_unk,X
+C - - - - - 0x00E307 03:A2F7: A8        TAY ; 01
+C - - - - - 0x00E308 03:A2F8: 20 12 A3  JSR sub_A312
+C - - - - - 0x00E30B 03:A2FB: B0 05     BCS bra_A302
+C - - - - - 0x00E30D 03:A2FD: A9 01     LDA #$01
+C - - - - - 0x00E30F 03:A2FF: 9D AA 07  STA ram_07AA_unk,X
+bra_A302:
+C - - - - - 0x00E312 03:A302: C8        INY ; 01
+C - - - - - 0x00E313 03:A303: 20 12 A3  JSR sub_A312
+C - - - - - 0x00E316 03:A306: B0 08     BCS bra_A310
+- - - - - - 0x00E318 03:A308: BD AA 07  LDA ram_07AA_unk,X
+- - - - - - 0x00E31B 03:A30B: 09 02     ORA #$02
+- - - - - - 0x00E31D 03:A30D: 9D AA 07  STA ram_07AA_unk,X
+bra_A310:
+C - - - - - 0x00E320 03:A310: 38        SEC
+C - - - - - 0x00E321 03:A311: 60        RTS
+bra_A32A:
+C - - - - - 0x00E33A 03:A32A: 4C 5F A3  LDA ram_000A_t03
+                                        JMP loc_0x00E371
+
+
+
+sub_A312:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
+C - - - - - 0x00E322 03:A312: B9 82 07  LDA ram_0782_unk,Y
+C - - - - - 0x00E325 03:A315: F0 F9     BEQ bra_A327
+C - - - - - 0x00E327 03:A317: 20 FE 94  JSR sub_0x00950E
+C - - - - - 0x00E32A 03:A31A: C9 18     CMP #$18
+C - - - - - 0x00E32C 03:A31C: B0 0B     BCS bra_A329_RTS
+C - - - - - 0x00E32E 03:A31E: BD 4E 06  LDA ram_obj_pos_X,X
+C - - - - - 0x00E331 03:A321: D9 4E 06  CMP ram_obj_pos_X,Y
+C D 1 - - - 0x00E334 03:A324: 6A        ROR
+C - - - - - 0x00E335 03:A325: 5D B2 06  EOR ram_06B2_obj,X
+C - - - - - 0x00E338 03:A328: 2A        ROL
+bra_A329_RTS:
+C - - - - - 0x00E339 03:A329: 60        RTS
+bra_A327:
+                                        SEC
+                                        RTS
 
 
 

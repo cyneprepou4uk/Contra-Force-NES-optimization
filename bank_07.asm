@@ -7,7 +7,6 @@
 
 
 .export ofs_017_0x00E2F1_3E
-.export ofs_017_0x00E2FB_16
 .export ofs_017_0x00E33D_17
 .export ofs_017_0x00E36F_18
 .export ofs_017_0x00E405_19
@@ -78,54 +77,6 @@ C - - - - - 0x00E2FA 03:A2EA: 60        RTS
 
 
 
-ofs_017_0x00E2FB_16:
-C - - J - - 0x00E2FB 03:A2EB: BD 68 06  LDA ram_obj_pos_Y,X
-C - - - - - 0x00E2FE 03:A2EE: C9 50     CMP #$50
-C - - - - - 0x00E300 03:A2F0: 90 38     BCC bra_A32A
-; 50+
-C - - - - - 0x00E302 03:A2F2: A9 00     LDA #$00
-C - - - - - 0x00E304 03:A2F4: 9D AA 07  STA ram_07AA_unk,X
-C - - - - - 0x00E307 03:A2F7: A8        TAY
-C - - - - - 0x00E308 03:A2F8: 20 12 A3  JSR sub_A312
-C - - - - - 0x00E30B 03:A2FB: B0 05     BCS bra_A302
-C - - - - - 0x00E30D 03:A2FD: A9 01     LDA #$01
-C - - - - - 0x00E30F 03:A2FF: 9D AA 07  STA ram_07AA_unk,X
-bra_A302:
-C - - - - - 0x00E312 03:A302: C8        INY
-C - - - - - 0x00E313 03:A303: 20 12 A3  JSR sub_A312
-C - - - - - 0x00E316 03:A306: B0 08     BCS bra_A310
-- - - - - - 0x00E318 03:A308: BD AA 07  LDA ram_07AA_unk,X
-- - - - - - 0x00E31B 03:A30B: 09 02     ORA #$02
-loc_A30D:
-- - - - - - 0x00E31D 03:A30D: 9D AA 07  STA ram_07AA_unk,X
-bra_A310:
-C - - - - - 0x00E320 03:A310: 38        SEC
-C - - - - - 0x00E321 03:A311: 60        RTS
-
-
-
-sub_A312:
-C - - - - - 0x00E322 03:A312: B9 82 07  LDA ram_0782_unk,Y
-C - - - - - 0x00E325 03:A315: F0 F9     BEQ bra_A310
-C - - - - - 0x00E327 03:A317: 20 FE 94  JSR sub_0x00950E
-C - - - - - 0x00E32A 03:A31A: C9 18     CMP #$18
-C - - - - - 0x00E32C 03:A31C: B0 0B     BCS bra_A329_RTS
-C - - - - - 0x00E32E 03:A31E: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x00E331 03:A321: D9 4E 06  CMP ram_obj_pos_X,Y
-loc_A324:
-C D 1 - - - 0x00E334 03:A324: 6A        ROR
-C - - - - - 0x00E335 03:A325: 5D B2 06  EOR ram_06B2_obj,X
-C - - - - - 0x00E338 03:A328: 2A        ROL
-bra_A329_RTS:
-C - - - - - 0x00E339 03:A329: 60        RTS
-
-
-
-bra_A32A:
-C - - - - - 0x00E33A 03:A32A: 4C 5F A3  JMP loc_A35F
-
-
-
 ofs_017_0x00E33D_17:
 C - - J - - 0x00E33D 03:A32D: A0 00     LDY #$00
 C - - - - - 0x00E33F 03:A32F: 20 4A A3  JSR sub_A34A
@@ -134,28 +85,42 @@ C - - - - - 0x00E344 03:A334: BD AA 07  LDA ram_07AA_unk,X
 C - - - - - 0x00E347 03:A337: 09 04     ORA #$04
 C - - - - - 0x00E349 03:A339: 9D AA 07  STA ram_07AA_unk,X
 bra_A33C:
-C - - - - - 0x00E34C 03:A33C: C8        INY
+C - - - - - 0x00E34C 03:A33C: C8        INY ; 01
 C - - - - - 0x00E34D 03:A33D: 20 4A A3  JSR sub_A34A
-C - - - - - 0x00E350 03:A340: B0 CE     BCS bra_A310
+C - - - - - 0x00E350 03:A340: B0 CE     BCS bra_A348
 - - - - - - 0x00E352 03:A342: BD AA 07  LDA ram_07AA_unk,X
 - - - - - - 0x00E355 03:A345: 09 08     ORA #$08
-- - - - - - 0x00E357 03:A347: 4C 0D A3  JMP loc_A30D
+- - - - - - 0x00E357 03:A347: 4C 0D A3  STA ram_07AA_unk,X
+bra_A348:
+; bzk optimize, C = 1
+                                        SEC
+                                        RTS
 
 
 
 sub_A34A:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
 C - - - - - 0x00E35A 03:A34A: B9 82 07  LDA ram_0782_unk,Y
-C - - - - - 0x00E35D 03:A34D: F0 C1     BEQ bra_A310
+C - - - - - 0x00E35D 03:A34D: F0 C1     BEQ bra_A35B
 C - - - - - 0x00E35F 03:A34F: 20 FE 94  JSR sub_0x00950E
 C - - - - - 0x00E362 03:A352: C9 18     CMP #$18
-C - - - - - 0x00E364 03:A354: B0 D3     BCS bra_A329_RTS
+C - - - - - 0x00E364 03:A354: B0 D3     BCS bra_A35A_RTS
 C - - - - - 0x00E366 03:A356: B9 4E 06  LDA ram_obj_pos_X,Y
 C - - - - - 0x00E369 03:A359: DD 4E 06  CMP ram_obj_pos_X,X
-C - - - - - 0x00E36C 03:A35C: 4C 24 A3  JMP loc_A324
+C - - - - - 0x00E36C 03:A35C: 4C 24 A3  ROR
+                                        EOR ram_06B2_obj,X
+                                        ROL
+bra_A35A_RTS:
+                                        RTS
+bra_A35B:
+                                        SEC
+                                        RTS
 
 
 
-loc_A35F:
 ofs_017_0x00E36F_18:
 C D 1 J - - 0x00E36F 03:A35F: A5 0A     LDA ram_000A_t03
                                         JMP loc_0x00E371
@@ -449,7 +414,8 @@ C - - - - - 0x00E572 03:A562: 60        RTS
 bra_A563:
 C - - - - - 0x00E573 03:A563: 98        TYA
 C - - - - - 0x00E574 03:A564: 9D AA 07  STA ram_07AA_unk,X
-C - - - - - 0x00E577 03:A567: 4C 5F A3  JMP loc_A35F
+C - - - - - 0x00E577 03:A567: 4C 5F A3  LDA ram_000A_t03
+                                        JMP loc_0x00E371
 
 
 
@@ -556,7 +522,8 @@ C - - - - - 0x00E5FF 03:A5EF: C8        INY
 C - - - - - 0x00E600 03:A5F0: 20 FD A5  JSR sub_A5FD
 C - - - - - 0x00E603 03:A5F3: B0 AE     BCS bra_A5A3
 bra_A5F5:
-C - - - - - 0x00E605 03:A5F5: 4C 5F A3  JMP loc_A35F
+C - - - - - 0x00E605 03:A5F5: 4C 5F A3  LDA ram_000A_t03
+                                        JMP loc_0x00E371
 bra_A5F8:
 C - - - - - 0x00E608 03:A5F8: A9 3D     LDA #con_A36F_3D
 C - - - - - 0x00E60A 03:A5FA: 4C 61 A3  JMP loc_0x00E371
@@ -679,7 +646,8 @@ loc_A69F:
 C D 1 - - - 0x00E6AF 03:A69F: 98        TYA
 C - - - - - 0x00E6B0 03:A6A0: 9D AA 07  STA ram_07AA_unk,X
 bra_A6A3:
-C - - - - - 0x00E6B3 03:A6A3: 4C 5F A3  JMP loc_A35F
+C - - - - - 0x00E6B3 03:A6A3: 4C 5F A3  LDA ram_000A_t03
+                                        JMP loc_0x00E371
 
 
 
