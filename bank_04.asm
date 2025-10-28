@@ -1754,6 +1754,9 @@ C - - - - - 0x008FEF 02:8FDF: D0 10     BNE bra_8FF1
 bra_8FE1:
 C - - - - - 0x008FF1 02:8FE1: 38        SEC
 C - - - - - 0x008FF2 02:8FE2: 60        RTS
+bra_8FF1:
+                                        CLC
+                                        RTS
 
 
 
@@ -1770,7 +1773,6 @@ C - - - - - 0x008FF8 02:8FE8: D0 09     BNE bra_8FF3
 C - - - - - 0x008FFA 02:8FEA: BD 62 07  LDA ram_0762_obj,X
 C - - - - - 0x008FFD 02:8FED: 29 03     AND #$03
 C - - - - - 0x008FFF 02:8FEF: D0 02     BNE bra_8FF3
-bra_8FF1:
 C - - - - - 0x009001 02:8FF1: 18        CLC
 C - - - - - 0x009002 02:8FF2: 60        RTS
 bra_8FF3:
