@@ -56,7 +56,6 @@
 .export sub_0x01FEDA_add_music_to_queue
 .export sub_0x01E038
 .export loc_0x01E12C
-.export ofs_002_0x01E12C_0C
 .export sub_0x01E136_copy_ppu_address
 .export loc_0x01E136_copy_ppu_address
 .export loc_0x01E13F
@@ -176,8 +175,6 @@ tbl_E108_names:
 
 
 loc_0x01E12C:
-ofs_002_0x01E12C_0C:
-; con_DA9D_0C
 C D 3 - - - 0x01E12C 07:E11C: A6 39     LDX ram_buffer_index_2
 C - - - - - 0x01E12E 07:E11E: A5 DF     LDA ram_00DF
 C - - - - - 0x01E130 07:E120: 20 CF DD  JSR sub_0x01DDDF
