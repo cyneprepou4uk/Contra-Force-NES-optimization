@@ -566,8 +566,8 @@ _off009_F2CC_08_stage_5:
 
 
 
-ofs_006_F2E0_08:
-; con_F3D6_08
+.export sub_0x01F2F0
+sub_0x01F2F0:
 C - - J - - 0x01F2F0 07:F2E0: A4 88     LDY ram_x2_stage
 C - - - - - 0x01F2F2 07:F2E2: A5 00     LDA ram_0000_t42
 C - - - - - 0x01F2F4 07:F2E4: D9 73 F2  CMP tbl_F273,Y
@@ -850,8 +850,8 @@ tbl_F3D6:
 ; 07 con_F3D6_07 unused, index doesn't exist
 - - - - - - 0x01F3FB 07:F3EB: 01 A0     .word $FFFF ; 
 - - - - - - 0x01F3FD 07:F3ED: 05        .byte con_prg_pair + $05   ; 
-; 08 con_F3D6_08
-- D 3 - - - 0x01F3FE 07:F3EE: E0 F2     .word ofs_006_F2E0_08
+; 08 con_F3D6_08 unused
+- D 3 - - - 0x01F3FE 07:F3EE: E0 F2     .word $FFFF ; 
 - D 3 - - - 0x01F400 07:F3F0: 03        .byte con_prg_pair + $03   ; 
 ; 09 con_F3D6_09
 - D 3 - - - 0x01F401 07:F3F1: 34 AE     .word ofs_006_0x00AE44_09

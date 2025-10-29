@@ -6739,8 +6739,7 @@ C - - - - - 0x01759E 05:B58E: AD 79 03  LDA ram_0374_cpu + $05
 C - - - - - 0x0175A1 05:B591: 19 AE F5  ORA tbl_0x01F5BE,Y
 C - - - - - 0x0175A4 05:B594: 8D 79 03  STA ram_0374_cpu + $05
 bra_B597:
-C - - - - - 0x0175A7 05:B597: A9 08     LDA #con_F3D6_08
-C - - - - - 0x0175A9 05:B599: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x0175A9 05:B599: 20 B3 F3  JSR sub_0x01F2F0
 C - - - - - 0x0175AC 05:B59C: A4 0F     LDY ram_000F_t05_table_index
 C - - - - - 0x0175AE 05:B59E: B9 AE F5  LDA tbl_0x01F5BE,Y
 C - - - - - 0x0175B1 05:B5A1: 49 FF     EOR #$FF
