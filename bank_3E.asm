@@ -4286,13 +4286,22 @@ _off010_B2CA_0A:
 
 
 
+.export sub_0x0093E8
+sub_0x0093E8:
+; in
+    ; A = 
+    ; Y = 
+C - - - - - 0x0093E8 02:93D8: 85 0A     STA ram_000A_t09
+C - - - - - 0x0093EA 02:93DA: 4C CB 8B  JMP loc_8BCB
+
+
+
 .export sub_0x008BD9
 sub_0x008BD9:
 ; in
     ; ram_000B_t10
 C - - - - - 0x008BD9 02:8BC9: A4 0B     LDY ram_000B_t10
-.export loc_0x008BDB
-loc_0x008BDB:
+loc_8BCB:
 C D 0 - - - 0x008BDB 02:8BCB: B9 82 07  LDA ram_0782_unk,Y
 C - - - - - 0x008BDE 02:8BCE: D0 46     BEQ bra_8BD0
                                         SEC

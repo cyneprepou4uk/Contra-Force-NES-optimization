@@ -65,7 +65,6 @@
 .export ofs_006_0x009219_1F
 .export sub_0x009382
 .export sub_0x0093CA
-.export sub_0x0093E8
 .export sub_0x00943E
 .export sub_0x0094A9
 .export sub_0x0094D5
@@ -2294,15 +2293,6 @@ C - - - - - 0x0093E7 02:93D7: 60        RTS
 bra_93AF:
 C - - - - - 0x0093BF 02:93AF: 38        SEC
 C - - - - - 0x0093C0 02:93B0: 60        RTS
-
-
-
-sub_0x0093E8:
-; in
-    ; A = 
-    ; Y = 
-C - - - - - 0x0093E8 02:93D8: 85 0A     STA ram_000A_t09
-C - - - - - 0x0093EA 02:93DA: 4C CB 8B  JMP loc_0x008BDB
 
 
 
