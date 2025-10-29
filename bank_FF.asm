@@ -692,7 +692,7 @@ C - - - - - 0x01F38E 07:F37E: B9 94 F3  LDA tbl_F393_prg_pairs + $01,Y
                                         BNE bra_F381
 ; C = 1
                                         LDA ram_stage
-                                        ADC #con_prg_bank + $25 - $01
+                                        ADC #con_prg_bank + $26 - $01
 bra_F381:
 C - - - - - 0x01F391 07:F381: 8D 01 80  STA $5115   ; A000-BFFF
 C - - - - - 0x01F394 07:F384: A9 00     LDA #$00
@@ -787,7 +787,7 @@ tbl_F393_prg_pairs:
 ; 12 
                                         .byte con_prg_bank + $24   ; 
                                         .byte con_prg_bank + $7F   ; 
-                                        .byte con_prg_bank + $3D   ; 
+                                        .byte con_prg_bank + $25   ; 
 ; 13 unused
                                         .byte con_prg_bank + $04   ; 
                                         .byte con_prg_bank + $23   ; 
