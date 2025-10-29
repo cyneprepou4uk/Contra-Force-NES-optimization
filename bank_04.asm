@@ -816,6 +816,7 @@ C - - - - - 0x0084C3 02:84B3: 99 34 06  STA ram_obj_animation_hi,Y
 C - - - - - 0x0084C6 02:84B6: 20 47 91  JSR sub_9147_copy_speed
 C - - - - - 0x0084C9 02:84B9: 20 54 91  JSR sub_9154_copy_position
 C - - - - - 0x0084CC 02:84BC: 20 61 91  JSR sub_9161
+; A = 00
 C - - - - - 0x0084CF 02:84BF: 99 F4 06  STA ram_06F4_obj,Y
 C - - - - - 0x0084D2 02:84C2: BD A0 07  LDA ram_07A0_unk,X
 C - - - - - 0x0084D5 02:84C5: 29 02     AND #$02
@@ -1573,6 +1574,7 @@ C - - - - - 0x008BE3 02:8BD3: BD 00 06  LDA ram_0600_obj,X
 C - - - - - 0x008BE6 02:8BD6: 99 00 06  STA ram_0600_obj,Y
 C - - - - - 0x008BE9 02:8BD9: 20 47 91  JSR sub_9147_copy_speed
 C - - - - - 0x008BEC 02:8BDC: 20 61 91  JSR sub_9161
+; A = 00
 C - - - - - 0x008BEF 02:8BDF: 99 78 07  STA ram_0778_unk,Y
 C - - - - - 0x008BF2 02:8BE2: 99 AA 07  STA ram_07AA_unk,Y
 C - - - - - 0x008BF5 02:8BE5: 99 B4 07  STA ram_07B4_unk,Y
@@ -2098,6 +2100,8 @@ C - - - - - 0x009170 02:9160: 60        RTS
 
 
 sub_9161:
+; out
+    ; A = 00
 C - - - - - 0x009171 02:9161: A9 13     LDA #$13
 C - - - - - 0x009173 02:9163: 99 20 07  STA ram_0720_obj,Y
 C - - - - - 0x009176 02:9166: A9 00     LDA #$00
