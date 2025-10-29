@@ -2513,12 +2513,12 @@ C - - - - - 0x00ADF1 02:ADE1: 49 FF     EOR #$FF
 C - - - - - 0x00ADF3 02:ADE3: 18        CLC
 C - - - - - 0x00ADF4 02:ADE4: 65 1C     ADC ram_001C_t08
 C - - - - - 0x00ADF6 02:ADE6: A8        TAY
-C - - - - - 0x00ADF7 02:ADE7: B9 7B F6  LDA tbl_0x01F68B,Y
+C - - - - - 0x00ADF7 02:ADE7: B9 7B F6  LDA tbl_F67B,Y
 C - - - - - 0x00ADFA 02:ADEA: 49 FF     EOR #$FF
 C - - - - - 0x00ADFC 02:ADEC: 18        CLC
 C - - - - - 0x00ADFD 02:ADED: 69 01     ADC #< $0001
 C - - - - - 0x00ADFF 02:ADEF: 85 18     STA ram_0018_t07_lo
-C - - - - - 0x00AE01 02:ADF1: B9 7C F6  LDA tbl_0x01F68B + $01,Y
+C - - - - - 0x00AE01 02:ADF1: B9 7C F6  LDA tbl_F67B + $01,Y
 C - - - - - 0x00AE04 02:ADF4: 49 FF     EOR #$FF
 C - - - - - 0x00AE06 02:ADF6: 69 00     ADC #> $0001
 C - - - - - 0x00AE08 02:ADF8: 85 19     STA ram_0019_t03_hi
@@ -2529,9 +2529,9 @@ C - - - - - 0x00AE0C 02:ADFC: E9 02     SBC #$02
 C - - - - - 0x00AE0E 02:ADFE: 18        CLC
 C - - - - - 0x00AE0F 02:ADFF: 65 1C     ADC ram_001C_t08
 C - - - - - 0x00AE11 02:AE01: A8        TAY
-C - - - - - 0x00AE12 02:AE02: B9 7B F6  LDA tbl_0x01F68B,Y
+C - - - - - 0x00AE12 02:AE02: B9 7B F6  LDA tbl_F67B,Y
 C - - - - - 0x00AE15 02:AE05: 85 18     STA ram_0018_t07_lo
-C - - - - - 0x00AE17 02:AE07: B9 7C F6  LDA tbl_0x01F68B + $01,Y
+C - - - - - 0x00AE17 02:AE07: B9 7C F6  LDA tbl_F67B + $01,Y
 bra_AE0A:
 C - - - - - 0x00AE1A 02:AE0A: 85 19     STA ram_0019_t03_hi
 C - - - - - 0x00AE1C 02:AE0C: 60        RTS
@@ -2539,6 +2539,20 @@ bra_AE0D:
 C - - - - - 0x00AE1D 02:AE0D: A9 00     LDA #$00
 C - - - - - 0x00AE1F 02:AE0F: 85 18     STA ram_0018_t07_lo
 C - - - - - 0x00AE21 02:AE11: F0 F7     BEQ bra_AE0A    ; jmp
+
+
+
+tbl_F67B:
+- D 3 - - - 0x01F68B 07:F67B: 38 01     .word $0138 ; 00 
+- D 3 - - - 0x01F68D 07:F67D: EA 00     .word $00EA ; 02 
+- D 3 - - - 0x01F68F 07:F67F: 30 01     .word $0130 ; 04 
+- D 3 - - - 0x01F691 07:F681: E4 00     .word $00E4 ; 06 
+- D 3 - - - 0x01F693 07:F683: 20 01     .word $0120 ; 08 
+- D 3 - - - 0x01F695 07:F685: D8 00     .word $00D8 ; 0A 
+- D 3 - - - 0x01F697 07:F687: 3F 01     .word $013F ; 0C 
+- D 3 - - - 0x01F699 07:F689: F0 00     .word $00F0 ; 0E 
+- D 3 - - - 0x01F69B 07:F68B: A0 00     .word $00A0 ; 10 
+- D 3 - - - 0x01F69D 07:F68D: 78 00     .word $0078 ; 12 
 
 
 
@@ -2559,7 +2573,6 @@ C - - - - - 0x00AE31 02:AE21: 60        RTS
 
 
 tbl_F669:
-; bzk optimize, переместить
 ;                                              +---------- 
 ;                                              |    +----- 
 ;                                              |    |

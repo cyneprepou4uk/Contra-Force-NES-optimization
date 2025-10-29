@@ -32,7 +32,6 @@
 .export tbl_0x01F5C6
 .export sub_0x01F61F
 .export sub_0x01F650
-.export tbl_0x01F68B
 .export sub_0x01F69F_get_stage_view_type
 .export sub_0x01F6BF
 .export loc_0x01F6D1
@@ -4385,21 +4384,6 @@ C - - - - - 0x01F655 07:F645: 9D E8 07  STA ram_07E8,X
 C - - - - - 0x01F658 07:F648: 9D EA 07  STA ram_07EA,X
 C - - - - - 0x01F65B 07:F64B: 9D E6 07  STA ram_07E6,X
 C - - - - - 0x01F65E 07:F64E: 60        RTS
-
-
-
-tbl_0x01F68B:
-; bzk optimize, переместить
-- D 3 - - - 0x01F68B 07:F67B: 38 01     .word $0138 ; 00 
-- D 3 - - - 0x01F68D 07:F67D: EA 00     .word $00EA ; 02 
-- D 3 - - - 0x01F68F 07:F67F: 30 01     .word $0130 ; 04 
-- D 3 - - - 0x01F691 07:F681: E4 00     .word $00E4 ; 06 
-- D 3 - - - 0x01F693 07:F683: 20 01     .word $0120 ; 08 
-- D 3 - - - 0x01F695 07:F685: D8 00     .word $00D8 ; 0A 
-- D 3 - - - 0x01F697 07:F687: 3F 01     .word $013F ; 0C 
-- D 3 - - - 0x01F699 07:F689: F0 00     .word $00F0 ; 0E 
-- D 3 - - - 0x01F69B 07:F68B: A0 00     .word $00A0 ; 10 
-- D 3 - - - 0x01F69D 07:F68D: 78 00     .word $0078 ; 12 
 
 
 
