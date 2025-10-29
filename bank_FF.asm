@@ -842,7 +842,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F3F2 07:F3E2: 23 F1     .word ofs_006_0x01F133_04
 - D 3 - - - 0x01F3F4 07:F3E4: 03        .byte con_prg_pair + $12   ; 
 ; 05 con_F3D6_05 unused
-- D 3 - - - 0x01F3F5 07:F3E5: 75 DA     .word $FFFF
+- D 3 - - - 0x01F3F5 07:F3E5: 75 DA     .word $FFFF ; 
 - D 3 - - - 0x01F3F7 07:F3E7: 03        .byte con_prg_pair + $03   ; 
 ; 06 con_F3D6_06 unused
 - D 3 - - - 0x01F3F8 07:F3E8: 75 DA     .word $FFFF ; 
@@ -893,7 +893,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F425 07:F415: 7D BA     .word ofs_006_0x003A8D_15
 - D 3 - - - 0x01F427 07:F417: 00        .byte con_prg_pair + $07   ; 
 ; 16 con_F3D6_16 unused
-- D 3 - - - 0x01F428 07:F418: 72 97     .word $FFFF
+- D 3 - - - 0x01F428 07:F418: 72 97     .word $FFFF ; 
 - D 3 - - - 0x01F42A 07:F41A: 02        .byte con_prg_pair + $02   ; 
 ; 17 con_F3D6_17
 - D 3 - - - 0x01F42B 07:F41B: 32 81     .word ofs_006_0x008142_17
@@ -911,7 +911,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F437 07:F427: 71 DA     .word ofs_006_0x01DA81_1B
 - D 3 - - - 0x01F439 07:F429: 03        .byte con_prg_pair + $03   ; 
 ; 1C con_F3D6_1C unused
-- D 3 - - - 0x01F43A 07:F42A: 6B DA     .word $FFFF
+- D 3 - - - 0x01F43A 07:F42A: 6B DA     .word $FFFF ; 
 - D 3 - - - 0x01F43C 07:F42C: 01        .byte con_prg_pair + $01   ; 
 ; 1D con_F3D6_1D
 - D 3 - - - 0x01F43D 07:F42D: 94 84     .word ofs_006_0x0084A4_1D
@@ -926,10 +926,10 @@ tbl_F3D6:
 - D 3 - - - 0x01F446 07:F436: 30 A0     .word ofs_006_0x00A040_20
 - D 3 - - - 0x01F448 07:F438: 02        .byte con_prg_pair + $02   ; 
 ; 21 con_F3D6_21 unused
-- D 3 - - - 0x01F449 07:F439: 0F 80     .word $FFFF
+- D 3 - - - 0x01F449 07:F439: 0F 80     .word $FFFF ; 
 - D 3 - - - 0x01F44B 07:F43B: 02        .byte con_prg_pair + $02   ; 
 ; 22 con_F3D6_22 unused
-- D 3 - - - 0x01F44C 07:F43C: C9 BF     .word $FFFF
+- D 3 - - - 0x01F44C 07:F43C: C9 BF     .word $FFFF ; 
 - D 3 - - - 0x01F44E 07:F43E: 0B        .byte con_prg_pair + $03   ; 
 ; 23 con_F3D6_23
 - D 3 - - - 0x01F44F 07:F43F: 48 A0     .word ofs_006_0x00A058_23
