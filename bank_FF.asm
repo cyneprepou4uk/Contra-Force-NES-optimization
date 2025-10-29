@@ -833,10 +833,10 @@ tbl_F3D6:
 - D 3 - - - 0x01F3E9 07:F3D9: D6 B3     .word ofs_006_0x0133E6_01
 - D 3 - - - 0x01F3EB 07:F3DB: 04        .byte con_prg_pair + $04   ; 
 ; 02 con_F3D6_02 unused, index doesn't exist
-- - - - - - 0x01F3EC 07:F3DC: 0F AA     .word ofs_006_0x012A1F_02_update_sound_engine
+- - - - - - 0x01F3EC 07:F3DC: 0F AA     .word $FFFF ; 
 - - - - - - 0x01F3EE 07:F3DE: 04        .byte con_prg_pair + $04   ; 
 ; 03 con_F3D6_03 unused, index doesn't exist
-- - - - - - 0x01F3EF 07:F3DF: 86 B2     .word ofs_006_0x013296_03
+- - - - - - 0x01F3EF 07:F3DF: 86 B2     .word $FFFF ; 
 - - - - - - 0x01F3F1 07:F3E1: 04        .byte con_prg_pair + $04   ; 
 ; 04 con_F3D6_04 (перемещено)
 - D 3 - - - 0x01F3F2 07:F3E2: 23 F1     .word ofs_006_0x01F133_04
@@ -848,7 +848,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F3F8 07:F3E8: 75 DA     .word $FFFF ; 
 - D 3 - - - 0x01F3FA 07:F3EA: 01        .byte con_prg_pair + $01   ; 
 ; 07 con_F3D6_07 unused, index doesn't exist
-- - - - - - 0x01F3FB 07:F3EB: 01 A0     .word sub_006_0x00C011_07
+- - - - - - 0x01F3FB 07:F3EB: 01 A0     .word $FFFF ; 
 - - - - - - 0x01F3FD 07:F3ED: 05        .byte con_prg_pair + $05   ; 
 ; 08 con_F3D6_08
 - D 3 - - - 0x01F3FE 07:F3EE: E0 F2     .word ofs_006_F2E0_08
@@ -857,7 +857,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F401 07:F3F1: 34 AE     .word ofs_006_0x00AE44_09
 - D 3 - - - 0x01F403 07:F3F3: 02        .byte con_prg_pair + $02   ; 
 ; 0A con_F3D6_0A unused, index doesn't exist
-- - - - - - 0x01F404 07:F3F4: E4 A1     .word ofs_006_0x0161F4_0A
+- - - - - - 0x01F404 07:F3F4: E4 A1     .word $FFFF ; 
 - - - - - - 0x01F406 07:F3F6: 01        .byte con_prg_pair + $01   ; 
 ; 0B con_F3D6_0B
 - D 3 - - - 0x01F407 07:F3F7: F0 AE     .word ofs_006_0x00AF00_0B
@@ -874,11 +874,11 @@ tbl_F3D6:
 ; 0F con_F3D6_0F (перемещено)
 - D 3 - - - 0x01F413 07:F403: EC EE     .word ofs_006_0x01EEFC_0F
 - D 3 - - - 0x01F415 07:F405: 03        .byte con_prg_pair + $12   ; 
-; 10 con_F3D6_10 unused, index doesn't exist, points to FF
-- - - - - - 0x01F416 07:F406: 88 B3     .word $B388 ; 0x00D398
+; 10 con_F3D6_10 unused, index doesn't exist
+- - - - - - 0x01F416 07:F406: 88 B3     .word $FFFF ; 
 - - - - - - 0x01F418 07:F408: 05        .byte con_prg_pair + $05   ; 
 ; 11 con_F3D6_11 unused, index doesn't exist
-- - - - - - 0x01F419 07:F409: 5A B6     .word ofs_006_0x01766A_11
+- - - - - - 0x01F419 07:F409: 5A B6     .word $FFFF ; 
 - - - - - - 0x01F41B 07:F40B: 01        .byte con_prg_pair + $01   ; 
 ; 12 con_F3D6_12
 - D 3 - - - 0x01F41C 07:F40C: 63 A0     .word ofs_006_0x00A073_12

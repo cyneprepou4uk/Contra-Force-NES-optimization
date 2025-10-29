@@ -12,11 +12,9 @@
 .export loc_0x015E9B
 .export sub_0x015F79
 .export sub_0x0161F4
-.export ofs_006_0x0161F4_0A
 .export loc_0x016303
 .export ofs_006_0x016F16_0D
 .export ofs_006_0x01711D_0E
-.export ofs_006_0x01766A_11
 
 
 
@@ -4657,8 +4655,6 @@ C - - - - - 0x0161F0 05:A1E0: A5 63     LDA ram_0063_hi
 C - - - - - 0x0161F2 05:A1E2: 85 02     STA ram_0002_t11_hi
 sub_A1E4:
 sub_0x0161F4:
-ofs_006_0x0161F4_0A:
-; con_F3D6_0A
 C - - - - - 0x0161F4 05:A1E4: A5 02     LDA ram_0002_t11_hi
 C - - - - - 0x0161F6 05:A1E6: 0A        ASL
 C - - - - - 0x0161F7 05:A1E7: A8        TAY
@@ -6860,8 +6856,6 @@ C - - - - - 0x017669 05:B659: 60        RTS
 
 
 sub_B65A:
-ofs_006_0x01766A_11:
-; con_F3D6_11
 ; in
     ; ram_001F_t13_object_index
 ; out

@@ -7,13 +7,10 @@
 
 
 .export sub_0x00C011
-.export sub_006_0x00C011_07
 
 
 
 sub_0x00C011:
-sub_006_0x00C011_07:
-; con_F3D6_07
 C - - - - - 0x00C011 03:A001: 20 DA A0  JSR sub_A0DA
 C - - - - - 0x00C014 03:A004: A5 75     LDA ram_stage
 C - - - - - 0x00C016 03:A006: C9 03     CMP #$03

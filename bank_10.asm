@@ -7,10 +7,8 @@
 
 
 .export sub_0x012A1F_update_sound_engine
-.export ofs_006_0x012A1F_02_update_sound_engine
 .export ofs_006_0x013261_1E
 .export sub_0x013296
-.export ofs_006_0x013296_03
 .export ofs_006_0x0133E6_01
 .export ofs_006_0x013FCB_25
 
@@ -10145,8 +10143,6 @@ _off000_A9FB_67_03:
 
 
 sub_0x012A1F_update_sound_engine:
-ofs_006_0x012A1F_02_update_sound_engine:
-; con_F3D6_02
 C - - - - - 0x012A1F 04:AA0F: AD A1 05  LDA ram_059E_se + $03
 C - - - - - 0x012A22 04:AA12: F0 03     BEQ bra_AA17
 C - - - - - 0x012A24 04:AA14: 20 4A AA  JSR sub_AA4A
@@ -11448,8 +11444,6 @@ bra_B284:
 sub_B286:
 loc_B286:
 sub_0x013296:
-ofs_006_0x013296_03:
-; con_F3D6_03
 C D 1 - - - 0x013296 04:B286: 86 E4     STX ram_00E4_se_t04_save_X
 C - - - - - 0x013298 04:B288: 84 E5     STY ram_00E5_se_t01_save_Y
 C - - - - - 0x01329A 04:B28A: A5 EE     LDA ram_00EE_se
