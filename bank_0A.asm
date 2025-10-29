@@ -593,8 +593,7 @@ C - - - - - 0x01434D 05:833D: B9 0B 8D  LDA tbl_8D0A + $01,Y
 C - - - - - 0x014350 05:8340: 85 03     STA ram_0002_t02_ppu_data + $01
 C - - - - - 0x014352 05:8342: A9 07     LDA #con_DA9D_07
 C - - - - - 0x014354 05:8344: 85 1F     STA ram_001F_t01
-C - - - - - 0x014356 05:8346: A9 0C     LDA #con_F3D6_0C
-C - - - - - 0x014358 05:8348: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x014358 05:8348: 20 B3 F3  JSR sub_0x01DA85
 C - - - - - 0x01435B 05:834B: 4C 02 F7  JMP loc_0x01F712
 
 
@@ -639,8 +638,7 @@ C - - - - - 0x014399 05:8389: 60        RTS
 
 sub_838A:
 C - - - - - 0x01439A 05:838A: 20 DF 83  JSR sub_83DF
-C - - - - - 0x01439D 05:838D: A9 0C     LDA #con_F3D6_0C
-C - - - - - 0x01439F 05:838F: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x01439F 05:838F: 20 B3 F3  JSR sub_0x01DA85
 C - - - - - 0x0143A2 05:8392: 20 8A 82  JSR sub_828A
 C - - - - - 0x0143A5 05:8395: 4C 02 F7  JMP loc_0x01F712
 
@@ -655,8 +653,7 @@ C - - - - - 0x0143AF 05:839F: 20 85 82  JSR sub_8285
 C - - - - - 0x0143B2 05:83A2: 20 DF 83  JSR sub_83DF
 ; bzk optimize, useless LDA
 C - - - - - 0x0143B5 05:83A5: A5 07     LDA ram_0007_t13_useless
-C - - - - - 0x0143B7 05:83A7: A9 0C     LDA #con_F3D6_0C
-C - - - - - 0x0143B9 05:83A9: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x0143B9 05:83A9: 20 B3 F3  JSR sub_0x01DA85
 C - - - - - 0x0143BC 05:83AC: 20 02 F7  JSR sub_0x01F712
 C - - - - - 0x0143BF 05:83AF: 4C 70 FE  JMP loc_0x01FE80
 
@@ -1119,8 +1116,7 @@ C - - - - - 0x014779 05:8769: B9 EB 87  LDA tbl_87EA_credits + $01,Y
 C - - - - - 0x01477C 05:876C: 85 03     STA ram_0002_t02_ppu_data + $01
 C - - - - - 0x01477E 05:876E: A9 06     LDA #con_DA9D_06
 C - - - - - 0x014780 05:8770: 85 1F     STA ram_001F_t01
-                                       ;LDA #con_F3D6_06
-C - - - - - 0x014782 05:8772: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x014782 05:8772: 20 B3 F3  JSR sub_0x01DA85
 C - - - - - 0x014785 05:8775: 4C A4 87  JMP loc_87A4
 bra_8778:
 C - - - - - 0x014788 05:8778: A4 00     LDY ram_0000_t3A
@@ -5526,8 +5522,7 @@ bra_A6E5:
 C - - - - - 0x0166F5 05:A6E5: A9 06     LDA #con_DA9D_06
 bra_A6E7:
 C - - - - - 0x0166F7 05:A6E7: 85 1F     STA ram_001F_t01
-C - - - - - 0x0166F9 05:A6E9: A9 06     LDA #con_F3D6_06
-C - - - - - 0x0166FB 05:A6EB: 4C B3 F3  JMP loc_0x01F3C3_execute_script
+C - - - - - 0x0166FB 05:A6EB: 4C B3 F3  JMP loc_0x01DA85
 
 
 

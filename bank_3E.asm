@@ -41,8 +41,6 @@
 .export ofs_006_0x01D9BC_14
 .export sub_0x01DA7B
 .export ofs_006_0x01DA81_1B
-.export ofs_006_0x01DA85_06
-.export ofs_006_0x01DA85_0C
 .export sub_0x01DAD1_close_ppu_buffer
 .export loc_0x01DAD1_close_ppu_buffer
 .export sub_0x01DDDF
@@ -2161,10 +2159,6 @@ ofs_006_0x01DA81_1B:    ; bzk optimize
 C - - - - - 0x01DA81 07:DA71: A5 1F     LDA ram_001F_t01
 C - - - - - 0x01DA83 07:DA73: D0 09     BNE bra_DA7E
 bra_DA75:
-ofs_006_0x01DA85_06:
-; con_F3D6_06
-ofs_006_0x01DA85_0C:
-; con_F3D6_0C
 .export sub_0x01DA85
 sub_0x01DA85:
 .export loc_0x01DA85
