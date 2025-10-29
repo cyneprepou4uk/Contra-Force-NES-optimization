@@ -108,24 +108,11 @@ bra_A08A_side_view:
 C - - - - - 0x00A09A 02:A08A: BD B4 07  LDA ram_07B4_unk,X
 C - - - - - 0x00A09D 02:A08D: D0 12     BNE bra_A0A1_RTS
 C - - - - - 0x00A09F 02:A08F: 4C 84 AC  JMP loc_AC84
-
-
-
 bra_A09C:
 C - - - - - 0x00A0AC 02:A09C: 20 4F A4  JSR sub_A44F
 C - - - - - 0x00A0AF 02:A09F: 90 0D     BCC bra_A0AE
 bra_A0A1_RTS:
 C - - - - - 0x00A0B1 02:A0A1: 60        RTS
-
-
-
-sub_A0A8:
-C - - - - - 0x00A0B8 02:A0A8: 20 A2 A0  JSR sub_0x00A0B2_07AAx_AND_0F
-C - - - - - 0x00A0BB 02:A0AB: C9 05     CMP #$05
-C - - - - - 0x00A0BD 02:A0AD: 60        RTS
-
-
-
 bra_A0AE:
 C - - - - - 0x00A0BE 02:A0AE: BD 00 06  LDA ram_0600_obj,X
 C - - - - - 0x00A0C1 02:A0B1: 29 FD     AND #$FD
@@ -3534,6 +3521,13 @@ C D 1 - - - 0x00B3FB 02:B3EB: 20 4C 9A  JSR sub_0x009A5C_clear_animation
 C - - - - - 0x00B3FE 02:B3EE: 9D 82 06  STA ram_0682_obj,X
 bra_B3F1_RTS:
 C - - - - - 0x00B401 02:B3F1: 60        RTS
+
+
+
+sub_A0A8:
+C - - - - - 0x00A0B8 02:A0A8: 20 A2 A0  JSR sub_0x00A0B2_07AAx_AND_0F
+C - - - - - 0x00A0BB 02:A0AB: C9 05     CMP #$05
+C - - - - - 0x00A0BD 02:A0AD: 60        RTS
 
 
 
