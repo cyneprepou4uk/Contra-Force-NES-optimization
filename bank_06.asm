@@ -51,7 +51,9 @@ C - - - - - 0x00C05D 03:A04D: 85 7B     STA ram_chr_bank + $04
 C - - - - - 0x00C05F 03:A04F: A9 0C     LDA #$0C
 C - - - - - 0x00C061 03:A051: C5 89     CMP ram_0089
 C - - - - - 0x00C063 03:A053: F0 C8     BEQ bra_A01D_RTS
-C - - - - - 0x00C065 03:A055: 4C 93 A4  JMP loc_A493
+C - - - - - 0x00C065 03:A055: 4C 93 A4  STA ram_0089
+                                        LDY #$02
+                                        JMP loc_0x01F4C1
 
 
 
@@ -758,11 +760,9 @@ C - - - - - 0x00C49D 03:A48D: F0 0B     BEQ bra_A49A_RTS
 loc_A48F:
 C D 1 - - - 0x00C49F 03:A48F: C5 89     CMP ram_0089
 C - - - - - 0x00C4A1 03:A491: F0 07     BEQ bra_A49A_RTS
-loc_A493:
 C D 1 - - - 0x00C4A3 03:A493: 85 89     STA ram_0089
 C - - - - - 0x00C4A5 03:A495: A0 02     LDY #$02
-; bzk optimize, JMP
-C - - - - - 0x00C4A7 03:A497: 20 B1 F4  JSR sub_0x01F4C1
+C - - - - - 0x00C4A7 03:A497: 20 B1 F4  JMP loc_0x01F4C1
 bra_A49A_RTS:
 C - - - - - 0x00C4AA 03:A49A: 60        RTS
 bra_A49B:
