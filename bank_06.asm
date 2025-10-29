@@ -745,7 +745,13 @@ C - - - - - 0x00C483 03:A473: 9D C8 07  STA ram_07C8_unk,X
 bra_A476:
 C - - - - - 0x00C486 03:A476: A4 00     LDY ram_0000_t1E
 loc_A478:
-C D 1 - - - 0x00C488 03:A478: 20 E3 93  JSR sub_0x0093F3
+; 
+C D 1 - - - 0x00C488 03:A478: 20 E3 93  LDA ram_0782_unk,Y
+                                        AND #$7F
+                                        TAX
+                                        LDA tbl_0x009400 - $01,X
+                                        STA ram_0796_unk,Y
+; 
 C - - - - - 0x00C48B 03:A47B: 20 84 A3  LDA ram_0782_unk,Y
                                         AND #$7F
 C - - - - - 0x00C48E 03:A47E: A8        TAY

@@ -4286,6 +4286,134 @@ _off010_B2CA_0A:
 
 
 
+.export sub_0x008BD9
+sub_0x008BD9:
+; in
+    ; ram_000B_t10
+C - - - - - 0x008BD9 02:8BC9: A4 0B     LDY ram_000B_t10
+.export loc_0x008BDB
+loc_0x008BDB:
+C D 0 - - - 0x008BDB 02:8BCB: B9 82 07  LDA ram_0782_unk,Y
+C - - - - - 0x008BDE 02:8BCE: D0 46     BEQ bra_8BD0
+                                        SEC
+                                        RTS
+bra_8BD0:
+.export sub_0x008BE0
+sub_0x008BE0:
+; copy position
+C - - - - - 0x008BE0 02:8BD0: 20 54 91  LDA ram_obj_pos_X,X
+                                        STA ram_obj_pos_X,Y
+                                        LDA ram_obj_pos_Y,X
+                                        STA ram_obj_pos_Y,Y
+.export sub_0x008BE3
+sub_0x008BE3:
+C - - - - - 0x008BE3 02:8BD3: BD 00 06  LDA ram_0600_obj,X
+C - - - - - 0x008BE6 02:8BD6: 99 00 06  STA ram_0600_obj,Y
+; copy speed
+C - - - - - 0x008BE9 02:8BD9: 20 47 91  LDA ram_obj_spd_X,X
+                                        STA ram_obj_spd_X,Y
+                                        LDA ram_obj_spd_Y,X
+                                        STA ram_obj_spd_Y,Y
+; 
+C - - - - - 0x008BEC 02:8BDC: 20 61 91  LDA #$13
+                                        STA ram_0720_obj,Y
+                                        LDA #$00
+                                        STA ram_obj_animation_lo,Y
+                                        STA ram_069C_obj,Y
+                                        STA ram_0736_obj,Y
+; A = 00
+C - - - - - 0x008BEF 02:8BDF: 99 78 07  STA ram_0778_unk,Y
+C - - - - - 0x008BF2 02:8BE2: 99 AA 07  STA ram_07AA_unk,Y
+C - - - - - 0x008BF5 02:8BE5: 99 B4 07  STA ram_07B4_unk,Y
+C - - - - - 0x008BF8 02:8BE8: 99 BE 07  STA ram_07BE_unk,Y
+C - - - - - 0x008BFB 02:8BEB: 99 C8 07  STA ram_07C8_unk,Y
+C - - - - - 0x008BFE 02:8BEE: 99 D2 07  STA ram_07D2_unk,Y
+C - - - - - 0x008C01 02:8BF1: A5 0A     LDA ram_000A_t09
+C - - - - - 0x008C03 02:8BF3: 99 82 07  STA ram_0782_unk,Y
+C - - - - - 0x008C06 02:8BF6: 20 7D 91  LDA ram_06B2_obj,X
+                                        AND #$F0
+C - - - - - 0x008C09 02:8BF9: 99 B2 06  STA ram_06B2_obj,Y
+; 
+C - - - - - 0x008C0C 02:8BFC: 20 E3 93  LDA ram_0782_unk,Y
+                                        AND #$7F
+                                        TAX
+                                        LDA tbl_93F0 - $01,X
+                                        STA ram_0796_unk,Y
+; 
+C - - - - - 0x008C0F 02:8BFF: 4C 84 9B  LDX ram_0053
+                                        CLC
+                                        RTS
+
+
+
+tbl_93F0:
+.export tbl_0x009400
+tbl_0x009400:
+- D 0 - - - 0x009400 02:93F0: 01        .byte $01   ; 01 
+- D 0 - - - 0x009401 02:93F1: 01        .byte $01   ; 02 
+- D 0 - - - 0x009402 02:93F2: 01        .byte $01   ; 03 
+- - - - - - 0x009403 02:93F3: 01        .byte $01   ; 04 
+- D 0 - - - 0x009404 02:93F4: 01        .byte $01   ; 05 
+- D 0 - - - 0x009405 02:93F5: 01        .byte $01   ; 06 
+- - - - - - 0x009406 02:93F6: 01        .byte $01   ; 07 
+- - - - - - 0x009407 02:93F7: 01        .byte $01   ; 08 
+- - - - - - 0x009408 02:93F8: 01        .byte $01   ; 09 
+- D 0 - - - 0x009409 02:93F9: 10        .byte $10   ; 0A 
+- D 0 - - - 0x00940A 02:93FA: 01        .byte $01   ; 0B 
+- D 0 - - - 0x00940B 02:93FB: 01        .byte $01   ; 0C 
+- - - - - - 0x00940C 02:93FC: 01        .byte $01   ; 0D 
+- - - - - - 0x00940D 02:93FD: 01        .byte $01   ; 0E 
+- D 0 - - - 0x00940E 02:93FE: 80        .byte $80   ; 0F 
+- D 0 - - - 0x00940F 02:93FF: 20        .byte $20   ; 10 
+- D 0 - - - 0x009410 02:9400: 80        .byte $80   ; 11 
+- D 0 - - - 0x009411 02:9401: 90        .byte $90   ; 12 
+- D 0 - - - 0x009412 02:9402: 01        .byte $01   ; 13 
+- D 0 - - - 0x009413 02:9403: 01        .byte $01   ; 14 
+- D 0 - - - 0x009414 02:9404: 01        .byte $01   ; 15 
+- - - - - - 0x009415 02:9405: 01        .byte $01   ; 16 
+- D 0 - - - 0x009416 02:9406: 01        .byte $01   ; 17 
+- D 0 - - - 0x009417 02:9407: 01        .byte $01   ; 18 
+- D 0 - - - 0x009418 02:9408: 01        .byte $01   ; 19 
+- D 0 - - - 0x009419 02:9409: 01        .byte $01   ; 1A 
+- D 0 - - - 0x00941A 02:940A: 01        .byte $01   ; 1B 
+- D 0 - - - 0x00941B 02:940B: 01        .byte $01   ; 1C 
+- - - - - - 0x00941C 02:940C: 01        .byte $01   ; 1D 
+- D 0 - - - 0x00941D 02:940D: 01        .byte $01   ; 1E 
+- D 0 - - - 0x00941E 02:940E: 01        .byte $01   ; 1F 
+- D 0 - - - 0x00941F 02:940F: 01        .byte $01   ; 20 
+- D 0 - - - 0x009420 02:9410: 01        .byte $01   ; 21 
+- D 0 - - - 0x009421 02:9411: 01        .byte $01   ; 22 
+- D 0 - - - 0x009422 02:9412: 01        .byte $01   ; 23 
+- D 0 - - - 0x009423 02:9413: 01        .byte $01   ; 24 
+- D 0 - - - 0x009424 02:9414: 01        .byte $01   ; 25 
+- D 0 - - - 0x009425 02:9415: 01        .byte $01   ; 26 
+- D 0 - - - 0x009426 02:9416: 01        .byte $01   ; 27 
+- - - - - - 0x009427 02:9417: 01        .byte $01   ; 28 
+- - - - - - 0x009428 02:9418: 01        .byte $01   ; 29 
+- D 0 - - - 0x009429 02:9419: 01        .byte $01   ; 2A 
+- D 0 - - - 0x00942A 02:941A: 01        .byte $01   ; 2B 
+- - - - - - 0x00942B 02:941B: 01        .byte $01   ; 2C 
+- D 0 - - - 0x00942C 02:941C: 01        .byte $01   ; 2D 
+- - - - - - 0x00942D 02:941D: 01        .byte $01   ; 2E 
+- - - - - - 0x00942E 02:941E: 01        .byte $01   ; 2F 
+- D 0 - - - 0x00942F 02:941F: 01        .byte $01   ; 30 
+- D 0 - - - 0x009430 02:9420: 01        .byte $01   ; 31 
+- D 0 - - - 0x009431 02:9421: 01        .byte $01   ; 32 
+- D 0 - - - 0x009432 02:9422: 50        .byte $50   ; 33 
+- D 0 - - - 0x009433 02:9423: 01        .byte $01   ; 34 
+- - - - - - 0x009434 02:9424: 01        .byte $01   ; 35 
+- - - - - - 0x009435 02:9425: 01        .byte $01   ; 36 
+- D 0 - - - 0x009436 02:9426: 01        .byte $01   ; 37 
+- D 0 - - - 0x009437 02:9427: 01        .byte $01   ; 38 
+- D 0 - - - 0x009438 02:9428: 01        .byte $01   ; 39 
+- D 0 - - - 0x009439 02:9429: 01        .byte $01   ; 3A 
+- D 0 - - - 0x00943A 02:942A: 01        .byte $01   ; 3B 
+- - - - - - 0x00943B 02:942B: 01        .byte $01   ; 3C 
+- - - - - - 0x00943C 02:942C: 01        .byte $01   ; 3D 
+- - - - - - 0x00943D 02:942D: 01        .byte $01   ; 3E 
+
+
+
 .out .sprintf("Free bytes in bank 3E: 0x%04X [%d]", ($8000 - *), ($8000 - *))
 
 

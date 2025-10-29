@@ -291,7 +291,11 @@ tbl_857A:
 ofs_017_0x00858E_07:
 C - - J - - 0x00858E 02:857E: A5 0A     LDA ram_000A_t03
 C - - - - - 0x008590 02:8580: 30 03     BMI bra_8585
-C - - - - - 0x008592 02:8582: 4C 10 8C  JMP loc_0x008C20
+C - - - - - 0x008592 02:8582: 4C 10 8C  SEC
+                                        SBC #$01
+                                        STA ram_0778_unk,X
+                                        SEC
+                                        RTS
 bra_8585:
 C - - - - - 0x008595 02:8585: BD C8 07  LDA ram_07C8_unk,X
 C - - - - - 0x008598 02:8588: 9D 82 07  STA ram_0782_unk,X
@@ -1713,8 +1717,13 @@ C - - - - - 0x008C15 02:8C05: BC D2 07  LDY ram_07D2_unk,X
 C - - - - - 0x008C18 02:8C08: 18        CLC
 C - - - - - 0x008C19 02:8C09: 79 18 8C  ADC tbl_8C18,Y
 C - - - - - 0x008C1C 02:8C0C: A8        TAY
+; bzk optimize, подготовить значения без последующего уменьшения
 C - - - - - 0x008C1D 02:8C0D: B9 21 8C  LDA tbl_8C21,Y
-                                        JMP loc_0x008C20
+                                        SEC
+                                        SBC #$01
+                                        STA ram_0778_unk,X
+                                        SEC
+                                        RTS
 
 
 
@@ -2594,8 +2603,14 @@ tbl_AB03:
 
 
 ofs_017_0x00EB19_4B:
+; bzk optimize
 C - - J - - 0x00EB19 03:AB09: A0 02     LDY #$02
-C - - - - - 0x00EB1B 03:AB0B: 20 54 91  JSR sub_0x009164_copy_position
+; copy position
+C - - - - - 0x00EB1B 03:AB0B: 20 54 91  LDA ram_obj_pos_X,X
+                                        STA ram_obj_pos_X,Y
+                                        LDA ram_obj_pos_Y,X
+                                        STA ram_obj_pos_Y,Y
+; 
 C - - - - - 0x00EB1E 03:AB0E: A5 8C     LDA ram_008C
 C - - - - - 0x00EB20 03:AB10: C9 05     CMP #$05
 C - - - - - 0x00EB22 03:AB12: F0 1B     BEQ bra_AB2F
