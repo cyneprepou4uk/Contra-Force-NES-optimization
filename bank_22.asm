@@ -1411,6 +1411,10 @@ C - - - - - 0x00E577 03:A567: 4C 5F A3  LDA ram_000A_t03
 
 
 sub_A56A:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
 C - - - - - 0x00E57A 03:A56A: B9 82 07  LDA ram_0782_unk,Y
 C - - - - - 0x00E57D 03:A56D: F0 BF     BEQ bra_A573
 C - - - - - 0x00E57F 03:A56F: 20 FE 94  JSR sub_0x00950E
@@ -1545,6 +1549,10 @@ bra_A5FB:
 
 
 sub_A5FD:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
 C - - - - - 0x00E60D 03:A5FD: B9 82 07  LDA ram_0782_unk,Y
 C - - - - - 0x00E610 03:A600: F0 A1     BEQ bra_A606
 C - - - - - 0x00E612 03:A602: 20 F4 94  JSR sub_0x009504
@@ -1636,6 +1644,10 @@ bra_A614:
 
 
 sub_A616:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
 C - - - - - 0x00E626 03:A616: B9 82 07  LDA ram_0782_unk,Y
 C - - - - - 0x00E629 03:A619: F0 3F     BEQ bra_A65A
 C - - - - - 0x00E62B 03:A61B: B9 68 06  LDA ram_obj_pos_Y,Y
@@ -1974,6 +1986,7 @@ bra_A6A3:
 
 
 sub_A6C9:
+; bzk optimize, C на выходе не проверяется
 C - - - - - 0x00E6D9 03:A6C9: BC AA 07  LDY ram_07AA_unk,X
 C - - - - - 0x00E6DC 03:A6CC: B9 68 06  LDA ram_obj_pos_Y,Y
 C - - - - - 0x00E6DF 03:A6CF: DD 68 06  CMP ram_obj_pos_Y,X
@@ -2699,6 +2712,7 @@ sub_91B1:
 C - - - - - 0x0091C1 02:91B1: A2 03     LDX #$03
 C - - - - - 0x0091C3 02:91B3: A9 00     LDA #$00
 bra_91B5_loop:
+; bzk optimize, распаковать цикл
 C - - - - - 0x0091C5 02:91B5: 9D 46 03  STA ram_0346,X
 C - - - - - 0x0091C8 02:91B8: CA        DEX
 C - - - - - 0x0091C9 02:91B9: 10 FA     BPL bra_91B5_loop
@@ -2759,7 +2773,7 @@ bra_AB73:
 C - - - - - 0x00EB83 03:AB73: A5 AF     LDA ram_00AF_lo
 C - - - - - 0x00EB85 03:AB75: C9 39     CMP #$39
 C - - - - - 0x00EB87 03:AB77: 90 1A     BCC bra_AB93
-C - - - - - 0x00EB89 03:AB79: 4C F5 A8  JMP loc_A8F5
+C - - - - - 0x00EB89 03:AB79: 4C F5 A8  JMP loc_A8F5    ; out C = 1
 bra_AB7C:
 C - - - - - 0x00EB8C 03:AB7C: A5 75     LDA ram_stage
 C - - - - - 0x00EB8E 03:AB7E: C9 04     CMP #$04
@@ -3185,6 +3199,7 @@ C - - - - - 0x008D67 02:8D57: 38        SEC
 C - - - - - 0x008D68 02:8D58: 60        RTS
 bra_8D59:
 sub_8D59:
+; bzk optimize, INC,X + LDA,X + AND 03 + STA,X
 C - - - - - 0x008D69 02:8D59: BD B4 07  LDA ram_07B4_unk,X
 C - - - - - 0x008D6C 02:8D5C: 18        CLC
 C - - - - - 0x008D6D 02:8D5D: 69 01     ADC #$01
@@ -3240,6 +3255,10 @@ C - - - - - 0x00EDF8 03:ADE8: 4C 61 A3  JMP loc_0x00E371
 
 
 sub_ADEB:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
 C - - - - - 0x00EDFB 03:ADEB: B9 82 07  LDA ram_0782_unk,Y
 C - - - - - 0x00EDFE 03:ADEE: F0 13     BEQ bra_AE03
 C - - - - - 0x00EE00 03:ADF0: BD 4E 06  LDA ram_obj_pos_X,X

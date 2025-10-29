@@ -511,9 +511,9 @@ sub_D1A8_unpack_static_screen:
 sub_0x01D1B8_unpack_static_screen:
 loc_0x01D1B8_unpack_static_screen:
 ofs_006_0x01D1B8_19_unpack_static_screen___pause:
-; con_F3D6_19
+; con_F3D6_unpack_screen___pause
 ofs_006_0x01D1B8_1A_unpack_static_screen___cutscene_pause:
-; con_F3D6_1A
+; con_F3D6_unpack_screen___cutscene_pause
                                         LDA ram_prg_banks_pair
                                         PHA
                                         LDA #con_prg_pair + $0B

@@ -317,7 +317,7 @@ ofs_020_8271_0A:
 C - - J - - 0x014281 05:8271: A9 1D     LDA #con_chr_pair + $1D
 C - - - - - 0x014283 05:8273: 20 48 F4  JSR sub_0x01F458_select_bg_chr_bank_pair
 C - - - - - 0x014286 05:8276: A2 08     LDX #con_D22A_cutscene_phone
-C - - - - - 0x014288 05:8278: A9 1A     LDA #con_F3D6_1A
+C - - - - - 0x014288 05:8278: A9 1A     LDA #con_F3D6_unpack_screen___cutscene_pause
 C - - - - - 0x01428A 05:827A: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x01428D 05:827D: 4C 9E 82  JMP loc_829E
 
@@ -4984,7 +4984,7 @@ C - - - - - 0x01640A 05:A3FA: 85 1E     STA ram_001E_t11
 C - - - - - 0x01640C 05:A3FC: 20 93 FE  JSR sub_0x01FEA3_disable_rendering
 C - - - - - 0x01640F 05:A3FF: 20 97 D1  JSR sub_0x01D1A7_clear_nametables
 C - - - - - 0x016412 05:A402: A2 0C     LDX #con_D22A_pause
-C - - - - - 0x016414 05:A404: A9 19     LDA #con_F3D6_19
+C - - - - - 0x016414 05:A404: A9 19     LDA #con_F3D6_unpack_screen___pause
 C - - - - - 0x016416 05:A406: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x016419 05:A409: A9 00     LDA #$00
 C - - - - - 0x01641B 05:A40B: 85 17     STA ram_0017_t02
