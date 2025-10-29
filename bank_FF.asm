@@ -732,8 +732,7 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $14   ; 
 - D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $15   ; 
                                         .byte con_prg_bank + $16   ; 
-; 09 unused !!!
-; используется в 0x01F436, но ни на что не влияет
+; 09 unused
 - D 3 - - - 0x01F3B5 07:F3A5: 0C        .byte con_prg_bank + $7F   ; 
 - D 3 - - - 0x01F3B6 07:F3A6: 03        .byte con_prg_bank + $7F   ; 
                                         .byte con_prg_bank + $7F   ; 
@@ -886,12 +885,12 @@ tbl_F3D6:
 ; 18 con_F3D6_18
 - D 3 - - - 0x01F42E 07:F41E: D3 A6     .word ofs_006_0x00A6E3_18
 - D 3 - - - 0x01F430 07:F420: 02        .byte con_prg_pair + $02   ; 
-; 19 con_F3D6_unpack_screen___pause
-- D 3 - - - 0x01F431 07:F421: A8 D1     .word ofs_006_0x01D1B8_19_unpack_static_screen___pause
-- D 3 - - - 0x01F433 07:F423: 0B        .byte con_prg_pair + $03   ; 
-; 1A con_F3D6_unpack_screen___cutscene_pause
-- D 3 - - - 0x01F434 07:F424: A8 D1     .word ofs_006_0x01D1B8_1A_unpack_static_screen___cutscene_pause
-- D 3 - - - 0x01F436 07:F426: 09        .byte con_prg_pair + $09   ; 
+; 19 con_F3D6_19
+- D 3 - - - 0x01F431 07:F421: A8 D1     .word $FFFF ; 
+- D 3 - - - 0x01F433 07:F423: 0B        .byte $FF   ; 
+; 1A con_F3D6_1A
+- D 3 - - - 0x01F434 07:F424: A8 D1     .word $FFFF ; 
+- D 3 - - - 0x01F436 07:F426: 09        .byte $FF   ; 
 ; 1B con_F3D6_1B
 - D 3 - - - 0x01F437 07:F427: 71 DA     .word ofs_006_0x01DA81_1B
 - D 3 - - - 0x01F439 07:F429: 03        .byte con_prg_pair + $03   ; 
