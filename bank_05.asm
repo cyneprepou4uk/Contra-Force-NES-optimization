@@ -94,7 +94,7 @@ C - - - - - 0x00A07C 02:A06C: 20 40 F6  JSR sub_0x01F650
 C - - - - - 0x00A07F 02:A06F: BD C8 07  LDA ram_07C8_unk,X
 C - - - - - 0x00A082 02:A072: 29 20     AND #$20
 C - - - - - 0x00A084 02:A074: F0 26     BEQ bra_A09C
-C - - - - - 0x00A086 02:A076: A9 0D     LDA #con_F3D6_0D
+C - - - - - 0x00A086 02:A076: A9 0D     LDY #con_F3D6_0D
 C - - - - - 0x00A088 02:A078: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x00A08B 02:A07B: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x00A08E 02:A07E: F0 0A     BEQ bra_A08A_side_view
@@ -465,7 +465,7 @@ C - - - - - 0x00A301 02:A2F1: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A304 02:A2F4: 29 F0     AND #$F0
 C - - - - - 0x00A306 02:A2F6: C9 30     CMP #$30
 C - - - - - 0x00A308 02:A2F8: 90 08     BCC bra_A302
-C - - - - - 0x00A30A 02:A2FA: A9 0E     LDA #con_F3D6_0E
+C - - - - - 0x00A30A 02:A2FA: A9 0E     LDY #con_F3D6_0E
 C - - - - - 0x00A30C 02:A2FC: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x00A30F 02:A2FF: 4C 14 A3  JMP loc_A314
 bra_A302:
@@ -1541,7 +1541,7 @@ C - - - - - 0x00A92B 02:A91B: B9 1D AB  LDA tbl_AB1D,Y
 C - - - - - 0x00A92E 02:A91E: C9 22     CMP #$22
 C - - - - - 0x00A930 02:A920: D0 18     BNE bra_A93A
 C - - - - - 0x00A932 02:A922: 85 08     STA ram_0008_t05
-C - - - - - 0x00A934 02:A924: A9 25     LDA #con_F3D6_25
+C - - - - - 0x00A934 02:A924: A9 25     LDY #con_F3D6_25
 C - - - - - 0x00A936 02:A926: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x00A939 02:A929: 20 A2 A0  LDA ram_07AA_unk,X
                                         AND #$0F

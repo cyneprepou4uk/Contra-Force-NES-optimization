@@ -108,7 +108,7 @@ C - - - - - 0x008030 02:8020: D0 F7     BNE bra_8053_RTS
 C - - - - - 0x008032 02:8022: A5 23     LDA ram_frm_cnt
 C - - - - - 0x008034 02:8024: 29 03     AND #$03
 C - - - - - 0x008036 02:8026: D0 2B     BNE bra_8053_RTS
-C - - - - - 0x008038 02:8028: A9 0B     LDA #con_F3D6_0B
+C - - - - - 0x008038 02:8028: A9 0B     LDY #con_F3D6_0B
 C - - - - - 0x00803A 02:802A: 4C B3 F3  JMP loc_0x01F3C3_execute_script
 bra_802D_01_stage_2:
 C - - - - - 0x00803D 02:802D: E0 0A     CPX #$0A
@@ -1764,7 +1764,7 @@ C - - - - - 0x008FD8 02:8FC8: BD 68 06  LDA ram_obj_pos_Y,X
 C - - - - - 0x008FDB 02:8FCB: 18        CLC
 C - - - - - 0x008FDC 02:8FCC: 65 01     ADC ram_0001_t20_pos_Y
 C - - - - - 0x008FDE 02:8FCE: 85 01     STA ram_0001_t18_pos_Y
-C - - - - - 0x008FE0 02:8FD0: A9 00     LDA #con_F3D6_00
+C - - - - - 0x008FE0 02:8FD0: A9 00     LDY #con_F3D6_00
 C - - - - - 0x008FE2 02:8FD2: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x008FE5 02:8FD5: A5 01     LDA ram_0001_t15_table_index
 C - - - - - 0x008FE7 02:8FD7: F0 08     BEQ bra_8FE1
@@ -2661,7 +2661,7 @@ sub_0x00961A:
 C - - - - - 0x00961A 02:960A: A4 02     LDY ram_0002_t18_array_index
 C - - - - - 0x00961C 02:960C: B9 00 04  LDA ram_0400,Y
 C - - - - - 0x00961F 02:960F: 85 1B     STA ram_001B_t04
-C - - - - - 0x009621 02:9611: A9 04     LDA #con_F3D6_04
+C - - - - - 0x009621 02:9611: A9 04     LDY #con_F3D6_04
 C - - - - - 0x009623 02:9613: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x009626 02:9616: A4 02     LDY ram_0002_t18_array_index
 C - - - - - 0x009628 02:9618: B9 00 04  LDA ram_0400,Y

@@ -588,7 +588,7 @@ C - - - - - 0x01756E 05:B55E: B9 86 B6  LDA tbl_B685 + $01,Y
 C - - - - - 0x017571 05:B561: 18        CLC
 C - - - - - 0x017572 05:B562: 7D 68 06  ADC ram_obj_pos_Y,X
 C - - - - - 0x017575 05:B565: 85 01     STA ram_0001_t18_pos_Y
-C - - - - - 0x017577 05:B567: A9 00     LDA #con_F3D6_00
+C - - - - - 0x017577 05:B567: A9 00     LDY #con_F3D6_00
 C - - - - - 0x017579 05:B569: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x01757C 05:B56C: A4 0F     LDY ram_000F_t05_table_index
 C - - - - - 0x01757E 05:B56E: B9 AE F5  LDA tbl_0x01F5BE,Y
@@ -668,7 +668,7 @@ tbl_B5C5:
 
 
 sub_B3E2:
-C - - - - - 0x0173F2 05:B3E2: A9 1F     LDA #con_F3D6_1F
+C - - - - - 0x0173F2 05:B3E2: A9 1F     LDY #con_F3D6_1F
 C - - - - - 0x0173F4 05:B3E4: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x0173F7 05:B3E7: A5 6D     LDA ram_006D
 C - - - - - 0x0173F9 05:B3E9: 18        CLC
@@ -793,7 +793,7 @@ C - - - - - 0x01766C 05:B65C: B9 4E 06  LDA ram_obj_pos_X,Y
 C - - - - - 0x01766F 05:B65F: 85 90     STA ram_0090_pos_X
 C - - - - - 0x017671 05:B661: B9 68 06  LDA ram_obj_pos_Y,Y
 C - - - - - 0x017674 05:B664: 85 91     STA ram_0091_pos_Y
-C - - - - - 0x017676 05:B666: A9 1F     LDA #con_F3D6_1F
+C - - - - - 0x017676 05:B666: A9 1F     LDY #con_F3D6_1F
 C - - - - - 0x017678 05:B668: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x01767B 05:B66B: A5 6D     LDA ram_006D
 C - - - - - 0x01767D 05:B66D: 18        CLC

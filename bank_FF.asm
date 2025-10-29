@@ -784,19 +784,14 @@ sub_F3B3_execute_script:
 loc_0x01F3C3_execute_script:
 sub_0x01F3C3_execute_script:
 ; in
-    ; A = con_F3D6
-C D 3 - - - 0x01F3C3 07:F3B3: 85 37     STA ram_0037_t02
-; * 03
-C - - - - - 0x01F3C5 07:F3B5: 0A        ASL
-C - - - - - 0x01F3C6 07:F3B6: 65 37     ADC ram_0037_t02
-C - - - - - 0x01F3C8 07:F3B8: A8        TAY
+    ; Y = con_F3D6
 C - - - - - 0x01F3C9 07:F3B9: A5 36     LDA ram_prg_banks_pair
 C - - - - - 0x01F3CB 07:F3BB: 48        PHA
-C - - - - - 0x01F3CC 07:F3BC: B9 D6 F3  LDA tbl_F3D6,Y
+C - - - - - 0x01F3CC 07:F3BC: B9 D6 F3  LDA tbl_F3D6_addr_lo,Y
 C - - - - - 0x01F3CF 07:F3BF: 85 37     STA ram_0037_t01_jmp
-C - - - - - 0x01F3D1 07:F3C1: B9 D7 F3  LDA tbl_F3D6 + $01,Y
+C - - - - - 0x01F3D1 07:F3C1: B9 D7 F3  LDA tbl_F3D6_addr_hi,Y
 C - - - - - 0x01F3D4 07:F3C4: 85 38     STA ram_0037_t01_jmp + $01
-C - - - - - 0x01F3D6 07:F3C6: B9 D8 F3  LDA tbl_F3D6 + $02,Y
+C - - - - - 0x01F3D6 07:F3C6: B9 D8 F3  LDA tbl_F3D6_prg_pair,Y
 C - - - - - 0x01F3D9 07:F3C9: 20 4C F3  JSR sub_F34C_prg_bankswitch
 C - - - - - 0x01F3DC 07:F3CC: 20 D3 F3  JSR sub_F3D3_execute_indirect_jump_0037
 C - - - - - 0x01F3DF 07:F3CF: 68        PLA
@@ -809,127 +804,139 @@ C - - - - - 0x01F3E3 07:F3D3: 6C 37 00  JMP (ram_0037_t01_jmp)
 
 
 
-tbl_F3D6:
-; 00 con_F3D6_00 (перемещено)
-- D 3 - - - 0x01F3E6 07:F3D6: 54 EE     .word ofs_006_0x01EE64_00
-- D 3 - - - 0x01F3E8 07:F3D8: 03        .byte con_prg_pair + $12   ; 
-; 01 con_F3D6_01
-- D 3 - - - 0x01F3E9 07:F3D9: D6 B3     .word ofs_006_0x0133E6_01
-- D 3 - - - 0x01F3EB 07:F3DB: 04        .byte con_prg_pair + $04   ; 
-; 02 con_F3D6_02 unused, index doesn't exist
-- - - - - - 0x01F3EC 07:F3DC: 0F AA     .word $FFFF ; 
-- - - - - - 0x01F3EE 07:F3DE: 04        .byte $FF   ; 
-; 03 con_F3D6_03 unused, index doesn't exist
-- - - - - - 0x01F3EF 07:F3DF: 86 B2     .word $FFFF ; 
-- - - - - - 0x01F3F1 07:F3E1: 04        .byte $FF   ; 
-; 04 con_F3D6_04 (перемещено)
-- D 3 - - - 0x01F3F2 07:F3E2: 23 F1     .word ofs_006_0x01F133_04
-- D 3 - - - 0x01F3F4 07:F3E4: 03        .byte con_prg_pair + $12   ; 
-; 05 con_F3D6_05 unused
-- D 3 - - - 0x01F3F5 07:F3E5: 75 DA     .word $FFFF ; 
-- D 3 - - - 0x01F3F7 07:F3E7: 03        .byte $FF   ; 
-; 06 con_F3D6_06 unused
-- D 3 - - - 0x01F3F8 07:F3E8: 75 DA     .word $FFFF ; 
-- D 3 - - - 0x01F3FA 07:F3EA: 01        .byte $FF   ; 
-; 07 con_F3D6_07 unused, index doesn't exist
-- - - - - - 0x01F3FB 07:F3EB: 01 A0     .word $FFFF ; 
-- - - - - - 0x01F3FD 07:F3ED: 05        .byte $FF   ; 
-; 08 con_F3D6_08 unused
-- D 3 - - - 0x01F3FE 07:F3EE: E0 F2     .word $FFFF ; 
-- D 3 - - - 0x01F400 07:F3F0: 03        .byte $FF   ; 
-; 09 con_F3D6_09 unused
-- D 3 - - - 0x01F401 07:F3F1: 34 AE     .word $FFFF ; 
-- D 3 - - - 0x01F403 07:F3F3: 02        .byte $FF   ; 
-; 0A con_F3D6_0A unused, index doesn't exist
-- - - - - - 0x01F404 07:F3F4: E4 A1     .word $FFFF ; 
-- - - - - - 0x01F406 07:F3F6: 01        .byte $FF   ; 
-; 0B con_F3D6_0B
-- D 3 - - - 0x01F407 07:F3F7: F0 AE     .word ofs_006_0x00AF00_0B
-- D 3 - - - 0x01F409 07:F3F9: 02        .byte con_prg_pair + $02   ; 
-; 0C con_F3D6_0C unused
-- D 3 - - - 0x01F40A 07:F3FA: 75 DA     .word $FFFF ; 
-- D 3 - - - 0x01F40C 07:F3FC: 07        .byte $FF   ; 
-; 0D con_F3D6_0D
-- D 3 - - - 0x01F40D 07:F3FD: 06 AF     .word ofs_006_0x016F16_0D
-- D 3 - - - 0x01F40F 07:F3FF: 01        .byte con_prg_pair + $01   ; 
-; 0E con_F3D6_0E (перемещено)
-- D 3 - - - 0x01F410 07:F400: 0D B1     .word ofs_006_0x01711D_0E
-- D 3 - - - 0x01F412 07:F402: 01        .byte con_prg_pair + $13   ; 
-; 0F con_F3D6_0F (перемещено)
-- D 3 - - - 0x01F413 07:F403: EC EE     .word ofs_006_0x01EEFC_0F
-- D 3 - - - 0x01F415 07:F405: 03        .byte con_prg_pair + $12   ; 
-; 10 con_F3D6_10 unused, index doesn't exist
-- - - - - - 0x01F416 07:F406: 88 B3     .word $FFFF ; 
-- - - - - - 0x01F418 07:F408: 05        .byte $FF   ; 
-; 11 con_F3D6_11 unused, index doesn't exist
-- - - - - - 0x01F419 07:F409: 5A B6     .word $FFFF ; 
-- - - - - - 0x01F41B 07:F40B: 01        .byte $FF   ; 
-; 12 con_F3D6_12
-- D 3 - - - 0x01F41C 07:F40C: 63 A0     .word ofs_006_0x00A073_12
-- D 3 - - - 0x01F41E 07:F40E: 02        .byte con_prg_pair + $02   ; 
-; 13 con_F3D6_13
-- D 3 - - - 0x01F41F 07:F40F: 38 A5     .word ofs_006_0x00A548_13
-- D 3 - - - 0x01F421 07:F411: 02        .byte con_prg_pair + $02   ; 
-; 14 con_F3D6_14
-- D 3 - - - 0x01F422 07:F412: AC D9     .word ofs_006_0x01D9BC_14
-- D 3 - - - 0x01F424 07:F414: 01        .byte con_prg_pair + $01   ; 
-; 15 con_F3D6_15
-- D 3 - - - 0x01F425 07:F415: 7D BA     .word ofs_006_0x003A8D_15
-- D 3 - - - 0x01F427 07:F417: 00        .byte con_prg_pair + $07   ; 
-; 16 con_F3D6_16 unused
-- D 3 - - - 0x01F428 07:F418: 72 97     .word $FFFF ; 
-- D 3 - - - 0x01F42A 07:F41A: 02        .byte $FF   ; 
-; 17 con_F3D6_17
-- D 3 - - - 0x01F42B 07:F41B: 32 81     .word ofs_006_0x008142_17
-- D 3 - - - 0x01F42D 07:F41D: 02        .byte con_prg_pair + $02   ; 
-; 18 con_F3D6_18
-- D 3 - - - 0x01F42E 07:F41E: D3 A6     .word ofs_006_0x00A6E3_18
-- D 3 - - - 0x01F430 07:F420: 02        .byte con_prg_pair + $02   ; 
-; 19 con_F3D6_19
-- D 3 - - - 0x01F431 07:F421: A8 D1     .word $FFFF ; 
-- D 3 - - - 0x01F433 07:F423: 0B        .byte $FF   ; 
-; 1A con_F3D6_1A
-- D 3 - - - 0x01F434 07:F424: A8 D1     .word $FFFF ; 
-- D 3 - - - 0x01F436 07:F426: 09        .byte $FF   ; 
-; 1B con_F3D6_1B
-- D 3 - - - 0x01F437 07:F427: 71 DA     .word ofs_006_0x01DA81_1B
-- D 3 - - - 0x01F439 07:F429: 03        .byte con_prg_pair + $03   ; 
-; 1C con_F3D6_1C unused
-- D 3 - - - 0x01F43A 07:F42A: 6B DA     .word $FFFF ; 
-- D 3 - - - 0x01F43C 07:F42C: 01        .byte $FF   ; 
-; 1D con_F3D6_1D
-- D 3 - - - 0x01F43D 07:F42D: 94 84     .word ofs_006_0x0084A4_1D
-- D 3 - - - 0x01F43F 07:F42F: 02        .byte con_prg_pair + $02   ; 
-; 1E con_F3D6_1E
-- D 3 - - - 0x01F440 07:F430: 51 B2     .word ofs_006_0x013261_1E
-- D 3 - - - 0x01F442 07:F432: 04        .byte con_prg_pair + $04   ; 
-; 1F con_F3D6_1F
-- D 3 - - - 0x01F443 07:F433: 09 92     .word ofs_006_0x009219_1F
-- D 3 - - - 0x01F445 07:F435: 02        .byte con_prg_pair + $02   ; 
-; 20 con_F3D6_20
-- D 3 - - - 0x01F446 07:F436: 30 A0     .word ofs_006_0x00A040_20
-- D 3 - - - 0x01F448 07:F438: 02        .byte con_prg_pair + $02   ; 
-; 21 con_F3D6_21 unused
-- D 3 - - - 0x01F449 07:F439: 0F 80     .word $FFFF ; 
-- D 3 - - - 0x01F44B 07:F43B: 02        .byte $FF   ; 
-; 22 con_F3D6_22 unused
-- D 3 - - - 0x01F44C 07:F43C: C9 BF     .word $FFFF ; 
-- D 3 - - - 0x01F44E 07:F43E: 0B        .byte $FF   ; 
-; 23 con_F3D6_23
-- D 3 - - - 0x01F44F 07:F43F: 48 A0     .word ofs_006_0x00A058_23
-- D 3 - - - 0x01F451 07:F441: 02        .byte con_prg_pair + $02   ; 
-; 24 con_F3D6_24
-- D 3 - - - 0x01F452 07:F442: 83 97     .word ofs_006_0x009793_24
-- D 3 - - - 0x01F454 07:F444: 05        .byte con_prg_pair + $0A   ; 
-; 25 con_F3D6_25
-- D 3 - - - 0x01F455 07:F445: BB BF     .word ofs_006_0x013FCB_25
-- D 3 - - - 0x01F457 07:F447: 0F        .byte con_prg_pair + $04   ; 
-; 26 con_F3D6_26 new (перемещено)
-                                        .word ofs_006_0x01DAA5_26
-                                        .byte con_prg_pair + $12   ; 
-; 27 con_F3D6_27 new (перемещено)
-                                        .word ofs_006_0x01FC36_27
-                                        .byte con_prg_pair + $12   ; 
+tbl_F3D6_addr_lo:
+; 0x01F3E6
+; see con_F3D6
+                                        .byte < ofs_006_0x01EE64_00
+                                        .byte < ofs_006_0x0133E6_01
+                                        .byte < $FFFF ;          02 
+                                        .byte < $FFFF ;          03 
+                                        .byte < ofs_006_0x01F133_04
+                                        .byte < $FFFF ;          05 
+                                        .byte < $FFFF ;          06 
+                                        .byte < $FFFF ;          07 
+                                        .byte < $FFFF ;          08 
+                                        .byte < $FFFF ;          09 
+                                        .byte < $FFFF ;          0A 
+                                        .byte < ofs_006_0x00AF00_0B
+                                        .byte < $FFFF ;          0C 
+                                        .byte < ofs_006_0x016F16_0D
+                                        .byte < ofs_006_0x01711D_0E
+                                        .byte < ofs_006_0x01EEFC_0F
+                                        .byte < $FFFF ;          10 
+                                        .byte < $FFFF ;          11 
+                                        .byte < ofs_006_0x00A073_12
+                                        .byte < ofs_006_0x00A548_13
+                                        .byte < ofs_006_0x01D9BC_14
+                                        .byte < ofs_006_0x003A8D_15
+                                        .byte < $FFFF ;          16 
+                                        .byte < ofs_006_0x008142_17
+                                        .byte < ofs_006_0x00A6E3_18
+                                        .byte < $FFFF ;          19 
+                                        .byte < $FFFF ;          1A 
+                                        .byte < ofs_006_0x01DA81_1B
+                                        .byte < $FFFF ;          1C 
+                                        .byte < ofs_006_0x0084A4_1D
+                                        .byte < ofs_006_0x013261_1E
+                                        .byte < ofs_006_0x009219_1F
+                                        .byte < ofs_006_0x00A040_20
+                                        .byte < $FFFF ;          21 
+                                        .byte < $FFFF ;          22 
+                                        .byte < ofs_006_0x00A058_23
+                                        .byte < ofs_006_0x009793_24
+                                        .byte < ofs_006_0x013FCB_25
+                                        .byte < ofs_006_0x01DAA5_26
+                                        .byte < ofs_006_0x01FC36_27
+
+
+
+tbl_F3D6_addr_hi:
+; see con_F3D6
+                                        .byte > ofs_006_0x01EE64_00
+                                        .byte > ofs_006_0x0133E6_01
+                                        .byte > $FFFF ;          02 
+                                        .byte > $FFFF ;          03 
+                                        .byte > ofs_006_0x01F133_04
+                                        .byte > $FFFF ;          05 
+                                        .byte > $FFFF ;          06 
+                                        .byte > $FFFF ;          07 
+                                        .byte > $FFFF ;          08 
+                                        .byte > $FFFF ;          09 
+                                        .byte > $FFFF ;          0A 
+                                        .byte > ofs_006_0x00AF00_0B
+                                        .byte > $FFFF ;          0C 
+                                        .byte > ofs_006_0x016F16_0D
+                                        .byte > ofs_006_0x01711D_0E
+                                        .byte > ofs_006_0x01EEFC_0F
+                                        .byte > $FFFF ;          10 
+                                        .byte > $FFFF ;          11 
+                                        .byte > ofs_006_0x00A073_12
+                                        .byte > ofs_006_0x00A548_13
+                                        .byte > ofs_006_0x01D9BC_14
+                                        .byte > ofs_006_0x003A8D_15
+                                        .byte > $FFFF ;          16 
+                                        .byte > ofs_006_0x008142_17
+                                        .byte > ofs_006_0x00A6E3_18
+                                        .byte > $FFFF ;          19 
+                                        .byte > $FFFF ;          1A 
+                                        .byte > ofs_006_0x01DA81_1B
+                                        .byte > $FFFF ;          1C 
+                                        .byte > ofs_006_0x0084A4_1D
+                                        .byte > ofs_006_0x013261_1E
+                                        .byte > ofs_006_0x009219_1F
+                                        .byte > ofs_006_0x00A040_20
+                                        .byte > $FFFF ;          21 
+                                        .byte > $FFFF ;          22 
+                                        .byte > ofs_006_0x00A058_23
+                                        .byte > ofs_006_0x009793_24
+                                        .byte > ofs_006_0x013FCB_25
+                                        .byte > ofs_006_0x01DAA5_26
+                                        .byte > ofs_006_0x01FC36_27
+
+
+
+tbl_F3D6_prg_pair:
+; see con_F3D6
+                                        .byte con_prg_pair + $12   ; 00 (перемещено)
+                                        .byte con_prg_pair + $04   ; 01 
+                                        .byte $FF   ; 02 unused, index doesn't exist
+                                        .byte $FF   ; 03 unused, index doesn't exist
+                                        .byte con_prg_pair + $12   ; 04 (перемещено)
+                                        .byte $FF   ; 05 unused
+                                        .byte $FF   ; 06 unused
+                                        .byte $FF   ; 07 unused, index doesn't exist
+                                        .byte $FF   ; 08 unused
+                                        .byte $FF   ; 09 unused
+                                        .byte $FF   ; 0A unused, index doesn't exist
+                                        .byte con_prg_pair + $02   ; 0B 
+                                        .byte $FF   ; 0C unused
+                                        .byte con_prg_pair + $01   ; 0D 
+                                        .byte con_prg_pair + $13   ; 0E (перемещено)
+                                        .byte con_prg_pair + $12   ; 0F (перемещено)
+                                        .byte $FF   ; 10 unused, index doesn't exist
+                                        .byte $FF   ; 11 unused, index doesn't exist
+                                        .byte con_prg_pair + $02   ; 12 
+                                        .byte con_prg_pair + $02   ; 13 
+                                        .byte con_prg_pair + $01   ; 14 
+                                        .byte con_prg_pair + $07   ; 15 
+                                        .byte $FF   ; 16 unused
+                                        .byte con_prg_pair + $02   ; 17 
+                                        .byte con_prg_pair + $02   ; 18 
+                                        .byte $FF   ; 19 
+                                        .byte $FF   ; 1A 
+                                        .byte con_prg_pair + $03   ; 1B 
+                                        .byte $FF   ; 1C  unused
+                                        .byte con_prg_pair + $02   ; 1D 
+                                        .byte con_prg_pair + $04   ; 1E 
+                                        .byte con_prg_pair + $02   ; 1F 
+                                        .byte con_prg_pair + $02   ; 20 
+                                        .byte $FF   ; 21 unused
+                                        .byte $FF   ; 22 unused
+                                        .byte con_prg_pair + $02   ; 23 
+                                        .byte con_prg_pair + $0A   ; 24 
+                                        .byte con_prg_pair + $04   ; 25 
+                                        .byte con_prg_pair + $12   ; 26 new (перемещено)
+                                        .byte con_prg_pair + $12   ; 27 new (перемещено)
 
 
 
@@ -2311,7 +2318,7 @@ C - - - - - 0x01FC30 07:FC20: A6 39     LDX ram_buffer_index_2
 C - - - - - 0x01FC32 07:FC22: E0 20     CPX #$20
 C - - - - - 0x01FC34 07:FC24: B0 05     BCS bra_FC2B_RTS
 bra_FC26:
-                                        LDA #con_F3D6_27
+                                        LDY #con_F3D6_27
                                         JMP loc_F3B3_execute_script
 bra_FC2B_RTS:
 C - - - - - 0x01FC3B 07:FC2B: 68        RTS
@@ -2846,7 +2853,7 @@ C - - - - - 0x01FECC 07:FEBC: 4C 62 F3  JMP loc_F362_switch_prg_bank_pair
 sub_FEBF:
 sub_0x01FECF:
 C - - - - - 0x01FECF 07:FEBF: 20 03 FF  INC ram_nmi_flag_1
-C - - - - - 0x01FED2 07:FEC2: A9 01     LDA #con_F3D6_01
+C - - - - - 0x01FED2 07:FEC2: A9 01     LDY #con_F3D6_01
 C - - - - - 0x01FED4 07:FEC4: 20 B3 F3  JSR sub_F3B3_execute_script
 C - - - - - 0x01FED7 07:FEC7: 4C 06 FF  JMP loc_FF06
 

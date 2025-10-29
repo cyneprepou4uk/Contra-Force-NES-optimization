@@ -1012,7 +1012,6 @@ ram_prg_banks_pair                      = $0036 ; 008198 008288 01D1A7 01F365 01
 ; 
 ram_0037_temp                           = $0037 ; 01F3C3 01F3C6 01F3CF 01FD5D 
     ram_0037_t01_jmp                        = ram_0037_temp ; 2 addreses 0037-0038
-    ram_0037_t02                            = ram_0037_temp ; 
 
 
 

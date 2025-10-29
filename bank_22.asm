@@ -1786,7 +1786,7 @@ C - - - - - 0x008C56 02:8C46: BD 68 06  LDA ram_obj_pos_Y,X
 C - - - - - 0x008C59 02:8C49: 38        SEC
 C - - - - - 0x008C5A 02:8C4A: E9 20     SBC #$20
 C - - - - - 0x008C5C 02:8C4C: 85 01     STA ram_0001_t18_pos_Y
-C - - - - - 0x008C5E 02:8C4E: A9 00     LDA #con_F3D6_00
+C - - - - - 0x008C5E 02:8C4E: A9 00     LDY #con_F3D6_00
 C - - - - - 0x008C60 02:8C50: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x008C63 02:8C53: A5 01     LDA ram_0001_t15_table_index
 C - - - - - 0x008C65 02:8C55: F0 05     BEQ bra_8C5C

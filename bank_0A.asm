@@ -1341,11 +1341,11 @@ C - - - - - 0x01493B 05:892B: AD 1A 06  LDA ram_obj_animation_lo
 C - - - - - 0x01493E 05:892E: 0D 1B 06  ORA ram_obj_animation_lo + $01
 C - - - - - 0x014941 05:8931: F0 11     BEQ bra_8944
 bra_8933:
-C - - - - - 0x014943 05:8933: A9 23     LDA #con_F3D6_23
+C - - - - - 0x014943 05:8933: A9 23     LDY #con_F3D6_23
 C - - - - - 0x014945 05:8935: 20 B3 F3  JSR sub_0x01F3C3_execute_script
-C - - - - - 0x014948 05:8938: A9 14     LDA #con_F3D6_14
+C - - - - - 0x014948 05:8938: A9 14     LDY #con_F3D6_14
 C - - - - - 0x01494A 05:893A: 20 B3 F3  JSR sub_0x01F3C3_execute_script
-C - - - - - 0x01494D 05:893D: A9 15     LDA #con_F3D6_15
+C - - - - - 0x01494D 05:893D: A9 15     LDY #con_F3D6_15
 C - - - - - 0x01494F 05:893F: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 bra_8942:
 C - - - - - 0x014952 05:8942: 18        CLC
@@ -1445,13 +1445,13 @@ C - - - - - 0x0149E5 05:89D5: A5 00     LDA ram_0000_t3C_btns
 C - - - - - 0x0149E7 05:89D7: 95 42     STA ram_btn_hold_1,X
 bra_89D9:
 sub_89D9:
-C - - - - - 0x0149E9 05:89D9: A9 12     LDA #con_F3D6_12
+C - - - - - 0x0149E9 05:89D9: A9 12     LDY #con_F3D6_12
 C - - - - - 0x0149EB 05:89DB: 20 B3 F3  JSR sub_0x01F3C3_execute_script
-C - - - - - 0x0149EE 05:89DE: A9 13     LDA #con_F3D6_13
+C - - - - - 0x0149EE 05:89DE: A9 13     LDY #con_F3D6_13
 C - - - - - 0x0149F0 05:89E0: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x0149F5 05:89E5: 20 B3 F3  JSR sub_0x009782
 C - - - - - 0x0149F8 05:89E8: 86 3A     STX ram_003A_t06
-C - - - - - 0x0149FA 05:89EA: A9 17     LDA #con_F3D6_17
+C - - - - - 0x0149FA 05:89EA: A9 17     LDY #con_F3D6_17
 C - - - - - 0x0149FC 05:89EC: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x0149FF 05:89EF: A6 3A     LDX ram_003A_t06
 C - - - - - 0x014A01 05:89F1: D0 5E     BNE bra_8A51_RTS
@@ -1652,7 +1652,7 @@ C - - - - - 0x014B54 05:8B44: 9D C8 07  STA ram_07C8_unk,X
 C - - - - - 0x014B57 05:8B47: 9D D2 07  STA ram_07D2_unk,X
 C - - - - - 0x014B5A 05:8B4A: A9 04     LDA #$04
 C - - - - - 0x014B5C 05:8B4C: 85 02     STA ram_0002_t33
-C - - - - - 0x014B5E 05:8B4E: A9 18     LDA #con_F3D6_18
+C - - - - - 0x014B5E 05:8B4E: A9 18     LDY #con_F3D6_18
 C - - - - - 0x014B60 05:8B50: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x014B65 05:8B55: 4C B3 F3  JMP loc_0x009782
 bra_8B58:
@@ -2428,7 +2428,7 @@ sub_96F2:
 C - - - - - 0x015702 05:96F2: 85 1F     STA ram_001F_t01
 C - - - - - 0x015704 05:96F4: A9 01     LDA #$01
 C - - - - - 0x015706 05:96F6: 85 3D     STA ram_003D_t02_flag
-C - - - - - 0x015708 05:96F8: A9 1B     LDA #con_F3D6_1B
+C - - - - - 0x015708 05:96F8: A9 1B     LDY #con_F3D6_1B
 C - - - - - 0x01570A 05:96FA: 4C B3 F3  JMP loc_0x01F3C3_execute_script
 
 
@@ -5236,7 +5236,7 @@ C - - - - - 0x0165BA 05:A5AA: 95 BE     STA ram_00BE,X
 C - - - - - 0x0165BC 05:A5AC: B9 34 06  LDA ram_obj_animation_hi,Y
 bra_A5AF:
 C - - - - - 0x0165BF 05:A5AF: 48        PHA
-C - - - - - 0x0165C0 05:A5B0: A9 20     LDA #con_F3D6_20
+C - - - - - 0x0165C0 05:A5B0: A9 20     LDY #con_F3D6_20
 C - - - - - 0x0165C2 05:A5B2: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x0165C5 05:A5B5: 68        PLA
 C - - - - - 0x0165C6 05:A5B6: 29 80     AND #$80
@@ -5329,7 +5329,7 @@ bra_A62D_loop:
 C - - - - - 0x01663D 05:A62D: 99 3C 05  STA ram_053C,Y
 C - - - - - 0x016640 05:A630: 88        DEY
 C - - - - - 0x016641 05:A631: 10 FA     BPL bra_A62D_loop
-C - - - - - 0x016643 05:A633: A9 1E     LDA #con_F3D6_1E
+C - - - - - 0x016643 05:A633: A9 1E     LDY #con_F3D6_1E
 C - - - - - 0x016645 05:A635: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x016648 05:A638: A9 05     LDA #$05
 C - - - - - 0x01664A 05:A63A: 8D 69 03  STA ram_0369_counter
@@ -5588,7 +5588,7 @@ C - - - - - 0x016F81 05:AF71: A9 80     LDA #$80
 C - - - - - 0x016F83 05:AF73: 85 00     STA ram_0000_t50_pos_X
 C - - - - - 0x016F85 05:AF75: A9 07     LDA #$07
 C - - - - - 0x016F87 05:AF77: 85 0F     STA ram_000F_t04
-C - - - - - 0x016F89 05:AF79: A9 00     LDA #con_F3D6_00
+C - - - - - 0x016F89 05:AF79: A9 00     LDY #con_F3D6_00
 C - - - - - 0x016F8B 05:AF7B: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x016F8E 05:AF7E: A5 13     LDA ram_0013_t10
 C - - - - - 0x016F90 05:AF80: 29 0C     AND #$0C
@@ -5601,7 +5601,7 @@ C - - - - - 0x016F9A 05:AF8A: 4C 92 AF  JMP loc_AF92
 
 
 loc_AF8D_loop:
-C D 1 - - - 0x016F9D 05:AF8D: A9 0F     LDA #con_F3D6_0F
+C D 1 - - - 0x016F9D 05:AF8D: A9 0F     LDY #con_F3D6_0F
 C - - - - - 0x016F9F 05:AF8F: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 loc_AF92:
 C D 1 - - - 0x016FA2 05:AF92: A4 01     LDY ram_0001_t15_table_index
@@ -5693,7 +5693,7 @@ C - - - - - 0x01703C 05:B02C: 29 CF     AND #$CF
 C - - - - - 0x01703E 05:B02E: 9D C8 07  STA ram_07C8_unk,X
 C - - - - - 0x017041 05:B031: A9 00     LDA #$00
 C - - - - - 0x017043 05:B033: 9D AA 07  STA ram_07AA_unk,X
-C - - - - - 0x017046 05:B036: A9 20     LDA #con_F3D6_20
+C - - - - - 0x017046 05:B036: A9 20     LDY #con_F3D6_20
 C - - - - - 0x017048 05:B038: 4C B3 F3  JMP loc_0x01F3C3_execute_script
 bra_B03B:
 C - - - - - 0x01704B 05:B03B: FE AA 07  INC ram_07AA_unk,X
@@ -5702,7 +5702,7 @@ C - - - - - 0x01704E 05:B03E: 60        RTS
 
 
 sub_B03F:
-C - - - - - 0x01704F 05:B03F: A9 0F     LDA #con_F3D6_0F
+C - - - - - 0x01704F 05:B03F: A9 0F     LDY #con_F3D6_0F
 C - - - - - 0x017051 05:B041: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x017054 05:B044: A4 01     LDY ram_0001_t15_table_index
 C - - - - - 0x017056 05:B046: A5 75     LDA ram_stage
@@ -6366,14 +6366,14 @@ C - - - - - 0x017980 05:B970: 85 00     STA ram_0000_t50_pos_X
 C - - - - - 0x017982 05:B972: A9 28     LDA #$28
 C - - - - - 0x017984 05:B974: 8D 6D 06  STA ram_obj_pos_Y + $05
 C - - - - - 0x017987 05:B977: 85 01     STA ram_0001_t18_pos_Y
-C - - - - - 0x017989 05:B979: A9 00     LDA #con_F3D6_00
+C - - - - - 0x017989 05:B979: A9 00     LDY #con_F3D6_00
 C - - - - - 0x01798B 05:B97B: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x01798E 05:B97E: A5 00     LDA ram_0000_t42
 C - - - - - 0x017990 05:B980: C9 68     CMP #$68
 C - - - - - 0x017992 05:B982: 90 1A     BCC bra_B99E
 C - - - - - 0x017994 05:B984: A9 91     LDA #$91
 C - - - - - 0x017996 05:B986: 9D A0 07  STA ram_07A0_unk,X
-C - - - - - 0x017999 05:B989: A9 1D     LDA #con_F3D6_1D
+C - - - - - 0x017999 05:B989: A9 1D     LDY #con_F3D6_1D
 C - - - - - 0x01799B 05:B98B: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 ; bzk bug? should this be ram_001E_t03_flag ?
 ; because of 0x008535

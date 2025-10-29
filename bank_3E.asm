@@ -162,8 +162,9 @@ C - - - - - 0x014035 05:8025: A9 00     LDA #$00
 C - - - - - 0x014037 05:8027: 8D 32 03  STA ram_0332_flag
 C - - - - - 0x01403A 05:802A: 8D 43 03  STA ram_0343
 C - - - - - 0x01403D 05:802D: 8D 45 03  STA ram_0345_table_index
-C - - - - - 0x01F6A4 07:F694: A9 14     LDA #$14    ; con_F3D6_14
+C - - - - - 0x01F6A4 07:F694: A9 14     LDA #$14
 C - - - - - 0x01F6A6 07:F696: 8D 33 03  STA ram_0333_counter
+                                        LDY #con_F3D6_14
 C - - - - - 0x01F6A9 07:F699: 20 B3 F3  JSR sub_0x01F3C3_execute_script
 C - - - - - 0x014043 05:8033: CE 70 03  DEC ram_0370_counter_00_C0
 C - - - - - 0x014046 05:8036: 60        RTS
@@ -2170,7 +2171,7 @@ C - - - - - 0x01DA95 07:DA85: E0 20     CPX #$20
 C - - - - - 0x01DA97 07:DA87: B0 10     BCS bra_DA99_RTS
 bra_DA89:
                                         STA ram_0028_t01
-                                        LDA #con_F3D6_26
+                                        LDY #con_F3D6_26
                                         JMP loc_0x01F3C3_execute_script
 bra_DA99_RTS:
                                         RTS
@@ -3266,7 +3267,7 @@ C - - - - - 0x009785 02:9775: F0 37     BEQ bra_9761_RTS
 C - - - - - 0x009787 02:9777: BD 0A 07  LDA ram_070A_obj,X
 C - - - - - 0x00978A 02:977A: F0 32     BEQ bra_9761_RTS
 C - - - - - 0x00978C 02:977C: 30 30     BMI bra_9761_RTS
-C - - - - - 0x00978E 02:977E: A9 24     LDA #con_F3D6_24
+C - - - - - 0x00978E 02:977E: A9 24     LDY #con_F3D6_24
 C - - - - - 0x009790 02:9780: 4C B3 F3  JMP loc_0x01F3C3_execute_script
 bra_9761_RTS:
                                         RTS
