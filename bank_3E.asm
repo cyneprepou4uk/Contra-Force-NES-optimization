@@ -41,7 +41,6 @@
 .export ofs_006_0x01D9BC_14
 .export sub_0x01DA7B
 .export ofs_006_0x01DA81_1B
-.export ofs_006_0x01DA85_05
 .export ofs_006_0x01DA85_06
 .export ofs_006_0x01DA85_0C
 .export sub_0x01DAD1_close_ppu_buffer
@@ -2162,14 +2161,14 @@ ofs_006_0x01DA81_1B:    ; bzk optimize
 C - - - - - 0x01DA81 07:DA71: A5 1F     LDA ram_001F_t01
 C - - - - - 0x01DA83 07:DA73: D0 09     BNE bra_DA7E
 bra_DA75:
-ofs_006_0x01DA85_05:
-; con_F3D6_05
 ofs_006_0x01DA85_06:
 ; con_F3D6_06
 ofs_006_0x01DA85_0C:
 ; con_F3D6_0C
 .export sub_0x01DA85
 sub_0x01DA85:
+.export loc_0x01DA85
+loc_0x01DA85:
 C - - J - - 0x01DA85 07:DA75: A5 1F     LDA ram_001F_t01
 loc_0x01DA87:
 C D 2 - - - 0x01DA87 07:DA77: A0 00     LDY #$00

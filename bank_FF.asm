@@ -841,8 +841,8 @@ tbl_F3D6:
 ; 04 con_F3D6_04 (перемещено)
 - D 3 - - - 0x01F3F2 07:F3E2: 23 F1     .word ofs_006_0x01F133_04
 - D 3 - - - 0x01F3F4 07:F3E4: 03        .byte con_prg_pair + $12   ; 
-; 05 con_F3D6_05
-- D 3 - - - 0x01F3F5 07:F3E5: 75 DA     .word ofs_006_0x01DA85_05
+; 05 con_F3D6_05 unused
+- D 3 - - - 0x01F3F5 07:F3E5: 75 DA     .word $FFFF
 - D 3 - - - 0x01F3F7 07:F3E7: 03        .byte con_prg_pair + $03   ; 
 ; 06 con_F3D6_06
 - D 3 - - - 0x01F3F8 07:F3E8: 75 DA     .word ofs_006_0x01DA85_06

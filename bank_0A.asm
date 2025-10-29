@@ -2464,8 +2464,9 @@ C - - - - - 0x0156DE 05:96CE: B9 E0 96  LDA tbl_96E0,Y
 C - - - - - 0x0156E1 05:96D1: F0 0A     BEQ bra_96DD_00
 C - - - - - 0x0156E3 05:96D3: C9 FF     CMP #$FF
 C - - - - - 0x0156E5 05:96D5: F0 05     BEQ bra_96DC_FF
+; if 01
 C - - - - - 0x0156E7 05:96D7: 84 1F     STY ram_001F_t01
-C - - - - - 0x0156E9 05:96D9: 4C B3 F3  JMP loc_0x01F3C3_execute_script
+C - - - - - 0x0156E9 05:96D9: 4C B3 F3  JMP loc_0x01DA85
 bra_96DC_FF:
 C - - - - - 0x0156EC 05:96DC: 98        TYA
 bra_96DD_00:
@@ -2474,20 +2475,23 @@ C - - - - - 0x0156ED 05:96DD: 4C 77 DA  JMP loc_0x01DA87
 
 
 tbl_96E0:
+; 00 = 
+; 01 = 
+; FF = 
 - - - - - - 0x0156F0 05:96E0: 00        .byte $00   ; 00 
-- D 0 - - - 0x0156F1 05:96E1: 05        .byte con_F3D6_05   ; 01 
-- D 0 - - - 0x0156F2 05:96E2: 05        .byte con_F3D6_05   ; 02 
-- D 0 - - - 0x0156F3 05:96E3: 05        .byte con_F3D6_05   ; 03 
-- - - - - - 0x0156F4 05:96E4: 05        .byte con_F3D6_05   ; 04 
+- D 0 - - - 0x0156F1 05:96E1: 05        .byte $01   ; 01 
+- D 0 - - - 0x0156F2 05:96E2: 05        .byte $01   ; 02 
+- D 0 - - - 0x0156F3 05:96E3: 05        .byte $01   ; 03 
+- - - - - - 0x0156F4 05:96E4: 05        .byte $01   ; 04 
 - D 0 - - - 0x0156F5 05:96E5: FF        .byte $FF   ; 05 
 - - - - - - 0x0156F6 05:96E6: 00        .byte $00   ; 06 
 - - - - - - 0x0156F7 05:96E7: 00        .byte $00   ; 07 
 - - - - - - 0x0156F8 05:96E8: 00        .byte $00   ; 08 
-- D 0 - - - 0x0156F9 05:96E9: 05        .byte con_F3D6_05   ; 09 
-- - - - - - 0x0156FA 05:96EA: 05        .byte con_F3D6_05   ; 0A 
+- D 0 - - - 0x0156F9 05:96E9: 05        .byte $01   ; 09 
+- - - - - - 0x0156FA 05:96EA: 05        .byte $01   ; 0A 
 - D 0 - - - 0x0156FB 05:96EB: FF        .byte $FF   ; 0B 
 - - - - - - 0x0156FC 05:96EC: FF        .byte $FF   ; 0C 
-- - - - - - 0x0156FD 05:96ED: 05        .byte con_F3D6_05   ; 0D 
+- - - - - - 0x0156FD 05:96ED: 05        .byte $01   ; 0D 
 - D 0 - - - 0x0156FE 05:96EE: FF        .byte $FF   ; 0E 
 - - - - - - 0x0156FF 05:96EF: FF        .byte $FF   ; 0F 
 - - - - - - 0x015700 05:96F0: FF        .byte $FF   ; 10 
@@ -7090,8 +7094,7 @@ loc_B787:
 C D 1 - - - 0x017797 05:B787: A9 0D     LDA #con_DA9D_0D
 bra_B789:
 C - - - - - 0x017799 05:B789: 85 1F     STA ram_001F_t01
-C - - - - - 0x01779B 05:B78B: A9 05     LDA #con_F3D6_05
-C - - - - - 0x01779D 05:B78D: 4C B3 F3  JMP loc_0x01F3C3_execute_script
+C - - - - - 0x01779D 05:B78D: 4C B3 F3  JMP loc_0x01DA85
 bra_B790:
 C - - - - - 0x0177A0 05:B790: E6 D0     INC ram_00D0
 sub_B792:
@@ -7327,8 +7330,7 @@ C - - - - - 0x0178FB 05:B8EB: 60        RTS
 ofs_022_B8EC_09:
 C - - J - - 0x0178FC 05:B8EC: A9 10     LDA #con_DA9D_10
 C - - - - - 0x0178FE 05:B8EE: 85 1F     STA ram_001F_t01
-C - - - - - 0x017900 05:B8F0: A9 05     LDA #con_F3D6_05
-C - - - - - 0x017902 05:B8F2: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x017902 05:B8F2: 20 B3 F3  JSR sub_0x01DA85
 C - - - - - 0x017905 05:B8F5: E6 D1     INC ram_00D1_counter
 C - - - - - 0x017907 05:B8F7: A5 D1     LDA ram_00D1_counter
 C - - - - - 0x017909 05:B8F9: C9 21     CMP #$21
@@ -7656,8 +7658,7 @@ C - - - - - 0x017AF5 05:BAE5: A5 67     LDA ram_0067
 C - - - - - 0x017AF7 05:BAE7: 29 03     AND #$03
 C - - - - - 0x017AF9 05:BAE9: C9 03     CMP #$03
 C - - - - - 0x017AFB 05:BAEB: D0 3E     BNE bra_BB2B_RTS
-C - - - - - 0x017AFD 05:BAED: A9 05     LDA #con_F3D6_05
-C - - - - - 0x017AFF 05:BAEF: 4C B3 F3  JMP loc_0x01F3C3_execute_script
+C - - - - - 0x017AFF 05:BAEF: 4C B3 F3  JMP loc_0x01DA85
 
 
 
