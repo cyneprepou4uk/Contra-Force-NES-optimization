@@ -495,7 +495,7 @@ C - - - - - 0x01D16F 07:D15F: A0 02     LDY #$02
 C - - - - - 0x01D171 07:D161: 84 44     STY ram_script_lo
 C - - - - - 0x01D173 07:D163: C8        INY ; 03 con_0020_gameplay
 C - - - - - 0x01D174 07:D164: 84 20     STY ram_script_hi
-C - - - - - 0x01D176 07:D166: 20 35 F6  JSR sub_0x01F645_set_default_3_lives
+C - - - - - 0x01D176 07:D166: 20 35 F6  JSR sub_F635_set_default_3_lives
 C - - - - - 0x01D179 07:D169: 4C 62 D0  JMP loc_D062
 
 
@@ -1693,7 +1693,13 @@ bra_D803:
 C - - - - - 0x01D813 07:D803: 20 62 D0  JSR sub_D062
 C - - - - - 0x01D816 07:D806: A9 03     LDA #$03
 C - - - - - 0x01D818 07:D808: 8D A1 05  STA ram_059E_se + $03
-C - - - - - 0x01D81B 07:D80B: 4C 35 F6  JMP loc_0x01F645_set_default_3_lives
+sub_F635_set_default_3_lives:
+C D 3 - - - 0x01F645 07:F635: A9 03     LDA #$03
+C - - - - - 0x01F647 07:F637: 85 B3     STA ram_lives
+C - - - - - 0x01F649 07:F639: 85 B4     STA ram_lives + $01
+C - - - - - 0x01F64B 07:F63B: 85 B5     STA ram_lives + $02
+C - - - - - 0x01F64D 07:F63D: 85 B6     STA ram_lives + $03
+C - - - - - 0x01F64F 07:F63F: 60        RTS
 
 
 

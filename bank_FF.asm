@@ -78,8 +78,6 @@
 .export sub_0x01F32C
 .export loc_0x01F458_select_bg_chr_bank_pair
 .export sub_0x01F606
-.export sub_0x01F645_set_default_3_lives
-.export loc_0x01F645_set_default_3_lives
 .export sub_0x01F9A4
 
 
@@ -4378,17 +4376,6 @@ C - - - - - 0x01F640 07:F630: E6 02     INC ram_0002_t35
 C - - - - - 0x01F642 07:F632: 85 03     STA ram_0003_t22
 bra_F634_RTS:
 C - - - - - 0x01F644 07:F634: 60        RTS
-
-
-
-sub_0x01F645_set_default_3_lives:
-loc_0x01F645_set_default_3_lives:
-C D 3 - - - 0x01F645 07:F635: A9 03     LDA #$03
-C - - - - - 0x01F647 07:F637: 85 B3     STA ram_lives
-C - - - - - 0x01F649 07:F639: 85 B4     STA ram_lives + $01
-C - - - - - 0x01F64B 07:F63B: 85 B5     STA ram_lives + $02
-C - - - - - 0x01F64D 07:F63D: 85 B6     STA ram_lives + $03
-C - - - - - 0x01F64F 07:F63F: 60        RTS
 
 
 
