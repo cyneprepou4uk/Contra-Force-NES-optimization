@@ -6,7 +6,6 @@
 
 
 
-.export sub_0x008011
 .export loc_0x008093
 .export sub_0x008093
 .export sub_0x0080C6
@@ -103,18 +102,6 @@
 .export sub_0x009E25
 .export sub_0x009E65
 .export sub_0x009E75
-
-
-
-sub_0x008011:
-C D 0 - - - 0x008011 02:8001: A9 00     LDA #$00
-C - - - - - 0x008013 02:8003: 8D 40 03  STA ram_0340_flag
-C - - - - - 0x008016 02:8006: 85 8C     STA ram_008C
-; bzk optimize, useless STA
-C - - - - - 0x008018 02:8008: 85 8D     STA ram_008D
-C - - - - - 0x00801A 02:800A: 85 9E     STA ram_009E
-C - - - - - 0x00801C 02:800C: 20 01 A0  JSR sub_0x00A011
-                                        JMP loc_0x00801F
 
 
 
