@@ -990,7 +990,8 @@ C - - - - - 0x00A5BF 02:A5AF: 84 1C     STY ram_001C_t22_useless
 C - - - - - 0x00A5C1 02:A5B1: 20 8B A8  JSR sub_A88B
 C - - - - - 0x00A5C4 02:A5B4: B0 17     BCS bra_A5CD
 bra_A5B6:
-C - - - - - 0x00A5C6 02:A5B6: 20 0A A6  JSR sub_A60A
+C - - - - - 0x00A5C6 02:A5B6: 20 0A A6  LDA ram_07C8_unk,X
+                                        AND #$80
 C - - - - - 0x00A5C9 02:A5B9: D0 12     BNE bra_A5CD
 C - - - - - 0x00A5CB 02:A5BB: BD 62 07  LDA ram_0762_obj,X
 C - - - - - 0x00A5CE 02:A5BE: 29 3C     AND #$3C
@@ -1037,19 +1038,13 @@ C - - - - - 0x00A617 02:A607: 4C 84 AC  JMP loc_AC84
 
 
 
-sub_A60A:
-C - - - - - 0x00A61A 02:A60A: BD C8 07  LDA ram_07C8_unk,X
-C - - - - - 0x00A61D 02:A60D: 29 80     AND #$80
-C - - - - - 0x00A61F 02:A60F: 60        RTS
-
-
-
 bra_A610:
 C - - - - - 0x00A620 02:A610: 20 5A AD  JSR sub_AD5A
 C - - - - - 0x00A623 02:A613: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x00A626 02:A616: F0 07     BEQ bra_A61F_side_view
 ; if upper view
-C - - - - - 0x00A628 02:A618: 20 0A A6  JSR sub_A60A
+C - - - - - 0x00A628 02:A618: 20 0A A6  LDA ram_07C8_unk,X
+                                        AND #$80
 C - - - - - 0x00A62B 02:A61B: F0 1F     BEQ bra_A63C
 C - - - - - 0x00A62D 02:A61D: D0 05     BNE bra_A624    ; jmp
 bra_A61F_side_view:
@@ -1068,7 +1063,8 @@ C - - - - - 0x00A646 02:A636: 9D AA 07  STA ram_07AA_unk,X
 C - - - - - 0x00A649 02:A639: 20 96 A0  JSR sub_A096
 bra_A63C:
 loc_A63C:
-C D 1 - - - 0x00A64C 02:A63C: 20 0A A6  JSR sub_A60A
+C D 1 - - - 0x00A64C 02:A63C: 20 0A A6  LDA ram_07C8_unk,X
+                                        AND #$80
 C - - - - - 0x00A64F 02:A63F: D0 65     BNE bra_A6A6
 C - - - - - 0x00A651 02:A641: BD AA 07  LDA ram_07AA_unk,X
 C - - - - - 0x00A654 02:A644: 10 60     BPL bra_A6A6
@@ -1169,7 +1165,8 @@ C - - - - - 0x00A6F4 02:A6E4: B9 9D A9  LDA tbl_A99D,Y
 C - - - - - 0x00A6F7 02:A6E7: 85 02     STA ram_0002_t01_data
 C - - - - - 0x00A6F9 02:A6E9: B9 9E A9  LDA tbl_A99D + $01,Y
 C - - - - - 0x00A6FC 02:A6EC: 85 03     STA ram_0002_t01_data + $01
-C - - - - - 0x00A6FE 02:A6EE: 20 0A A6  JSR sub_A60A
+C - - - - - 0x00A6FE 02:A6EE: 20 0A A6  LDA ram_07C8_unk,X
+                                        AND #$80
 C - - - - - 0x00A701 02:A6F1: D0 0A     BNE bra_A6FD
 C - - - - - 0x00A703 02:A6F3: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x00A706 02:A6F6: D0 08     BNE bra_A700    ; if upper view
@@ -1255,7 +1252,8 @@ C - - - - - 0x00A789 02:A779: 4C B9 A7  JMP loc_A7B9
 loc_A77C:
 C D 1 - - - 0x00A78C 02:A77C: 20 43 A0  JSR sub_A043_00B1x_AND_0F
 C - - - - - 0x00A78F 02:A77F: A8        TAY
-C - - - - - 0x00A790 02:A780: 20 0A A6  JSR sub_A60A
+C - - - - - 0x00A790 02:A780: 20 0A A6  LDA ram_07C8_unk,X
+                                        AND #$80
 C - - - - - 0x00A793 02:A783: F0 31     BEQ bra_A7B6
 C - - - - - 0x00A795 02:A785: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x00A798 02:A788: F0 1D     BEQ bra_A7A7_side_view
@@ -1494,7 +1492,8 @@ bra_A8BA:
 C - - - - - 0x00A8CA 02:A8BA: A4 1C     LDY ram_001C_t07
 C - - - - - 0x00A8CC 02:A8BC: C0 0A     CPY #$0A
 C - - - - - 0x00A8CE 02:A8BE: B0 F7     BCS bra_A8B7
-C - - - - - 0x00A8D0 02:A8C0: 20 0A A6  JSR sub_A60A
+C - - - - - 0x00A8D0 02:A8C0: 20 0A A6  LDA ram_07C8_unk,X
+                                        AND #$80
 C - - - - - 0x00A8D3 02:A8C3: D0 08     BNE bra_A8CD
 C - - - - - 0x00A8D5 02:A8C5: 8C A2 03  STY ram_03A2
 C - - - - - 0x00A8D8 02:A8C8: B9 82 07  LDA ram_0782_unk,Y
@@ -2247,7 +2246,8 @@ C - - - - - 0x00AC78 02:AC68: E5 02     SBC ram_0002_t34
 C - - - - - 0x00AC7A 02:AC6A: 9D 68 06  STA ram_obj_pos_Y,X
 bra_AC6D:
 loc_AC6D:
-C D 1 - - - 0x00AC7D 02:AC6D: 20 0A A6  JSR sub_A60A
+C D 1 - - - 0x00AC7D 02:AC6D: 20 0A A6  LDA ram_07C8_unk,X
+                                        AND #$80
 C - - - - - 0x00AC80 02:AC70: F0 4F     BEQ bra_ACC1_RTS
 ; player invincibility timer
 C - - - - - 0x00AC82 02:AC72: A9 5F     LDA #$5F
