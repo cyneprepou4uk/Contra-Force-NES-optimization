@@ -4199,7 +4199,8 @@ C - - - - - 0x01F55E 07:F54E: D0 E7     BNE bra_F537_loop
 C - - - - - 0x01F560 07:F550: EE F1 03  INC ram_03F1
 C - - - - - 0x01F563 07:F553: A9 83     LDA #$80 + $01 + $02
 C - - - - - 0x01F565 07:F555: 85 2B     STA ram_002B_flags
-C - - - - - 0x01F567 07:F557: 4C 67 F5  JMP loc_F567
+C - - - - - 0x01F567 07:F557: 4C 67 F5  CLC
+                                        RTS
 bra_F55A:
 loc_0x01F56A:
 C D 3 - - - 0x01F56A 07:F55A: A9 00     LDA #$00
@@ -4211,7 +4212,6 @@ bra_F564:
 loc_0x01F574:
 ; bzk optimize
 C D 3 - - - 0x01F574 07:F564: CE F2 03  DEC ram_03F2
-loc_F567:
 C D 3 - - - 0x01F577 07:F567: 18        CLC
 C - - - - - 0x01F578 07:F568: 60        RTS
 
