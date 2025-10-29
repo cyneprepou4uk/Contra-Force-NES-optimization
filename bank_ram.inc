@@ -948,8 +948,9 @@ ram_0027_useless_00                     = $0027 ; 01D043 01DA28 01FD5D
 
 
 
-; free address
-; ram_0028                              = $0028 ; 01FD5D 
+; мой личный временный адрес
+ram_0028_temp                           = $0028 ; 01FD5D 
+    ram_0028_t01                            = ram_0028_temp ; 
 
 
 

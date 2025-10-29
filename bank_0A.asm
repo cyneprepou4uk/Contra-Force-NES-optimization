@@ -3132,7 +3132,10 @@ C - - - - - 0x015928 05:9918: 4C 77 D2  JMP loc_0x01D287_write_to_buffer___unk_X
 
 sub_991B_write_00_to_buffer___unk_X:
 C - - - - - 0x01592B 05:991B: A6 39     LDX ram_buffer_index_2
-C - - - - - 0x01592D 05:991D: 4C 8F E1  JMP loc_0x01E19F_write_00_to_buffer
+C - - - - - 0x01592D 05:991D: 4C 8F E1  LDA #$00
+                                        JSR sub_0x01DE34_write_A_to_buffer_and_INX
+                                        STX ram_buffer_index_2
+                                        RTS
 
 
 
@@ -8725,7 +8728,10 @@ C - - - - - 0x017DF8 05:BDE8: A5 00     LDA ram_0000_t6B_ppu_addr_lo
 C - - - - - 0x017DFA 05:BDEA: 29 1F     AND #$1F
 C - - - - - 0x017DFC 05:BDEC: D0 BC     BNE bra_BDAA_RTS
 bra_BDEE:
-- - - - - - 0x017DFE 05:BDEE: 4C B5 DE  JMP loc_0x01DEC5
+- - - - - - 0x017DFE 05:BDEE: 4C B5 DE  LDA #$FF
+                                        JSR sub_0x01DE34_write_A_to_buffer_and_INX
+                                        STX ram_buffer_index_2
+                                        RTS
 
 
 

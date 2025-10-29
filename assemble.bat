@@ -88,6 +88,8 @@ if %fast_assembly% equ 1 (
     ca65 -U copy_bank_20.asm
     ca65 -U copy_bank_22.asm
     ca65 -U copy_bank_24.asm
+    ca65 -U copy_bank_25.asm
+    ca65 -U copy_bank_26.asm
     ca65 -U copy_bank_28.asm
     ca65 -U copy_bank_2C.asm
     ca65 -U copy_bank_30.asm
@@ -115,6 +117,8 @@ if %fast_assembly% equ 1 (
     ca65 -U -l copy_bank_20.lst -g copy_bank_20.asm
     ca65 -U -l copy_bank_22.lst -g copy_bank_22.asm
     ca65 -U -l copy_bank_24.lst -g copy_bank_24.asm
+    ca65 -U -l copy_bank_25.lst -g copy_bank_25.asm
+    ca65 -U -l copy_bank_26.lst -g copy_bank_26.asm
     ca65 -U -l copy_bank_28.lst -g copy_bank_28.asm
     ca65 -U -l copy_bank_2C.lst -g copy_bank_2C.asm
     ca65 -U -l copy_bank_30.lst -g copy_bank_30.asm
@@ -146,6 +150,8 @@ if %fast_assembly% equ 1 (
         copy_bank_20.o ^
         copy_bank_22.o ^
         copy_bank_24.o ^
+        copy_bank_25.o ^
+        copy_bank_26.o ^
         copy_bank_28.o ^
         copy_bank_2C.o ^
         copy_bank_30.o ^
@@ -174,6 +180,8 @@ if %fast_assembly% equ 1 (
         copy_bank_20.o ^
         copy_bank_22.o ^
         copy_bank_24.o ^
+        copy_bank_25.o ^
+        copy_bank_26.o ^
         copy_bank_28.o ^
         copy_bank_2C.o ^
         copy_bank_30.o ^
