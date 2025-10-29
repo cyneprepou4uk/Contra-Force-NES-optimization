@@ -73,20 +73,15 @@ ofs_006_0x00A040_20:
 C - - - - - 0x00A040 02:A030: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x00A043 02:A033: F0 08     BEQ bra_A03D_side_view
 ; if upper view
-C - - - - - 0x00A045 02:A035: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+; bzk optimize
+C - - - - - 0x00A045 02:A035: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A048 02:A038: 29 02     AND #$02
 C - - - - - 0x00A04A 02:A03A: 0A        ASL
 C - - - - - 0x00A04B 02:A03B: 69 04     ADC #$04
 bra_A03D_side_view:
 C - - - - - 0x00A04D 02:A03D: 9D 34 06  STA ram_obj_animation_hi,X
 C - - - - - 0x00A050 02:A040: 4C C7 A6  JMP loc_A6C7
-
-
-
-sub_A043_00B1x_AND_0F:
-C - - - - - 0x00A053 02:A043: B5 B1     LDA ram_current_player,X
-C - - - - - 0x00A055 02:A045: 29 0F     AND #$0F
-C - - - - - 0x00A057 02:A047: 60        RTS
 
 
 
@@ -208,7 +203,8 @@ C - - - - - 0x00A134 02:A124: 9D C8 07  STA ram_07C8_unk,X
 C - - - - - 0x00A137 02:A127: A9 30     LDA #$30
 C - - - - - 0x00A139 02:A129: 9D B4 07  STA ram_07B4_unk,X
 C - - - - - 0x00A13C 02:A12C: 20 48 A8  JSR sub_A848
-C - - - - - 0x00A13F 02:A12F: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A13F 02:A12F: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A142 02:A132: A8        TAY
 C - - - - - 0x00A143 02:A133: A5 75     LDA ram_stage
 C - - - - - 0x00A145 02:A135: C9 03     CMP #$03
@@ -496,7 +492,8 @@ C - - - - - 0x00A2F7 02:A2E7: 20 56 A4  JSR sub_A456_decrease_invincibility_time
 C - - - - - 0x00A2FA 02:A2EA: 90 01     BCC bra_A2ED
 C - - - - - 0x00A2FC 02:A2EC: 60        RTS
 bra_A2ED:
-C - - - - - 0x00A2FD 02:A2ED: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A2FD 02:A2ED: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A300 02:A2F0: A8        TAY
 C - - - - - 0x00A301 02:A2F1: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A304 02:A2F4: 29 F0     AND #$F0
@@ -615,7 +612,8 @@ C - - - - - 0x00A3C8 02:A3B8: D0 16     BNE bra_A3D0
 C - - - - - 0x00A3CA 02:A3BA: A5 01     LDA ram_0001_t22_btns_ABSS
 C - - - - - 0x00A3CC 02:A3BC: 29 80     AND #con_btn_A
 C - - - - - 0x00A3CE 02:A3BE: F0 1B     BEQ bra_A3DB
-C - - - - - 0x00A3D0 02:A3C0: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A3D0 02:A3C0: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A3D3 02:A3C3: A8        TAY
 C - - - - - 0x00A3D4 02:A3C4: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A3D7 02:A3C7: 29 08     AND #$08
@@ -643,7 +641,8 @@ bra_A3F0:
 C - - - - - 0x00A400 02:A3F0: A5 01     LDA ram_0001_t22_btns_ABSS
 C - - - - - 0x00A402 02:A3F2: 29 20     AND #con_btn_Select
 C - - - - - 0x00A404 02:A3F4: F0 71     BEQ bra_A467_RTS
-C - - - - - 0x00A406 02:A3F6: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A406 02:A3F6: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A409 02:A3F9: 85 01     STA ram_0001_t23_player_index
 C - - - - - 0x00A40B 02:A3FB: B5 B1     LDA ram_current_player,X
 C - - - - - 0x00A40D 02:A3FD: 29 F0     AND #$F0
@@ -681,7 +680,8 @@ C - - - - - 0x00A44D 02:A43D: 19 F6 A4  ORA tbl_A4F6_bonus,Y
 loc_A440:
 C D 1 - - - 0x00A450 02:A440: A4 01     LDY ram_0001_t23_player_index
 C - - - - - 0x00A452 02:A442: 99 7F 00  STA ram_player_stats,Y
-C - - - - - 0x00A455 02:A445: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A455 02:A445: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A458 02:A448: 95 B1     STA ram_current_player,X
 C - - - - - 0x00A45A 02:A44A: A9 4E     LDA #con_music_4E
 C - - - - - 0x00A45C 02:A44C: 4C CA FE  JMP loc_0x01FEDA_add_music_to_queue
@@ -923,7 +923,8 @@ ofs_006_0x00A548_13:
 C D 1 - - - 0x00A548 02:A538: 8A        TXA
 C - - - - - 0x00A549 02:A539: 25 74     AND ram_0074
 C - - - - - 0x00A54B 02:A53B: D0 2D     BNE bra_A56A_RTS
-C - - - - - 0x00A54D 02:A53D: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A54D 02:A53D: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A550 02:A540: A8        TAY
 C - - - - - 0x00A551 02:A541: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A554 02:A544: C9 30     CMP #$30
@@ -961,7 +962,8 @@ C - - - - - 0x00A590 02:A580: F0 04     BEQ bra_A586
 C - - - - - 0x00A592 02:A582: C9 F8     CMP #$F8
 C - - - - - 0x00A594 02:A584: D0 10     BNE bra_A596
 bra_A586:
-C - - - - - 0x00A596 02:A586: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A596 02:A586: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A599 02:A589: A8        TAY
 C - - - - - 0x00A59A 02:A58A: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A59D 02:A58D: 29 F0     AND #$F0
@@ -1075,7 +1077,8 @@ C - - - - - 0x00A65D 02:A64D: B0 05     BCS bra_A654
 C - - - - - 0x00A65F 02:A64F: FE BE 07  INC ram_07BE_unk,X
 C - - - - - 0x00A662 02:A652: D0 57     BNE bra_A6AB
 bra_A654:
-C - - - - - 0x00A664 02:A654: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A664 02:A654: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A667 02:A657: D0 52     BNE bra_A6AB
 C - - - - - 0x00A669 02:A659: A8        TAY
 C - - - - - 0x00A66A 02:A65A: B9 7F 00  LDA ram_player_stats,Y
@@ -1085,7 +1088,8 @@ C - - - - - 0x00A671 02:A661: A9 00     LDA #$00
 C - - - - - 0x00A673 02:A663: 9D BE 07  STA ram_07BE_unk,X
 bra_A666:
 C - - - - - 0x00A676 02:A666: FE BE 07  INC ram_07BE_unk,X
-C - - - - - 0x00A679 02:A669: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A679 02:A669: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A67C 02:A66C: 85 00     STA ram_0000_t79
 C - - - - - 0x00A67E 02:A66E: A8        TAY
 C - - - - - 0x00A67F 02:A66F: B9 7F 00  LDA ram_player_stats,Y
@@ -1099,7 +1103,8 @@ bra_A67C:
 C - - - - - 0x00A68C 02:A67C: D5 83     CMP ram_bullet_counter,X
 C - - - - - 0x00A68E 02:A67E: 90 2B     BCC bra_A6AB
 C - - - - - 0x00A690 02:A680: 06 00     ASL ram_0000_t79
-C - - - - - 0x00A692 02:A682: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A692 02:A682: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A695 02:A685: A8        TAY
 C - - - - - 0x00A696 02:A686: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A699 02:A689: A0 00     LDY #$00
@@ -1150,7 +1155,8 @@ bra_A6D1_side_view:   ; A = 00
 C - - - - - 0x00A6E1 02:A6D1: 85 02     STA ram_0002_t33
 ofs_006_0x00A6E3_18:
 ; con_F3D6_18
-C - - - - - 0x00A6E3 02:A6D3: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A6E3 02:A6D3: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A6E6 02:A6D6: 18        CLC
 C - - - - - 0x00A6E7 02:A6D7: 65 02     ADC ram_0002_t33
 C - - - - - 0x00A6E9 02:A6D9: 0A        ASL
@@ -1189,7 +1195,8 @@ C - - - - - 0x00A723 02:A713: F0 02     BEQ bra_A717
 C - - - - - 0x00A725 02:A715: A9 01     LDA #$01
 bra_A717:   ; A = 00
 C - - - - - 0x00A727 02:A717: 85 00     STA ram_0000_t80
-C - - - - - 0x00A729 02:A719: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A729 02:A719: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A72C 02:A71C: 0A        ASL
 C - - - - - 0x00A72D 02:A71D: 05 00     ORA ram_0000_t80
 C - - - - - 0x00A72F 02:A71F: A8        TAY
@@ -1216,7 +1223,8 @@ C - - - - - 0x00A755 02:A745: 98        TYA
 bra_A746:
 C - - - - - 0x00A756 02:A746: 85 00     STA ram_0000_t81
 bra_A748:
-C - - - - - 0x00A758 02:A748: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A758 02:A748: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A75B 02:A74B: A8        TAY
 ; * 04
 C - - - - - 0x00A75C 02:A74C: 0A        ASL
@@ -1250,7 +1258,8 @@ C - - - - - 0x00A789 02:A779: 4C B9 A7  JMP loc_A7B9
 
 
 loc_A77C:
-C D 1 - - - 0x00A78C 02:A77C: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C D 1 - - - 0x00A78C 02:A77C: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A78F 02:A77F: A8        TAY
 C - - - - - 0x00A790 02:A780: 20 0A A6  LDA ram_07C8_unk,X
                                         AND #$80
@@ -1439,7 +1448,8 @@ C - - - - - 0x00A873 02:A863: 60        RTS
 bra_A864_side_view:
 C - - - - - 0x00A874 02:A864: A9 00     LDA #$00
 C - - - - - 0x00A876 02:A866: 9D 54 03  STA ram_0354,X
-C - - - - - 0x00A879 02:A869: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A879 02:A869: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A87C 02:A86C: A8        TAY
 C - - - - - 0x00A87D 02:A86D: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A880 02:A870: 29 08     AND #$08
@@ -1476,7 +1486,8 @@ C - - - - - 0x00A8A7 02:A897: 20 E7 F8  JSR sub_0x01F8F7
 C - - - - - 0x00A8AA 02:A89A: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x00A8AD 02:A89D: D0 1B     BNE bra_A8BA    ; if upper view
 ; if side view
-C - - - - - 0x00A8AF 02:A89F: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00A8AF 02:A89F: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A8B2 02:A8A2: A8        TAY
 C - - - - - 0x00A8B3 02:A8A3: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A8B6 02:A8A6: 29 08     AND #$08
@@ -1581,7 +1592,8 @@ C - - - - - 0x00A95D 02:A94D: D0 08     BNE bra_A957
 bra_A957:
 loc_A957:
 sub_A957:
-C D 1 - - - 0x00A967 02:A957: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C D 1 - - - 0x00A967 02:A957: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00A96A 02:A95A: A8        TAY
 C - - - - - 0x00A96B 02:A95B: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A96E 02:A95E: C9 30     CMP #$30
@@ -2118,7 +2130,8 @@ C - - - - - 0x00AB8B 02:AB7B: 30 03     BMI bra_AB80
 bra_AB7D:
 C - - - - - 0x00AB8D 02:AB7D: 20 96 A0  JSR sub_A096
 bra_AB80:
-C - - - - - 0x00AB90 02:AB80: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00AB90 02:AB80: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00AB93 02:AB83: 0A        ASL
 C - - - - - 0x00AB94 02:AB84: A8        TAY
 bra_AB85:
@@ -2259,7 +2272,8 @@ C - - - - - 0x00AC8F 02:AC7F: C8        INY
 C - - - - - 0x00AC90 02:AC80: 98        TYA
 C - - - - - 0x00AC91 02:AC81: 20 B9 A7  JSR sub_A7B9
 loc_AC84:
-C D 1 - - - 0x00AC94 02:AC84: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C D 1 - - - 0x00AC94 02:AC84: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00AC97 02:AC87: 95 B1     STA ram_current_player,X
 C - - - - - 0x00AC99 02:AC89: A8        TAY
 C - - - - - 0x00AC9A 02:AC8A: B9 7F 00  LDA ram_player_stats,Y
@@ -2329,7 +2343,8 @@ tbl_ACCE:
 
 
 sub_ACDC:
-C - - - - - 0x00ACEC 02:ACDC: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00ACEC 02:ACDC: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 C - - - - - 0x00ACEF 02:ACDF: A8        TAY
 C - - - - - 0x00ACF0 02:ACE0: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00ACF3 02:ACE3: 29 F0     AND #$F0
@@ -2459,7 +2474,8 @@ loc_ADAA:
 C D 1 - - - 0x00ADBA 02:ADAA: B5 BE     LDA ram_00BE,X
 C - - - - - 0x00ADBC 02:ADAC: 29 10     AND #$10
 C - - - - - 0x00ADBE 02:ADAE: D0 05     BNE bra_ADB5
-C - - - - - 0x00ADC0 02:ADB0: 20 43 A0  JSR sub_A043_00B1x_AND_0F
+C - - - - - 0x00ADC0 02:ADB0: 20 43 A0  LDA ram_current_player,X
+                                        AND #$0F
 ; * 04
 C - - - - - 0x00ADC3 02:ADB3: 0A        ASL
 C - - - - - 0x00ADC4 02:ADB4: 0A        ASL
