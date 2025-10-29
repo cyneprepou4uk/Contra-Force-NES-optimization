@@ -95,7 +95,6 @@
 .export loc_0x00974A
 .export sub_0x009772
 .export loc_0x009772
-.export sub_0x009A88_drop_a_box_with_powerup
 .export sub_0x009E15
 .export loc_0x009E15
 .export loc_0x009E25
@@ -2969,60 +2968,6 @@ C - - - - - 0x00977F 02:976F: 9D F4 06  STA ram_06F4_obj,X
                                         JMP loc_0x009782
 bra_976E_RTS:
                                         RTS
-
-
-
-sub_0x009A88_drop_a_box_with_powerup:
-C - - - - - 0x009A88 02:9A78: A0 0A     LDY #$0A
-C - - - - - 0x009A8A 02:9A7A: 20 41 91  LDA ram_0682_obj,X
-                                        AND #$0F
-C - - - - - 0x009A8D 02:9A7D: C9 0A     CMP #$0A
-C - - - - - 0x009A8F 02:9A7F: F0 03     BEQ bra_9A84
-C - - - - - 0x009A91 02:9A81: 20 B1 93  JSR sub_0x0093C1_06B2x_LSRx4_TAY
-bra_9A84:
-C - - - - - 0x009A94 02:9A84: B9 BB 9A  LDA tbl_9ABB_positions,Y
-C - - - - - 0x009A97 02:9A87: 85 00     STA ram_0000_t71_pos_X
-C - - - - - 0x009A99 02:9A89: B9 BC 9A  LDA tbl_9ABB_positions + $01,Y
-C - - - - - 0x009A9C 02:9A8C: 85 01     STA ram_0001_t13_pos_Y
-C - - - - - 0x009A9E 02:9A8E: A0 16     LDY #$16
-bra_9A90_loop:
-C - - - - - 0x009AA0 02:9A90: B9 1A 06  LDA ram_obj_animation_lo,Y
-C - - - - - 0x009AA3 02:9A93: F0 06     BEQ bra_9A9B
-C - - - - - 0x009AA5 02:9A95: C8        INY
-C - - - - - 0x009AA6 02:9A96: C0 1A     CPY #$1A
-C - - - - - 0x009AA8 02:9A98: 90 F6     BCC bra_9A90_loop
-- - - - - - 0x009AAA 02:9A9A: 60        RTS
-bra_9A9B:
-C - - - - - 0x009AAB 02:9A9B: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x009AAE 02:9A9E: 18        CLC
-C - - - - - 0x009AAF 02:9A9F: 65 00     ADC ram_0000_t71_pos_X
-C - - - - - 0x009AB1 02:9AA1: 99 4E 06  STA ram_obj_pos_X,Y
-C - - - - - 0x009AB4 02:9AA4: BD 68 06  LDA ram_obj_pos_Y,X
-C - - - - - 0x009AB7 02:9AA7: 18        CLC
-C - - - - - 0x009AB8 02:9AA8: 65 01     ADC ram_0001_t13_pos_Y
-C - - - - - 0x009ABA 02:9AAA: 99 68 06  STA ram_obj_pos_Y,Y
-; box with a powerup
-C - - - - - 0x009ABD 02:9AAD: A9 8E     LDA #$8E
-C - - - - - 0x009ABF 02:9AAF: 99 1A 06  STA ram_obj_animation_lo,Y
-C - - - - - 0x009AC2 02:9AB2: 99 82 06  STA ram_0682_obj,Y
-C - - - - - 0x009AC5 02:9AB5: A9 1C     LDA #$1C
-C - - - - - 0x009AC7 02:9AB7: 99 34 06  STA ram_obj_animation_hi,Y
-C - - - - - 0x009ACA 02:9ABA: 60        RTS
-
-
-
-tbl_9ABB_positions:
-;                                              +---------- X
-;                                              |    +----- Y
-;                                              |    |
-- D 0 - - - 0x009ACB 02:9ABB: F8        .byte $F8, $00   ; 00 
-- D 0 - - - 0x009ACD 02:9ABD: F8        .byte $F8, $F8   ; 10 
-- D 0 - - - 0x009ACF 02:9ABF: 00        .byte $00, $F8   ; 20 
-- D 0 - - - 0x009AD1 02:9AC1: 08        .byte $08, $F8   ; 30 
-- D 0 - - - 0x009AD3 02:9AC3: 08        .byte $08, $00   ; 40 
-- D 0 - - - 0x009AD5 02:9AC5: 08        .byte $08, $08   ; 50 
-- D 0 - - - 0x009AD7 02:9AC7: 00        .byte $00, $08   ; 60 
-- D 0 - - - 0x009AD9 02:9AC9: F8        .byte $F8, $08   ; 70 
 
 
 
