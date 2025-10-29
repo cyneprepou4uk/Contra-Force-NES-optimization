@@ -1520,7 +1520,19 @@ bra_8B7F:
 C - - - - - 0x008B8F 02:8B7F: BD 9C 06  LDA ram_069C_obj,X
 C - - - - - 0x008B92 02:8B82: 29 40     AND #$40
 C - - - - - 0x008B94 02:8B84: F0 03     BEQ bra_8B89
-C - - - - - 0x008B96 02:8B86: 20 A5 8B  JSR sub_8BA5
+; 
+C - - - - - 0x008BB5 02:8BA5: A5 14     LDA ram_0014_t04_hi
+C - - - - - 0x008BB7 02:8BA7: 49 FF     EOR #$FF
+C - - - - - 0x008BB9 02:8BA9: 85 14     STA ram_0014_t04_hi
+C - - - - - 0x008BBB 02:8BAB: A5 13     LDA ram_0013_t03_lo
+C - - - - - 0x008BBD 02:8BAD: 20 07 95  EOR #$FF
+                                        CLC
+                                        ADC #$01
+C - - - - - 0x008BC0 02:8BB0: 85 13     STA ram_0013_t03_lo
+C - - - - - 0x008BC2 02:8BB2: 90 02     BCC bra_8B89
+; if overflow
+C - - - - - 0x008BC4 02:8BB4: E6 14     INC ram_0014_t04_hi
+; 
 bra_8B89:
 C - - - - - 0x008B99 02:8B89: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x008B9C 02:8B8C: F0 0E     BEQ bra_8B9C_side_view
@@ -1539,22 +1551,6 @@ C - - - - - 0x008BAE 02:8B9E: 85 92     STA ram_0092_lo
 C - - - - - 0x008BB0 02:8BA0: A5 14     LDA ram_0014_t04_hi
 C - - - - - 0x008BB2 02:8BA2: 85 93     STA ram_0093_hi
 C - - - - - 0x008BB4 02:8BA4: 60        RTS
-
-
-
-sub_8BA5:
-C - - - - - 0x008BB5 02:8BA5: A5 14     LDA ram_0014_t04_hi
-C - - - - - 0x008BB7 02:8BA7: 49 FF     EOR #$FF
-C - - - - - 0x008BB9 02:8BA9: 85 14     STA ram_0014_t04_hi
-C - - - - - 0x008BBB 02:8BAB: A5 13     LDA ram_0013_t03_lo
-C - - - - - 0x008BBD 02:8BAD: 20 07 95  EOR #$FF
-                                        CLC
-                                        ADC #$01
-C - - - - - 0x008BC0 02:8BB0: 85 13     STA ram_0013_t03_lo
-C - - - - - 0x008BC2 02:8BB2: 90 02     BCC bra_8BB6_RTS
-C - - - - - 0x008BC4 02:8BB4: E6 14     INC ram_0014_t04_hi
-bra_8BB6_RTS:
-C - - - - - 0x008BC6 02:8BB6: 60        RTS
 
 
 
