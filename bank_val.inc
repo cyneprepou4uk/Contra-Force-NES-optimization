@@ -4,7 +4,8 @@
 
 ; todo баги
     ; на демке не показывается надпись NEOCITY
-    ; босс не триггерится когда доходишь до конца уровня
+    ; катсцены между уровнями с глючной графой на фоне (текст вроде норм)
+    ; вертикально падающие в яму ящики первый раз спавнятся очень долго
 
 
 
@@ -429,7 +430,7 @@ con_music_80                            = $80 ; stage 3 soundtrack
 con_music_84                            = $84 ; stage 4 soundtrack
 con_music_88                            = $88 ; stage 5 soundtrack
 con_music_8C                            = $8C ; 
-con_music_90                            = $90 ; 
+con_music_90                            = $90 ; boss fight
 ; con_music_94                          = $94 ; unused?
 con_music_98                            = $98 ; 
 con_music_9C                            = $9C ; stage clear
