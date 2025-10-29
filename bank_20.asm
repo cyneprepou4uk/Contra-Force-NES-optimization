@@ -4191,7 +4191,7 @@ bra_BD56:
 C - - - - - 0x005D66 01:BD56: A5 00     LDA ram_0000_t41_lo
 C - - - - - 0x005D68 01:BD58: C9 8B     CMP #$8B
 C - - - - - 0x005D6A 01:BD5A: 90 F9     BCC bra_BD55_RTS
-C - - - - - 0x005D6C 01:BD5C: C8        INY ; 02
+C - - - - - 0x005D6C 01:BD5C: C8        INY ; 01
 C - - - - - 0x005D6D 01:BD5D: 60        RTS
 bra_BD5E:
 C - - - - - 0x005D6E 01:BD5E: A0 00     LDY #$00
