@@ -1681,16 +1681,16 @@ sub_0x008F46:
 C - - - - - 0x008F46 02:8F36: A8        TAY
 sub_0x008F47:
 loc_0x008F47:
-C D 0 - - - 0x008F47 02:8F37: B9 57 8F  LDA tbl_0x008F67,Y
+C D 0 - - - 0x008F47 02:8F37: B9 57 8F  LDA tbl_8F57,Y
 C - - - - - 0x008F4A 02:8F3A: 85 02     STA ram_0002_t02_ppu_data
 C - - - - - 0x008F4C 02:8F3C: C8        INY
-C - - - - - 0x008F4D 02:8F3D: B9 57 8F  LDA tbl_0x008F67,Y
+C - - - - - 0x008F4D 02:8F3D: B9 57 8F  LDA tbl_8F57,Y
 C - - - - - 0x008F50 02:8F40: 85 03     STA ram_0002_t02_ppu_data + $01
 C - - - - - 0x008F52 02:8F42: C8        INY
-C - - - - - 0x008F53 02:8F43: B9 57 8F  LDA tbl_0x008F67,Y
+C - - - - - 0x008F53 02:8F43: B9 57 8F  LDA tbl_8F57,Y
 C - - - - - 0x008F56 02:8F46: 85 06     STA ram_0006_t05_ppu_addr_lo
 C - - - - - 0x008F58 02:8F48: C8        INY
-C - - - - - 0x008F59 02:8F49: B9 57 8F  LDA tbl_0x008F67,Y
+C - - - - - 0x008F59 02:8F49: B9 57 8F  LDA tbl_8F57,Y
 C - - - - - 0x008F5C 02:8F4C: 85 07     STA ram_0007_t01_ppu_addr_hi
 C - - - - - 0x008F5E 02:8F4E: C8        INY
 C - - - - - 0x008F5F 02:8F4F: 98        TYA
@@ -1705,6 +1705,80 @@ C - - - - - 0x008F66 02:8F56: 60        RTS
 tbl_8FB7_index:
 - D 0 - - - 0x008FC7 02:8FB7: 00        .byte con_8F57_00   ; 00 
 - D 0 - - - 0x008FC8 02:8FB8: 08        .byte con_8F57_08   ; 01 
+
+
+
+tbl_8F57:
+; see con_8F57
+; 
+- D 0 - - - 0x008F67 02:8F57: 1A AB     .word _off026_0x016B2A_00
+- D 0 - - - 0x008F69 02:8F59: 06 22     .word $2206 ; ppu address
+; 
+- D 0 - - - 0x008F6B 02:8F5B: 10 AB     .word _off026_0x016B20_04
+- D 0 - - - 0x008F6D 02:8F5D: 06 22     .word $2206 ; ppu address
+; 
+- D 0 - - - 0x008F6F 02:8F5F: 1A AB     .word _off026_0x016B2A_08
+- D 0 - - - 0x008F71 02:8F61: 16 22     .word $2216 ; ppu address
+; 
+- D 0 - - - 0x008F73 02:8F63: 10 AB     .word _off026_0x016B20_0C
+- D 0 - - - 0x008F75 02:8F65: 16 22     .word $2216 ; ppu address
+; 
+- D 0 - - - 0x008F77 02:8F67: DC AC     .word _off026_0x016CEC_10
+- D 0 - - - 0x008F79 02:8F69: 0A 2D     .word $2D0A ; ppu address
+; 
+- D 0 - - - 0x008F7B 02:8F6B: E2 AC     .word _off026_0x016CF2_14
+- D 0 - - - 0x008F7D 02:8F6D: 0A 2D     .word $2D0A ; ppu address
+; 
+- D 0 - - - 0x008F7F 02:8F6F: C8 AC     .word _off026_0x016CD8_18
+- D 0 - - - 0x008F81 02:8F71: D0 2E     .word $2ED0 ; ppu address
+; 
+- D 0 - - - 0x008F83 02:8F73: D2 AC     .word _off026_0x016CE2_1C
+- D 0 - - - 0x008F85 02:8F75: D0 2E     .word $2ED0 ; ppu address
+; 
+- D 0 - - - 0x008F87 02:8F77: C8 AC     .word _off026_0x016CD8_20
+- D 0 - - - 0x008F89 02:8F79: D8 2E     .word $2ED8 ; ppu address
+; 
+- D 0 - - - 0x008F8B 02:8F7B: D2 AC     .word _off026_0x016CE2_24
+- D 0 - - - 0x008F8D 02:8F7D: D8 2E     .word $2ED8 ; ppu address
+; 
+- - - - - - 0x008F8F 02:8F7F: E8 AC     .word _off026_0x016CF8_28
+- - - - - - 0x008F91 02:8F81: 0E 27     .word $270E ; ppu address
+; 
+- D 0 - - - 0x008F93 02:8F83: F6 AC     .word _off026_0x016D06_2C
+- D 0 - - - 0x008F95 02:8F85: 0E 27     .word $270E ; ppu address
+; 
+- D 0 - - - 0x008F97 02:8F87: 04 AD     .word _off026_0x016D14_30
+- D 0 - - - 0x008F99 02:8F89: 0E 27     .word $270E ; ppu address
+; 
+- D 0 - - - 0x008F9B 02:8F8B: 12 AD     .word _off026_0x016D22_34
+- D 0 - - - 0x008F9D 02:8F8D: 0E 27     .word $270E ; ppu address
+; 
+- - - - - - 0x008F9F 02:8F8F: 20 AD     .word _off026_0x016D30_38
+- - - - - - 0x008FA1 02:8F91: 0E 27     .word $270E ; ppu address
+; 
+- D 0 - - - 0x008FA3 02:8F93: 2E AD     .word _off026_0x016D3E_3C
+- D 0 - - - 0x008FA5 02:8F95: 84 26     .word $2684 ; ppu address
+; 
+- D 0 - - - 0x008FA7 02:8F97: 34 AD     .word _off026_0x016D44_40
+- D 0 - - - 0x008FA9 02:8F99: 68 26     .word $2668 ; ppu address
+; 
+- D 0 - - - 0x008FAB 02:8F9B: 3C AD     .word _off026_0x016D4C_44
+- D 0 - - - 0x008FAD 02:8F9D: 76 26     .word $2676 ; ppu address
+; 
+- D 0 - - - 0x008FAF 02:8F9F: 44 AD     .word _off026_0x016D54_48
+- D 0 - - - 0x008FB1 02:8FA1: 9A 26     .word $269A ; ppu address
+; 
+- D 0 - - - 0x008FB3 02:8FA3: 4A AD     .word _off026_0x016D5A_4C
+- D 0 - - - 0x008FB5 02:8FA5: 0E 27     .word $270E ; ppu address
+; 
+- D 0 - - - 0x008FB7 02:8FA7: 58 AD     .word _off026_0x016D68_50
+- D 0 - - - 0x008FB9 02:8FA9: 6B 26     .word $266B ; ppu address
+; 
+- D 0 - - - 0x008FBB 02:8FAB: 60 AD     .word _off026_0x016D70_54
+- D 0 - - - 0x008FBD 02:8FAD: 73 26     .word $2673 ; ppu address
+; 
+- D 0 - - - 0x008FBF 02:8FAF: 68 AD     .word _off026_0x016D78_58
+- D 0 - - - 0x008FC1 02:8FB1: 8E 26     .word $268E ; ppu address
 
 
 

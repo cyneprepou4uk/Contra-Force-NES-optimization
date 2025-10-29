@@ -18,7 +18,7 @@ C - - - - - 0x005D46 01:BD36: 90 26     BCC bra_BD5E
 - - - - - - 0x005D4D 01:BD3D: CD 4F 06  CMP ram_obj_pos_X + $01
 - - - - - - 0x005D50 01:BD40: B0 01     BCS bra_BD43
 bra_BD42:
-- - - - - - 0x005D52 01:BD42: C8        INY
+- - - - - - 0x005D52 01:BD42: C8        INY ; 01
 bra_BD43:
 C - - - - - 0x005D53 01:BD43: 98        TYA
 C - - - - - 0x005D54 01:BD44: AA        TAX

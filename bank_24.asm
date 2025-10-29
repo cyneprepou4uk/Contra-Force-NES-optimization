@@ -1266,7 +1266,6 @@ ofs_002_DB69_07:
 C - - J - - 0x01DB79 07:DB69: A6 26     LDX ram_buffer_index
 C - - - - - 0x01DB7B 07:DB6B: E0 20     CPX #$20
 C - - - - - 0x01DB7D 07:DB6D: 90 01     BCC bra_DB70
-bra_DB6F_RTS:
 - - - - - - 0x01DB7F 07:DB6F: 60        RTS
 bra_DB70:
 C - - - - - 0x01DB80 07:DB70: A0 00     LDY #$00
@@ -1323,6 +1322,8 @@ C - - - - - 0x01DB71 07:DB61: E0 20     CPX #$20
 C - - - - - 0x01DB73 07:DB63: B0 0A     BCS bra_DB6F_RTS
 C - - - - - 0x01DB75 07:DB65: A0 FF     LDY #$FF
 C - - - - - 0x01DB77 07:DB67: D0 17     JMP loc_DB80
+bra_DB6F_RTS:
+                                        RTS
 
 
 
