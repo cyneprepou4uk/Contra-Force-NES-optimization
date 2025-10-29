@@ -1,7 +1,7 @@
 .segment "BANK_06"
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
-.org $A000  ; for listing file
+.org $8000  ; for listing file
 ; 0x00C010-0x00E00F
 
 ; код в банке перемещается целиком

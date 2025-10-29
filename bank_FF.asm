@@ -716,14 +716,14 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3AB 07:F39B: 08        .byte con_prg_bank + $10   ; 
 - D 3 - - - 0x01F3AC 07:F39C: 09        .byte con_prg_bank + $11   ; 
                                         .byte con_prg_bank + $12   ; 
-; 05 
-- D 3 - - - 0x01F3AD 07:F39D: 04        .byte con_prg_bank + $04   ; 
+; 05 норм
+- D 3 - - - 0x01F3AD 07:F39D: 04        .byte con_prg_bank + $06   ; 
 - D 3 - - - 0x01F3AE 07:F39E: 06        .byte con_prg_bank + $06   ; 
                                         .byte con_prg_bank + $3D   ; 
-; 06 
-- D 3 - - - 0x01F3AF 07:F39F: 04        .byte con_prg_bank + $04   ; 
-- D 3 - - - 0x01F3B0 07:F3A0: 07        .byte con_prg_bank + $07   ; 
-                                        .byte con_prg_bank + $3D   ; 
+; 06 unused
+- D 3 - - - 0x01F3AF 07:F39F: 04        .byte con_prg_bank + $7F   ; 
+- D 3 - - - 0x01F3B0 07:F3A0: 07        .byte con_prg_bank + $7F   ; 
+                                        .byte con_prg_bank + $7F   ; 
 ; 07 норм
 - D 3 - - - 0x01F3B1 07:F3A1: 0A        .byte con_prg_bank + $08   ; 
 - D 3 - - - 0x01F3B2 07:F3A2: 0B        .byte con_prg_bank + $09   ; 
@@ -732,10 +732,10 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $14   ; 
 - D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $15   ; 
                                         .byte con_prg_bank + $16   ; 
-; 09 unused
-- D 3 - - - 0x01F3B5 07:F3A5: 0C        .byte con_prg_bank + $0C   ; 
-- D 3 - - - 0x01F3B6 07:F3A6: 03        .byte con_prg_bank + $03   ; 
-                                        .byte con_prg_bank + $3D   ; 
+; 09 unused !!!
+- D 3 - - - 0x01F3B5 07:F3A5: 0C        .byte con_prg_bank + $7F   ; 
+- D 3 - - - 0x01F3B6 07:F3A6: 03        .byte con_prg_bank + $7F   ; 
+                                        .byte con_prg_bank + $7F   ; 
 ; 0A норм
 - D 3 - - - 0x01F3B7 07:F3A7: 00        .byte con_prg_bank + $18   ; 
 - D 3 - - - 0x01F3B8 07:F3A8: 03        .byte con_prg_bank + $19   ; 
@@ -752,11 +752,11 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3BD 07:F3AD: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3BE 07:F3AE: 01        .byte con_prg_bank + $01   ; 
                                         .byte con_prg_bank + $3D   ; 
-; 0E 
-- D 3 - - - 0x01F3BF 07:F3AF: 04        .byte con_prg_bank + $04   ; 
-- D 3 - - - 0x01F3C0 07:F3B0: 02        .byte con_prg_bank + $02   ; 
-                                        .byte con_prg_bank + $3D   ; 
-; 0F (unused) 
+; 0E unused
+- D 3 - - - 0x01F3BF 07:F3AF: 04        .byte con_prg_bank + $7F   ; 
+- D 3 - - - 0x01F3C0 07:F3B0: 02        .byte con_prg_bank + $7F   ; 
+                                        .byte con_prg_bank + $7F   ; 
+; 0F unused 
                                         .byte con_prg_bank + $7F   ; 
                                         .byte con_prg_bank + $7F   ; 
                                         .byte con_prg_bank + $7F   ; 
