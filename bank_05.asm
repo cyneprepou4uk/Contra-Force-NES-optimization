@@ -1006,9 +1006,6 @@ C - - - - - 0x00A60F 02:A5FF: 9D C8 07  STA ram_07C8_unk,X
 C - - - - - 0x00A612 02:A602: A9 00     LDA #$00
 C - - - - - 0x00A614 02:A604: 9D AA 07  STA ram_07AA_unk,X
 C - - - - - 0x00A617 02:A607: 4C 84 AC  JMP loc_AC84
-
-
-
 bra_A610:
 C - - - - - 0x00A620 02:A610: 20 5A AD  JSR sub_AD5A
 C - - - - - 0x00A623 02:A613: 20 78 91  JSR sub_0x009188_stage_AND_01

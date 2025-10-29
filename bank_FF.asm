@@ -826,7 +826,7 @@ C - - - - - 0x01F3E3 07:F3D3: 6C 37 00  JMP (ram_0037_t01_jmp)
 
 
 tbl_F3D6:
-; 00 con_F3D6_00
+; 00 con_F3D6_00 (перемещено)
 - D 3 - - - 0x01F3E6 07:F3D6: 54 EE     .word ofs_006_0x01EE64_00
 - D 3 - - - 0x01F3E8 07:F3D8: 03        .byte con_prg_pair + $12   ; 
 ; 01 con_F3D6_01
@@ -838,7 +838,7 @@ tbl_F3D6:
 ; 03 con_F3D6_03 unused, index doesn't exist
 - - - - - - 0x01F3EF 07:F3DF: 86 B2     .word ofs_006_0x013296_03
 - - - - - - 0x01F3F1 07:F3E1: 04        .byte con_prg_pair + $04   ; 
-; 04 con_F3D6_04
+; 04 con_F3D6_04 (перемещено)
 - D 3 - - - 0x01F3F2 07:F3E2: 23 F1     .word ofs_006_0x01F133_04
 - D 3 - - - 0x01F3F4 07:F3E4: 03        .byte con_prg_pair + $12   ; 
 ; 05 con_F3D6_05
@@ -871,7 +871,7 @@ tbl_F3D6:
 ; 0E con_F3D6_0E
 - D 3 - - - 0x01F410 07:F400: 0D B1     .word ofs_006_0x01711D_0E
 - D 3 - - - 0x01F412 07:F402: 01        .byte con_prg_pair + $01   ; 
-; 0F con_F3D6_0F
+; 0F con_F3D6_0F (перемещено)
 - D 3 - - - 0x01F413 07:F403: EC EE     .word ofs_006_0x01EEFC_0F
 - D 3 - - - 0x01F415 07:F405: 03        .byte con_prg_pair + $12   ; 
 ; 10 con_F3D6_10 unused, index doesn't exist, points to FF
@@ -940,10 +940,10 @@ tbl_F3D6:
 ; 25 con_F3D6_25
 - D 3 - - - 0x01F455 07:F445: BB BF     .word ofs_006_0x013FCB_25
 - D 3 - - - 0x01F457 07:F447: 0F        .byte con_prg_pair + $04   ; 
-; 26 con_F3D6_26 new
+; 26 con_F3D6_26 new (перемещено)
                                         .word ofs_006_0x01DAA5_26
                                         .byte con_prg_pair + $12   ; 
-; 27 con_F3D6_27 new
+; 27 con_F3D6_27 new (перемещено)
                                         .word ofs_006_0x01FC36_27
                                         .byte con_prg_pair + $12   ; 
 
