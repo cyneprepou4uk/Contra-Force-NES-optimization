@@ -428,7 +428,8 @@ C - - - - - 0x00819C 02:818C: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 bra_818F:
 C - - - - - 0x00819F 02:818F: 6C 18 00  JMP (ram_0018_t04_jmp)
 bra_8192:
-C - - - - - 0x0081A2 02:8192: 20 53 81  JSR sub_8153_swap_prg_banks
+C - - - - - 0x0081A2 02:8192: 20 53 81  LDA #con_prg_pair + $02
+                                        JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x0081A5 02:8195: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x0081A8 02:8198: F0 28     BEQ bra_81C2
 C - - - - - 0x0081AA 02:819A: 20 26 B6  JSR sub_0x00B636
@@ -437,13 +438,15 @@ C - - - - - 0x0081B0 02:81A0: BD 82 07  LDA ram_0782_unk,X
 C - - - - - 0x0081B3 02:81A3: F0 23     BEQ bra_81BA_RTS
 ; временный фикс
 ; todo переместить код и данные из банка 05
-                                        JSR sub_8153_swap_prg_banks
+                                        LDA #con_prg_pair + $02
+                                        JSR sub_0x01F35C_prg_bankswitch
 ; 
 C - - - - - 0x0081B5 02:81A5: 20 F2 B3  JSR sub_B3F2
 C - - - - - 0x0081B8 02:81A8: 20 10 8E  JSR sub_0x008E20
 C - - - - - 0x0081BB 02:81AB: 4C C0 B6  JMP loc_B6C0
 bra_81AE:
-C - - - - - 0x0081BE 02:81AE: 20 53 81  JSR sub_8153_swap_prg_banks
+C - - - - - 0x0081BE 02:81AE: 20 53 81  LDA #con_prg_pair + $02
+                                        JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x0081C1 02:81B1: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x0081C4 02:81B4: F0 0C     BEQ bra_81C2
 .export loc_0x0081C6
@@ -569,7 +572,8 @@ bra_8278_loop:
 C D 0 - - - 0x008288 02:8278: A5 36     LDA ram_prg_banks_pair
 C - - - - - 0x00828A 02:827A: C9 02     CMP #con_prg_pair + $02
 C - - - - - 0x00828C 02:827C: F0 03     BEQ bra_8281_same_pair
-C - - - - - 0x00828E 02:827E: 20 53 81  JSR sub_8153_swap_prg_banks
+C - - - - - 0x00828E 02:827E: 20 53 81  LDA #con_prg_pair + $02
+                                        JSR sub_0x01F35C_prg_bankswitch
 bra_8281_same_pair:
 C - - - - - 0x008291 02:8281: BD 82 07  LDA ram_0782_unk,X
 C - - - - - 0x008294 02:8284: F0 3F     BEQ bra_82C5_RTS
