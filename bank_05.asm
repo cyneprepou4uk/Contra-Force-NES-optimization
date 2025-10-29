@@ -242,18 +242,6 @@ C - - - - - 0x00A1AA 02:A19A: 4C AF A2  JMP loc_A2AF
 
 
 
-sub_A1A4:
-; out
-    ; A = 
-    ; Z
-        ; 0 = 
-        ; 1 = 
-C - - - - - 0x00A1B4 02:A1A4: BD AA 07  LDA ram_07AA_unk,X
-C - - - - - 0x00A1B7 02:A1A7: 29 40     AND #$40
-C - - - - - 0x00A1B9 02:A1A9: 60        RTS
-
-
-
 sub_A1AA:
 ; out
     ; A = 
@@ -270,7 +258,8 @@ C - - - - - 0x00A1C3 02:A1B3: 60        RTS
 
 loc_A1B4_side_view:
 C D 1 - - - 0x00A1C4 02:A1B4: A0 00     LDY #$00
-C - - - - - 0x00A1C6 02:A1B6: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00A1C6 02:A1B6: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00A1C9 02:A1B9: F0 07     BEQ bra_A1C2
 C - - - - - 0x00A1CB 02:A1BB: BD B4 07  LDA ram_07B4_unk,X
 C - - - - - 0x00A1CE 02:A1BE: 30 02     BMI bra_A1C2
@@ -342,7 +331,8 @@ C - - - - - 0x00A245 02:A235: F0 1A     BEQ bra_A251
 C - - - - - 0x00A247 02:A237: A9 04     LDA #$04
 C - - - - - 0x00A249 02:A239: D0 13     BNE bra_A24E    ; jmp
 bra_A23B:
-C - - - - - 0x00A24B 02:A23B: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00A24B 02:A23B: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00A24E 02:A23E: F0 11     BEQ bra_A251
 C - - - - - 0x00A250 02:A240: 20 DC A2  JSR sub_A2DC
 C - - - - - 0x00A253 02:A243: 20 D5 A2  JSR sub_A2D5
@@ -544,7 +534,8 @@ C - - - - - 0x00A37F 02:A36F: F0 0D     BEQ bra_A37E
 C - - - - - 0x00A381 02:A371: 38        SEC
 C - - - - - 0x00A382 02:A372: E9 10     SBC #$10
 C - - - - - 0x00A384 02:A374: 85 02     STA ram_0002_t32
-C - - - - - 0x00A386 02:A376: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00A386 02:A376: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00A389 02:A379: 05 02     ORA ram_0002_t32
 C - - - - - 0x00A38B 02:A37B: 9D AA 07  STA ram_07AA_unk,X
 bra_A37E:
@@ -1021,7 +1012,8 @@ C - - - - - 0x00A628 02:A618: 20 0A A6  LDA ram_07C8_unk,X
 C - - - - - 0x00A62B 02:A61B: F0 1F     BEQ bra_A63C
 C - - - - - 0x00A62D 02:A61D: D0 05     BNE bra_A624    ; jmp
 bra_A61F_side_view:
-C - - - - - 0x00A62F 02:A61F: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00A62F 02:A61F: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00A632 02:A622: F0 06     BEQ bra_A62A
 bra_A624:
 C - - - - - 0x00A634 02:A624: 20 42 AB  JSR sub_AB42
@@ -1149,7 +1141,8 @@ C - - - - - 0x00A701 02:A6F1: D0 0A     BNE bra_A6FD
 C - - - - - 0x00A703 02:A6F3: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x00A706 02:A6F6: D0 08     BNE bra_A700    ; if upper view
 ; if side view
-C - - - - - 0x00A708 02:A6F8: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00A708 02:A6F8: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00A70B 02:A6FB: F0 03     BEQ bra_A700
 bra_A6FD:
 C - - - - - 0x00A70D 02:A6FD: 4C 7C A7  JMP loc_A77C
@@ -1283,7 +1276,8 @@ C - - - - - 0x00A7D8 02:A7C8: 20 62 97  JSR sub_0x009772
 C - - - - - 0x00A7DB 02:A7CB: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x00A7DE 02:A7CE: D0 0E     BNE bra_A7DE    ; if upper view
 ; if side view
-C - - - - - 0x00A7E0 02:A7D0: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00A7E0 02:A7D0: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00A7E3 02:A7D3: D0 09     BNE bra_A7DE
 C - - - - - 0x00A7E5 02:A7D5: 20 A8 A0  JSR sub_A0A8
 C - - - - - 0x00A7E8 02:A7D8: D0 08     BNE bra_A7E2
@@ -1311,7 +1305,8 @@ C - - - - - 0x00A80C 02:A7FC: A5 3C     LDA ram_003C_t03
 C - - - - - 0x00A80E 02:A7FE: 29 4F     AND #$4F
 C - - - - - 0x00A810 02:A800: C9 05     CMP #$05
 C - - - - - 0x00A812 02:A802: F0 1E     BEQ bra_A822_RTS
-C - - - - - 0x00A814 02:A804: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00A814 02:A804: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00A817 02:A807: D0 19     BNE bra_A822_RTS
 C - - - - - 0x00A819 02:A809: BD 68 06  LDA ram_obj_pos_Y,X
 C - - - - - 0x00A81C 02:A80C: 18        CLC
@@ -1426,7 +1421,8 @@ C - - - - - 0x00A87C 02:A86C: A8        TAY
 C - - - - - 0x00A87D 02:A86D: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A880 02:A870: 29 08     AND #$08
 C - - - - - 0x00A882 02:A872: F0 16     BEQ bra_A88A_RTS
-C - - - - - 0x00A884 02:A874: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00A884 02:A874: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00A887 02:A877: F0 11     BEQ bra_A88A_RTS
 C - - - - - 0x00A889 02:A879: FE 54 03  INC ram_0354,X
 C - - - - - 0x00A88C 02:A87C: A5 23     LDA ram_frm_cnt
@@ -1464,7 +1460,8 @@ C - - - - - 0x00A8B2 02:A8A2: A8        TAY
 C - - - - - 0x00A8B3 02:A8A3: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A8B6 02:A8A6: 29 08     AND #$08
 C - - - - - 0x00A8B8 02:A8A8: F0 10     BEQ bra_A8BA
-C - - - - - 0x00A8BA 02:A8AA: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00A8BA 02:A8AA: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00A8BD 02:A8AD: F0 0B     BEQ bra_A8BA
 C - - - - - 0x00A8BF 02:A8AF: A4 1C     LDY ram_001C_t07
 C - - - - - 0x00A8C1 02:A8B1: B9 82 07  LDA ram_0782_unk,Y
@@ -2355,7 +2352,8 @@ C - - - - - 0x00AD15 02:AD05: 18        CLC
 C - - - - - 0x00AD16 02:AD06: 69 01     ADC #$01
 C - - - - - 0x00AD18 02:AD08: D0 2C     BNE bra_AD36
 bra_AD0A_side_view:
-C - - - - - 0x00AD1A 02:AD0A: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00AD1A 02:AD0A: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00AD1D 02:AD0D: D0 1F     BNE bra_AD2E
 C - - - - - 0x00AD1F 02:AD0F: 20 A2 A0  JSR sub_0x00A0B2_07AAx_AND_0F
 C - - - - - 0x00AD22 02:AD12: F0 0B     BEQ bra_AD1F
@@ -2465,10 +2463,11 @@ C - - - - - 0x00ADC5 02:ADB5: 85 1C     STA ram_001C_t08
 C - - - - - 0x00ADC7 02:ADB7: 20 78 91  JSR sub_0x009188_stage_AND_01
 C - - - - - 0x00ADCA 02:ADBA: D0 09     BNE bra_ADC5    ; if upper view
 ; if side view
-C - - - - - 0x00ADCC 02:ADBC: 20 A4 A1  JSR sub_A1A4
+C - - - - - 0x00ADCC 02:ADBC: 20 A4 A1  LDA ram_07AA_unk,X
+                                        AND #$40
 C - - - - - 0x00ADCF 02:ADBF: F0 04     BEQ bra_ADC5
 C - - - - - 0x00ADD1 02:ADC1: A9 00     LDA #$00
-C - - - - - 0x00ADD3 02:ADC3: F0 02     BEQ bra_ADC7
+C - - - - - 0x00ADD3 02:ADC3: F0 02     BEQ bra_ADC7    ; jmp
 bra_ADC5:
 C - - - - - 0x00ADD5 02:ADC5: A5 1A     LDA ram_001A_t04
 bra_ADC7:
