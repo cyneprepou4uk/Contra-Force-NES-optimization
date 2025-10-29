@@ -654,12 +654,6 @@ sub_F34C_prg_bankswitch:
 loc_F34C_prg_bankswitch:
 loc_0x01F35C_prg_bankswitch:
 sub_0x01F35C_prg_bankswitch:
-C D 3 - - - 0x01F35C 07:F34C: C9 03     CMP #con_prg_pair + $03
-C - - - - - 0x01F35E 07:F34E: D0 05     BNE bra_F355
-; 03
-C - - - - - 0x01F360 07:F350: A4 75     LDY ram_stage
-C - - - - - 0x01F362 07:F352: B9 89 F3  LDA tbl_F389,Y
-bra_F355:
 C - - - - - 0x01F365 07:F355: 85 36     STA ram_prg_banks_pair
 bra_F357_loop:
 C - - - - - 0x01F367 07:F357: 20 8E F3  LDA #$00
@@ -700,18 +694,9 @@ C - - - - - 0x01F398 07:F388: 60        RTS
 
 
 
-tbl_F389:
-- D 3 - - - 0x01F399 07:F389: 03        .byte con_prg_pair + $03   ; 00 stage 1
-- D 3 - - - 0x01F39A 07:F38A: 03        .byte con_prg_pair + $03   ; 01 stage 2
-- D 3 - - - 0x01F39B 07:F38B: 09        .byte con_prg_pair + $09   ; 02 stage 3
-- D 3 - - - 0x01F39C 07:F38C: 03        .byte con_prg_pair + $03   ; 03 stage 4
-- D 3 - - - 0x01F39D 07:F38D: 09        .byte con_prg_pair + $09   ; 04 stage 5
-
-
-
 tbl_F393_prg_pairs:
 ; see con_prg_pair
-; 00 
+; 00 unused
 - D 3 - - - 0x01F3A3 07:F393: 00        .byte con_prg_bank + $00   ; 
 - D 3 - - - 0x01F3A4 07:F394: 01        .byte con_prg_bank + $01   ; 
                                         .byte con_prg_bank + $3D   ; 
