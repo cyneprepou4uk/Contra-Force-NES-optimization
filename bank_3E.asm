@@ -4203,14 +4203,6 @@ C - - - - - 0x00968B 02:967B: 60        RTS
 
 
 
-.export sub_0x00A0B2_07AAx_AND_0F
-sub_0x00A0B2_07AAx_AND_0F:
-C - - - - - 0x00A0B2 02:A0A2: BD AA 07  LDA ram_07AA_unk,X
-C - - - - - 0x00A0B5 02:A0A5: 29 0F     AND #$0F
-C - - - - - 0x00A0B7 02:A0A7: 60        RTS
-
-
-
 sub_0x009768:
 .export sub_0x009768
 ; out
