@@ -667,9 +667,6 @@ C - - - - - 0x01F371 07:F361: 60        RTS
 
 loc_F362_switch_prg_bank_pair:
 sub_F362_switch_prg_bank_pair:
-; bzk optimize, 007E is useless
-C D 3 - - - 0x01F372 07:F362: A9 01     LDA #$01
-C - - - - - 0x01F374 07:F364: 85 7E     STA ram_007E_useless
 ; bzk optimize, divide table in 2 tables,
 ; replace LDA with LDY, delete ASL + TAY
 C - - - - - 0x01F376 07:F366: A5 36     LDA ram_prg_banks_pair
@@ -688,8 +685,6 @@ C - - - - - 0x01F38E 07:F37E: B9 94 F3  LDA tbl_F393_prg_pairs + $01,Y
                                         ADC #con_prg_bank + $26 - $01
 bra_F381:
 C - - - - - 0x01F391 07:F381: 8D 01 80  STA $5115   ; A000-BFFF
-C - - - - - 0x01F394 07:F384: A9 00     LDA #$00
-C - - - - - 0x01F396 07:F386: 85 7E     STA ram_007E_useless
 C - - - - - 0x01F398 07:F388: 60        RTS
 
 

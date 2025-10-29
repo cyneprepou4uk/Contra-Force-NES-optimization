@@ -1312,13 +1312,9 @@ ram_chr_bank                            = $0077 ; 00EA36 00EA3F 01D050 01D0BC 01
 
 
 
-; free address
+; free addresses
 ; ram_007D                              = $007D ; 01F311 01F37C 01F389 01F74F 01FD5D 
-
-
-
-; bzk optimize, useless address usage
-ram_007E_useless                        = $007E ; 01F311 01F374 01F396 01FD5D 
+; ram_007E                        = $007E ; 01F311 01F374 01F396 01FD5D 
 
 
 
