@@ -27,12 +27,6 @@ C - - - - - 0x008016 02:8006: 85 8C     STA ram_008C
 ; bzk optimize, useless STA
 C - - - - - 0x008018 02:8008: 85 8D     STA ram_008D
 C - - - - - 0x00801A 02:800A: 85 9E     STA ram_009E
-C - - - - - 0x00801C 02:800C: 20 01 A0  JSR sub_A001
-                                        JMP loc_0x00801F
-
-
-
-sub_A001:
 C - - - - - 0x00A011 02:A001: A2 01     LDX #$01
 bra_A003_loop:
 C - - - - - 0x00A013 02:A003: 20 40 F6  JSR sub_0x01F650
@@ -57,7 +51,7 @@ C - - - - - 0x00A039 02:A029: 20 30 A0  JSR sub_A030
 bra_A02C:
 C - - - - - 0x00A03C 02:A02C: CA        DEX
 C - - - - - 0x00A03D 02:A02D: 10 D4     BPL bra_A003_loop
-C - - - - - 0x00A03F 02:A02F: 60        RTS
+C - - - - - 0x00A03F 02:A02F: 60        JMP loc_0x00801F
 
 
 
