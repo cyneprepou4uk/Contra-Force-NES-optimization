@@ -235,16 +235,10 @@ C - - - - - 0x00A1A0 02:A190: D0 08     BNE bra_A19A
 bra_A192:
 C - - - - - 0x00A1A2 02:A192: A4 18     LDY ram_0018_t14
 C - - - - - 0x00A1A4 02:A194: B9 FD A4  LDA tbl_A4FD,Y
-C - - - - - 0x00A1A7 02:A197: 20 9D A1  JSR sub_A19D
+C - - - - - 0x00A1A7 02:A197: 20 9D A1  ORA ram_07D2_unk,X
+                                        STA ram_07D2_unk,X
 bra_A19A:
 C - - - - - 0x00A1AA 02:A19A: 4C AF A2  JMP loc_A2AF
-
-
-
-sub_A19D:
-C - - - - - 0x00A1AD 02:A19D: 1D D2 07  ORA ram_07D2_unk,X
-C - - - - - 0x00A1B0 02:A1A0: 9D D2 07  STA ram_07D2_unk,X
-C - - - - - 0x00A1B3 02:A1A3: 60        RTS
 
 
 
@@ -328,7 +322,8 @@ C - - - - - 0x00A224 02:A214: A4 18     LDY ram_0018_t14
 C - - - - - 0x00A226 02:A216: C8        INY
 C - - - - - 0x00A227 02:A217: 98        TYA
 bra_A218:
-C - - - - - 0x00A228 02:A218: 20 9D A1  JSR sub_A19D
+C - - - - - 0x00A228 02:A218: 20 9D A1  ORA ram_07D2_unk,X
+                                        STA ram_07D2_unk,X
 bra_A21B:
 C - - - - - 0x00A22B 02:A21B: A5 3A     LDA ram_003A_t03
 C - - - - - 0x00A22D 02:A21D: 29 08     AND #$08
@@ -356,7 +351,8 @@ C - - - - - 0x00A258 02:A248: C9 02     CMP #$02
 C - - - - - 0x00A25A 02:A24A: F0 05     BEQ bra_A251
 C - - - - - 0x00A25C 02:A24C: A9 02     LDA #$02
 bra_A24E:
-C - - - - - 0x00A25E 02:A24E: 20 9D A1  JSR sub_A19D
+C - - - - - 0x00A25E 02:A24E: 20 9D A1  ORA ram_07D2_unk,X
+                                        STA ram_07D2_unk,X
 bra_A251:
 C - - - - - 0x00A261 02:A251: 20 DC A2  JSR sub_A2DC
 C - - - - - 0x00A264 02:A254: C8        INY
@@ -408,7 +404,8 @@ C - - - - - 0x00A2B6 02:A2A6: 29 7F     AND #$7F
 C - - - - - 0x00A2B8 02:A2A8: 95 BE     STA ram_00BE,X
 C - - - - - 0x00A2BA 02:A2AA: A9 02     LDA #$02
 bra_A2AC:
-C - - - - - 0x00A2BC 02:A2AC: 20 9D A1  JSR sub_A19D
+C - - - - - 0x00A2BC 02:A2AC: 20 9D A1  ORA ram_07D2_unk,X
+                                        STA ram_07D2_unk,X
 bra_A2AF:
 loc_A2AF:   ; bzk optimize
 C D 1 - - - 0x00A2BF 02:A2AF: 4C 7B AE  JMP loc_AE7B
@@ -1483,7 +1480,8 @@ C - - - - - 0x00A8D0 02:A8C0: 20 0A A6  LDA ram_07C8_unk,X
 C - - - - - 0x00A8D3 02:A8C3: D0 08     BNE bra_A8CD
 C - - - - - 0x00A8D5 02:A8C5: 8C A2 03  STY ram_03A2
 C - - - - - 0x00A8D8 02:A8C8: B9 82 07  LDA ram_0782_unk,Y
-C - - - - - 0x00A8DB 02:A8CB: 10 7E     BPL bra_A94B
+C - - - - - 0x00A8DB 02:A8CB: 10 7E     BMI bra_A8CD
+                                        JMP loc_A94B
 bra_A8CD:
 loc_A8CD:
 C D 1 - - - 0x00A8DD 02:A8CD: 29 7F     AND #$7F
@@ -1547,7 +1545,8 @@ bra_A938:
 C - - - - - 0x00A948 02:A938: A5 08     LDA ram_0008_t05
 bra_A93A:
 loc_A93A:
-C D 1 - - - 0x00A94A 02:A93A: 20 9D A1  JSR sub_A19D
+C D 1 - - - 0x00A94A 02:A93A: 20 9D A1  ORA ram_07D2_unk,X
+                                        STA ram_07D2_unk,X
 C - - - - - 0x00A94D 02:A93D: A5 1D     LDA ram_001D_t05
 C - - - - - 0x00A94F 02:A93F: F0 08     BEQ bra_A949
 C - - - - - 0x00A951 02:A941: A4 1C     LDY ram_001C_t07
@@ -1557,7 +1556,10 @@ C - - - - - 0x00A956 02:A946: 4C 8B A8  JMP loc_A88B_loop
 bra_A949:
 C - - - - - 0x00A959 02:A949: 18        CLC
 C - - - - - 0x00A95A 02:A94A: 60        RTS
-bra_A94B:
+
+
+
+loc_A94B:
 C - - - - - 0x00A95B 02:A94B: C9 15     CMP #$15
 C - - - - - 0x00A95D 02:A94D: D0 08     BNE bra_A957
 - - - - - - 0x00A95F 02:A94F: A5 00     LDA ram_0000_t84
