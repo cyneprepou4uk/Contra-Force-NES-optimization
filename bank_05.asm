@@ -111,20 +111,6 @@ C - - - - - 0x00A09F 02:A08F: 4C 84 AC  JMP loc_AC84
 
 
 
-sub_A092:
-C - - - - - 0x00A0A2 02:A092: A9 00     LDA #$00
-C - - - - - 0x00A0A4 02:A094: F0 02     BEQ bra_A098    ; jmp
-
-
-
-sub_A096:
-C - - - - - 0x00A0A6 02:A096: A9 80     LDA #$80
-bra_A098:
-C - - - - - 0x00A0A8 02:A098: 9D B4 07  STA ram_07B4_unk,X
-C - - - - - 0x00A0AB 02:A09B: 60        RTS
-
-
-
 bra_A09C:
 C - - - - - 0x00A0AC 02:A09C: 20 4F A4  JSR sub_A44F
 C - - - - - 0x00A0AF 02:A09F: 90 0D     BCC bra_A0AE
@@ -624,7 +610,8 @@ bra_A3D0:
 C - - - - - 0x00A3E0 02:A3D0: BD AA 07  LDA ram_07AA_unk,X
 C - - - - - 0x00A3E3 02:A3D3: 09 40     ORA #$40
 C - - - - - 0x00A3E5 02:A3D5: 9D AA 07  STA ram_07AA_unk,X
-C - - - - - 0x00A3E8 02:A3D8: 20 92 A0  JSR sub_A092
+C - - - - - 0x00A3E8 02:A3D8: 20 92 A0  LDA #$00
+                                        STA ram_07B4_unk,X
 bra_A3DB:
 loc_A3DB:
 C D 1 - - - 0x00A3EB 02:A3DB: A5 01     LDA ram_0001_t22_btns_ABSS
@@ -1062,7 +1049,8 @@ C - - - - - 0x00A63F 02:A62F: D0 0B     BNE bra_A63C
 C - - - - - 0x00A641 02:A631: BD AA 07  LDA ram_07AA_unk,X
 C - - - - - 0x00A644 02:A634: 09 60     ORA #$60
 C - - - - - 0x00A646 02:A636: 9D AA 07  STA ram_07AA_unk,X
-C - - - - - 0x00A649 02:A639: 20 96 A0  JSR sub_A096
+C - - - - - 0x00A649 02:A639: 20 96 A0  LDA #$80
+                                        STA ram_07B4_unk,X
 bra_A63C:
 loc_A63C:
 C D 1 - - - 0x00A64C 02:A63C: 20 0A A6  LDA ram_07C8_unk,X
@@ -1620,7 +1608,8 @@ C D 1 - - - 0x00A98B 02:A97B: 9D AA 07  STA ram_07AA_unk,X
 C - - - - - 0x00A98E 02:A97E: BD D2 07  LDA ram_07D2_unk,X
 C - - - - - 0x00A991 02:A981: 29 F7     AND #$F7
 C - - - - - 0x00A993 02:A983: 9D D2 07  STA ram_07D2_unk,X
-C - - - - - 0x00A996 02:A986: 20 92 A0  JSR sub_A092
+C - - - - - 0x00A996 02:A986: 20 92 A0  LDA #$00
+                                        STA ram_07B4_unk,X
 ; player was killed with a bullet, enemy or object
 C - - - - - 0x00A999 02:A989: A9 80     LDA #$80
 C - - - - - 0x00A99B 02:A98B: 9D C8 07  STA ram_07C8_unk,X
@@ -2128,7 +2117,8 @@ C - - - - - 0x00AB86 02:AB76: D0 08     BNE bra_AB80
 C - - - - - 0x00AB88 02:AB78: BD B4 07  LDA ram_07B4_unk,X
 C - - - - - 0x00AB8B 02:AB7B: 30 03     BMI bra_AB80
 bra_AB7D:
-C - - - - - 0x00AB8D 02:AB7D: 20 96 A0  JSR sub_A096
+C - - - - - 0x00AB8D 02:AB7D: 20 96 A0  LDA #$80
+                                        STA ram_07B4_unk,X
 bra_AB80:
 C - - - - - 0x00AB90 02:AB80: 20 43 A0  LDA ram_current_player,X
                                         AND #$0F
@@ -2172,7 +2162,8 @@ C - - - - - 0x00ABD0 02:ABC0: B9 CF AC  LDA tbl_ACCE + $01,Y
 C - - - - - 0x00ABD3 02:ABC3: E5 1B     SBC ram_001B_t02_hi
 C - - - - - 0x00ABD5 02:ABC5: 85 1B     STA ram_001B_t02_hi
 C - - - - - 0x00ABD7 02:ABC7: 10 31     BPL bra_ABFA
-C - - - - - 0x00ABD9 02:ABC9: 20 96 A0  JSR sub_A096
+C - - - - - 0x00ABD9 02:ABC9: 20 96 A0  LDA #$80
+                                        STA ram_07B4_unk,X
 C - - - - - 0x00ABDC 02:ABCC: A9 00     LDA #$00
 C - - - - - 0x00ABDE 02:ABCE: 85 1A     STA ram_001A_t08_lo
 C - - - - - 0x00ABE0 02:ABD0: 85 1B     STA ram_001B_t02_hi
@@ -2228,7 +2219,8 @@ C - - - - - 0x00AC37 02:AC27: A6 1F     LDX ram_001F_t06
 C - - - - - 0x00AC39 02:AC29: B5 CD     LDA ram_00CD,X
 C - - - - - 0x00AC3B 02:AC2B: 29 FC     AND #$FC
 C - - - - - 0x00AC3D 02:AC2D: 95 CD     STA ram_00CD,X
-C - - - - - 0x00AC3F 02:AC2F: 20 92 A0  JSR sub_A092
+C - - - - - 0x00AC3F 02:AC2F: 20 92 A0  LDA #$00
+                                        STA ram_07B4_unk,X
 C - - - - - 0x00AC42 02:AC32: A9 BF     LDA #$BF
 C - - - - - 0x00AC44 02:AC34: 3D AA 07  AND ram_07AA_unk,X
 C - - - - - 0x00AC47 02:AC37: 9D AA 07  STA ram_07AA_unk,X
