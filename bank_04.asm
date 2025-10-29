@@ -3085,8 +3085,7 @@ sub_9E20:
     ; A = 
 C - - - - - 0x009E30 02:9E20: 25 00     AND ram_0000_t75
 C - - - - - 0x009E32 02:9E22: F0 05     BEQ bra_9E29
-C - - - - - 0x009E34 02:9E24: A9 09     LDA #con_F3D6_09
-C - - - - - 0x009E36 02:9E26: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x009E36 02:9E26: 20 B3 F3  JSR sub_0x00AE44
 bra_9E29:
 C - - - - - 0x009E39 02:9E29: A6 53     LDX ram_0053
 C - - - - - 0x009E3B 02:9E2B: A5 6A     LDA ram_006A

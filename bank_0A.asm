@@ -5642,8 +5642,7 @@ C - - - - - 0x016F5D 05:AF4D: B9 EB B0  LDA tbl_B0ED - $04 + $02,Y
 C - - - - - 0x016F60 05:AF50: 85 1A     STA ram_001A_t08_lo
 C - - - - - 0x016F62 05:AF52: B9 EC B0  LDA tbl_B0ED - $04 + $03,Y
 C - - - - - 0x016F65 05:AF55: 85 1B     STA ram_001B_t02_hi
-C - - - - - 0x016F67 05:AF57: A9 09     LDA #con_F3D6_09
-C - - - - - 0x016F69 05:AF59: 4C B3 F3  JMP loc_0x01F3C3_execute_script
+C - - - - - 0x016F69 05:AF59: 4C B3 F3  JMP loc_0x00AE44
 bra_AF5C:
 C - - - - - 0x016F6C 05:AF5C: BD 00 06  LDA ram_0600_obj,X
 C - - - - - 0x016F6F 05:AF5F: 29 01     AND #$01

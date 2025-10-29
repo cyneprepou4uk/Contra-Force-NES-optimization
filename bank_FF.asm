@@ -852,8 +852,8 @@ tbl_F3D6:
 ; 08 con_F3D6_08 unused
 - D 3 - - - 0x01F3FE 07:F3EE: E0 F2     .word $FFFF ; 
 - D 3 - - - 0x01F400 07:F3F0: 03        .byte con_prg_pair + $03   ; 
-; 09 con_F3D6_09
-- D 3 - - - 0x01F401 07:F3F1: 34 AE     .word ofs_006_0x00AE44_09
+; 09 con_F3D6_09 unused
+- D 3 - - - 0x01F401 07:F3F1: 34 AE     .word $FFFF ; 
 - D 3 - - - 0x01F403 07:F3F3: 02        .byte con_prg_pair + $02   ; 
 ; 0A con_F3D6_0A unused, index doesn't exist
 - - - - - - 0x01F404 07:F3F4: E4 A1     .word $FFFF ; 

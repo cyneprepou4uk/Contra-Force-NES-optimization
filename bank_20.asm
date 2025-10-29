@@ -3981,8 +3981,7 @@ C - - - - - 0x00FFD3 03:BFC3: D0 0E     BNE bra_BFD3
 C - - - - - 0x00FFD5 03:BFC5: BD F3 BF  LDA tbl_BFE1,X
 C - - - - - 0x00FFD8 03:BFC8: 19 C8 07  ORA ram_07C8_unk,Y
 C - - - - - 0x00FFDB 03:BFCB: 99 C8 07  STA ram_07C8_unk,Y
-C - - - - - 0x00FFDE 03:BFCE: A9 09     LDA #con_F3D6_09
-C - - - - - 0x00FFE0 03:BFD0: 20 B3 F3  JSR sub_0x01F3C3_execute_script
+C - - - - - 0x00FFE0 03:BFD0: 20 B3 F3  JSR sub_0x00AE44
 bra_BFD3:
 C - - - - - 0x00FFE3 03:BFD3: E8        INX
 C - - - - - 0x00FFE4 03:BFD4: E0 02     CPX #$02

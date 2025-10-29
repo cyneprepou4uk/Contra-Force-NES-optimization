@@ -3281,9 +3281,8 @@ bra_9761_RTS:
 
 .export loc_0x00AE44
 loc_0x00AE44:
-.export ofs_006_0x00AE44_09
-ofs_006_0x00AE44_09:
-; con_F3D6_09
+.export sub_0x00AE44
+sub_0x00AE44:
 C D 1 J - - 0x00AE44 02:AE34: A9 00     LDA #$00
 .export loc_0x00AE46
 loc_0x00AE46:
