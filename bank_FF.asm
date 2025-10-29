@@ -787,9 +787,9 @@ tbl_F393_prg_pairs:
                                         .byte con_prg_bank + $24   ; 
                                         .byte con_prg_bank + $7F   ; 
                                         .byte con_prg_bank + $25   ; 
-; 13 unused
-                                        .byte con_prg_bank + $04   ; 
-                                        .byte con_prg_bank + $23   ; 
+; 13 
+                                        .byte con_prg_bank + $02   ; 
+                                        .byte con_prg_bank + $03   ; 
                                         .byte con_prg_bank + $3D   ; 
  
 
@@ -867,9 +867,9 @@ tbl_F3D6:
 ; 0D con_F3D6_0D
 - D 3 - - - 0x01F40D 07:F3FD: 06 AF     .word ofs_006_0x016F16_0D
 - D 3 - - - 0x01F40F 07:F3FF: 01        .byte con_prg_pair + $01   ; 
-; 0E con_F3D6_0E
+; 0E con_F3D6_0E (перемещено)
 - D 3 - - - 0x01F410 07:F400: 0D B1     .word ofs_006_0x01711D_0E
-- D 3 - - - 0x01F412 07:F402: 01        .byte con_prg_pair + $01   ; 
+- D 3 - - - 0x01F412 07:F402: 01        .byte con_prg_pair + $13   ; 
 ; 0F con_F3D6_0F (перемещено)
 - D 3 - - - 0x01F413 07:F403: EC EE     .word ofs_006_0x01EEFC_0F
 - D 3 - - - 0x01F415 07:F405: 03        .byte con_prg_pair + $12   ; 
