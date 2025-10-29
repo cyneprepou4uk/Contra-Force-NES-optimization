@@ -684,11 +684,17 @@ C - - - - - 0x01F378 07:F368: 0A        ASL
                                         ADC ram_prg_banks_pair
 C - - - - - 0x01F379 07:F369: A8        TAY
 C - - - - - 0x01F381 07:F371: B9 93 F3  LDA tbl_F393_prg_pairs,Y
-C - - - - - 0x01F384 07:F374: 8D 01 80  STA $5114
-C - - - - - 0x01F38E 07:F37E: B9 94 F3  LDA tbl_F393_prg_pairs + $01,Y
-C - - - - - 0x01F391 07:F381: 8D 01 80  STA $5115
+C - - - - - 0x01F384 07:F374: 8D 01 80  STA $5114   ; 8000-9FFF
                                         LDA tbl_F393_prg_pairs + $02,Y
-                                        STA $5116
+                                        STA $5116   ; C000-DFFF
+C - - - - - 0x01F38E 07:F37E: B9 94 F3  LDA tbl_F393_prg_pairs + $01,Y
+                                        CMP #con_prg_bank + $7F
+                                        BNE bra_F381
+; C = 1
+                                        LDA ram_stage
+                                        ADC #con_prg_bank + $25 - $01
+bra_F381:
+C - - - - - 0x01F391 07:F381: 8D 01 80  STA $5115   ; A000-BFFF
 C - - - - - 0x01F394 07:F384: A9 00     LDA #$00
 C - - - - - 0x01F396 07:F386: 85 7E     STA ram_007E_useless
 C - - - - - 0x01F398 07:F388: 60        RTS
@@ -718,9 +724,7 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3A7 07:F397: 04        .byte con_prg_bank + $04   ; 
 - D 3 - - - 0x01F3A8 07:F398: 05        .byte con_prg_bank + $05   ; 
                                         .byte con_prg_bank + $3D   ; 
-; 03 !!! надо переместить данные каждого уровня в свой банк, тогда
-; можно будет переместить con_F3D6_00 и con_F3D6_0F в первую часть банка,
-; и подключать вторую часть с нужным уровнем, вместо трех банков 03 0C 0D
+; 03 
 - D 3 - - - 0x01F3A9 07:F399: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3AA 07:F39A: 0D        .byte con_prg_bank + $0D   ; 
                                         .byte con_prg_bank + $3D   ; 
@@ -744,7 +748,7 @@ tbl_F393_prg_pairs:
 - D 3 - - - 0x01F3B3 07:F3A3: 00        .byte con_prg_bank + $14   ; 
 - D 3 - - - 0x01F3B4 07:F3A4: 02        .byte con_prg_bank + $15   ; 
                                         .byte con_prg_bank + $16   ; 
-; 09 
+; 09 unused
 - D 3 - - - 0x01F3B5 07:F3A5: 0C        .byte con_prg_bank + $0C   ; 
 - D 3 - - - 0x01F3B6 07:F3A6: 03        .byte con_prg_bank + $03   ; 
                                         .byte con_prg_bank + $3D   ; 
@@ -782,7 +786,7 @@ tbl_F393_prg_pairs:
                                         .byte con_prg_bank + $23   ; 
 ; 12 
                                         .byte con_prg_bank + $24   ; 
-                                        .byte con_prg_bank + $24   ; 
+                                        .byte con_prg_bank + $7F   ; 
                                         .byte con_prg_bank + $3D   ; 
 ; 13 unused
                                         .byte con_prg_bank + $04   ; 

@@ -13,7 +13,7 @@
 .export ofs_006_0x01FC36_27
 
 
-; !!!
+
 tbl_DA4D_nametable_attributes:
 - D 2 - - - 0x01DA5D 07:DA4D: 91 8F     .word _off030_0x018FA1_00_stage_1
 - D 2 - - - 0x01DA5F 07:DA4F: 9A A6     .word _off030_0x01A6AA_02_stage_2
@@ -22,7 +22,7 @@ tbl_DA4D_nametable_attributes:
 - D 2 - - - 0x01DA65 07:DA55: 4E BC     .word _off030_0x007C5E_08_stage_5
 
 
-; !!!
+
 sub_EDB5_prepare_metatiles_pointers:
 ; out
     ; ram_0008_t17_metatiles_ptr
@@ -44,7 +44,7 @@ tbl_DA57_metatiles:
 - D 2 - - - 0x01DA6F 07:DA5F: 5E B4     .word _off029_0x00746E_08_stage_5
 
 
-; !!!
+
 sub_EB0D:
 ; in
     ; ram_003A_t01_data
