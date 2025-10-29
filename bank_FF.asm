@@ -833,37 +833,37 @@ tbl_F3D6:
 - D 3 - - - 0x01F3EB 07:F3DB: 04        .byte con_prg_pair + $04   ; 
 ; 02 con_F3D6_02 unused, index doesn't exist
 - - - - - - 0x01F3EC 07:F3DC: 0F AA     .word $FFFF ; 
-- - - - - - 0x01F3EE 07:F3DE: 04        .byte con_prg_pair + $04   ; 
+- - - - - - 0x01F3EE 07:F3DE: 04        .byte $FF   ; 
 ; 03 con_F3D6_03 unused, index doesn't exist
 - - - - - - 0x01F3EF 07:F3DF: 86 B2     .word $FFFF ; 
-- - - - - - 0x01F3F1 07:F3E1: 04        .byte con_prg_pair + $04   ; 
+- - - - - - 0x01F3F1 07:F3E1: 04        .byte $FF   ; 
 ; 04 con_F3D6_04 (перемещено)
 - D 3 - - - 0x01F3F2 07:F3E2: 23 F1     .word ofs_006_0x01F133_04
 - D 3 - - - 0x01F3F4 07:F3E4: 03        .byte con_prg_pair + $12   ; 
 ; 05 con_F3D6_05 unused
 - D 3 - - - 0x01F3F5 07:F3E5: 75 DA     .word $FFFF ; 
-- D 3 - - - 0x01F3F7 07:F3E7: 03        .byte con_prg_pair + $03   ; 
+- D 3 - - - 0x01F3F7 07:F3E7: 03        .byte $FF   ; 
 ; 06 con_F3D6_06 unused
 - D 3 - - - 0x01F3F8 07:F3E8: 75 DA     .word $FFFF ; 
-- D 3 - - - 0x01F3FA 07:F3EA: 01        .byte con_prg_pair + $01   ; 
+- D 3 - - - 0x01F3FA 07:F3EA: 01        .byte $FF   ; 
 ; 07 con_F3D6_07 unused, index doesn't exist
 - - - - - - 0x01F3FB 07:F3EB: 01 A0     .word $FFFF ; 
-- - - - - - 0x01F3FD 07:F3ED: 05        .byte con_prg_pair + $05   ; 
+- - - - - - 0x01F3FD 07:F3ED: 05        .byte $FF   ; 
 ; 08 con_F3D6_08 unused
 - D 3 - - - 0x01F3FE 07:F3EE: E0 F2     .word $FFFF ; 
-- D 3 - - - 0x01F400 07:F3F0: 03        .byte con_prg_pair + $03   ; 
+- D 3 - - - 0x01F400 07:F3F0: 03        .byte $FF   ; 
 ; 09 con_F3D6_09 unused
 - D 3 - - - 0x01F401 07:F3F1: 34 AE     .word $FFFF ; 
-- D 3 - - - 0x01F403 07:F3F3: 02        .byte con_prg_pair + $02   ; 
+- D 3 - - - 0x01F403 07:F3F3: 02        .byte $FF   ; 
 ; 0A con_F3D6_0A unused, index doesn't exist
 - - - - - - 0x01F404 07:F3F4: E4 A1     .word $FFFF ; 
-- - - - - - 0x01F406 07:F3F6: 01        .byte con_prg_pair + $01   ; 
+- - - - - - 0x01F406 07:F3F6: 01        .byte $FF   ; 
 ; 0B con_F3D6_0B
 - D 3 - - - 0x01F407 07:F3F7: F0 AE     .word ofs_006_0x00AF00_0B
 - D 3 - - - 0x01F409 07:F3F9: 02        .byte con_prg_pair + $02   ; 
 ; 0C con_F3D6_0C unused
 - D 3 - - - 0x01F40A 07:F3FA: 75 DA     .word $FFFF ; 
-- D 3 - - - 0x01F40C 07:F3FC: 07        .byte con_prg_pair + $01   ; 
+- D 3 - - - 0x01F40C 07:F3FC: 07        .byte $FF   ; 
 ; 0D con_F3D6_0D
 - D 3 - - - 0x01F40D 07:F3FD: 06 AF     .word ofs_006_0x016F16_0D
 - D 3 - - - 0x01F40F 07:F3FF: 01        .byte con_prg_pair + $01   ; 
@@ -875,10 +875,10 @@ tbl_F3D6:
 - D 3 - - - 0x01F415 07:F405: 03        .byte con_prg_pair + $12   ; 
 ; 10 con_F3D6_10 unused, index doesn't exist
 - - - - - - 0x01F416 07:F406: 88 B3     .word $FFFF ; 
-- - - - - - 0x01F418 07:F408: 05        .byte con_prg_pair + $05   ; 
+- - - - - - 0x01F418 07:F408: 05        .byte $FF   ; 
 ; 11 con_F3D6_11 unused, index doesn't exist
 - - - - - - 0x01F419 07:F409: 5A B6     .word $FFFF ; 
-- - - - - - 0x01F41B 07:F40B: 01        .byte con_prg_pair + $01   ; 
+- - - - - - 0x01F41B 07:F40B: 01        .byte $FF   ; 
 ; 12 con_F3D6_12
 - D 3 - - - 0x01F41C 07:F40C: 63 A0     .word ofs_006_0x00A073_12
 - D 3 - - - 0x01F41E 07:F40E: 02        .byte con_prg_pair + $02   ; 
@@ -893,7 +893,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F427 07:F417: 00        .byte con_prg_pair + $07   ; 
 ; 16 con_F3D6_16 unused
 - D 3 - - - 0x01F428 07:F418: 72 97     .word $FFFF ; 
-- D 3 - - - 0x01F42A 07:F41A: 02        .byte con_prg_pair + $02   ; 
+- D 3 - - - 0x01F42A 07:F41A: 02        .byte $FF   ; 
 ; 17 con_F3D6_17
 - D 3 - - - 0x01F42B 07:F41B: 32 81     .word ofs_006_0x008142_17
 - D 3 - - - 0x01F42D 07:F41D: 02        .byte con_prg_pair + $02   ; 
@@ -911,7 +911,7 @@ tbl_F3D6:
 - D 3 - - - 0x01F439 07:F429: 03        .byte con_prg_pair + $03   ; 
 ; 1C con_F3D6_1C unused
 - D 3 - - - 0x01F43A 07:F42A: 6B DA     .word $FFFF ; 
-- D 3 - - - 0x01F43C 07:F42C: 01        .byte con_prg_pair + $01   ; 
+- D 3 - - - 0x01F43C 07:F42C: 01        .byte $FF   ; 
 ; 1D con_F3D6_1D
 - D 3 - - - 0x01F43D 07:F42D: 94 84     .word ofs_006_0x0084A4_1D
 - D 3 - - - 0x01F43F 07:F42F: 02        .byte con_prg_pair + $02   ; 
@@ -926,10 +926,10 @@ tbl_F3D6:
 - D 3 - - - 0x01F448 07:F438: 02        .byte con_prg_pair + $02   ; 
 ; 21 con_F3D6_21 unused
 - D 3 - - - 0x01F449 07:F439: 0F 80     .word $FFFF ; 
-- D 3 - - - 0x01F44B 07:F43B: 02        .byte con_prg_pair + $02   ; 
+- D 3 - - - 0x01F44B 07:F43B: 02        .byte $FF   ; 
 ; 22 con_F3D6_22 unused
 - D 3 - - - 0x01F44C 07:F43C: C9 BF     .word $FFFF ; 
-- D 3 - - - 0x01F44E 07:F43E: 0B        .byte con_prg_pair + $03   ; 
+- D 3 - - - 0x01F44E 07:F43E: 0B        .byte $FF   ; 
 ; 23 con_F3D6_23
 - D 3 - - - 0x01F44F 07:F43F: 48 A0     .word ofs_006_0x00A058_23
 - D 3 - - - 0x01F451 07:F441: 02        .byte con_prg_pair + $02   ; 
