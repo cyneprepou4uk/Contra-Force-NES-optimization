@@ -109,7 +109,7 @@ C - - - - - 0x00802A 02:801A: A4 75     LDY ram_stage
 C - - - - - 0x00802C 02:801C: 88        DEY
 C - - - - - 0x00802D 02:801D: F0 0E     BEQ bra_802D_01_stage_2
 C - - - - - 0x00802F 02:801F: 88        DEY
-C - - - - - 0x008030 02:8020: D0 F7     BNE bra_8019_RTS
+C - - - - - 0x008030 02:8020: D0 F7     BNE bra_8053_RTS
 ; if 02 (stage 3)
 C - - - - - 0x008032 02:8022: A5 23     LDA ram_frm_cnt
 C - - - - - 0x008034 02:8024: 29 03     AND #$03
@@ -118,7 +118,7 @@ C - - - - - 0x008038 02:8028: A9 0B     LDA #con_F3D6_0B
 C - - - - - 0x00803A 02:802A: 4C B3 F3  JMP loc_0x01F3C3_execute_script
 bra_802D_01_stage_2:
 C - - - - - 0x00803D 02:802D: E0 0A     CPX #$0A
-C - - - - - 0x00803F 02:802F: 90 E8     BCC bra_8019_RTS
+C - - - - - 0x00803F 02:802F: 90 E8     BCC bra_8053_RTS
 C - - - - - 0x008041 02:8031: 20 BA 96  JSR sub_96BA
 C - - - - - 0x008044 02:8034: A5 60     LDA ram_0060_hi
 C - - - - - 0x008046 02:8036: C9 04     CMP #$04
@@ -134,24 +134,23 @@ C - - - - - 0x008057 02:8047: C0 05     CPY #$05
 C - - - - - 0x008059 02:8049: 90 F3     BCC bra_803E_loop
 C - - - - - 0x00805B 02:804B: BD 34 06  LDA ram_obj_animation_hi,X
 C - - - - - 0x00805E 02:804E: 29 7F     AND #$7F
-bra_8050:
-loc_8050:
 C - - - - - 0x008060 02:8050: 9D 34 06  STA ram_obj_animation_hi,X
 bra_8053_RTS:
 C - - - - - 0x008063 02:8053: 60        RTS
 bra_8054:
 C - - - - - 0x008064 02:8054: BD 34 06  LDA ram_obj_animation_hi,X
 C - - - - - 0x008067 02:8057: 09 80     ORA #$80
-C - - - - - 0x008069 02:8059: D0 F5     BNE bra_8050    ; jmp
+C - - - - - 0x008069 02:8059: D0 F5     STA ram_obj_animation_hi,X
+                                        RTS
 bra_805B:
 C - - - - - 0x00806B 02:805B: BD 34 06  LDA ram_obj_animation_hi,X
-C - - - - - 0x00806E 02:805E: 10 F3     BPL bra_8053_RTS
+C - - - - - 0x00806E 02:805E: 10 F3     BPL bra_8019_RTS
 C - - - - - 0x008070 02:8060: A9 00     LDA #$00
 C - - - - - 0x008072 02:8062: 20 71 80  JSR sub_8071
-C - - - - - 0x008075 02:8065: B0 EC     BCS bra_8053_RTS
+C - - - - - 0x008075 02:8065: B0 EC     BCS bra_8019_RTS
 - - - - - - 0x008077 02:8067: BD 34 06  LDA ram_obj_animation_hi,X
 - - - - - - 0x00807A 02:806A: 49 80     EOR #$80
-- - - - - - 0x00807C 02:806C: 4C 50 80  JMP loc_8050
+- - - - - - 0x00807C 02:806C: 4C 50 80  STA ram_obj_animation_hi,X
 bra_8019_RTS:
                                         RTS
 
