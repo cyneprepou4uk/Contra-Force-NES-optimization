@@ -2550,11 +2550,28 @@ sub_AE13:
 C - - - - - 0x00AE23 02:AE13: 29 0F     AND #$0F
 C - - - - - 0x00AE25 02:AE15: 0A        ASL
 C - - - - - 0x00AE26 02:AE16: A8        TAY
-C - - - - - 0x00AE27 02:AE17: B9 69 F6  LDA tbl_0x01F679,Y
+C - - - - - 0x00AE27 02:AE17: B9 69 F6  LDA tbl_F669,Y
 C - - - - - 0x00AE2A 02:AE1A: 85 1D     STA ram_001D_t06
-C - - - - - 0x00AE2C 02:AE1C: B9 6A F6  LDA tbl_0x01F679 + $01,Y
+C - - - - - 0x00AE2C 02:AE1C: B9 6A F6  LDA tbl_F669 + $01,Y
 C - - - - - 0x00AE2F 02:AE1F: 85 1A     STA ram_001A_t04
 C - - - - - 0x00AE31 02:AE21: 60        RTS
+
+
+
+tbl_F669:
+; bzk optimize, переместить
+;                                              +---------- 
+;                                              |    +----- 
+;                                              |    |
+- D 3 - - - 0x01F679 07:F669: 00        .byte $00, $00   ; 00 
+- D 3 - - - 0x01F67B 07:F66B: 00        .byte $00, $FF   ; 01 
+- D 3 - - - 0x01F67D 07:F66D: 04        .byte $04, $FD   ; 02 
+- D 3 - - - 0x01F67F 07:F66F: 02        .byte $02, $00   ; 03 
+- D 3 - - - 0x01F681 07:F671: 04        .byte $04, $04   ; 04 
+- D 3 - - - 0x01F683 07:F673: 00        .byte $00, $02   ; 05 
+- D 3 - - - 0x01F685 07:F675: FD        .byte $FD, $04   ; 06 
+- D 3 - - - 0x01F687 07:F677: FF        .byte $FF, $00   ; 07 
+- D 3 - - - 0x01F689 07:F679: FD        .byte $FD, $FD   ; 08 
 
 
 

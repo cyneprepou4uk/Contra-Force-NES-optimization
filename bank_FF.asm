@@ -32,7 +32,6 @@
 .export tbl_0x01F5C6
 .export sub_0x01F61F
 .export sub_0x01F650
-.export tbl_0x01F679
 .export tbl_0x01F68B
 .export sub_0x01F69F_get_stage_view_type
 .export sub_0x01F6BF
@@ -4386,23 +4385,6 @@ C - - - - - 0x01F655 07:F645: 9D E8 07  STA ram_07E8,X
 C - - - - - 0x01F658 07:F648: 9D EA 07  STA ram_07EA,X
 C - - - - - 0x01F65B 07:F64B: 9D E6 07  STA ram_07E6,X
 C - - - - - 0x01F65E 07:F64E: 60        RTS
-
-
-
-tbl_0x01F679:
-; bzk optimize, переместить
-;                                              +---------- 
-;                                              |    +----- 
-;                                              |    |
-- D 3 - - - 0x01F679 07:F669: 00        .byte $00, $00   ; 00 
-- D 3 - - - 0x01F67B 07:F66B: 00        .byte $00, $FF   ; 01 
-- D 3 - - - 0x01F67D 07:F66D: 04        .byte $04, $FD   ; 02 
-- D 3 - - - 0x01F67F 07:F66F: 02        .byte $02, $00   ; 03 
-- D 3 - - - 0x01F681 07:F671: 04        .byte $04, $04   ; 04 
-- D 3 - - - 0x01F683 07:F673: 00        .byte $00, $02   ; 05 
-- D 3 - - - 0x01F685 07:F675: FD        .byte $FD, $04   ; 06 
-- D 3 - - - 0x01F687 07:F677: FF        .byte $FF, $00   ; 07 
-- D 3 - - - 0x01F689 07:F679: FD        .byte $FD, $FD   ; 08 
 
 
 
