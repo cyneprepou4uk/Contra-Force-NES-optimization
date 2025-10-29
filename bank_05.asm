@@ -13,7 +13,6 @@
 .export loc_0x00A548
 .export ofs_006_0x00A548_13
 .export ofs_006_0x00A6E3_18
-.export ofs_006_0x00AE44_09
 .export ofs_006_0x00AF00_0B
 .export loc_0x00B38A
 .export sub_0x00B636
@@ -2208,7 +2207,7 @@ bra_AC15:
 C - - - - - 0x00AC25 02:AC15: A9 00     LDA #$00
 C - - - - - 0x00AC27 02:AC17: 85 18     STA ram_0018_t17_ueless
 C - - - - - 0x00AC29 02:AC19: 85 19     STA ram_0019_t08_useless
-C - - - - - 0x00AC2B 02:AC1B: 4C 69 AE  JMP loc_AE69
+C - - - - - 0x00AC2B 02:AC1B: 4C 69 AE  JMP loc_0x00AE79
 bra_AC1E:
 C - - - - - 0x00AC2E 02:AC1E: 29 08     AND #$08
 C - - - - - 0x00AC30 02:AC20: F0 05     BEQ bra_AC27
@@ -2499,7 +2498,7 @@ C - - - - - 0x00ADE0 02:ADD0: 85 1B     STA ram_001B_t02_hi
 C - - - - - 0x00ADE2 02:ADD2: A5 1D     LDA ram_001D_t06
 C - - - - - 0x00ADE4 02:ADD4: 20 DD AD  JSR sub_ADDD
 C - - - - - 0x00ADE7 02:ADD7: BD D2 07  LDA ram_07D2_unk,X
-C - - - - - 0x00ADEA 02:ADDA: 4C 36 AE  JMP loc_AE36
+C - - - - - 0x00ADEA 02:ADDA: 4C 36 AE  JMP loc_0x00AE46
 
 
 
@@ -2607,51 +2606,6 @@ tbl_AE22:
 
 
 
-loc_AE34:
-ofs_006_0x00AE44_09:
-; con_F3D6_09
-C D 1 J - - 0x00AE44 02:AE34: A9 00     LDA #$00
-loc_AE36:
-C D 1 - - - 0x00AE46 02:AE36: 85 1D     STA ram_001D_t07
-loc_AE38:
-C D 1 - - - 0x00AE48 02:AE38: B5 BE     LDA ram_00BE,X
-C - - - - - 0x00AE4A 02:AE3A: 30 06     BMI bra_AE42
-C - - - - - 0x00AE4C 02:AE3C: A5 1D     LDA ram_001D_t07
-C - - - - - 0x00AE4E 02:AE3E: 29 02     AND #$02
-C - - - - - 0x00AE50 02:AE40: D0 11     BNE bra_AE53
-bra_AE42:
-C - - - - - 0x00AE52 02:AE42: A5 18     LDA ram_0018_t07_lo
-C - - - - - 0x00AE54 02:AE44: 18        CLC
-C - - - - - 0x00AE55 02:AE45: 7D E6 07  ADC ram_07E6,X
-C - - - - - 0x00AE58 02:AE48: 9D E6 07  STA ram_07E6,X
-C - - - - - 0x00AE5B 02:AE4B: A5 19     LDA ram_0019_t03_hi
-C - - - - - 0x00AE5D 02:AE4D: 7D E8 07  ADC ram_07E8,X
-C - - - - - 0x00AE60 02:AE50: 9D E8 07  STA ram_07E8,X
-bra_AE53:
-C - - - - - 0x00AE63 02:AE53: 20 D1 F6  JSR sub_0x01F6E1
-C - - - - - 0x00AE66 02:AE56: 90 22     BCC bra_AE7A_RTS
-C - - - - - 0x00AE68 02:AE58: BD 00 06  LDA ram_0600_obj,X
-C - - - - - 0x00AE6B 02:AE5B: 29 01     AND #$01
-C - - - - - 0x00AE6D 02:AE5D: D0 0A     BNE bra_AE69
-C - - - - - 0x00AE6F 02:AE5F: B5 BE     LDA ram_00BE,X
-C - - - - - 0x00AE71 02:AE61: 30 06     BMI bra_AE69
-C - - - - - 0x00AE73 02:AE63: A5 1D     LDA ram_001D_t07
-C - - - - - 0x00AE75 02:AE65: 29 05     AND #$05
-C - - - - - 0x00AE77 02:AE67: D0 11     BNE bra_AE7A_RTS
-bra_AE69:
-loc_AE69:
-C D 1 - - - 0x00AE79 02:AE69: A5 1A     LDA ram_001A_t08_lo
-C - - - - - 0x00AE7B 02:AE6B: 18        CLC
-C - - - - - 0x00AE7C 02:AE6C: 7D EA 07  ADC ram_07EA,X
-C - - - - - 0x00AE7F 02:AE6F: 9D EA 07  STA ram_07EA,X
-C - - - - - 0x00AE82 02:AE72: A5 1B     LDA ram_001B_t02_hi
-C - - - - - 0x00AE84 02:AE74: 7D EC 07  ADC ram_07EC,X
-C - - - - - 0x00AE87 02:AE77: 9D EC 07  STA ram_07EC,X
-bra_AE7A_RTS:
-C - - - - - 0x00AE8A 02:AE7A: 60        RTS
-
-
-
 loc_AE7B:
 C D 1 - - - 0x00AE8B 02:AE7B: A5 75     LDA ram_stage
 C - - - - - 0x00AE8D 02:AE7D: C9 03     CMP #$03
@@ -2676,7 +2630,7 @@ C - - - - - 0x00AEB5 02:AEA5: 85 19     STA ram_0019_t03_hi
 C - - - - - 0x00AEB7 02:AEA7: 85 1B     STA ram_001B_t02_hi
 C - - - - - 0x00AEB9 02:AEA9: 85 1A     STA ram_001A_t08_lo
 C - - - - - 0x00AEBB 02:AEAB: BD D2 07  LDA ram_07D2_unk,X
-C - - - - - 0x00AEBE 02:AEAE: 4C 36 AE  JMP loc_AE36
+C - - - - - 0x00AEBE 02:AEAE: 4C 36 AE  JMP loc_0x00AE46
 bra_AEAC_RTS:
                                         RTS
 
@@ -3013,7 +2967,7 @@ C - - - - - 0x00B0DB 02:B0CB: A0 80     LDY #$80
 C - - - - - 0x00B0DD 02:B0CD: 84 18     STY ram_0018_t07_lo
 C - - - - - 0x00B0DF 02:B0CF: 84 1A     STY ram_001A_t08_lo
 bra_B0D1:
-C - - - - - 0x00B0E1 02:B0D1: 4C 34 AE  JMP loc_AE34
+C - - - - - 0x00B0E1 02:B0D1: 4C 34 AE  JMP loc_0x00AE44
 
 
 
@@ -3069,7 +3023,7 @@ C - - - - - 0x00B125 02:B115: C9 02     CMP #$02
 C - - - - - 0x00B127 02:B117: 90 02     BCC bra_B11B
 C - - - - - 0x00B129 02:B119: B0 B6     BCS bra_B0D1    ; jmp
 bra_B11B:
-C - - - - - 0x00B12B 02:B11B: 4C 38 AE  JMP loc_AE38
+C - - - - - 0x00B12B 02:B11B: 4C 38 AE  JMP loc_0x00AE48
 
 
 

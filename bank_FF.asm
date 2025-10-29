@@ -35,7 +35,6 @@
 .export sub_0x01F6BF
 .export loc_0x01F6D1
 .export sub_0x01F6D1
-.export sub_0x01F6E1
 .export loc_0x01F712
 .export sub_0x01F712
 .export sub_0x01F71F
@@ -1419,42 +1418,6 @@ sub_0x01F6D1:
 C D 3 - - - 0x01F6D1 07:F6C1: A9 08     LDA #$08
 C - - - - - 0x01F6D3 07:F6C3: 8D A1 03  STA ram_03A1_irq_timer
 C - - - - - 0x01F6D6 07:F6C6: 60        RTS
-
-
-
-sub_0x01F6E1:
-; out
-    ; C
-        ; 0 = 
-        ; 1 = 
-C - - - - - 0x01F6E1 07:F6D1: A5 75     LDA ram_stage
-C - - - - - 0x01F6E3 07:F6D3: C9 01     CMP #$01
-C - - - - - 0x01F6E5 07:F6D5: D0 29     BNE bra_F700
-C - - - - - 0x01F6E7 07:F6D7: A5 1B     LDA ram_001B_t02_hi
-C - - - - - 0x01F6E9 07:F6D9: 30 1B     BMI bra_F6F6
-C - - - - - 0x01F6EB 07:F6DB: AD 40 03  LDA ram_0340_flag
-C - - - - - 0x01F6EE 07:F6DE: F0 20     BEQ bra_F700
-C - - - - - 0x01F6F0 07:F6E0: AD 82 07  LDA ram_0782_unk
-C - - - - - 0x01F6F3 07:F6E3: 18        CLC
-C - - - - - 0x01F6F4 07:F6E4: 6D 83 07  ADC ram_0782_unk + $01
-C - - - - - 0x01F6F7 07:F6E7: C9 2F     CMP #$2F
-C - - - - - 0x01F6F9 07:F6E9: 90 04     BCC bra_F6EF
-- - - - - - 0x01F6FB 07:F6EB: A9 01     LDA #$01
-- - - - - - 0x01F6FD 07:F6ED: D0 0E     BNE bra_F6FD    ; jmp
-bra_F6EF:
-C - - - - - 0x01F6FF 07:F6EF: AD 59 03  LDA ram_0359_flag
-C - - - - - 0x01F702 07:F6F2: D0 0C     BNE bra_F700
-C - - - - - 0x01F704 07:F6F4: 18        CLC
-C - - - - - 0x01F705 07:F6F5: 60        RTS
-bra_F6F6:
-C - - - - - 0x01F706 07:F6F6: AD 40 03  LDA ram_0340_flag
-C - - - - - 0x01F709 07:F6F9: 30 05     BMI bra_F700
-C - - - - - 0x01F70B 07:F6FB: A9 00     LDA #$00
-bra_F6FD:
-C - - - - - 0x01F70D 07:F6FD: 8D 59 03  STA ram_0359_flag
-bra_F700:
-C - - - - - 0x01F710 07:F700: 38        SEC
-C - - - - - 0x01F711 07:F701: 60        RTS
 
 
 

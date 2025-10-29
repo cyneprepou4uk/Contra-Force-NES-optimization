@@ -3279,6 +3279,92 @@ bra_9761_RTS:
 
 
 
+.export loc_0x00AE44
+loc_0x00AE44:
+.export ofs_006_0x00AE44_09
+ofs_006_0x00AE44_09:
+; con_F3D6_09
+C D 1 J - - 0x00AE44 02:AE34: A9 00     LDA #$00
+.export loc_0x00AE46
+loc_0x00AE46:
+C D 1 - - - 0x00AE46 02:AE36: 85 1D     STA ram_001D_t07
+.export loc_0x00AE48
+loc_0x00AE48:
+C D 1 - - - 0x00AE48 02:AE38: B5 BE     LDA ram_00BE,X
+C - - - - - 0x00AE4A 02:AE3A: 30 06     BMI bra_AE42
+C - - - - - 0x00AE4C 02:AE3C: A5 1D     LDA ram_001D_t07
+C - - - - - 0x00AE4E 02:AE3E: 29 02     AND #$02
+C - - - - - 0x00AE50 02:AE40: D0 11     BNE bra_AE53
+bra_AE42:
+C - - - - - 0x00AE52 02:AE42: A5 18     LDA ram_0018_t07_lo
+C - - - - - 0x00AE54 02:AE44: 18        CLC
+C - - - - - 0x00AE55 02:AE45: 7D E6 07  ADC ram_07E6,X
+C - - - - - 0x00AE58 02:AE48: 9D E6 07  STA ram_07E6,X
+C - - - - - 0x00AE5B 02:AE4B: A5 19     LDA ram_0019_t03_hi
+C - - - - - 0x00AE5D 02:AE4D: 7D E8 07  ADC ram_07E8,X
+C - - - - - 0x00AE60 02:AE50: 9D E8 07  STA ram_07E8,X
+bra_AE53:
+C - - - - - 0x00AE63 02:AE53: 20 D1 F6  JSR sub_F6D1
+C - - - - - 0x00AE66 02:AE56: 90 22     BCC bra_AE7A_RTS
+C - - - - - 0x00AE68 02:AE58: BD 00 06  LDA ram_0600_obj,X
+C - - - - - 0x00AE6B 02:AE5B: 29 01     AND #$01
+C - - - - - 0x00AE6D 02:AE5D: D0 0A     BNE bra_AE69
+C - - - - - 0x00AE6F 02:AE5F: B5 BE     LDA ram_00BE,X
+C - - - - - 0x00AE71 02:AE61: 30 06     BMI bra_AE69
+C - - - - - 0x00AE73 02:AE63: A5 1D     LDA ram_001D_t07
+C - - - - - 0x00AE75 02:AE65: 29 05     AND #$05
+C - - - - - 0x00AE77 02:AE67: D0 11     BNE bra_AE7A_RTS
+bra_AE69:
+.export loc_0x00AE79
+loc_0x00AE79:
+C D 1 - - - 0x00AE79 02:AE69: A5 1A     LDA ram_001A_t08_lo
+C - - - - - 0x00AE7B 02:AE6B: 18        CLC
+C - - - - - 0x00AE7C 02:AE6C: 7D EA 07  ADC ram_07EA,X
+C - - - - - 0x00AE7F 02:AE6F: 9D EA 07  STA ram_07EA,X
+C - - - - - 0x00AE82 02:AE72: A5 1B     LDA ram_001B_t02_hi
+C - - - - - 0x00AE84 02:AE74: 7D EC 07  ADC ram_07EC,X
+C - - - - - 0x00AE87 02:AE77: 9D EC 07  STA ram_07EC,X
+bra_AE7A_RTS:
+C - - - - - 0x00AE8A 02:AE7A: 60        RTS
+
+
+
+sub_F6D1:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
+C - - - - - 0x01F6E1 07:F6D1: A5 75     LDA ram_stage
+C - - - - - 0x01F6E3 07:F6D3: C9 01     CMP #$01
+C - - - - - 0x01F6E5 07:F6D5: D0 29     BNE bra_F700
+C - - - - - 0x01F6E7 07:F6D7: A5 1B     LDA ram_001B_t02_hi
+C - - - - - 0x01F6E9 07:F6D9: 30 1B     BMI bra_F6F6
+C - - - - - 0x01F6EB 07:F6DB: AD 40 03  LDA ram_0340_flag
+C - - - - - 0x01F6EE 07:F6DE: F0 20     BEQ bra_F700
+C - - - - - 0x01F6F0 07:F6E0: AD 82 07  LDA ram_0782_unk
+C - - - - - 0x01F6F3 07:F6E3: 18        CLC
+C - - - - - 0x01F6F4 07:F6E4: 6D 83 07  ADC ram_0782_unk + $01
+C - - - - - 0x01F6F7 07:F6E7: C9 2F     CMP #$2F
+C - - - - - 0x01F6F9 07:F6E9: 90 04     BCC bra_F6EF
+- - - - - - 0x01F6FB 07:F6EB: A9 01     LDA #$01
+- - - - - - 0x01F6FD 07:F6ED: D0 0E     BNE bra_F6FD    ; jmp
+bra_F6EF:
+C - - - - - 0x01F6FF 07:F6EF: AD 59 03  LDA ram_0359_flag
+C - - - - - 0x01F702 07:F6F2: D0 0C     BNE bra_F700
+C - - - - - 0x01F704 07:F6F4: 18        CLC
+C - - - - - 0x01F705 07:F6F5: 60        RTS
+bra_F6F6:
+C - - - - - 0x01F706 07:F6F6: AD 40 03  LDA ram_0340_flag
+C - - - - - 0x01F709 07:F6F9: 30 05     BMI bra_F700
+C - - - - - 0x01F70B 07:F6FB: A9 00     LDA #$00
+bra_F6FD:
+C - - - - - 0x01F70D 07:F6FD: 8D 59 03  STA ram_0359_flag
+bra_F700:
+C - - - - - 0x01F710 07:F700: 38        SEC
+C - - - - - 0x01F711 07:F701: 60        RTS
+
+
+
 .export tbl_0x00EF91
 tbl_0x00EF91:
 ; bzk optimize, переместить в банк 04 (todo)
