@@ -4,7 +4,7 @@
 .org $C000  ; for listing file
 ; 0x04A010-0x04C00F
 
-
+; данные для отрисовки
 
 ; банк в паре с 24 (8000)
 
@@ -1087,6 +1087,80 @@ _off006_0x0168DF_14:
 - D 1 - I - 0x0168E6 05:A8D6: 0D        .byte $0D   ; 0x01DBAA
 - D 1 - I - 0x0168E7 05:A8D7: 00        .byte $00   ; 0x01DBB6
 - D 1 - I - 0x0168E8 05:A8D8: FF        .byte $FF   ; 0x01DBAA
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+.export off_0x014D1E_00
+off_0x014D1E_00:
+- D 0 - I - 0x014D1E 05:8D0E: E2 21     .word $21E2 ; ppu address
+- D 0 - I - 0x014D20 05:8D10: 05        .byte $05   ; data chunks counter
+;                                              +---------- ppu address offset/tile?
+;                                              |    +----- tile
+;                                              |    |
+; 01 
+- D 0 - I - 0x014D21 05:8D11: 01        .byte $01, $3D   ; 
+- D 0 - I - 0x014D23 05:8D13: 1A        .byte $1A, $3C   ; 
+- D 0 - I - 0x014D25 05:8D15: 01        .byte $01, $2F   ; 
+- D 0 - I - 0x014D27 05:8D17: FF        .byte $FF   ; end token
+; 02 
+- D 0 - I - 0x014D28 05:8D18: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D2A 05:8D1A: 1A        .byte $1A, $00   ; 
+- D 0 - I - 0x014D2C 05:8D1C: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D2E 05:8D1E: FF        .byte $FF   ; end token
+; 03 
+- D 0 - I - 0x014D2F 05:8D1F: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D31 05:8D21: 1A        .byte $1A, $00   ; 
+- D 0 - I - 0x014D33 05:8D23: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D35 05:8D25: FF        .byte $FF   ; end token
+; 04 
+- D 0 - I - 0x014D36 05:8D26: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D38 05:8D28: 1A        .byte $1A, $00   ; 
+- D 0 - I - 0x014D3A 05:8D2A: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D3C 05:8D2C: FF        .byte $FF   ; end token
+; 05 
+- D 0 - I - 0x014D3D 05:8D2D: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D3F 05:8D2F: 1A        .byte $1A, $00   ; 
+- D 0 - I - 0x014D41 05:8D31: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D43 05:8D33: FF        .byte $FF   ; end token
+
+
+
+.export off_0x014D44_02
+off_0x014D44_02:
+- D 0 - I - 0x014D44 05:8D34: 82 22     .word $2282 ; ppu address
+- D 0 - I - 0x014D46 05:8D36: 05        .byte $05   ; data chunks counter
+;                                              +---------- ppu address offset/tile?
+;                                              |    +----- tile
+;                                              |    |
+; 01 
+- D 0 - I - 0x014D47 05:8D37: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D49 05:8D39: 1A        .byte $1A, $00   ; 
+- D 0 - I - 0x014D4B 05:8D3B: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D4D 05:8D3D: FF        .byte $FF   ; end token
+; 02 
+- D 0 - I - 0x014D4E 05:8D3E: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D50 05:8D40: 1A        .byte $1A, $00   ; 
+- D 0 - I - 0x014D52 05:8D42: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D54 05:8D44: FF        .byte $FF   ; end token
+; 03 
+- D 0 - I - 0x014D55 05:8D45: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D57 05:8D47: 1A        .byte $1A, $00   ; 
+- D 0 - I - 0x014D59 05:8D49: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D5B 05:8D4B: FF        .byte $FF   ; end token
+; 04 
+- D 0 - I - 0x014D5C 05:8D4C: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D5E 05:8D4E: 1A        .byte $1A, $00   ; 
+- D 0 - I - 0x014D60 05:8D50: 01        .byte $01, $3B   ; 
+- D 0 - I - 0x014D62 05:8D52: FF        .byte $FF   ; end token
+; 05 
+- D 0 - I - 0x014D63 05:8D53: 01        .byte $01, $3E   ; 
+- D 0 - I - 0x014D65 05:8D55: 1A        .byte $1A, $3C   ; 
+- D 0 - I - 0x014D67 05:8D57: 01        .byte $01, $3F   ; 
+- D 0 - I - 0x014D69 05:8D59: FF        .byte $FF   ; end token
 
 
 
