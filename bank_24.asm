@@ -1947,6 +1947,10 @@ C - - - - - 0x01F272 07:F262: 90 0A     BCC bra_F26E
 C - - - - - 0x01F274 07:F264: 9D 60 01  STA ram_ppu_buffer_2,X
 C - - - - - 0x01F277 07:F267: E8        INX
 C - - - - - 0x01F278 07:F268: 60        RTS
+bra_F26E:
+C - - - - - 0x01F27E 07:F26E: 9D 00 01  STA ram_ppu_buffer_1,X
+C - - - - - 0x01F281 07:F271: E8        INX
+C - - - - - 0x01F282 07:F272: 60        RTS
 
 
 
@@ -1958,10 +1962,6 @@ sub_F269:
 C - - - - - 0x01F279 07:F269: A4 75     LDY ram_stage
 C - - - - - 0x01F27B 07:F26B: C0 02     CPY #$02
 C - - - - - 0x01F27D 07:F26D: 60        RTS
-bra_F26E:
-C - - - - - 0x01F27E 07:F26E: 9D 00 01  STA ram_ppu_buffer_1,X
-C - - - - - 0x01F281 07:F271: E8        INX
-C - - - - - 0x01F282 07:F272: 60        RTS
 
 
 
