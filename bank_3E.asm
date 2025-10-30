@@ -377,6 +377,7 @@ ofs_000_D088_05_game_over:
 ; con_0020_game_over
 C - - J - - 0x01D098 07:D088: A4 21     LDY ram_0021_t01
 C - - - - - 0x01D09A 07:D08A: D0 0A     BNE bra_D096
+; 00
 C - - - - - 0x01D09C 07:D08C: C6 4A     DEC ram_004A_t02_game_over_screen_delay
 C - - - - - 0x01D09E 07:D08E: D0 33     BNE bra_D0C3_RTS
 ; display game over screen
@@ -386,6 +387,7 @@ C - - - - - 0x01D0A4 07:D094: D0 2B     BNE bra_D0C1    ; jmp
 bra_D096:
 C - - - - - 0x01D0A6 07:D096: 88        DEY
 C - - - - - 0x01D0A7 07:D097: D0 2B     BNE bra_D0C4
+; 01
 C - - - - - 0x01D0A9 07:D099: 20 23 D2  JSR sub_D223_set_scroll_00
 ; Y = 00
 C - - - - - 0x01D0AC 07:D09C: 84 5A     STY ram_005A_flag
@@ -404,18 +406,20 @@ C - - - - - 0x01D0C9 07:D0B9: 20 27 F3  JSR sub_F327
 C - - - - - 0x01D0CC 07:D0BC: A9 A4     LDA #con_music_A4
 C - - - - - 0x01D0CE 07:D0BE: 20 CA FE  JSR sub_0x01FEDA_add_music_to_queue
 bra_D0C1:
-loc_D0C1:
+loc_D0C1:   ; bzk optimize
 C D 2 - - - 0x01D0D1 07:D0C1: E6 21     INC ram_0021_t01
 bra_D0C3_RTS:
 C - - - - - 0x01D0D3 07:D0C3: 60        RTS
 bra_D0C4:
 C - - - - - 0x01D0D4 07:D0C4: 88        DEY
 C - - - - - 0x01D0D5 07:D0C5: D0 04     BNE bra_D0CB
+; 02
 C - - - - - 0x01D0D7 07:D0C7: A9 14     LDA #con_D280_game_over
-C - - - - - 0x01D0D9 07:D0C9: D0 12     BNE bra_D0DD    ; jmp
+C - - - - - 0x01D0D9 07:D0C9: D0 12     BNE bra_D0DD_draw_text    ; jmp
 bra_D0CB:
 C - - - - - 0x01D0DB 07:D0CB: 88        DEY
 C - - - - - 0x01D0DC 07:D0CC: D0 15     BNE bra_D0E3
+; 03
 C - - - - - 0x01D0DE 07:D0CE: C6 4A     DEC ram_004A_t01_game_over_options_delay
 C - - - - - 0x01D0E0 07:D0D0: D0 F1     BNE bra_D0C3_RTS
 ; draw game over options
@@ -424,18 +428,19 @@ C - - - - - 0x01D0E4 07:D0D4: 85 22     STA ram_0022_t01
 C - - - - - 0x01D0E6 07:D0D6: A9 21     LDA #con_D280_continue
 C - - - - - 0x01D0E8 07:D0D8: 20 3C D2  JSR sub_D23C_draw_text
 C - - - - - 0x01D0EB 07:D0DB: A9 2C     LDA #con_D280_end
-bra_D0DD:
+bra_D0DD_draw_text:
 C - - - - - 0x01D0ED 07:D0DD: 20 3C D2  JSR sub_D23C_draw_text
 C - - - - - 0x01D0F0 07:D0E0: 4C C1 D0  JMP loc_D0C1
 bra_D0E3:
 C - - - - - 0x01D0F3 07:D0E3: 88        DEY
-C - - - - - 0x01D0F4 07:D0E4: D0 32     BNE bra_D118
+C - - - - - 0x01D0F4 07:D0E4: D0 32     BNE bra_D118_05
+; 04
 C - - - - - 0x01D0F6 07:D0E6: A5 40     LDA ram_btn_press_1
 C - - - - - 0x01D0F8 07:D0E8: 05 42     ORA ram_btn_hold_1
 C - - - - - 0x01D0FA 07:D0EA: 29 10     AND #con_btn_Start
 C - - - - - 0x01D0FC 07:D0EC: F0 07     BEQ bra_D0F5
 C - - - - - 0x01D101 07:D0F1: E6 21     INC ram_0021_t01
-C - - - - - 0x01D103 07:D0F3: D0 17     BNE bra_D10C
+C - - - - - 0x01D103 07:D0F3: D0 17     BNE bra_D10C    ; jmp?
 bra_D0F5:
 C - - - - - 0x01D105 07:D0F5: A5 40     LDA ram_btn_press_1
 C - - - - - 0x01D107 07:D0F7: 29 0C     AND #con_btns_UD
@@ -465,7 +470,7 @@ tbl_D116:
 
 
 
-bra_D118:
+bra_D118_05:
 C - - - - - 0x01D128 07:D118: A5 22     LDA ram_0022_t01
 C - - - - - 0x01D12A 07:D11A: F0 07     BEQ bra_D123
 C - - - - - 0x01D12C 07:D11C: A9 00     LDA #con_0020_00
