@@ -670,7 +670,8 @@ C - - - - - 0x0143CE 05:83BE: A6 26     LDX ram_buffer_index
 ; bzk optimize, put LDY 02 at 0x0143D7 for readability
 C - - - - - 0x0143D0 05:83C0: A0 02     LDY #$02
 C - - - - - 0x0143D2 05:83C2: A9 04     LDA #$04
-C - - - - - 0x0143D4 05:83C4: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x0143D4 05:83C4: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 ; set counter (bytes counter from data + 3 bytes for address and counter)
 C - - - - - 0x0143D7 05:83C7: B1 00     LDA (ram_0000_t12_ppu_data),Y
 C - - - - - 0x0143D9 05:83C9: 18        CLC
@@ -679,7 +680,8 @@ C - - - - - 0x0143DC 05:83CC: 85 02     STA ram_0002_t40_data_counter
 C - - - - - 0x0143DE 05:83CE: A0 00     LDY #$00
 bra_83D0_loop:
 C - - - - - 0x0143E0 05:83D0: B1 00     LDA (ram_0000_t12_ppu_data),Y
-C - - - - - 0x0143E2 05:83D2: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x0143E2 05:83D2: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x0143E5 05:83D5: C8        INY
 C - - - - - 0x0143E6 05:83D6: C6 02     DEC ram_0002_t40_data_counter
 C - - - - - 0x0143E8 05:83D8: D0 F6     BNE bra_83D0_loop
@@ -1905,9 +1907,11 @@ C - - - - - 0x014CAF 05:8C9F: C9 FD     CMP #con_cut_cb_end_of_cutscene
 C - - - - - 0x014CB1 05:8CA1: F0 4E     BEQ bra_8CF1_FD_end_of_cutscene
 C - - - - - 0x014CB3 05:8CA3: 38        SEC
 C - - - - - 0x014CB4 05:8CA4: E9 30     SBC #$30
-C - - - - - 0x014CB6 05:8CA6: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x014CB6 05:8CA6: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x014CB9 05:8CA9: A9 FF     LDA #$FF
-C - - - - - 0x014CBB 05:8CAB: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x014CBB 05:8CAB: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x014CBE 05:8CAE: 86 26     STX ram_buffer_index
 C - - - - - 0x014CC0 05:8CB0: E6 5C     INC ram_005C_cutscene_line
 C - - - - - 0x014CC2 05:8CB2: E6 58     INC ram_0058
@@ -1930,7 +1934,8 @@ C - - - - - 0x014CD7 05:8CC7: F0 25     BEQ bra_8CEE
 C - - - - - 0x014CD9 05:8CC9: C9 FE     CMP #$FE
 C - - - - - 0x014CDB 05:8CCB: D0 18     BNE bra_8CE5
 C - - - - - 0x014CDD 05:8CCD: A9 FF     LDA #$FF
-C - - - - - 0x014CDF 05:8CCF: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x014CDF 05:8CCF: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x014CE2 05:8CD2: A5 02     LDA ram_0002_t43_ppu_addr_lo
 C - - - - - 0x014CE4 05:8CD4: 18        CLC
 C - - - - - 0x014CE5 05:8CD5: 69 40     ADC #< $0040
@@ -1942,7 +1947,8 @@ C - - - - - 0x014CEF 05:8CDF: 20 F3 8C  JSR sub_8CF3_write_ppu_address_to_buffer
 C - - - - - 0x014CF2 05:8CE2: 4C EA 8C  JMP loc_8CEA
 bra_8CE5:
 C - - - - - 0x014CF5 05:8CE5: A9 00     LDA #$00
-C - - - - - 0x014CF7 05:8CE7: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x014CF7 05:8CE7: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 loc_8CEA:
 C D 0 - - - 0x014CFA 05:8CEA: C8        INY
 C - - - - - 0x014CFB 05:8CEB: 4C C3 8C  JMP loc_8CC3_loop
@@ -1956,11 +1962,15 @@ C - - - - - 0x014D02 05:8CF2: 60        RTS
 
 sub_8CF3_write_ppu_address_to_buffer:
 C - - - - - 0x014D03 05:8CF3: A9 01     LDA #$01
-C - - - - - 0x014D05 05:8CF5: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x014D05 05:8CF5: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x014D08 05:8CF8: A5 02     LDA ram_0002_t43_ppu_addr_lo
-C - - - - - 0x014D0A 05:8CFA: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x014D0A 05:8CFA: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x014D0D 05:8CFD: A5 03     LDA ram_0003_t13_ppu_addr_hi
-C - - - - - 0x014D0F 05:8CFF: 4C C9 DA  JMP loc_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x014D0F 05:8CFF: 4C C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
+                                        RTS
 
 
 

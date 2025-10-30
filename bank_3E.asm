@@ -27,8 +27,6 @@
 .export sub_0x01DA4B
 .export loc_0x01DA87
 .export sub_0x01DAAA_execute_indirect_jump_0000
-.export sub_0x01DAD9_write_byte_to_ppu_buffer
-.export loc_0x01DAD9_write_byte_to_ppu_buffer
 .export sub_0x01DDBD
 .export sub_0x01DE34_write_A_to_buffer_and_INX
 .export loc_0x01E01E
@@ -2186,19 +2184,12 @@ C - - - - - 0x01DAAA 07:DA9A: 6C 00 00  JMP (ram_0000_t1A_jmp)
 
 sub_0x01DAD1_close_ppu_buffer:
 loc_0x01DAD1_close_ppu_buffer:
+; bzk optimize
 C D 2 - - - 0x01DAD1 07:DAC1: A9 FF     LDA #$FF
-C - - - - - 0x01DAD3 07:DAC3: 20 C9 DA  JSR sub_DAC9_write_byte_to_ppu_buffer
+C - - - - - 0x01DAD3 07:DAC3: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DAD6 07:DAC6: 86 26     STX ram_buffer_index
 C - - - - - 0x01DAD8 07:DAC8: 60        RTS
-
-
-
-sub_DAC9_write_byte_to_ppu_buffer:
-sub_0x01DAD9_write_byte_to_ppu_buffer:
-loc_0x01DAD9_write_byte_to_ppu_buffer:
-C D 2 - - - 0x01DAD9 07:DAC9: 9D 00 01  STA ram_ppu_buffer_1,X
-C - - - - - 0x01DADC 07:DACC: E8        INX
-C - - - - - 0x01DADD 07:DACD: 60        RTS
 
 
 

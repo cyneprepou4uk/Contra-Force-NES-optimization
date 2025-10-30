@@ -773,21 +773,26 @@ C - - - - - 0x01DC48 07:DC38: C5 04     CMP ram_0004_t25_loop_counter
 C - - - - - 0x01DC4A 07:DC3A: B0 49     BCS bra_DC85_loop
 bra_DC3C_loop:
 C - - - - - 0x01DC4C 07:DC3C: A9 01     LDA #$01
-C - - - - - 0x01DC4E 07:DC3E: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DC4E 07:DC3E: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DC51 07:DC41: A5 00     LDA ram_0000_t7D_ppu_addr_lo
-C - - - - - 0x01DC53 07:DC43: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DC53 07:DC43: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DC56 07:DC46: A5 01     LDA ram_0001_t50_ppu_addr_hi
-C - - - - - 0x01DC58 07:DC48: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DC58 07:DC48: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DC5B 07:DC4B: A5 04     LDA ram_0004_t25_loop_counter
 C - - - - - 0x01DC5D 07:DC4D: 85 06     STA ram_0006_t16_loop_counter
 bra_DC4F_loop:
 C - - - - - 0x01DC5F 07:DC4F: B1 02     LDA (ram_0002_t02_ppu_data),Y
-C - - - - - 0x01DC61 07:DC51: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DC61 07:DC51: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DC64 07:DC54: C8        INY
 C - - - - - 0x01DC65 07:DC55: C6 06     DEC ram_0006_t16_loop_counter
 C - - - - - 0x01DC67 07:DC57: D0 F6     BNE bra_DC4F_loop
 C - - - - - 0x01DC69 07:DC59: A9 FF     LDA #$FF
-C - - - - - 0x01DC6B 07:DC5B: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DC6B 07:DC5B: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DC6E 07:DC5E: A5 00     LDA ram_0000_t7D_ppu_addr_lo
 C - - - - - 0x01DC70 07:DC60: 18        CLC
 C - - - - - 0x01DC71 07:DC61: 69 20     ADC #< $0020
@@ -813,17 +818,21 @@ C - - - - - 0x01DC92 07:DC82: D0 B8     BNE bra_DC3C_loop
 C - - - - - 0x01DC94 07:DC84: 60        RTS
 bra_DC85_loop:
 C - - - - - 0x01DC95 07:DC85: A9 02     LDA #$02
-C - - - - - 0x01DC97 07:DC87: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DC97 07:DC87: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DC9A 07:DC8A: A5 00     LDA ram_0000_t7D_ppu_addr_lo
-C - - - - - 0x01DC9C 07:DC8C: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DC9C 07:DC8C: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DC9F 07:DC8F: A5 01     LDA ram_0001_t50_ppu_addr_hi
-C - - - - - 0x01DCA1 07:DC91: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DCA1 07:DC91: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DCA4 07:DC94: A5 05     LDA ram_0005_t08_tiles_counter
 C - - - - - 0x01DCA6 07:DC96: 85 06     STA ram_0006_t08_loop_counter
 C - - - - - 0x01DCA8 07:DC98: A4 08     LDY ram_0008_t13_data_index
 bra_DC9A_loop:
 C - - - - - 0x01DCAA 07:DC9A: B1 02     LDA (ram_0002_t02_ppu_data),Y
-C - - - - - 0x01DCAC 07:DC9C: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DCAC 07:DC9C: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DCAF 07:DC9F: 98        TYA
 C - - - - - 0x01DCB0 07:DCA0: 18        CLC
 C - - - - - 0x01DCB1 07:DCA1: 65 07     ADC ram_0007_t10
@@ -832,7 +841,8 @@ C - - - - - 0x01DCB4 07:DCA4: C6 06     DEC ram_0006_t08_loop_counter
 C - - - - - 0x01DCB6 07:DCA6: D0 F2     BNE bra_DC9A_loop
 C - - - - - 0x01DCB8 07:DCA8: E6 08     INC ram_0008_t13_data_index
 C - - - - - 0x01DCBA 07:DCAA: A9 FF     LDA #$FF
-C - - - - - 0x01DCBC 07:DCAC: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DCBC 07:DCAC: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DCBF 07:DCAF: A5 00     LDA ram_0000_t7D_ppu_addr_lo
 C - - - - - 0x01DCC1 07:DCB1: 29 E0     AND #$E0
 C - - - - - 0x01DCC3 07:DCB3: 48        PHA
@@ -1162,11 +1172,14 @@ C - - - - - 0x01ED21 07:ED11: A9 04     LDA #$04
 C - - - - - 0x01ED23 07:ED13: 85 16     STA ram_0016_t08_loop_counter
 bra_ED15_loop:
 C - - - - - 0x01ED25 07:ED15: A9 01     LDA #$01
-C - - - - - 0x01ED27 07:ED17: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01ED27 07:ED17: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01ED2A 07:ED1A: A5 04     LDA ram_0004_t30_ppu_addr_lo
-C - - - - - 0x01ED2C 07:ED1C: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01ED2C 07:ED1C: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01ED2F 07:ED1F: A5 05     LDA ram_0005_t09_ppu_addr_hi
-C - - - - - 0x01ED31 07:ED21: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01ED31 07:ED21: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01ED34 07:ED24: A0 01     LDY #$01
 C - - - - - 0x01ED36 07:ED26: 20 4F EC  JSR sub_EC4F
 C - - - - - 0x01ED39 07:ED29: 20 4F ED  JSR sub_ED4F
@@ -1288,20 +1301,25 @@ loc_DB88_loop:
 C D 2 - - - 0x01DB98 07:DB88: 86 26     STX ram_buffer_index
 C - - - - - 0x01DB9A 07:DB8A: C8        INY
 C - - - - - 0x01DB9B 07:DB8B: A9 03     LDA #$03
-C - - - - - 0x01DB9D 07:DB8D: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DB9D 07:DB8D: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DBA0 07:DB90: A5 00     LDA ram_0000_t7C_ppu_addr_lo
-C - - - - - 0x01DBA2 07:DB92: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DBA2 07:DB92: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DBA5 07:DB95: A5 01     LDA ram_0001_t49_ppu_addr_hi
-C - - - - - 0x01DBA7 07:DB97: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DBA7 07:DB97: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DBAA 07:DB9A: B1 02     LDA (ram_0002_t02_ppu_data),Y
 ; bzk optimize, CMP + BEQ first, then STA
 C - - - - - 0x01DBAC 07:DB9C: 85 06     STA ram_0006_t07
 C - - - - - 0x01DBAE 07:DB9E: C9 FF     CMP #$FF
 C - - - - - 0x01DBB0 07:DBA0: F0 13     BEQ bra_DBB5_FF
-C - - - - - 0x01DBB2 07:DBA2: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DBB2 07:DBA2: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DBB5 07:DBA5: C8        INY
 C - - - - - 0x01DBB6 07:DBA6: B1 02     LDA (ram_0002_t02_ppu_data),Y
-C - - - - - 0x01DBB8 07:DBA8: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01DBB8 07:DBA8: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01DBBB 07:DBAB: A5 06     LDA ram_0006_t07
 C - - - - - 0x01DBBD 07:DBAD: 18        CLC
 C - - - - - 0x01DBBE 07:DBAE: 65 00     ADC ram_0000_t7C_ppu_addr_lo
@@ -2113,11 +2131,14 @@ C - - - - - 0x01E361 07:E351: 4C C1 DA  JMP loc_0x01DAD1_close_ppu_buffer
 sub_E319:
 loc_E319:
 C D 3 - - - 0x01E329 07:E319: A9 02     LDA #$02
-C - - - - - 0x01E32B 07:E31B: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01E32B 07:E31B: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01E32E 07:E31E: A5 0E     LDA ram_000E_t06
-C - - - - - 0x01E330 07:E320: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01E330 07:E320: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01E333 07:E323: A5 0F     LDA ram_000F_t07
-C - - - - - 0x01E335 07:E325: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01E335 07:E325: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01E338 07:E328: A0 00     LDY #$00
 C - - - - - 0x01E33A 07:E32A: A9 06     LDA #$06
 C - - - - - 0x01E33C 07:E32C: 20 CE DA  JSR sub_DACE
@@ -2396,11 +2417,14 @@ C - - - - - 0x01E501 07:E4F1: 60        RTS
 
 sub_E475:
 C - - - - - 0x01E485 07:E475: A9 01     LDA #$01
-C - - - - - 0x01E487 07:E477: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01E487 07:E477: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01E48A 07:E47A: A5 0E     LDA ram_000E_t06
-C - - - - - 0x01E48C 07:E47C: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01E48C 07:E47C: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01E48F 07:E47F: A5 0F     LDA ram_000F_t07
-C - - - - - 0x01E491 07:E481: 20 C9 DA  JSR sub_0x01DAD9_write_byte_to_ppu_buffer
+C - - - - - 0x01E491 07:E481: 20 C9 DA  STA ram_ppu_buffer_1,X
+                                        INX
 C - - - - - 0x01E494 07:E484: A0 00     LDY #$00
 C - - - - - 0x01E496 07:E486: A9 04     LDA #$04
 C - - - - - 0x01E498 07:E488: 20 CE DA  JSR sub_DACE
