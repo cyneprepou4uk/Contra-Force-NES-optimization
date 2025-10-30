@@ -2135,13 +2135,17 @@ C - - - - - 0x01E335 07:E325: 20 C9 DA  STA ram_ppu_buffer_1,X
                                         INX
 C - - - - - 0x01E338 07:E328: A0 00     LDY #$00
 C - - - - - 0x01E33A 07:E32A: A9 06     LDA #$06
-C - - - - - 0x01E33C 07:E32C: 20 CE DA  JSR sub_DACE
+C - - - - - 0x01E33C 07:E32C: 20 CE DA  STA ram_0500_nmt_attr_buffer,Y
+                                        INY
 C - - - - - 0x01E33F 07:E32F: A5 14     LDA ram_0014_t06
-C - - - - - 0x01E341 07:E331: 20 CE DA  JSR sub_DACE
+C - - - - - 0x01E341 07:E331: 20 CE DA  STA ram_0500_nmt_attr_buffer,Y
+                                        INY
 C - - - - - 0x01E344 07:E334: A5 15     LDA ram_0015_t02
-C - - - - - 0x01E346 07:E336: 20 CE DA  JSR sub_DACE
+C - - - - - 0x01E346 07:E336: 20 CE DA  STA ram_0500_nmt_attr_buffer,Y
+                                        INY
 C - - - - - 0x01E349 07:E339: A9 00     LDA #$00
-C - - - - - 0x01E34B 07:E33B: 20 CE DA  JSR sub_DACE
+C - - - - - 0x01E34B 07:E33B: 20 CE DA  STA ram_0500_nmt_attr_buffer,Y
+                                        INY
 C - - - - - 0x01E34E 07:E33E: 84 0A     STY ram_000A_t18_buffer_index
 C - - - - - 0x01E350 07:E340: 60        RTS
 
@@ -2414,23 +2418,19 @@ C - - - - - 0x01E491 07:E481: 20 C9 DA  STA ram_ppu_buffer_1,X
                                         INX
 C - - - - - 0x01E494 07:E484: A0 00     LDY #$00
 C - - - - - 0x01E496 07:E486: A9 04     LDA #$04
-C - - - - - 0x01E498 07:E488: 20 CE DA  JSR sub_DACE
+C - - - - - 0x01E498 07:E488: 20 CE DA  STA ram_0500_nmt_attr_buffer,Y
+                                        INY
 C - - - - - 0x01E49B 07:E48B: A5 14     LDA ram_0014_t06
-C - - - - - 0x01E49D 07:E48D: 20 CE DA  JSR sub_DACE
+C - - - - - 0x01E49D 07:E48D: 20 CE DA  STA ram_0500_nmt_attr_buffer,Y
+                                        INY
 C - - - - - 0x01E4A0 07:E490: A5 15     LDA ram_0015_t02
-C - - - - - 0x01E4A2 07:E492: 20 CE DA  JSR sub_DACE
+C - - - - - 0x01E4A2 07:E492: 20 CE DA  STA ram_0500_nmt_attr_buffer,Y
+                                        INY
 C - - - - - 0x01E4A5 07:E495: A9 00     LDA #$00
-C - - - - - 0x01E4A7 07:E497: 20 CE DA  JSR sub_DACE
+C - - - - - 0x01E4A7 07:E497: 20 CE DA  STA ram_0500_nmt_attr_buffer,Y
+                                        INY
 C - - - - - 0x01E4AA 07:E49A: 84 0A     STY ram_000A_t18_buffer_index
 C - - - - - 0x01E4AC 07:E49C: 60        RTS
-
-
-
-sub_DACE:
-; bzk optimize
-C - - - - - 0x01DADE 07:DACE: 99 00 05  STA ram_0500_nmt_attr_buffer,Y
-C - - - - - 0x01DAE1 07:DAD1: C8        INY
-C - - - - - 0x01DAE2 07:DAD2: 60        RTS
 
 
 
