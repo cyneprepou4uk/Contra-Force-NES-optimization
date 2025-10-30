@@ -570,7 +570,8 @@ C - - - - - 0x01D210 07:D200: A9 01     LDA #$01
 C - - - - - 0x01D212 07:D202: 20 0B D2  JSR sub_D20B_increase_0000_pointer_by_A
 C - - - - - 0x01D215 07:D205: 4C AE D1  JMP loc_D1AE_loop
 bra_D208_FF:
-C - - - - - 0x01D218 07:D208: 4C 70 FE  JSR sub_0x01FE80
+C - - - - - 0x01D218 07:D208: 4C 70 FE  LDA ram_for_2000
+                                        STA $2000
                                         PLA
                                         JMP loc_0x01F35C_prg_bankswitch
                                         

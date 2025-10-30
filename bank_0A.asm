@@ -567,7 +567,8 @@ C - - - - - 0x014334 05:8324: 20 B2 83  JSR sub_83B2
 C - - - - - 0x014337 05:8327: A9 06     LDA #$06
 C - - - - - 0x014339 05:8329: A0 01     LDY #$01
 C - - - - - 0x01433B 05:832B: 20 98 85  JSR sub_8598
-C - - - - - 0x01433E 05:832E: 20 70 FE  JSR sub_0x01FE80
+C - - - - - 0x01433E 05:832E: 20 70 FE  LDA ram_for_2000
+                                        STA $2000
 C - - - - - 0x014341 05:8331: 38        SEC
 C - - - - - 0x014342 05:8332: 60        RTS
 
@@ -651,7 +652,9 @@ C - - - - - 0x0143B2 05:83A2: 20 DF 83  JSR sub_83DF
 C - - - - - 0x0143B5 05:83A5: A5 07     LDA ram_0007_t13_useless
 C - - - - - 0x0143B9 05:83A9: 20 B3 F3  JSR sub_0x01DA85
 C - - - - - 0x0143BC 05:83AC: 20 02 F7  JSR sub_0x01F712
-C - - - - - 0x0143BF 05:83AF: 4C 70 FE  JMP loc_0x01FE80
+C - - - - - 0x0143BF 05:83AF: 4C 70 FE  LDA ram_for_2000
+                                        STA $2000
+                                        RTS
 
 
 
@@ -2498,7 +2501,9 @@ C - - - - - 0x01576B 05:975B: AD 61 03  LDA ram_0361_counter
 C - - - - - 0x01576E 05:975E: 85 25     STA ram_disable_rendering_timer
 C - - - - - 0x015770 05:9760: D0 06     BNE bra_9768
 C - - - - - 0x015772 05:9762: 20 52 98  JSR sub_9852
-C - - - - - 0x015775 05:9765: 4C 70 FE  JMP loc_0x01FE80
+C - - - - - 0x015775 05:9765: 4C 70 FE  LDA ram_for_2000
+                                        STA $2000
+                                        RTS
 bra_9768:
 C - - - - - 0x015778 05:9768: 20 BF 98  JSR sub_98BF
 C - - - - - 0x01577B 05:976B: CE 61 03  DEC ram_0361_counter
@@ -2799,7 +2804,9 @@ C D 0 - - - 0x0158C2 05:98B2: 20 BF 98  JSR sub_98BF
 C - - - - - 0x0158C5 05:98B5: 20 85 D5  JSR sub_0x01D595
 C - - - - - 0x0158C8 05:98B8: C6 5F     DEC ram_005F_counter
 C - - - - - 0x0158CA 05:98BA: D0 F6     BNE bra_98B2_loop
-C - - - - - 0x0158CC 05:98BC: 4C 70 FE  JMP loc_0x01FE80
+C - - - - - 0x0158CC 05:98BC: 4C 70 FE  LDA ram_for_2000
+                                        STA $2000
+                                        RTS
 
 
 
@@ -4872,7 +4879,9 @@ bra_A34E_loop:
 - - - - - - 0x01636D 05:A35D: 8D 44 03  STA ram_0344
 - - - - - - 0x016370 05:A360: 20 98 A3  JSR sub_A398
 - - - - - - 0x016373 05:A363: 20 29 99  JSR sub_9929
-- - - - - - 0x016376 05:A366: 4C 70 FE  JMP loc_0x01FE80
+- - - - - - 0x016376 05:A366: 4C 70 FE  LDA ram_for_2000
+                                        STA $2000
+                                        RTS
 
 
 
@@ -5010,7 +5019,9 @@ C - - - - - 0x016443 05:A433: C9 04     CMP #$04
 C - - - - - 0x016445 05:A435: 90 D6     BCC bra_A40D_loop
 C - - - - - 0x016447 05:A437: A9 00     LDA #$00
 C - - - - - 0x016449 05:A439: 85 21     STA ram_0021_t02
-C - - - - - 0x01644B 05:A43B: 4C 70 FE  JMP loc_0x01FE80
+C - - - - - 0x01644B 05:A43B: 4C 70 FE  LDA ram_for_2000
+                                        STA $2000
+                                        RTS
 
 
 

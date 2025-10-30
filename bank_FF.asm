@@ -45,8 +45,6 @@
 .export tbl_0x01F95A
 .export sub_0x01FC1E
 .export loc_0x01FC1E
-.export loc_0x01FE80
-.export sub_0x01FE80
 .export sub_0x01FEA3_disable_rendering
 .export loc_0x01FEA3_disable_rendering
 .export sub_0x01FECF
@@ -2781,8 +2779,6 @@ C - - - - - 0x01FE76 07:FE66: A5 FD     LDA ram_scroll_X
 C - - - - - 0x01FE78 07:FE68: 8D 05 20  STA $2005
 C - - - - - 0x01FE7B 07:FE6B: A5 FC     LDA ram_scroll_Y
 C - - - - - 0x01FE7D 07:FE6D: 8D 05 20  STA $2005
-loc_0x01FE80:
-sub_0x01FE80:
 C D 3 - - - 0x01FE80 07:FE70: A5 FF     LDA ram_for_2000
 C - - - - - 0x01FE82 07:FE72: 8D 00 20  STA $2000
 C - - - - - 0x01FE85 07:FE75: 60        RTS
