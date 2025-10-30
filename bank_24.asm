@@ -1208,7 +1208,8 @@ C - - - - - 0x01ED5E 07:ED4E: 60        RTS
 
 ofs_002_DD12_05:
 ; con_DA9D_05
-C - - J - - 0x01DD22 07:DD12: 20 4F DD  JSR sub_DD4F
+C - - J - - 0x01DD22 07:DD12: 20 4F DD  LDX ram_buffer_index_2
+                                        CPX #$20
 C - - - - - 0x01DD25 07:DD15: 90 01     BCC bra_DD18
 - - - - - - 0x01DD27 07:DD17: 60        RTS
 bra_DD18:
@@ -1347,7 +1348,8 @@ bra_DB6F_RTS:
 
 ofs_002_DCE8_0B:
 ; con_DA9D_0B
-C - - J - - 0x01DCF8 07:DCE8: 20 4F DD  JSR sub_DD4F
+C - - J - - 0x01DCF8 07:DCE8: 20 4F DD  LDX ram_buffer_index_2
+                                        CPX #$20
 C - - - - - 0x01DCFB 07:DCEB: B0 2A     BCS bra_DD10_RTS
 C - - - - - 0x01DCFD 07:DCED: 20 A5 DD  JSR sub_0x01DDB5
 C - - - - - 0x01DD00 07:DCF0: C4 DE     CPY ram_00DE
@@ -1400,7 +1402,8 @@ ofs_002_DCD2_0E:
 ; con_DA9D_0E
 C - - J - - 0x01DCE2 07:DCD2: 20 54 DD  JSR sub_DD54
 loc_DCD5:
-C D 2 - - - 0x01DCE5 07:DCD5: 20 4F DD  JSR sub_DD4F
+C D 2 - - - 0x01DCE5 07:DCD5: 20 4F DD  LDX ram_buffer_index_2
+                                        CPX #$20
 C - - - - - 0x01DCE8 07:DCD8: B0 3D     BCS bra_DCE6_RTS
 C - - - - - 0x01DCEA 07:DCDA: A5 1E     LDA ram_001E_t08
 C - - - - - 0x01DCEC 07:DCDC: F0 54     BNE bra_DCDE
@@ -2203,13 +2206,6 @@ C - - - - - 0x01DD76 07:DD66: A5 64     LDA ram_0064_lo
 C - - - - - 0x01DD78 07:DD68: 29 E0     AND #$E0
 C - - - - - 0x01DD7A 07:DD6A: 85 B8     STA ram_00B8_lo
 C - - - - - 0x01DD7C 07:DD6C: 60        RTS
-
-
-
-sub_DD4F:
-C - - - - - 0x01DD5F 07:DD4F: A6 39     LDX ram_buffer_index_2
-C - - - - - 0x01DD61 07:DD51: E0 20     CPX #$20
-C - - - - - 0x01DD63 07:DD53: 60        RTS
 
 
 
