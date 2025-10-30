@@ -2836,7 +2836,9 @@ sub_0x01FECF:
 C - - - - - 0x01FECF 07:FEBF: 20 03 FF  INC ram_nmi_flag_1
 C - - - - - 0x01FED2 07:FEC2: A9 01     LDY #con_F3D6_01
 C - - - - - 0x01FED4 07:FEC4: 20 B3 F3  JSR sub_F3B3_execute_script
-C - - - - - 0x01FED7 07:FEC7: 4C 06 FF  JMP loc_FF06
+C D 3 - - - 0x01FF16 07:FF06: A9 00     LDA #$00
+C - - - - - 0x01FF18 07:FF08: 85 2D     STA ram_nmi_flag_1
+C - - - - - 0x01FF1A 07:FF0A: 60        RTS
 
 
 
@@ -2867,7 +2869,8 @@ C - - - - - 0x01FEFB 07:FEEB: BD 90 03  LDA ram_sound_history,X
 C - - - - - 0x01FEFE 07:FEEE: 85 EE     STA ram_00EE_se
 C - - - - - 0x01FF00 07:FEF0: 20 03 FF  INC ram_nmi_flag_1
 C - - - - - 0x01FF03 07:FEF3: 20 86 B2  JSR sub_0x013296
-C - - - - - 0x01FF06 07:FEF6: 20 06 FF  JSR sub_FF06
+C - - - - - 0x01FF06 07:FEF6: 20 06 FF  LDA #$00
+                                        STA ram_nmi_flag_1
 C - - - - - 0x01FF09 07:FEF9: E8        INX
 C - - - - - 0x01FF0A 07:FEFA: 8A        TXA
 C - - - - - 0x01FF0B 07:FEFB: 29 0F     AND #$0F
@@ -2876,19 +2879,13 @@ C - - - - - 0x01FF10 07:FF00: 4C E3 FE  JMP loc_FEE3_loop
 
 
 
-loc_FF06:
-sub_FF06:
-C D 3 - - - 0x01FF16 07:FF06: A9 00     LDA #$00
-C - - - - - 0x01FF18 07:FF08: 85 2D     STA ram_nmi_flag_1
-C - - - - - 0x01FF1A 07:FF0A: 60        RTS
-
-
-
 sub_FF11:
 C - - - - - 0x01FF21 07:FF11: 20 3A FF  JSR sub_FF3A_set_mirroring_and_chr_banks
 C - - - - - 0x01FF29 07:FF19: AD 4A 03  LDA ram_copy_chr_bank_4
 C - - - - - 0x01FF2C 07:FF1C: 8D 01 80  STA $5126
-C - - - - - 0x01FF2F 07:FF1F: 4C 2F FF  JMP loc_FF2F
+C - - - - - 0x01FF2F 07:FF1F: 4C 2F FF  LDA ram_chr_bank + $05
+                                        STA $5127
+                                        RTS
 
 
 
@@ -2896,7 +2893,6 @@ sub_FF22_write_chr_banks:
 C - - - - - 0x01FF32 07:FF22: 20 3A FF  JSR sub_FF3A_set_mirroring_and_chr_banks
 C - - - - - 0x01FF3A 07:FF2A: A5 7B     LDA ram_chr_bank + $04
 C - - - - - 0x01FF3C 07:FF2C: 8D 01 80  STA $5126
-loc_FF2F:
 C - - - - - 0x01FF44 07:FF34: A5 7C     LDA ram_chr_bank + $05
 C - - - - - 0x01FF46 07:FF36: 8D 01 80  STA $5127
 C - - - - - 0x01FF49 07:FF39: 60        RTS
