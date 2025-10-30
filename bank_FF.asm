@@ -2643,7 +2643,13 @@ C - - - - - 0x01FD80 07:FD70: A4 24     LDY ram_nmi_flag_3
 C - - - - - 0x01FD82 07:FD72: F0 16     BEQ bra_FD8A_skip
 C - - - - - 0x01FD84 07:FD74: 20 48 FE  JSR sub_FE48_try_to_disable_rendering
 C - - - - - 0x01FD87 07:FD77: 20 D7 FD  JSR sub_FDD7_prepare_irq_data
-C - - - - - 0x01FD8A 07:FD7A: 20 11 FF  JSR sub_FF11
+; 
+C - - - - - 0x01FD8A 07:FD7A: 20 11 FF  JSR sub_FF3A_set_mirroring_and_chr_banks
+                                        LDA ram_copy_chr_bank_4
+                                        STA $5126
+                                        LDA ram_chr_bank + $05
+                                        STA $5127
+; 
 C - - - - - 0x01FD8D 07:FD7D: 20 56 FE  JSR sub_FE56
 C - - - - - 0x01FD90 07:FD80: 20 AA FE  JSR sub_FEAA_update_sound_engine
 C - - - - - 0x01FD93 07:FD83: A9 01     LDA #$01
@@ -2662,7 +2668,13 @@ C - - - - - 0x01FDAC 07:FD9C: E6 24     INC ram_nmi_flag_3
 C - - - - - 0x01FDAE 07:FD9E: 20 85 D5  JSR sub_0x01D595
 C - - - - - 0x01FDB1 07:FDA1: 20 48 FE  JSR sub_FE48_try_to_disable_rendering
 C - - - - - 0x01FDB4 07:FDA4: 20 D7 FD  JSR sub_FDD7_prepare_irq_data
-C - - - - - 0x01FDB7 07:FDA7: 20 22 FF  JSR sub_FF22_write_chr_banks
+; 
+C - - - - - 0x01FDB7 07:FDA7: 20 22 FF  JSR sub_FF3A_set_mirroring_and_chr_banks
+                                        LDA ram_chr_bank + $04
+                                        STA $5126
+                                        LDA ram_chr_bank + $05
+                                        STA $5127
+; 
 C - - - - - 0x01FDBA 07:FDAA: 20 56 FE  JSR sub_FE56
 C - - - - - 0x01FDBD 07:FDAD: 20 AA FE  JSR sub_FEAA_update_sound_engine
 C - - - - - 0x01FDC0 07:FDB0: 20 97 FF  JSR sub_FF97
@@ -2876,26 +2888,6 @@ C - - - - - 0x01FF0A 07:FEFA: 8A        TXA
 C - - - - - 0x01FF0B 07:FEFB: 29 0F     AND #$0F
 C - - - - - 0x01FF0D 07:FEFD: 8D 63 03  STA ram_sound_hist_index_2
 C - - - - - 0x01FF10 07:FF00: 4C E3 FE  JMP loc_FEE3_loop
-
-
-
-sub_FF11:
-C - - - - - 0x01FF21 07:FF11: 20 3A FF  JSR sub_FF3A_set_mirroring_and_chr_banks
-C - - - - - 0x01FF29 07:FF19: AD 4A 03  LDA ram_copy_chr_bank_4
-C - - - - - 0x01FF2C 07:FF1C: 8D 01 80  STA $5126
-C - - - - - 0x01FF2F 07:FF1F: 4C 2F FF  LDA ram_chr_bank + $05
-                                        STA $5127
-                                        RTS
-
-
-
-sub_FF22_write_chr_banks:
-C - - - - - 0x01FF32 07:FF22: 20 3A FF  JSR sub_FF3A_set_mirroring_and_chr_banks
-C - - - - - 0x01FF3A 07:FF2A: A5 7B     LDA ram_chr_bank + $04
-C - - - - - 0x01FF3C 07:FF2C: 8D 01 80  STA $5126
-C - - - - - 0x01FF44 07:FF34: A5 7C     LDA ram_chr_bank + $05
-C - - - - - 0x01FF46 07:FF36: 8D 01 80  STA $5127
-C - - - - - 0x01FF49 07:FF39: 60        RTS
 
 
 
