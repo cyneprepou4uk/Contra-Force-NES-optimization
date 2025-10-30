@@ -58,7 +58,6 @@
 .export sub_0x01F309_clear_0040_00DF
 .export sub_0x01F30D_clear_0060_00DF
 .export sub_0x01F319_clear_0400_07FF
-.export sub_0x01F32C
 .export loc_0x01F458_select_bg_chr_bank_pair
 .export sub_0x01F606
 .export sub_0x01F9A4
@@ -613,17 +612,6 @@ C - - - - - 0x01F325 07:F315: 9D 00 07  STA $0700,X
 C - - - - - 0x01F328 07:F318: E8        INX
 C - - - - - 0x01F329 07:F319: D0 F1     BNE bra_F30C_loop
 C - - - - - 0x01F32B 07:F31B: 60        RTS
-
-
-
-sub_0x01F32C:
-C - - - - - 0x01F32C 07:F31C: A9 00     LDA #$00
-C - - - - - 0x01F32E 07:F31E: A2 B0     LDX #$B0
-bra_F320_loop:
-C - - - - - 0x01F330 07:F320: 9D 00 03  STA ram_palette_buffer - $B0,X
-C - - - - - 0x01F333 07:F323: E8        INX
-C - - - - - 0x01F334 07:F324: D0 FA     BNE bra_F320_loop
-C - - - - - 0x01F336 07:F326: 60        RTS
 
 
 

@@ -90,7 +90,14 @@ C - - - - - 0x01D041 07:D031: D0 12     BNE bra_D045
 C - - - - - 0x01D043 07:D033: 86 27     STX ram_0027_useless_00
 C - - - - - 0x01D045 07:D035: 20 F9 F2  JSR sub_0x01F309_clear_0040_00DF
 C - - - - - 0x01D048 07:D038: 20 09 F3  JSR sub_0x01F319_clear_0400_07FF
-C - - - - - 0x01D04B 07:D03B: 20 1C F3  JSR sub_0x01F32C
+; 
+C - - - - - 0x01F32C 07:F31C: A9 00     LDA #$00
+C - - - - - 0x01F32E 07:F31E: A2 B0     LDX #$B0
+bra_F320_loop:
+C - - - - - 0x01F330 07:F320: 9D 00 03  STA ram_palette_buffer - $B0,X
+C - - - - - 0x01F333 07:F323: E8        INX
+C - - - - - 0x01F334 07:F324: D0 FA     BNE bra_F320_loop
+; 
 C - - - - - 0x01D04E 07:D03E: A9 7C     LDA #con_chr_bank + $7C
 C - - - - - 0x01D050 07:D040: 85 77     STA ram_chr_bank
 bra_D042:
@@ -102,7 +109,7 @@ C - - - - - 0x01D055 07:D045: CA        DEX
 C - - - - - 0x01D056 07:D046: D0 14     BNE bra_D05C
 C - - - - - 0x01D058 07:D048: A9 07     LDA #con_prg_pair + $01
 C - - - - - 0x01D05A 07:D04A: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
-C - - - - - 0x01D05D 07:D04D: 20 01 80  JSR sub_0x014011
+C - - - - - 0x01D05D 07:D04D: 20 01 80  JSR sub_8001
 C - - - - - 0x01D060 07:D050: A5 22     LDA ram_0022_t02
 C - - - - - 0x01D062 07:D052: C9 3A     CMP #$3A
 C - - - - - 0x01D064 07:D054: D0 EE     BNE bra_D044_RTS
@@ -2498,7 +2505,7 @@ C - - - - - 0x00800F 01:BFFF: 60        RTS
 
 
 
-sub_0x014011:
+sub_8001:
 C D 0 - - - 0x014011 05:8001: A5 42     LDA ram_btn_hold_1
 C - - - - - 0x014013 05:8003: F0 13     BEQ bra_8018
 C - - - - - 0x014015 05:8005: A5 22     LDA ram_0022_t02
