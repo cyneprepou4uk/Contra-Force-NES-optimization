@@ -1931,7 +1931,8 @@ C - - - - - 0x01EBA2 07:EB92: 4C EC EB  JMP loc_EBEC
 
 
 sub_F254:
-C - - - - - 0x01F264 07:F254: 20 69 F2  JSR sub_F269
+C - - - - - 0x01F264 07:F254: 20 69 F2  LDY ram_stage
+                                        CPY #$02
 C - - - - - 0x01F267 07:F257: 90 03     BCC bra_F25C
 C - - - - - 0x01F269 07:F259: 86 39     STX ram_buffer_index_2
 C - - - - - 0x01F26B 07:F25B: 60        RTS
@@ -1942,7 +1943,8 @@ C - - - - - 0x01F26E 07:F25E: 60        RTS
 
 
 sub_F25F:
-C - - - - - 0x01F26F 07:F25F: 20 69 F2  JSR sub_F269
+C - - - - - 0x01F26F 07:F25F: 20 69 F2  LDY ram_stage
+                                        CPY #$02
 C - - - - - 0x01F272 07:F262: 90 0A     BCC bra_F26E
 C - - - - - 0x01F274 07:F264: 9D 60 01  STA ram_ppu_buffer_2,X
 C - - - - - 0x01F277 07:F267: E8        INX
@@ -1951,17 +1953,6 @@ bra_F26E:
 C - - - - - 0x01F27E 07:F26E: 9D 00 01  STA ram_ppu_buffer_1,X
 C - - - - - 0x01F281 07:F271: E8        INX
 C - - - - - 0x01F282 07:F272: 60        RTS
-
-
-
-sub_F269:
-; out
-    ; C
-        ; 0 = 
-        ; 1 = 
-C - - - - - 0x01F279 07:F269: A4 75     LDY ram_stage
-C - - - - - 0x01F27B 07:F26B: C0 02     CPY #$02
-C - - - - - 0x01F27D 07:F26D: 60        RTS
 
 
 
