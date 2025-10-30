@@ -371,6 +371,9 @@ tbl_BB03:
 
 
 tbl_BB33:
+;                                              +---------- 
+;                                              |    +----- 
+;                                              |    |
 - D 1 - - - 0x00FB43 03:BB33: 0C        .byte $0C, $0C   ; 10
 - D 1 - - - 0x00FB45 03:BB35: 00        .byte $00, $0C   ; 20
 - - - - - - 0x00FB47 03:BB37: F4        .byte $F4, $0C   ; 30
@@ -491,12 +494,14 @@ C D 1 - - - 0x00F48E 03:B47E: 4C 17 9A  JMP loc_0x009A27
 
 
 sub_B6BE:
+; bzk optimize
 C - - - - - 0x00F6CE 03:B6BE: A9 24     LDA #con_music_24
 C - - - - - 0x00F6D0 03:B6C0: 4C D8 95  JMP loc_0x0095E8_play_music
 
 
 
 sub_B5D4:
+; bzk optimize
 C - - - - - 0x00F5E4 03:B5D4: 18        CLC
 C - - - - - 0x00F5E5 03:B5D5: 7D AA 07  ADC ram_07AA_unk,X
 C - - - - - 0x00F5E8 03:B5D8: 9D AA 07  STA ram_07AA_unk,X
@@ -508,6 +513,7 @@ C - - - - - 0x00F5F0 03:B5E0: 60        RTS
 
 
 sub_B481:
+; bzk optimize
 C - - - - - 0x00F491 03:B481: A5 9F     LDA ram_009F
 C - - - - - 0x00F493 03:B483: 38        SEC
 C - - - - - 0x00F494 03:B484: E9 01     SBC #$01
@@ -516,6 +522,7 @@ C - - - - - 0x00F496 03:B486: 60        RTS
 
 
 sub_B530:
+; bzk optimize
 C - - - - - 0x00F540 03:B530: BD A0 07  LDA ram_07A0_unk,X
 C - - - - - 0x00F543 03:B533: 29 01     AND #$01
 C - - - - - 0x00F545 03:B535: 60        RTS
@@ -759,6 +766,7 @@ C - - - - - 0x00F53D 03:B52D: 4C A3 90  JMP loc_0x0090B3
 
 
 sub_B487:
+; bzk optimize
 C - - - - - 0x00F497 03:B487: B9 BB B4  LDA tbl_B4BB,Y
 C - - - - - 0x00F49A 03:B48A: 85 02     STA ram_0002_t02_ppu_data
 C - - - - - 0x00F49C 03:B48C: B9 BC B4  LDA tbl_B4BB + $01,Y
@@ -887,12 +895,14 @@ C - - - - - 0x00B9BB 02:B9AB: 60        RTS
 
 
 sub_B9D4:
+; bzk optimize
 C - - - - - 0x00B9E4 02:B9D4: A9 0C     LDA #$0C
 C - - - - - 0x00B9E6 02:B9D6: 4C A1 89  JMP loc_0x0089B1
 
 
 
 sub_B9AC:
+; bzk optimize
 C - - - - - 0x00B9BC 02:B9AC: A9 00     LDA #$00
 C - - - - - 0x00B9BE 02:B9AE: A0 10     LDY #$10
 C - - - - - 0x00B9C0 02:B9B0: 4C BC 8F  JMP loc_0x008FCC
@@ -900,6 +910,7 @@ C - - - - - 0x00B9C0 02:B9B0: 4C BC 8F  JMP loc_0x008FCC
 
 
 sub_B9B3:
+; bzk optimize
 C - - - - - 0x00B9C3 02:B9B3: A9 F0     LDA #$F0
 C - - - - - 0x00B9C5 02:B9B5: A0 00     LDY #$00
 C - - - - - 0x00B9C7 02:B9B7: 4C BC 8F  JMP loc_0x008FCC
@@ -907,6 +918,11 @@ C - - - - - 0x00B9C7 02:B9B7: 4C BC 8F  JMP loc_0x008FCC
 
 
 sub_B9BA:
+; out
+    ; C
+        ; 0 = 
+        ; 1 = 
+; bzk optimize
 C - - - - - 0x00B9CA 02:B9BA: 20 D9 B9  JSR sub_B9D9
 C - - - - - 0x00B9CD 02:B9BD: B0 14     BCS bra_B9D3_RTS
 C - - - - - 0x00B9CF 02:B9BF: E0 03     CPX #$03
@@ -1031,6 +1047,7 @@ C - - - - - 0x00F92B 03:B91B: 20 70 90  JSR sub_0x009080
 C - - - - - 0x00F92E 03:B91E: A6 53     LDX ram_0053
 C - - - - - 0x00F930 03:B920: 9D 82 06  STA ram_0682_obj,X
 loc_B923:
+; bzk optimize
 C D 1 - - - 0x00F933 03:B923: A9 18     LDA #$18
 C D 1 - - - 0x00F935 03:B925: 9D 9C 06  STA ram_069C_obj,X
 C - - - - - 0x00F938 03:B928: FE 78 07  INC ram_0778_unk,X
@@ -1090,6 +1107,9 @@ bra_B967_RTS:
 
 
 tbl_B9C2:
+;                                              +---------- 
+;                                              |    +----- 
+;                                              |    |
 - D 1 - - - 0x00F9D2 03:B9C2: 08        .byte $08, $00   ; 00 
 - D 1 - - - 0x00F9D4 03:B9C4: 08        .byte $08, $08   ; 10 
 - - - - - - 0x00F9D6 03:B9C6: 00        .byte $00, $08   ; 20 
@@ -1418,6 +1438,9 @@ C - - - - - 0x00BB2B 02:BB1B: 60        RTS
 
 
 tbl_BBEF:
+;                                              +---------- 
+;                                              |    +----- 
+;                                              |    |
 - D 1 - - - 0x00BBFF 02:BBEF: 08        .byte $08, $00   ; 00 
 - D 1 - - - 0x00BC01 02:BBF1: 10        .byte $10, $04   ; 01 
 - D 1 - - - 0x00BC03 02:BBF3: 18        .byte $18, $08   ; 02 
@@ -1656,13 +1679,14 @@ C - - - - - 0x00BAB2 02:BAA2: 60        RTS
 
 
 ofs_016_0x00B84F_09:
-; bzk bug, reading from 0x00B84A
+; bzk bug, reading 1st byte from 0x00B84A
 C D 1 J - - 0x00B84F 02:B83F: 20 45 B8  JSR sub_B845
 C - - - - - 0x00B852 02:B842: 4C 10 8E  JMP loc_0x008E20
 
 
 
 sub_B845:
+; bzk optimize
 C - - - - - 0x00B855 02:B845: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x00B858 02:B848: D0 0D     BNE bra_B857
 C - - - - - 0x00B85A 02:B84A: A9 00     LDA #$00
@@ -1785,6 +1809,7 @@ tbl_B8D8:
 
 
 sub_B8A7:
+; bzk optimize
 C - - - - - 0x00B8B7 02:B8A7: 20 7C 96  JSR sub_0x00968C
 C - - - - - 0x00B8BA 02:B8AA: A4 91     LDY ram_0091_pos_Y
 C - - - - - 0x00B8BC 02:B8AC: 4C B8 B8  JMP loc_B8B8
@@ -1814,6 +1839,7 @@ C - - - - - 0x00B8D9 02:B8C9: 4C 83 80  JMP loc_0x008093
 
 
 sub_B8F6:
+; bzk optimize
 C - - - - - 0x00B906 02:B8F6: A6 53     LDX ram_0053
 C - - - - - 0x00B908 02:B8F8: 20 BA 93  JSR sub_0x0093CA
 C - - - - - 0x00B90B 02:B8FB: B0 23     BCS bra_B920_RTS
@@ -1953,6 +1979,7 @@ C - - - - - 0x00FCDD 03:BCCD: 4C 3A 97  JMP loc_0x00974A
 
 
 sub_BCD0:
+; bzk optimize
 C - - - - - 0x00FCE0 03:BCD0: A0 00     LDY #$00
 bra_BCD2_loop:
 C - - - - - 0x00FCE2 03:BCD2: B9 82 07  LDA ram_0782_unk,Y
@@ -1983,6 +2010,7 @@ C - - - - - 0x00D1E1 03:B1D1: 4C 10 8E  JMP loc_0x008E20
 
 
 sub_B1D4:
+; bzk optimize
 C - - - - - 0x00D1E4 03:B1D4: 20 22 B2  JSR sub_B222
 C - - - - - 0x00D1E7 03:B1D7: A5 23     LDA ram_frm_cnt
 C - - - - - 0x00D1E9 03:B1D9: 29 3F     AND #$3F
@@ -2026,6 +2054,7 @@ C - - - - - 0x00D231 03:B221: 60        RTS
 
 
 sub_B222:
+; bzk optimize
 C - - - - - 0x00D232 03:B222: BD 68 06  LDA ram_obj_pos_Y,X
 C - - - - - 0x00D235 03:B225: C9 C2     CMP #$C2
 C - - - - - 0x00D237 03:B227: B0 0C     BCS bra_B235
