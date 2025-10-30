@@ -3496,6 +3496,7 @@ C - - - - - 0x00B3BF 02:B3AF: A9 00     LDA #$00
 C - - - - - 0x00B3C1 02:B3B1: 85 00     STA ram_0000_t67_lo
 C - - - - - 0x00B3C3 02:B3B3: 85 01     STA ram_0001_t12_hi
 C - - - - - 0x00B3C5 02:B3B5: 20 C8 99  JSR sub_0x0099D8
+                                       ;CLC
 C - - - - - 0x00B3C8 02:B3B8: BD 4E 06  LDA ram_obj_pos_X,X
 C - - - - - 0x00B3CB 02:B3BB: 65 01     ADC ram_0001_t04_hi
 C - - - - - 0x00B3CD 02:B3BD: 9D 4E 06  STA ram_obj_pos_X,X
@@ -3516,6 +3517,7 @@ C - - - - - 0x00B3E6 02:B3D6: A9 04     LDA #$04
 C - - - - - 0x00B3E8 02:B3D8: 85 01     STA ram_0001_t12_hi
 bra_B3DA:
 C - - - - - 0x00B3EA 02:B3DA: 20 D5 99  JSR sub_0x0099E5
+                                       ;CLC
 C - - - - - 0x00B3ED 02:B3DD: BD 68 06  LDA ram_obj_pos_Y,X
 C - - - - - 0x00B3F0 02:B3E0: 65 01     ADC ram_0001_t04_hi
 C - - - - - 0x00B3F2 02:B3E2: 9D 68 06  STA ram_obj_pos_Y,X

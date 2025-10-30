@@ -119,6 +119,7 @@ C D 2 - - - 0x01D070 07:D060: E6 20     INC ram_script_hi
 loc_D062:
 sub_D062:
 sub_0x01D072:
+; bzk optimize
 C D 2 - - - 0x01D072 07:D062: A9 00     LDA #$00
 C - - - - - 0x01D074 07:D064: 85 21     STA ram_0021_t01
 C - - - - - 0x01D076 07:D066: 85 22     STA ram_0022_t02
@@ -492,7 +493,7 @@ C - - - - - 0x01D179 07:D169: 4C 62 D0  JMP loc_D062
 
 sub_D174:
 sub_0x01D184:
-C - - - - - 0x01D186 07:D176: 20 B3 F3  JSR sub_0x00801F
+C - - - - - 0x01D186 07:D176: 20 B3 F3  JSR sub_800F
 C - - - - - 0x01D189 07:D179: A9 00     LDA #$00
 C - - - - - 0x01D18B 07:D17B: 8D 98 06  STA ram_0682_obj + $16
 C - - - - - 0x01D18E 07:D17E: 8D 99 06  STA ram_0682_obj + $17
@@ -2666,7 +2667,7 @@ C - - - - - 0x009A4B 02:9A3B: 9D 36 07  STA ram_0736_obj,X
 C - - - - - 0x009A4E 02:9A3E: 9D 4C 07  STA ram_074C_obj,X
 C - - - - - 0x009A51 02:9A41: 9D 62 07  STA ram_0762_obj,X
 C - - - - - 0x009A54 02:9A44: 9D 20 07  STA ram_0720_obj,X
-sub_9A47:
+sub_9A47:   ; bzk optimize
 .export sub_0x009A57
 sub_0x009A57:
 .export loc_0x009A57
@@ -2726,6 +2727,7 @@ C - - - - - 0x009A87 02:9A77: 60        RTS
 
 .export sub_0x0091D5_add_to_pos_X
 sub_0x0091D5_add_to_pos_X:
+; bzk optimize
 ; in
     ; A = how much to add
 C - - - - - 0x0091D5 02:91C5: 18        CLC
@@ -2741,6 +2743,7 @@ C - - - - - 0x0091DC 02:91CC: 60        RTS
 sub_93B1_06B2x_LSRx4_TAY:
 .export sub_0x0093C1_06B2x_LSRx4_TAY
 sub_0x0093C1_06B2x_LSRx4_TAY:
+; bzk optimize
 C - - - - - 0x0093C1 02:93B1: BD B2 06  LDA ram_06B2_obj,X
 .export sub_0x0093C4_LSRx4_TAY
 sub_0x0093C4_LSRx4_TAY:
@@ -2895,10 +2898,8 @@ bra_9933:
 C - - - - - 0x009943 02:9933: 20 13 9A  JSR sub_9A13
 C - - - - - 0x009946 02:9936: 38        SEC
 C - - - - - 0x009947 02:9937: 60        RTS
-
-
-
 bra_9948:
+; bzk optimize
 C - - - - - 0x009958 02:9948: 18        CLC
 C - - - - - 0x009959 02:9949: 60        RTS
 
@@ -2999,6 +3000,7 @@ C - - - - - 0x0099E2 02:99D2: 4C DF 99  JMP loc_99DF
 sub_99D5:
 .export sub_0x0099E5
 sub_0x0099E5:
+; bzk optimize, удалить CLC в конце, раскомментировать CLC после JSR
 C - - - - - 0x0099E5 02:99D5: A5 6C     LDA ram_006C
 C - - - - - 0x0099E7 02:99D7: 85 02     STA ram_0002_t27
 C - - - - - 0x0099E9 02:99D9: A5 6B     LDA ram_006B
@@ -3108,6 +3110,9 @@ C - - - - - 0x009FC0 02:9FB0: 60        RTS
 
 
 tbl_9FC1:
+;                                              +---------- 
+;                                              |    +----- 
+;                                              |    |
 - D 0 - - - 0x009FD1 02:9FC1: 00        .byte $00, $00   ; 
 - D 0 - - - 0x009FD3 02:9FC3: 80        .byte $80, $00   ; 
 - D 0 - - - 0x009FD5 02:9FC5: 00        .byte $00, $01   ; 
@@ -3145,6 +3150,7 @@ tbl_9FC1:
 sub_9172_06B2x_AND_0F:
 .export sub_0x009182_06B2x_AND_0F
 sub_0x009182_06B2x_AND_0F:
+; bzk optimize
 C - - - - - 0x009182 02:9172: BD B2 06  LDA ram_06B2_obj,X
 C - - - - - 0x009185 02:9175: 29 0F     AND #$0F
 C - - - - - 0x009187 02:9177: 60        RTS
@@ -3154,6 +3160,7 @@ C - - - - - 0x009187 02:9177: 60        RTS
 sub_9178_stage_AND_01:
 .export sub_0x009188_stage_AND_01
 sub_0x009188_stage_AND_01:
+; bzk optimize
 ; out
     ; Z
         ; 0 = upper view (stages 01/03 (2/4))
@@ -3167,6 +3174,7 @@ C - - - - - 0x00918C 02:917C: 60        RTS
 
 .export loc_0x009672
 loc_0x009672:
+; bzk optimize, переместить в банк 04
 C D 0 - - - 0x009672 02:9662: BD BE 07  LDA ram_07BE_unk,X
 ; * 04
 C - - - - - 0x009675 02:9665: 0A        ASL
@@ -3187,8 +3195,9 @@ C - - - - - 0x00968B 02:967B: 60        RTS
 
 
 
-sub_0x009768:
 .export sub_0x009768
+sub_0x009768:
+; bzk optimize, переместить в банк 04
 ; out
     ; C
         ; 0 = 
@@ -3236,8 +3245,7 @@ bra_9009:
 
 
 
-.export sub_0x00801F
-sub_0x00801F:
+sub_800F:
 .export loc_0x00801F
 loc_0x00801F:
 C - - - - - 0x00801F 02:800F: A2 02     LDX #$02
