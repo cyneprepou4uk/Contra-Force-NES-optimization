@@ -2779,14 +2779,12 @@ C - - - - - 0x0096EB 02:96DB: 65 01     ADC ram_0001_t07_hi
 C - - - - - 0x0096ED 02:96DD: 85 01     STA ram_0001_t02_hi
 C - - - - - 0x0096EF 02:96DF: 60        RTS
 bra_96E0:
-C - - - - - 0x0096F0 02:96E0: A9 01     LDA #$01
-C - - - - - 0x0096F2 02:96E2: 85 01     STA ram_0001_t55_useless_01
 C - - - - - 0x0096F4 02:96E4: A9 00     LDA #$00
 C - - - - - 0x0096F6 02:96E6: 38        SEC
 C - - - - - 0x0096F7 02:96E7: FD 68 06  SBC ram_obj_pos_Y,X
 C - - - - - 0x0096FA 02:96EA: 85 00     STA ram_0000_t65
-; bzk optimize, always 01
-C - - - - - 0x0096FC 02:96EC: A5 01     LDA ram_0001_t55_useless_01
+; bzk optimize?
+C - - - - - 0x0096FC 02:96EC: A5 01     LDA #$01
 C - - - - - 0x0096FE 02:96EE: E9 00     SBC #$00
 C - - - - - 0x009700 02:96F0: 85 01     STA ram_0001_t09
 C - - - - - 0x009702 02:96F2: A5 64     LDA ram_0064_lo

@@ -3030,8 +3030,6 @@ C - - - - - 0x015A1E 05:9A0E: E5 64     SBC ram_0064_lo
 C - - - - - 0x015A20 05:9A10: 85 00     STA ram_0000_t72_lo
 C - - - - - 0x015A22 05:9A12: A5 01     LDA ram_0001_t33_hi
 C - - - - - 0x015A24 05:9A14: E5 63     SBC ram_0063_hi
-; bzk optimize, useless STA
-C - - - - - 0x015A26 05:9A16: 85 01     STA ram_0001_t54_useless
 C - - - - - 0x015A28 05:9A18: F0 0E     BEQ bra_9A28
 C - - - - - 0x015A2A 05:9A1A: 10 50     BPL bra_9A6C
 C - - - - - 0x015A2C 05:9A1C: 49 FF     EOR #$FF
@@ -4562,9 +4560,6 @@ _off005_A1B5_04_stage_5:
 
 
 sub_A1D4:
-; bzk optimize, useless LDA + STA
-C - - - - - 0x0161E4 05:A1D4: A5 61     LDA ram_0061_lo
-C - - - - - 0x0161E6 05:A1D6: 85 01     STA ram_0001_t53_useless
 C - - - - - 0x0161E8 05:A1D8: A5 60     LDA ram_0060_hi
 C - - - - - 0x0161EA 05:A1DA: 85 00     STA ram_0000_t92
 C - - - - - 0x0161EC 05:A1DC: A5 64     LDA ram_0064_lo
@@ -6610,9 +6605,6 @@ C - - - - - 0x017B08 05:BAF8: F0 02     BEQ bra_BAFC
 C - - - - - 0x017B0A 05:BAFA: A9 80     LDA #$80
 bra_BAFC:
 C - - - - - 0x017B0C 05:BAFC: 85 03     STA ram_0003_t21
-; bzk optimize, useless LDA + STA
-C - - - - - 0x017B0E 05:BAFE: A9 00     LDA #$00
-C - - - - - 0x017B10 05:BB00: 85 02     STA ram_0002_t63_useless
 C - - - - - 0x017B12 05:BB02: 20 0F F6  JSR sub_0x01F61F
 C - - - - - 0x017B15 05:BB05: A9 08     LDA #$08
 C - - - - - 0x017B17 05:BB07: 85 00     STA ram_0000_t5F

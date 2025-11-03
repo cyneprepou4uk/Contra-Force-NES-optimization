@@ -2954,8 +2954,6 @@ C - - - - - 0x01DEDC 07:DECC: 4C D4 DE  JMP loc_DED4
 sub_DDFF:
 ; in
     ; A = 
-; bzk optimize, useless STA
-C - - - - - 0x01DE0F 07:DDFF: 85 02     STA ram_0002_t64_useless
 C - - - - - 0x01DE11 07:DE01: 18        CLC
 C - - - - - 0x01DE12 07:DE02: 65 00     ADC ram_0000_t73_ppu_addr_lo
 C - - - - - 0x01DE14 07:DE04: 85 00     STA ram_0000_t73_ppu_addr_lo

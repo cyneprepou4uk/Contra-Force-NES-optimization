@@ -2211,8 +2211,6 @@ C - - - - - 0x01DDBB 07:DDAB: 85 03     STA ram_0003_t06_lo
 sub_0x01DDBD:
 C - - - - - 0x01DDBD 07:DDAD: A5 02     LDA ram_0002_t12_hi
 C - - - - - 0x01DDBF 07:DDAF: 29 01     AND #$01
-; bzk optimize, useless STA
-C - - - - - 0x01DDC1 07:DDB1: 85 02     STA ram_0002_t62_useless
 C - - - - - 0x01DDC3 07:DDB3: F0 12     BEQ bra_DDC7
 C - - - - - 0x01DDC5 07:DDB5: A5 03     LDA ram_0003_t06_lo
 C - - - - - 0x01DDC7 07:DDB7: 38        SEC
@@ -2987,12 +2985,10 @@ C - - - - - 0x0099ED 02:99DD: A5 65     LDA ram_0065_fr
 loc_99DF:
 C D 0 - - - 0x0099EF 02:99DF: 85 04     STA ram_0004_t15
 C - - - - - 0x0099F1 02:99E1: 20 F7 99  JSR sub_99F7
-C - - - - - 0x0099F4 02:99E4: A9 00     LDA #$00
-C - - - - - 0x0099F6 02:99E6: 85 02     STA ram_0002_t61_useless_00
 C - - - - - 0x0099F8 02:99E8: A5 00     LDA ram_0000_t67_lo
 C - - - - - 0x0099FA 02:99EA: 38        SEC
-; bzk optimize, always 00
-C - - - - - 0x0099FB 02:99EB: E5 02     SBC ram_0002_t61_useless_00
+; bzk optimize?
+C - - - - - 0x0099FB 02:99EB: E5 02     SBC #$00
 C - - - - - 0x0099FD 02:99ED: 85 00     STA ram_0000_t47_lo
 C - - - - - 0x0099FF 02:99EF: A5 01     LDA ram_0001_t12_hi
 C - - - - - 0x009A01 02:99F1: E5 03     SBC ram_0003_t19

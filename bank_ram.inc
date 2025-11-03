@@ -210,9 +210,6 @@ ram_0001_temp                           = $0001 ; 0033CA 00385C 003987 003CC0 00
     ram_0001_t50_ppu_addr_hi                = ram_0001_temp ; 
     ram_0001_t51_meta_indexes_ptr_hi        = ram_0001_temp ; 
     ram_0001_t52_hi                         = ram_0001_temp ; 
-    ram_0001_t53_useless                    = ram_0001_temp ; bzk optimize
-    ram_0001_t54_useless                    = ram_0001_temp ; bzk optimize
-    ram_0001_t55_useless_01                 = ram_0001_temp ; bzk optimize
 
 
 
@@ -278,10 +275,7 @@ ram_0002_temp                           = $0002 ; 0034CE 00354F 0035C4 003718 00
     ram_0002_t58                            = ram_0002_temp ; 
     ram_0002_t59_ppu_addr_lo                = ram_0002_temp ; 
     ram_0002_t60                            = ram_0002_temp ; 
-    ram_0002_t61_useless_00                 = ram_0002_temp ; bzk optimize
-    ram_0002_t62_useless                    = ram_0002_temp ; bzk optimize
-    ram_0002_t63_useless                    = ram_0002_temp ; bzk optimize
-    ram_0002_t64_useless                    = ram_0002_temp ; bzk optimize
+    
     ram_0002_t65_data                       = ram_0002_temp ; 2 addresses 0002-0003
 
 
@@ -323,7 +317,6 @@ ram_0003_temp                           = $0003 ; 00371D 003733 00399C 0039B5 00
     ram_0003_t33                            = ram_0003_temp ; 
     ram_0003_t34                            = ram_0003_temp ; 
     ram_0003_t35                            = ram_0003_temp ; 
-    ram_0003_t36_useless                    = ram_0003_temp ; bzk optimize
 
 
 

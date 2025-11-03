@@ -3913,9 +3913,6 @@ C - - - - - 0x00FF33 03:BF23: B9 4E 06  LDA ram_obj_pos_X,Y
 C - - - - - 0x00FF36 03:BF26: 85 00     STA ram_0000_t26_pos_X
 C - - - - - 0x00FF38 03:BF28: B9 68 06  LDA ram_obj_pos_Y,Y
 C - - - - - 0x00FF3B 03:BF2B: 85 01     STA ram_0001_t30_pos_Y
-; bzk optimize, useless LDA + STA
-C - - - - - 0x00FF3D 03:BF2D: A9 00     LDA #$00
-C - - - - - 0x00FF3F 03:BF2F: 85 03     STA ram_0003_t36_useless
 C - - - - - 0x00FF41 03:BF31: BD 00 06  LDA ram_0600_obj,X
 C - - - - - 0x00FF44 03:BF34: 29 CF     AND #$CF
 C - - - - - 0x00FF46 03:BF36: 9D 00 06  STA ram_0600_obj,X
