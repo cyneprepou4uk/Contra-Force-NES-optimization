@@ -219,7 +219,7 @@ C - - - - - 0x010113 04:8103: 60        RTS
 
 ofs_010_8104_E5:
 ; con_se_cb_E5
-C D 0 - - - 0x010114 04:8104: B1 E0     LDA (ram_00E0_se_t01_music_data),Y
+; bzk optimize?
 C - - - - - 0x010116 04:8106: 9D F7 05  STA ram_05F7_se,X
 C - - - - - 0x010119 04:8109: 60        RTS
 
