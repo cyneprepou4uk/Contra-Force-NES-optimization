@@ -212,8 +212,6 @@ C - - - - - 0x009B33 02:9B23: BC 0A 07  LDY ram_070A_obj,X
 C - - - - - 0x009B36 02:9B26: 88        DEY
 C - - - - - 0x009B37 02:9B27: B1 00     LDA (ram_0000_t09_data),Y
 loc_9B29:
-; bzk optimize, useless STA
-C D 0 - - - 0x009B39 02:9B29: 85 1F     STA ram_001F_t17_useless
 C - - - - - 0x009B3B 02:9B2B: F0 A5     BEQ bra_9AD2_exit
 C - - - - - 0x009B3D 02:9B2D: 0A        ASL
 C - - - - - 0x009B3E 02:9B2E: A8        TAY

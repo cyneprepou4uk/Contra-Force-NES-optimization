@@ -890,9 +890,6 @@ ram_001F_temp                           = $001F ; 0036CE 0036DA 003A8F 003AAD 00
     ram_001F_t14                            = ram_001F_temp ; 
     ram_001F_t15                            = ram_001F_temp ; 
     ram_001F_t16                            = ram_001F_temp ; 
-    ram_001F_t17_useless                    = ram_001F_temp ; bzk optimize
-    ram_001F_t18_useless                    = ram_001F_temp ; bzk optimize
-    ram_001F_t19_useless                    = ram_001F_temp ; bzk optimize
 
 
 

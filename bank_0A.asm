@@ -3285,8 +3285,6 @@ C - - - - - 0x015BC7 05:9BB7: 84 1E     STY ram_001E_t08
 C - - - - - 0x015BC9 05:9BB9: A9 00     LDA #$00
 C - - - - - 0x015BCB 05:9BBB: 85 39     STA ram_buffer_index_2
 C - - - - - 0x015BCD 05:9BBD: A9 0E     LDA #con_DA9D_0E
-; bzk optimize, useless STA
-C - - - - - 0x015BCF 05:9BBF: 85 1F     STA ram_001F_t18_useless
 C - - - - - 0x015BD1 05:9BC1: D0 45     JMP loc_96C9
 bra_9BC3:
 C - - - - - 0x015BD3 05:9BC3: A9 00     LDA #$00
@@ -3334,8 +3332,6 @@ C - - - - - 0x015C0E 05:9BFE: AA        TAX
 C - - - - - 0x015C0F 05:9BFF: BD 5D 9F  LDA tbl_9F5D,X
 C - - - - - 0x015C12 05:9C02: C9 FF     CMP #$FF
 C - - - - - 0x015C14 05:9C04: F0 EF     BEQ bra_9BF5_RTS
-; bzk optimize, useless STA
-C - - - - - 0x015C16 05:9C06: 85 1F     STA ram_001F_t19_useless
 C - - - - - 0x015C18 05:9C08: 4C C9 96  JMP loc_96C9
 
 
