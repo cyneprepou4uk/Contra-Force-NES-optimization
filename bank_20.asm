@@ -3971,11 +3971,6 @@ C - - - - - 0x00FFA2 03:BF92: BD BE 07  LDA ram_07BE_unk,X
 C - - - - - 0x00FFA5 03:BF95: 38        SEC
 C - - - - - 0x00FFA6 03:BF96: F9 B4 07  SBC ram_07B4_unk,Y
 C - - - - - 0x00FFA9 03:BF99: 85 19     STA ram_0019_t03_hi
-; bzk optimize, useless code up to 0x00FFAF
-C - - - - - 0x00FFAB 03:BF9B: 10 04     BPL bra_BFA1
-C - - - - - 0x00FFAD 03:BF9D: A9 07     LDA #$07
-C - - - - - 0x00FFAF 03:BF9F: 85 1C     STA ram_001C_t20_useless
-bra_BFA1:
 C - - - - - 0x00FFB1 03:BFA1: A9 00     LDA #$00
 C - - - - - 0x00FFB3 03:BFA3: 85 18     STA ram_0018_t07_lo
 C - - - - - 0x00FFB5 03:BFA5: 85 1A     STA ram_001A_t08_lo

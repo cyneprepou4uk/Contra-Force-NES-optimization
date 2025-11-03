@@ -347,8 +347,6 @@ C - - - - - 0x01EE4C 07:EE3C: 85 13     STA ram_0013_t16_useless
 C - - - - - 0x01EE4E 07:EE3E: 29 70     AND #$70
 C - - - - - 0x01EE50 07:EE40: 85 11     STA ram_0011_t15
 C - - - - - 0x01EE52 07:EE42: A5 17     LDA ram_0017_t09_useless
-; bzk optimize, useless STA
-C - - - - - 0x01EE54 07:EE44: 85 1C     STA ram_001C_t19_useless
 C - - - - - 0x01EE56 07:EE46: 29 01     AND #$01
 C - - - - - 0x01EE58 07:EE48: F0 02     BEQ bra_EE4C
 C - - - - - 0x01EE5A 07:EE4A: A9 80     LDA #$80
