@@ -2568,8 +2568,8 @@ ram_copy_chr_bank_4                     = $034A ; 01FD65 01FF1D 01FF29
 
 
 
-; bzk optimize, useless address
-ram_034B_useless                        = $034B ; 007FC2 015D09 015D47 015D60 01FD65 
+; free address
+; ram_034B                              = $034B ; 007FC2 015D09 015D47 015D60 01FD65 
 
 
 

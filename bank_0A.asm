@@ -3501,7 +3501,6 @@ C - - - - - 0x015D03 05:9CF3: 85 A6     STA ram_00A6
 C - - - - - 0x015D05 05:9CF5: 85 A7     STA ram_00A7
 ; bzk optimize, useless STA
 C - - - - - 0x015D07 05:9CF7: 85 A8     STA ram_00A8
-C - - - - - 0x015D09 05:9CF9: 8D 4B 03  STA ram_034B_useless
 bra_9CFC_RTS:
 C - - - - - 0x015D0C 05:9CFC: 60        RTS
 
@@ -3537,8 +3536,6 @@ C - - - - - 0x015D3D 05:9D2D: A9 00     LDA #$00
 C - - - - - 0x015D3F 05:9D2F: 85 C6     STA ram_00C6
 C - - - - - 0x015D41 05:9D31: A9 80     LDA #$80
 C - - - - - 0x015D43 05:9D33: 85 A6     STA ram_00A6
-C - - - - - 0x015D45 05:9D35: A9 02     LDA #$02
-C - - - - - 0x015D47 05:9D37: 8D 4B 03  STA ram_034B_useless
 bra_9D3A:
 C - - - - - 0x015D4A 05:9D3A: 20 75 9D  JSR sub_9D75
 C - - - - - 0x015D4D 05:9D3D: C5 A7     CMP ram_00A7
@@ -3549,8 +3546,6 @@ C - - - - - 0x015D55 05:9D45: E6 A6     INC ram_00A6
 C - - - - - 0x015D57 05:9D47: 20 75 9D  JSR sub_9D75
 C - - - - - 0x015D5A 05:9D4A: C9 FF     CMP #$FF
 C - - - - - 0x015D5C 05:9D4C: D0 10     BNE bra_9D5E
-C - - - - - 0x015D5E 05:9D4E: A9 01     LDA #$01
-C - - - - - 0x015D60 05:9D50: 8D 4B 03  STA ram_034B_useless
 C - - - - - 0x015D63 05:9D53: C8        INY
 C - - - - - 0x015D64 05:9D54: A5 A6     LDA ram_00A6
 C - - - - - 0x015D66 05:9D56: 38        SEC

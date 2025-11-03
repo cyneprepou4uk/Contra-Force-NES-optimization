@@ -2460,7 +2460,6 @@ C - - - - - 0x007FBC 01:BFAC: 85 A6     STA ram_00A6
 C - - - - - 0x007FBE 01:BFAE: 85 A7     STA ram_00A7
 ; bzk optimize, useless STA
 C - - - - - 0x007FC0 01:BFB0: 85 A8     STA ram_00A8
-C - - - - - 0x007FC2 01:BFB2: 8D 4B 03  STA ram_034B_useless
 C - - - - - 0x007FC5 01:BFB5: 85 C5     STA ram_00C5_flag
 C - - - - - 0x007FC7 01:BFB7: A2 03     LDX #$03
 bra_BFB9_loop:
