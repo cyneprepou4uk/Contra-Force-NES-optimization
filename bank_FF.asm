@@ -1347,7 +1347,7 @@ C - - - - - 0x01F6D0 07:F6C0: 60        RTS
 
 
 
-sub_F6C1:
+loc_F6C1:
 loc_0x01F6D1:
 sub_0x01F6D1:
 C D 3 - - - 0x01F6D1 07:F6C1: A9 08     LDA #$08
@@ -1920,16 +1920,10 @@ C - - - - - 0x01F9FE 07:F9EE: A2 09     LDX #$09
 sub_F9F0:
 C - - - - - 0x01FA00 07:F9F0: 20 FF F9  JSR sub_F9FF
 C - - - - - 0x01FA03 07:F9F3: B0 03     BCS bra_F9F8_RTS
-; bzk optimize, JMP
-C - - - - - 0x01FA05 07:F9F5: 20 F9 F9  JSR sub_F9F9
+C - - - - - 0x01FA05 07:F9F5: 20 F9 F9  JSR sub_FA7D
+                                        JMP loc_FAA6
 bra_F9F8_RTS:
 C - - - - - 0x01FA08 07:F9F8: 60        RTS
-
-
-
-sub_F9F9:
-C - - - - - 0x01FA09 07:F9F9: 20 7D FA  JSR sub_FA7D
-C - - - - - 0x01FA0C 07:F9FC: 4C A6 FA  JMP loc_FAA6
 
 
 
@@ -2241,8 +2235,7 @@ C - - - - - 0x01FBF1 07:FBE1: 99 B1 00  STA ram_current_player,Y
 C - - - - - 0x01FBF4 07:FBE4: A9 00     LDA #$00
 C - - - - - 0x01FBF6 07:FBE6: 9D 82 06  STA ram_0682_obj,X
 C - - - - - 0x01FBF9 07:FBE9: 9D 1A 06  STA ram_obj_animation_lo,X
-; bzk optimize, JMP
-C - - - - - 0x01FBFC 07:FBEC: 20 C1 F6  JSR sub_F6C1
+C - - - - - 0x01FBFC 07:FBEC: 20 C1 F6  JMP loc_F6C1
 bra_FBEF_RTS:
 C - - - - - 0x01FBFF 07:FBEF: 60        RTS
 

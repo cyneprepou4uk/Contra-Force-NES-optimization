@@ -900,7 +900,7 @@ C - - - - - 0x00A556 02:A546: 90 1B     BCC bra_A563
 C - - - - - 0x00A558 02:A548: AD 69 03  LDA ram_0369_counter
 C - - - - - 0x00A55B 02:A54B: 0D 6B 03  ORA ram_036B_counter_00_3E
 C - - - - - 0x00A55E 02:A54E: D0 03     BNE bra_A553
-C - - - - - 0x00A560 02:A550: 4C BE AC  JMP loc_ACBE
+C - - - - - 0x00A560 02:A550: 4C BE AC  JMP loc_F64F
 bra_A553:
 C - - - - - 0x00A563 02:A553: CE 6B 03  DEC ram_036B_counter_00_3E
 C - - - - - 0x00A566 02:A556: 10 0B     BPL bra_A563
@@ -937,7 +937,7 @@ C - - - - - 0x00A59A 02:A58A: B9 7F 00  LDA ram_player_stats,Y
 C - - - - - 0x00A59D 02:A58D: 29 F0     AND #$F0
 C - - - - - 0x00A59F 02:A58F: C9 30     CMP #$30
 C - - - - - 0x00A5A1 02:A591: 90 03     BCC bra_A596
-C - - - - - 0x00A5A3 02:A593: 4C BE AC  JMP loc_ACBE
+C - - - - - 0x00A5A3 02:A593: 4C BE AC  JMP loc_F64F
 bra_A596:
 C - - - - - 0x00A5A6 02:A596: BD 36 07  LDA ram_0736_obj,X
 C - - - - - 0x00A5A9 02:A599: 29 FC     AND #$FC
@@ -2279,9 +2279,7 @@ C - - - - - 0x00ACBA 02:ACAA: F0 16     BEQ bra_ACC2
 - - - - - - 0x00ACC9 02:ACB9: B9 B3 00  LDA ram_lives,Y
 - - - - - - 0x00ACCC 02:ACBC: F0 04     BEQ bra_ACC2
 bra_ACBE:
-loc_ACBE:   ; bzk optimize
-; bzk optimize, JMP
-C D 1 - - - 0x00ACCE 02:ACBE: 20 4F F6  JSR sub_F64F
+C D 1 - - - 0x00ACCE 02:ACBE: 20 4F F6  JMP loc_F64F
 bra_ACC1_RTS:
 C - - - - - 0x00ACD1 02:ACC1: 60        RTS
 bra_ACC2:
@@ -2295,7 +2293,7 @@ C - - - - - 0x00ACDD 02:ACCD: 60        RTS
 
 
 
-sub_F64F:
+loc_F64F:
 C - - - - - 0x01F65F 07:F64F: A9 00     LDA #$00
 C - - - - - 0x01F661 07:F651: 9D 1A 06  STA ram_obj_animation_lo,X
 C - - - - - 0x01F664 07:F654: 9D 82 07  STA ram_0782_unk,X
@@ -2333,7 +2331,7 @@ C - - - - - 0x00ACF7 02:ACE7: 90 0C     BCC bra_ACF5_RTS
 - - - - - - 0x00ACFC 02:ACEC: 29 1F     AND #$1F
 - - - - - - 0x00ACFE 02:ACEE: C9 1C     CMP #$1C
 - - - - - - 0x00AD00 02:ACF0: D0 03     BNE bra_ACF5_RTS
-- - - - - - 0x00AD02 02:ACF2: 4C BE AC  JMP loc_ACBE
+- - - - - - 0x00AD02 02:ACF2: 4C BE AC  JMP loc_F64F
 bra_ACF5_RTS:
 C - - - - - 0x00AD05 02:ACF5: 60        RTS
 

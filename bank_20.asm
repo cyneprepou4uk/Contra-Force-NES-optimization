@@ -4631,8 +4631,7 @@ C - - - - - 0x00F797 03:B787: B0 02     BCS bra_B78B
 bra_B789:
 C - - - - - 0x00F799 03:B789: E6 1E     INC ram_001E_t05    ; -> 01
 bra_B78B:
-; bzk optimize, JMP
-C - - - - - 0x00F79B 03:B78B: 20 AF B7  JSR sub_B7AF
+C - - - - - 0x00F79B 03:B78B: 20 AF B7  JMP loc_B7AF
 bra_B78E_RTS:
 C - - - - - 0x00F79E 03:B78E: 60        RTS
 bra_B78F:
@@ -4768,7 +4767,7 @@ tbl_B85C:
 
 
 
-sub_B7AF:
+loc_B7AF:
 C - - - - - 0x00F7BF 03:B7AF: BD BE 07  LDA ram_07BE_unk,X
 C - - - - - 0x00F7C2 03:B7B2: 38        SEC
 C - - - - - 0x00F7C3 03:B7B3: E9 01     SBC #$01

@@ -122,7 +122,6 @@ C - - - - - 0x00C0FE 03:A0EE: AD 02 06  LDA ram_0600_obj + $02
 C - - - - - 0x00C101 03:A0F1: 29 F0     AND #$F0
 C - - - - - 0x00C103 03:A0F3: D0 05     BNE bra_A0FA
 bra_A0F5_RTS:
-loc_A0F5_RTS:   ; bzk optimize
 C D 1 - - - 0x00C105 03:A0F5: 60        RTS
 bra_A0F6:
 C - - - - - 0x00C106 03:A0F6: A5 8C     LDA ram_008C
@@ -146,7 +145,7 @@ bra_A115:
 C - - - - - 0x00C125 03:A115: C0 FF     CPY #$FF
 C - - - - - 0x00C127 03:A117: D0 03     BNE bra_A11C
 ; FF
-C - - - - - 0x00C129 03:A119: 4C F5 A0  JMP loc_A0F5_RTS
+C - - - - - 0x00C129 03:A119: 4C F5 A0  RTS
 bra_A11C:
 C - - - - - 0x00C12C 03:A11C: 98        TYA
 C - - - - - 0x00C12D 03:A11D: 0A        ASL
