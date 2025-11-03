@@ -5554,11 +5554,6 @@ C - - - - - 0x016F4A 05:AF3A: 69 10     ADC #$10
 C - - - - - 0x016F4C 05:AF3C: 4A        LSR
 C - - - - - 0x016F4D 05:AF3D: 4A        LSR
 C - - - - - 0x016F4E 05:AF3E: A8        TAY
-; / 04 (10)
-; bzk optimize, useless LSR + LSR + STA
-C - - - - - 0x016F4F 05:AF3F: 4A        LSR
-C - - - - - 0x016F50 05:AF40: 4A        LSR
-C - - - - - 0x016F51 05:AF41: 85 1C     STA ram_001C_t24_useless
 C - - - - - 0x016F53 05:AF43: B9 E9 B0  LDA tbl_B0ED - $04,Y
 C - - - - - 0x016F56 05:AF46: 85 18     STA ram_0018_t07_lo
 C - - - - - 0x016F58 05:AF48: B9 EA B0  LDA tbl_B0ED - $04 + $01,Y

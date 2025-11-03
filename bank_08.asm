@@ -162,21 +162,9 @@ C - - - - - 0x003BC5 00:BBB5: 20 99 BB  JSR sub_BB99
 C - - - - - 0x003BC8 00:BBB8: 90 08     BCC bra_BBC2
 bra_BBBA:
 C - - - - - 0x003BCA 00:BBBA: A9 00     LDA #$00
-C - - - - - 0x003BCC 00:BBBC: 85 1C     STA ram_001C_t21_useless_00
 C - - - - - 0x003BCE 00:BBBE: 85 1D     STA ram_001D_t02
 C - - - - - 0x003BD0 00:BBC0: F0 26     BEQ bra_BBE8    ; jmp
 bra_BBC2:
-C - - - - - 0x003BD2 00:BBC2: AD 4E 06  LDA ram_obj_pos_X
-C - - - - - 0x003BD5 00:BBC5: 38        SEC
-C - - - - - 0x003BD6 00:BBC6: ED 4F 06  SBC ram_obj_pos_X + $01
-C - - - - - 0x003BD9 00:BBC9: B0 02     BCS bra_BBCD
-C - - - - - 0x003BDB 00:BBCB: 49 FF     EOR #$FF
-bra_BBCD:
-C - - - - - 0x003BDD 00:BBCD: C9 80     CMP #$80
-C - - - - - 0x003BDF 00:BBCF: B0 04     BCS bra_BBD5
-C - - - - - 0x003BE1 00:BBD1: A9 00     LDA #$00
-C - - - - - 0x003BE3 00:BBD3: 85 1C     STA ram_001C_t21_useless_00
-bra_BBD5:
 C - - - - - 0x003BE5 00:BBD5: AD 68 06  LDA ram_obj_pos_Y
 C - - - - - 0x003BE8 00:BBD8: 38        SEC
 C - - - - - 0x003BE9 00:BBD9: ED 69 06  SBC ram_obj_pos_Y + $01
@@ -205,9 +193,6 @@ C - - - - - 0x003C15 00:BC05: F0 03     BEQ bra_BC0A    ; jmp
 bra_BC07:
 C - - - - - 0x003C17 00:BC07: 4C E0 BC  JMP loc_BCE0
 bra_BC0A:
-; bzk optimize, useless check
-C - - - - - 0x003C1A 00:BC0A: A5 1C     LDA ram_001C_t21_useless_00
-C - - - - - 0x003C1C 00:BC0C: D0 57     BNE bra_BC65
 C - - - - - 0x003C1E 00:BC0E: A5 1F     LDA ram_001F_t03
 C - - - - - 0x003C20 00:BC10: 29 01     AND #$01
 C - - - - - 0x003C22 00:BC12: F0 51     BEQ bra_BC65

@@ -953,8 +953,6 @@ C - - - - - 0x00A5B6 02:A5A6: 6A        ROR
 C - - - - - 0x00A5B7 02:A5A7: 05 1D     ORA ram_001D_t04
 C - - - - - 0x00A5BB 02:A5AB: F0 09     BEQ bra_A5B6
 C - - - - - 0x00A5BD 02:A5AD: A0 02     LDY #$02
-; bzk optimize, useless STY
-C - - - - - 0x00A5BF 02:A5AF: 84 1C     STY ram_001C_t22_useless
 C - - - - - 0x00A5C1 02:A5B1: 20 8B A8  JSR sub_A88B
 C - - - - - 0x00A5C4 02:A5B4: B0 17     BCS bra_A5CD
 bra_A5B6:
@@ -968,8 +966,6 @@ C - - - - - 0x00A5D0 02:A5C0: 4A        LSR
 C - - - - - 0x00A5D1 02:A5C1: 4A        LSR
 C - - - - - 0x00A5D4 02:A5C4: F0 07     BEQ bra_A5CD
 C - - - - - 0x00A5D6 02:A5C6: A0 12     LDY #$12
-; bzk optimize, useless STA
-C - - - - - 0x00A5D8 02:A5C8: 85 1C     STA ram_001C_t23_useless
 C - - - - - 0x00A5DA 02:A5CA: 20 8B A8  JSR sub_A88B
 bra_A5CD:
 C - - - - - 0x00A5DD 02:A5CD: A9 00     LDA #$00
