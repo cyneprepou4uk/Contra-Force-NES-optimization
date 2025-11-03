@@ -3287,7 +3287,7 @@ C - - - - - 0x015BCB 05:9BBB: 85 39     STA ram_buffer_index_2
 C - - - - - 0x015BCD 05:9BBD: A9 0E     LDA #con_DA9D_0E
 ; bzk optimize, useless STA
 C - - - - - 0x015BCF 05:9BBF: 85 1F     STA ram_001F_t18_useless
-C - - - - - 0x015BD1 05:9BC1: D0 45     BNE bra_9C08    ; jmp
+C - - - - - 0x015BD1 05:9BC1: D0 45     JMP loc_96C9
 bra_9BC3:
 C - - - - - 0x015BD3 05:9BC3: A9 00     LDA #$00
 C - - - - - 0x015BD5 05:9BC5: 85 C7     STA ram_00C7_flag
@@ -3318,7 +3318,6 @@ bra_9BF3:
 loc_9BF3:
 C D 0 - - - 0x015C03 05:9BF3: E6 67     INC ram_0067
 bra_9BF5_RTS:
-loc_9BF5_RTS:
 C D 0 - - - 0x015C05 05:9BF5: 60        RTS
 
 
@@ -3337,7 +3336,6 @@ C - - - - - 0x015C12 05:9C02: C9 FF     CMP #$FF
 C - - - - - 0x015C14 05:9C04: F0 EF     BEQ bra_9BF5_RTS
 ; bzk optimize, useless STA
 C - - - - - 0x015C16 05:9C06: 85 1F     STA ram_001F_t19_useless
-bra_9C08:
 C - - - - - 0x015C18 05:9C08: 4C C9 96  JMP loc_96C9
 
 
@@ -5334,7 +5332,7 @@ C - - - - - 0x016621 05:A611: 8D 44 03  STA ram_0344
 C - - - - - 0x016624 05:A614: 20 C2 D9  JSR sub_0x01D9D2
 C - - - - - 0x016627 05:A617: 20 68 99  JSR sub_9968
 C - - - - - 0x01662A 05:A61A: E6 5B     INC ram_pause_menu_script
-C - - - - - 0x01662C 05:A61C: 4C F5 9B  JMP loc_9BF5_RTS
+C - - - - - 0x01662C 05:A61C: 4C F5 9B  RTS
 
 
 
