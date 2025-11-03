@@ -3931,8 +3931,7 @@ C - - - - - 0x00FF5B 03:BF4B: BD B4 07  LDA ram_07B4_unk,X
 C - - - - - 0x00FF5E 03:BF4E: A8        TAY
 C - - - - - 0x00FF5F 03:BF4F: B9 EE BF  LDA tbl_BFEE,Y
 C - - - - - 0x00FF62 03:BF52: 9D 20 07  STA ram_0720_obj,X
-; bzk optimize, TYA instead
-C - - - - - 0x00FF65 03:BF55: BD B4 07  LDA ram_07B4_unk,X
+C - - - - - 0x00FF65 03:BF55: BD B4 07  TYA
 C - - - - - 0x00FF68 03:BF58: 0A        ASL
 C - - - - - 0x00FF69 03:BF59: A8        TAY
 C - - - - - 0x00FF6A 03:BF5A: B9 E4 BF  LDA tbl_BFE4,Y
