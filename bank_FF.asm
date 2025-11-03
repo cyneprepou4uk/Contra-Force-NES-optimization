@@ -32,7 +32,6 @@
 .export sub_0x01F61F
 .export sub_0x01F650
 .export sub_0x01F69F_get_stage_view_type
-.export sub_0x01F6BF
 .export loc_0x01F6D1
 .export sub_0x01F6D1
 .export loc_0x01F712
@@ -1331,19 +1330,6 @@ sub_0x01F69F_get_stage_view_type:
 C - - - - - 0x01F69F 07:F68F: A5 75     LDA ram_stage
 C - - - - - 0x01F6A1 07:F691: 29 01     AND #$01
 C - - - - - 0x01F6A3 07:F693: 60        RTS
-
-
-
-sub_0x01F6BF:
-; bzk optimize, переместить
-C - - - - - 0x01F6BF 07:F6AF: A9 00     LDA #$00
-C - - - - - 0x01F6C1 07:F6B1: 85 D3     STA ram_00D3
-C - - - - - 0x01F6C3 07:F6B3: A9 01     LDA #$01
-C - - - - - 0x01F6C5 07:F6B5: 8D 59 03  STA ram_0359_flag
-C - - - - - 0x01F6C8 07:F6B8: AD 40 03  LDA ram_0340_flag
-C - - - - - 0x01F6CB 07:F6BB: 09 80     ORA #$80
-C - - - - - 0x01F6CD 07:F6BD: 8D 40 03  STA ram_0340_flag
-C - - - - - 0x01F6D0 07:F6C0: 60        RTS
 
 
 
