@@ -4981,7 +4981,6 @@ C - - - - - 0x01642B 05:A41B: 84 21     STY ram_0021_t02_pause_menu_cursor_pos
 C - - - - - 0x01642D 05:A41D: 20 45 A6  JSR sub_A645
 C - - - - - 0x016430 05:A420: 20 3E A4  JSR sub_A43E
 C - - - - - 0x016433 05:A423: A5 21     LDA ram_0021_t02_pause_menu_cursor_pos
-C - - - - - 0x016435 05:A425: 29 03     AND #$03
 C - - - - - 0x016437 05:A427: 85 1E     STA ram_001E_t11
 C - - - - - 0x016439 05:A429: 20 96 A6  JSR sub_A696
 C - - - - - 0x01643C 05:A42C: 20 3E A4  JSR sub_A43E
@@ -5045,7 +5044,6 @@ loc_A478:
 C D 1 - - - 0x016488 05:A478: A5 21     LDA ram_0021_t02_pause_menu_cursor_pos
 C - - - - - 0x01648A 05:A47A: 29 03     AND #$03
 C - - - - - 0x01648C 05:A47C: A8        TAY
-C - - - - - 0x01648D 05:A47D: 09 80     ORA #$80
 C - - - - - 0x01648F 05:A47F: 85 21     STA ram_0021_t02_pause_menu_cursor_pos
 C - - - - - 0x016491 05:A481: B9 B3 00  LDA ram_lives,Y
 C - - - - - 0x016494 05:A484: D0 05     BNE bra_A48B
@@ -5056,9 +5054,7 @@ bra_A48B:
 C - - - - - 0x01649B 05:A48B: A9 61     LDA #con_music_61
 C - - - - - 0x01649D 05:A48D: 20 CA FE  JSR sub_0x01FEDA_add_music_to_queue
 bra_A490:
-C - - - - - 0x0164A0 05:A490: A5 21     LDA ram_0021_t02_pause_menu_cursor_pos
-C - - - - - 0x0164A2 05:A492: 29 03     AND #$03
-C - - - - - 0x0164A4 05:A494: A8        TAY
+C - - - - - 0x0164A0 05:A490: A5 21     LDY ram_0021_t02_pause_menu_cursor_pos
 C - - - - - 0x0164A5 05:A495: A5 3A     LDA ram_003A_t07_btn_press_sum
 C - - - - - 0x0164A7 05:A497: 29 03     AND #con_btns_LR
 C - - - - - 0x0164A9 05:A499: F0 3B     BEQ bra_A4D6
@@ -5092,7 +5088,6 @@ C - - - - - 0x0164D6 05:A4C6: 29 0F     AND #$0F
 C - - - - - 0x0164D8 05:A4C8: 05 01     ORA ram_0001_t38
 C - - - - - 0x0164DA 05:A4CA: 99 7F 00  STA ram_player_stats,Y
 C - - - - - 0x0164DD 05:A4CD: A5 21     LDA ram_0021_t02_pause_menu_cursor_pos
-C - - - - - 0x0164DF 05:A4CF: 29 03     AND #$03
 C - - - - - 0x0164E1 05:A4D1: 85 1E     STA ram_001E_t11
 C - - - - - 0x0164E3 05:A4D3: 20 45 A6  JSR sub_A645
 bra_A4D6:
@@ -5336,7 +5331,6 @@ C - - - - - 0x016671 05:A661: B9 16 A7  LDA tbl_A716,Y
 C - - - - - 0x016674 05:A664: F0 10     BEQ bra_A676
 C - - - - - 0x016676 05:A666: 20 76 A6  JSR sub_A676
 C - - - - - 0x016679 05:A669: A5 21     LDA ram_0021_t02_pause_menu_cursor_pos
-C - - - - - 0x01667B 05:A66B: 29 03     AND #$03
 C - - - - - 0x01667D 05:A66D: 18        CLC
 C - - - - - 0x01667E 05:A66E: 69 04     ADC #$04
 C - - - - - 0x016680 05:A670: 85 1E     STA ram_001E_t11

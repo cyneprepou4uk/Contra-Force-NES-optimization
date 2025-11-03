@@ -765,9 +765,7 @@ C - - - - - 0x01D2F7 07:D2E7: C9 08     CMP #$08
 C - - - - - 0x01D2F9 07:D2E9: B0 5D     BCS bra_D348
 C - - - - - 0x01D2FB 07:D2EB: A9 18     LDA #$18
 C - - - - - 0x01D2FD 07:D2ED: 85 11     STA ram_0011_t02_pos_X_lo
-C - - - - - 0x01D303 07:D2F3: A5 21     LDA ram_0021_t02_pause_menu_cursor_pos
-C - - - - - 0x01D305 07:D2F5: 29 03     AND #$03
-C - - - - - 0x01D307 07:D2F7: A8        TAY
+C - - - - - 0x01D303 07:D2F3: A5 21     LDY ram_0021_t02_pause_menu_cursor_pos
 C - - - - - 0x01D308 07:D2F8: B9 6B D5  LDA tbl_D56B,Y
 C - - - - - 0x01D30B 07:D2FB: 85 10     STA ram_0010_t08_spr_Y
 C - - - - - 0x01D30F 07:D2FF: 20 05 D3  JSR sub_D305
