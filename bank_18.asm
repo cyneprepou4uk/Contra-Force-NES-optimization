@@ -179,8 +179,6 @@ C - - - - - 0x009AFE 02:9AEE: BD 1A 06  LDA ram_obj_animation_lo,X
 bra_9AF1:
 loc_9AF1:
 C D 0 - - - 0x009B01 02:9AF1: F0 DF     BEQ bra_9AD2_exit
-; bzk optimize, useless STA
-C - - - - - 0x009B03 02:9AF3: 85 1E     STA ram_001E_t15_useless
 C - - - - - 0x009B05 02:9AF5: BD 34 06  LDA ram_obj_animation_hi,X
 ; / 04
 C - - - - - 0x009B08 02:9AF8: 4A        LSR

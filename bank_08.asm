@@ -20,7 +20,6 @@ C - - - - - 0x003A8F 00:BA7F: 85 1F     STA ram_001F_t03
 C - - - - - 0x003A91 00:BA81: 85 19     STA ram_0019_t07_useless
 C - - - - - 0x003A93 00:BA83: 85 1B     STA ram_001B_t11_useless
 C - - - - - 0x003A95 00:BA85: 85 1C     STA ram_001C_t18_useless
-C - - - - - 0x003A97 00:BA87: 85 1D     STA ram_001D_t14_useless
 C - - - - - 0x003A99 00:BA89: 85 69     STA ram_0069
 C - - - - - 0x003A9B 00:BA8B: 85 6A     STA ram_006A
 C - - - - - 0x003A9D 00:BA8D: 85 6B     STA ram_006B
@@ -50,22 +49,6 @@ C D 1 - - - 0x003AC5 00:BAB5: BD 82 07  LDA ram_0782_unk,X
 C - - - - - 0x003AC8 00:BAB8: D0 03     BNE bra_BABD
 C - - - - - 0x003ACA 00:BABA: 4C 91 BB  JMP loc_BB91
 bra_BABD:
-; bzk optimize, useless code up to 0x003AD7
-C - - - - - 0x003ACD 00:BABD: BD 4E 06  LDA ram_obj_pos_X,X
-C - - - - - 0x003AD0 00:BAC0: 18        CLC
-C - - - - - 0x003AD1 00:BAC1: 69 10     ADC #$10
-C - - - - - 0x003AD3 00:BAC3: C9 21     CMP #$21
-C - - - - - 0x003AD5 00:BAC5: B0 02     BCS bra_BAC9
-C - - - - - 0x003AD7 00:BAC7: E6 1C     INC ram_001C_t18_useless
-bra_BAC9:
-; bzk optimize, useless code up to 0x003AE3
-C - - - - - 0x003AD9 00:BAC9: BD 68 06  LDA ram_obj_pos_Y,X
-C - - - - - 0x003ADC 00:BACC: 18        CLC
-C - - - - - 0x003ADD 00:BACD: 69 40     ADC #$40
-C - - - - - 0x003ADF 00:BACF: C9 50     CMP #$50
-C - - - - - 0x003AE1 00:BAD1: B0 02     BCS bra_BAD5
-C - - - - - 0x003AE3 00:BAD3: E6 1D     INC ram_001D_t14_useless
-bra_BAD5:
 C - - - - - 0x003AE5 00:BAD5: A9 01     LDA #$01
 C - - - - - 0x003AE7 00:BAD7: 20 94 BF  JSR sub_BF94
 C - - - - - 0x003AEA 00:BADA: A5 00     LDA ram_0000_t36

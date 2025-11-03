@@ -951,8 +951,6 @@ C - - - - - 0x00A5B4 02:A5A4: 4A        LSR
 C - - - - - 0x00A5B5 02:A5A5: 6A        ROR
 C - - - - - 0x00A5B6 02:A5A6: 6A        ROR
 C - - - - - 0x00A5B7 02:A5A7: 05 1D     ORA ram_001D_t04
-; bzk optimize, useless STA
-C - - - - - 0x00A5B9 02:A5A9: 85 1D     STA ram_001D_t15_useless
 C - - - - - 0x00A5BB 02:A5AB: F0 09     BEQ bra_A5B6
 C - - - - - 0x00A5BD 02:A5AD: A0 02     LDY #$02
 ; bzk optimize, useless STY
@@ -968,8 +966,6 @@ C - - - - - 0x00A5CE 02:A5BE: 29 3C     AND #$3C
 ; / 04
 C - - - - - 0x00A5D0 02:A5C0: 4A        LSR
 C - - - - - 0x00A5D1 02:A5C1: 4A        LSR
-; bzk optimize, useless STA
-C - - - - - 0x00A5D2 02:A5C2: 85 1D     STA ram_001D_t16_useless
 C - - - - - 0x00A5D4 02:A5C4: F0 07     BEQ bra_A5CD
 C - - - - - 0x00A5D6 02:A5C6: A0 12     LDY #$12
 ; bzk optimize, useless STA
@@ -2960,9 +2956,6 @@ C - - - - - 0x00B0CE 02:B0BE: 85 1C     STA ram_001C_t15_useless
 C - - - - - 0x00B0D0 02:B0C0: A9 00     LDA #$00
 C - - - - - 0x00B0D2 02:B0C2: 85 19     STA ram_0019_t03_hi
 C - - - - - 0x00B0D4 02:B0C4: 85 1B     STA ram_001B_t02_hi
-; bzk optimize, useless LDA + STA
-C - - - - - 0x00B0D6 02:B0C6: BD D2 07  LDA ram_07D2_unk,X
-C - - - - - 0x00B0D9 02:B0C9: 85 1D     STA ram_001D_t17_useless
 C - - - - - 0x00B0DB 02:B0CB: A0 80     LDY #$80
 C - - - - - 0x00B0DD 02:B0CD: 84 18     STY ram_0018_t07_lo
 C - - - - - 0x00B0DF 02:B0CF: 84 1A     STY ram_001A_t08_lo

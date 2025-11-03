@@ -2868,9 +2868,6 @@ C - - - - - 0x01591C 05:990C: 60        RTS
 
 
 sub_990D:
-; bzk optimize, useless LDA + STA
-- - - - - - 0x01591D 05:990D: A9 00     LDA #$00
-- - - - - - 0x01591F 05:990F: 85 1D     STA ram_001D_t20_useless
 - - - - - - 0x015921 05:9911: A9 09     LDA #con_DA9D_09
 - - - - - - 0x015923 05:9913: 20 C9 96  JSR sub_96C9
 sub_9916:

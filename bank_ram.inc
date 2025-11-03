@@ -840,13 +840,6 @@ ram_001D_temp                           = $001D ; 0036D5 0036EC 003A97 003AE3 00
     ram_001D_t11                            = ram_001D_temp ; 
     ram_001D_t12                            = ram_001D_temp ; 
     ram_001D_t13                            = ram_001D_temp ; 
-    ram_001D_t14_useless                    = ram_001D_temp ; bzk optimize
-    ram_001D_t15_useless                    = ram_001D_temp ; bzk optimize
-    ram_001D_t16_useless                    = ram_001D_temp ; bzk optimize
-    ram_001D_t17_useless                    = ram_001D_temp ; bzk optimize
-    ram_001D_t18_useless                    = ram_001D_temp ; bzk optimize
-    ram_001D_t19_useless                    = ram_001D_temp ; bzk optimize
-    ram_001D_t20_useless                    = ram_001D_temp ; bzk optimize
 
 
 
@@ -866,8 +859,6 @@ ram_001E_temp                           = $001E ; 003B56 003B5F 003B67 003B7A 00
     ram_001E_t12_loop_counter               = ram_001E_temp ; 
     ram_001E_t13                            = ram_001E_temp ; 
     ram_001E_t14                            = ram_001E_temp ; 
-    ram_001E_t15_useless                    = ram_001E_temp ; bzk optimize
-    ram_001E_t16_useless                    = ram_001E_temp ; bzk optimize
 
 
 

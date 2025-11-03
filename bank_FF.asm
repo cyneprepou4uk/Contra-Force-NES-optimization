@@ -366,12 +366,6 @@ sub_F0CD:
     ; ram_0012_t14
 ; out
     ; ram_0010_t18
-; bzk optimize, useless LDA + STA
-C - - - - - 0x01F0DD 07:F0CD: A5 12     LDA ram_0012_t14
-C - - - - - 0x01F0DF 07:F0CF: 85 1E     STA ram_001E_t16_useless
-; bzk optimize, useless LDA + STA
-C - - - - - 0x01F0E1 07:F0D1: A5 17     LDA ram_0017_t07
-C - - - - - 0x01F0E3 07:F0D3: 85 1D     STA ram_001D_t18_useless
 C - - - - - 0x01F0E5 07:F0D5: A5 12     LDA ram_0012_t14
 ; / 20
 C - - - - - 0x01F0E7 07:F0D7: 4A        LSR
