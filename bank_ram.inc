@@ -728,7 +728,7 @@ ram_0017_temp                           = $0017 ; 003C84 003CAF 01641B 01641F 01
     ram_0017_t06                            = ram_0017_temp ; 
     ram_0017_t07                            = ram_0017_temp ; 
     ram_0017_t08_player_index               = ram_0017_temp ; 
-    ram_0017_t09_useless                    = ram_0017_temp ; bzk optimize, useless because of 0x01EE54
+    ram_0017_t09                            = ram_0017_temp ; 
 
 
 

@@ -346,7 +346,7 @@ C - - - - - 0x01EE4B 07:EE3B: 4A        LSR
 C - - - - - 0x01EE4C 07:EE3C: 85 13     STA ram_0013_t16_useless
 C - - - - - 0x01EE4E 07:EE3E: 29 70     AND #$70
 C - - - - - 0x01EE50 07:EE40: 85 11     STA ram_0011_t15
-C - - - - - 0x01EE52 07:EE42: A5 17     LDA ram_0017_t09_useless
+C - - - - - 0x01EE52 07:EE42: A5 17     LDA ram_0017_t09
 C - - - - - 0x01EE56 07:EE46: 29 01     AND #$01
 C - - - - - 0x01EE58 07:EE48: F0 02     BEQ bra_EE4C
 C - - - - - 0x01EE5A 07:EE4A: A9 80     LDA #$80
@@ -388,17 +388,19 @@ C - - - - - 0x01F0FC 07:F0EC: 60        RTS
 sub_F0ED:
 ; in
     ; ram_0011_t14
+; out
+    ; ram_0017_t09
 C - - - - - 0x01F0FD 07:F0ED: A5 11     LDA ram_0011_t14
 C - - - - - 0x01F0FF 07:F0EF: 0A        ASL
 C - - - - - 0x01F100 07:F0F0: A8        TAY
 C - - - - - 0x01F101 07:F0F1: B9 B6 F5  LDA tbl_F5B6,Y
-C - - - - - 0x01F104 07:F0F4: 85 17     STA ram_0017_t09_useless
+C - - - - - 0x01F104 07:F0F4: 85 17     STA ram_0017_t09
 C - - - - - 0x01F106 07:F0F6: A5 13     LDA ram_0013_t11
 C - - - - - 0x01F108 07:F0F8: 38        SEC
 C - - - - - 0x01F109 07:F0F9: E9 F0     SBC #$F0
 C - - - - - 0x01F10B 07:F0FB: 90 04     BCC bra_F101
 C - - - - - 0x01F10D 07:F0FD: 85 13     STA ram_0013_t11
-C - - - - - 0x01F10F 07:F0FF: E6 17     INC ram_0017_t09_useless
+C - - - - - 0x01F10F 07:F0FF: E6 17     INC ram_0017_t09
 bra_F101:
 C - - - - - 0x01F111 07:F101: A5 13     LDA ram_0013_t11
 C - - - - - 0x01F113 07:F103: 18        CLC
@@ -406,14 +408,14 @@ C - - - - - 0x01F114 07:F104: 79 B7 F5  ADC tbl_F5B6 + $01,Y
 C - - - - - 0x01F117 07:F107: 90 05     BCC bra_F10E
 C - - - - - 0x01F119 07:F109: 18        CLC
 C - - - - - 0x01F11A 07:F10A: 69 10     ADC #$10
-C - - - - - 0x01F11C 07:F10C: E6 17     INC ram_0017_t09_useless
+C - - - - - 0x01F11C 07:F10C: E6 17     INC ram_0017_t09
 bra_F10E:
 C - - - - - 0x01F11E 07:F10E: 85 13     STA ram_0013_t12
 C - - - - - 0x01F120 07:F110: 38        SEC
 C - - - - - 0x01F121 07:F111: E9 F0     SBC #$F0
 C - - - - - 0x01F123 07:F113: 90 04     BCC bra_F119_RTS
 C - - - - - 0x01F125 07:F115: 85 13     STA ram_0013_t12
-C - - - - - 0x01F127 07:F117: E6 17     INC ram_0017_t09_useless
+C - - - - - 0x01F127 07:F117: E6 17     INC ram_0017_t09
 bra_F119_RTS:
 C - - - - - 0x01F129 07:F119: 60        RTS
 
@@ -421,7 +423,7 @@ C - - - - - 0x01F129 07:F119: 60        RTS
 
 sub_F11A:
 C - - - - - 0x01F12A 07:F11A: A5 DC     LDA ram_00DC
-C - - - - - 0x01F12C 07:F11C: 85 17     STA ram_0017_t09_useless
+C - - - - - 0x01F12C 07:F11C: 85 17     STA ram_0017_t09
 C - - - - - 0x01F12E 07:F11E: A5 DD     LDA ram_00DD
 C - - - - - 0x01F130 07:F120: 85 13     STA ram_0013_t12
 C - - - - - 0x01F132 07:F122: 60        RTS
