@@ -1002,30 +1002,17 @@ C - - - - - 0x01D468 07:D458: 60        RTS
 
 sub_D459:
 ; out
-    ; ram_0019_t02_spr_A
+    ; ram_0019_t02_spr_At
 C - - - - - 0x01D469 07:D459: A9 FF     LDA #$FF
 C - - - - - 0x01D46B 07:D45B: D1 02     CMP (ram_0002_t04_data),Y
 C - - - - - 0x01D46D 07:D45D: D0 18     BNE bra_D477
 ; A = FF
-; bzk optimize, in bank 00 and 02, instead of FF pointers, point directly
-; to where needed from the start. remove FF comparsion and
-; this part of code up to 0x01D485.
-; although this code still could be necessary
-; because of writes to additional addresses
 C - - - - - 0x01D46F 07:D45F: 85 1B     STA ram_001B_t02_hi
 C - - - - - 0x01D471 07:D461: A9 08     LDA #$08
 C - - - - - 0x01D473 07:D463: 85 1F     STA ram_001F_t14
 C - - - - - 0x01D475 07:D465: A9 40     LDA #$40
 C - - - - - 0x01D477 07:D467: 85 1C     STA ram_001C_t10_spr_A_flip
-C - - - - - 0x01D479 07:D469: C8        INY
-C - - - - - 0x01D47A 07:D46A: B1 02     LDA (ram_0002_t04_data),Y
-C - - - - - 0x01D47C 07:D46C: 48        PHA
-C - - - - - 0x01D47D 07:D46D: C8        INY
-C - - - - - 0x01D47E 07:D46E: B1 02     LDA (ram_0002_t04_data),Y
-C - - - - - 0x01D480 07:D470: 85 03     STA ram_0002_t04_data + $01
-C - - - - - 0x01D482 07:D472: 68        PLA
-C - - - - - 0x01D483 07:D473: 85 02     STA ram_0002_t04_data
-C - - - - - 0x01D485 07:D475: A0 00     LDY #$00
+C - - - - - 0x01D485 07:D475: A0 00     LDY #$01
 bra_D477:
 C - - - - - 0x01D487 07:D477: B1 02     LDA (ram_0002_t04_data),Y
 C - - - - - 0x01D489 07:D479: 85 1A     STA ram_001A_t08_lo
