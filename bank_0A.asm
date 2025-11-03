@@ -571,7 +571,6 @@ C - - - - - 0x014328 05:8318: A0 00     LDY #$00
 C - - - - - 0x01432A 05:831A: 20 38 83  JSR sub_8338
 C - - - - - 0x01432D 05:831D: A0 02     LDY #$02
 C - - - - - 0x01432F 05:831F: 20 38 83  JSR sub_8338
-C - - - - - 0x014332 05:8322: A9 00     LDA #$00
 C - - - - - 0x014334 05:8324: 20 B2 83  JSR sub_83B2
 C - - - - - 0x014337 05:8327: A9 06     LDA #$06
 C - - - - - 0x014339 05:8329: A0 01     LDY #$01
@@ -667,12 +666,9 @@ C - - - - - 0x0143BF 05:83AF: 4C 70 FE  LDA ram_for_2000
 
 
 sub_83B2:
-; bzk optimize, A always = 00
-C - - - - - 0x0143C2 05:83B2: 0A        ASL
-C - - - - - 0x0143C3 05:83B3: A8        TAY
-C - - - - - 0x0143C4 05:83B4: B9 02 84  LDA tbl_8402_ppu_data,Y
+C - - - - - 0x0143C4 05:83B4: B9 02 84  LDA #< tbl_84F2_ppu_data
 C - - - - - 0x0143C7 05:83B7: 85 00     STA ram_0000_t12_ppu_data
-C - - - - - 0x0143C9 05:83B9: B9 03 84  LDA tbl_8402_ppu_data + $01,Y
+C - - - - - 0x0143C9 05:83B9: B9 03 84  LDA #> tbl_84F2_ppu_data
 C - - - - - 0x0143CC 05:83BC: 85 01     STA ram_0000_t12_ppu_data + $01
 C - - - - - 0x0143CE 05:83BE: A6 26     LDX ram_buffer_index
 ; bzk optimize, put LDY 02 at 0x0143D7 for readability
@@ -723,19 +719,13 @@ tbl_83F0:
 - D 0 - - - 0x014410 05:8400: BE 84     .word _off001_0x0144CE_08
 
 
-
-tbl_8402_ppu_data:
-; bzk optimize
-- D 0 - - - 0x014412 05:8402: F2 84     .word tbl_84F2
-
-
 ; bzk garbage
 - - - - - - 0x014414 05:8404: 35        .byte $35   ; 
 - - - - - - 0x014415 05:8405: 85        .byte $85   ; 
 
 
 
-tbl_84F2:
+tbl_84F2_ppu_data:
 - D 0 - I - 0x014502 05:84F2: C0 23     .word $23C0 ; ppu address
 - D 0 - I - 0x014504 05:84F4: 40        .byte $40   ; counter
 - D 0 - I - 0x014505 05:84F5: 00        .byte $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $FF, $FF, $00, $00, $00, $00   ; 
