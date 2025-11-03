@@ -3529,7 +3529,6 @@ C - - - - - 0x00B64A 02:B63A: D0 02     BNE bra_B63E    ; jmp
 bra_B63C_side_view:
 C - - - - - 0x00B64C 02:B63C: A9 09     LDA #$09
 bra_B63E:
-loc_B63E:   ; bzk optimize
 C - - - - - 0x00B64E 02:B63E: 4C B0 B7  JMP loc_0x00B7C0
 bra_B641:
 C - - - - - 0x00B651 02:B641: DE DC 07  DEC ram_07DC_unk,X
@@ -3544,7 +3543,7 @@ C - - - - - 0x00B663 02:B653: F0 14     BEQ bra_B669
 C - - - - - 0x00B665 02:B655: A5 3A     LDA ram_003A_t04
 C - - - - - 0x00B667 02:B657: 10 05     BPL bra_B65E
 - - - - - - 0x00B669 02:B659: 29 7F     AND #$7F
-- - - - - - 0x00B66B 02:B65B: 4C 3E B6  JMP loc_B63E
+- - - - - - 0x00B66B 02:B65B: 4C 3E B6  JMP loc_0x00B7C0
 bra_B65E:
 C - - - - - 0x00B66E 02:B65E: A5 23     LDA ram_frm_cnt
 C - - - - - 0x00B670 02:B660: 4A        LSR
