@@ -11334,6 +11334,9 @@ C - - - - - 0x0131F7 04:B1E7: 60        RTS
 
 tbl_B1E8:
 ; 00-21
+;                                              +---------- 
+;                                              |    +----- 
+;                                              |    |
 - D 1 - - - 0x0131F8 04:B1E8: AE        .byte $AE, $06   ; 01 
 - D 1 - - - 0x0131FA 04:B1EA: 4E        .byte $4E, $06   ; 02 
 - D 1 - - - 0x0131FC 04:B1EC: F4        .byte $F4, $05   ; 03 
@@ -11451,7 +11454,7 @@ C - - - - - 0x01329C 04:B28C: C9 AC     CMP #$AC
 C - - - - - 0x01329E 04:B28E: 90 06     BCC bra_B296    ; 00-AB
 ; AC+
 C - - - - - 0x0132A0 04:B290: 20 65 85  JSR sub_8565
-C - - - - - 0x0132A3 04:B293: 4C CF B3  JMP loc_B3CF
+C - - - - - 0x0132A3 04:B293: 4C CF B3  JMP loc_B3CF_exit
 bra_B296:
 C - - - - - 0x0132A6 04:B296: C9 67     CMP #$67
 C - - - - - 0x0132A8 04:B298: 90 27     BCC bra_B2C1    ; 00-66
@@ -11637,7 +11640,7 @@ C - - - - - 0x0133D9 04:B3C9: 30 04     BMI bra_B3CF
 C - - - - - 0x0133DB 04:B3CB: C8        INY
 C - - - - - 0x0133DC 04:B3CC: 4C 17 B3  JMP loc_B317_loop
 bra_B3CF:
-loc_B3CF:
+loc_B3CF_exit:
 C D 1 - - - 0x0133DF 04:B3CF: A6 E4     LDX ram_00E4_se_t04_save_X
 C - - - - - 0x0133E1 04:B3D1: A4 E5     LDY ram_00E5_se_t01_save_Y
 C - - - - - 0x0133E3 04:B3D3: 60        RTS

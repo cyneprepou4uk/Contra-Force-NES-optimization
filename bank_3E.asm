@@ -24,7 +24,7 @@
 .export sub_0x01D718_execute_indirect_jump_0000
 .export loc_0x01D718_execute_indirect_jump_0000
 .export sub_0x01D9D2
-.export sub_0x01DA4B
+.export sub_0x01DA4B_clear_obj_animation
 .export loc_0x01DA87
 .export sub_0x01DAAA_execute_indirect_jump_0000
 .export sub_0x01DDBD
@@ -32,7 +32,7 @@
 .export loc_0x01E01E
 .export sub_0x01E02E
 .export sub_0x01D009
-.export sub_0x01D2E1
+.export sub_0x01D2E1_sprite_engine
 .export sub_0x01D689
 .export ofs_006_0x01D9BC_14
 .export sub_0x01DA7B
@@ -749,7 +749,7 @@ tbl_D280_menu_text:
 
 
 
-sub_0x01D2E1:
+sub_0x01D2E1_sprite_engine:
 C - - - - - 0x01D2E1 07:D2D1: A5 35     LDA ram_base_oam_offset
 C - - - - - 0x01D2E3 07:D2D3: 18        CLC
 C - - - - - 0x01D2E4 07:D2D4: 69 4C     ADC #$4C
@@ -758,8 +758,9 @@ C - - - - - 0x01D2E8 07:D2D8: AA        TAX
 C - - - - - 0x01D2E9 07:D2D9: A9 40     LDA #$40
 C - - - - - 0x01D2EB 07:D2DB: 85 01     STA ram_0001_t37_sprites_counter
 C - - - - - 0x01D2ED 07:D2DD: A5 45     LDA ram_pause_flag
-C - - - - - 0x01D2EF 07:D2DF: F0 3D     BEQ bra_D31E
-C - - - - - 0x01D2F1 07:D2E1: A5 5B     LDA ram_005B_script
+C - - - - - 0x01D2EF 07:D2DF: F0 3D     BEQ bra_D31E_not_paused
+; if paused
+C - - - - - 0x01D2F1 07:D2E1: A5 5B     LDA ram_pause_menu_script
 C - - - - - 0x01D2F3 07:D2E3: C9 03     CMP #$03
 C - - - - - 0x01D2F5 07:D2E5: 90 61     BCC bra_D348
 C - - - - - 0x01D2F7 07:D2E7: C9 08     CMP #$08
@@ -769,7 +770,7 @@ C - - - - - 0x01D2FD 07:D2ED: 85 11     STA ram_0011_t02_pos_X_lo
 ; bzk optimize, useless LDA + STA
 C - - - - - 0x01D2FF 07:D2EF: A9 00     LDA #$00
 C - - - - - 0x01D301 07:D2F1: 85 08     STA ram_0008_t20_useless
-C - - - - - 0x01D303 07:D2F3: A5 21     LDA ram_0021_t02
+C - - - - - 0x01D303 07:D2F3: A5 21     LDA ram_0021_t02_pause_menu_cursor_pos
 C - - - - - 0x01D305 07:D2F5: 29 03     AND #$03
 C - - - - - 0x01D307 07:D2F7: A8        TAY
 C - - - - - 0x01D308 07:D2F8: B9 6B D5  LDA tbl_D56B,Y
@@ -795,7 +796,7 @@ C - - - - - 0x01D32B 07:D31B: 4C FF D3  JMP loc_D3FF
 
 
 
-bra_D31E:
+bra_D31E_not_paused:
 C - - - - - 0x01D32E 07:D31E: A9 1A     LDA #$1A
 C - - - - - 0x01D330 07:D320: 85 0A     STA ram_000A_t15_loop_counter
 C - - - - - 0x01D332 07:D322: A5 23     LDA ram_frm_cnt
@@ -1548,12 +1549,12 @@ C - - - - - 0x01D6F4 07:D6E4: AD 40 03  LDA ram_0340_flag
 C - - - - - 0x01D6F7 07:D6E7: 30 13     BMI bra_D6FC
 C - - - - - 0x01D6F9 07:D6E9: A5 BB     LDA ram_00BB
 C - - - - - 0x01D6FB 07:D6EB: D0 0F     BNE bra_D6FC
-C - - - - - 0x01D6FD 07:D6ED: 20 18 DA  JSR sub_DA18
+C - - - - - 0x01D6FD 07:D6ED: 20 18 DA  JSR sub_DA18_try_to_pause
 C - - - - - 0x01D700 07:D6F0: A5 45     LDA ram_pause_flag
 C - - - - - 0x01D702 07:D6F2: F0 08     BEQ bra_D6FC
 C - - - - - 0x01D704 07:D6F4: A9 01     LDA #con_prg_pair + $01
 C - - - - - 0x01D706 07:D6F6: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
-C - - - - - 0x01D709 07:D6F9: 4C F3 A2  JMP loc_0x016303
+C - - - - - 0x01D709 07:D6F9: 4C F3 A2  JMP loc_0x016303_pause_menu_handler
 bra_D6FC:
 C - - - - - 0x01D70C 07:D6FC: A5 44     LDA ram_script_lo
 C - - - - - 0x01D70E 07:D6FE: 0A        ASL
@@ -1687,7 +1688,7 @@ C - - - - - 0x01D7E5 07:D7D5: F0 F1     BEQ bra_D7C8
 C - - - - - 0x01D7E7 07:D7D7: A9 62     LDA #con_music_62
 C - - - - - 0x01D7E9 07:D7D9: 20 CA FE  JSR sub_0x01FEDA_add_music_to_queue
 C - - - - - 0x01D7EC 07:D7DC: E6 44     INC ram_script_lo
-C - - - - - 0x01D7EE 07:D7DE: 20 39 DA  JSR sub_DA39
+C - - - - - 0x01D7EE 07:D7DE: 20 39 DA  JSR sub_DA39_clear_all_obj_animation
 C - - - - - 0x01D7F1 07:D7E1: A4 21     LDY ram_0021_t03
 C - - - - - 0x01D7F3 07:D7E3: F0 0D     BEQ bra_D7F2
 C - - - - - 0x01D7F5 07:D7E5: 88        DEY
@@ -2137,7 +2138,8 @@ tbl_DA13:
 
 
 
-sub_DA18:
+sub_DA18_try_to_pause:
+; bzk optimize
 C - - - - - 0x01DA28 07:DA18: A5 27     LDA ram_0027_useless_00
 C - - - - - 0x01DA2A 07:DA1A: 05 46     ORA ram_0046_useless_00
 C - - - - - 0x01DA2C 07:DA1C: 05 25     ORA ram_disable_rendering_timer
@@ -2158,9 +2160,9 @@ C - - - - - 0x01DA48 07:DA38: 60        RTS
 
 
 
-sub_DA39:
+sub_DA39_clear_all_obj_animation:
 C - - - - - 0x01DA49 07:DA39: A2 15     LDX #$15
-sub_0x01DA4B:
+sub_0x01DA4B_clear_obj_animation:
 bra_DA3B_loop:
 C - - - - - 0x01DA4B 07:DA3B: A9 00     LDA #$00
 C - - - - - 0x01DA4D 07:DA3D: 9D 1A 06  STA ram_obj_animation_lo,X

@@ -2669,7 +2669,7 @@ C - - - - - 0x01FDC5 07:FDB5: 8D 5C 03  STA ram_035C_flag
 C - - - - - 0x01FDC8 07:FDB8: 20 4C F3  JSR sub_F34C_prg_bankswitch
 C - - - - - 0x01FDCB 07:FDBB: 20 F9 CF  JSR sub_0x01D009
 C - - - - - 0x01FDCE 07:FDBE: CE 5C 03  DEC ram_035C_flag   ; -> 00
-C - - - - - 0x01FDD1 07:FDC1: 20 D1 D2  JSR sub_0x01D2E1
+C - - - - - 0x01FDD1 07:FDC1: 20 D1 D2  JSR sub_0x01D2E1_sprite_engine
 C - - - - - 0x01FDD4 07:FDC4: 20 DE FE  JSR sub_FEDE
 C - - - - - 0x01FDD7 07:FDC7: 20 0B FF  LDA ram_chr_bank + $04
                                         STA ram_copy_chr_bank_4

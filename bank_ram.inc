@@ -909,7 +909,8 @@ ram_script_hi                           = $0020 ; 00350C 00ACD7 00E517 014369 01
 ; 
 ram_0021_temp                           = $0021 ; 01437A 01642B 016433 016449 016481 016486 016488 01648F 0164A0 0164DD 016679 01D03F 01D052 01D074 01D098 01D0D1 01D101 01D303 01D73D 01D769 01D76D 01D78B 01D795 01D7AD 01D7BD 01D7E1 01D7F1 01D836 01D904 01D90D 01D931 01D939 01FD5D 
     ram_0021_t01                            = ram_0021_temp ; 
-    ram_0021_t02                            = ram_0021_temp ; 
+    ram_0021_t02_pause_menu_cursor_pos      = ram_0021_temp ; позиция курсора в меню паузы, +80 = ???
+                                                            ; bzk optimize, этот +80 нахрен не нужен, только лишние AND 03
     ram_0021_t03                            = ram_0021_temp ; 2 addresses 0021-0022
     ram_0021_t04_useless                    = ram_0021_temp ; bzk optimize
 
@@ -1209,8 +1210,9 @@ ram_005A_flag                           = $005A ; 007FB6 014265 0146EC 015722 01
 
 
 
+; pause menu script?
 ; handlers at 0x016314
-ram_005B_script                         = $005B ; 016303 0163A8 016406 01646E 0164EE 0165FF 01662A 016633 01BFFE 01D2F1 01F311 01FD5D 
+ram_pause_menu_script                   = $005B ; 016303 0163A8 016406 01646E 0164EE 0165FF 01662A 016633 01BFFE 01D2F1 01F311 01FD5D 
 
 
 
