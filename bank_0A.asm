@@ -614,9 +614,8 @@ C - - - - - 0x014369 05:8359: 84 20     STY ram_script_hi
 C - - - - - 0x01436B 05:835B: 88        DEY ; 02
 C - - - - - 0x01436C 05:835C: 84 44     STY ram_script_lo
 C - - - - - 0x01436E 05:835E: E6 75     INC ram_stage
-                                        LDA ram_stage
-                                        ASL
-                                        STA ram_x2_stage
+                                        INC ram_x2_stage
+                                        INC ram_x2_stage
 C - - - - - 0x014370 05:8360: A9 00     LDA #$00
 sub_8362:
 C - - - - - 0x014372 05:8362: 85 BD     STA ram_00BD_flag
