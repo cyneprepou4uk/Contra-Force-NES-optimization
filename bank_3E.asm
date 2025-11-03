@@ -755,12 +755,7 @@ C - - - - - 0x01D2FD 07:D2ED: 85 11     STA ram_0011_t02_pos_X_lo
 C - - - - - 0x01D303 07:D2F3: A5 21     LDY ram_0021_t02_pause_menu_cursor_pos
 C - - - - - 0x01D308 07:D2F8: B9 6B D5  LDA tbl_D56B,Y
 C - - - - - 0x01D30B 07:D2FB: 85 10     STA ram_0010_t08_spr_Y
-C - - - - - 0x01D30F 07:D2FF: 20 05 D3  JSR sub_D305
-C - - - - - 0x01D312 07:D302: 4C 48 D3  JMP loc_D348
-
-
-
-sub_D305:
+; 
 C - - - - - 0x01D315 07:D305: B9 6F D5  LDA #< tbl_D571
 C - - - - - 0x01D318 07:D308: 85 02     STA ram_0002_t04_data
 C - - - - - 0x01D31A 07:D30A: B9 70 D5  LDA #> tbl_D571
@@ -770,7 +765,8 @@ C - - - - - 0x01D321 07:D311: 85 12     STA ram_0012_t04_spr_A
 C - - - - - 0x01D323 07:D313: 85 13     STA ram_0013_t04_pos_X_hi
 C - - - - - 0x01D327 07:D317: A9 C3     LDA #$C3
 C - - - - - 0x01D329 07:D319: 85 18     STA ram_0018_t16
-C - - - - - 0x01D32B 07:D31B: 4C FF D3  JMP loc_D3FF
+C - - - - - 0x01D32B 07:D31B: 4C FF D3  JSR sub_D3FF
+C - - - - - 0x01D312 07:D302: 4C 48 D3  JMP loc_D348_hide_unused_sprites
 
 
 
@@ -800,7 +796,7 @@ C - - - - - 0x01D352 07:D342: 84 08     STY ram_0008_t11_object_index
 C - - - - - 0x01D354 07:D344: C6 0A     DEC ram_000A_t15_loop_counter
 C - - - - - 0x01D356 07:D346: D0 E5     BNE bra_D32D_loop
 bra_D348:
-loc_D348:
+loc_D348_hide_unused_sprites:
 C D 2 - - - 0x01D358 07:D348: A5 01     LDA ram_0001_t37_sprites_counter
 C - - - - - 0x01D35A 07:D34A: F0 0E     BEQ bra_D35A_RTS
 bra_D34C_loop:
@@ -912,7 +908,7 @@ C - - - - - 0x01D407 07:D3F7: B9 1D D5  LDA tbl_D51D,Y
 C - - - - - 0x01D40A 07:D3FA: 85 1D     STA ram_001D_t10
 C - - - - - 0x01D40C 07:D3FC: 4C 25 D4  JMP loc_D425
 bra_D3FF:
-loc_D3FF:
+sub_D3FF:
 C D 2 - - - 0x01D40F 07:D3FF: 20 A7 D4  JSR sub_D4A7_clear_001B_001C_001D
 bra_D402_loop:
 C - - - - - 0x01D412 07:D402: 20 59 D4  JSR sub_D459
