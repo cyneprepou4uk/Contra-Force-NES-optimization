@@ -3262,6 +3262,7 @@ C - - - - - 0x015B90 05:9B80: A5 AF     LDA ram_00AF_lo
 C - - - - - 0x015B92 05:9B82: C5 64     CMP ram_0064_lo
 C - - - - - 0x015B94 05:9B84: B0 07     BCS bra_9B8D
 C - - - - - 0x015B96 05:9B86: 20 F1 9C  JSR sub_9CF1
+; A = 00
 C - - - - - 0x015B99 05:9B89: 85 C6     STA ram_00C6
 C - - - - - 0x015B9B 05:9B8B: F0 66     BEQ bra_9BF3    ; jmp
 bra_9B8D:

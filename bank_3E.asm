@@ -966,7 +966,7 @@ C - - - - - 0x01D434 07:D424: 60        RTS
 
 loc_D425:
 C D 2 - - - 0x01D435 07:D425: 20 A7 D4  JSR sub_D4A7_clear_001B_001C_001D
-loc_D428_loop:
+bra_D428_loop:
 C D 2 - - - 0x01D438 07:D428: 20 59 D4  JSR sub_D459
 bra_D42B_loop:
 C - - - - - 0x01D43B 07:D42B: 20 8A D4  JSR sub_D48A
@@ -992,9 +992,7 @@ C - - - - - 0x01D45C 07:D44C: C8        INY
 C - - - - - 0x01D45D 07:D44D: C6 00     DEC ram_0000_t6F_loop_counter
 C - - - - - 0x01D45F 07:D44F: D0 DA     BNE bra_D42B_loop
 C - - - - - 0x01D461 07:D451: A5 1A     LDA ram_001A_t08_lo
-; BZK optimize, BMI to D428
-C - - - - - 0x01D463 07:D453: 10 03     BPL bra_D458_RTS
-C - - - - - 0x01D465 07:D455: 4C 28 D4  JMP loc_D428_loop
+C - - - - - 0x01D463 07:D453: 10 03     BMI bra_D428_loop
 bra_D458_RTS:
 C - - - - - 0x01D468 07:D458: 60        RTS
 
