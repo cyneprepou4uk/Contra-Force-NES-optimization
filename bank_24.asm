@@ -1377,11 +1377,9 @@ ofs_002_E395_0D:
 ; con_DA9D_0D
 C - - J - - 0x01E3A5 07:E395: A9 FF     LDA #$FF
 C - - - - - 0x01E3A7 07:E397: 85 3C     STA ram_003C_t03
-C - - - - - 0x01E3AB 07:E39B: A9 70     LDA #$70
-C - - - - - 0x01E3AD 07:E39D: 85 16     STA ram_0016_t11_useless_70
 C - - - - - 0x01E3AF 07:E39F: A5 02     LDA ram_0002_t50_lo
 C - - - - - 0x01E3B1 07:E3A1: 18        CLC
-C - - - - - 0x01E3B2 07:E3A2: 65 16     ADC ram_0016_t11_useless_70
+C - - - - - 0x01E3B2 07:E3A2: 65 16     ADC #$70
 C - - - - - 0x01E3B4 07:E3A4: 85 02     STA ram_0002_t45_lo
 C - - - - - 0x01E3B6 07:E3A6: A5 04     LDA ram_0004_t11_hi
 C - - - - - 0x01E3B8 07:E3A8: 65 0D     ADC #$FF
@@ -1428,16 +1426,14 @@ ofs_002_E242_10:
 ; con_DA9D_10
 C - - J - - 0x01E252 07:E242: A9 00     LDA #$00
 C - - - - - 0x01E254 07:E244: 85 3C     STA ram_003C_t03
-C - - - - - 0x01E256 07:E246: 85 16     STA ram_0016_t10_useless_00
 C - - - - - 0x01E25C 07:E24C: A5 A4     LDA ram_00A4_lo
 C - - - - - 0x01E25E 07:E24E: 85 02     STA ram_0002_t45_lo
 C - - - - - 0x01E260 07:E250: A5 A3     LDA ram_00A3_hi
 C - - - - - 0x01E262 07:E252: 85 04     STA ram_0004_t08_hi
 C - - - - - 0x01E264 07:E254: A5 A1     LDA ram_00A1_lo
-C - - - - - 0x01E266 07:E256: 18        CLC
-C - - - - - 0x01E267 07:E257: 65 16     ADC ram_0016_t10_useless_00
 C - - - - - 0x01E269 07:E259: 85 03     STA ram_0003_t04_lo
 C - - - - - 0x01E26B 07:E25B: A5 A0     LDA ram_00A0_hi
+                                        CLC
 C - - - - - 0x01E26D 07:E25D: 65 0D     ADC #$01
 C - - - - - 0x01E26F 07:E25F: 85 05     STA ram_0005_t05_hi
 C - - - - - 0x01E271 07:E261: 4C BD E2  JMP loc_E2BD
@@ -3273,10 +3269,6 @@ C - - - - - 0x01EA25 07:EA15: 20 5E E9  JSR sub_E95E
 loc_EA18:
 C D 3 - - - 0x01EA28 07:EA18: A5 00     LDA ram_0000_t8B
 C - - - - - 0x01EA2A 07:EA1A: 85 1A     STA ram_001A_t05
-; bzk optimize, useless LDA + STA
-; bzk bug? value in 0001 can be from ram_0000_t1A_jmp + $01
-C - - - - - 0x01EA2C 07:EA1C: A5 01     LDA ram_0000_t01_data + $01
-C - - - - - 0x01EA2E 07:EA1E: 85 1B     STA ram_001B_t10_useless
 C - - - - - 0x01EA30 07:EA20: A4 05     LDY ram_0005_t05_hi
 C - - - - - 0x01EA32 07:EA22: 20 5E E9  JSR sub_E95E
 C - - - - - 0x01EA35 07:EA25: 20 74 E9  JSR sub_E974

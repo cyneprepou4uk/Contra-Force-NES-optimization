@@ -677,8 +677,6 @@ ram_0016_temp                           = $0016 ; 003C41 003C55 003C6E 003CA1 00
     ram_0016_t07                            = ram_0016_temp ; 
     ram_0016_t08_loop_counter               = ram_0016_temp ; 
     ram_0016_t09_object_index               = ram_0016_temp ; 
-    ram_0016_t10_useless_00                 = ram_0016_temp ; bzk optimize
-    ram_0016_t11_useless_70                 = ram_0016_temp ; bzk optimize
 
 
 
@@ -752,7 +750,6 @@ ram_001B_temp                           = $001B ; 003A93 003AB1 003B71 003B76 00
     ram_001B_t07                            = ram_001B_temp ; 
     ram_001B_t08                            = ram_001B_temp ; 
     ram_001B_t09_meta_indexes_ptr_hi        = ram_001B_temp ; 
-    ram_001B_t10_useless                    = ram_001B_temp ; bzk optimize
 
 
 
