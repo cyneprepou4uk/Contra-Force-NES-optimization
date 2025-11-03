@@ -278,9 +278,6 @@ C - - - - - 0x0173B8 05:B3A8: 9D 8C 07  STA ram_078C_unk,X
 C - - - - - 0x0173BB 05:B3AB: 38        SEC
 C - - - - - 0x0173BC 05:B3AC: 60        RTS
 bra_B3AD:
-; bzk optimize, useless LDA + STA
-C - - - - - 0x0173BD 05:B3AD: A9 00     LDA #$00
-C - - - - - 0x0173BF 05:B3AF: 85 0C     STA ram_000C_t13_useless
 C - - - - - 0x0173C1 05:B3B1: A4 0A     LDY ram_000A_t13
 C - - - - - 0x0173C3 05:B3B3: B9 2E B4  LDA tbl_B42E,Y
 C - - - - - 0x0173C6 05:B3B6: 18        CLC
@@ -301,8 +298,6 @@ C - - - - - 0x0173DE 05:B3CE: FD 68 06  SBC ram_obj_pos_Y,X
 C - - - - - 0x0173E1 05:B3D1: B0 02     BCS bra_B3D5
 C - - - - - 0x0173E3 05:B3D3: 49 FF     EOR #$FF
 bra_B3D5:
-; bzk optimize, useless STA
-C - - - - - 0x0173E5 05:B3D5: 85 0C     STA ram_000C_t12_useless
 C - - - - - 0x0173E7 05:B3D7: 18        CLC
 C - - - - - 0x0173E8 05:B3D8: 65 0B     ADC ram_000B_t14
 C - - - - - 0x0173EA 05:B3DA: 85 0C     STA ram_000C_t10

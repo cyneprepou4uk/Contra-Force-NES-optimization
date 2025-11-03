@@ -290,7 +290,7 @@ ram_0003_temp                           = $0003 ; 00371D 003733 00399C 0039B5 00
     ram_0003_t06_lo                         = ram_0003_temp ; 
     ram_0003_t07_hi                         = ram_0003_temp ; 
     ram_0003_t08_hi                         = ram_0003_temp ; 
-    ram_0003_t09_hi                         = ram_0003_temp ; 
+    ram_0003_t09_hi                         = ram_0003_temp ; bzk optimize, useless?
     ram_0003_t10_hi                         = ram_0003_temp ; 
     ram_0003_t11_hi                         = ram_0003_temp ; 
     ram_0003_t12_hi                         = ram_0003_temp ; 
@@ -508,9 +508,6 @@ ram_000C_temp                           = $000C ; 0038EE 003CAA 003CC2 003F73 00
     ram_000C_t09                            = ram_000C_temp ; 
     ram_000C_t10                            = ram_000C_temp ; 
     ram_000C_t11                            = ram_000C_temp ; 
-    ram_000C_t12_useless                    = ram_000C_temp ; bzk optimize
-    ram_000C_t13_useless                    = ram_000C_temp ; bzk optimize
-    ram_000C_t14_useless_00                 = ram_000C_temp ; bzk optimize
 
 
 
@@ -526,9 +523,6 @@ ram_000D_temp                           = $000D ; 003948 003C4A 003CC8 003F85 00
     ram_000D_t08                            = ram_000D_temp ; 
     ram_000D_t09_data_index                 = ram_000D_temp ; 
     ram_000D_t10                            = ram_000D_temp ; 
-    ram_000D_t11_useless_01                 = ram_000D_temp ; bzk optimize
-    ram_000D_t12_useless_FF                 = ram_000D_temp ; bzk optimize
-    ram_000D_t13_useless                    = ram_000D_temp ; bzk optimize
 
 
 
@@ -584,7 +578,6 @@ ram_0010_temp                           = $0010 ; 003F54 00921B 009244 0097C9 00
     ram_0010_t19_metatiles_ptr              = ram_0010_temp ; 2 addresses 0010-0011
     ram_0010_t20                            = ram_0010_temp ; 
     ram_0010_t21_useless                    = ram_0010_temp ; bzk optimize
-    ram_0010_t22_useless                    = ram_0010_temp ; bzk optimize
 
 
 

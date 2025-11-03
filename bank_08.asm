@@ -263,8 +263,6 @@ C - - - - - 0x003C9F 00:BC8F: 65 63     ADC ram_0063_hi
 C - - - - - 0x003CA1 00:BC91: 85 16     STA ram_0014_t02 + $02
 C - - - - - 0x003CA3 00:BC93: 20 DE BE  JSR sub_BEDE
 C - - - - - 0x003CA6 00:BC96: 90 48     BCC bra_BCE0
-C - - - - - 0x003CA8 00:BC98: A9 00     LDA #$00
-C - - - - - 0x003CAA 00:BC9A: 85 0C     STA ram_000C_t14_useless_00
 C - - - - - 0x003CAC 00:BC9C: A5 11     LDA ram_0011_t03
 C - - - - - 0x003CAE 00:BC9E: 38        SEC
 C - - - - - 0x003CAF 00:BC9F: E5 17     SBC ram_0017_t03
@@ -278,7 +276,7 @@ C - - - - - 0x003CBB 00:BCAB: 18        CLC
 C - - - - - 0x003CBC 00:BCAC: 65 0B     ADC ram_000B_t04
 C - - - - - 0x003CBE 00:BCAE: 85 00     STA ram_0000_t05_data
 C - - - - - 0x003CC0 00:BCB0: A5 01     LDA ram_0000_t04_data + $01
-C - - - - - 0x003CC2 00:BCB2: 65 0C     ADC ram_000C_t14_useless_00
+C - - - - - 0x003CC2 00:BCB2: 65 0C     ADC #$00
 C - - - - - 0x003CC4 00:BCB4: 85 01     STA ram_0000_t05_data + $01
 C - - - - - 0x003CC6 00:BCB6: A5 0E     LDA ram_000E_t02
 C - - - - - 0x003CC8 00:BCB8: A4 0D     LDY ram_000D_t03_data_index
@@ -671,7 +669,7 @@ C - - - - - 0x003F24 00:BF14: 4C 1A BF  JMP loc_BF1A
 bra_BF17:
 C - - - - - 0x003F27 00:BF17: 20 A3 BE  JSR sub_BEA3
 loc_BF1A:
-C D 1 - - - 0x003F2A 00:BF1A: A5 03     LDA ram_0003_t09_hi
+C D 1 - - - 0x003F2A 00:BF1A: A5 03    ;LDA ram_0003_t09_hi
 C - - - - - 0x003F2C 00:BF1C: A4 02     LDY ram_0002_t24_lo
 C - - - - - 0x003F2E 00:BF1E: 4C 44 BF  JMP loc_BF44
 
@@ -720,12 +718,8 @@ sub_BF3C:
 C - - - - - 0x003F4C 00:BF3C: A5 60     LDA ram_0060_hi
 C - - - - - 0x003F4E 00:BF3E: 85 0A     STA ram_000A_t05
 bra_BF40:
-; bzk optimize, useless LDA
-C - - - - - 0x003F50 00:BF40: A5 DD     LDA ram_00DD
 C - - - - - 0x003F52 00:BF42: A4 DC     LDY ram_00DC
 loc_BF44:
-; bzk optimize, useless STA
-C D 1 - - - 0x003F54 00:BF44: 85 10     STA ram_0010_t22_useless
 C - - - - - 0x003F56 00:BF46: 84 11     STY ram_0011_t03
 C - - - - - 0x003F58 00:BF48: A4 88     LDY ram_x2_stage
 C - - - - - 0x003F5A 00:BF4A: B9 2F BE  LDA tbl_BE2F,Y
