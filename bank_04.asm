@@ -1962,8 +1962,6 @@ C - - - - - 0x0090F1 02:90E1: 60        RTS
 .export sub_0x0090F2
 sub_0x0090F2:
 C - - - - - 0x0090F2 02:90E2: BD B2 06  LDA ram_06B2_obj,X
-; bzk optimize, useless STA
-C - - - - - 0x0090F5 02:90E5: 85 0B     STA ram_000B_t16_useless
 C - - - - - 0x0090F7 02:90E7: 29 F0     AND #$F0
 C - - - - - 0x0090F9 02:90E9: 85 0D     STA ram_000D_t02
 C - - - - - 0x0090FB 02:90EB: 20 E8 91  JSR sub_91E8

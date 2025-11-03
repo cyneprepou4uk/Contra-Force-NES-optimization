@@ -5584,9 +5584,6 @@ C - - - - - 0x016FB3 05:AFA3: F0 34     BEQ bra_AFD9    ; jmp
 bra_AFA5:
 C - - - - - 0x016FB5 05:AFA5: B9 54 B0  LDA tbl_B054,Y
 C - - - - - 0x016FB8 05:AFA8: D0 3E     BNE bra_AFE8
-; bzk optimize, useless LDA + STA
-C - - - - - 0x016FBA 05:AFAA: A5 12     LDA ram_0012_t09
-C - - - - - 0x016FBC 05:AFAC: 85 08     STA ram_0008_t18_useless
 C - - - - - 0x016FBE 05:AFAE: A9 00     LDA #$00
 C - - - - - 0x016FC0 05:AFB0: 85 12     STA ram_0012_t09
 bra_AFB2_loop:

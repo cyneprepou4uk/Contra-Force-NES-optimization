@@ -437,9 +437,6 @@ ram_0008_temp                           = $0008 ; 008089 00809E 00A932 00A948 00
     ram_0008_t15                            = ram_0008_temp ; 
     ram_0008_t16_letters_counter            = ram_0008_temp ; 
     ram_0008_t17_metatiles_ptr              = ram_0008_temp ; 2 addresses 0008-0009
-    ram_0008_t18_useless                    = ram_0008_temp ; bzk optimize
-    ram_0008_t19_useless                    = ram_0008_temp ; bzk optimize
-    ram_0008_t20_useless                    = ram_0008_temp ; bzk optimize
 
 
 
@@ -475,8 +472,6 @@ ram_000A_temp                           = $000A ; 00386E 003975 003C43 003C51 00
     ram_000A_t16_lo                         = ram_000A_temp ; 
     ram_000A_t17                            = ram_000A_temp ; 
     ram_000A_t18_buffer_index               = ram_000A_temp ; 
-    ram_000A_t19_useless                    = ram_000A_temp ; bzk optimize
-    ram_000A_t20_useless                    = ram_000A_temp ; bzk optimize
 
 
 
@@ -497,9 +492,6 @@ ram_000B_temp                           = $000B ; 00397A 00398C 003CB7 003CBC 00
     ram_000B_t13                            = ram_000B_temp ; 
     ram_000B_t14                            = ram_000B_temp ; 
     ram_000B_t15                            = ram_000B_temp ; 
-    ram_000B_t16_useless                    = ram_000B_temp ; bzk optimize
-    ram_000B_t17_useless                    = ram_000B_temp ; bzk optimize
-    ram_000B_t18_useless                    = ram_000B_temp ; bzk optimize
 
 
 

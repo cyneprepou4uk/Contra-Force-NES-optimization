@@ -916,9 +916,6 @@ C - - - - - 0x01E443 07:E433: 20 C1 DA  JSR sub_0x01DAD1_close_ppu_buffer
 C - - - - - 0x01E446 07:E436: A5 06     LDA ram_0006_t03
 C - - - - - 0x01E448 07:E438: F0 38     BEQ bra_E472
 C - - - - - 0x01E44A 07:E43A: 20 72 E4  JSR sub_E472
-; bzk optimize, useless LDA + STA
-C - - - - - 0x01E44D 07:E43D: A9 00     LDA #$00
-C - - - - - 0x01E44F 07:E43F: 85 0A     STA ram_000A_t20_useless
 C - - - - - 0x01E451 07:E441: A5 14     LDA ram_0014_t06
 C - - - - - 0x01E453 07:E443: 29 F8     AND #$F8
 C - - - - - 0x01E455 07:E445: 85 14     STA ram_0014_t06
@@ -2081,9 +2078,6 @@ C - - - - - 0x01E3D2 07:E3C2: 60        RTS
 
 
 sub_E354:
-; bzk optimize, useless LDA + STA
-C - - - - - 0x01E364 07:E354: A9 00     LDA #$00
-C - - - - - 0x01E366 07:E356: 85 0A     STA ram_000A_t19_useless
 C - - - - - 0x01E368 07:E358: A5 14     LDA ram_0014_t06
 C - - - - - 0x01E36A 07:E35A: 29 C7     AND #$C7
 C - - - - - 0x01E36C 07:E35C: 85 14     STA ram_0014_t06

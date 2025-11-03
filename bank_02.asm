@@ -251,8 +251,6 @@ C - - - - - 0x017387 05:B377: A8        TAY
 C - - - - - 0x017388 05:B378: B9 28 B4  LDA tbl_B428,Y
 C - - - - - 0x01738B 05:B37B: 18        CLC
 C - - - - - 0x01738C 05:B37C: 65 08     ADC ram_0008_t08_pos_X
-; bzk optimize, useless STA
-C - - - - - 0x01738E 05:B37E: 85 08     STA ram_0008_t19_useless
 C - - - - - 0x017390 05:B380: 38        SEC
 C - - - - - 0x017391 05:B381: FD 4E 06  SBC ram_obj_pos_X,X
 C - - - - - 0x017394 05:B384: 85 0C     STA ram_000C_t10

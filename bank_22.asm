@@ -358,8 +358,6 @@ C - - - - - 0x008615 02:8605: 10 07     BPL bra_860E
 - - - - - - 0x00861A 02:860A: 09 C0     ORA #$C0
 - - - - - - 0x00861C 02:860C: D0 22     BNE bra_8630    ; jmp
 bra_860E:
-; bzk optimize, useless STY
-C - - - - - 0x00861E 02:860E: 84 0B     STY ram_000B_t17_useless
 C - - - - - 0x008620 02:8610: B9 A0 86  LDA tbl_869F + $01,Y
 C - - - - - 0x008623 02:8613: 6A        ROR
 C - - - - - 0x008624 02:8614: 6A        ROR
@@ -404,9 +402,6 @@ loc_865E:
 C D 0 - - - 0x00866E 02:865E: B9 A0 86  LDA tbl_869F + $01,Y
 C - - - - - 0x008671 02:8661: 09 C0     ORA #$C0
 C - - - - - 0x008673 02:8663: 85 0C     STA ram_000C_t02
-; bzk optimize, useless LDA + STA
-C - - - - - 0x008675 02:8665: A9 01     LDA #$01
-C - - - - - 0x008677 02:8667: 85 0B     STA ram_000B_t18_useless
 C - - - - - 0x008679 02:8669: 20 70 8A  JSR sub_0x008A80
 C - - - - - 0x00867C 02:866C: BD 9C 06  LDA ram_069C_obj,X
 C - - - - - 0x00867F 02:866F: 29 40     AND #$40

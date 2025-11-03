@@ -765,9 +765,6 @@ C - - - - - 0x01D2F7 07:D2E7: C9 08     CMP #$08
 C - - - - - 0x01D2F9 07:D2E9: B0 5D     BCS bra_D348
 C - - - - - 0x01D2FB 07:D2EB: A9 18     LDA #$18
 C - - - - - 0x01D2FD 07:D2ED: 85 11     STA ram_0011_t02_pos_X_lo
-; bzk optimize, useless LDA + STA
-C - - - - - 0x01D2FF 07:D2EF: A9 00     LDA #$00
-C - - - - - 0x01D301 07:D2F1: 85 08     STA ram_0008_t20_useless
 C - - - - - 0x01D303 07:D2F3: A5 21     LDA ram_0021_t02_pause_menu_cursor_pos
 C - - - - - 0x01D305 07:D2F5: 29 03     AND #$03
 C - - - - - 0x01D307 07:D2F7: A8        TAY
