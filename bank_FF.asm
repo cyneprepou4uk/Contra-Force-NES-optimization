@@ -1651,7 +1651,7 @@ C - - - - - 0x01F86B 07:F85B: 8E 06 20  STX $2006
 C - - - - - 0x01F86E 07:F85E: AD 02 20  LDA $2002
 C - - - - - 0x01F871 07:F861: 8C 05 20  STY $2005
 C - - - - - 0x01F874 07:F864: 8C 05 20  STY $2005
-C - - - - - 0x01F877 07:F867: A4 3F     LDY ram_garbage_loop_counter
+C - - - - - 0x01F877 07:F867: A4 3F     LDY #$3D
 bra_F869_garbage_loop:
 C - - - - - 0x01F879 07:F869: 88        DEY
 C - - - - - 0x01F87A 07:F86A: D0 FD     BNE bra_F869_garbage_loop

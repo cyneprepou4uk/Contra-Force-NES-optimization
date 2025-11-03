@@ -48,14 +48,7 @@
 sub_0x01D009:
 C - - - - - 0x01D00E 07:CFFE: 20 EE BF  JSR sub_BFEE_copy_buttons
 C - - - - - 0x01D011 07:D001: E6 23     INC ram_frm_cnt
-C - - - - - 0x01D013 07:D003: A0 3D     LDY #$3D
 C - - - - - 0x01D015 07:D005: A5 75     LDA ram_stage
-C - - - - - 0x01D017 07:D007: C9 03     CMP #$03
-C - - - - - 0x01D019 07:D009: D0 02     BNE bra_D00D
-C - - - - - 0x01D01B 07:D00B: A0 3D     LDY #$3D
-bra_D00D:
-; bzk optimize, Y is always 3D despite conditions
-C - - - - - 0x01D01D 07:D00D: 84 3F     STY ram_garbage_loop_counter
 ; bzk optimize, code is executed each frame
 ; I suppose there is no need to constantly overwite this address
 ; it should be one only once here 0x01436E

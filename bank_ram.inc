@@ -992,8 +992,8 @@ ram_003E_brightness_counter             = $003E ; 01D59F 01D979 01D97F 01FD5D
 
 
 
-; bzk useless address, always 3D value
-ram_garbage_loop_counter                = $003F ; 01D01D 01F877 01FD5D 
+; free address
+; ram_003F                              = $003F ; 01D01D 01F877 01FD5D 
 
 
 
