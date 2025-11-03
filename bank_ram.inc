@@ -750,7 +750,6 @@ ram_0018_temp                           = $0018 ; 0033F7 003401 00340B 00340D 00
     ram_0018_t14                            = ram_0018_temp ; 
     ram_0018_t15                            = ram_0018_temp ; 
     ram_0018_t16                            = ram_0018_temp ; 
-    ram_0018_t17_ueless                     = ram_0018_temp ; bzk optimize
 
 
 
@@ -762,8 +761,6 @@ ram_0019_temp                           = $0019 ; 003429 003A91 003AA7 003B08 00
     ram_0019_t04                            = ram_0019_temp ; 
     ram_0019_t05                            = ram_0019_temp ; 
     ram_0019_t06                            = ram_0019_temp ; 
-    ram_0019_t07_useless                    = ram_0019_temp ; bzk optimize
-    ram_0019_t08_useless                    = ram_0019_temp ; bzk optimize
 
 
 
@@ -792,7 +789,6 @@ ram_001B_temp                           = $001B ; 003A93 003AB1 003B71 003B76 00
     ram_001B_t08                            = ram_001B_temp ; 
     ram_001B_t09_meta_indexes_ptr_hi        = ram_001B_temp ; 
     ram_001B_t10_useless                    = ram_001B_temp ; bzk optimize
-    ram_001B_t11_useless                    = ram_001B_temp ; bzk optimize
 
 
 
@@ -812,10 +808,6 @@ ram_001C_temp                           = $001C ; 003A95 003AD7 003BCC 003BE3 00
     ram_001C_t12                            = ram_001C_temp ; 
     ram_001C_t13                            = ram_001C_temp ; 
     ram_001C_t14_pos_X                      = ram_001C_temp ; 
-    ram_001C_t15_useless                    = ram_001C_temp ; bzk optimize
-    ram_001C_t16_useless                    = ram_001C_temp ; bzk optimize
-    ram_001C_t17_useless                    = ram_001C_temp ; bzk optimize
-    ram_001C_t18_useless                    = ram_001C_temp ; bzk optimize
 
 
 

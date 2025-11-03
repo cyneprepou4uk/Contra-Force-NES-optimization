@@ -2195,10 +2195,6 @@ C - - - - - 0x00AC1D 02:AC0D: FE B4 07  INC ram_07B4_unk,X
 C - - - - - 0x00AC20 02:AC10: D0 03     BNE bra_AC15
 - - - - - - 0x00AC22 02:AC12: DE B4 07  DEC ram_07B4_unk,X
 bra_AC15:
-; bzk optimize, useless LDA + STA + STA
-C - - - - - 0x00AC25 02:AC15: A9 00     LDA #$00
-C - - - - - 0x00AC27 02:AC17: 85 18     STA ram_0018_t17_ueless
-C - - - - - 0x00AC29 02:AC19: 85 19     STA ram_0019_t08_useless
 C - - - - - 0x00AC2B 02:AC1B: 4C 69 AE  JMP loc_0x00AE79
 bra_AC1E:
 C - - - - - 0x00AC2E 02:AC1E: 29 08     AND #$08
@@ -2946,9 +2942,6 @@ C - - - - - 0x00B0C6 02:B0B6: B0 04     BCS bra_B0BC
 - - - - - - 0x00B0C8 02:B0B8: A5 69     LDA ram_0069
 - - - - - - 0x00B0CA 02:B0BA: F0 1E     BEQ bra_B0DA_RTS
 bra_B0BC:
-; bzk optimize, useless LDA + STA
-C - - - - - 0x00B0CC 02:B0BC: A9 04     LDA #$04
-C - - - - - 0x00B0CE 02:B0BE: 85 1C     STA ram_001C_t15_useless
 C - - - - - 0x00B0D0 02:B0C0: A9 00     LDA #$00
 C - - - - - 0x00B0D2 02:B0C2: 85 19     STA ram_0019_t03_hi
 C - - - - - 0x00B0D4 02:B0C4: 85 1B     STA ram_001B_t02_hi

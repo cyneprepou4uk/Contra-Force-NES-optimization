@@ -3963,9 +3963,6 @@ C - - - - - 0x00FF91 03:BF81: 9D 68 06  STA ram_obj_pos_Y,X
 C - - - - - 0x00FF94 03:BF84: BD 36 07  LDA ram_0736_obj,X
 C - - - - - 0x00FF97 03:BF87: 29 03     AND #$03
 C - - - - - 0x00FF99 03:BF89: F0 4F     BEQ bra_BFDA
-; bzk optimize, useless LDA + STA
-C - - - - - 0x00FF9B 03:BF8B: A9 03     LDA #$03
-C - - - - - 0x00FF9D 03:BF8D: 85 1C     STA ram_001C_t17_useless
 C - - - - - 0x00FF9F 03:BF8F: BC AA 07  LDY ram_07AA_unk,X
 C - - - - - 0x00FFA2 03:BF92: BD BE 07  LDA ram_07BE_unk,X
 C - - - - - 0x00FFA5 03:BF95: 38        SEC

@@ -700,8 +700,6 @@ sub_B5DA:
 C - - - - - 0x0175EA 05:B5DA: A9 FF     LDA #$FF
 C - - - - - 0x0175EC 05:B5DC: 85 1D     STA ram_001D_t09_pos_Y_distance
 C - - - - - 0x0175EE 05:B5DE: A9 00     LDA #$00
-; bzk optimize, useless STA
-C - - - - - 0x0175F0 05:B5E0: 85 1C     STA ram_001C_t16_useless
 C - - - - - 0x0175F2 05:B5E2: 8D 76 03  STA ram_0374_cpu + $02
 C - - - - - 0x0175F5 05:B5E5: 8D 77 03  STA ram_0374_cpu + $03
 C - - - - - 0x0175F8 05:B5E8: 8D 83 03  STA ram_0374_cpu + $0F

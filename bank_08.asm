@@ -16,10 +16,6 @@ ofs_006_0x003A8D_15:
 ; con_F3D6_15
 C - - - - - 0x003A8D 00:BA7D: A9 00     LDA #$00
 C - - - - - 0x003A8F 00:BA7F: 85 1F     STA ram_001F_t03
-; bzk optimize, useless STA + STA + STA + STA
-C - - - - - 0x003A91 00:BA81: 85 19     STA ram_0019_t07_useless
-C - - - - - 0x003A93 00:BA83: 85 1B     STA ram_001B_t11_useless
-C - - - - - 0x003A95 00:BA85: 85 1C     STA ram_001C_t18_useless
 C - - - - - 0x003A99 00:BA89: 85 69     STA ram_0069
 C - - - - - 0x003A9B 00:BA8B: 85 6A     STA ram_006A
 C - - - - - 0x003A9D 00:BA8D: 85 6B     STA ram_006B
