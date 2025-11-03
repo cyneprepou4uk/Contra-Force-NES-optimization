@@ -1010,7 +1010,10 @@ C - - - - - 0x0146D2 05:86C2: 60        RTS
 
 
 sub_86C3:
-C - - - - - 0x0146D3 05:86C3: 20 AA 87  JSR sub_87AA_set_2006_hi
+C - - - - - 0x0146D3 05:86C3: 20 AA 87  BIT $2002
+                                        LDA #$00
+                                        STY $2006
+                                        STA $2006
 C - - - - - 0x0146D6 05:86C6: A2 10     LDX #con_D22A_credits
 C - - - - - 0x0146D8 05:86C8: 20 15 D2  JMP loc_0x01D225_unpack_static_screen___no_2006_writes
 
@@ -1151,15 +1154,6 @@ C - - - - - 0x0147B7 05:87A7: 60        RTS
 bra_87A8:
 C - - - - - 0x0147B8 05:87A8: 38        SEC
 C - - - - - 0x0147B9 05:87A9: 60        RTS
-
-
-
-sub_87AA_set_2006_hi:
-C - - - - - 0x0147BA 05:87AA: AD 02 20  LDA $2002
-C - - - - - 0x0147BD 05:87AD: A9 00     LDA #$00
-C - - - - - 0x0147BF 05:87AF: 8C 06 20  STY $2006
-C - - - - - 0x0147C2 05:87B2: 8D 06 20  STA $2006
-C - - - - - 0x0147C5 05:87B5: 60        RTS
 
 
 ; todo
