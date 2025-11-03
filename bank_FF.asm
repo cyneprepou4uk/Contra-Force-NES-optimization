@@ -1975,8 +1975,7 @@ C - - - - - 0x01FA64 07:FA54: E8        INX ; 06
 C - - - - - 0x01FA65 07:FA55: 20 E6 FA  JSR sub_FAE6
 C - - - - - 0x01FA68 07:FA58: E8        INX ; 07
 C - - - - - 0x01FA69 07:FA59: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FA6C 07:FA5C: A9 01     LDA #$01
-C - - - - - 0x01FA6E 07:FA5E: 85 0E     STA ram_000E_t10
+C - - - - - 0x01FA6E 07:FA5E: 85 0E     INC ram_000E_t10    ; -> 01
 C - - - - - 0x01FA70 07:FA60: E8        INX ; 08
 C - - - - - 0x01FA71 07:FA61: 20 E6 FA  JSR sub_FAE6
 C - - - - - 0x01FA74 07:FA64: E8        INX ; 09
@@ -2013,8 +2012,7 @@ C - - - - - 0x01FAA2 07:FA92: E8        INX ; 06
 C - - - - - 0x01FAA3 07:FA93: 20 E0 FA  JSR sub_FAE0
 C - - - - - 0x01FAA6 07:FA96: E8        INX ; 07
 C - - - - - 0x01FAA7 07:FA97: 20 E0 FA  JSR sub_FAE0
-C - - - - - 0x01FAAA 07:FA9A: A9 01     LDA #$01
-C - - - - - 0x01FAAC 07:FA9C: 85 0E     STA ram_000E_t10
+C - - - - - 0x01FAAC 07:FA9C: 85 0E     INC ram_000E_t10    ; -> 01
 C - - - - - 0x01FAAE 07:FA9E: E8        INX ; 08
 C - - - - - 0x01FAAF 07:FA9F: 20 E0 FA  JSR sub_FAE0
 C - - - - - 0x01FAB2 07:FAA2: E8        INX ; 09
@@ -2037,8 +2035,7 @@ C - - - - - 0x01FACB 07:FABB: E8        INX ; 0E
 C - - - - - 0x01FACC 07:FABC: 20 E6 FA  JSR sub_FAE6
 C - - - - - 0x01FACF 07:FABF: E8        INX ; 0F
 C - - - - - 0x01FAD0 07:FAC0: 20 E6 FA  JSR sub_FAE6
-C - - - - - 0x01FAD3 07:FAC3: A9 02     LDA #$02
-C - - - - - 0x01FAD5 07:FAC5: 85 0E     STA ram_000E_t10
+C - - - - - 0x01FAD5 07:FAC5: 85 0E     INC ram_000E_t10    ; -> 02
 C - - - - - 0x01FAD7 07:FAC7: E8        INX ; 10
 C - - - - - 0x01FAD8 07:FAC8: 20 E6 FA  JSR sub_FAE6
 C - - - - - 0x01FADB 07:FACB: E8        INX ; 11
