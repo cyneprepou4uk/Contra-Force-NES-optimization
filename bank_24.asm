@@ -1971,14 +1971,14 @@ C - - - - - 0x01E9A9 07:E999: D0 29     BNE bra_E9C4
 C - - - - - 0x01E9AB 07:E99B: A9 38     LDA #$38
 C - - - - - 0x01E9AD 07:E99D: 38        SEC
 C - - - - - 0x01E9AE 07:E99E: E5 54     SBC ram_0054
-; bzk optimize, always 00
-C - - - - - 0x01E9B0 07:E9A0: C5 1E     CMP ram_001E_t17_useless_00
+; bzk optimize?
+C - - - - - 0x01E9B0 07:E9A0: C5 1E     CMP #$00
 C - - - - - 0x01E9B2 07:E9A2: B0 09     BCS bra_E9AD
 - - - - - - 0x01E9B4 07:E9A4: A9 28     LDA #$28
 - - - - - - 0x01E9B6 07:E9A6: 38        SEC
 - - - - - - 0x01E9B7 07:E9A7: E5 54     SBC ram_0054
-; bzk optimize, always 00
-- - - - - - 0x01E9B9 07:E9A9: C5 1E     CMP ram_001E_t17_useless_00
+; bzk optimize?
+- - - - - - 0x01E9B9 07:E9A9: C5 1E     CMP #$00
 - - - - - - 0x01E9BB 07:E9AB: B0 17     BCS bra_E9C4
 bra_E9AD:
 C - - - - - 0x01E9BD 07:E9AD: 4C EB E8  JMP loc_E8EB

@@ -2826,12 +2826,11 @@ C - - - - - 0x0158CC 05:98BC: 4C 70 FE  LDA ram_for_2000
 
 
 sub_98BF:
-C - - - - - 0x0158CF 05:98BF: 20 20 99  JSR sub_9920
+C - - - - - 0x0158CF 05:98BF: 20 20 99  LDA ram_00C5_flag
 C - - - - - 0x0158D2 05:98C2: F0 22     BEQ bra_98E6
 - - - - - - 0x0158D4 05:98C4: 20 93 9D  JSR sub_9D93
 - - - - - - 0x0158D7 05:98C7: 20 0D 99  JSR sub_990D
 - - - - - - 0x0158DA 05:98CA: 20 85 D5  JSR sub_0x01D595
-- - - - - - 0x0158DD 05:98CD: 20 20 99  JSR sub_9920
 - - - - - - 0x0158E0 05:98D0: 20 B8 9D  JSR sub_9DB8
 - - - - - - 0x0158E3 05:98D3: 20 0D 99  JSR sub_990D
 - - - - - - 0x0158E6 05:98D6: A5 A1     LDA ram_00A1_lo
@@ -2886,21 +2885,6 @@ C - - - - - 0x01592D 05:991D: 4C 8F E1  LDA #$00
                                         JSR sub_0x01DE34_write_A_to_buffer_and_INX
                                         STX ram_buffer_index_2
                                         RTS
-
-
-
-sub_9920:
-; out
-    ; Z
-        ; 0 = 
-        ; 1 = 
-C - - - - - 0x015930 05:9920: A9 00     LDA #$00
-C - - - - - 0x015932 05:9922: 85 1E     STA ram_001E_t17_useless_00
-; bzk optimize, useless LDA + STA
-C - - - - - 0x015934 05:9924: A5 C5     LDA ram_00C5_flag
-C - - - - - 0x015936 05:9926: 85 1D     STA ram_001D_t19_useless
-bra_9928_RTS:
-C - - - - - 0x015938 05:9928: 60        RTS
 
 
 
@@ -2971,7 +2955,7 @@ C - - - - - 0x015994 05:9984: A5 D0     LDA ram_00D0
 C - - - - - 0x015996 05:9986: C9 03     CMP #$03
 C - - - - - 0x015998 05:9988: 90 12     BCC bra_999C
 C - - - - - 0x01599A 05:998A: C9 09     CMP #$09
-C - - - - - 0x01599C 05:998C: B0 9A     BCS bra_9928_RTS
+C - - - - - 0x01599C 05:998C: B0 9A     BCS bra_999B_RTS
 C - - - - - 0x01599E 05:998E: E6 67     INC ram_0067
 C - - - - - 0x0159A0 05:9990: A6 39     LDX ram_buffer_index_2
 C - - - - - 0x0159A2 05:9992: E0 08     CPX #$08
