@@ -415,7 +415,6 @@ ram_0007_temp                           = $0007 ; 005CC3 008766 008791 008F5C 00
     ram_0007_t08                            = ram_0007_temp ; 
     ram_0007_t09                            = ram_0007_temp ; 
     ram_0007_t10                            = ram_0007_temp ; 
-    ram_0007_t13_useless                    = ram_0007_temp ; bzk optimize
 
 
 

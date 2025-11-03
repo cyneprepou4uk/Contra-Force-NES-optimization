@@ -314,7 +314,6 @@ C - - - - - 0x014279 05:8269: 60        RTS
 
 ofs_020_826A_08:
 ; con_8113_08
-C - - J - - 0x01427A 05:826A: A9 00     LDA #$00
 C - - - - - 0x01427C 05:826C: 20 98 83  JSR sub_8398
 C - - - - - 0x01427F 05:826F: 38        SEC
 C - - - - - 0x014280 05:8270: 60        RTS
@@ -651,14 +650,10 @@ C - - - - - 0x0143A5 05:8395: 4C 02 F7  JMP loc_0x01F712
 
 
 sub_8398:
-; bzk optimize, useless STA
-C - - - - - 0x0143A8 05:8398: 85 07     STA ram_0007_t13_useless
 C - - - - - 0x0143AA 05:839A: 20 93 FE  JSR sub_0x01FEA3_disable_rendering
 C - - - - - 0x0143AD 05:839D: A9 10     LDA #$10
 C - - - - - 0x0143AF 05:839F: 20 85 82  JSR sub_8285
 C - - - - - 0x0143B2 05:83A2: 20 DF 83  JSR sub_83DF
-; bzk optimize, useless LDA
-C - - - - - 0x0143B5 05:83A5: A5 07     LDA ram_0007_t13_useless
 C - - - - - 0x0143B9 05:83A9: 20 B3 F3  JSR sub_0x01DA85
 C - - - - - 0x0143BC 05:83AC: 20 02 F7  JSR sub_0x01F712
 C - - - - - 0x0143BF 05:83AF: 4C 70 FE  LDA ram_for_2000
