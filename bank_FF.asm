@@ -2785,8 +2785,6 @@ C - - - - - 0x01FE90 07:FE80: 60        RTS
 sub_FE81_enable_rendering:
 C - - - - - 0x01FE91 07:FE81: A9 A8     LDA #$A8
 C - - - - - 0x01FE93 07:FE83: 85 FF     STA ram_for_2000
-; bzk optimize, useless STA
-C - - - - - 0x01FE95 07:FE85: 85 2C     STA ram_002C_useless
 C - - - - - 0x01FE97 07:FE87: 8D 00 20  STA $2000
 C - - - - - 0x01FE9A 07:FE8A: A9 18     LDA #$18
 C - - - - - 0x01FE9C 07:FE8C: 85 FE     STA ram_for_2001

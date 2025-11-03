@@ -1902,8 +1902,6 @@ C - - - - - 0x00FC56 03:BC46: BD 4E 06  LDA ram_obj_pos_X,X
 C - - - - - 0x00FC59 03:BC49: 20 07 95  EOR #$FF
                                         CLC
                                         ADC #$01
-; bzk optimize, useless STA
-C - - - - - 0x00FC5C 03:BC4C: 85 00     STA ram_0000_t95_useless
 C - - - - - 0x00FC5E 03:BC4E: 90 02     BCC bra_BC52
 ; if overflow
 - - - - - - 0x00FC60 03:BC50: E6 01     INC ram_0001_t27
@@ -1933,8 +1931,6 @@ C - - - - - 0x00FC83 03:BC73: 10 12     BPL bra_BC87
 - - - - - - 0x00FC8E 03:BC7E: 20 07 95  EOR #$FF
                                         CLC
                                         ADC #$01
-; bzk optimize, useless STA
-- - - - - - 0x00FC91 03:BC81: 85 00     STA ram_0000_t96_useless
 - - - - - - 0x00FC93 03:BC83: 90 02     BCC bra_BC87
 ; if overflow
 - - - - - - 0x00FC95 03:BC85: E6 01     INC ram_0001_t28

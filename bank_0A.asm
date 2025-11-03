@@ -4990,9 +4990,6 @@ tbl_A3C8_palette:
 ofs_008_pause_menu_A3E8_02:
 C - - J - - 0x0163F8 05:A3E8: A9 01     LDA #$01
 C - - - - - 0x0163FA 05:A3EA: 85 4B     STA ram_004B_cutscene_counter
-; bzk optimize, useless LDA + STA
-C - - - - - 0x0163FC 05:A3EC: A9 FF     LDA #$FF
-C - - - - - 0x0163FE 05:A3EE: 85 22     STA ram_0022_t03_useless
 C - - - - - 0x016400 05:A3F0: A5 FF     LDA ram_for_2000
 C - - - - - 0x016402 05:A3F2: 29 FC     AND #$FC
 C - - - - - 0x016404 05:A3F4: 85 FF     STA ram_for_2000

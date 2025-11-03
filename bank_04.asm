@@ -2232,14 +2232,9 @@ C - - - - - 0x0093AB 02:939B: E0 00     CPX #$00
 C - - - - - 0x0093AD 02:939D: F0 02     BEQ bra_93A1
 C - - - - - 0x0093AF 02:939F: A0 0E     LDY #$0E
 bra_93A1:
-; bzk optimize, useless LDA + STA
-C - - - - - 0x0093B1 02:93A1: A9 04     LDA #$04
-C - - - - - 0x0093B3 02:93A3: 85 00     STA ram_0000_t99_useless_04
 C - - - - - 0x0093B5 02:93A5: B9 82 06  LDA ram_0682_obj,Y
 C - - - - - 0x0093B8 02:93A8: F0 DC     BEQ bra_9386
-; bzk optimize, useless INY + DEC
 C - - - - - 0x0093BA 02:93AA: C8        INY
-C - - - - - 0x0093BB 02:93AB: C6 00     DEC ram_0000_t99_useless_04
 C - - - - - 0x0093BD 02:93AD: D0 DF     BNE bra_938E    ; jmp
 
 

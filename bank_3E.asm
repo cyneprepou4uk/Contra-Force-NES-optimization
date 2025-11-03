@@ -1949,9 +1949,6 @@ C - - - - - 0x01D933 07:D923: 60        RTS
 bra_D924:
 C - - - - - 0x01D934 07:D924: 88        DEY
 C - - - - - 0x01D935 07:D925: F0 F2     BEQ bra_D919
-; bzk optimize, useless LDA + STA
-C - - - - - 0x01D937 07:D927: A9 00     LDA #$00
-C - - - - - 0x01D939 07:D929: 85 21     STA ram_0021_t04_useless
 C - - - - - 0x01D93B 07:D92B: E6 44     INC ram_script_lo
 C - - - - - 0x01D93D 07:D92D: 20 36 D9  JSR sub_D936
 C - - - - - 0x01D940 07:D930: 20 C8 F8  JSR sub_0x01F8D8_prepare_irq_data

@@ -544,8 +544,6 @@ tbl_9ABB_positions:
 sub_B53F:
 C - - - - - 0x00354F 00:B53F: A5 02     LDA ram_0002_t18_array_index
 C - - - - - 0x003551 00:B541: 85 94     STA ram_0094_array_index
-; bzk optimize, useless STA
-C - - - - - 0x003553 00:B543: 85 3A     STA ram_003A_t08_useless
 C - - - - - 0x003555 00:B545: A5 00     LDA ram_0000_t42
 C - - - - - 0x003557 00:B547: C9 75     CMP #$75
 C - - - - - 0x003559 00:B549: F0 41     BEQ bra_B58C
@@ -611,8 +609,6 @@ C - - - - - 0x0035C3 00:B5B3: 60        RTS
 sub_B5B4:
 C - - - - - 0x0035C4 00:B5B4: A5 02     LDA ram_0002_t18_array_index
 C - - - - - 0x0035C6 00:B5B6: 85 94     STA ram_0094_array_index
-; bzk optimize, useless STA
-C - - - - - 0x0035C8 00:B5B8: 85 3A     STA ram_003A_t09_useless
 C - - - - - 0x0035CA 00:B5BA: A5 00     LDA ram_0000_t42
 C - - - - - 0x0035CC 00:B5BC: A2 22     LDX #$22
 C - - - - - 0x0035CE 00:B5BE: C9 6F     CMP #$6F

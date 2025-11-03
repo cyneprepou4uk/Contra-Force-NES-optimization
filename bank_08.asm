@@ -80,13 +80,6 @@ C - - - - - 0x003AFC 00:BAEC: A5 D0     LDA ram_00D0
 C - - - - - 0x003AFE 00:BAEE: D0 39     BNE bra_BB29
 C - - - - - 0x003B00 00:BAF0: A5 BD     LDA ram_00BD_flag
 C - - - - - 0x003B02 00:BAF2: D0 35     BNE bra_BB29
-; bzk optimize, useless code up to 0x003B0C
-C - - - - - 0x003B04 00:BAF4: A9 00     LDA #$00
-C - - - - - 0x003B06 00:BAF6: 85 00     STA ram_0000_t97_useless
-C - - - - - 0x003B08 00:BAF8: A5 19     LDA ram_0019_t04
-C - - - - - 0x003B0A 00:BAFA: 10 02     BPL bra_BAFE
-C - - - - - 0x003B0C 00:BAFC: C6 00     DEC ram_0000_t97_useless    ; -> FF
-bra_BAFE:
 C - - - - - 0x003B0E 00:BAFE: BD E6 07  LDA ram_07E6,X
 C - - - - - 0x003B11 00:BB01: 18        CLC
 C - - - - - 0x003B12 00:BB02: 65 18     ADC ram_0018_t12

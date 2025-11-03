@@ -153,10 +153,6 @@ ram_0000_temp                           = $0000 ; 003398 0033AD 003438 003487 00
     ram_0000_t92                            = ram_0000_temp ; 
     ram_0000_t93_loop_counter               = ram_0000_temp ; 
     ram_0000_t94                            = ram_0000_temp ; 
-    ram_0000_t95_useless                    = ram_0000_temp ; bzk optimize
-    ram_0000_t96_useless                    = ram_0000_temp ; bzk optimize
-    ram_0000_t97_useless                    = ram_0000_temp ; bzk optimize
-    ram_0000_t99_useless_04                 = ram_0000_temp ; bzk optimize
 
 
 
@@ -912,7 +908,6 @@ ram_0021_temp                           = $0021 ; 01437A 01642B 016433 016449 01
     ram_0021_t02_pause_menu_cursor_pos      = ram_0021_temp ; позиция курсора в меню паузы, +80 = ???
                                                             ; bzk optimize, этот +80 нахрен не нужен, только лишние AND 03
     ram_0021_t03                            = ram_0021_temp ; 2 addresses 0021-0022
-    ram_0021_t04_useless                    = ram_0021_temp ; bzk optimize
 
 
 
@@ -920,7 +915,6 @@ ram_0021_temp                           = $0021 ; 01437A 01642B 016433 016449 01
 ram_0022_temp                           = $0022 ; 00E51B 014015 014028 01404D 014064 014202 014226 01437C 015BF2 0163FE 01666D 01D060 01D076 01D0E4 01D110 01D114 01D11E 01D128 01D17C 01D73B 01D769 01D76D 01D78B 01D795 01D7AD 01D7BD 01D7E3 01D802 01D836 01FD5D 
     ram_0022_t01                            = ram_0022_temp ; 
     ram_0022_t02                            = ram_0022_temp ; 
-    ram_0022_t03_useless                    = ram_0022_temp ; bzk optimize
 
 
 
@@ -973,8 +967,8 @@ ram_002B_flags                          = $002B ; 01429C 0145A0 015789 0159C7 01
 
 
 
-; bzk optimize, useless
-ram_002C_useless                        = $002C ; 01FD5D 01FE95 
+; free address
+; ram_002C                              = $002C ; 01FD5D 01FE95 
 
 
 
@@ -1035,8 +1029,6 @@ ram_003A_temp                           = $003A ; 003553 0035C8 0085FC 008643 00
     ram_003A_t05                            = ram_003A_temp ; 
     ram_003A_t06                            = ram_003A_temp ; 
     ram_003A_t07_btn_press_sum              = ram_003A_temp ; 
-    ram_003A_t08_useless                    = ram_003A_temp ; bzk optimize
-    ram_003A_t09_useless                    = ram_003A_temp ; bzk optimize
 
 
 
