@@ -1776,7 +1776,6 @@ ram_00EC_se_channel_index               = $00EC ; 010020 010527 01055F 012A3F 01
 ; sound engine address
 ram_00ED_se_temp                        = $00ED ; 012A44 012B95 0131A3 01FD5D 
     ram_00ED_se_t01                         = ram_00ED_se_temp ; 
-    ram_00ED_se_t02_useless                 = ram_00ED_se_temp ; bzk optimize
 
 
 
