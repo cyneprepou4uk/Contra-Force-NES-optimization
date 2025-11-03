@@ -1568,8 +1568,10 @@ C - - - - - 0x01F7FD 07:F7ED: A0 21     LDY #$21
 bra_F7EF_garbage_loop:
 C - - - - - 0x01F7FF 07:F7EF: 88        DEY
 C - - - - - 0x01F800 07:F7F0: D0 FD     BNE bra_F7EF_garbage_loop
+; bzk garbage
 C - - - - - 0x01F802 07:F7F2: EA        NOP
 C - - - - - 0x01F803 07:F7F3: EA        NOP
+; 
 C - - - - - 0x01F804 07:F7F4: AD 02 20  LDA $2002
 C - - - - - 0x01F807 07:F7F7: A5 D7     LDA ram_00D7
 C - - - - - 0x01F809 07:F7F9: 8D 06 20  STA $2006

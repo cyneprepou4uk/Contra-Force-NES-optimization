@@ -14633,7 +14633,6 @@ C - - - - - 0x013FD6 04:BFC6: F0 21     BEQ bra_BFE9_RTS
 - - - - - - 0x013FD8 04:BFC8: BD D2 07  LDA ram_07D2_unk,X
 - - - - - - 0x013FDB 04:BFCB: 29 01     AND #$01
 - - - - - - 0x013FDD 04:BFCD: D0 1A     BNE bra_BFE9_RTS
-- - - - - - 0x013FDF 04:BFCF: EA        NOP
 - - - - - - 0x013FE0 04:BFD0: AC A2 03  LDY ram_03A2
 - - - - - - 0x013FE3 04:BFD3: B9 B2 06  LDA ram_06B2_obj,Y
 - - - - - - 0x013FE6 04:BFD6: 30 12     BMI bra_BFEA
