@@ -134,7 +134,8 @@ bra_80A7:
 C - - - - - 0x0100B7 04:80A7: 20 F0 80  JSR sub_80F0
 C - - - - - 0x0100BA 04:80AA: C8        INY
 C - - - - - 0x0100BB 04:80AB: B1 E0     LDA (ram_00E0_se_t01_music_data),Y
-C - - - - - 0x0100BD 04:80AD: 4C 04 81  JMP loc_8104
+C - - - - - 0x0100BD 04:80AD: 4C 04 81  STA ram_05F7_se,X
+                                        RTS
 
 
 
@@ -191,7 +192,8 @@ C - - - - - 0x0100EA 04:80DA: F0 0D     BEQ bra_80E9
 - - - - - - 0x0100F4 04:80E4: E9 10     SBC #$10
 - - - - - - 0x0100F6 04:80E6: 4C D4 80  JMP loc_80D4
 bra_80E9:
-C - - - - - 0x0100F9 04:80E9: 20 04 81  JSR sub_8104
+C - - - - - 0x0100F9 04:80E9: 20 04 81  LDA (ram_00E0_se_t01_music_data),Y
+                                        STA ram_05F7_se,X
 C - - - - - 0x0100FC 04:80EC: A9 90     LDA #$90
 C - - - - - 0x0100FE 04:80EE: D0 E4     BNE bra_80D4    ; jmp
 
@@ -215,11 +217,8 @@ C - - - - - 0x010113 04:8103: 60        RTS
 
 
 
-loc_8104:   ; bzk optimize, point to 0x010116, or write this code at 0x0100BD
-sub_8104:
 ofs_010_8104_E5:
 ; con_se_cb_E5
-; bzk optimize, A already has proper byte
 C D 0 - - - 0x010114 04:8104: B1 E0     LDA (ram_00E0_se_t01_music_data),Y
 C - - - - - 0x010116 04:8106: 9D F7 05  STA ram_05F7_se,X
 C - - - - - 0x010119 04:8109: 60        RTS
