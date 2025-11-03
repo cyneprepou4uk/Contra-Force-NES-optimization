@@ -333,6 +333,7 @@ C - - - - - 0x01428D 05:827D: 4C 9E 82  JMP loc_829E
 ofs_020_8280_03:
 ; con_8113_03
 C - - J - - 0x014290 05:8280: 20 8F D1  JSR sub_D18F
+sub_8283:
 C - - - - - 0x014293 05:8283: A9 17     LDA #$17
 sub_8285:
 C - - - - - 0x014295 05:8285: A0 01     LDY #$01
@@ -1263,8 +1264,7 @@ C - - - - - 0x0148BD 05:88AD: A9 32     LDA #con_D280_konami_1
 C - - - - - 0x0148BF 05:88AF: 20 3C D2  JSR sub_0x01D24C_draw_text
 C - - - - - 0x0148C2 05:88B2: A9 41     LDA #con_D280_konami_2
 C - - - - - 0x0148C4 05:88B4: 20 3C D2  JSR sub_0x01D24C_draw_text
-C - - - - - 0x0148C7 05:88B7: A9 17     LDA #$17
-C - - - - - 0x0148C9 05:88B9: 20 85 82  JSR sub_8285    ; bzk optimize, jsr to 0x014293
+C - - - - - 0x0148C9 05:88B9: 20 85 82  JSR sub_8283
 C - - - - - 0x0148CC 05:88BC: 4C 4F 82  JMP loc_824F
 
 
