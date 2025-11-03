@@ -86,8 +86,6 @@ ofs_000_D02F_00:
 ; con_0020_00
 C - - J - - 0x01D03F 07:D02F: A6 21     LDX ram_0021_t01
 C - - - - - 0x01D041 07:D031: D0 12     BNE bra_D045
-; X = 00
-C - - - - - 0x01D043 07:D033: 86 27     STX ram_0027_useless_00
 C - - - - - 0x01D045 07:D035: 20 F9 F2  JSR sub_0x01F309_clear_0040_00DF
 C - - - - - 0x01D048 07:D038: 20 09 F3  JSR sub_0x01F319_clear_0400_07FF
 ; 
@@ -2125,9 +2123,7 @@ tbl_DA13:
 
 sub_DA18_try_to_pause:
 ; bzk optimize
-C - - - - - 0x01DA28 07:DA18: A5 27     LDA ram_0027_useless_00
-C - - - - - 0x01DA2A 07:DA1A: 05 46     ORA ram_0046_useless_00
-C - - - - - 0x01DA2C 07:DA1C: 05 25     ORA ram_disable_rendering_timer
+C - - - - - 0x01DA2C 07:DA1C: 05 25     LDA ram_disable_rendering_timer
 C - - - - - 0x01DA2E 07:DA1E: D0 18     BNE bra_DA38_RTS
 C - - - - - 0x01DA30 07:DA20: A5 40     LDA ram_btn_press_1
 C - - - - - 0x01DA32 07:DA22: 05 41     ORA ram_btn_press_1 + $01

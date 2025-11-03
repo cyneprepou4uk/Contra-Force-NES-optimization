@@ -1313,8 +1313,6 @@ ofs_020_88E2_21:
 C - - J - - 0x0148F2 05:88E2: A9 01     LDA #$01
 bra_88E4:
 C - - - - - 0x0148F4 05:88E4: 8D 41 03  STA ram_0341
-C - - - - - 0x0148F7 05:88E7: A9 00     LDA #$00
-C - - - - - 0x0148F9 05:88E9: 85 3B     STA ram_003B_t02_useless_00
 C - - - - - 0x0148FB 05:88EB: A2 01     LDX #$01
 bra_88ED_loop:
 C - - - - - 0x0148FD 05:88ED: A9 00     LDA #$00
@@ -1324,8 +1322,6 @@ C - - - - - 0x014905 05:88F5: D0 0A     BNE bra_8901
 C - - - - - 0x014907 05:88F7: 8A        TXA
 C - - - - - 0x014908 05:88F8: 18        CLC
 C - - - - - 0x014909 05:88F9: 69 01     ADC #$01
-; bzk optimize, always 00
-C - - - - - 0x01490B 05:88FB: 05 3B     ORA ram_003B_t02_useless_00
 C - - - - - 0x01490D 05:88FD: 85 3B     STA ram_003B_t01
 C - - - - - 0x01490F 05:88FF: D0 1B     BNE bra_891C    ; jmp?
 bra_8901:
@@ -3200,9 +3196,6 @@ C - - - - - 0x015B23 05:9B13: D0 03     BNE bra_9B18
 C - - - - - 0x015B25 05:9B15: 4C F3 9B  JMP loc_9BF3
 bra_9B18:
 C - - - - - 0x015B28 05:9B18: 85 1F     STA ram_001F_t11
-; bzk optimize, useless LDA + STA
-C - - - - - 0x015B2A 05:9B1A: A9 00     LDA #$00
-C - - - - - 0x015B2C 05:9B1C: 85 3D     STA ram_003D_t04_useless
 C - - - - - 0x015B2E 05:9B1E: A5 A6     LDA ram_00A6
 C - - - - - 0x015B30 05:9B20: 30 14     BMI bra_9B36
 C - - - - - 0x015B32 05:9B22: C9 01     CMP #$01
@@ -3211,8 +3204,6 @@ C - - - - - 0x015B36 05:9B26: A5 67     LDA ram_0067
 C - - - - - 0x015B38 05:9B28: 29 01     AND #$01
 C - - - - - 0x015B3A 05:9B2A: D0 0A     BNE bra_9B36
 C - - - - - 0x015B3C 05:9B2C: A5 1D     LDA ram_001D_t08
-; bzk optimize, useless STA
-C - - - - - 0x015B3E 05:9B2E: 85 3D     STA ram_003D_t03_useless
 C - - - - - 0x015B40 05:9B30: F0 04     BEQ bra_9B36
 C - - - - - 0x015B42 05:9B32: A5 6B     LDA ram_006B
 C - - - - - 0x015B44 05:9B34: 30 18     BMI bra_9B4E

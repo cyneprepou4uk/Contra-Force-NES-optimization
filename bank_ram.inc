@@ -944,8 +944,8 @@ ram_buffer_index                        = $0026 ; 00344C 005C03 005CD3 009086 00
 
 
 
-; bzk optimize, always 00
-ram_0027_useless_00                     = $0027 ; 01D043 01DA28 01FD5D 
+; free address
+; ram_0027                              = $0027 ; 01D043 01DA28 01FD5D 
 
 
 
@@ -1043,7 +1043,6 @@ ram_003A_temp                           = $003A ; 003553 0035C8 0085FC 008643 00
 ; 
 ram_003B_temp                           = $003B ; 00A111 00AEA9 00B6AA 00B6D5 0148F9 01490B 01490D 01492F 014C0F 014C11 01E22E 01E59F 01E5B5 01E5E0 01FD5D 
     ram_003B_t01                            = ram_003B_temp ; 
-    ram_003B_t02_useless_00                 = ram_003B_temp ; bzk optimize
 
 
 
@@ -1060,8 +1059,6 @@ ram_003C_temp                           = $003C ; 0085E2 00864B 008692 0088C7 00
 ram_003D_temp                           = $003D ; 00E225 00E234 00E259 00E27A 015706 015B2C 015B3E 01DA89 01E851 01E9A7 01EBB4 01FD5D 
     ram_003D_t01                            = ram_003D_temp ; 
     ram_003D_t02_flag                       = ram_003D_temp ; 
-    ram_003D_t03_useless                    = ram_003D_temp ; bzk optimize
-    ram_003D_t04_useless                    = ram_003D_temp ; bzk optimize
 
 
 
@@ -1098,12 +1095,8 @@ ram_pause_flag                          = $0045 ; 015DD1 016631 017D0C 01D2ED 01
 
 
 
-; bzk optimize, useless address, holds 00
-ram_0046_useless_00                     = $0046 ; 01DA2A 01F311 01FD5D 
-
-
-
 ; free addresses
+; ram_0046                              = $0046 ; 01DA2A 01F311 01FD5D 
 ; ram_0047                              = $0047 ; 01F311 01FD5D 
 ; ram_0048                              = $0048 ; 01F311 01FD5D 
 ; ram_0049                              = $0049 ; 01F311 01FD5D 
