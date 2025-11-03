@@ -1522,9 +1522,24 @@ C - - - - - 0x01D6F4 07:D6E4: AD 40 03  LDA ram_0340_flag
 C - - - - - 0x01D6F7 07:D6E7: 30 13     BMI bra_D6FC
 C - - - - - 0x01D6F9 07:D6E9: A5 BB     LDA ram_00BB
 C - - - - - 0x01D6FB 07:D6EB: D0 0F     BNE bra_D6FC
-C - - - - - 0x01D6FD 07:D6ED: 20 18 DA  JSR sub_DA18_try_to_pause
+; try to pause
+C - - - - - 0x01DA2C 07:DA1C: 05 25     LDA ram_disable_rendering_timer
+C - - - - - 0x01DA2E 07:DA1E: D0 18     BNE bra_D6F0_pause_failed
+C - - - - - 0x01DA30 07:DA20: A5 40     LDA ram_btn_press_1
+C - - - - - 0x01DA32 07:DA22: 05 41     ORA ram_btn_press_1 + $01
+C - - - - - 0x01DA34 07:DA24: A4 45     LDY ram_pause_flag
+C - - - - - 0x01DA36 07:DA26: D0 10     BNE bra_D6F0_pause_failed
+C - - - - - 0x01DA38 07:DA28: 29 10     AND #con_btn_Start
+C - - - - - 0x01DA3A 07:DA2A: F0 0C     BEQ bra_D6F0_pause_failed
+C - - - - - 0x01DA3C 07:DA2C: AD 5B 03  LDA ram_035B_flag
+C - - - - - 0x01DA3F 07:DA2F: D0 07     BNE bra_D6F0_pause_failed
+C - - - - - 0x01DA41 07:DA31: E6 45     INC ram_pause_flag  ; -> 01
+C - - - - - 0x01DA43 07:DA33: A9 67     LDA #con_music_67
+C - - - - - 0x01DA45 07:DA35: 4C CA FE  JSR sub_0x01FEDA_add_music_to_queue
+bra_D6F0_pause_failed:
 C - - - - - 0x01D700 07:D6F0: A5 45     LDA ram_pause_flag
 C - - - - - 0x01D702 07:D6F2: F0 08     BEQ bra_D6FC
+; if paused
 C - - - - - 0x01D704 07:D6F4: A9 01     LDA #con_prg_pair + $01
 C - - - - - 0x01D706 07:D6F6: 20 4C F3  JSR sub_0x01F35C_prg_bankswitch
 C - - - - - 0x01D709 07:D6F9: 4C F3 A2  JMP loc_0x016303_pause_menu_handler
@@ -2065,6 +2080,8 @@ C - - - - - 0x01DA00 07:D9F0: 29 10     AND #$10
 C - - - - - 0x01DA02 07:D9F2: F0 F4     BEQ bra_D9E8
 C - - - - - 0x01DA04 07:D9F4: A9 04     LDA #$04
 C - - - - - 0x01DA06 07:D9F6: D0 F3     BNE bra_D9EB    ; jmp
+bra_DA38_RTS:
+C - - - - - 0x01DA48 07:DA38: 60        RTS
 
 
 
@@ -2105,26 +2122,6 @@ tbl_DA13:
 - D 2 - - - 0x01DA25 07:DA15: 0D        .byte con_chr_bank + $0D   ; 02 stage 3
 - D 2 - - - 0x01DA26 07:DA16: 1A        .byte con_chr_bank + $1A   ; 03 stage 4
 - D 2 - - - 0x01DA27 07:DA17: 0D        .byte con_chr_bank + $0D   ; 04 stage 5
-
-
-
-sub_DA18_try_to_pause:
-; bzk optimize
-C - - - - - 0x01DA2C 07:DA1C: 05 25     LDA ram_disable_rendering_timer
-C - - - - - 0x01DA2E 07:DA1E: D0 18     BNE bra_DA38_RTS
-C - - - - - 0x01DA30 07:DA20: A5 40     LDA ram_btn_press_1
-C - - - - - 0x01DA32 07:DA22: 05 41     ORA ram_btn_press_1 + $01
-C - - - - - 0x01DA34 07:DA24: A4 45     LDY ram_pause_flag
-C - - - - - 0x01DA36 07:DA26: D0 10     BNE bra_DA38_RTS
-C - - - - - 0x01DA38 07:DA28: 29 10     AND #con_btn_Start
-C - - - - - 0x01DA3A 07:DA2A: F0 0C     BEQ bra_DA38_RTS
-C - - - - - 0x01DA3C 07:DA2C: AD 5B 03  LDA ram_035B_flag
-C - - - - - 0x01DA3F 07:DA2F: D0 07     BNE bra_DA38_RTS
-C - - - - - 0x01DA41 07:DA31: E6 45     INC ram_pause_flag
-C - - - - - 0x01DA43 07:DA33: A9 67     LDA #con_music_67
-C - - - - - 0x01DA45 07:DA35: 4C CA FE  JMP loc_0x01FEDA_add_music_to_queue
-bra_DA38_RTS:
-C - - - - - 0x01DA48 07:DA38: 60        RTS
 
 
 

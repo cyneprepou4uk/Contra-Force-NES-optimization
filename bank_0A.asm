@@ -5287,6 +5287,7 @@ C - - - - - 0x01662C 05:A61C: 4C F5 9B  RTS
 
 ofs_008_pause_menu_A61F_0E:
 C - - J - - 0x01662F 05:A61F: A9 00     LDA #$00
+; bzk optimize, DEC?
 C - - - - - 0x016631 05:A621: 85 45     STA ram_pause_flag
 C - - - - - 0x016633 05:A623: 85 5B     STA ram_pause_menu_script
 C - - - - - 0x016635 05:A625: 85 C3     STA ram_00C3
