@@ -3647,9 +3647,6 @@ C - - - - - 0x00FD37 03:BD27: A9 26     LDA #con_music_26
 C - - - - - 0x00FD39 03:BD29: 20 CA FE  JSR sub_0x01FEDA_add_music_to_queue
 C - - - - - 0x00FD3C 03:BD2C: A0 04     LDY #$04
 C - - - - - 0x00FD3E 03:BD2E: 20 CA F8  JSR sub_0x01F8DA_prepare_irq_data
-; bzk optimize, useless LDA + STA
-C - - - - - 0x00FD41 03:BD31: A5 61     LDA ram_0061_lo
-C - - - - - 0x00FD43 03:BD33: 85 50     STA ram_0050_t03_useless
 C - - - - - 0x00FD45 03:BD35: A9 00     LDA #$00
 C - - - - - 0x00FD47 03:BD37: 85 51     STA ram_0051_t01_scroll_Y
 C - - - - - 0x00FD49 03:BD39: 9D B4 07  STA ram_07B4_unk,X
@@ -3897,12 +3894,6 @@ tbl_BF17:
 
 loc_BEF0:
 C D 1 - - - 0x00FF00 03:BEF0: 20 C8 F8  JSR sub_0x01F8D8_prepare_irq_data
-; bzk optimize, useless LDA + STA
-C - - - - - 0x00FF03 03:BEF3: A5 FD     LDA ram_scroll_X
-C - - - - - 0x00FF05 03:BEF5: 85 50     STA ram_0050_t04_useless
-; bzk optimize, useless LDA + STA
-C - - - - - 0x00FF07 03:BEF7: A5 FF     LDA ram_for_2000
-C - - - - - 0x00FF09 03:BEF9: 85 52     STA ram_0052_for_2000
 loc_BEFB:
 C - - - - - 0x00FF0B 03:BEFB: A9 00     LDA #$00
 C - - - - - 0x00FF0D 03:BEFD: 9D 82 07  STA ram_0782_unk,X

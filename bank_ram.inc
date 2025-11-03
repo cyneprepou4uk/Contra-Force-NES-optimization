@@ -1151,8 +1151,6 @@ ram_004F                                = $004F ; 0146E8 015AB8 01787C 017ABC 01
 ram_0050_temp                           = $0050 ; 00FD43 00FE52 00FF05 0146F6 0147A1 015E4B 0177A5 017B35 01F311 01F814 01F845 01FD5D 
     ram_0050_t01_scroll_X                   = ram_0050_temp ; 
     ram_0050_t02_scroll_X                   = ram_0050_temp ; 
-    ram_0050_t03_useless                    = ram_0050_temp ; bzk optimize
-    ram_0050_t04_useless                    = ram_0050_temp ; bzk optimize
 
 
 
