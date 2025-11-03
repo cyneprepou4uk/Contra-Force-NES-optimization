@@ -5840,7 +5840,7 @@ C - - - - - 0x00ED42 03:AD32: A5 8D     LDA ram_008D
 C - - - - - 0x00ED44 03:AD34: 29 4F     AND #$4F
 C - - - - - 0x00ED46 03:AD36: C9 4F     CMP #$4F
 C - - - - - 0x00ED48 03:AD38: D0 49     BNE bra_AD83
-C - - - - - 0x00ED4A 03:AD3A: AD 85 AD  LDA tbl_AD85
+C - - - - - 0x00ED4A 03:AD3A: AD 85 AD  LDA #con_8F57_58
 C - - - - - 0x00ED4D 03:AD3D: 20 DC AC  JSR sub_ACDC
 C - - - - - 0x00ED50 03:AD40: A9 51     LDA #$51
 C - - - - - 0x00ED52 03:AD42: 20 1F 97  JSR sub_0x00972F
@@ -5878,11 +5878,6 @@ C - - - - - 0x00ED91 03:AD81: 85 8D     STA ram_008D
 bra_AD83:
 C - - - - - 0x00ED93 03:AD83: 18        CLC
 C - - - - - 0x00ED94 03:AD84: 60        RTS
-
-
-
-tbl_AD85:   ; bzk optimize
-- D 1 - - - 0x00ED95 03:AD85: 58        .byte con_8F57_58   ; 
 
 
 
