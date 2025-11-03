@@ -622,12 +622,6 @@ C - - J - - 0x008756 02:8746: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x008759 02:8749: 30 0D     BMI bra_8758
 C - - - - - 0x00875B 02:874B: A5 0A     LDA ram_000A_t03
 C - - - - - 0x00875D 02:874D: 9D A0 07  STA ram_07A0_unk,X
-; bzk optimize, useless LDA + STA
-C - - - - - 0x008760 02:8750: A5 0B     LDA ram_000B_t04    ; also ram_000B_t13
-C - - - - - 0x008762 02:8752: 85 06     STA ram_0006_t18_useless
-; bzk optimize, useless LDA + STA
-C - - - - - 0x008764 02:8754: A5 0C     LDA ram_000C_t01_distance
-C - - - - - 0x008766 02:8756: 85 07     STA ram_0007_t12_useless
 bra_8758:
 C - - - - - 0x008768 02:8758: 20 62 87  JSR sub_8762
 C - - - - - 0x00876B 02:875B: B0 03     BCS bra_8760

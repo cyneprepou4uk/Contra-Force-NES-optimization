@@ -356,7 +356,7 @@ ram_0004_temp                           = $0004 ; 0039A4 0039AC 0039B7 0039BF 00
     ram_0004_t32                            = ram_0004_temp ; 
     ram_0004_t33                            = ram_0004_temp ; 
     ram_0004_t34                            = ram_0004_temp ; 
-    ram_0004_t35_useless                    = ram_0004_temp ; bzk optimize
+    
     ram_0004_t36_data                       = ram_0004_temp ; 2 addresses 0004-0005
 
 
@@ -400,8 +400,6 @@ ram_0006_temp                           = $0006 ; 005CBE 005CCB 005CCD 008762 00
     ram_0006_t14_lo                         = ram_0006_temp ; 
     ram_0006_t15                            = ram_0006_temp ; 
     ram_0006_t16_loop_counter               = ram_0006_temp ; 
-    ram_0006_t17_useless                    = ram_0006_temp ; bzk optimize
-    ram_0006_t18_useless                    = ram_0006_temp ; bzk optimize
 
 
 
@@ -417,8 +415,6 @@ ram_0007_temp                           = $0007 ; 005CC3 008766 008791 008F5C 00
     ram_0007_t08                            = ram_0007_temp ; 
     ram_0007_t09                            = ram_0007_temp ; 
     ram_0007_t10                            = ram_0007_temp ; 
-    ram_0007_t11_useless                    = ram_0007_temp ; bzk optimize
-    ram_0007_t12_useless                    = ram_0007_temp ; bzk optimize
     ram_0007_t13_useless                    = ram_0007_temp ; bzk optimize
 
 

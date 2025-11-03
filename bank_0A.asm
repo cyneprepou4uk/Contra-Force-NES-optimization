@@ -5112,19 +5112,6 @@ C - - - - - 0x0164F0 05:A4E0: 60        RTS
 
 
 ofs_008_pause_menu_A4E1_06:
-; bzk optimize, some useless code here
-; because 0007 is not used
-C - - J - - 0x0164F1 05:A4E1: A9 00     LDA #$00
-C - - - - - 0x0164F3 05:A4E3: 85 07     STA ram_0007_t11_useless
-C - - - - - 0x0164F5 05:A4E5: AD 82 07  LDA ram_0782_unk
-C - - - - - 0x0164F8 05:A4E8: F0 02     BEQ bra_A4EC
-C - - - - - 0x0164FA 05:A4EA: E6 07     INC ram_0007_t11_useless
-bra_A4EC:
-C - - - - - 0x0164FC 05:A4EC: AD 83 07  LDA ram_0782_unk + $01
-C - - - - - 0x0164FF 05:A4EF: F0 04     BEQ bra_A4F5
-C - - - - - 0x016501 05:A4F1: E6 07     INC ram_0007_t11_useless
-C - - - - - 0x016503 05:A4F3: E6 07     INC ram_0007_t11_useless
-bra_A4F5:
 C - - - - - 0x016505 05:A4F5: A9 00     LDA #$00
 C - - - - - 0x016507 05:A4F7: 8D 82 07  STA ram_0782_unk
 C - - - - - 0x01650A 05:A4FA: 8D 83 07  STA ram_0782_unk + $01
@@ -7092,9 +7079,6 @@ C - - - - - 0x017DB8 05:BDA8: F0 01     BEQ bra_BDAB    ; jmp
 bra_BDAA_RTS:
 C - - - - - 0x017DBA 05:BDAA: 60        RTS
 bra_BDAB:
-; bzk optimize, useless LDA + STA
-C - - - - - 0x017DBB 05:BDAB: A9 01     LDA #$01
-C - - - - - 0x017DBD 05:BDAD: 85 06     STA ram_0006_t17_useless
 C - - - - - 0x017DBF 05:BDAF: A5 17     LDA ram_0017_t04
 C - - - - - 0x017DC1 05:BDB1: 18        CLC
 C - - - - - 0x017DC2 05:BDB2: 69 01     ADC #$01

@@ -3941,8 +3941,6 @@ C - - - - - 0x00FF6E 03:BF5E: 65 00     ADC ram_0000_t26_pos_X
 C - - - - - 0x00FF70 03:BF60: 9D 4E 06  STA ram_obj_pos_X,X
 C - - - - - 0x00FF73 03:BF63: A5 03     LDA ram_0003_t25
 C - - - - - 0x00FF75 03:BF65: 69 00     ADC #$00
-; bzk optimize, useless STA
-C - - - - - 0x00FF77 03:BF67: 85 04     STA ram_0004_t35_useless
 C - - - - - 0x00FF79 03:BF69: F0 0A     BEQ bra_BF75
 C - - - - - 0x00FF7B 03:BF6B: 29 80     AND #$80
 C - - - - - 0x00FF7D 03:BF6D: F0 04     BEQ bra_BF73
