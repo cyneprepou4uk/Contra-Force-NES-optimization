@@ -783,8 +783,6 @@ C - - - - - 0x01D31D 07:D30D: 85 03     STA ram_0002_t04_data + $01
 C - - - - - 0x01D31F 07:D30F: A9 00     LDA #$00
 C - - - - - 0x01D321 07:D311: 85 12     STA ram_0012_t04_spr_A
 C - - - - - 0x01D323 07:D313: 85 13     STA ram_0013_t04_pos_X_hi
-; bzk optimize, useless STA
-C - - - - - 0x01D325 07:D315: 85 14     STA ram_0014_t10_useless
 C - - - - - 0x01D327 07:D317: A9 C3     LDA #$C3
 C - - - - - 0x01D329 07:D319: 85 18     STA ram_0018_t16
 C - - - - - 0x01D32B 07:D31B: 4C FF D3  JMP loc_D3FF
@@ -849,9 +847,6 @@ C - - - - - 0x01D376 07:D366: B9 3B D5  LDA tbl_D53B,Y
 C - - - - - 0x01D379 07:D369: 85 13     STA ram_0013_t04_pos_X_hi
 C - - - - - 0x01D37B 07:D36B: B9 3C D5  LDA tbl_D53C,Y
 C - - - - - 0x01D37E 07:D36E: D0 EA     BNE bra_D35A_RTS
-; A = 00
-; bzk optimize, useless STA
-C - - - - - 0x01D380 07:D370: 85 14     STA ram_0014_t11_useless
                                         LDA #con_prg_pair + $08
                                         CMP ram_prg_banks_pair
                                         BEQ bra_D372_currently_same_bank

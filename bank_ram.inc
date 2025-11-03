@@ -577,7 +577,6 @@ ram_0010_temp                           = $0010 ; 003F54 00921B 009244 0097C9 00
     ram_0010_t18                            = ram_0010_temp ; 
     ram_0010_t19_metatiles_ptr              = ram_0010_temp ; 2 addresses 0010-0011
     ram_0010_t20                            = ram_0010_temp ; 
-    ram_0010_t21_useless                    = ram_0010_temp ; bzk optimize
 
 
 
@@ -600,7 +599,6 @@ ram_0011_temp                           = $0011 ; 003CAC 003F56 003F6B 008ADE 00
     ram_0011_t15                            = ram_0011_temp ; 
     ram_0011_t16_pos_Y                      = ram_0011_temp ; 
     ram_0011_t17_lo                         = ram_0011_temp ; 
-    ram_0011_t18_useless                    = ram_0011_temp ; bzk optimize
 
 
 
@@ -623,8 +621,6 @@ ram_0012_temp                           = $0012 ; 008B17 009224 009247 009250 00
     ram_0012_t15                            = ram_0012_temp ; 
     ram_0012_t16_pos_X                      = ram_0012_temp ; 
     ram_0012_t17_data_index                 = ram_0012_temp ; 
-    ram_0012_t18_useless                    = ram_0012_temp ; bzk optimize
-    ram_0012_t19_useless                    = ram_0012_temp ; bzk optimize
 
 
 
@@ -643,9 +639,6 @@ ram_0013_temp                           = $0013 ; 003C26 003C2E 003C3D 003C88 00
     ram_0013_t11                            = ram_0013_temp ; 
     ram_0013_t12                            = ram_0013_temp ; 
     ram_0013_t13_pos_Y                      = ram_0013_temp ; 
-    ram_0013_t14_useless                    = ram_0013_temp ; bzk optimize
-    ram_0013_t15_useless                    = ram_0013_temp ; bzk optimize
-    ram_0013_t16_useless                    = ram_0013_temp ; bzk optimize
 
 
 
@@ -660,8 +653,6 @@ ram_0014_temp                           = $0014 ; 003C35 003C66 003C95 003CE4 00
     ram_0014_t07                            = ram_0014_temp ; 
     ram_0014_t08                            = ram_0014_temp ; 
     ram_0014_t09                            = ram_0014_temp ; 
-    ram_0014_t10_useless                    = ram_0014_temp ; bzk optimize
-    ram_0014_t11_useless                    = ram_0014_temp ; bzk optimize
 
 
 

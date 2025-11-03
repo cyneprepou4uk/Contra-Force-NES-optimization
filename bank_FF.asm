@@ -278,8 +278,6 @@ C - - - - - 0x01EDDE 07:EDCE: A5 12     LDA ram_0012_t13
 C - - - - - 0x01EDE0 07:EDD0: 4A        LSR
 C - - - - - 0x01EDE1 07:EDD1: 4A        LSR
 C - - - - - 0x01EDE2 07:EDD2: 4A        LSR
-; bzk optimize, useless STA
-C - - - - - 0x01EDE3 07:EDD3: 85 12     STA ram_0012_t18_useless
 C - - - - - 0x01EDE5 07:EDD5: 4A        LSR
 C - - - - - 0x01EDE6 07:EDD6: 4A        LSR
 C - - - - - 0x01EDE7 07:EDD7: 85 10     STA ram_0010_t16
@@ -289,12 +287,6 @@ C - - - - - 0x01EDED 07:EDDD: F0 02     BEQ bra_EDE1
 C - - - - - 0x01EDEF 07:EDDF: A9 08     LDA #$08
 bra_EDE1:
 C - - - - - 0x01EDF1 07:EDE1: 05 10     ORA ram_0010_t16
-; bzk optimize, useless code up to 0x01EDFB
-C - - - - - 0x01EDF3 07:EDE3: 85 10     STA ram_0010_t21_useless
-C - - - - - 0x01EDF5 07:EDE5: A9 00     LDA #$00
-C - - - - - 0x01EDF7 07:EDE7: 85 13     STA ram_0013_t14_useless
-C - - - - - 0x01EDF9 07:EDE9: 29 F0     AND #$F0
-C - - - - - 0x01EDFB 07:EDEB: 05 10     ORA ram_0010_t21_useless
 C - - - - - 0x01EDFD 07:EDED: 20 50 EE  TAY
                                         STY ram_0002_t28
 C - - - - - 0x01EE00 07:EDF0: 4C 33 EE  JMP loc_EE33
@@ -317,12 +309,6 @@ C - - - - - 0x01EE22 07:EE12: 20 39 EE  JSR sub_EE39
 C - - - - - 0x01EE25 07:EE15: A4 02     LDY ram_0002_t28
 C - - - - - 0x01EE27 07:EE17: 8C 51 03  STY ram_0351
 bra_EE1A:
-; bzk optimize, useless LDA + STA
-C - - - - - 0x01EE2A 07:EE1A: A5 64     LDA ram_0064_lo
-C - - - - - 0x01EE2C 07:EE1C: 85 13     STA ram_0013_t15_useless
-; bzk optimize, useless LDA + STA
-C - - - - - 0x01EE2E 07:EE1E: A5 63     LDA ram_0063_hi
-C - - - - - 0x01EE30 07:EE20: 85 11     STA ram_0011_t18_useless
 C - - - - - 0x01EE32 07:EE22: A5 61     LDA ram_0061_lo
 C - - - - - 0x01EE34 07:EE24: 85 12     STA ram_0012_t14
 C - - - - - 0x01EE36 07:EE26: A5 60     LDA ram_0060_hi
@@ -342,8 +328,6 @@ sub_EE39:
     ; ram_0010_t18
 C - - - - - 0x01EE49 07:EE39: A5 13     LDA ram_0013_t12
 C - - - - - 0x01EE4B 07:EE3B: 4A        LSR
-; bzk optimize, useless STA
-C - - - - - 0x01EE4C 07:EE3C: 85 13     STA ram_0013_t16_useless
 C - - - - - 0x01EE4E 07:EE3E: 29 70     AND #$70
 C - - - - - 0x01EE50 07:EE40: 85 11     STA ram_0011_t15
 C - - - - - 0x01EE52 07:EE42: A5 17     LDA ram_0017_t09
@@ -369,8 +353,6 @@ C - - - - - 0x01F0E5 07:F0D5: A5 12     LDA ram_0012_t14
 C - - - - - 0x01F0E7 07:F0D7: 4A        LSR
 C - - - - - 0x01F0E8 07:F0D8: 4A        LSR
 C - - - - - 0x01F0E9 07:F0D9: 4A        LSR
-; bzk optimize, useless STA
-C - - - - - 0x01F0EA 07:F0DA: 85 12     STA ram_0012_t19_useless
 C - - - - - 0x01F0EC 07:F0DC: 4A        LSR
 C - - - - - 0x01F0ED 07:F0DD: 4A        LSR
 C - - - - - 0x01F0EE 07:F0DE: 85 10     STA ram_0010_t20
