@@ -3308,7 +3308,7 @@ C - - - - - 0x00EE3C 03:AE2C: 60        RTS
 
 
 ofs_017_0x00EE49_5E:
-- - - - - - 0x00EE49 03:AE39: A9 A9     LDA #$A9
+- - - - - - 0x00EE49 03:AE39: A9 A9     LDA #$29 + $80
 - - - - - - 0x00EE4B 03:AE3B: CD 8B 07  CMP ram_0782_unk + $09
 - - - - - - 0x00EE4E 03:AE3E: F0 6E     BEQ bra_AE63
 - - - - - - 0x00EE50 03:AE40: 8D 8B 07  STA ram_0782_unk + $09

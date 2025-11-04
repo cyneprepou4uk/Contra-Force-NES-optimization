@@ -2122,20 +2122,20 @@ C - - - - - 0x01FB52 07:FB42: D0 0A     BNE bra_FB4E
 C - - - - - 0x01FB54 07:FB44: A4 17     LDY ram_0017_t08_player_index
 C - - - - - 0x01FB56 07:FB46: 19 36 07  ORA ram_0736_obj,Y
 C - - - - - 0x01FB59 07:FB49: 99 36 07  STA ram_0736_obj,Y
-C - - - - - 0x01FB5C 07:FB4C: D0 17     BNE bra_FB65
+C - - - - - 0x01FB5C 07:FB4C: D0 17     BNE bra_FB65    ; jmp
 bra_FB4E:
 C - - - - - 0x01FB5E 07:FB4E: 88        DEY
 C - - - - - 0x01FB5F 07:FB4F: D0 0A     BNE bra_FB5B
 C - - - - - 0x01FB61 07:FB51: A4 17     LDY ram_0017_t08_player_index
 C - - - - - 0x01FB63 07:FB53: 19 4C 07  ORA ram_074C_obj,Y
 C - - - - - 0x01FB66 07:FB56: 99 4C 07  STA ram_074C_obj,Y
-C - - - - - 0x01FB69 07:FB59: D0 0A     BNE bra_FB65
+C - - - - - 0x01FB69 07:FB59: D0 0A     BNE bra_FB65    ; jmp
 bra_FB5B:
 C - - - - - 0x01FB6B 07:FB5B: A4 17     LDY ram_0017_t08_player_index
 C - - - - - 0x01FB6D 07:FB5D: 19 62 07  ORA ram_0762_obj,Y
 C - - - - - 0x01FB70 07:FB60: 99 62 07  STA ram_0762_obj,Y
 ; bzk optimize, useless branch
-C - - - - - 0x01FB73 07:FB63: D0 00     BNE bra_FB65
+C - - - - - 0x01FB73 07:FB63: D0 00     BNE bra_FB65    ; jmp
 bra_FB65:
 C - - - - - 0x01FB75 07:FB65: A5 17     LDA ram_0017_t08_player_index
 C - - - - - 0x01FB77 07:FB67: 29 07     AND #$07

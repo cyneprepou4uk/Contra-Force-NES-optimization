@@ -5162,6 +5162,7 @@ C - - - - - 0x016595 05:A585: A2 01     LDX #$01
 bra_A587_loop:
 C - - - - - 0x016597 05:A587: BD 82 07  LDA ram_0782_unk,X
 C - - - - - 0x01659A 05:A58A: D0 0A     BNE bra_A596
+; A = 00
 C - - - - - 0x01659C 05:A58C: 9D 1A 06  STA ram_obj_animation_lo,X
 C - - - - - 0x01659F 05:A58F: 9D 82 07  STA ram_0782_unk,X
 C - - - - - 0x0165A2 05:A592: 95 B1     STA ram_current_player,X

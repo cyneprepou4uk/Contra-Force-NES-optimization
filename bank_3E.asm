@@ -2772,7 +2772,7 @@ C - - - - - 0x0098BF 02:98AF: 20 D5 99  JSR sub_99D5
 .export sub_0x0098C2
 sub_0x0098C2:
 C - - - - - 0x0098C2 02:98B2: BD 82 07  LDA ram_0782_unk,X
-C - - - - - 0x0098C5 02:98B5: C9 9C     CMP #$9C
+C - - - - - 0x0098C5 02:98B5: C9 9C     CMP #$1C + $80
 C - - - - - 0x0098C7 02:98B7: F0 12     BEQ bra_98CB
 C - - - - - 0x0098C9 02:98B9: C9 0A     CMP #$0A
 C - - - - - 0x0098CB 02:98BB: F0 1B     BEQ bra_98D8

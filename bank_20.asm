@@ -2937,7 +2937,7 @@ sub_AF27:
 C - - - - - 0x00CF37 03:AF27: BD 78 07  LDA ram_0778_unk,X
 C - - - - - 0x00CF3A 03:AF2A: F0 62     BEQ bra_AF8E
 C - - - - - 0x00CF3C 03:AF2C: BD 82 07  LDA ram_0782_unk,X
-C - - - - - 0x00CF3F 03:AF2F: C9 AA     CMP #$AA
+C - - - - - 0x00CF3F 03:AF2F: C9 AA     CMP #$2A + $80
 C - - - - - 0x00CF41 03:AF31: D0 36     BNE bra_AF69
 C - - - - - 0x00CF43 03:AF33: BD AA 07  LDA ram_07AA_unk,X
 C - - - - - 0x00CF46 03:AF36: 30 0D     BMI bra_AF45
@@ -4517,7 +4517,7 @@ C - - - - - 0x00E063 03:A053: D0 B3     JMP loc_0x00E018
 sub_B32F:
 C - - - - - 0x00F33F 03:B32F: A2 09     LDX #$09
 C - - - - - 0x00F341 03:B331: BD 82 07  LDA ram_0782_unk,X
-C - - - - - 0x00F344 03:B334: C9 A9     CMP #$A9
+C - - - - - 0x00F344 03:B334: C9 A9     CMP #$29 + $80
 C - - - - - 0x00F346 03:B336: D0 28     BNE bra_B360
 - - - - - - 0x00F348 03:B338: BD 4E 06  LDA ram_obj_pos_X,X
 - - - - - - 0x00F34B 03:B33B: 8D 50 06  STA ram_obj_pos_X + $02
